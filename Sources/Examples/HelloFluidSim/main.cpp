@@ -3,6 +3,18 @@
 void UpdateWave(const double timeInterval, double* x, double* speed)
 {
 	(*x) += timeInterval * (*speed);
+
+	// Boundary reflection
+	if ((*x) > 1.0)
+	{
+		(*speed) += -1.0;
+		(*x) = 1.0 + timeInterval * (*speed);
+	}
+	else if ((*x) > 0.0)
+	{
+		(*speed) *= -1.0;
+		(*x) = timeInterval * (*speed);
+	}
 }
 
 int main()
@@ -19,6 +31,7 @@ int main()
 	{
 		// Update waves
 		UpdateWave(timeInterval, &x, &speedX);
+		UpdateWave(timeInterval, &y, &speedY);
 	}
 
 	return 0;
