@@ -9,5 +9,8 @@
     <ClInclude Include="..\Sources\Array\Array.h">
       <Filter>Array</Filter>
     </ClInclude>
+    <ClInclude Include="..\Sources\Array\Array1.h">
+      <Filter>Array</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
