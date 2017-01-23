@@ -1,6 +1,6 @@
 /*************************************************************************
 > File Name: main.cpp
-> Project Name: Cubby
+> Project Name: CubbyFlow
 > Author: Chan-Ho Chris Ohk
 > Purpose: Hello, Fluid Simulator
 > Created Time: 2017/01/22

@@ -1,6 +1,6 @@
 /*************************************************************************
 > File Name: Array.h
-> Project Name: Cubby
+> Project Name: CubbyFlow
 > Author: Chan-Ho Chris Ohk
 > Purpose: Generic N-dimensional array class interface.
 > Created Time: 2017/01/23
