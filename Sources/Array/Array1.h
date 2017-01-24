@@ -48,7 +48,7 @@ namespace CubbyFlow
 		//! Array<int, 1> arr = {1, 2, 4, 9, 3};
 		//! \endcode
 		//!
-		//! \param lst Initializer list that should be copy to the new array.
+		//! \param list Initializer list that should be copy to the new array.
 		//!
 		Array(const std::initializer_list<T>& list);
 
