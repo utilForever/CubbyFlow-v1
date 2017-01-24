@@ -8,6 +8,8 @@
 *************************************************************************/
 #include <Array/Array1.h>
 
+#include <cassert>
+
 namespace CubbyFlow
 {
 	template <typename T>
@@ -60,5 +62,49 @@ namespace CubbyFlow
 			(*this)[i] = *colIter;
 			++colIter;
 		}
+	}
+
+	template <typename T>
+	void Array<T, 1>::Clear()
+	{
+		m_data.clear();
+	}
+
+	template <typename T>
+	void Array<T, 1>::Resize(size_t size, const T& initVal)
+	{
+		m_data.resize(size, initVal);
+	}
+
+	template <typename T>
+	T& Array<T, 1>::At(size_t i)
+	{
+		assert(i < Size());
+		return m_data[i];
+	}
+
+	template <typename T>
+	const T& Array<T, 1>::At(size_t i) const
+	{
+		assert(i < Size());
+		return m_data[i];
+	}
+
+	template <typename T>
+	size_t Array<T, 1>::Size() const
+	{
+		return m_data.size();
+	}
+
+	template <typename T>
+	T* Array<T, 1>::Data()
+	{
+		return m_data.data();
+	}
+
+	template <typename T>
+	const T* const Array<T, 1>::Data() const
+	{
+		return m_data.data();
 	}
 }
