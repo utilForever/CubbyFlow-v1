@@ -103,7 +103,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	const T* const Array<T, 1>::Data() const
+	const T* Array<T, 1>::Data() const
 	{
 		return m_data.data();
 	}
