@@ -39,7 +39,8 @@ namespace CubbyFlow
 	template <typename T>
 	void Array<T, 1>::Set(const T& value)
 	{
-		for (auto& v : m_data) {
+		for (auto& v : m_data)
+		{
 			v = value;
 		}
 	}
@@ -106,5 +107,131 @@ namespace CubbyFlow
 	const T* Array<T, 1>::Data() const
 	{
 		return m_data.data();
+	}
+
+	template <typename T>
+	typename Array<T, 1>::ContainerType::iterator Array<T, 1>::Begin()
+	{
+		return m_data.begin();
+	}
+
+	template <typename T>
+	typename Array<T, 1>::ContainerType::const_iterator Array<T, 1>::Begin() const
+	{
+		return m_data.begin();
+	}
+
+	template <typename T>
+	typename Array<T, 1>::ContainerType::iterator Array<T, 1>::End()
+	{
+		return m_data.end();
+	}
+
+	template <typename T>
+	typename Array<T, 1>::ContainerType::const_iterator Array<T, 1>::End() const
+	{
+		return m_data.end();
+	}
+
+	template <typename T>
+	ArrayAccessor1<T> Array<T, 1>::Accessor()
+	{
+		return ArrayAccessor1<T>(Size(), Data());
+	}
+
+	template <typename T>
+	ConstArrayAccessor1<T> Array<T, 1>::ConstAccessor() const
+	{
+		return ConstArrayAccessor1<T>(Size(), Data());
+	}
+
+	template <typename T>
+	void Array<T, 1>::Swap(Array& other)
+	{
+		std::swap(other.m_data, m_data);
+	}
+
+	template <typename T>
+	void Array<T, 1>::Append(const T& newVal)
+	{
+		m_data.push_back(newVal);
+	}
+
+	template <typename T>
+	void Array<T, 1>::Append(const Array& other)
+	{
+		m_data.insert(m_data.end(), other.m_data.begin(), other.m_data.end());
+	}
+
+	template <typename T>
+	template <typename Callback>
+	void Array<T, 1>::ForEach(Callback func) const
+	{
+		ConstAccessor().ForEach(func);
+	}
+
+	template <typename T>
+	template <typename Callback>
+	void Array<T, 1>::ForEachIndex(Callback func) const
+	{
+		ConstAccessor().ForEachIndex(func);
+	}
+
+	template <typename T>
+	template <typename Callback>
+	void Array<T, 1>::ParallelForEach(Callback func) {
+		Accessor().ParallelForEach(func);
+	}
+
+	template <typename T>
+	template <typename Callback>
+	void Array<T, 1>::ParallelForEachIndex(Callback func) const
+	{
+		ConstAccessor().ParallelForEachIndex(func);
+	}
+
+	template <typename T>
+	T& Array<T, 1>::operator[](size_t i)
+	{
+		return m_data[i];
+	}
+
+	template <typename T>
+	const T& Array<T, 1>::operator[](size_t i) const
+	{
+		return m_data[i];
+	}
+
+	template <typename T>
+	Array<T, 1>& Array<T, 1>::operator=(const T& value)
+	{
+		Set(value);
+		return *this;
+	}
+
+	template <typename T>
+	Array<T, 1>& Array<T, 1>::operator=(const Array& other)
+	{
+		Set(other);
+		return *this;
+	}
+
+	template <typename T>
+	Array<T, 1>& Array<T, 1>::operator=(const std::initializer_list<T>& list)
+	{
+		Set(list);
+		return *this;
+	}
+
+	template <typename T>
+	Array<T, 1>::operator ArrayAccessor1<T>()
+	{
+		return Accessor();
+	}
+
+	template <typename T>
+	Array<T, 1>::operator ConstArrayAccessor1<T>() const
+	{
+		return ConstAccessor();
 	}
 }
