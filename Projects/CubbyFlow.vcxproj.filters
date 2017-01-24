@@ -15,5 +15,8 @@
     <ClInclude Include="..\Sources\Array\Array2.h">
       <Filter>Array</Filter>
     </ClInclude>
+    <ClInclude Include="..\Sources\Array\Array3.h">
+      <Filter>Array</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
