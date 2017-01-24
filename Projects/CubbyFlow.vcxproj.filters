@@ -26,5 +26,8 @@
     <ClCompile Include="..\Sources\Array\Array2.cpp">
       <Filter>Array</Filter>
     </ClCompile>
+    <ClCompile Include="..\Sources\Array\Array3.cpp">
+      <Filter>Array</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
