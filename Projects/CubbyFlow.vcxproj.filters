@@ -19,4 +19,9 @@
       <Filter>Array</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Sources\Array\Array1.cpp">
+      <Filter>Array</Filter>
+    </ClCompile>
+  </ItemGroup>
 </Project>
