@@ -119,7 +119,7 @@ namespace CubbyFlow
 	template <typename T>
 	typename Array<T, 1>::ContainerType::const_iterator Array<T, 1>::Begin() const
 	{
-		return m_data.begin();
+		return m_data.cbegin();
 	}
 
 	template <typename T>
@@ -131,7 +131,7 @@ namespace CubbyFlow
 	template <typename T>
 	typename Array<T, 1>::ContainerType::const_iterator Array<T, 1>::End() const
 	{
-		return m_data.end();
+		return m_data.cend();
 	}
 
 	template <typename T>
