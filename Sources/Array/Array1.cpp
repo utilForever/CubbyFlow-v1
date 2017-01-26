@@ -59,7 +59,8 @@ namespace CubbyFlow
 		Resize(size);
 		
 		auto colIter = list.begin();
-		for (size_t i = 0; i < size; ++i) {
+		for (size_t i = 0; i < size; ++i)
+		{
 			(*this)[i] = *colIter;
 			++colIter;
 		}
