@@ -180,7 +180,8 @@ namespace CubbyFlow
 
 	template <typename T>
 	template <typename Callback>
-	void Array<T, 1>::ParallelForEach(Callback func) {
+	void Array<T, 1>::ParallelForEach(Callback func)
+	{
 		Accessor().ParallelForEach(func);
 	}
 
