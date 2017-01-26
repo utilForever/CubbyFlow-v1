@@ -70,16 +70,16 @@ namespace CubbyFlow
 		Resize(Size3(width, height, depth));
 
 		auto depthIter = list.begin();
-
-		for (size_t k = 0; k < depth; ++k) {
+		for (size_t k = 0; k < depth; ++k)
+		{
 			assert(Depth() == depthIter->size());
 
 			auto heightIter = depthIter->begin();
 			for (size_t j = 0; j < height; ++j)
 			{
 				assert(Height() == heightIter->size());
+			
 				auto widthIter = heightIter->begin();
-
 				for (size_t i = 0; i < width; ++i)
 				{
 					(*this)(i, j, k) = *widthIter;
@@ -115,7 +115,7 @@ namespace CubbyFlow
 			{
 				for (size_t i = 0; i < iMin; ++i)
 				{
-					grid(i, j, k) = at(i, j, k);
+					grid(i, j, k) = At(i, j, k);
 				}
 			}
 		}
@@ -190,7 +190,7 @@ namespace CubbyFlow
 	template <typename T>
 	typename Array<T, 3>::ContainerType::const_iterator Array<T, 3>::Begin() const
 	{
-		return m_data.begin();
+		return m_data.cbegin();
 	}
 
 	template <typename T>
@@ -202,7 +202,7 @@ namespace CubbyFlow
 	template <typename T>
 	typename Array<T, 3>::ContainerType::const_iterator Array<T, 3>::End() const
 	{
-		return m_data.end();
+		return m_data.cend();
 	}
 
 	template <typename T>
