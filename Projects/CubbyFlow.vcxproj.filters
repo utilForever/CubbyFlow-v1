@@ -47,5 +47,8 @@
     <ClCompile Include="..\Sources\Array\ArrayAccessor2.cpp">
       <Filter>Array</Filter>
     </ClCompile>
+    <ClCompile Include="..\Sources\Array\ArrayAccessor3.cpp">
+      <Filter>Array</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
