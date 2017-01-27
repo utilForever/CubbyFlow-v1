@@ -18,6 +18,9 @@
     <ClInclude Include="..\Sources\Array\Array3.h">
       <Filter>Array</Filter>
     </ClInclude>
+    <ClInclude Include="..\Sources\Array\ArrayAccessor.h">
+      <Filter>Array</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Array\Array1.cpp">
