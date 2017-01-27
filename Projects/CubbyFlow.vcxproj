@@ -128,6 +128,7 @@
     <ClInclude Include="..\Sources\Array\ArrayAccessor.h" />
     <ClInclude Include="..\Sources\Array\ArrayAccessor1.h" />
     <ClInclude Include="..\Sources\Array\ArrayAccessor2.h" />
+    <ClInclude Include="..\Sources\Array\ArrayAccessor3.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Array\Array1.cpp" />
