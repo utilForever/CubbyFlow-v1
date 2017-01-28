@@ -17,7 +17,7 @@ namespace CubbyFlow
 	ArrayAccessor<T, 1>::ArrayAccessor() :
 		m_size(0), m_data(nullptr)
 	{
-
+		// Do nothing
 	}
 
 	template <typename T>
@@ -162,5 +162,97 @@ namespace CubbyFlow
 	ArrayAccessor<T, 1>::operator ConstArrayAccessor<T, 1>() const
 	{
 		return ConstArrayAccessor<T, 1>(*this);
+	}
+
+	template <typename T>
+	ConstArrayAccessor<T, 1>::ConstArrayAccessor() :
+		m_size(0), m_data(nullptr)
+	{
+		// Do nothing
+	}
+
+	template <typename T>
+	ConstArrayAccessor<T, 1>::ConstArrayAccessor(size_t size, const T* const data)
+	{
+		m_size = size;
+		m_data = data;
+	}
+
+	template <typename T>
+	ConstArrayAccessor<T, 1>::ConstArrayAccessor(const ArrayAccessor<T, 1>& other)
+	{
+		m_size = other.Size();
+		m_data = other.Data();
+	}
+
+	template <typename T>
+	ConstArrayAccessor<T, 1>::ConstArrayAccessor(const ConstArrayAccessor& other)
+	{
+		m_size = other.m_size;
+		m_data = other.m_data;
+	}
+
+	template <typename T>
+	const T& ConstArrayAccessor<T, 1>::At(size_t i) const
+	{
+		assert(i < m_size);
+		return m_data[i];
+	}
+
+	template <typename T>
+	const T* const ConstArrayAccessor<T, 1>::Begin() const
+	{
+		return m_data;
+	}
+
+	template <typename T>
+	const T* const ConstArrayAccessor<T, 1>::End() const
+	{
+		return m_data + m_size;
+	}
+
+	template <typename T>
+	size_t ConstArrayAccessor<T, 1>::Size() const
+	{
+		return m_size;
+	}
+
+	template <typename T>
+	const T* const ConstArrayAccessor<T, 1>::Data() const
+	{
+		return m_data;
+	}
+
+	template <typename T>
+	template <typename Callback>
+	void ConstArrayAccessor<T, 1>::ForEach(Callback func) const
+	{
+		for (size_t i = 0; i < Size(); ++i)
+		{
+			func(At(i));
+		}
+	}
+
+	template <typename T>
+	template <typename Callback>
+	void ConstArrayAccessor<T, 1>::ForEachIndex(Callback func) const
+	{
+		for (size_t i = 0; i < Size(); ++i)
+		{
+			func(i);
+		}
+	}
+
+	template <typename T>
+	template <typename Callback>
+	void ConstArrayAccessor<T, 1>::ParallelForEachIndex(Callback func) const
+	{
+		ParallelFor(ZERO_SIZE, Size(), func);
+	}
+
+	template <typename T>
+	const T& ConstArrayAccessor<T, 1>::operator[](size_t i) const
+	{
+		return m_data[i];
 	}
 }
