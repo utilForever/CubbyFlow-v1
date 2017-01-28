@@ -89,7 +89,7 @@ namespace CubbyFlow
 	{
 		assert(i < Width());
 		assert(j < Height());
-		return m_data[i + j * Width()];
+		return m_data[Index(i, j)];
 	}
 
 	template <typename T>
@@ -97,7 +97,7 @@ namespace CubbyFlow
 	{
 		assert(i < Width());
 		assert(j < Height());
-		return m_data[i + j * Width()];
+		return m_data[Index(i, j)];
 	}
 
 	template <typename T>
@@ -234,37 +234,37 @@ namespace CubbyFlow
 	template <typename T>
 	T& ArrayAccessor<T, 2>::operator()(const Point2UI& pt)
 	{
-		return m_data[i + j * Width()];
+		return m_data[Index(i, j)];
 	}
 
 	template <typename T>
 	const T& ArrayAccessor<T, 2>::operator()(const Point2UI& pt) const
 	{
-		return m_data[i + j * Width()];
+		return m_data[Index(i, j)];
 	}
 
 	template <typename T>
 	T& ArrayAccessor<T, 2>::operator()(size_t i, size_t j)
 	{
-		return m_data[i + j * width()];
+		return m_data[Index(i, j)];
 	}
 	
 	template <typename T>
 	const T& ArrayAccessor<T, 2>::operator()(size_t i, size_t j) const
 	{
-		return m_data[i + j * width()];
+		return m_data[Index(i, j)];
 	}
 
 	template <typename T>
 	T& ArrayAccessor<T, 2>::operator()(const Point2UI& pt)
 	{
-		return m_data[pt.x + pt.y * width()];
+		return m_data[Index(pt)];
 	}
 
 	template <typename T>
 	const T& ArrayAccessor<T, 2>::operator()(const Point2UI& pt) const
 	{
-		return m_data[pt.x + pt.y * width()];
+		return m_data[Index(pt)];
 	}
 
 	template <typename T>
@@ -325,7 +325,7 @@ namespace CubbyFlow
 	template <typename T>
 	const T& ConstArrayAccessor<T, 2>::At(const Point2UI& pt) const
 	{
-		return m_data[pt.x + pt.y * Width()];
+		return m_data[Index(pt)];
 	}
 
 	template <typename T>
@@ -333,7 +333,7 @@ namespace CubbyFlow
 	{
 		assert(i < Width());
 		assert(j < Height());
-		return m_data[i + j * Width()];
+		return m_data[Index(i, j)];
 	}
 
 	template <typename T>
@@ -433,18 +433,18 @@ namespace CubbyFlow
 	template <typename T>
 	const T& ConstArrayAccessor<T, 2>::operator()(const Point2UI& pt) const
 	{
-		return m_data[i + j * Width()];
+		return m_data[Index(pt)];
 	}
 
 	template <typename T>
 	const T& ConstArrayAccessor<T, 2>::operator()(size_t i, size_t j) const
 	{
-		return m_data[i + j * width()];
+		return m_data[Index(i, j)];
 	}
 
 	template <typename T>
 	const T& ConstArrayAccessor<T, 2>::operator()(const Point2UI& pt) const
 	{
-		return m_data[pt.x + pt.y * width()];
+		return m_data[Index(pt)];
 	}
 }
