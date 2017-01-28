@@ -6,7 +6,6 @@
 > Created Time: 2017/01/28
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
-
 #include "ArrayAccessor2.h"
 
 #include <algorithm>
@@ -30,7 +29,7 @@ namespace CubbyFlow
 	template <typename T>
 	ArrayAccessor<T, 2>::ArrayAccessor(size_t width, size_t height, T* const data)
 	{
-		Reset(Size2(width, height), data);
+		Reset(width, height, data);
 	}
 
 	template <typename T>
@@ -76,16 +75,12 @@ namespace CubbyFlow
 	template <typename T>
 	T& ArrayAccessor<T, 2>::At(const Point2UI& pt)
 	{
-		assert(pt.x < Width());
-		assert(pt.y < Height());
 		return m_data[pt.x + pt. y * Width()];
 	}
 
 	template <typename T>
 	const T& ArrayAccessor<T, 2>::At(const Point2UI& pt) const
 	{
-		assert(pt.x < Width());
-		assert(pt.y < Height());
 		return m_data[pt.x + pt.y * Width()];
 	}
 
@@ -156,7 +151,7 @@ namespace CubbyFlow
 	template <typename T>
 	void ArrayAccessor<T, 2>::Swap(ArrayAccessor& other)
 	{
-		std::swap(other.m_data,m_data);
+		std::swap(other.m_data, m_data);
 		std::swap(ohter.m_size, other.m_size);
 	}
 
@@ -239,13 +234,13 @@ namespace CubbyFlow
 	template <typename T>
 	T& ArrayAccessor<T, 2>::operator()(const Point2UI& pt)
 	{
-		return m_data[i * j * Width()];
+		return m_data[i + j * Width()];
 	}
 
 	template <typename T>
 	const T& ArrayAccessor<T, 2>::operator()(const Point2UI& pt) const
 	{
-		return m_data[i * j * Width()];
+		return m_data[i + j * Width()];
 	}
 
 	template <typename T>
@@ -330,8 +325,6 @@ namespace CubbyFlow
 	template <typename T>
 	const T& ConstArrayAccessor<T, 2>::At(const Point2UI& pt) const
 	{
-		assert(pt.x < Width());
-		assert(pt.y < Height());
 		return m_data[pt.x + pt.y * Width()];
 	}
 
@@ -414,22 +407,9 @@ namespace CubbyFlow
 
 	template <typename T>
 	template <typename Callback>
-	void ConstArrayAccessor<T, 2>::ParallelForEach(Callback func)
-	{
-		ParallelFor(ZERO_SIZE, Size(), [&](size_t i, size_t j)
-		{
-			func(At(i, j));
-		});
-	}
-
-	template <typename T>
-	template <typename Callback>
 	void ConstArrayAccessor<T, 2>::ParallelForEachIndex(Callback func) const
 	{
-		ParallelFor(ZERO_SIZE, Size(), [&](size_t i, size_t j)
-		{
-			func(i, j);
-		});
+		ParallelFor(ZERO_SIZE, m_size.x, ZERO_SIZE, m_size.y, func);
 	}
 
 	template <typename T>
@@ -453,7 +433,7 @@ namespace CubbyFlow
 	template <typename T>
 	const T& ConstArrayAccessor<T, 2>::operator()(const Point2UI& pt) const
 	{
-		return m_data[i * j * Width()];
+		return m_data[i + j * Width()];
 	}
 
 	template <typename T>
