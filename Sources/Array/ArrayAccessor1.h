@@ -193,7 +193,7 @@ namespace CubbyFlow
 
 		//! Constructs a read-only array accessor from read/write accessor.
 		explicit ConstArrayAccessor(const ArrayAccessor<T, 1>& other);
-
+		
 		//! Copy constructor.
 		ConstArrayAccessor(const ConstArrayAccessor& other);
 
