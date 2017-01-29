@@ -74,13 +74,13 @@ namespace CubbyFlow
 	template <typename T>
 	T& ArrayAccessor<T, 3>::At(const Point3UI& pt)
 	{
-		At(pt.x, pt.y, pt.z);
+		return At(pt.x, pt.y, pt.z);
 	}
 
 	template <typename T>
 	const T& ArrayAccessor<T, 3>::At(const Point3UI& pt) const
 	{
-		At(pt.x, pt.y, pt.z);
+		return At(pt.x, pt.y, pt.z);
 	}
 
 	template <typename T>
@@ -293,7 +293,8 @@ namespace CubbyFlow
 	template <typename T>
 	ConstArrayAccessor<T, 3>::ConstArrayAccessor(size_t width, size_t height, size_t depth, T* const data)
 	{
-		m_data = data
+		m_size = Size3(width, height, depth);
+		m_data = data;
 	}
 
 	template <typename T>
