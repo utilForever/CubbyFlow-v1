@@ -143,7 +143,7 @@ namespace CubbyFlow
 		//!
 		//! This function iterates the array elements and invoke the callback
 		//! function \p func. The callback function takes three parameters which are
-		//! the (i, j, j) indices of the array. The order of execution will be the
+		//! the (i, j, k) indices of the array. The order of execution will be the
 		//! same as the nested for-loop below:
 		//!
 		//! \code{.cpp}

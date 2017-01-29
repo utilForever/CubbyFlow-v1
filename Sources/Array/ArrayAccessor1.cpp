@@ -6,6 +6,7 @@
 > Created Time: 2017/01/28
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
+
 #include <Array/ArrayAccessor1.h>
 
 #include <algorithm>
