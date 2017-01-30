@@ -6,7 +6,7 @@
 > Created Time: 2017/01/28
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
-#include "ArrayAccessor3.h"
+#include <Array/ArrayAccessor3.h>
 
 #include <algorithm>
 #include <cassert>
@@ -39,13 +39,13 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	ArrayAccessor<T, 3>::Set(const ArrayAccessor& other)
+	void ArrayAccessor<T, 3>::Set(const ArrayAccessor& other)
 	{
 		Reset(other.m_size, other.m_data);
 	}
 
 	template <typename T>
-	void ArrayAccessor<T, 3>::Reset(Size3& size, T* const data)
+	void ArrayAccessor<T, 3>::Reset(const Size3& size, T* const data)
 	{
 		m_size = size;
 		m_data = data;
@@ -86,41 +86,37 @@ namespace CubbyFlow
 	template <typename T>
 	T& ArrayAccessor<T, 3>::At(size_t i, size_t j, size_t k)
 	{
-		assert(i < Width());
-		assert(j < Height());
-		assert(k < Depth());
+		assert(i < Width() && j < Height() && k < Depth());
 		return m_data[Index(i, j, k)];
 	}
 
 	template <typename T>
 	const T& ArrayAccessor<T, 3>::At(size_t i, size_t j, size_t k) const
 	{
-		assert(i < Width());
-		assert(j < Height());
-		assert(k < Depth());
+		assert(i < Width() && j < Height() && k < Depth());
 		return m_data[Index(i, j, k)];
 	}
 
 	template <typename T>
-	const T* const ArrayAccessor<T, 3>::Begin() const
+	T* const ArrayAccessor<T, 3>::Begin() const
 	{
 		return m_data;
 	}
 
 	template <typename T>
-	const T* const ArrayAccessor<T, 3>::End() const
+	T* const ArrayAccessor<T, 3>::End() const
 	{
-		return m_data + Width() * Height();
+		return m_data + Width() * Height() * Depth();
 	}
 
 	template <typename T>
-	T* const ArrayAccessor<T, 3>::Begin()
+	T* ArrayAccessor<T, 3>::Begin()
 	{
 		return m_data;
 	}
 
 	template <typename T>
-	T* const ArrayAccessor<T, 3>::End()
+	T* ArrayAccessor<T, 3>::End()
 	{
 		return m_data + Width() * Height() * Depth();
 	}
@@ -159,7 +155,7 @@ namespace CubbyFlow
 	void ArrayAccessor<T, 3>::Swap(ArrayAccessor& other)
 	{
 		std::swap(other.m_data, m_data);
-		std::swap(ohter.m_size, m_size);
+		std::swap(other.m_size, m_size);
 	}
 
 	template <typename T>
@@ -175,8 +171,7 @@ namespace CubbyFlow
 					func(At(i, j, k));
 				}
 			}
-		}
-		
+		}		
 	}
 
 	template <typename T>
@@ -193,14 +188,13 @@ namespace CubbyFlow
 				}
 			}
 		}
-		
 	}
 
 	template <typename T>
 	template <typename Callback>
 	void ArrayAccessor<T, 3>::ParallelForEach(Callback func)
 	{
-		ParallelFor(ZERO_SIZE, Size(), [&](size_t i, size_t j, size_t k)
+		ParallelFor(ZERO_SIZE, Width(), ZERO_SIZE, Height(), ZERO_SIZE, Depth(), [&](size_t i, size_t j, size_t k)
 		{
 			func(At(i, j, k));
 		});
@@ -210,21 +204,21 @@ namespace CubbyFlow
 	template <typename Callback>
 	void ArrayAccessor<T, 3>::ParallelForEachIndex(Callback func) const
 	{
-		ParallelFor(ZERO_SIZE, m_size.x, ZERO_SIZE, m_size.y, ZERO_SIZE, m_size.z, func);
+		ParallelFor(ZERO_SIZE, Width(), ZERO_SIZE, Height(), ZERO_SIZE, Depth(), func);
 	}
 
 	template <typename T>
 	size_t ArrayAccessor<T, 3>::Index(const Point3UI& pt) const
 	{
-		assert(pt.x < m_size.x && pt.y < m_size.y && pt.z < m_size.z);
-		return pt.x + pt.y * Width() + pt.z * Width() * Height();
+		assert(pt.x < Width() && pt.y < Height() && pt.z < Depth());
+		return pt.x + Width() * pt.y + Width() * Height() * pt.z;
 	}
 
 	template <typename T>
 	size_t ArrayAccessor<T, 3>::Index(size_t i, size_t j, size_t k) const
 	{
-		assert(i < m_size.x && j < m_size.y && k < m_size.z);
-		return i + j * Width() + k * Width() * Height();
+		assert(i < Width() && j < Height() && k < Depth());
+		return i + Width() * j + Width() * Height() * k;
 	}
 
 	template <typename T>
@@ -264,7 +258,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	ArrayAccessor& ArrayAccessor<T, 3>::operator=(const ArrayAccessor& other)
+	ArrayAccessor<T, 3>& ArrayAccessor<T, 3>::operator=(const ArrayAccessor& other)
 	{
 		Set(other);
 		return *this;
@@ -291,7 +285,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	ConstArrayAccessor<T, 3>::ConstArrayAccessor(size_t width, size_t height, size_t depth, T* const data)
+	ConstArrayAccessor<T, 3>::ConstArrayAccessor(size_t width, size_t height, size_t depth, const T* const data)
 	{
 		m_size = Size3(width, height, depth);
 		m_data = data;
@@ -305,7 +299,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	void ConstArrayAccessor<T, 3>::ConstArrayAccessor(const ConstArrayAccessor& other)
+	ConstArrayAccessor<T, 3>::ConstArrayAccessor(const ConstArrayAccessor& other)
 	{
 		m_size = other.m_size;
 		m_data = other.m_data;
@@ -321,7 +315,7 @@ namespace CubbyFlow
 	template <typename T>
 	const T& ConstArrayAccessor<T, 3>::At(const Point3UI& pt) const
 	{
-		At(pt.x, pt.y, pt.z);
+		return At(pt.x, pt.y, pt.z);
 	}
 
 	template <typename T>
@@ -370,16 +364,9 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	T* const ConstArrayAccessor<T, 3>::Data() const
+	const T* const ConstArrayAccessor<T, 3>::Data() const
 	{
 		return m_data;
-	}
-
-	template <typename T>
-	void ConstArrayAccessor<T, 3>::Swap(ConstArrayAccessor& other)
-	{
-		std::swap(other.m_data, m_data);
-		std::swap(ohter.m_size, m_size);
 	}
 
 	template <typename T>
@@ -418,33 +405,27 @@ namespace CubbyFlow
 	template <typename Callback>
 	void ConstArrayAccessor<T, 3>::ParallelForEachIndex(Callback func) const
 	{
-		ParallelFor(ZERO_SIZE, m_size.x, ZERO_SIZE, m_size.y, ZERO_SIZE, m_size.z, func);
+		ParallelFor(ZERO_SIZE, Width(), ZERO_SIZE, Height(), ZERO_SIZE, Depth(), func);
 	}
 
 	template <typename T>
 	size_t ConstArrayAccessor<T, 3>::Index(const Point3UI& pt) const
 	{
 		assert(pt.x < m_size.x && pt.y < m_size.y && pt.z < m_size.z);
-		return pt.x + pt.y * Width() + pt.z * Width() * Height();
+		return pt.x + Width() * pt.y + Width() * Height() * pt.z;
 	}
 
 	template <typename T>
 	size_t ConstArrayAccessor<T, 3>::Index(size_t i, size_t j, size_t k) const
 	{
 		assert(i < m_size.x && j < m_size.y && k < m_size.z);
-		return i + j * Width() + k * Width() * Height();
+		return i + Width() * j + Width() * Height() * k;
 	}
 
 	template <typename T>
 	const T& ConstArrayAccessor<T, 3>::operator[](size_t i) const
 	{
 		return m_data[i];
-	}
-
-	template <typename T>
-	const T& ConstArrayAccessor<T, 3>::operator()(const Point3UI& pt) const
-	{
-		return m_data[Index(pt)];
 	}
 
 	template <typename T>

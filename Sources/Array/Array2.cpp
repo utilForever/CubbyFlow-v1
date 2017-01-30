@@ -8,6 +8,7 @@
 *************************************************************************/
 #include <Array/Array2.h>
 
+#include <algorithm>
 #include <cassert>
 
 namespace CubbyFlow
@@ -103,7 +104,7 @@ namespace CubbyFlow
 		{
 			for (size_t i = 0; i < iMin; ++i)
 			{
-				grid(i, j) = at(i, j);
+				grid(i, j) = At(i, j);
 			}
 		}
 
@@ -119,14 +120,14 @@ namespace CubbyFlow
 	template <typename T>
 	T& Array<T, 2>::At(size_t i)
 	{
-		assert(i < m_size.x * m_size.y);
+		assert(i < Width() * Height());
 		return m_data[i];
 	}
 
 	template <typename T>
 	const T& Array<T, 2>::At(size_t i) const
 	{
-		assert(i < m_size.x * m_size.y);
+		assert(i < Width() * Height());
 		return m_data[i];
 	}
 
@@ -145,15 +146,15 @@ namespace CubbyFlow
 	template <typename T>
 	T& Array<T, 2>::At(size_t i, size_t j)
 	{
-		assert(i < m_size.x && j < m_size.y);
-		return m_data[i + m_size.x * j];
+		assert(i < Width() && j < Height());
+		return m_data[i + Width() * j];
 	}
 
 	template <typename T>
 	const T& Array<T, 2>::At(size_t i, size_t j) const
 	{
-		assert(i < m_size.x && j < m_size.y);
-		return m_data[i + m_size.x * j];
+		assert(i < Width() && j < Height());
+		return m_data[i + Width() * j];
 	}
 
 	template <typename T>
@@ -272,29 +273,29 @@ namespace CubbyFlow
 	template <typename T>
 	T& Array<T, 2>::operator()(size_t i, size_t j)
 	{
-		assert(i < m_size.x && j < m_size.y);
-		return m_data[i + m_size.x * j];
+		assert(i < Width() && j < Height());
+		return m_data[i + Width() * j];
 	}
 
 	template <typename T>
 	const T& Array<T, 2>::operator()(size_t i, size_t j) const
 	{
-		assert(i < m_size.x && j < m_size.y);
-		return m_data[i + m_size.x * j];
+		assert(i < Width() && j < Height());
+		return m_data[i + Width() * j];
 	}
 
 	template <typename T>
 	T& Array<T, 2>::operator()(const Point2UI &pt)
 	{
-		assert(pt.x < m_size.x && pt.y < m_size.y);
-		return m_data[pt.x + m_size.x * pt.y];
+		assert(pt.x < Width() && pt.y < Height());
+		return m_data[pt.x + Width() * pt.y];
 	}
 
 	template <typename T>
 	const T& Array<T, 2>::operator()(const Point2UI &pt) const
 	{
-		assert(pt.x < m_size.x && pt.y < m_size.y);
-		return m_data[pt.x + m_size.x * pt.y];
+		assert(pt.x < Width() && pt.y < Height());
+		return m_data[pt.x + Width() * pt.y];
 	}
 
 	template <typename T>

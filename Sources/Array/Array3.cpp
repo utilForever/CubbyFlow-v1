@@ -6,9 +6,9 @@
 > Created Time: 2017/01/25
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
+#include <Array/Array3.h>
 
-#include "Array3.h"
-
+#include <algorithm>
 #include <cassert>
 
 namespace CubbyFlow
@@ -65,7 +65,7 @@ namespace CubbyFlow
 	{
 		size_t depth = list.size();
 		size_t height = (depth > 0) ? list.begin()->size() : 0;
-		size_t width = (height > 0) ? list.begin().begin()->size() : 0;
+		size_t width = (height > 0) ? list.begin()->begin()->size() : 0;
 
 		Resize(Size3(width, height, depth));
 
@@ -94,8 +94,8 @@ namespace CubbyFlow
 	template <typename T>
 	void Array<T, 3>::Clear()
 	{
-		m_data.clear();
 		m_size = Size3(0, 0, 0);
+		m_data.clear();
 	}
 
 	template <typename T>
@@ -124,24 +124,22 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	void Array<T, 3>::Resize(size_t width, size_t height, size_t depth, const T& initVal = T())
+	void Array<T, 3>::Resize(size_t width, size_t height, size_t depth, const T& initVal)
 	{
 		Resize(Size3(width, height, depth), initVal);
 	}
 
 	template <typename T>
-	T& Array<T, 3>::At(size_t i, size_t j, size_t k)
+	T& Array<T, 3>::At(size_t i)
 	{
-		assert(i < Width());
-		assert(j < Height());
-		assert(k < Depth());
-		return m_data[i + Width() * (j + Height() * k)];
+		assert(i < Width() * Height() * Depth());
+		return m_data[i];
 	}
 
 	template <typename T>
 	const T& Array<T, 3>::At(size_t i) const
 	{
-		assert(i < m_size.x * m_size.y * m_size.z);
+		assert(i < Width() * Height() * Depth());
 		return m_data[i];
 	}
 
@@ -160,11 +158,19 @@ namespace CubbyFlow
 	template <typename T>
 	T& Array<T, 3>::At(size_t i, size_t j, size_t k)
 	{
-		return m_data[i + Width() * (j + Height() * k)];
+		assert(i < Width() && j < Height() && k < Depth());
+		return m_data[i + Width() * j + Width() * Height() * k];
 	}
 
 	template <typename T>
-	size_t Array<T, 3>::Size() const
+	const T& Array<T, 3>::At(size_t i, size_t j, size_t k) const
+	{
+		assert(i < Width() && j < Height() && k < Depth());
+		return m_data[i + Width() * j + Width() * Height() * k];
+	}
+
+	template <typename T>
+	Size3 Array<T, 3>::Size() const
 	{
 		return m_data.size();
 	}
@@ -221,12 +227,7 @@ namespace CubbyFlow
 	void Array<T, 3>::Swap(Array& other)
 	{
 		std::swap(other.m_data, m_data);
-	}
-
-	template <typename T>
-	void Array<T, 3>::Append(cosnt T& newVal)
-	{
-		m_data.push_back(newVal);
+		std::swap(other.m_size, m_size);
 	}
 
 	template <typename T>
@@ -270,6 +271,34 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
+	T& Array<T, 3>::operator()(size_t i, size_t j, size_t k)
+	{
+		assert(i < Width() && j < Height() && k < Depth());
+		return m_data[i + Width() * j + Width() * Height() * k];
+	}
+
+	template <typename T>
+	const T& Array<T, 3>::operator()(size_t i, size_t j, size_t k) const
+	{
+		assert(i < Width() && j < Height() && k < Depth());
+		return m_data[i + Width() * j + Width() * Height() * k];
+	}
+
+	template <typename T>
+	T& Array<T, 3>::operator()(const Point3UI &pt)
+	{
+		assert(pt.x < Width() && pt.y < Height() && pt.z < Depth());
+		return m_data[pt.x + Width() * pt.y + Width() * Height() * pt.z];
+	}
+
+	template <typename T>
+	const T& Array<T, 3>::operator()(const Point3UI &pt) const
+	{
+		assert(pt.x < Width() && pt.y < Height() && pt.z < Depth());
+		return m_data[pt.x + Width() * pt.y + Width() * Height() * pt.z];
+	}
+
+	template <typename T>
 	Array<T, 3>& Array<T, 3>::operator=(const T& value)
 	{
 		Set(value);
@@ -277,7 +306,14 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	Array<T, 3>& Array<T, 3>::operator=(const std::initializer_list<T> &list)
+	Array<T, 3>& Array<T, 3>::operator=(const Array& other)
+	{
+		Set(other);
+		return *this;
+	}
+
+	template <typename T>
+	Array<T, 3>& Array<T, 3>::operator=(const std::initializer_list<std::initializer_list<std::initializer_list<T>>>& list)
 	{
 		Set(list);
 		return *this;

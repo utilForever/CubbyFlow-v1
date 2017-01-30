@@ -6,7 +6,6 @@
 > Created Time: 2017/01/28
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
-
 #include <Array/ArrayAccessor1.h>
 
 #include <algorithm>
@@ -49,14 +48,14 @@ namespace CubbyFlow
 	template <typename T>
 	T& ArrayAccessor<T, 1>::At(size_t i)
 	{
-		assert(i < m_size);
+		assert(i < Size());
 		return m_data[i];
 	}
 
 	template <typename T>
 	const T& ArrayAccessor<T, 1>::At(size_t i) const
 	{
-		assert(i < m_size);
+		assert(i < Size());
 		return m_data[i];
 	}
 
@@ -196,7 +195,7 @@ namespace CubbyFlow
 	template <typename T>
 	const T& ConstArrayAccessor<T, 1>::At(size_t i) const
 	{
-		assert(i < m_size);
+		assert(i < Size());
 		return m_data[i];
 	}
 
