@@ -21,7 +21,8 @@ namespace CubbyFlow
 	//! \tparam N - Dimension.
 	//!
 	template <typename T, size_t N>
-	class Point final {
+	class Point final
+	{
 	public:
 		static_assert(N > 0, "Size of static-sized point should be greater than zero.");
 		static_assert(std::is_arithmetic<T>::value, "Point only can be instantiated with arithmetic types");
