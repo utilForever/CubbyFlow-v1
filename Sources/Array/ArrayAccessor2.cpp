@@ -7,6 +7,7 @@
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <Array/ArrayAccessor2.h>
+#include <Utils/Constants.h>
 
 #include <algorithm>
 #include <cassert>
