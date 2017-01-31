@@ -4,6 +4,15 @@
     <Filter Include="Array">
       <UniqueIdentifier>{42b4cbb6-09f9-41f2-a4c1-4b6c3f5d413e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{ee0d78ce-8c31-45de-997a-0974a148889e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Size">
+      <UniqueIdentifier>{7086aa98-35e6-4dcd-a24c-0082f7ce1648}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Point">
+      <UniqueIdentifier>{99e5baf1-50a1-4cd4-9cdc-825cb8c33b80}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Sources\Array\Array.h">
@@ -29,6 +38,15 @@
     </ClInclude>
     <ClInclude Include="..\Sources\Array\ArrayAccessor3.h">
       <Filter>Array</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\Utils\Constants.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\Utils\Macros.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\Point\Point.h">
+      <Filter>Point</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
