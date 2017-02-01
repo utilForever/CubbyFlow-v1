@@ -11,6 +11,8 @@
 
 #include <Point/Point.h>
 
+#include <Utils/Constants.h>
+
 namespace CubbyFlow
 {
 	//!
@@ -213,6 +215,93 @@ namespace CubbyFlow
 		//! Returns true if \p other is the not same as this point.
 		bool operator!=(const Point& v) const;
 	};
+
+	//! Type alias for three dimensional point.
+	template <typename T> using Point3 = Point<T, 3>;
+
+	//! Positive sign operator.
+	template <typename T>
+	Point<T, 3> operator+(const Point<T, 3>& a);
+
+	//! Negative sign operator.
+	template <typename T>
+	Point3<T> operator-(const Point3<T>& a);
+
+	//! Computes (a, a, a) + (b.x, b.y, b.z).
+	template <typename T>
+	Point3<T> operator+(T a, const Point3<T>& b);
+
+	//! Computes (a.x, a.y, a.z) + (b.x, b.y, b.z).
+	template <typename T>
+	Point3<T> operator+(const Point3<T>& a, const Point3<T>& b);
+
+	//! Computes (a.x, a.y, a.z) - (b, b, b).
+	template <typename T>
+	Point3<T> operator-(const Point3<T>& a, T b);
+
+	//! Computes (a, a, a) - (b.x, b.y, b.z).
+	template <typename T>
+	Point3<T> operator-(T a, const Point3<T>& b);
+
+	//! Computes (a.x, a.y, a.z) - (b.x, b.y, b.z).
+	template <typename T>
+	Point3<T> operator-(const Point3<T>& a, const Point3<T>& b);
+
+	//! Computes (a.x, a.y, a.z) * (b, b, b).
+	template <typename T>
+	Point3<T> operator*(const Point3<T>& a, T b);
+
+	//! Computes (a, a, a) * (b.x, b.y, b.z).
+	template <typename T>
+	Point3<T> operator*(T a, const Point3<T>& b);
+
+	//! Computes (a.x, a.y, a.z) * (b.x, b.y, b.z).
+	template <typename T>
+	Point3<T> operator*(const Point3<T>& a, const Point3<T>& b);
+
+	//! Computes (a.x, a.y, a.z) / (b, b, b).
+	template <typename T>
+	Point3<T> operator/(const Point3<T>& a, T b);
+
+	//! Computes (a, a, a) / (b.x, b.y, b.z).
+	template <typename T>
+	Point3<T> operator/(T a, const Point3<T>& b);
+
+	//! Computes (a.x, a.y, a.z) / (b.x, b.y, b.z).
+	template <typename T>
+	Point3<T> operator/(const Point3<T>& a, const Point3<T>& b);
+
+	//! Returns element-wise min vector.
+	template <typename T>
+	Point3<T> Min(const Point3<T>& a, const Point3<T>& b);
+
+	//! Returns element-wise max vector.
+	template <typename T>
+	Point3<T> Max(const Point3<T>& a, const Point3<T>& b);
+
+	//! Returns element-wise clamped vector.
+	template <typename T>
+	Point3<T> Clamp(const Point3<T>& v, const Point3<T>& low, const Point3<T>& high);
+
+	//! Returns element-wise ceiled vector.
+	template <typename T>
+	Point3<T> Ceil(const Point3<T>& a);
+
+	//! Returns element-wise floored vector.
+	template <typename T>
+	Point3<T> Floor(const Point3<T>& a);
+
+	//! Float-type 3D point.
+	typedef Point3<float> Point3F;
+
+	//! Double-type 3D point.
+	typedef Point3<double> Point3D;
+
+	//! Integer-type 3D point.
+	typedef Point3<ssize_t> Point3I;
+
+	//! Unsigned integer-type 3D point.
+	typedef Point3<size_t> Point3UI;
 }
 
 #endif
