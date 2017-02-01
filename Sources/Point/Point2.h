@@ -11,6 +11,8 @@
 
 #include <Point/Point.h>
 
+#include <Utils/Constants.h>
+
 namespace CubbyFlow
 {
 	//!
@@ -204,6 +206,93 @@ namespace CubbyFlow
 		//! Returns true if \p other is the not same as this point.
 		bool operator!=(const Point& v) const;
 	};
+
+	//! Type alias for two dimensional point.
+	template <typename T> using Point2 = Point<T, 2>;
+
+	//! Positive sign operator.
+	template <typename T>
+	Point<T, 2> operator+(const Point<T, 2>& a);
+
+	//! Negative sign operator.
+	template <typename T>
+	Point2<T> operator-(const Point2<T>& a);
+
+	//! Computes (a, a) + (b.x, b.y).
+	template <typename T>
+	Point2<T> operator+(T a, const Point2<T>& b);
+
+	//! Computes (a.x, a.y) + (b.x, b.y).
+	template <typename T>
+	Point2<T> operator+(const Point2<T>& a, const Point2<T>& b);
+
+	//! Computes (a.x, a.y) - (b, b).
+	template <typename T>
+	Point2<T> operator-(const Point2<T>& a, T b);
+
+	//! Computes (a, a) - (b.x, b.y).
+	template <typename T>
+	Point2<T> operator-(T a, const Point2<T>& b);
+
+	//! Computes (a.x, a.y) - (b.x, b.y).
+	template <typename T>
+	Point2<T> operator-(const Point2<T>& a, const Point2<T>& b);
+
+	//! Computes (a.x, a.y) * (b, b).
+	template <typename T>
+	Point2<T> operator*(const Point2<T>& a, T b);
+
+	//! Computes (a, a) * (b.x, b.y).
+	template <typename T>
+	Point2<T> operator*(T a, const Point2<T>& b);
+
+	//! Computes (a.x, a.y) * (b.x, b.y).
+	template <typename T>
+	Point2<T> operator*(const Point2<T>& a, const Point2<T>& b);
+
+	//! Computes (a.x, a.y) / (b, b).
+	template <typename T>
+	Point2<T> operator/(const Point2<T>& a, T b);
+
+	//! Computes (a, a) / (b.x, b.y).
+	template <typename T>
+	Point2<T> operator/(T a, const Point2<T>& b);
+
+	//! Computes (a.x, a.y) / (b.x, b.y).
+	template <typename T>
+	Point2<T> operator/(const Point2<T>& a, const Point2<T>& b);
+
+	//! Returns element-wise min vector: (min(a.x, b.x), min(a.y, b.y)).
+	template <typename T>
+	Point2<T> Min(const Point2<T>& a, const Point2<T>& b);
+
+	//! Returns element-wise max vector: (max(a.x, b.x), max(a.y, b.y)).
+	template <typename T>
+	Point2<T> Max(const Point2<T>& a, const Point2<T>& b);
+
+	//! Returns element-wise clamped vector.
+	template <typename T>
+	Point2<T> Clamp(const Point2<T>& v, const Point2<T>& low, const Point2<T>& high);
+
+	//! Returns element-wise ceiled vector.
+	template <typename T>
+	Point2<T> Ceil(const Point2<T>& a);
+
+	//! Returns element-wise floored vector.
+	template <typename T>
+	Point2<T> Floor(const Point2<T>& a);
+
+	//! Float-type 2D point.
+	typedef Point2<float> Point2F;
+
+	//! Double-type 2D point.
+	typedef Point2<double> Point2D;
+
+	//! Integer-type 2D point.
+	typedef Point2<ssize_t> Point2I;
+
+	//! Unsigned integer-type 2D point.
+	typedef Point2<size_t> Point2UI;
 }
 
 #endif
