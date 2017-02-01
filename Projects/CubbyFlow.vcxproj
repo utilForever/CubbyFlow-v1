@@ -131,6 +131,7 @@
     <ClInclude Include="..\Sources\Array\ArrayAccessor3.h" />
     <ClInclude Include="..\Sources\Point\Point.h" />
     <ClInclude Include="..\Sources\Point\Point2.h" />
+    <ClInclude Include="..\Sources\Point\Point3.h" />
     <ClInclude Include="..\Sources\Utils\Constants.h" />
     <ClInclude Include="..\Sources\Utils\Macros.h" />
   </ItemGroup>

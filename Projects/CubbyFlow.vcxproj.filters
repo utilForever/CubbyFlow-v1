@@ -51,6 +51,9 @@
     <ClInclude Include="..\Sources\Point\Point2.h">
       <Filter>Point</Filter>
     </ClInclude>
+    <ClInclude Include="..\Sources\Point\Point3.h">
+      <Filter>Point</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Array\Array1.cpp">
