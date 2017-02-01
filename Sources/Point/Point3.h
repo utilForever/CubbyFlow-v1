@@ -292,16 +292,16 @@ namespace CubbyFlow
 	Point3<T> Floor(const Point3<T>& a);
 
 	//! Float-type 3D point.
-	typedef Point3<float> Point3F;
+	using Point3F = Point3<float>;
 
 	//! Double-type 3D point.
-	typedef Point3<double> Point3D;
+	using Point3D = Point3<double>;
 
 	//! Integer-type 3D point.
-	typedef Point3<ssize_t> Point3I;
+	using Point3I = Point3<ssize_t>;
 
 	//! Unsigned integer-type 3D point.
-	typedef Point3<size_t> Point3UI;
+	using Point3UI = Point3<size_t>;
 }
 
 #endif
