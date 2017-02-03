@@ -142,6 +142,9 @@
     <ClCompile Include="..\Sources\Array\ArrayAccessor1.cpp" />
     <ClCompile Include="..\Sources\Array\ArrayAccessor2.cpp" />
     <ClCompile Include="..\Sources\Array\ArrayAccessor3.cpp" />
+    <ClCompile Include="..\Sources\Point\Point.cpp" />
+    <ClCompile Include="..\Sources\Point\Point2.cpp" />
+    <ClCompile Include="..\Sources\Point\Point3.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
