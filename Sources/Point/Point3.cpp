@@ -237,4 +237,290 @@ namespace CubbyFlow
 		y /= v.y;
 		z /= v.z;
 	}
+
+	// Basic getters
+	template <typename T>
+	const T& Point<T, 3>::At(size_t i) const
+	{
+		assert(i < 3);
+		return (&x)[i];
+	}
+
+	template <typename T>
+	T& Point<T, 3>::At(size_t i)
+	{
+		assert(i < 3);
+		return (&x)[i];
+	}
+
+	template <typename T>
+	T Point<T, 3>::Sum() const 
+	{
+		return x + y + z;
+	}
+
+	template <typename T>
+	T Point<T, 3>::Min() const
+	{
+		return std::min(std::min(x, y), z);
+	}
+
+	template <typename T>
+	T Point<T, 3>::Max() const
+	{
+		return std::max(std::max(x, y), z);
+	}
+
+	template <typename T>
+	T Point<T, 3>::AbsMin() const
+	{
+		return CubbyFlow::AbsMin(CubbyFlow::AbsMin(x, y), z);
+	}
+
+	template <typename T>
+	T Point<T, 3>::AbsMax() const
+	{
+		return CubbyFlow::AbsMax(CubbyFlow::AbsMax(x, y), z);
+	}
+
+	template <typename T>
+	size_t Point<T, 3>::DominantAxis() const
+	{
+		return (std::fabs(x) > std::fabs(y))
+			? ((std::fabs(x) > std::fabs(z)) ? 0 : 2)
+			: ((std::fabs(y) > std::fabs(z)) ? 1 : 2);
+	}
+
+	template <typename T>
+	size_t Point<T, 3>::SubdominantAxis() const
+	{
+		return (std::fabs(x) < std::fabs(y))
+			? ((std::fabs(x) < std::fabs(z)) ? 0 : 2)
+			: ((std::fabs(y) < std::fabs(z)) ? 1 : 2);
+	}
+
+	template <typename T>
+	template <typename U>
+	Point3<U> Point<T, 3>::CastTo() const
+	{
+		return Point3<U>(static_cast<U>(x), static_cast<U>(y), static_cast<U>(z));
+	}
+
+	template <typename T>
+	bool Point<T, 3>::IsEqual(const Point& other) const
+	{
+		return (x == other.x && y == other.y && z == other.z);
+	}
+
+	// Operators
+	template <typename T>
+	T& Point<T, 3>::operator[](size_t i)
+	{
+		assert(i < 3);
+		return (&x)[i];
+	}
+
+	template <typename T>
+	const T& Point<T, 3>::operator[](size_t i) const
+	{
+		assert(i < 3);
+		return (&x)[i];
+	}
+
+	template <typename T>
+	Point<T, 3>& Point<T, 3>::operator=(const std::initializer_list<T>& list)
+	{
+		Set(list);
+		return (*this);
+	}
+
+	template <typename T>
+	Point<T, 3>& Point<T, 3>::operator=(const Point& v)
+	{
+		Set(v);
+		return (*this);
+	}
+
+	template <typename T>
+	Point<T, 3>& Point<T, 3>::operator+=(T v)
+	{
+		IAdd(v);
+		return (*this);
+	}
+
+	template <typename T>
+	Point<T, 3>& Point<T, 3>::operator+=(const Point& v)
+	{
+		IAdd(v);
+		return (*this);
+	}
+
+	template <typename T>
+	Point<T, 3>& Point<T, 3>::operator-=(T v)
+	{
+		ISub(v);
+		return (*this);
+	}
+
+	template <typename T>
+	Point<T, 3>& Point<T, 3>::operator-=(const Point& v)
+	{
+		ISub(v);
+		return (*this);
+	}
+
+	template <typename T>
+	Point<T, 3>& Point<T, 3>::operator*=(T v)
+	{
+		IMul(v);
+		return (*this);
+	}
+
+	template <typename T>
+	Point<T, 3>& Point<T, 3>::operator*=(const Point& v)
+	{
+		IMul(v);
+		return (*this);
+	}
+
+	template <typename T>
+	Point<T, 3>& Point<T, 3>::operator/=(T v)
+	{
+		IDiv(v);
+		return (*this);
+	}
+
+	template <typename T>
+	Point<T, 3>& Point<T, 3>::operator/=(const Point& v)
+	{
+		IDiv(v);
+		return (*this);
+	}
+
+	template <typename T>
+	bool Point<T, 3>::operator==(const Point& v) const
+	{
+		return IsEqual(v);
+	}
+
+	template <typename T>
+	bool Point<T, 3>::operator!=(const Point& v) const
+	{
+		return !IsEqual(v);
+	}
+
+	// Math functions
+	template <typename T>
+	Point<T, 3> operator+(const Point<T, 3>& a)
+	{
+		return a;
+	}
+
+	template <typename T>
+	Point<T, 3> operator-(const Point<T, 3>& a)
+	{
+		return Point<T, 3>(-a.x, -a.y, -a.z);
+	}
+
+	template <typename T>
+	Point<T, 3> operator+(const Point<T, 3>& a, T b)
+	{
+		return a.Add(b);
+	}
+
+	template <typename T>
+	Point<T, 3> operator+(T a, const Point<T, 3>& b)
+	{
+		return b.RAdd(a);
+	}
+
+	template <typename T>
+	Point<T, 3> operator+(const Point<T, 3>& a, const Point<T, 3>& b)
+	{
+		return a.Add(b);
+	}
+
+	template <typename T>
+	Point<T, 3> operator-(const Point<T, 3>& a, T b)
+	{
+		return a.Sub(b);
+	}
+
+	template <typename T>
+	Point<T, 3> operator-(T a, const Point<T, 3>& b)
+	{
+		return b.RSub(a);
+	}
+
+	template <typename T>
+	Point<T, 3> operator-(const Point<T, 3>& a, const Point<T, 3>& b)
+	{
+		return a.Sub(b);
+	}
+
+	template <typename T>
+	Point<T, 3> operator*(const Point<T, 3>& a, T b)
+	{
+		return a.Mul(b);
+	}
+
+	template <typename T>
+	Point<T, 3> operator*(T a, const Point<T, 3>& b)
+	{
+		return b.RMul(a);
+	}
+
+	template <typename T>
+	Point<T, 3> operator*(const Point<T, 3>& a, const Point<T, 3>& b)
+	{
+		return a.Mul(b);
+	}
+
+	template <typename T>
+	Point<T, 3> operator/(const Point<T, 3>& a, T b)
+	{
+		return a.Div(b);
+	}
+
+	template <typename T>
+	Point<T, 3> operator/(T a, const Point<T, 3>& b)
+	{
+		return b.RDiv(a);
+	}
+
+	template <typename T>
+	Point<T, 3> operator/(const Point<T, 3>& a, const Point<T, 3>& b)
+	{
+		return a.Div(b);
+	}
+
+	template <typename T>
+	Point<T, 3> Min(const Point<T, 3>& a, const Point<T, 3>& b)
+	{
+		return Point<T, 3>(std::min(a.x, b.x), std::min(a.y, b.y), std::min(a.z, b.z));
+	}
+
+	template <typename T>
+	Point<T, 3> Max(const Point<T, 3>& a, const Point<T, 3>& b)
+	{
+		return Point<T, 3>(std::max(a.x, b.x), std::max(a.y, b.y), std::max(a.z, b.z));
+	}
+
+	template <typename T>
+	Point<T, 3> Clamp(const Point<T, 3>& v, const Point<T, 3>& low, const Point<T, 3>& high)
+	{
+		return Point<T, 3>(Clamp(v.x, low.x, high.x), Clamp(v.y, low.y, high.y), Clamp(v.z, low.z, high.z));
+	}
+
+	template <typename T>
+	Point<T, 3> Ceil(const Point<T, 3>& a)
+	{
+		return Point<T, 3>(std::ceil(a.x), std::ceil(a.y), std::ceil(a.z));
+	}
+
+	template <typename T>
+	Point<T, 3> Floor(const Point<T, 3>& a)
+	{
+		return Point<T, 3>(std::floor(a.x), std::floor(a.y), std::floor(a.z));
+	}
 }
