@@ -8,6 +8,8 @@
 *************************************************************************/
 #include <Point/Point.h>
 
+#include <cassert>
+
 namespace CubbyFlow
 {
 	template <typename T, size_t N>
