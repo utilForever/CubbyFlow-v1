@@ -132,6 +132,9 @@
     <ClInclude Include="..\Sources\Point\Point.h" />
     <ClInclude Include="..\Sources\Point\Point2.h" />
     <ClInclude Include="..\Sources\Point\Point3.h" />
+    <ClInclude Include="..\Sources\Size\Size.h" />
+    <ClInclude Include="..\Sources\Size\Size2.h" />
+    <ClInclude Include="..\Sources\Size\Size3.h" />
     <ClInclude Include="..\Sources\Utils\Constants.h" />
     <ClInclude Include="..\Sources\Utils\Macros.h" />
   </ItemGroup>
@@ -145,6 +148,9 @@
     <ClCompile Include="..\Sources\Point\Point.cpp" />
     <ClCompile Include="..\Sources\Point\Point2.cpp" />
     <ClCompile Include="..\Sources\Point\Point3.cpp" />
+    <ClCompile Include="..\Sources\Size\Size.cpp" />
+    <ClCompile Include="..\Sources\Size\Size2.cpp" />
+    <ClCompile Include="..\Sources\Size\Size3.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
