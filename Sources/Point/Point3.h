@@ -100,11 +100,23 @@ namespace CubbyFlow
 		Point Div(const Point& v) const;
 
 		// MARK: Binary operations: new instance = v (+) this
+		//! Computes (v, v, v) + this.
+		Point RAdd(T v) const;
+
+		//! Computes (v.x, v.y, v.z) + this.
+		Point RAdd(const Point& v) const;
+
 		//! Computes (v, v, v) - this.
 		Point RSub(T v) const;
 
 		//! Computes (v.x, v.y, v.z) - this.
 		Point RSub(const Point& v) const;
+
+		//! Computes (v, v, v) * this.
+		Point RMul(T v) const;
+
+		//! Computes (v.x, v.y, v.z) * this.
+		Point RMul(const Point& v) const;
 
 		//! Computes (v, v, v) / this.
 		Point RDiv(T v) const;
