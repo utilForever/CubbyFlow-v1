@@ -131,6 +131,18 @@ namespace CubbyFlow
 
 	// Binary operators: new instance = v (+) this
 	template <typename T>
+	Point<T, 2> Point<T, 2>::RAdd(T v) const
+	{
+		return Point(v + x, v + y);
+	}
+
+	template <typename T>
+	Point<T, 2> Point<T, 2>::RAdd(const Point& v) const
+	{
+		return Point(v.x + x, v.y + y);
+	}
+
+	template <typename T>
 	Point<T, 2> Point<T, 2>::RSub(T v) const
 	{
 		return Point(v - x, v - y);
@@ -140,6 +152,18 @@ namespace CubbyFlow
 	Point<T, 2> Point<T, 2>::RSub(const Point& v) const
 	{
 		return Point(v.x - x, v.y - y);
+	}
+
+	template <typename T>
+	Point<T, 2> Point<T, 2>::RMul(T v) const
+	{
+		return Point(v * x, v * y);
+	}
+
+	template <typename T>
+	Point<T, 2> Point<T, 2>::RMul(const Point& v) const
+	{
+		return Point(v.x * x, v.y * y);
 	}
 
 	template <typename T>
