@@ -207,80 +207,80 @@ namespace CubbyFlow
 		bool operator!=(const Point& v) const;
 	};
 
-	//! Type alias for two dimensional point.
-	template <typename T> using Point2 = Point<T, 2>;
-
 	//! Positive sign operator.
 	template <typename T>
 	Point<T, 2> operator+(const Point<T, 2>& a);
 
 	//! Negative sign operator.
 	template <typename T>
-	Point2<T> operator-(const Point2<T>& a);
+	Point<T, 2> operator-(const Point<T, 2>& a);
 
 	//! Computes (a, a) + (b.x, b.y).
 	template <typename T>
-	Point2<T> operator+(T a, const Point2<T>& b);
+	Point<T, 2> operator+(T a, const Point<T, 2>& b);
 
 	//! Computes (a.x, a.y) + (b.x, b.y).
 	template <typename T>
-	Point2<T> operator+(const Point2<T>& a, const Point2<T>& b);
+	Point<T, 2> operator+(const Point<T, 2>& a, const Point<T, 2>& b);
 
 	//! Computes (a.x, a.y) - (b, b).
 	template <typename T>
-	Point2<T> operator-(const Point2<T>& a, T b);
+	Point<T, 2> operator-(const Point<T, 2>& a, T b);
 
 	//! Computes (a, a) - (b.x, b.y).
 	template <typename T>
-	Point2<T> operator-(T a, const Point2<T>& b);
+	Point<T, 2> operator-(T a, const Point<T, 2>& b);
 
 	//! Computes (a.x, a.y) - (b.x, b.y).
 	template <typename T>
-	Point2<T> operator-(const Point2<T>& a, const Point2<T>& b);
+	Point<T, 2> operator-(const Point<T, 2>& a, const Point<T, 2>& b);
 
 	//! Computes (a.x, a.y) * (b, b).
 	template <typename T>
-	Point2<T> operator*(const Point2<T>& a, T b);
+	Point<T, 2> operator*(const Point<T, 2>& a, T b);
 
 	//! Computes (a, a) * (b.x, b.y).
 	template <typename T>
-	Point2<T> operator*(T a, const Point2<T>& b);
+	Point<T, 2> operator*(T a, const Point<T, 2>& b);
 
 	//! Computes (a.x, a.y) * (b.x, b.y).
 	template <typename T>
-	Point2<T> operator*(const Point2<T>& a, const Point2<T>& b);
+	Point<T, 2> operator*(const Point<T, 2>& a, const Point<T, 2>& b);
 
 	//! Computes (a.x, a.y) / (b, b).
 	template <typename T>
-	Point2<T> operator/(const Point2<T>& a, T b);
+	Point<T, 2> operator/(const Point<T, 2>& a, T b);
 
 	//! Computes (a, a) / (b.x, b.y).
 	template <typename T>
-	Point2<T> operator/(T a, const Point2<T>& b);
+	Point<T, 2> operator/(T a, const Point<T, 2>& b);
 
 	//! Computes (a.x, a.y) / (b.x, b.y).
 	template <typename T>
-	Point2<T> operator/(const Point2<T>& a, const Point2<T>& b);
+	Point<T, 2> operator/(const Point<T, 2>& a, const Point<T, 2>& b);
 
 	//! Returns element-wise min vector: (min(a.x, b.x), min(a.y, b.y)).
 	template <typename T>
-	Point2<T> Min(const Point2<T>& a, const Point2<T>& b);
+	Point<T, 2> Min(const Point<T, 2>& a, const Point<T, 2>& b);
 
 	//! Returns element-wise max vector: (max(a.x, b.x), max(a.y, b.y)).
 	template <typename T>
-	Point2<T> Max(const Point2<T>& a, const Point2<T>& b);
+	Point<T, 2> Max(const Point<T, 2>& a, const Point<T, 2>& b);
 
 	//! Returns element-wise clamped vector.
 	template <typename T>
-	Point2<T> Clamp(const Point2<T>& v, const Point2<T>& low, const Point2<T>& high);
+	Point<T, 2> Clamp(const Point<T, 2>& v, const Point<T, 2>& low, const Point<T, 2>& high);
 
 	//! Returns element-wise ceiled vector.
 	template <typename T>
-	Point2<T> Ceil(const Point2<T>& a);
+	Point<T, 2> Ceil(const Point<T, 2>& a);
 
 	//! Returns element-wise floored vector.
 	template <typename T>
-	Point2<T> Floor(const Point2<T>& a);
+	Point<T, 2> Floor(const Point<T, 2>& a);
+
+	//! Type alias for two dimensional point.
+	template <typename T> using Point2 = Point<T, 2>;
 
 	//! Float-type 2D point.
 	using Point2F = Point2<float>;
