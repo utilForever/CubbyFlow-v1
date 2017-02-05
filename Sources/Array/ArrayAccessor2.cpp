@@ -16,7 +16,7 @@ namespace CubbyFlow
 {
 	template <typename T>
 	ArrayAccessor<T, 2>::ArrayAccessor() :
-		m_size(0), m_data(nullptr)
+		m_data(nullptr)
 	{
 		// Do nothing
 	}
@@ -46,7 +46,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	void ArrayAccessor<T, 2>::Reset(Size2 size, T* const data)
+	void ArrayAccessor<T, 2>::Reset(const Size2& size, T* const data)
 	{
 		m_size = size;
 		m_data = data;
@@ -261,7 +261,7 @@ namespace CubbyFlow
 
 	template <typename T>
 	ConstArrayAccessor<T, 2>::ConstArrayAccessor() :
-		m_size(0), m_data(nullptr)
+		m_data(nullptr)
 	{
 		// Do nothing
 	}
@@ -288,6 +288,13 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
+	ConstArrayAccessor<T, 2>::ConstArrayAccessor(const ConstArrayAccessor& other)
+	{
+		m_size = other.m_size;
+		m_data = other.m_data;
+	}
+
+	template <typename T>
 	const T& ConstArrayAccessor<T, 2>::At(size_t i) const
 	{
 		assert(i < Width() * Height());
@@ -303,7 +310,7 @@ namespace CubbyFlow
 	template <typename T>
 	const T& ConstArrayAccessor<T, 2>::At(size_t i, size_t j) const
 	{
-		assert(i < Width()) && j < Height());
+		assert(i < Width() && j < Height());
 		return m_data[Index(i, j)];
 	}
 

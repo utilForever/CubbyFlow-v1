@@ -16,7 +16,7 @@ namespace CubbyFlow
 {
 	template <typename T>
 	ArrayAccessor<T, 3>::ArrayAccessor() :
-		m_size(0), m_data(nullptr)
+		m_data(nullptr)
 	{
 		// Do nothing
 	}
@@ -273,13 +273,13 @@ namespace CubbyFlow
 
 	template <typename T>
 	ConstArrayAccessor<T, 3>::ConstArrayAccessor() :
-		m_size(0), m_data(nullptr)
+		m_data(nullptr)
 	{
 		// Do nothing
 	}
 
 	template <typename T>
-	ConstArrayAccessor<T, 3>::ConstArrayAccessor(const Size3& size, T* const data)
+	ConstArrayAccessor<T, 3>::ConstArrayAccessor(const Size3& size, const T* const data)
 	{
 		m_size = size;
 		m_data = data;
