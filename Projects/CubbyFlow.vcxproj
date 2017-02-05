@@ -137,6 +137,7 @@
     <ClInclude Include="..\Sources\Size\Size3.h" />
     <ClInclude Include="..\Sources\Utils\Constants.h" />
     <ClInclude Include="..\Sources\Utils\Macros.h" />
+    <ClInclude Include="..\Sources\Utils\Parallel.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Array\Array1.cpp" />
@@ -148,6 +149,7 @@
     <ClCompile Include="..\Sources\Point\Point.cpp" />
     <ClCompile Include="..\Sources\Point\Point2.cpp" />
     <ClCompile Include="..\Sources\Point\Point3.cpp" />
+    <ClCompile Include="..\Sources\Utils\Parallel.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
