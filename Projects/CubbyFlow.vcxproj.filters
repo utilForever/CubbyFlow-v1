@@ -92,14 +92,5 @@
     <ClCompile Include="..\Sources\Point\Point3.cpp">
       <Filter>Point</Filter>
     </ClCompile>
-    <ClCompile Include="..\Sources\Size\Size.cpp">
-      <Filter>Size</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sources\Size\Size2.cpp">
-      <Filter>Size</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sources\Size\Size3.cpp">
-      <Filter>Size</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>
