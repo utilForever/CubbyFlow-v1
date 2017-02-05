@@ -10,6 +10,7 @@
 #define CUBBYFLOW_POINT3_H
 
 #include <Point/Point.h>
+#include <Point/Point2.h>
 
 #include <Utils/Constants.h>
 

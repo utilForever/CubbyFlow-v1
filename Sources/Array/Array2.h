@@ -10,6 +10,9 @@
 #define CUBBYFLOW_ARRAY2_H
 
 #include <Array/Array.h>
+#include <Array/ArrayAccessor2.h>
+
+#include <Size/Size2.h>
 
 #include <vector>
 

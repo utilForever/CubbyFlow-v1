@@ -10,6 +10,9 @@
 #define CUBBYFLOW_ARRAY3_H
 
 #include <Array/Array.h>
+#include <Array/ArrayAccessor3.h>
+
+#include <Size/Size3.h>
 
 #include <vector>
 
@@ -39,6 +42,7 @@ namespace CubbyFlow
 	template <typename T>
 	class Array<T, 3> final
 	{
+	public:
 		using ContainerType = std::vector<T>;
 
 		//! Constructs zero-sized 3-D array.
