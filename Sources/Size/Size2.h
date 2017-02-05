@@ -9,4 +9,11 @@
 #ifndef CUBBYFLOW_SIZE2_H
 #define CUBBYFLOW_SIZE2_H
 
+#include <Point/Point2.h>
+
+namespace CubbyFlow
+{
+	using Size2 = Point2<size_t>;
+}
+
 #endif
