@@ -138,6 +138,8 @@
     <ClInclude Include="..\Sources\Utils\Constants.h" />
     <ClInclude Include="..\Sources\Utils\Macros.h" />
     <ClInclude Include="..\Sources\Utils\Parallel.h" />
+    <ClInclude Include="..\Sources\Vector\Vector.h" />
+    <ClInclude Include="..\Sources\Vector\Vector2.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Array\Array1.cpp" />

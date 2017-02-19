@@ -13,6 +13,9 @@
     <Filter Include="Point">
       <UniqueIdentifier>{99e5baf1-50a1-4cd4-9cdc-825cb8c33b80}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Vector">
+      <UniqueIdentifier>{2a9323e0-24d8-40e1-8075-5276f4af16aa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Sources\Array\Array.h">
@@ -65,6 +68,12 @@
     </ClInclude>
     <ClInclude Include="..\Sources\Utils\Parallel.h">
       <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\Vector\Vector.h">
+      <Filter>Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\Vector\Vector2.h">
+      <Filter>Vector</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
