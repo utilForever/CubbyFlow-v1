@@ -107,5 +107,8 @@
     <ClCompile Include="..\Sources\Utils\Parallel.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
+    <ClCompile Include="Vector.cpp">
+      <Filter>Vector</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
