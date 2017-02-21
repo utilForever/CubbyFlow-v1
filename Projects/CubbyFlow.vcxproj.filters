@@ -113,5 +113,8 @@
     <ClCompile Include="Vector.cpp">
       <Filter>Vector</Filter>
     </ClCompile>
+    <ClCompile Include="Vector2.cpp">
+      <Filter>Vector</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -192,7 +192,7 @@ namespace CubbyFlow
 
 		//! Returns the tangential vector for this vector.
 		Vector Tangential() const;
-
+		 
 		//! Returns a vector with different value type.
 		template <typename U>
 		Vector<U, 2> CastTo() const;
@@ -331,14 +331,14 @@ namespace CubbyFlow
 
 	// MARK: Extensions
 	//! Returns float-type zero vector.
-	template <>
+	template <typename T>
 	inline Vector2F Zero<Vector2F>()
 	{
 		return Vector2F(0.f, 0.f);
 	}
 
 	//! Returns double-type zero vector.
-	template <>
+	template <typename T>
 	inline Vector2D Zero<Vector2D>()
 	{
 		return Vector2D(0.0, 0.0);

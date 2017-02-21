@@ -11,6 +11,7 @@
 
 #include <array>
 #include <type_traits>
+#include <math.h>
 
 namespace CubbyFlow
 {
