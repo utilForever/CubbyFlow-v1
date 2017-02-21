@@ -353,7 +353,7 @@ namespace CubbyFlow
 
 	//! Computes monotonic Catmull-Rom interpolation.
 	template <typename T>
-	Vector2<T> monotonicCatmullRom(
+	Vector2<T> MonotonicCatmullRom(
 		const Vector2<T>& v0,
 		const Vector2<T>& v1,
 		const Vector2<T>& v2,
