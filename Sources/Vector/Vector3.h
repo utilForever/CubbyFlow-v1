@@ -1,27 +1,29 @@
 /*************************************************************************
-> File Name: Vector2.h
+> File Name: Vector3.h
 > Project Name: CubbyFlow
 > Author: Chan-Ho Chris Ohk
-> Purpose: 2-D vector class.
-> Created Time: 2017/02/19
+> Purpose: 3-D vector class.
+> Created Time: 2017/02/21
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
-#ifndef CUBBYFLOW_VECTOR2_H
-#define CUBBYFLOW_VECTOR2_H
+#ifndef CUBBYFLOW_VECTOR3_H
+#define CUBBYFLOW_VECTOR3_H
 
 #include <Vector/Vector.h>
+
+#include <limits>
 
 namespace CubbyFlow
 {
 	//!
-	//! \brief 2-D vector class.
+	//! \brief 3-D vector class.
 	//!
-	//! This class defines simple 2-D vector data.
+	//! This class defines simple 3-D vector data.
 	//!
 	//! \tparam T - Type of the element
 	//!
 	template <typename T>
-	class Vector<T, 2> final
+	class Vector<T, 3> final
 	{
 	public:
 		static_assert(std::is_floating_point<T>::value, "Vector only can be instantiated with floating point types");
@@ -32,12 +34,18 @@ namespace CubbyFlow
 		//! Y (or the second) component of the vector.
 		T y;
 
+		//! Z (or the third) component of the vector.
+		T z;
+
 		// MARK: Constructors
-		//! Constructs default vector (0, 0).
+		//! Constructs default vector (0, 0, 0).
 		Vector();
 
-		//! Constructs vector with given parameters \p x and \p y.
-		Vector(T x, T y);
+		//! Constructs vector with given parameters \p x, \p y, and \p z.
+		Vector(T x, T y, T z);
+
+		//! Constructs vector with a 2-D vector and a scalar.
+		Vector(const Vector2<T>& pt, T z);
 
 		//! Constructs vector with initializer list.
 		template <typename U>
@@ -47,95 +55,98 @@ namespace CubbyFlow
 		Vector(const Vector& v);
 
 		// MARK: Basic setters
-		//! Set both x and y components to \p s.
+		//! Set all x, y, and z components to \p s.
 		void Set(T s);
 
-		//! Set x and y components with given parameters.
-		void Set(T x, T y);
+		//! Set x, y, and z components with given parameters.
+		void Set(T x, T y, T z);
 
-		//! Set x and y components with given initializer list.
+		//! Set x, y, and z components with given \p pt.x, \p pt.y, and \p z.
+		void Set(const Vector2<T>& pt, T z);
+
+		//! Set x, y, and z components with given initializer list.
 		template <typename U>
 		void Set(const std::initializer_list<U>& list);
 
-		//! Set x and y with other vector \p pt.
-		void Set(const Vector& pt);
+		//! Set x, y, and z with other vector \p v.
+		void Set(const Vector& v);
 
-		//! Set both x and y to zero.
+		//! Set all x, y, and z to zero.
 		void SetZero();
 
 		//! Normalizes this vector.
 		void Normalize();
 
 		// MARK: Binary operations: new instance = this (+) v
-		//! Computes this + (v, v).
+		//! Computes this + (v, v, v).
 		Vector Add(T v) const;
 
-		//! Computes this + (v.x, v.y).
+		//! Computes this + (v.x, v.y, v.z).
 		Vector Add(const Vector& v) const;
 
-		//! Computes this - (v, v).
+		//! Computes this - (v, v, v).
 		Vector Sub(T v) const;
 
-		//! Computes this - (v.x, v.y).
+		//! Computes this - (v.x, v.y, v.z).
 		Vector Sub(const Vector& v) const;
 
-		//! Computes this * (v, v).
+		//! Computes this * (v, v, v).
 		Vector Mul(T v) const;
 
-		//! Computes this * (v.x, v.y).
+		//! Computes this * (v.x, v.y, v.z).
 		Vector Mul(const Vector& v) const;
-
-		//! Computes this / (v, v).
+		
+		//! Computes this / (v, v, v).
 		Vector Div(T v) const;
 
-		//! Computes this / (v.x, v.y).
+		//! Computes this / (v.x, v.y, v.z).
 		Vector Div(const Vector& v) const;
 
 		//! Computes dot product.
 		T Dot(const Vector& v) const;
-		
+
 		//! Computes cross product.
-		T Cross(const Vector& v) const;
+		Vector Cross(const Vector& v) const;
 
 		// MARK: Binary operations: new instance = v (+) this
-		//! Computes (v, v) - this.
+		//! Computes (v, v, v) - this.
 		Vector RSub(T v) const;
 
-		//! Computes (v.x, v.y) - this.
+		//! Computes (v.x, v.y, v.z) - this.
 		Vector RSub(const Vector& v) const;
 
-		//! Computes (v, v) / this.
+		//! Computes (v, v, v) / this.
 		Vector RDiv(T v) const;
 
-		//! Computes (v.x, v.y) / this.
+		//! Computes (v.x, v.y, v.z) / this.
 		Vector RDiv(const Vector& v) const;
 
 		//! Computes \p v cross this.
-		T RCross(const Vector& v) const;
+		Vector RCross(const Vector& v) const;
 
 		// MARK: Augmented operations: this (+)= v
-		//! Computes this += (v, v).
+		//! Computes this += (v, v, v).
 		void IAdd(T v);
 
-		//! Computes this += (v.x, v.y).
+		//! Computes this += (v.x, v.y, v.z).
 		void IAdd(const Vector& v);
 
-		//! Computes this -= (v, v).
+		//! Computes this -= (v, v, v).
 		void ISub(T v);
 
-		//! Computes this -= (v.x, v.y).
+		//! Computes this -= (v.x, v.y, v.z).
 		void ISub(const Vector& v);
 
-		//! Computes this *= (v, v).
+		//! Computes this *= (v, v, v).
 		void IMul(T v);
 
-		//! Computes this *= (v.x, v.y).
+		//! Computes this *= (v.x, v.y, v.z).
 		void IMul(const Vector& v);
 
-		//! Computes this /= (v, v).
+		//! Computes this /= (v, v, v).
 		void IDiv(T v);
 
-		//! Computes this /= (v.x, v.y).
+		//! Computes this /= (v.x, v.y, v.z).
 		void IDiv(const Vector& v);
 
 		// MARK: Basic getters
@@ -145,22 +156,22 @@ namespace CubbyFlow
 		//! Returns reference to the \p i -th element of the vector.
 		T& At(size_t i);
 
-		//! Returns the sum of all the components (i.e. x + y).
+		//! Returns the sum of all the components (i.e. x + y + z).
 		T Sum() const;
 
 		//! Returns the average of all the components.
 		T Avg() const;
 
-		//! Returns the minimum value among x and y.
+		//! Returns the minimum value among x, y, and z.
 		T Min() const;
 
-		//! Returns the maximum value among x and y.
+		//! Returns the maximum value among x, y, and z.
 		T Max() const;
 
-		//! Returns the absolute minimum value among x and y.
+		//! Returns the absolute minimum value among x, y, and z.
 		T AbsMin() const;
 
-		//! Returns the absolute maximum value among x and y.
+		//! Returns the absolute maximum value among x, y, and z.
 		T AbsMax() const;
 
 		//! Returns the index of the dominant axis.
@@ -191,11 +202,11 @@ namespace CubbyFlow
 		Vector Projected(const Vector& normal) const;
 
 		//! Returns the tangential vector for this vector.
-		Vector Tangential() const;
+		std::tuple<Vector, Vector> Tangential() const;
 
 		//! Returns a vector with different value type.
 		template <typename U>
-		Vector<U, 2> CastTo() const;
+		Vector<U, 3> CastTo() const;
 
 		//! Returns true if \p other is the same as this vector.
 		bool IsEqual(const Vector& other) const;
@@ -248,117 +259,108 @@ namespace CubbyFlow
 		bool operator!=(const Vector& v) const;
 	};
 
-	//! Type alias for two dimensional vector.
-	template <typename T> using Vector2 = Vector<T, 2>;
+	//! Type alias for three dimensional vector.
+	template <typename T> using Vector3 = Vector<T, 3>;
 
 	//! Positive sign operator.
 	template <typename T>
-	Vector2<T> operator+(const Vector2<T>& a);
+	Vector3<T> operator+(const Vector3<T>& a);
 
 	//! Negative sign operator.
 	template <typename T>
-	Vector2<T> operator-(const Vector2<T>& a);
+	Vector3<T> operator-(const Vector3<T>& a);
 
-	//! Computes (a, a) + (b.x, b.y).
+	//! Computes (a, a, a) + (b.x, b.y, b.z).
 	template <typename T>
-	Vector2<T> operator+(T a, const Vector2<T>& b);
+	Vector3<T> operator+(T a, const Vector3<T>& b);
 
-	//! Computes (a.x, a.y) + (b.x, b.y).
+	//! Computes (a.x, a.y, a.z) + (b.x, b.y, b.z).
 	template <typename T>
-	Vector2<T> operator+(const Vector2<T>& a, const Vector2<T>& b);
+	Vector3<T> operator+(const Vector3<T>& a, const Vector3<T>& b);
 
-	//! Computes (a.x, a.y) - (b, b).
+	//! Computes (a.x, a.y, a.z) - (b, b, b).
 	template <typename T>
-	Vector2<T> operator-(const Vector2<T>& a, T b);
+	Vector3<T> operator-(const Vector3<T>& a, T b);
 
-	//! Computes (a, a) - (b.x, b.y).
+	//! Computes (a, a, a) - (b.x, b.y, b.z).
 	template <typename T>
-	Vector2<T> operator-(T a, const Vector2<T>& b);
+	Vector3<T> operator-(T a, const Vector3<T>& b);
 
-	//! Computes (a.x, a.y) - (b.x, b.y).
+	//! Computes (a.x, a.y, a.z) - (b.x, b.y, b.z).
 	template <typename T>
-	Vector2<T> operator-(const Vector2<T>& a, const Vector2<T>& b);
+	Vector3<T> operator-(const Vector3<T>& a, const Vector3<T>& b);
 
-	//! Computes (a.x, a.y) * (b, b).
+	//! Computes (a.x, a.y, a.z) * (b, b, b).
 	template <typename T>
-	Vector2<T> operator*(const Vector2<T>& a, T b);
+	Vector3<T> operator*(const Vector3<T>& a, T b);
 
-	//! Computes (a, a) * (b.x, b.y).
+	//! Computes (a, a, a) * (b.x, b.y, b.z).
 	template <typename T>
-	Vector2<T> operator*(T a, const Vector2<T>& b);
+	Vector3<T> operator*(T a, const Vector3<T>& b);
 
-	//! Computes (a.x, a.y) * (b.x, b.y).
+	//! Computes (a.x, a.y, a.z) * (b.x, b.y, b.z).
 	template <typename T>
-	Vector2<T> operator*(const Vector2<T>& a, const Vector2<T>& b);
+	Vector3<T> operator*(const Vector3<T>& a, const Vector3<T>& b);
 
-	//! Computes (a.x, a.y) / (b, b).
+	//! Computes (a.x, a.y, a.z) / (b, b, b).
 	template <typename T>
-	Vector2<T> operator/(const Vector2<T>& a, T b);
+	Vector3<T> operator/(const Vector3<T>& a, T b);
 
-	//! Computes (a, a) / (b.x, b.y).
+	//! Computes (a, a, a) / (b.x, b.y, b.z).
 	template <typename T>
-	Vector2<T> operator/(T a, const Vector2<T>& b);
+	Vector3<T> operator/(T a, const Vector3<T>& b);
 
-	//! Computes (a.x, a.y) / (b.x, b.y).
+	//! Computes (a.x, a.y, a.z) / (b.x, b.y, b.z).
 	template <typename T>
-	Vector2<T> operator/(const Vector2<T>& a, const Vector2<T>& b);
+	Vector3<T> operator/(const Vector3<T>& a, const Vector3<T>& b);
 
-	//! Returns element-wise min vector: (min(a.x, b.x), min(a.y, b.y)).
+	//! Returns element-wise min vector.
 	template <typename T>
-	Vector2<T> Min(const Vector2<T>& a, const Vector2<T>& b);
+	Vector3<T> Min(const Vector3<T>& a, const Vector3<T>& b);
 
-	//! Returns element-wise max vector: (max(a.x, b.x), max(a.y, b.y)).
+	//! Returns element-wise max vector.
 	template <typename T>
-	Vector2<T> Max(const Vector2<T>& a, const Vector2<T>& b);
+	Vector3<T> Max(const Vector3<T>& a, const Vector3<T>& b);
 
 	//! Returns element-wise clamped vector.
 	template <typename T>
-	Vector2<T> Clamp(const Vector2<T>& v, const Vector2<T>& low, const Vector2<T>& high);
+	Vector3<T> Clamp(const Vector3<T>& v, const Vector3<T>& low, const Vector3<T>& high);
 
 	//! Returns element-wise ceiled vector.
 	template <typename T>
-	Vector2<T> Ceil(const Vector2<T>& a);
+	Vector3<T> Ceil(const Vector3<T>& a);
 
 	//! Returns element-wise floored vector.
 	template <typename T>
-	Vector2<T> Floor(const Vector2<T>& a);
+	Vector3<T> Floor(const Vector3<T>& a);
 
-	//! Float-type 2D vector.
-	using Vector2F = Vector2<float>;
+	//! Float-type 3D vector.
+	using Vector3F = Vector3<float>;
 
-	//! Double-type 2D vector.
-	using Vector2D = Vector2<double>;
+	//! Double-type 3D vector.
+	using Vector3D = Vector3<double>;
 
 	// MARK: Extensions
 	//! Returns float-type zero vector.
 	template <>
-	inline Vector2F Zero<Vector2F>()
+	inline Vector3F Zero<Vector3F>()
 	{
-		return Vector2F(0.f, 0.f);
+		return Vector3F(0.f, 0.f, 0.f);
 	}
 
 	//! Returns double-type zero vector.
 	template <>
-	inline Vector2D Zero<Vector2D>()
+	inline Vector3D Zero<Vector3D>()
 	{
-		return Vector2D(0.0, 0.0);
+		return Vector3D(0.0, 0.0, 0.0);
 	}
 
 	//! Returns the type of the value itself.
 	template <typename T>
-	struct ScalarType<Vector2<T>>
+	struct ScalarType<Vector3<T>>
 	{
 		typedef T value;
 	};
-
-	//! Computes monotonic Catmull-Rom interpolation.
-	template <typename T>
-	Vector2<T> MonotonicCatmullRom(
-		const Vector2<T>& v0,
-		const Vector2<T>& v1,
-		const Vector2<T>& v2,
-		const Vector2<T>& v3,
-		T f);
 }
 
 #endif
