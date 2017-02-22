@@ -353,7 +353,7 @@ namespace CubbyFlow
 	template <typename U>
 	Vector<T, 2>& Vector<T, 2>::operator=(const std::initializer_list<U>& list)
 	{
-		Set(list);
+		return Set(list);
 	}
 
 	template <typename T>
