@@ -11,6 +11,7 @@
 
 #include <array>
 #include <type_traits>
+#include <math.h>
 
 namespace CubbyFlow
 {
@@ -60,7 +61,7 @@ namespace CubbyFlow
 		const T& operator[](size_t i) const;
 
 		//! Returns the reference to the \p i -th element.
-		T& operator[](size_t);
+		T& operator[](size_t i);
 
 	private:
 		std::array<T, N> m_elements;
