@@ -1,25 +1,27 @@
-﻿/*************************************************************************
+/*************************************************************************
 > File Name: Vector2.cpp
 > Project Name: CubbyFlow
-> Author: Dongmin KIm
-> Purpose: Generic N-D vector class.
+> Author: Dongmin Kim
+> Purpose: 2-D vector class.
 > Created Time: 2017/02/21
 > Copyright (c) 2017, Dongmin Kim
 *************************************************************************/
-#include<Vector\Vector2.h>
+#include <Vector\Vector2.h>
 
 namespace CubbyFlow
 {
 	template <typename T>
-	Vector<T, 2>::Vector()
+	Vector<T, 2>::Vector() :
+		x(0), y(0)
 	{
 		// Do nothing
 	}
 
 	template <typename T>
-	Vector<T, 2>::Vector(T x, T y)
+	Vector<T, 2>::Vector(T newX, T newY) :
+		x(newX), y(newY)
 	{
-		Set(x, y);
+		// Do nothing
 	}
 
 	template <typename T>
@@ -30,22 +32,24 @@ namespace CubbyFlow
 	}
 	
 	template <typename T>
-	Vector<T, 2>::Vector(const Vector& v)
+	Vector<T, 2>::Vector(const Vector& v) :
+		x(v.x), y(x.y)
 	{
-		Set(v);
+		// Do nothing
 	}
 
 	template <typename T>
 	void Vector<T, 2>::Set(T s)
 	{
-		Set(s, s);
+		x = s;
+		y = s;
 	}
 
 	template <typename T>
-	void Vector<T, 2>::Set(T x, T y)
+	void Vector<T, 2>::Set(T newX, T newY)
 	{
-		this->x = x;
-		this->y = y;
+		x = newX;
+		y = newY;
 	}
 
 	template <typename T>
@@ -60,10 +64,10 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	void Vector<T, 2>::Set(const Vector& pt)
+	void Vector<T, 2>::Set(const Vector& v)
 	{
-		x = pt.x;
-		y = pt.y;
+		x = v.x;
+		y = v.y;
 	}
 
 	template <typename T>
@@ -87,7 +91,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	Vector<T, 2> Vector<T, 2>::Add(const Vector<T, 2>& v) const
+	Vector<T, 2> Vector<T, 2>::Add(const Vector& v) const
 	{
 		return Vector(x + v.x, y + v.y);
 	}
@@ -100,7 +104,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	Vector<T, 2> Vector<T, 2>::Sub(const Vector<T, 2>& v) const
+	Vector<T, 2> Vector<T, 2>::Sub(const Vector& v) const
 	{
 		return Vector(x - v.x, y - v.y);
 	}
@@ -112,7 +116,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	Vector<T, 2> Vector<T, 2>::Mul(const Vector<T, 2>& v) const
+	Vector<T, 2> Vector<T, 2>::Mul(const Vector& v) const
 	{
 		return Vector(x * v.x, y * v.y);
 	}
@@ -124,21 +128,21 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	Vector<T, 2> Vector<T, 2>::Div(const Vector<T, 2>& v) const
+	Vector<T, 2> Vector<T, 2>::Div(const Vector& v) const
 	{
 		return Vector(x / v.x, y / v.y);
 	}
 
 	template <typename T>
-	T Vector<T, 2>::Dot(const Vector<T, 2>& v) const
+	T Vector<T, 2>::Dot(const Vector& v) const
 	{
 		return x * v.x + y * v.y;
 	}
 
 	template <typename T>
-	T Vector<T, 2>::Cross(const Vector<T, 2>& v) const
+	T Vector<T, 2>::Cross(const Vector& v) const
 	{
-		return x * v.y - y * v.x;
+		return x * v.y - v.x * y;
 	}
 
 	template <typename T>
@@ -168,7 +172,7 @@ namespace CubbyFlow
 	template <typename T>
 	T Vector<T, 2>::RCross(const Vector& v) const
 	{
-		return v.x * y - v.y * x;
+		return v.x * y - x * v.y;
 	}
 
 	template <typename T>
@@ -179,7 +183,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	void Vector<T, 2>::IAdd(const Vector<T, 2>& v)
+	void Vector<T, 2>::IAdd(const Vector& v)
 	{
 		x += v.x;
 		y += v.y;
@@ -193,7 +197,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	void Vector<T, 2>::ISub(const Vector<T, 2>& v)
+	void Vector<T, 2>::ISub(const Vector& v)
 	{
 		x -= v.x;
 		y -= v.y;
@@ -207,7 +211,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	void Vector<T, 2>::IMul(const Vector<T, 2>& v)
+	void Vector<T, 2>::IMul(const Vector& v)
 	{
 		x *= v.x;
 		y *= v.y;
@@ -221,10 +225,17 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	void Vector<T, 2>::IDiv(const Vector<T, 2>& v)
+	void Vector<T, 2>::IDiv(const Vector& v)
 	{
 		x /= v.x;
 		y /= v.y;
+	}
+
+	template <typename T>
+	const T& Vector<T, 2>::At(size_t i) const
+	{
+		assert(i < 2);
+		return (&x)[i];
 	}
 
 	template <typename T>
@@ -243,31 +254,43 @@ namespace CubbyFlow
 	template <typename T>
 	T Vector<T, 2>::Avg() const
 	{
-		return (x + y)/2.0;
+		return (x + y) / 2;
 	}
 
 	template <typename T>
 	T Vector<T, 2>::Min() const
 	{
-		return min(x, y);
+		return std::min(x, y);
 	}
 
 	template <typename T>
 	T Vector<T, 2>::Max() const
 	{
-		return max(x, y);
+		return std::max(x, y);
 	}
 
 	template <typename T>
 	T Vector<T, 2>::AbsMin() const
 	{
-		return min(abs(x), abs(y));
+		return CubbyFlow::AbsMin(x, y);
 	}
-
+	
 	template <typename T>
 	T Vector<T, 2>::AbsMax() const
 	{
-		return max(abs(x), abs(y));
+		return CubbyFlow::AbsMax(x, y);
+	}
+
+	template <typename T>
+	size_t Vector<T, 2>::DominantAxis() const
+	{
+    	return (std::fabs(x) > std::fabs(y)) ? 0 : 1;
+	}
+
+	template <typename T>
+	size_t Vector<T, 2>::SubdominantAxis() const
+	{
+    	return (std::fabs(x) < std::fabs(y)) ? 0 : 1;
 	}
 
 	template <typename T>
@@ -279,42 +302,45 @@ namespace CubbyFlow
 	template <typename T>
 	T Vector<T, 2>::Length() const
 	{
-		return sqrt(pow(x, 2) + pow(y, 2));
+		return std::sqrt(x * x + y * y);
 	}
 
 	template <typename T>
 	T Vector<T, 2>::LengthSquared() const
 	{
-		return pow(Length(), 2);
+		return x * x + y * y;
 	}
 
 	template <typename T>
-	T DistanceTo(const Vector<T, 2>& other) const
+	T Vector<T, 2>::DistanceTo(const Vector<T, 2>& other) const
 	{
-		return (*this - other).Length();
+		return Sub(other).Length();
 	}
 
 	template <typename T>
-	T DistanceSquaredTo(const Vector& other) const
+	T Vector<T, 2>::DistanceSquaredTo(const Vector<T, 2>& other) const
 	{
-		return pow(DistanceTo(other), 2);
+		return Sub(other).LengthSquared();
 	}
 
 	template <typename T>
-	Vector<T, 2> Vector<T, 2>::Reflected(const Vector& normal) const
+	Vector<T, 2> Vector<T, 2>::Reflected(const Vector<T, 2>& normal) const
 	{
-		return (*this) - Cross(Dot(normal)) * 2;
+		// this - 2(this.n)n
+		return Sub(normal.Mul(2 * Dot(normal)));
 	}
 
 	template <typename T>
-	Vector<T, 2> Vector<T, 2>::Projected(const Vector& normal) const
+	Vector<T, 2> Vector<T, 2>::Projected(const Vector<T, 2>& normal) const
 	{
-		return normal / (Dot(normal) / normal.LengthSquared());
+		// this - (this.n)n
+		return Sub(normal.Mul(Dot(normal)));
 	}
 
 	template <typename T>
 	Vector<T, 2> Vector<T, 2>::Tangential() const
 	{
+		// Rotate 90 degrees
 		return Vector<T, 2>(-y, x);
 	}
 
@@ -326,21 +352,22 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	bool Vector<T, 2>::IsEqual(const Vector<T, 2>& other) const
+	bool Vector<T, 2>::IsEqual(const Vector& other) const
 	{
 		return (x == other.x && y == other.y);
 	}
 
 	template <typename T>
-	bool Vector<T, 2>::IsSimilar(const Vector<T, 2>& other, T epsilon = std::numeric_limits<T>::epsilon()) const
+	bool Vector<T, 2>::IsSimilar(const Vector& other, T epsilon) const
 	{
-		return (abs(x - other.x) < epsilon() && abs(y - other.y) < epsilon());
+		return (std::fabs(x - other.x) < epsilon) && (std::fabs(y - other.y) < epsilon);
 	}
 
 	template <typename T>
 	T& Vector<T, 2>::operator[](size_t i)
 	{
-		return At(i);
+		assert(i < 2);
+		return (&x)[i];
 	}
 
 	template <typename T>
@@ -353,183 +380,206 @@ namespace CubbyFlow
 	template <typename U>
 	Vector<T, 2>& Vector<T, 2>::operator=(const std::initializer_list<U>& list)
 	{
-		return Set(list);
+		Set(list);
+		return (*this);
+	}
+	
+	template <typename T>
+	Vector<T, 2>& Vector<T, 2>::operator=(const Vector& v)
+	{
+    	Set(v);
+    	return (*this);
 	}
 
 	template <typename T>
 	Vector<T, 2>& Vector<T, 2>::operator+=(T v)
 	{
-		return Add(v);
+		IAdd(v);
+		return (*this);
 	}
 
 	template <typename T>
 	Vector<T, 2>& Vector<T, 2>::operator+=(const Vector& v)
 	{
-		return Add(v);
+		IAdd(v);
+		return (*this);
 	}
 
 	template <typename T>
 	Vector<T, 2>& Vector<T, 2>::operator-=(T v)
 	{
-		return Sub(v);
+		ISub(v);
+		return (*this);
 	}
 
 	template <typename T>
 	Vector<T, 2>& Vector<T, 2>::operator-=(const Vector& v)
 	{
-		return Sub(v);
+		ISub(v);
+		return (*this);
 	}
 
 	template <typename T>
 	Vector<T, 2>& Vector<T, 2>::operator*=(T v)
 	{
-		return Mul(v);
+		IMul(v);
+		return (*this);
 	}
 
 	template <typename T>
 	Vector<T, 2>& Vector<T, 2>::operator*=(const Vector& v)
 	{
-		return Mul(v);
+		IMul(v);
+		return (*this);
 	}
 
 	template <typename T>
 	Vector<T, 2>& Vector<T, 2>::operator/=(T v)
 	{
-		return Div(v);
+		IDiv(v);
+		return (*this);
 	}
 
 	template <typename T>
 	Vector<T, 2>& Vector<T, 2>::operator/=(const Vector& v)
 	{
-		return Div(v);
+		IDiv(v);
+		return (*this);
 	}
 
 	template <typename T>
-	bool Vector<T, 2>::operator==(const Vector<T, 2>& v) const
+	bool Vector<T, 2>::operator==(const Vector& v) const
 	{
 		return IsEqual(v);
 	}
 
 	template <typename T>
-	bool Vector<T, 2>::operator!=(const Vector<T, 2>& v) const
+	bool Vector<T, 2>::operator!=(const Vector& v) const
 	{
 		return !IsEqual(v);
 	}
 
 	template <typename T>
-	Vector2<T> operator+(const Vector2<T>& a)
+	Vector<T, 2> operator+(const Vector<T, 2>& a)
 	{
 		return a;
 	}
 
 	template <typename T>
-	Vector2<T> operator-(const Vector2<T>& a)
+	Vector<T, 2> operator-(const Vector<T, 2>& a)
 	{
 		return Vector<T, 2>(-a.x, -a.y);
 	}
 
 	template <typename T>
-	Vector2<T> operator+(T a, const Vector2<T>& b)
+	Vector<T, 2> operator+(const Vector<T, 2>& a, T b)
 	{
-		return Vector<T, 2>(a + b.x, a + b.y);
+		return a.Add(b);
 	}
 
 	template <typename T>
-	Vector2<T> operator+(const Vector2<T>& a, const Vector2<T>& b)
+	Vector<T, 2> operator+(T a, const Vector<T, 2>& b)
 	{
-		return Vector<T, 2>(a.x + b.x, a.y + b.y);
+		return b.Add(a);
 	}
 
 	template <typename T>
-	Vector2<T> operator-(const Vector2<T>& a, T b)
+	Vector<T, 2> operator+(const Vector<T, 2>& a, const Vector<T, 2>& b)
 	{
-		return Vector<T, 2>(a.x - b, a.y - b);
+    	return a.Add(b);
 	}
 
 	template <typename T>
-	Vector2<T> operator-(T a, const Vector2<T>& b)
+	Vector<T, 2> operator-(const Vector<T, 2>& a, T b)
 	{
-		return Vector<T, 2>(a - b.x, a - b.y);
+    	return a.Sub(b);
+	}
+
+
+	template <typename T>
+	Vector<T, 2> operator-(T a, const Vector<T, 2>& b)
+	{
+		return b.RSub(a);
 	}
 
 	template <typename T>
-	Vector2<T> operator-(const Vector2<T>& a, const Vector2<T>& b)
+	Vector<T, 2> operator-(const Vector<T, 2>& a, const Vector<T, 2>& b)
 	{
-		return Vector<T, 2>(a.x - b.x, a.y - b.y);
+		return a.Sub(b);
 	}
 
 	template <typename T>
-	Vector2<T> operator*(const Vector2<T>& a, T b)
+	Vector<T, 2> operator*(const Vector<T, 2>& a, T b)
 	{
-		return Vector<T, 2>(a.x * b, a.y * b);
+		return a.Mul(b);
 	}
 
 	template <typename T>
-	Vector2<T> operator*(T a, const Vector2<T>& b)
+	Vector<T, 2> operator*(T a, const Vector<T, 2>& b)
 	{
-		return Vector<T, 2>(a * b.x, a * b.y);
+		return b.Mul(a);
 	}
 
 	template <typename T>
-	Vector2<T> operator*(const Vector2<T>& a, const Vector2<T>& b)
+	Vector<T, 2> operator*(const Vector<T, 2>& a, const Vector<T, 2>& b)
 	{
-		return Vector<T, 2>(a.x * b.x, a.y * b.y);
+		return a.Mul(b);
 	}
 
 	template <typename T>
-	Vector2<T> operator/(const Vector2<T>& a, T b)
+	Vector<T, 2> operator/(const Vector<T, 2>& a, T b)
 	{
-		return Vector<T, 2>(a.x / b, a.y / b);
+		return a.Div(b);
 	}
 
 	template <typename T>
-	Vector2<T> operator/(T a, const Vector2<T>& b)
+	Vector<T, 2> operator/(T a, const Vector<T, 2>& b)
 	{
-		return Vector<T, 2>(a / b.x, a / b.y);
+		return b.RDiv(a);
 	}
 
 	template <typename T>
-	Vector2<T> operator/(const Vector2<T>& a, const Vector2<T>& b)
+	Vector<T, 2> operator/(const Vector<T, 2>& a, const Vector<T, 2>& b)
 	{
-		return Vector<T, 2>(a.x / b.x, a.y / b.y);
+		return a.Div(b);
 	}
 
 	template <typename T>
-	Vector2<T> Min(const Vector2<T>& a, const Vector2<T>& b)
+	Vector<T, 2> Min(const Vector<T, 2>& a, const Vector<T, 2>& b)
 	{
-		return Vector<T, 2>(min(a.x, b.x), (a.y, b.y));
+		return Vector<T, 2>(std::min(a.x, b.x), std::min(a.y, b.y));
 	}
 
 	template <typename T>
-	Vector2<T> Max(const Vector2<T>& a, const Vector2<T>& b)
+	Vector<T, 2> Max(const Vector<T, 2>& a, const Vector<T, 2>& b)
 	{
-		return Vector<T, 2>(max(a.x, b.x), max(a.y, b.y));
+		return Vector<T, 2>(std::max(a.x, b.x), std::max(a.y, b.y));
 	}
 
 	template <typename T>
-	Vector2<T> Clamp(const Vector2<T>& v, const Vector2<T>& low, const Vector2<T>& high)
+	Vector<T, 2> Clamp(const Vector<T, 2>& v, const Vector<T, 2>& low, const Vector<T, 2>& high)
 	{
-		return Min(Max(v, low), high);
+		return Vector<T, 2>(std::clamp(v.x, low.x, high.x), std::clamp(v.y, low.y, high.y));
 	}
 
 	template <typename T>
-	Vector2<T> Ceil(const Vector2<T>& a)
+	Vector<T, 2> Ceil(const Vector<T, 2>& a)
 	{
-		return Vector<T, 2>(ceil(a.x), ceil(a.y));
+		return Vector<T, 2>(std::ceil(a.x), std::ceil(a.y));
 	}
 
 	template <typename T>
-	Vector2<T> Floor(const Vector2<T>& a)
+	Vector<T, 2> Floor(const Vector<T, 2>& a)
 	{
-		return Vector<T, 2>(floor(a.x), floor(a.y));
+		return Vector<T, 2>(std::floor(a.x), std::floor(a.y));
 	}
 
 	template <typename T>
-	Vector2<T> MonotonicCatmullRom(
-		const Vector2<T>& v0,
-		const Vector2<T>& v1,
-		const Vector2<T>& v2,
-		const Vector2<T>& v3,
+	Vector<T, 2> MonotonicCatmullRom(
+		const Vector<T, 2>& v0,
+		const Vector<T, 2>& v1,
+		const Vector<T, 2>& v2,
+		const Vector<T, 2>& v3,
 		T f)
 	{
 
