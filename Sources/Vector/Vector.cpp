@@ -1,7 +1,7 @@
 /*************************************************************************
 > File Name: Vector.cpp
 > Project Name: CubbyFlow
-> Author: Dongmin KIm
+> Author: Dongmin Kim
 > Purpose: Generic N-D vector class.
 > Created Time: 2017/02/19
 > Copyright (c) 2017, Dongmin Kim
@@ -23,7 +23,7 @@ namespace CubbyFlow
 	template <typename... Params>
 	Vector<T, N>::Vector(Params... params)
 	{
-		static_assert(sizeof...(params) == N, "invalid number of parameters");
+		static_assert(sizeof...(params) == N, "Invalid number of parameters");
 
 		SetAt(0, params...);
 	}
@@ -36,9 +36,10 @@ namespace CubbyFlow
 	}
 
 	template <typename T, size_t N>
-	Vector<T, N>::Vector(const Vector& other)
+	Vector<T, N>::Vector(const Vector& other) :
+		m_elements(other.m_elements)
 	{
-		Set(other);
+
 	}
 
 	template <typename T, size_t N>
@@ -58,7 +59,7 @@ namespace CubbyFlow
 	template <typename T, size_t N>
 	void Vector<T, N>::Set(const Vector& other)
 	{
-		m_elements(other.m_elements);
+		m_elements = other.m_elements;
 	}
 
 	template <typename T, size_t N>
@@ -94,7 +95,7 @@ namespace CubbyFlow
 	{
 		m_elements[i] = v;
 
-		SetAt(i + 1, v, params...);
+		SetAt(i + 1, params...);
 	}
 
 	template <typename T, size_t N>
