@@ -78,6 +78,9 @@
     <ClInclude Include="..\Sources\Vector\Vector3.h">
       <Filter>Vector</Filter>
     </ClInclude>
+    <ClInclude Include="..\Sources\Vector\Vector4.h">
+      <Filter>Vector</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Array\Array1.cpp">
@@ -110,13 +113,13 @@
     <ClCompile Include="..\Sources\Utils\Parallel.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
-    <ClCompile Include="Vector.cpp">
+    <ClCompile Include="..\Sources\Vector\Vector.cpp">
       <Filter>Vector</Filter>
     </ClCompile>
-    <ClCompile Include="Vector2.cpp">
+    <ClCompile Include="..\Sources\Vector\Vector2.cpp">
       <Filter>Vector</Filter>
     </ClCompile>
-    <ClCompile Include="Vector3.cpp">
+    <ClCompile Include="..\Sources\Vector\Vector3.cpp">
       <Filter>Vector</Filter>
     </ClCompile>
   </ItemGroup>

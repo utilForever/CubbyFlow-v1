@@ -141,6 +141,7 @@
     <ClInclude Include="..\Sources\Vector\Vector.h" />
     <ClInclude Include="..\Sources\Vector\Vector2.h" />
     <ClInclude Include="..\Sources\Vector\Vector3.h" />
+    <ClInclude Include="..\Sources\Vector\Vector4.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Array\Array1.cpp" />
@@ -153,9 +154,9 @@
     <ClCompile Include="..\Sources\Point\Point2.cpp" />
     <ClCompile Include="..\Sources\Point\Point3.cpp" />
     <ClCompile Include="..\Sources\Utils\Parallel.cpp" />
-    <ClCompile Include="Vector.cpp" />
-    <ClCompile Include="Vector2.cpp" />
-    <ClCompile Include="Vector3.cpp" />
+    <ClCompile Include="..\Sources\Vector\Vector.cpp" />
+    <ClCompile Include="..\Sources\Vector\Vector2.cpp" />
+    <ClCompile Include="..\Sources\Vector\Vector3.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
