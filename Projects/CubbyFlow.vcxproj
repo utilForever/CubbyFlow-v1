@@ -137,6 +137,7 @@
     <ClInclude Include="..\Sources\Size\Size3.h" />
     <ClInclude Include="..\Sources\Utils\Constants.h" />
     <ClInclude Include="..\Sources\Utils\Macros.h" />
+    <ClInclude Include="..\Sources\Utils\MathUtils.h" />
     <ClInclude Include="..\Sources\Utils\Parallel.h" />
     <ClInclude Include="..\Sources\Vector\Vector.h" />
     <ClInclude Include="..\Sources\Vector\Vector2.h" />
@@ -153,6 +154,7 @@
     <ClCompile Include="..\Sources\Point\Point.cpp" />
     <ClCompile Include="..\Sources\Point\Point2.cpp" />
     <ClCompile Include="..\Sources\Point\Point3.cpp" />
+    <ClCompile Include="..\Sources\Utils\MathUtils.cpp" />
     <ClCompile Include="..\Sources\Utils\Parallel.cpp" />
     <ClCompile Include="..\Sources\Vector\Vector.cpp" />
     <ClCompile Include="..\Sources\Vector\Vector2.cpp" />

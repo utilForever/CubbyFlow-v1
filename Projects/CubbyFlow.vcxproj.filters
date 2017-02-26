@@ -81,6 +81,9 @@
     <ClInclude Include="..\Sources\Vector\Vector4.h">
       <Filter>Vector</Filter>
     </ClInclude>
+    <ClInclude Include="..\Sources\Utils\MathUtils.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Array\Array1.cpp">
@@ -121,6 +124,9 @@
     </ClCompile>
     <ClCompile Include="..\Sources\Vector\Vector3.cpp">
       <Filter>Vector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Utils\MathUtils.cpp">
+      <Filter>Utils</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
