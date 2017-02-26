@@ -8,6 +8,10 @@
 *************************************************************************/
 #include <Vector\Vector2.h>
 
+#include <Utils/MathUtils.h>
+
+#include <cassert>
+
 namespace CubbyFlow
 {
 	template <typename T>
@@ -559,7 +563,7 @@ namespace CubbyFlow
 	template <typename T>
 	Vector<T, 2> Clamp(const Vector<T, 2>& v, const Vector<T, 2>& low, const Vector<T, 2>& high)
 	{
-		return Vector<T, 2>(std::clamp(v.x, low.x, high.x), std::clamp(v.y, low.y, high.y));
+		return Vector<T, 2>(Clamp(v.x, low.x, high.x), Clamp(v.y, low.y, high.y));
 	}
 
 	template <typename T>
