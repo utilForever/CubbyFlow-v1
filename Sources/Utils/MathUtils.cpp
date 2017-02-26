@@ -21,4 +21,20 @@ namespace CubbyFlow
 	{
 		return (x * x > y * y) ? x : y;
 	}
+
+	template <typename T>
+	inline T Clamp(T val, T low, T high)
+	{
+		if (val < low)
+		{
+			return low;
+		}
+
+		if (val > high)
+		{
+			return high;
+		}
+		
+		return val;
+	}
 }

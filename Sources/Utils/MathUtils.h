@@ -36,6 +36,20 @@ namespace CubbyFlow
 	//!
 	template <typename T>
 	inline T AbsMax(T x, T y);
+
+	//!
+	//! \brief      Returns the clamped value.
+	//!
+	//! \param[in]  val   The value.
+	//! \param[in]  low   The low value.
+	//! \param[in]  high  The high value.
+	//!
+	//! \tparam     T     Value type.
+	//!
+	//! \return     The clamped value.
+	//!
+	template <typename T>
+	inline T Clamp(T val, T low, T high);
 }
 
 #endif
