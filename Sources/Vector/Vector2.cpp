@@ -33,7 +33,7 @@ namespace CubbyFlow
 	
 	template <typename T>
 	Vector<T, 2>::Vector(const Vector& v) :
-		x(v.x), y(x.y)
+		x(v.x), y(v.y)
 	{
 		// Do nothing
 	}

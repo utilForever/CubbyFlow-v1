@@ -81,69 +81,69 @@ namespace CubbyFlow
 		void Normalize();
 
 		// MARK: Binary operations: new instance = this (+) v
-		//! Computes this + (v, v, v).
+		//! Computes this + (v, v, v, v).
 		Vector Add(T v) const;
 
-		//! Computes this + (v.x, v.y, v.z).
+		//! Computes this + (v.x, v.y, v.z, v.w).
 		Vector Add(const Vector& v) const;
 
-		//! Computes this - (v, v, v).
+		//! Computes this - (v, v, v, v).
 		Vector Sub(T v) const;
 
-		//! Computes this - (v.x, v.y, v.z).
+		//! Computes this - (v.x, v.y, v.z, v.w).
 		Vector Sub(const Vector& v) const;
 
-		//! Computes this * (v, v, v).
+		//! Computes this * (v, v, v, v).
 		Vector Mul(T v) const;
 
-		//! Computes this * (v.x, v.y, v.z).
+		//! Computes this * (v.x, v.y, v.z, v.w).
 		Vector Mul(const Vector& v) const;
 		
-		//! Computes this / (v, v, v).
+		//! Computes this / (v, v, v, v).
 		Vector Div(T v) const;
 
-		//! Computes this / (v.x, v.y, v.z).
+		//! Computes this / (v.x, v.y, v.z, v.w).
 		Vector Div(const Vector& v) const;
 
 		//! Computes dot product.
 		T Dot(const Vector& v) const;
 
 		// MARK: Binary operations: new instance = v (+) this
-		//! Computes (v, v, v) - this.
+		//! Computes (v, v, v, v) - this.
 		Vector RSub(T v) const;
 
-		//! Computes (v.x, v.y, v.z) - this.
+		//! Computes (v.x, v.y, v.z, v.w) - this.
 		Vector RSub(const Vector& v) const;
 
-		//! Computes (v, v, v) / this.
+		//! Computes (v, v, v, v) / this.
 		Vector RDiv(T v) const;
 
-		//! Computes (v.x, v.y, v.z) / this.
+		//! Computes (v.x, v.y, v.z, v.w) / this.
 		Vector RDiv(const Vector& v) const;
 
 		// MARK: Augmented operations: this (+)= v
-		//! Computes this += (v, v, v).
+		//! Computes this += (v, v, v, v).
 		void IAdd(T v);
 
-		//! Computes this += (v.x, v.y, v.z).
+		//! Computes this += (v.x, v.y, v.z, v.w).
 		void IAdd(const Vector& v);
 
-		//! Computes this -= (v, v, v).
+		//! Computes this -= (v, v, v, v).
 		void ISub(T v);
 
-		//! Computes this -= (v.x, v.y, v.z).
+		//! Computes this -= (v.x, v.y, v.z, v.w).
 		void ISub(const Vector& v);
 
-		//! Computes this *= (v, v, v).
+		//! Computes this *= (v, v, v, v).
 		void IMul(T v);
 
-		//! Computes this *= (v.x, v.y, v.z).
+		//! Computes this *= (v.x, v.y, v.z, v.w).
 		void IMul(const Vector& v);
 
-		//! Computes this /= (v, v, v).
+		//! Computes this /= (v, v, v, v).
 		void IDiv(T v);
 
-		//! Computes this /= (v.x, v.y, v.z).
+		//! Computes this /= (v.x, v.y, v.z, v.w).
 		void IDiv(const Vector& v);
 
 		// MARK: Basic getters
@@ -159,16 +159,16 @@ namespace CubbyFlow
 		//! Returns the average of all the components.
 		T Avg() const;
 
-		//! Returns the minimum value among x, y, and z.
+		//! Returns the minimum value among x, y, z and w.
 		T Min() const;
 
-		//! Returns the maximum value among x, y, and z.
+		//! Returns the maximum value among x, y, z and w.
 		T Max() const;
 
-		//! Returns the absolute minimum value among x, y, and z.
+		//! Returns the absolute minimum value among x, y, z and w.
 		T AbsMin() const;
 
-		//! Returns the absolute maximum value among x, y, and z.
+		//! Returns the absolute maximum value among x, y, z and w.
 		T AbsMax() const;
 
 		//! Returns the index of the dominant axis.
@@ -216,28 +216,28 @@ namespace CubbyFlow
 		//! Set x and y with other vector \p pt.
 		Vector& operator=(const Vector& v);
 
-		//! Computes this += (v, v)
+		//! Computes this += (v, v, v, v)
 		Vector& operator+=(T v);
 
-		//! Computes this += (v.x, v.y)
+		//! Computes this += (v.x, v.y, v.z, v.w)
 		Vector& operator+=(const Vector& v);
 
-		//! Computes this -= (v, v)
+		//! Computes this -= (v, v, v, v)
 		Vector& operator-=(T v);
 
-		//! Computes this -= (v.x, v.y)
+		//! Computes this -= (v.x, v.y, v.z, v.w)
 		Vector& operator-=(const Vector& v);
 
-		//! Computes this *= (v, v)
+		//! Computes this *= (v, v, v, v)
 		Vector& operator*=(T v);
 
-		//! Computes this *= (v.x, v.y)
+		//! Computes this *= (v.x, v.y, v.z, v.w)
 		Vector& operator*=(const Vector& v);
 
-		//! Computes this /= (v, v)
+		//! Computes this /= (v, v, v, v)
 		Vector& operator/=(T v);
 
-		//! Computes this /= (v.x, v.y)
+		//! Computes this /= (v.x, v.y, v.z, v.w)
 		Vector& operator/=(const Vector& v);
 
 		//! Returns true if \p other is the same as this vector.
