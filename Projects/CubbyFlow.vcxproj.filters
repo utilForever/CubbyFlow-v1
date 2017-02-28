@@ -125,6 +125,9 @@
     <ClCompile Include="..\Sources\Vector\Vector3.cpp">
       <Filter>Vector</Filter>
     </ClCompile>
+    <ClCompile Include="Vector4.cpp">
+      <Filter>Vector</Filter>
+    </ClCompile>
     <ClCompile Include="..\Sources\Utils\MathUtils.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
