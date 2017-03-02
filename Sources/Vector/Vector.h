@@ -10,8 +10,8 @@
 #define CUBBYFLOW_VECTOR_H
 
 #include <array>
+#include <cmath>
 #include <type_traits>
-#include <math.h>
 
 namespace CubbyFlow
 {
