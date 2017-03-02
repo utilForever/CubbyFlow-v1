@@ -11,6 +11,7 @@
 #include <Utils/MathUtils.h>
 
 #include <cassert>
+#include <limits>
 
 namespace CubbyFlow
 {
@@ -586,6 +587,32 @@ namespace CubbyFlow
 		const Vector<T, 2>& v3,
 		T f)
 	{
+		static const T two = static_cast<T>(2);
+		static const T three = static_cast<T>(3);
 
+		Vector<T, 2> d1 = (v2 - v0) / two;
+		Vector<T, 2> d2 = (v3 - v1) / two;
+		Vector<T, 2> D1 = v2 - v1;
+
+		if (std::fabs(D1.x) < std::numeric_limits<T>::epsilon() ||
+			sign(D1.x) != sign(d1.x) ||
+			sign(D1.x) != sign(d2.x))
+		{
+			d1.x = d2.x = 0;
+		}
+
+		if (std::fabs(D1.y) < std::numeric_limits<T>::epsilon() ||
+			sign(D1.y) != sign(d1.y) ||
+			sign(D1.y) != sign(d2.y))
+		{
+			d1.y = d2.y = 0;
+		}
+
+		Vector<T, 2> a3 = d1 + d2 - two * D1;
+		Vector<T, 2> a2 = three * D1 - two * d1 - d2;
+		Vector<T, 2> a1 = d1;
+		Vector<T, 2> a0 = v1;
+
+		return a3 * Cubic(f) + a2 * Square(f) + a1 * f + a0;
 	}
 }
