@@ -38,6 +38,30 @@ namespace CubbyFlow
 	inline T AbsMax(T x, T y);
 
 	//!
+	//! \brief      Returns the square of \p x.
+	//!
+	//! \param[in]  x     The input.
+	//!
+	//! \tparam     T     Value type.
+	//!
+	//! \return     The squared value.
+	//!
+	template <typename T>
+	inline T Square(T x);
+
+	//!
+	//! \brief      Returns the cubic of \p x.
+	//!
+	//! \param[in]  x     The input.
+	//!
+	//! \tparam     T     Value type.
+	//!
+	//! \return     The cubic of \p x.
+	//!
+	template <typename T>
+	inline T Cubic(T x);
+
+	//!
 	//! \brief      Returns the clamped value.
 	//!
 	//! \param[in]  val   The value.
