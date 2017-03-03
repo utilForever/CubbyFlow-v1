@@ -11,6 +11,9 @@
 
 #include <Vector/Vector.h>
 
+#include <Utils/Constants.h>
+#include <Utils/TypeHelpers.h>
+
 namespace CubbyFlow
 {
 	//!
@@ -253,75 +256,75 @@ namespace CubbyFlow
 
 	//! Positive sign operator.
 	template <typename T>
-	Vector2<T> operator+(const Vector2<T>& a);
+	Vector<T, 2> operator+(const Vector<T, 2>& a);
 
 	//! Negative sign operator.
 	template <typename T>
-	Vector2<T> operator-(const Vector2<T>& a);
+	Vector<T, 2> operator-(const Vector<T, 2>& a);
 
 	//! Computes (a, a) + (b.x, b.y).
 	template <typename T>
-	Vector2<T> operator+(T a, const Vector2<T>& b);
+	Vector<T, 2> operator+(T a, const Vector<T, 2>& b);
 
 	//! Computes (a.x, a.y) + (b.x, b.y).
 	template <typename T>
-	Vector2<T> operator+(const Vector2<T>& a, const Vector2<T>& b);
+	Vector<T, 2> operator+(const Vector<T, 2>& a, const Vector<T, 2>& b);
 
 	//! Computes (a.x, a.y) - (b, b).
 	template <typename T>
-	Vector2<T> operator-(const Vector2<T>& a, T b);
+	Vector<T, 2> operator-(const Vector<T, 2>& a, T b);
 
 	//! Computes (a, a) - (b.x, b.y).
 	template <typename T>
-	Vector2<T> operator-(T a, const Vector2<T>& b);
+	Vector<T, 2> operator-(T a, const Vector<T, 2>& b);
 
 	//! Computes (a.x, a.y) - (b.x, b.y).
 	template <typename T>
-	Vector2<T> operator-(const Vector2<T>& a, const Vector2<T>& b);
+	Vector<T, 2> operator-(const Vector<T, 2>& a, const Vector<T, 2>& b);
 
 	//! Computes (a.x, a.y) * (b, b).
 	template <typename T>
-	Vector2<T> operator*(const Vector2<T>& a, T b);
+	Vector<T, 2> operator*(const Vector<T, 2>& a, T b);
 
 	//! Computes (a, a) * (b.x, b.y).
 	template <typename T>
-	Vector2<T> operator*(T a, const Vector2<T>& b);
+	Vector<T, 2> operator*(T a, const Vector<T, 2>& b);
 
 	//! Computes (a.x, a.y) * (b.x, b.y).
 	template <typename T>
-	Vector2<T> operator*(const Vector2<T>& a, const Vector2<T>& b);
+	Vector<T, 2> operator*(const Vector<T, 2>& a, const Vector<T, 2>& b);
 
 	//! Computes (a.x, a.y) / (b, b).
 	template <typename T>
-	Vector2<T> operator/(const Vector2<T>& a, T b);
+	Vector<T, 2> operator/(const Vector<T, 2>& a, T b);
 
 	//! Computes (a, a) / (b.x, b.y).
 	template <typename T>
-	Vector2<T> operator/(T a, const Vector2<T>& b);
+	Vector<T, 2> operator/(T a, const Vector<T, 2>& b);
 
 	//! Computes (a.x, a.y) / (b.x, b.y).
 	template <typename T>
-	Vector2<T> operator/(const Vector2<T>& a, const Vector2<T>& b);
+	Vector<T, 2> operator/(const Vector<T, 2>& a, const Vector<T, 2>& b);
 
 	//! Returns element-wise min vector: (min(a.x, b.x), min(a.y, b.y)).
 	template <typename T>
-	Vector2<T> Min(const Vector2<T>& a, const Vector2<T>& b);
+	Vector<T, 2> Min(const Vector<T, 2>& a, const Vector<T, 2>& b);
 
 	//! Returns element-wise max vector: (max(a.x, b.x), max(a.y, b.y)).
 	template <typename T>
-	Vector2<T> Max(const Vector2<T>& a, const Vector2<T>& b);
+	Vector<T, 2> Max(const Vector<T, 2>& a, const Vector<T, 2>& b);
 
 	//! Returns element-wise clamped vector.
 	template <typename T>
-	Vector2<T> Clamp(const Vector2<T>& v, const Vector2<T>& low, const Vector2<T>& high);
+	Vector<T, 2> Clamp(const Vector<T, 2>& v, const Vector<T, 2>& low, const Vector<T, 2>& high);
 
 	//! Returns element-wise ceiled vector.
 	template <typename T>
-	Vector2<T> Ceil(const Vector2<T>& a);
+	Vector<T, 2> Ceil(const Vector<T, 2>& a);
 
 	//! Returns element-wise floored vector.
 	template <typename T>
-	Vector2<T> Floor(const Vector2<T>& a);
+	Vector<T, 2> Floor(const Vector<T, 2>& a);
 
 	//! Float-type 2D vector.
 	using Vector2F = Vector2<float>;
@@ -331,33 +334,33 @@ namespace CubbyFlow
 
 	// MARK: Extensions
 	//! Returns float-type zero vector.
-	template <typename T>
-	inline Vector2F Zero<Vector2F>()
+	template <>
+	inline Vector<float, 2> Zero<Vector<float, 2>>()
 	{
-		return Vector2F(0.f, 0.f);
+		return Vector<float, 2>(0.f, 0.f);
 	}
 
 	//! Returns double-type zero vector.
-	template <typename T>
-	inline Vector2D Zero<Vector2D>()
+	template <>
+	inline Vector<double, 2> Zero<Vector<double, 2>>()
 	{
-		return Vector2D(0.0, 0.0);
+		return Vector<double, 2>(0.0, 0.0);
 	}
 
 	//! Returns the type of the value itself.
 	template <typename T>
-	struct ScalarType<Vector2<T>>
+	struct ScalarType<Vector<T, 2>>
 	{
 		typedef T value;
 	};
 
 	//! Computes monotonic Catmull-Rom interpolation.
 	template <typename T>
-	Vector2<T> MonotonicCatmullRom(
-		const Vector2<T>& v0,
-		const Vector2<T>& v1,
-		const Vector2<T>& v2,
-		const Vector2<T>& v3,
+	Vector<T, 2> MonotonicCatmullRom(
+		const Vector<T, 2>& v0,
+		const Vector<T, 2>& v1,
+		const Vector<T, 2>& v2,
+		const Vector<T, 2>& v3,
 		T f);
 }
 
