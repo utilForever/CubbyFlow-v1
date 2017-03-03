@@ -139,6 +139,7 @@
     <ClInclude Include="..\Sources\Utils\Macros.h" />
     <ClInclude Include="..\Sources\Utils\MathUtils.h" />
     <ClInclude Include="..\Sources\Utils\Parallel.h" />
+    <ClInclude Include="..\Sources\Utils\TypeHelpers.h" />
     <ClInclude Include="..\Sources\Vector\Vector.h" />
     <ClInclude Include="..\Sources\Vector\Vector2.h" />
     <ClInclude Include="..\Sources\Vector\Vector3.h" />
