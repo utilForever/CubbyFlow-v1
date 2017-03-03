@@ -23,6 +23,18 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
+	inline T Square(T x)
+	{
+		return x * x;
+	}
+
+	template <typename T>
+	inline T Cubic(T x)
+	{
+		return x * x * x;
+	}
+
+	template <typename T>
 	inline T Clamp(T val, T low, T high)
 	{
 		if (val < low)
