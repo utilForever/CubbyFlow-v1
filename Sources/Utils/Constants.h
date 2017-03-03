@@ -18,6 +18,27 @@ namespace CubbyFlow
 	constexpr size_t ZERO_SIZE = 0;
 	//! Zero ssize_t.
 	constexpr ssize_t ZERO_SSIZE = 0;
+
+	//! Zero for type T.
+	template <typename T>
+	inline T Zero()
+	{
+		return 0;
+	}
+
+	//! Zero for float.
+	template <>
+	inline float Zero<float>()
+	{
+		return 0.f;
+	}
+
+	//! Zero for double.
+	template <>
+	inline double Zero<double>()
+	{
+		return 0.0;
+	}
 }
 
 #endif
