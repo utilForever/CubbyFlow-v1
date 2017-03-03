@@ -9,6 +9,8 @@
 #ifndef CUBBYFLOW_VECTOR_H
 #define CUBBYFLOW_VECTOR_H
 
+#include <Utils/TypeHelpers.h>
+
 #include <array>
 #include <cmath>
 #include <type_traits>
