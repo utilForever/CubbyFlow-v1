@@ -1,12 +1,12 @@
 /*************************************************************************
 > File Name: Vector3.cpp
 > Project Name: CubbyFlow
-> Author: Dongmin KIm
-> Purpose: Generic N-D vector class.
+> Author: Dongmin Kim
+> Purpose: 3-D vector class.
 > Created Time: 2017/02/22
 > Copyright (c) 2017, Dongmin Kim
 *************************************************************************/
-#include<Vector\Vector3.h>
+#include <Vector/Vector3.h>
 
 namespace CubbyFlow
 {
@@ -25,7 +25,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	Vector<T, 3>::Vector(const Vector<T, 2>& pt, T newZ) :
+	Vector<T, 3>::Vector(const Vector2<T>& pt, T newZ) :
 		x(pt.x), y(pt.y), z(newZ)
 	{
 		// Do nothing
