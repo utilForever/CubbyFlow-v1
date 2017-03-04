@@ -17,9 +17,63 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
+	inline T AbsMin(T x, T y, T z)
+	{
+		if (AbsMin(x, y) == x)
+		{
+			if (AbsMin(x, z) == x)
+			{
+				return x;
+			}
+			else
+			{
+				return z;
+			}
+		}
+		else
+		{
+			if (AbsMin(y, z) == y)
+			{
+				return y;
+			}
+			else
+			{
+				return z;
+			}
+		}
+	}
+
+	template <typename T>
 	inline T AbsMax(T x, T y)
 	{
 		return (x * x > y * y) ? x : y;
+	}
+
+	template <typename T>
+	inline T AbsMax(T x, T y, T z)
+	{
+		if (AbsMax(x, y) == x)
+		{
+			if (AbsMax(x, z) == x)
+			{
+				return x;
+			}
+			else
+			{
+				return z;
+			}
+		}
+		else
+		{
+			if (AbsMax(y, z) == y)
+			{
+				return y;
+			}
+			else
+			{
+				return z;
+			}
+		}
 	}
 
 	template <typename T>
