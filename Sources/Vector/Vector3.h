@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_VECTOR3_H
 #define CUBBYFLOW_VECTOR3_H
 
-#include <Vector/Vector.h>
+#include <Vector/Vector2.h>
 
 #include <limits>
 
