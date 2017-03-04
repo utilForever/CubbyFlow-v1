@@ -310,6 +310,22 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
+	size_t Vector<T, 3>::DominantAxis() const
+	{
+		return (std::fabs(x) > std::fabs(y))
+			? ((std::fabs(x) > std::fabs(z)) ? 0 : 2)
+			: ((std::fabs(y) > std::fabs(z)) ? 1 : 2);
+	}
+
+	template <typename T>
+	size_t Vector<T, 3>::SubdominantAxis() const
+	{
+		return (std::fabs(x) < std::fabs(y))
+			? ((std::fabs(x) < std::fabs(z)) ? 0 : 2)
+			: ((std::fabs(y) < std::fabs(z)) ? 1 : 2);
+	}
+
+	template <typename T>
 	Vector<T, 3> Vector<T, 3>::Normalized() const
 	{
 		return Vector<T, 3>(x / Length(), y / Length(), z / Length());
@@ -326,7 +342,6 @@ namespace CubbyFlow
 	{
 		return x * x + y * y + z * z + w * w;
 	}
-
 
 	template <typename T>
 	T Vector<T, 3>::DistanceTo(const Vector& other) const
