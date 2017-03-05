@@ -613,4 +613,48 @@ namespace CubbyFlow
 	{
 		return Vector<T, 3>(std::floor(a.x), std::floor(a.y), std::floor(a.z));
 	}
+
+	template <typename T>
+	Vector<T, 3> MonotonicCatmullRom(
+		const Vector<T, 3>& v0,
+		const Vector<T, 3>& v1,
+		const Vector<T, 3>& v2,
+		const Vector<T, 3>& v3,
+		T f)
+	{
+		static const T two = static_cast<T>(2);
+		static const T three = static_cast<T>(3);
+
+		Vector<T, 3> d1 = (v2 - v0) / two;
+		Vector<T, 3> d2 = (v3 - v1) / two;
+		Vector<T, 3> D1 = v2 - v1;
+
+		if (std::fabs(D1.x) < std::numeric_limits<float>::epsilon() ||
+			Sign(D1.x) != Sign(d1.x) ||
+			Sign(D1.x) != Sign(d2.x))
+		{
+			d1.x = d2.x = 0;
+		}
+
+		if (std::fabs(D1.y) < std::numeric_limits<float>::epsilon() ||
+			Sign(D1.y) != Sign(d1.y) ||
+			Sign(D1.y) != Sign(d2.y))
+		{
+			d1.y = d2.y = 0;
+		}
+
+		if (std::fabs(D1.z) < std::numeric_limits<float>::epsilon() ||
+			Sign(D1.z) != Sign(d1.z) ||
+			Sign(D1.z) != Sign(d2.z))
+		{
+			d1.z = d2.z = 0;
+		}
+
+		Vector<T, 3> a3 = d1 + d2 - two * D1;
+		Vector<T, 3> a2 = three * D1 - two * d1 - d2;
+		Vector<T, 3> a1 = d1;
+		Vector<T, 3> a0 = v1;
+
+		return a3 * cubic(f) + a2 * square(f) + a1 * f + a0;
+	}
 }
