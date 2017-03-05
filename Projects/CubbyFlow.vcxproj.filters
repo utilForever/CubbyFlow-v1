@@ -93,6 +93,9 @@
     <ClInclude Include="..\Sources\Matrix\Matrix.h">
       <Filter>Matrix</Filter>
     </ClInclude>
+    <ClInclude Include="..\Sources\Matrix\Matrix2x2.h">
+      <Filter>Matrix</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Array\Array1.cpp">
