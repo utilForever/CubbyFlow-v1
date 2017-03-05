@@ -655,6 +655,6 @@ namespace CubbyFlow
 		Vector<T, 3> a1 = d1;
 		Vector<T, 3> a0 = v1;
 
-		return a3 * cubic(f) + a2 * square(f) + a1 * f + a0;
+		return a3 * Cubic(f) + a2 * Square(f) + a1 * f + a0;
 	}
 }
