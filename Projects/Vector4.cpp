@@ -1,12 +1,16 @@
 /*************************************************************************
-> File Name: Vector2.cpp
+> File Name: Vector4.cpp
 > Project Name: CubbyFlow
 > Author: Dongmin Kim
 > Purpose: 4-D vector class.
 > Created Time: 2017/02/26
 > Copyright (c) 2017, Dongmin Kim
 *************************************************************************/
-#include<Vector\Vector4.h>
+#include <Vector/Vector4.h>
+
+#include <Utils/MathUtils.h>
+
+#include <cassert>
 
 namespace CubbyFlow
 {
@@ -25,13 +29,6 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	template <typename U>
-	Vector<T, 4>::Vector(const std::initializer_list<U>& list)
-	{
-		Set(list);
-	}
-
-	template <typename T>
 	Vector<T, 4>::Vector(const Vector& v) :
 		x(v.x), y(v.y), z(v.z), w(v.w)
 	{
@@ -43,6 +40,13 @@ namespace CubbyFlow
 		x(pt.x), y(pt.y), z(pt.z), w(newW)
 	{
 		// Do nothing
+	}
+
+	template <typename T>
+	template <typename U>
+	Vector<T, 4>::Vector(const std::initializer_list<U>& list)
+	{
+		Set(list);
 	}
 
 	template <typename T>
@@ -280,13 +284,13 @@ namespace CubbyFlow
 	template <typename T>
 	T Vector<T, 4>::Sum() const
 	{
-		return x + y + z +w;
+		return x + y + z + w;
 	}
 
 	template <typename T>
 	T Vector<T, 4>::Avg() const
 	{
-		return (x + y + z + w) / 4;
+		return Sum() / 4;
 	}
 
 	template <typename T>
@@ -316,24 +320,25 @@ namespace CubbyFlow
 	template <typename T>
 	size_t Vector<T, 4>::DominantAxis() const
 	{
-		for (size_t i = 0; i < 4; i++)
-		{
-			if (AbsMax() == &x[i])
-				return i;
-		}
+		return (std::fabs(x) > std::fabs(y))
+			? ((std::fabs(x) > std::fabs(z))
+				? ((std::fabs(x) > std::fabs(w)) ? 0 : 3)
+				: ((std::fabs(x) > std::fabs(w)) ? 2 : 3))
+			: ((std::fabs(y) > std::fabs(z))
+				? ((std::fabs(y) > std::fabs(w)) ? 1 : 3)
+				: ((std::fabs(z) > std::fabs(w)) ? 2 : 3));
 	}
 
 	template <typename T>
 	size_t Vector<T, 4>::SubdominantAxis() const
 	{
-		T arr[4] = { x,y,z,w };
-		std::sort(arr, arr + 4);
-
-		for (size_t i = 0; i < 4; i++)
-		{
-			if (&x[i] == arr[1])
-				return i;
-		}
+		return (std::fabs(x) < std::fabs(y))
+			? ((std::fabs(x) < std::fabs(z))
+				? ((std::fabs(x) < std::fabs(w)) ? 0 : 3)
+				: ((std::fabs(x) < std::fabs(w)) ? 2 : 3))
+			: ((std::fabs(y) < std::fabs(z))
+				? ((std::fabs(y) < std::fabs(w)) ? 1 : 3)
+				: ((std::fabs(z) < std::fabs(w)) ? 2 : 3));
 	}
 
 	template <typename T>
@@ -395,6 +400,7 @@ namespace CubbyFlow
 	template <typename T>
 	const T& Vector<T, 4>::operator[](size_t i) const
 	{
+		assert(i < 4);
 		return At(i);
 	}
 
@@ -517,7 +523,6 @@ namespace CubbyFlow
 		return a.Sub(b);
 	}
 
-
 	template <typename T>
 	Vector<T, 4> operator-(T a, const Vector<T, 4>& b)
 	{
@@ -581,7 +586,7 @@ namespace CubbyFlow
 	template <typename T>
 	Vector<T, 4> Clamp(const Vector<T, 4>& v, const Vector<T, 4>& low, const Vector<T, 4>& high)
 	{
-		return Vector<T, 4>(std::clamp(v.x, low.x, high.x), std::clamp(v.y, low.y, high.y), std::clamp(v.z, low.z, high.z), std::clamp(v.w, low.w, high.w));
+		return Vector<T, 4>(Clamp(v.x, low.x, high.x), Clamp(v.y, low.y, high.y), Clamp(v.z, low.z, high.z), std::clamp(v.w, low.w, high.w));
 	}
 
 	template <typename T>
