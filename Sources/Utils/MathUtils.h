@@ -12,6 +12,18 @@
 namespace CubbyFlow
 {
 	//!
+	//! \brief      Returns the sign of the value.
+	//!
+	//! \param[in]  x     Input value.
+	//!
+	//! \tparam     T     Value type.
+	//!
+	//! \return     The sign.
+	//!
+	template <typename T>
+	inline T Sign(T x);
+
+	//!
 	//! \brief      Returns the absolute minimum value among the two inputs.
 	//!
 	//! \param[in]  x     The first value.

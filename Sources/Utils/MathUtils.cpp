@@ -11,6 +11,19 @@
 namespace CubbyFlow
 {
 	template <typename T>
+	inline T Sign(T x)
+	{
+		if (x >= 0)
+		{
+			return 1;
+		}
+		else
+		{
+			return -1;
+		}
+	}
+
+	template <typename T>
 	inline T AbsMin(T x, T y)
 	{
 		return (x * x < y * y) ? x : y;
