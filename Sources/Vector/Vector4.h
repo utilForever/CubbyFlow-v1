@@ -48,7 +48,7 @@ namespace CubbyFlow
 		Vector(T x, T y, T z, T w);
 
 		//! Constructs vector with a 3-D vector (x, y, and z) and a scalar (w).
-		Vector(const Vector3<T>& pt, T w);
+		Vector(const Vector<T, 3>& pt, T w);
 
 		//! Constructs vector with initializer list.
 		template <typename U>
@@ -252,75 +252,75 @@ namespace CubbyFlow
 
 	//! Positive sign operator.
 	template <typename T>
-	Vector4<T> operator+(const Vector4<T>& a);
+	Vector<T, 4> operator+(const Vector<T, 4>& a);
 
 	//! Negative sign operator.
 	template <typename T>
-	Vector4<T> operator-(const Vector4<T>& a);
+	Vector<T, 4> operator-(const Vector<T, 4>& a);
 
 	//! Computes (a, a, a, a) + (b.x, b.y, b.z, b.w).
 	template <typename T>
-	Vector4<T> operator+(T a, const Vector4<T>& b);
+	Vector<T, 4> operator+(T a, const Vector<T, 4>& b);
 
 	//! Computes (a.x, a.y, a.z, a.w) + (b.x, b.y, b.z, b.w).
 	template <typename T>
-	Vector4<T> operator+(const Vector4<T>& a, const Vector4<T>& b);
+	Vector<T, 4> operator+(const Vector<T, 4>& a, const Vector<T, 4>& b);
 
 	//! Computes (a.x, a.y, a.z, a.w) - (b, b, b, b).
 	template <typename T>
-	Vector4<T> operator-(const Vector4<T>& a, T b);
+	Vector<T, 4> operator-(const Vector<T, 4>& a, T b);
 
 	//! Computes (a, a, a, a) - (b.x, b.y, b.z, b.w).
 	template <typename T>
-	Vector4<T> operator-(T a, const Vector4<T>& b);
+	Vector<T, 4> operator-(T a, const Vector<T, 4>& b);
 
 	//! Computes (a.x, a.y, a.z, a.w) - (b.x, b.y, b.z, b.w).
 	template <typename T>
-	Vector4<T> operator-(const Vector4<T>& a, const Vector4<T>& b);
+	Vector<T, 4> operator-(const Vector<T, 4>& a, const Vector<T, 4>& b);
 
 	//! Computes (a.x, a.y, a.z, a.w) * (b, b, b, b).
 	template <typename T>
-	Vector4<T> operator*(const Vector4<T>& a, T b);
+	Vector<T, 4> operator*(const Vector<T, 4>& a, T b);
 
 	//! Computes (a, a, a, a) * (b.x, b.y, b.z, b.w).
 	template <typename T>
-	Vector4<T> operator*(T a, const Vector4<T>& b);
+	Vector<T, 4> operator*(T a, const Vector<T, 4>& b);
 
 	//! Computes (a.x, a.y, a.z, a.w) * (b.x, b.y, b.z, b.w).
 	template <typename T>
-	Vector4<T> operator*(const Vector4<T>& a, const Vector4<T>& b);
+	Vector<T, 4> operator*(const Vector<T, 4>& a, const Vector<T, 4>& b);
 
 	//! Computes (a.x, a.y, a.z, a.w) / (b, b, b, b).
 	template <typename T>
-	Vector4<T> operator/(const Vector4<T>& a, T b);
+	Vector<T, 4> operator/(const Vector<T, 4>& a, T b);
 
 	//! Computes (a, a, a, a) / (b.x, b.y, b.z, b.w).
 	template <typename T>
-	Vector4<T> operator/(T a, const Vector4<T>& b);
+	Vector<T, 4> operator/(T a, const Vector<T, 4>& b);
 
 	//! Computes (a.x, a.y, a.z, a.w) / (b.x, b.y, b.z, b.w).
 	template <typename T>
-	Vector4<T> operator/(const Vector4<T>& a, const Vector4<T>& b);
+	Vector<T, 4> operator/(const Vector<T, 4>& a, const Vector<T, 4>& b);
 
 	//! Returns element-wise min vector.
 	template <typename T>
-	Vector4<T> Min(const Vector4<T>& a, const Vector4<T>& b);
+	Vector<T, 4> Min(const Vector<T, 4>& a, const Vector<T, 4>& b);
 
 	//! Returns element-wise max vector.
 	template <typename T>
-	Vector4<T> Max(const Vector4<T>& a, const Vector4<T>& b);
+	Vector<T, 4> Max(const Vector<T, 4>& a, const Vector<T, 4>& b);
 
 	//! Returns element-wise clamped vector.
 	template <typename T>
-	Vector4<T> Clamp(const Vector4<T>& v, const Vector4<T>& low, const Vector4<T>& high);
+	Vector<T, 4> Clamp(const Vector<T, 4>& v, const Vector<T, 4>& low, const Vector<T, 4>& high);
 
 	//! Returns element-wise ceiled vector.
 	template <typename T>
-	Vector4<T> Ceil(const Vector4<T>& a);
+	Vector<T, 4> Ceil(const Vector<T, 4>& a);
 
 	//! Returns element-wise floored vector.
 	template <typename T>
-	Vector4<T> Floor(const Vector4<T>& a);
+	Vector<T, 4> Floor(const Vector<T, 4>& a);
 
 	//! Float-type 4D vector.
 	using Vector4F = Vector4<float>;
@@ -345,18 +345,18 @@ namespace CubbyFlow
 
 	//! Returns the type of the value itself.
 	template <typename T>
-	struct ScalarType<Vector4<T>>
+	struct ScalarType<Vector<T, 4>>
 	{
 		typedef T value;
 	};
 
 	//! Computes monotonic Catmull-Rom interpolation.
 	template <typename T>
-	Vector4<T> MonotonicCatmullRom(
-		const Vector4<T>& v0,
-		const Vector4<T>& v1,
-		const Vector4<T>& v2,
-		const Vector4<T>& v3,
+	Vector<T, 4> MonotonicCatmullRom(
+		const Vector<T, 4>& v0,
+		const Vector<T, 4>& v1,
+		const Vector<T, 4>& v2,
+		const Vector<T, 4>& v3,
 		T f);
 }
 
