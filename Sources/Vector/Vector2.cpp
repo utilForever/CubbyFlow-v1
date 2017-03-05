@@ -595,15 +595,15 @@ namespace CubbyFlow
 		Vector<T, 2> D1 = v2 - v1;
 
 		if (std::fabs(D1.x) < std::numeric_limits<T>::epsilon() ||
-			sign(D1.x) != sign(d1.x) ||
-			sign(D1.x) != sign(d2.x))
+			Sign(D1.x) != Sign(d1.x) ||
+			Sign(D1.x) != Sign(d2.x))
 		{
 			d1.x = d2.x = 0;
 		}
 
 		if (std::fabs(D1.y) < std::numeric_limits<T>::epsilon() ||
-			sign(D1.y) != sign(d1.y) ||
-			sign(D1.y) != sign(d2.y))
+			Sign(D1.y) != Sign(d1.y) ||
+			Sign(D1.y) != Sign(d2.y))
 		{
 			d1.y = d2.y = 0;
 		}
