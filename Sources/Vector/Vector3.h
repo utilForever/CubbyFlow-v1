@@ -264,75 +264,75 @@ namespace CubbyFlow
 
 	//! Positive sign operator.
 	template <typename T>
-	Vector3<T> operator+(const Vector3<T>& a);
+	Vector<T, 3> operator+(const Vector<T, 3>& a);
 
 	//! Negative sign operator.
 	template <typename T>
-	Vector3<T> operator-(const Vector3<T>& a);
+	Vector<T, 3> operator-(const Vector<T, 3>& a);
 
 	//! Computes (a, a, a) + (b.x, b.y, b.z).
 	template <typename T>
-	Vector3<T> operator+(T a, const Vector3<T>& b);
+	Vector<T, 3> operator+(T a, const Vector<T, 3>& b);
 
 	//! Computes (a.x, a.y, a.z) + (b.x, b.y, b.z).
 	template <typename T>
-	Vector3<T> operator+(const Vector3<T>& a, const Vector3<T>& b);
+	Vector<T, 3> operator+(const Vector<T, 3>& a, const Vector<T, 3>& b);
 
 	//! Computes (a.x, a.y, a.z) - (b, b, b).
 	template <typename T>
-	Vector3<T> operator-(const Vector3<T>& a, T b);
+	Vector<T, 3> operator-(const Vector<T, 3>& a, T b);
 
 	//! Computes (a, a, a) - (b.x, b.y, b.z).
 	template <typename T>
-	Vector3<T> operator-(T a, const Vector3<T>& b);
+	Vector<T, 3> operator-(T a, const Vector<T, 3>& b);
 
 	//! Computes (a.x, a.y, a.z) - (b.x, b.y, b.z).
 	template <typename T>
-	Vector3<T> operator-(const Vector3<T>& a, const Vector3<T>& b);
+	Vector<T, 3> operator-(const Vector<T, 3>& a, const Vector<T, 3>& b);
 
 	//! Computes (a.x, a.y, a.z) * (b, b, b).
 	template <typename T>
-	Vector3<T> operator*(const Vector3<T>& a, T b);
+	Vector<T, 3> operator*(const Vector<T, 3>& a, T b);
 
 	//! Computes (a, a, a) * (b.x, b.y, b.z).
 	template <typename T>
-	Vector3<T> operator*(T a, const Vector3<T>& b);
+	Vector<T, 3> operator*(T a, const Vector<T, 3>& b);
 
 	//! Computes (a.x, a.y, a.z) * (b.x, b.y, b.z).
 	template <typename T>
-	Vector3<T> operator*(const Vector3<T>& a, const Vector3<T>& b);
+	Vector<T, 3> operator*(const Vector<T, 3>& a, const Vector<T, 3>& b);
 
 	//! Computes (a.x, a.y, a.z) / (b, b, b).
 	template <typename T>
-	Vector3<T> operator/(const Vector3<T>& a, T b);
+	Vector<T, 3> operator/(const Vector<T, 3>& a, T b);
 
 	//! Computes (a, a, a) / (b.x, b.y, b.z).
 	template <typename T>
-	Vector3<T> operator/(T a, const Vector3<T>& b);
+	Vector<T, 3> operator/(T a, const Vector<T, 3>& b);
 
 	//! Computes (a.x, a.y, a.z) / (b.x, b.y, b.z).
 	template <typename T>
-	Vector3<T> operator/(const Vector3<T>& a, const Vector3<T>& b);
+	Vector<T, 3> operator/(const Vector<T, 3>& a, const Vector<T, 3>& b);
 
 	//! Returns element-wise min vector.
 	template <typename T>
-	Vector3<T> Min(const Vector3<T>& a, const Vector3<T>& b);
+	Vector<T, 3> Min(const Vector<T, 3>& a, const Vector<T, 3>& b);
 
 	//! Returns element-wise max vector.
 	template <typename T>
-	Vector3<T> Max(const Vector3<T>& a, const Vector3<T>& b);
+	Vector<T, 3> Max(const Vector<T, 3>& a, const Vector<T, 3>& b);
 
 	//! Returns element-wise clamped vector.
 	template <typename T>
-	Vector3<T> Clamp(const Vector3<T>& v, const Vector3<T>& low, const Vector3<T>& high);
+	Vector<T, 3> Clamp(const Vector<T, 3>& v, const Vector<T, 3>& low, const Vector<T, 3>& high);
 
 	//! Returns element-wise ceiled vector.
 	template <typename T>
-	Vector3<T> Ceil(const Vector3<T>& a);
+	Vector<T, 3> Ceil(const Vector<T, 3>& a);
 
 	//! Returns element-wise floored vector.
 	template <typename T>
-	Vector3<T> Floor(const Vector3<T>& a);
+	Vector<T, 3> Floor(const Vector<T, 3>& a);
 
 	//! Float-type 3D vector.
 	using Vector3F = Vector3<float>;
@@ -357,7 +357,7 @@ namespace CubbyFlow
 
 	//! Returns the type of the value itself.
 	template <typename T>
-	struct ScalarType<Vector3<T>>
+	struct ScalarType<Vector<T, 3>>
 	{
 		typedef T value;
 	};
