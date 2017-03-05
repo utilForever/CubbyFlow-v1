@@ -8,6 +8,10 @@
 *************************************************************************/
 #include <Vector/Vector3.h>
 
+#include <Utils/MathUtils.h>
+
+#include <cassert>
+
 namespace CubbyFlow
 {
 	template <typename T>
@@ -370,7 +374,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	std::tuple<Vector<T, 3>, Vector<T, 3>> Tangential() const
+	std::tuple<Vector<T, 3>, Vector<T, 3>> Vector<T, 3>::Tangential() const
 	{
 		Vector<T, 3> a = ((std::fabs(y) > 0 || std::fabs(z) > 0)
 				? Vector<T, 3>(1, 0, 0)
@@ -595,7 +599,7 @@ namespace CubbyFlow
 	template <typename T>
 	Vector<T, 3> Clamp(const Vector<T, 3>& v, const Vector<T, 3>& low, const Vector<T, 3>& high)
 	{
-		return Vector<T, 3>(std::clamp(v.x, low.x, high.x), std::clamp(v.y, low.y, high.y), std::clamp(v.z, low.z, high.z));
+		return Vector<T, 3>(Clamp(v.x, low.x, high.x), Clamp(v.y, low.y, high.y), Clamp(v.z, low.z, high.z));
 	}
 
 	template <typename T>
