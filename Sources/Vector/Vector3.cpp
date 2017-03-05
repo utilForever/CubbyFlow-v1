@@ -372,7 +372,12 @@ namespace CubbyFlow
 	template <typename T>
 	std::tuple<Vector<T, 3>, Vector<T, 3>> Tangential() const
 	{
+		Vector<T, 3> a = ((std::fabs(y) > 0 || std::fabs(z) > 0)
+				? Vector<T, 3>(1, 0, 0)
+				: Vector<T, 3>(0, 1, 0)).Cross(*this).Normalized();
+		Vector<T, 3> b = Cross(a);
 
+		return std::make_tuple(a, b);
 	}
 
 	template <typename T>
