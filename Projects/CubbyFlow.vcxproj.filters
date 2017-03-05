@@ -16,6 +16,9 @@
     <Filter Include="Vector">
       <UniqueIdentifier>{2a9323e0-24d8-40e1-8075-5276f4af16aa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Matrix">
+      <UniqueIdentifier>{6a2e4735-c1fb-4d91-adca-a5b79b0b7313}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Sources\Array\Array.h">
@@ -86,6 +89,9 @@
     </ClInclude>
     <ClInclude Include="..\Sources\Utils\TypeHelpers.h">
       <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\Matrix\Matrix.h">
+      <Filter>Matrix</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
