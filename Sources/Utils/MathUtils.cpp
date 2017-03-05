@@ -57,6 +57,12 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
+	inline T AbsMin(T x, T y, T z, T w)
+	{
+		return AbsMin(AbsMin(x, y), AbsMin(z, w));
+	}
+
+	template <typename T>
 	inline T AbsMax(T x, T y)
 	{
 		return (x * x > y * y) ? x : y;
@@ -87,6 +93,12 @@ namespace CubbyFlow
 				return z;
 			}
 		}
+	}
+
+	template <typename T>
+	inline T AbsMax(T x, T y, T z, T w)
+	{
+		return AbsMax(AbsMax(x, y), AbsMax(z, w));
 	}
 
 	template <typename T>
