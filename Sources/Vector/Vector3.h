@@ -202,7 +202,7 @@ namespace CubbyFlow
 		Vector Projected(const Vector& normal) const;
 
 		//! Returns the tangential vector for this vector.
-		std::tuple<Vector, Vector> Tangential() const;
+		std::tuple<Vector<T, 3>, Vector<T, 3>> Tangential() const;
 
 		//! Returns a vector with different value type.
 		template <typename U>
