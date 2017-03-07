@@ -346,11 +346,11 @@ namespace CubbyFlow
 
 	//! Returns a + b', where every element of matrix b' is b.
 	template <typename T>
-	Matrix<T, 2, 2> operator+(const Matrix<T, 2, 2>& a, const T& b);
+	Matrix<T, 2, 2> operator+(const Matrix<T, 2, 2>& a, const T b);
 
 	//! Returns a' + b, where every element of matrix a' is a.
 	template <typename T>
-	Matrix<T, 2, 2> operator+(const T& a, const Matrix<T, 2, 2>& b);
+	Matrix<T, 2, 2> operator+(const T a, const Matrix<T, 2, 2>& b);
 
 	//! Returns a - b (element-size).
 	template <typename T>
@@ -379,14 +379,6 @@ namespace CubbyFlow
 	//! Returns a * b.
 	template <typename T>
 	Matrix<T, 2, 2> operator*(const Matrix<T, 2, 2>& a, const Matrix<T, 2, 2>& b);
-
-	//! Returns a / b', where every element of matrix b' is b.
-	template <typename T>
-	Matrix<T, 2, 2> operator/(const Matrix<T, 2, 2>& a, T b);
-
-	//! Returns a' / b, where every element of matrix a' is a.
-	template <typename T>
-	Matrix<T, 2, 2> operator/(const T& a, const Matrix<T, 2, 2>& b);
 
 	//! Float-type 2x2 matrix.
 	using Matrix2x2F = Matrix2x2<float>;
