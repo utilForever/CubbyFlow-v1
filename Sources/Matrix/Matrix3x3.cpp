@@ -1,0 +1,716 @@
+/*************************************************************************
+> File Name: Matrix3x3.cpp
+> Project Name: CubbyFlow
+> Author: Dongmin Kim
+> Purpose: 3-D matrix class.
+> Created Time: 2017/03/07
+> Copyright (c) 2017, Dongmin Kim
+*************************************************************************/
+#include<Matrix\Matrix3x3.h>
+
+namespace CubbyFlow
+{
+	template <typename T>
+	Matrix<T, 3, 3>::Matrix() : m_elements(1, 0, 0, 0, 1, 0, 0, 0, 1)
+	{
+		// Do nothing
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3>::Matrix(T s) : m_elements(s, s, s, s, s, s, s, s, s)
+	{
+		// Do nothing
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3>::Matrix(T m00, T m01, T m02, 
+							T m10, T m11, T m12, 
+							T m20, T m21, T m22) : m_elements(m00, m01, m02, 
+					   									      m10, m11, m12, 
+															  m20, m21, m22)
+	{
+		// Do nothing
+	}
+
+	template <typename T>
+	template <typename U>
+	Matrix<T, 3, 3>::Matrix(const std::initializer_list<std::initializer_list<U>>& list)
+	{
+		Set(list);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3>::Matrix(const Matrix<T, 3, 3>& m)
+	{
+		Set(m);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3>::Matrix(const T* arr) : m_elements(arr[0], arr[1], arr[2], 
+													   arr[3], arr[4], arr[5], 
+													   arr[6], arr[7], arr[8])
+	{
+		// Do nothing
+	}
+
+	template <typename T>
+	void Matrix<T, 3, 3>::Set(T s)
+	{
+		m_elements(s, s, s, s, s, s, s, s, s, s);
+	}
+
+	template <typename T>
+	void Matrix<T, 3, 3>::Set(T m00, T m01, T m02,
+							  T m10, T m11, T m12,
+							  T m20, T m21, T m22)
+	{
+		m_elements(m00, m01, m02, m10, m11, m12, m20, m21, m22);
+	}
+
+	template <typename T>
+	template <typename U>
+	void Matrix<T, 3, 3>::Set(const std::initializer_list<std::initializer_list<U>>& list)
+	{
+		assert(list.size() >= 9);
+
+		auto inputElem = list.begin();
+
+		m_elements[0] = static_cast<T>(*inputElem);
+		for (size_t i = 1; i < 9; i++)
+		{
+			m_elements[i] = static_cast<T>(*(++inputElem));
+		}
+	}
+
+	template <typename T>
+	void Matrix<T, 3, 3>::Set(const Matrix<T, 3, 3>& m)
+	{
+		for (size_t i = 0; i < 9; i++)
+		{
+			m_elements[i] = m[i];
+		}
+	}
+
+	template <typename T>
+	void Matrix<T, 3, 3>::Set(const T* arr)
+	{
+		for (size_t i = 0; i < 9; i++)
+		{
+			m_elements[i] = arr[i];
+		}
+	}
+
+	template <typename T>
+	void Matrix<T, 3, 3>::SetDiagonal(T s)
+	{
+		m_elements[0] = s;
+		m_elements[4] = s;
+		m_elements[8] = s;
+	}
+
+	template <typename T>
+	void Matrix<T, 3, 3>::SetOffDiagonal(T s)
+	{
+		m_elements[1] = s;
+		m_elements[2] = s;
+		m_elements[3] = s;
+		m_elements[5] = s;
+		m_elements[6] = s;
+		m_elements[7] = s;
+	}
+
+	template <typename T>
+	void Matrix<T, 3, 3>::SetRow(size_t i, const Vector3<T>& row)
+	{
+		m_elements[i * 3] = row.m_elements[0];
+		m_elements[i * 3 + 1] = row.m_elements[1];
+		m_elements[i * 3 + 2] = row.m_elements[2];
+	}
+
+	template <typename T>
+	void Matrix<T, 3, 3>::SetColumn(size_t i, const Vector3<T>& col)
+	{
+		m_elements[i] = col.m_elements[0];
+		m_elements[i + 3] = col.m_elements[1];
+		m_elements[i + 6] = col.m_elements[2];
+	}
+
+	template <typename T>
+	bool Matrix<T, 3, 3>::IsSimilar(const Matrix<T, 3, 3>& m, double tol = std::numeric_limits<double>::epsilon()) const
+	{
+		for (size_t i = 0; i < 9; i++)
+		{
+			if (std::fabs(m_elements[i] - m[i]) > epsilon)
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+
+	template <typename T>
+	bool Matrix<T, 3, 3>::IsSquare() const
+	{
+
+	}
+
+	template <typename T>
+	size_t Matrix<T, 3, 3>::Rows() const
+	{
+		return 3;
+	}
+
+	template <typename T>
+	size_t Matrix<T, 3, 3>::Cols() const
+	{
+		return 3;
+	}
+
+	template <typename T>
+	T* Matrix<T, 3, 3>::Data()
+	{
+		return m_elements;
+	}
+
+	template <typename T>
+	const T* Matrix<T, 3, 3>::Data() const
+	{
+		return m_elements.begin();
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3> Matrix<T, 3, 3>::Add(T s) const
+	{
+		return Matrix<T, 3, 3>(m_elements[0] + s, m_elements[1] + s, m_elements[2] + s, m_elements[3] + s, m_elements[4] + s, m_elements[5] + s, m_elements[6] + s, m_elements[7] + s, m_elements[8] + s);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3> Matrix<T, 3, 3>::Add(const Matrix<T, 3, 3>& m) const
+	{
+		return Matrix<T, 3, 3>(m_elements[0] + m.m_elements[0], m_elements[1] + m.m_elements[1], m_elements[2] + m.m_elements[2], m_elements[3] + m.m_elements[3], m_elements[4] + m.m_elements[4], m_elements[5] + m.m_elements[5], m_elements[6] + m.m_elements[6], m_elements[7] + m.m_elements[7], m_elements[8] + m.m_elements[8]);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3> Matrix<T, 3, 3>::Sub(T s) const
+	{
+		return Matrix<T, 3, 3>(m_elements[0] - s, m_elements[1] - s, m_elements[2] - s, m_elements[3] - s, m_elements[4] - s, m_elements[5] - s, m_elements[6] - s, m_elements[7] - s, m_elements[8] - s);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3> Matrix<T, 3, 3>::Sub(const Matrix<T, 3, 3>& m) const
+	{
+		return Matrix<T, 3, 3>(m_elements[0] - m.m_elements[0], m_elements[1] - m.m_elements[1], m_elements[2] - m.m_elements[2], m_elements[3] - m.m_elements[3], m_elements[4] - m.m_elements[4], m_elements[5] - m.m_elements[5], m_elements[6] - m.m_elements[6], m_elements[7] - m.m_elements[7], m_elements[8] - m.m_elements[8]);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3> Matrix<T, 3, 3>::Mul(T s) const
+	{
+		return Matrix<T, 3, 3>(m_elements[0] * s, m_elements[1] * s, m_elements[2] * s, m_elements[3] * s, m_elements[4] * s, m_elements[5] * s, m_elements[6] * s, m_elements[7] * s, m_elements[8] * s);
+	}
+
+	template <typename T>
+	Vector3<T> Matrix<T, 3, 3>::Mul(const Vector3<T> & v) const
+	{
+		return Vector<T, 3>(v.m_elements[0] * m_elements[0] + v.m_elements[1] * m_elements[3] + v.m_elements[2] * v.m_elements[6], v.m_elements[0] * m_elements[1] + v.m_elements[1] * m_elements[4] + v.m_elements[2] * m_elements[7], v.m_elements[0] * m_elements[2] + v.m_elements[1] * m_elements[5] + v.m_elements[2] * m_elements[8]);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3> Matrix<T, 3, 3>::Mul(const Matrix<T, 3, 3>& m) const
+	{
+		assert(m.Cols == 3);
+		std::array<T> tmp;
+		for (size_t i = 0; i < 3; i++)
+		{
+			for (size_t j = 0; j < 3; j++)
+			{
+				tmp[i * 3 + j] = m_elements[i * 3] * m.m_elements[i * 3 + j] + m_elements[i * 3 + 1] * m.m_elements[(i + 1) * 3 + j] + m_elements[i * 3 + 2] * m.m_elements[(i + 2) * 3 + j];
+			}
+		}
+		return Matrix<T, 3, 3>(tmp);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3> Matrix<T, 3, 3>::Div(T s) const
+	{
+		return Matrix<T, 3, 3>(m_elements[0] / s, m_elements[1] / s, m_elements[2] / s, m_elements[3] / s, m_elements[4] / s, m_elements[5] / s, m_elements[6] / s, m_elements[7] / s, m_elements[8] / s);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3> Matrix<T, 3, 3>::RAdd(T s) const
+	{
+		return Matrix<T, 3, 3>(m_elements[0] + s, m_elements[1] + s, m_elements[2] + s, m_elements[3] + s, m_elements[4] + s, m_elements[5] + s, m_elements[6] + s, m_elements[7] + s, m_elements[8] + s);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3> Matrix<T, 3, 3>::RAdd(const Matrix<T, 3, 3>& m) const
+	{
+		return Matrix<T, 3, 3>(m_elements[0] + m.m_elements[0], m_elements[1] + m.m_elements[1], m_elements[2] + m.m_elements[2], m_elements[3] + m.m_elements[3], m_elements[4] + m.m_elements[4], m_elements[5] + m.m_elements[5], m_elements[6] + m.m_elements[6], m_elements[7] + m.m_elements[7], m_elements[8] + m.m_elements[8]);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3> Matrix<T, 3, 3>::RSub(T s) const
+	{
+		return Matrix<T, 3, 3>(s - m_elements[0], s - m_elements[1], s - m_elements[2], s - m_elements[3], s - m_elements[4], s - m_elements[5], s - m_elements[6], s - m_elements[7], s - m_elements[8]);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3> Matrix<T, 3, 3>::RSub(const Matrix<T, 3, 3>& m) const
+	{
+		return Matrix<T, 3, 3>(m.m_elements[0] - m_elements[0], m.m_elements[1] - m_elements[1], m.m_elements[2] - m_elements[2], m.m_elements[3] - m_elements[3], m.m_elements[4] - m_elements[4], m.m_elements[5] - m_elements[5], m.m_elements[6] - m_elements[6], m.m_elements[7] - m_elements[7], m.m_elements[8] - m_elements[8]);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3> Matrix<T, 3, 3>::RMul(T s) const
+	{
+		return Mul(s);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3> Matrix<T, 3, 3>::RMul(const Matrix<T, 3, 3>& m) const
+	{
+		assert(m.Cols == 3);
+		std::array<T> tmp;
+		for (size_t i = 0; i < 3; i++)
+		{
+			for (size_t j = 0; j < 3; j++)
+			{
+				tmp[i * 3 + j] = m.m_elements[i * 3] * m_elements[i * 3 + j] + m.m_elements[i * 3 + 1] * m_elements[(i+1) * 3 + j] + m.m_elements[i * 3 + 2] * m_elements[(i+2) * 3 + j];
+			}
+		}
+		return Matrix<T, 3, 3>(tmp);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3> Matrix<T, 3, 3>::RDiv(T s) const
+	{
+		return Matrix<T, 3, 3>(s / m_elements[0], s / m_elements[1], s / m_elements[2], s / m_elements[3], s / m_elements[4], s / m_elements[5], s / m_elements[6], s / m_elements[7], s / m_elements[8]);
+	}
+
+	template <typename T>
+	void Matrix<T, 3, 3>::IAdd(T s)
+	{
+		for (size_t i = 0; i < 9; i++)
+		{
+			m_elements[i] += s;
+		}
+	}
+
+	template <typename T>
+	void Matrix<T, 3, 3>::IAdd(const Matrix<T, 3, 3>& m)
+	{
+		for (size_t i = 0; i < 9; i++)
+		{
+			m_elements[i] += m.m_elements[i];
+		}
+	}
+
+	template <typename T>
+	void Matrix<T, 3, 3>::ISub(T s)
+	{
+		for (size_t i = 0; i < 9; i++)
+		{
+			m_elements[i] -= s;
+		}
+	}
+
+	template <typename T>
+	void Matrix<T, 3, 3>::ISub(const Matrix<T, 3, 3>& m)
+	{
+		for (size_t i = 0; i < 9; i++)
+		{
+			m_elements[i] -= m.m_elements[i];
+		}
+	}
+
+	template <typename T>
+	void Matrix<T, 3, 3>::IMul(T s)
+	{
+		for (size_t i = 0; i < 9; i++)
+		{
+			m_elements[i] *= s;
+		}
+	}
+
+	template <typename T>
+	void Matrix<T, 3, 3>::IMul(const Matrix<T, 3, 3>& m)
+	{
+		Set(Mul(m));
+	}
+
+	template <typename T>
+	void Matrix<T, 3, 3>::IDiv(T s)
+	{
+		for (size_t i = 0; i < 9; i++)
+		{
+			m_elements[i] /= s;
+		}
+	}
+
+	template <typename T>
+	void Matrix<T, 3, 3>::Transpose()
+	{
+		std::swap(m_elements[1], m_elements[3]);
+		std::swap(m_elements[2], m_elements[6]);
+		std::swap(m_elements[5], m_elements[7]);
+	}
+
+	template <typename T>
+	void Matrix<T, 3, 3>::Invert()
+	{
+		assert(Determinant());
+		
+		std::array<T> tmp, res;
+		for (size_t i = 0; i < 3; i++)
+		{
+			for (size_t j = 0; j < 3; j++)
+			{
+				for (size_t newI = 0; newI < 3; newI++)
+				{
+					for (size_t newJ = 0; newJ < 3; newJ++)
+					{
+						if (i != newI && j != newJ)
+						{
+							tmp.push(m_elements[newI * 3 + newJ]);
+						}
+					}
+				}
+				res[i * 3 + j] = std::pow(-1, i + j) * Matrix<T, 2, 2>(tmp).Determinant();
+			}
+		}
+		Set(res);
+	}
+
+	template <typename T>
+	T Matrix<T, 3, 3>::Sum() const
+	{
+		return (m_elements[0] + m_elements[1] + m_elements[2] + m_elements[3] + m_elements[4] + m_elements[5] + m_elements[6] + m_elements[7] + m_elements[8]);
+	}
+
+	template <typename T>
+	T Matrix<T, 3, 3>::Avg() const
+	{
+		return Sum() / 9;
+	}
+
+	template <typename T>
+	T Matrix<T, 3, 3>::Min() const
+	{
+		return std::min_element(m_elements.begin(), m_elements.end());
+	}
+
+	template <typename T>
+	T Matrix<T, 3, 3>::Max() const
+	{
+		return std::max_element(m_elements.begin(), m_elements.end());
+	}
+
+	template <typename T>
+	T Matrix<T, 3, 3>::AbsMin() const
+	{
+		return std::min({ std::fabs(m_elements[0]), std::fabs(m_elements[1]), std::fabs(m_elements[2]), std::fabs(m_elements[3]), std::fabs(m_elements[4]), std::fabs(m_elements[5]), std::fabs(m_elements[6]), std::fabs(m_elements[7]), std::fabs(m_elements[8]) });
+	}
+
+	template <typename T>
+	T Matrix<T, 3, 3>::AbsMax() const
+	{
+		return std::max({ std::fabs(m_elements[0]), std::fabs(m_elements[1]), std::fabs(m_elements[2]), std::fabs(m_elements[3]), std::fabs(m_elements[4]), std::fabs(m_elements[5]), std::fabs(m_elements[6]), std::fabs(m_elements[7]), std::fabs(m_elements[8]) });
+	}
+
+	template <typename T>
+	T Matrix<T, 3, 3>::Trace() const
+	{
+		return m_elements[0] + m_elements[4] + m_elements[8];
+	}
+
+	template <typename T>
+	T Matrix<T, 3, 3>::Determinant() const
+	{
+		return m_elements[0] * (m_elements[4] * m_elements[8] - m_elements[5] * m_elements[7]) - m_elements[1] * (m_elements[3] * m_elements[8] - m_elements[5] * m_elements[6]) + m_elements[2] * (m_elements[3] * m_elements[7] - m_elements[4] * m_elements[6]);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3> Matrix<T, 3, 3>::Diagonal() const
+	{
+		return Matrix<T, 3, 3>(m_elements[0], 0, 0, 0, m_elements[4], 0, 0, 0, m_elements[8]);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3> Matrix<T, 3, 3>::OffDiagonal() const
+	{
+		return Matrix<T, 3, 3>(0, m_elements[1], m_elements[2], m_elements[3], 0, m_elements[5], m_elements[6], m_elements[7], 0);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3> Matrix<T, 3, 3>::StrictLowerTriangle() const
+	{
+		return Matrix<T, 3, 3>(0, 0, 0, m_elements[3], 0, 0, m_elements[6], m_elements[7], 0);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3> Matrix<T, 3, 3>::StrictUpperTriangle() const
+	{
+		return Matrix<T, 3, 3>(0, m_elements[1], m_elements[2], 0, 0, m_elements[5], 0, 0, 0);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3> Matrix<T, 3, 3>::LowerTriangle() const
+	{
+		return Matrix<T, 3, 3>(m_elements[0], 0, 0, m_elements[3], m_elements[4], 0, m_elements[6], m_elements[7], m_elements[8]);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3> Matrix<T, 3, 3>::UpperTriangle() const
+	{
+		return Matrix<T, 3, 3>(m_elements[0], m_elements[1], m_elements[2], 0, m_elements[4], m_elements[5], 0, 0, m_elements[8]);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3> Matrix<T, 3, 3>::Transposed() const
+	{
+		return Matrix<T, 3, 3>(m_elements[0], m_elements[3], m_elements[6], m_elements[1], m_elements[4], m_elements[7], m_elements[2], m_elements[5], m_elements[8]);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3> Matrix<T, 3, 3>::Inverse() const
+	{
+		assert(Determinant());
+
+		std::array<T> tmp, res;
+		for (size_t i = 0; i < 3; i++)
+		{
+			for (size_t j = 0; j < 3; j++)
+			{
+				for (size_t newI = 0; newI < 3; newI++)
+				{
+					for (size_t newJ = 0; newJ < 3; newJ++)
+					{
+						if (i != newI && j != newJ)
+						{
+							tmp.push(m_elements[newI * 3 + newJ]);
+						}
+					}
+				}
+				res[i * 3 + j] = std::pow(-1, i + j) * Matrix<T, 2, 2>(tmp).Determinant();
+			}
+		}
+		return Matrix<T, 3, 3>(res);
+	}
+
+	template <typename T>
+	template <typename U>
+	Matrix<U, 3, 3> Matrix<T, 3, 3>::CastTo() const
+	{
+		return Matrix<U, 3, 3>(static_cast<U>(m_elements[0]), static_cast<U>(m_elements[1]), static_cast<U>(m_elements[2]), static_cast<U>(m_elements[3]), static_cast<U>(m_elements[4]), static_cast<U>(m_elements[5]), static_cast<U>(m_elements[6]), static_cast<U>(m_elements[7])), static_cast<U>(m_elements[8]);
+	}
+
+
+	template <typename T>
+	Matrix<T, 3, 3>& Matrix<T, 3, 3>::operator=(const Matrix<T, 3, 3>& m)
+	{
+		Set(m);
+		return (*this);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3>& Matrix<T, 3, 3>::operator+=(const Matrix<T, 3, 3>& m)
+	{
+		IAdd(m);
+		return (*this);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3>& Matrix<T, 3, 3>::operator+=(T s)
+	{
+		IAdd(s);
+		return (*this);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3>& Matrix<T, 3, 3>::operator-=(const Matrix<T, 3, 3>& m)
+	{
+		ISub(m);
+		return (*this);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3>& Matrix<T, 3, 3>::operator-=(T s)
+	{
+		ISub(s);
+		return (*this);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3>& Matrix<T, 3, 3>::operator*=(const Matrix<T, 3, 3>& m)
+	{
+		IMul(m);
+		return (*this);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3>& Matrix<T, 3, 3>::operator*=(T s)
+	{
+		IMul(s);
+		return (*this);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3>& Matrix<T, 3, 3>::operator/=(T s)
+	{
+		IDiv(s);
+		return (*this);
+	}
+
+	template <typename T>
+	T& Matrix<T, 3, 3>::operator[](size_t i)
+	{
+		return m_elements[i];
+	}
+
+	template <typename T>
+	const T& Matrix<T, 3, 3>::operator[](size_t i) const
+	{
+		return m_elements[i];
+	}
+
+	template <typename T>
+	T& Matrix<T, 3, 3>::operator()(size_t i, size_t j)
+	{
+		return m_elements[i * 3 + j];
+	}
+
+	template <typename T>
+	const T& Matrix<T, 3, 3>::operator()(size_t i, size_t j) const
+	{
+		return m_elements[i * 3 + j];
+	}
+
+	template <typename T>
+	bool Matrix<T, 3, 3>::operator==(const Matrix& m) const
+	{
+		for (size_t i = 0; i < 9; i++)
+		{
+			if (m_elements[i] != m.m_elements[i])
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+
+	template <typename T>
+	bool Matrix<T, 3, 3>::operator!=(const Matrix& m) const
+	{
+		return !((*this) == m);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3> Matrix<T, 3, 3>::MakeZero()
+	{
+		return Matrix<T, 3, 3>(0, 0, 0, 0, 0, 0, 0, 0, 0);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3> Matrix<T, 3, 3>::MakeIdentity()
+	{
+		return Matrix<T, 3, 3>(1, 0, 0, 0, 1, 0, 0, 0, 1);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3> Matrix<T, 3, 3>::MakeScaleMatrix(T sx, T sy, T sz)
+	{
+		return Matrix<T, 3, 3>(sx, 0, 0, 0, sy, 0, 0, 0, sz);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3> Matrix<T, 3, 3>::MakeScaleMatrix(const Vector3<T>& s)
+	{
+		return MakeScaleMatrix(s.x, s.y, s.z);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3> Matrix<T, 3, 3>::MakeRotationMatrix(const Vector3<T>& axis, const T rad)
+	{
+		return Matrix<T, 3, 3>(cos(rad) + axis.x * axis.x * (1 - cos(rad)), axis.x * axis.y * (1 - cos(rad)) - axis.z * sin(rad), axis.x * axis.z * (1 - cos(rad)) + axis.y * sin(rad),
+							   axis.y * axis.x * (1 - cos(rad)) + axis.z * sin(rad), cos(rad) + axis.y * axis.y * (1 - cos(rad)), axis.y * axis.z * (1 - cos(rad)) - axis.x * sin(rad),
+							   axis.z * axis.x * (1-cos(rad)) - axis.y * sin(rad), axis.z * axis.y * (1 - cos(rad)) + axis.x * sin(rad), cos(rad) + axis.z * axis.z * (1 - cos(rad)));
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3> operator-(const Matrix<T, 3, 3>& a)
+	{
+		return (*this) * -1;
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3> operator+(const Matrix<T, 3, 3>& a, const Matrix<T, 3, 3>& b)
+	{
+		return a.Add(b);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3> operator+(const Matrix<T, 3, 3>& a, const T b)
+	{
+		return a.Add(b);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3> operator+(const T a, const Matrix<T, 3, 3>& b)
+	{
+		return b.Add(a);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3> operator-(const Matrix<T, 3, 3>& a, const Matrix<T, 3, 3>& b)
+	{
+		return a.Sub(b);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3> operator-(const Matrix<T, 3, 3>& a, const T b)
+	{
+		return a.Sub(b);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3> operator-(const T a, const Matrix<T, 3, 3>& b)
+	{
+		return b.Rsub(a);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3> operator*(const Matrix<T, 3, 3>& a, const T b)
+	{
+		return a.Mul(Matrix<T, 3, 3>(b));
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3> operator*(const Matrix<T, 3, 3>& a, const Vector3<T>& b)
+	{
+		return a.Mul(b);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3> operator*(const T a, const Matrix<T, 3, 3>& b)
+	{
+		return b.RMul(Matrix<T, 3, 3>(a));
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3> operator*(const Matrix<T, 3, 3>& a, const Matrix<T, 3, 3>& b)
+	{
+		return a.Mul(b);
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3> operator/(const Matrix<T, 3, 3>& a, T b)
+	{
+		return a.Div(Matrix<T, 3, 3>(b));
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3> operator/(T a, const Matrix<T, 3, 3>& b)
+	{
+		return b.RDiv(Matrix<T, 3, 3>(a));
+	}
+}
+

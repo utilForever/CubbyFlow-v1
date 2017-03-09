@@ -156,6 +156,9 @@
     <ClCompile Include="..\Sources\Array\ArrayAccessor1.cpp" />
     <ClCompile Include="..\Sources\Array\ArrayAccessor2.cpp" />
     <ClCompile Include="..\Sources\Array\ArrayAccessor3.cpp" />
+    <ClCompile Include="..\Sources\Matrix\Matrix.cpp" />
+    <ClCompile Include="..\Sources\Matrix\Matrix2x2.cpp" />
+    <ClCompile Include="..\Sources\Matrix\Matrix3x3.cpp" />
     <ClCompile Include="..\Sources\Point\Point.cpp" />
     <ClCompile Include="..\Sources\Point\Point2.cpp" />
     <ClCompile Include="..\Sources\Point\Point3.cpp" />
@@ -164,8 +167,7 @@
     <ClCompile Include="..\Sources\Vector\Vector.cpp" />
     <ClCompile Include="..\Sources\Vector\Vector2.cpp" />
     <ClCompile Include="..\Sources\Vector\Vector3.cpp" />
-    <ClCompile Include="Matrix.cpp" />
-    <ClCompile Include="Matrix2x2.cpp" />
+    <ClCompile Include="Matrix4x4.cpp" />
     <ClCompile Include="Vector4.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -149,10 +149,16 @@
     <ClCompile Include="..\Sources\Utils\MathUtils.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
-    <ClCompile Include="Matrix.cpp">
+    <ClCompile Include="..\Sources\Matrix\Matrix2x2.cpp">
       <Filter>Matrix</Filter>
     </ClCompile>
-    <ClCompile Include="Matrix2x2.cpp">
+    <ClCompile Include="..\Sources\Matrix\Matrix3x3.cpp">
+      <Filter>Matrix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Matrix\Matrix.cpp">
+      <Filter>Matrix</Filter>
+    </ClCompile>
+    <ClCompile Include="Matrix4x4.cpp">
       <Filter>Matrix</Filter>
     </ClCompile>
   </ItemGroup>
