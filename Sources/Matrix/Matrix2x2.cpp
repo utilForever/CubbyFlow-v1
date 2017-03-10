@@ -9,6 +9,7 @@
 #include <Matrix/Matrix2x2.h>
 
 #include <cassert>
+#include <complex.h>
 
 namespace CubbyFlow
 {
@@ -152,20 +153,21 @@ namespace CubbyFlow
 	template <typename T>
 	bool Matrix<T, 2, 2>::IsSimilar(const Matrix<T, 2, 2>& m, double tol = std::numeric_limits<double>::epsilon()) const
 	{
-		for (size_t i = 0; i < 4; i++)
+		for (size_t i = 0; i < 4; ++i)
 		{
-			if (std::fabs(m_elements[i] - m[i]) > epsilon)
+			if (std::fabs(m_elements[i] - m.m_elements[i]) > tol)
 			{
 				return false;
 			}
 		}
+
 		return true;
 	}
 
 	template <typename T>
 	bool Matrix<T, 2, 2>::IsSquare() const
 	{
-
+		return true;
 	}
 
 	template <typename T>
