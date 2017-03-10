@@ -6,24 +6,31 @@
 > Created Time: 2017/03/06
 > Copyright (c) 2017, Dongmin Kim
 *************************************************************************/
-#include<Matrix\Matrix2x2.h>
+#include <Matrix/Matrix2x2.h>
 
 namespace CubbyFlow
 {
 	template <typename T>
-	Matrix<T, 2, 2>::Matrix() : m_elements(1,0,0,1)
+	Matrix<T, 2, 2>::Matrix() :
+		m_elements(1, 0,
+				   0, 1)
 	{
 		// Do nothing
 	}
 
 	template <typename T>
-	Matrix<T, 2, 2>::Matrix(T s) : m_elements(s,s,s,s)
+	Matrix<T, 2, 2>::Matrix(T s) :
+		m_elements(s, s,
+				   s, s)
 	{
 		// Do nothing
 	}
 
 	template <typename T>
-	Matrix<T, 2, 2>::Matrix(T m00, T m01, T m10, T m11) : m_elements(m00, m01, m10, m11)
+	Matrix<T, 2, 2>::Matrix(T m00, T m01,
+							T m10, T m11) :
+		m_elements(m00, m01,
+				   m10, m11)
 	{
 		// Do nothing
 	}
@@ -42,7 +49,9 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	Matrix<T, 2, 2>::Matrix(const T* arr) : m_elements(arr[0], arr[1], arr[2], arr[3])
+	Matrix<T, 2, 2>::Matrix(const T* arr) :
+		m_elements(arr[0], arr[1],
+				   arr[2], arr[3])
 	{
 		// Do nothing
 	}
