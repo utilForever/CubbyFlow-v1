@@ -197,31 +197,51 @@ namespace CubbyFlow
 	template <typename T>
 	Matrix<T, 2, 2> Matrix<T, 2, 2>::Add(T s) const
 	{
-		return Matrix<T, 2, 2>(m_elements[0] + s, m_elements[1] + s, m_elements[2] + s, m_elements[3] + s);
+		return Matrix<T, 2, 2>(
+			m_elements[0] + s,
+			m_elements[1] + s,
+			m_elements[2] + s,
+			m_elements[3] + s);
 	}
 
 	template <typename T>
 	Matrix<T, 2, 2> Matrix<T, 2, 2>::Add(const Matrix<T, 2, 2>& m) const
 	{
-		return Matrix<T, 2, 2>(m_elements[0] + m.m_elements[0], m_elements[1] + m.m_elements[1], m_elements[2] + m.m_elements[2], m_elements[3] + m.m_elements[3]);
+		return Matrix<T, 2, 2>(
+			m_elements[0] + m.m_elements[0],
+			m_elements[1] + m.m_elements[1],
+			m_elements[2] + m.m_elements[2],
+			m_elements[3] + m.m_elements[3]);
 	}
 	
 	template <typename T>
 	Matrix<T, 2, 2> Matrix<T, 2, 2>::Sub(T s) const
 	{
-		return Matrix<T, 2, 2>(m_elements[0] - s, m_elements[1] - s, m_elements[2] - s, m_elements[3] - s);
+		return Matrix<T, 2, 2>(
+			m_elements[0] - s,
+			m_elements[1] - s,
+			m_elements[2] - s,
+			m_elements[3] - s);
 	}
 
 	template <typename T>
 	Matrix<T, 2, 2> Matrix<T, 2, 2>::Sub(const Matrix<T, 2, 2>& m) const
 	{
-		return Matrix<T, 2, 2>(m_elements[0] - m.m_elements[0], m_elements[1] - m.m_elements[1], m_elements[2] - m.m_elements[2], m_elements[3] - m.m_elements[3]);
+		return Matrix<T, 2, 2>(
+			m_elements[0] - m.m_elements[0],
+			m_elements[1] - m.m_elements[1],
+			m_elements[2] - m.m_elements[2],
+			m_elements[3] - m.m_elements[3]);
 	}
 
 	template <typename T>
 	Matrix<T, 2, 2> Matrix<T, 2, 2>::Mul(T s) const
 	{
-		return Matrix<T, 2, 2>(m_elements[0] * s, m_elements[1] * s, m_elements[2] * s, m_elements[3] * s);
+		return Matrix<T, 2, 2>(
+			m_elements[0] * s,
+			m_elements[1] * s,
+			m_elements[2] * s,
+			m_elements[3] * s);
 	}
 
 	template <typename T>
