@@ -59,13 +59,20 @@ namespace CubbyFlow
 	template <typename T>
 	void Matrix<T, 2, 2>::Set(T s)
 	{
-		m_elements(s, s, s, s);
+		m_elements[0] = s;
+		m_elements[1] = s;
+		m_elements[2] = s;
+		m_elements[3] = s;
 	}
 
 	template <typename T>
-	void Matrix<T, 2, 2>::Set(T m00, T m01, T m10, T m11)
+	void Matrix<T, 2, 2>::Set(T m00, T m01,
+							  T m10, T m11)
 	{
-		m_elements(m00, m01, m10, m11);
+		m_elements[0] = m00;
+		m_elements[1] = m01;
+		m_elements[2] = m10;
+		m_elements[3] = m11;
 	}
 
 	template <typename T>
