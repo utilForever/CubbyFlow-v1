@@ -8,6 +8,8 @@
 *************************************************************************/
 #include <Matrix/Matrix2x2.h>
 
+#include <cassert>
+
 namespace CubbyFlow
 {
 	template <typename T>
@@ -79,19 +81,32 @@ namespace CubbyFlow
 	template <typename U>
 	void Matrix<T, 2, 2>::Set(const std::initializer_list<std::initializer_list<U>>& list)
 	{
-		assert(list.size() >= 4);
+		size_t height = list.size();
+		size_t width = (height > 0) ? list.begin()->size() : 0;
 
-		auto inputElem = list.begin();
-		m_elements[0] = static_cast<T>(*inputElem);
-		m_elements[1] = static_cast<T>(*(++inputElem));
-		m_elements[2] = static_cast<T>(*(++inputElem));
-		m_elements[3] = static_cast<T>(*(++inputElem));
+		assert(width == 2);
+		assert(height == 2);
+
+		auto rowIter = list.begin();
+		for (size_t i = 0; i < height; ++i)
+		{
+			assert(width == rowIter->size());
+
+			auto colIter = rowIter->begin();
+			for (size_t j = 0; j < width; ++j)
+			{
+				(*this)(i, j) = static_cast<T>(*colIter);
+				++colIter;
+			}
+
+			++rowIter;
+		}
 	}
 
 	template <typename T>
 	void Matrix<T, 2, 2>::Set(const Matrix<T, 2, 2>& m)
 	{
-		for (size_t i = 0; i < 4; i++)
+		for (size_t i = 0; i < 4; ++i)
 		{
 			m_elements[i] = m[i];
 		}
@@ -100,7 +115,7 @@ namespace CubbyFlow
 	template <typename T>
 	void Matrix<T, 2, 2>::Set(const T* arr)
 	{
-		for (size_t i = 0; i < 4; i++)
+		for (size_t i = 0; i < 4; ++i)
 		{
 			m_elements[i] = arr[i];
 		}
