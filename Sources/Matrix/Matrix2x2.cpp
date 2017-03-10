@@ -138,15 +138,15 @@ namespace CubbyFlow
 	template <typename T>
 	void Matrix<T, 2, 2>::SetRow(size_t i, const Vector2<T>& row)
 	{
-		m_elements[i * 2] = row.m_elements[0]
-		m_elements[i * 2 + 1] = row.m_elements[1];
+		m_elements[i * 2] = row.x;
+		m_elements[i * 2 + 1] = row.y;
 	}
 
 	template <typename T>
 	void Matrix<T, 2, 2>::SetColumn(size_t i, const Vector2<T>& col)
 	{
-		m_elements[i] = col.m_elements[0];
-		m_elements[i + 2] = col.m_elements[1];
+		m_elements[i] = col.x;
+		m_elements[i + 2] = col.y;
 	}
 
 	template <typename T>
