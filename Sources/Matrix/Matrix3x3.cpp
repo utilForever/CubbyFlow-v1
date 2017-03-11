@@ -175,20 +175,21 @@ namespace CubbyFlow
 	template <typename T>
 	bool Matrix<T, 3, 3>::IsSimilar(const Matrix<T, 3, 3>& m, double tol = std::numeric_limits<double>::epsilon()) const
 	{
-		for (size_t i = 0; i < 9; i++)
+		for (size_t i = 0; i < 9; ++i)
 		{
-			if (std::fabs(m_elements[i] - m[i]) > epsilon)
+			if (std::fabs(m_elements[i] - m.m_elements[i]) > tol)
 			{
 				return false;
 			}
 		}
+
 		return true;
 	}
 
 	template <typename T>
 	bool Matrix<T, 3, 3>::IsSquare() const
 	{
-
+		return true;
 	}
 
 	template <typename T>
@@ -206,70 +207,95 @@ namespace CubbyFlow
 	template <typename T>
 	T* Matrix<T, 3, 3>::Data()
 	{
-		return m_elements;
+		return m_elements.data();
 	}
 
 	template <typename T>
 	const T* Matrix<T, 3, 3>::Data() const
 	{
-		return m_elements.begin();
+		return m_elements.data();
 	}
 
 	template <typename T>
 	Matrix<T, 3, 3> Matrix<T, 3, 3>::Add(T s) const
 	{
-		return Matrix<T, 3, 3>(m_elements[0] + s, m_elements[1] + s, m_elements[2] + s, m_elements[3] + s, m_elements[4] + s, m_elements[5] + s, m_elements[6] + s, m_elements[7] + s, m_elements[8] + s);
+		return Matrix<T, 3, 3>(
+			m_elements[0] + s, m_elements[1] + s, m_elements[2] + s,
+			m_elements[3] + s, m_elements[4] + s, m_elements[5] + s,
+			m_elements[6] + s, m_elements[7] + s, m_elements[8] + s);
 	}
 
 	template <typename T>
 	Matrix<T, 3, 3> Matrix<T, 3, 3>::Add(const Matrix<T, 3, 3>& m) const
 	{
-		return Matrix<T, 3, 3>(m_elements[0] + m.m_elements[0], m_elements[1] + m.m_elements[1], m_elements[2] + m.m_elements[2], m_elements[3] + m.m_elements[3], m_elements[4] + m.m_elements[4], m_elements[5] + m.m_elements[5], m_elements[6] + m.m_elements[6], m_elements[7] + m.m_elements[7], m_elements[8] + m.m_elements[8]);
+		return Matrix<T, 3, 3>(
+			m_elements[0] + m.m_elements[0], m_elements[1] + m.m_elements[1], m_elements[2] + m.m_elements[2],
+			m_elements[3] + m.m_elements[3], m_elements[4] + m.m_elements[4], m_elements[5] + m.m_elements[5],
+			m_elements[6] + m.m_elements[6], m_elements[7] + m.m_elements[7], m_elements[8] + m.m_elements[8]);
 	}
 
 	template <typename T>
 	Matrix<T, 3, 3> Matrix<T, 3, 3>::Sub(T s) const
 	{
-		return Matrix<T, 3, 3>(m_elements[0] - s, m_elements[1] - s, m_elements[2] - s, m_elements[3] - s, m_elements[4] - s, m_elements[5] - s, m_elements[6] - s, m_elements[7] - s, m_elements[8] - s);
+		return Matrix<T, 3, 3>(
+			m_elements[0] - s, m_elements[1] - s, m_elements[2] - s,
+			m_elements[3] - s, m_elements[4] - s, m_elements[5] - s,
+			m_elements[6] - s, m_elements[7] - s, m_elements[8] - s);
 	}
 
 	template <typename T>
 	Matrix<T, 3, 3> Matrix<T, 3, 3>::Sub(const Matrix<T, 3, 3>& m) const
 	{
-		return Matrix<T, 3, 3>(m_elements[0] - m.m_elements[0], m_elements[1] - m.m_elements[1], m_elements[2] - m.m_elements[2], m_elements[3] - m.m_elements[3], m_elements[4] - m.m_elements[4], m_elements[5] - m.m_elements[5], m_elements[6] - m.m_elements[6], m_elements[7] - m.m_elements[7], m_elements[8] - m.m_elements[8]);
+		return Matrix<T, 3, 3>(
+			m_elements[0] - m.m_elements[0], m_elements[1] - m.m_elements[1], m_elements[2] - m.m_elements[2],
+			m_elements[3] - m.m_elements[3], m_elements[4] - m.m_elements[4], m_elements[5] - m.m_elements[5],
+			m_elements[6] - m.m_elements[6], m_elements[7] - m.m_elements[7], m_elements[8] - m.m_elements[8]);
 	}
 
 	template <typename T>
 	Matrix<T, 3, 3> Matrix<T, 3, 3>::Mul(T s) const
 	{
-		return Matrix<T, 3, 3>(m_elements[0] * s, m_elements[1] * s, m_elements[2] * s, m_elements[3] * s, m_elements[4] * s, m_elements[5] * s, m_elements[6] * s, m_elements[7] * s, m_elements[8] * s);
+		return Matrix<T, 3, 3>(
+			m_elements[0] * s, m_elements[1] * s, m_elements[2] * s,
+			m_elements[3] * s, m_elements[4] * s, m_elements[5] * s,
+			m_elements[6] * s, m_elements[7] * s, m_elements[8] * s);
 	}
 
 	template <typename T>
 	Vector3<T> Matrix<T, 3, 3>::Mul(const Vector3<T> & v) const
 	{
-		return Vector<T, 3>(v.m_elements[0] * m_elements[0] + v.m_elements[1] * m_elements[3] + v.m_elements[2] * v.m_elements[6], v.m_elements[0] * m_elements[1] + v.m_elements[1] * m_elements[4] + v.m_elements[2] * m_elements[7], v.m_elements[0] * m_elements[2] + v.m_elements[1] * m_elements[5] + v.m_elements[2] * m_elements[8]);
+		return Vector<T, 3>(
+			v.x * m_elements[0] + v.y * m_elements[1] + v.z * m_elements[2],
+			v.x * m_elements[3] + v.y * m_elements[4] + v.z * m_elements[5],
+			v.x * m_elements[6] + v.y * m_elements[7] + v.z * m_elements[8]);
 	}
 
 	template <typename T>
-	Matrix<T, 3, 3> Matrix<T, 3, 3>::Mul(const Matrix<T, 3, 3>& m) const
+	Matrix<T, 3, 3> Matrix<T, 3, 3>::Mul(const Matrix& m) const
 	{
-		assert(m.Cols == 3);
-		std::array<T> tmp;
-		for (size_t i = 0; i < 3; i++)
+		Matrix tmp;
+
+		for (size_t i = 0; i < 3; ++i)
 		{
-			for (size_t j = 0; j < 3; j++)
+			for (size_t j = 0; j < 3; ++j)
 			{
-				tmp[i * 3 + j] = m_elements[i * 3] * m.m_elements[i * 3 + j] + m_elements[i * 3 + 1] * m.m_elements[(i + 1) * 3 + j] + m_elements[i * 3 + 2] * m.m_elements[(i + 2) * 3 + j];
+				tmp.m_elements[i * 3 + j] =
+					m_elements[i * 3] * m.m_elements[i * 3 + j]
+					+ m_elements[i * 3 + 1] * m.m_elements[(i + 1) * 3 + j]
+					+ m_elements[i * 3 + 2] * m.m_elements[(i + 2) * 3 + j];
 			}
 		}
-		return Matrix<T, 3, 3>(tmp);
+
+		return tmp;
 	}
 
 	template <typename T>
 	Matrix<T, 3, 3> Matrix<T, 3, 3>::Div(T s) const
 	{
-		return Matrix<T, 3, 3>(m_elements[0] / s, m_elements[1] / s, m_elements[2] / s, m_elements[3] / s, m_elements[4] / s, m_elements[5] / s, m_elements[6] / s, m_elements[7] / s, m_elements[8] / s);
+		return Matrix(
+			m_elements[0] / s, m_elements[1] / s, m_elements[2] / s,
+			m_elements[3] / s, m_elements[4] / s, m_elements[5] / s,
+			m_elements[6] / s, m_elements[7] / s, m_elements[8] / s);
 	}
 
 	template <typename T>
