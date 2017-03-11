@@ -46,7 +46,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	Matrix<T, 2, 2>::Matrix(const Matrix<T, 2, 2>& m)
+	Matrix<T, 2, 2>::Matrix(const Matrix& m)
 	{
 		Set(m);
 	}
@@ -105,7 +105,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	void Matrix<T, 2, 2>::Set(const Matrix<T, 2, 2>& m)
+	void Matrix<T, 2, 2>::Set(const Matrix& m)
 	{
 		for (size_t i = 0; i < 4; ++i)
 		{
@@ -151,7 +151,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	bool Matrix<T, 2, 2>::IsSimilar(const Matrix<T, 2, 2>& m, double tol = std::numeric_limits<double>::epsilon()) const
+	bool Matrix<T, 2, 2>::IsSimilar(const Matrix& m, double tol = std::numeric_limits<double>::epsilon()) const
 	{
 		for (size_t i = 0; i < 4; ++i)
 		{
@@ -203,7 +203,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	Matrix<T, 2, 2> Matrix<T, 2, 2>::Add(const Matrix<T, 2, 2>& m) const
+	Matrix<T, 2, 2> Matrix<T, 2, 2>::Add(const Matrix& m) const
 	{
 		return Matrix<T, 2, 2>(
 			m_elements[0] + m.m_elements[0], m_elements[1] + m.m_elements[1],
@@ -219,7 +219,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	Matrix<T, 2, 2> Matrix<T, 2, 2>::Sub(const Matrix<T, 2, 2>& m) const
+	Matrix<T, 2, 2> Matrix<T, 2, 2>::Sub(const Matrix& m) const
 	{
 		return Matrix<T, 2, 2>(
 			m_elements[0] - m.m_elements[0], m_elements[1] - m.m_elements[1],
@@ -243,7 +243,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	Matrix<T, 2, 2> Matrix<T, 2, 2>::Mul(const Matrix<T, 2, 2>& m) const
+	Matrix<T, 2, 2> Matrix<T, 2, 2>::Mul(const Matrix& m) const
 	{
 		return Matrix<T, 2, 2>(
 			m_elements[0] * m.m_elements[0] + m_elements[1] * m.m_elements[2],
@@ -269,7 +269,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	Matrix<T, 2, 2> Matrix<T, 2, 2>::RAdd(const Matrix<T, 2, 2>& m) const
+	Matrix<T, 2, 2> Matrix<T, 2, 2>::RAdd(const Matrix& m) const
 	{
 		return Matrix<T, 2, 2>(
 			m.m_elements[0] + m_elements[0], m.m_elements[1] + m_elements[1],
@@ -285,7 +285,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	Matrix<T, 2, 2> Matrix<T, 2, 2>::RSub(const Matrix<T, 2, 2>& m) const
+	Matrix<T, 2, 2> Matrix<T, 2, 2>::RSub(const Matrix& m) const
 	{
 		return Matrix<T, 2, 2>(
 			m.m_elements[0] - m_elements[0], m.m_elements[1] - m_elements[1],
@@ -301,7 +301,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	Matrix<T, 2, 2> Matrix<T, 2, 2>::RMul(const Matrix<T, 2, 2>& m) const
+	Matrix<T, 2, 2> Matrix<T, 2, 2>::RMul(const Matrix& m) const
 	{
 		return m.Mul(*this);
 	}
@@ -324,7 +324,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	void Matrix<T, 2, 2>::IAdd(const Matrix<T, 2, 2>& m)
+	void Matrix<T, 2, 2>::IAdd(const Matrix& m)
 	{
 		m_elements[0] += m.m_elements[0];
 		m_elements[1] += m.m_elements[1];
@@ -342,7 +342,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	void Matrix<T, 2, 2>::ISub(const Matrix<T, 2, 2>& m)
+	void Matrix<T, 2, 2>::ISub(const Matrix& m)
 	{
 		m_elements[0] -= m.m_elements[0];
 		m_elements[1] -= m.m_elements[1];
@@ -360,7 +360,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	void Matrix<T, 2, 2>::IMul(const Matrix<T, 2, 2>& m)
+	void Matrix<T, 2, 2>::IMul(const Matrix& m)
 	{
 		Set(Mul(m));
 	}
@@ -512,14 +512,14 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	Matrix<T, 2, 2>& Matrix<T, 2, 2>::operator=(const Matrix<T, 2, 2>& m)
+	Matrix<T, 2, 2>& Matrix<T, 2, 2>::operator=(const Matrix& m)
 	{
 		Set(m);
 		return *this;
 	}
 
 	template <typename T>
-	Matrix<T, 2, 2>& Matrix<T, 2, 2>::operator+=(const Matrix<T, 2, 2>& m)
+	Matrix<T, 2, 2>& Matrix<T, 2, 2>::operator+=(const Matrix& m)
 	{
 		IAdd(m);
 		return *this;
@@ -533,7 +533,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	Matrix<T, 2, 2>& Matrix<T, 2, 2>::operator-=(const Matrix<T, 2, 2>& m)
+	Matrix<T, 2, 2>& Matrix<T, 2, 2>::operator-=(const Matrix& m)
 	{
 		ISub(m);
 		return *this;
@@ -547,7 +547,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	Matrix<T, 2, 2>& Matrix<T, 2, 2>::operator*=(const Matrix<T, 2, 2>& m)
+	Matrix<T, 2, 2>& Matrix<T, 2, 2>::operator*=(const Matrix& m)
 	{
 		IMul(m);
 		return *this;
