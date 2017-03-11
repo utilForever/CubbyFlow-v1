@@ -6,18 +6,26 @@
 > Created Time: 2017/03/07
 > Copyright (c) 2017, Dongmin Kim
 *************************************************************************/
-#include<Matrix\Matrix3x3.h>
+#include <Matrix/Matrix3x3.h>
+
+#include <cassert>
 
 namespace CubbyFlow
 {
 	template <typename T>
-	Matrix<T, 3, 3>::Matrix() : m_elements(1, 0, 0, 0, 1, 0, 0, 0, 1)
+	Matrix<T, 3, 3>::Matrix() :
+		m_elements(1, 0, 0,
+				   0, 1, 0,
+				   0, 0, 1)
 	{
 		// Do nothing
 	}
 
 	template <typename T>
-	Matrix<T, 3, 3>::Matrix(T s) : m_elements(s, s, s, s, s, s, s, s, s)
+	Matrix<T, 3, 3>::Matrix(T s) :
+		m_elements(s, s, s,
+				   s, s, s,
+				   s, s, s)
 	{
 		// Do nothing
 	}
@@ -25,9 +33,10 @@ namespace CubbyFlow
 	template <typename T>
 	Matrix<T, 3, 3>::Matrix(T m00, T m01, T m02, 
 							T m10, T m11, T m12, 
-							T m20, T m21, T m22) : m_elements(m00, m01, m02, 
-					   									      m10, m11, m12, 
-															  m20, m21, m22)
+							T m20, T m21, T m22) :
+		m_elements(m00, m01, m02, 
+			       m10, m11, m12, 
+				   m20, m21, m22)
 	{
 		// Do nothing
 	}
@@ -46,9 +55,10 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	Matrix<T, 3, 3>::Matrix(const T* arr) : m_elements(arr[0], arr[1], arr[2], 
-													   arr[3], arr[4], arr[5], 
-													   arr[6], arr[7], arr[8])
+	Matrix<T, 3, 3>::Matrix(const T* arr) :
+		m_elements(arr[0], arr[1], arr[2],
+				   arr[3], arr[4], arr[5],
+				   arr[6], arr[7], arr[8])
 	{
 		// Do nothing
 	}
@@ -56,7 +66,15 @@ namespace CubbyFlow
 	template <typename T>
 	void Matrix<T, 3, 3>::Set(T s)
 	{
-		m_elements(s, s, s, s, s, s, s, s, s, s);
+		m_elements[0] = s;
+		m_elements[1] = s;
+		m_elements[2] = s;
+		m_elements[3] = s;
+		m_elements[4] = s;
+		m_elements[5] = s;
+		m_elements[6] = s;
+		m_elements[7] = s;
+		m_elements[8] = s;
 	}
 
 	template <typename T>
@@ -64,37 +82,56 @@ namespace CubbyFlow
 							  T m10, T m11, T m12,
 							  T m20, T m21, T m22)
 	{
-		m_elements(m00, m01, m02, m10, m11, m12, m20, m21, m22);
+		m_elements[0] = m00;
+		m_elements[1] = m01;
+		m_elements[2] = m02;
+		m_elements[3] = m10;
+		m_elements[4] = m11;
+		m_elements[5] = m12;
+		m_elements[6] = m20;
+		m_elements[7] = m21;
+		m_elements[8] = m22;
 	}
 
 	template <typename T>
 	template <typename U>
 	void Matrix<T, 3, 3>::Set(const std::initializer_list<std::initializer_list<U>>& list)
 	{
-		assert(list.size() >= 9);
+		size_t height = list.size();
+		size_t width = (height > 0) ? list.begin()->size() : 0;
 
-		auto inputElem = list.begin();
+		assert(width == 3);
+		assert(height == 3);
 
-		m_elements[0] = static_cast<T>(*inputElem);
-		for (size_t i = 1; i < 9; i++)
+		auto rowIter = list.begin();
+		for (size_t i = 0; i < height; ++i)
 		{
-			m_elements[i] = static_cast<T>(*(++inputElem));
+			assert(width == rowIter->size());
+
+			auto colIter = rowIter->begin();
+			for (size_t j = 0; j < width; ++j)
+			{
+				(*this)(i, j) = static_cast<T>(*colIter);
+				++colIter;
+			}
+
+			++rowIter;
 		}
 	}
 
 	template <typename T>
 	void Matrix<T, 3, 3>::Set(const Matrix<T, 3, 3>& m)
 	{
-		for (size_t i = 0; i < 9; i++)
+		for (size_t i = 0; i < 9; ++i)
 		{
-			m_elements[i] = m[i];
+			m_elements[i] = m.m_elements[i];
 		}
 	}
 
 	template <typename T>
 	void Matrix<T, 3, 3>::Set(const T* arr)
 	{
-		for (size_t i = 0; i < 9; i++)
+		for (size_t i = 0; i < 9; ++i)
 		{
 			m_elements[i] = arr[i];
 		}
@@ -122,17 +159,17 @@ namespace CubbyFlow
 	template <typename T>
 	void Matrix<T, 3, 3>::SetRow(size_t i, const Vector3<T>& row)
 	{
-		m_elements[i * 3] = row.m_elements[0];
-		m_elements[i * 3 + 1] = row.m_elements[1];
-		m_elements[i * 3 + 2] = row.m_elements[2];
+		m_elements[i * 3] = row.x;
+		m_elements[i * 3 + 1] = row.y;
+		m_elements[i * 3 + 2] = row.z;
 	}
 
 	template <typename T>
 	void Matrix<T, 3, 3>::SetColumn(size_t i, const Vector3<T>& col)
 	{
-		m_elements[i] = col.m_elements[0];
-		m_elements[i + 3] = col.m_elements[1];
-		m_elements[i + 6] = col.m_elements[2];
+		m_elements[i] = col.x;
+		m_elements[i + 3] = col.y;
+		m_elements[i + 6] = col.z;
 	}
 
 	template <typename T>
