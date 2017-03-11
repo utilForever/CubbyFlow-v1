@@ -539,56 +539,56 @@ namespace CubbyFlow
 	Matrix<T, 2, 2>& Matrix<T, 2, 2>::operator=(const Matrix<T, 2, 2>& m)
 	{
 		Set(m);
-		return (*this);
+		return *this;
 	}
 
 	template <typename T>
 	Matrix<T, 2, 2>& Matrix<T, 2, 2>::operator+=(const Matrix<T, 2, 2>& m)
 	{
 		IAdd(m);
-		return (*this);
+		return *this;
 	}
 	
 	template <typename T>
 	Matrix<T, 2, 2>& Matrix<T, 2, 2>::operator+=(T s)
 	{
 		IAdd(s);
-		return (*this);
+		return *this;
 	}
 
 	template <typename T>
 	Matrix<T, 2, 2>& Matrix<T, 2, 2>::operator-=(const Matrix<T, 2, 2>& m)
 	{
 		ISub(m);
-		return (*this);
+		return *this;
 	}
 
 	template <typename T>
 	Matrix<T, 2, 2>& Matrix<T, 2, 2>::operator-=(T s)
 	{
 		ISub(s);
-		return (*this);
+		return *this;
 	}
 
 	template <typename T>
 	Matrix<T, 2, 2>& Matrix<T, 2, 2>::operator*=(const Matrix<T, 2, 2>& m)
 	{
 		IMul(m);
-		return (*this);
+		return *this;
 	}
 
 	template <typename T>
 	Matrix<T, 2, 2>& Matrix<T, 2, 2>::operator*=(T s)
 	{
 		IMul(s);
-		return (*this);
+		return *this;
 	}
 
 	template <typename T>
 	Matrix<T, 2, 2>& Matrix<T, 2, 2>::operator/=(T s)
 	{
 		IDiv(s);
-		return (*this);
+		return *this;
 	}
 
 	template <typename T>
@@ -618,20 +618,21 @@ namespace CubbyFlow
 	template <typename T>
 	bool Matrix<T, 2, 2>::operator==(const Matrix& m) const
 	{
-		for (size_t i = 0; i < 4; i++)
+		for (size_t i = 0; i < 4; ++i)
 		{
 			if (m_elements[i] != m.m_elements[i])
 			{
 				return false;
 			}
 		}
+
 		return true;
 	}
 
 	template <typename T>
 	bool Matrix<T, 2, 2>::operator!=(const Matrix& m) const
 	{
-		return !((*this) == m);
+		return !(*this == m);
 	}
 
 	template <typename T>
@@ -655,19 +656,21 @@ namespace CubbyFlow
 	template <typename T>
 	Matrix<T, 2, 2> Matrix<T, 2, 2>::MakeScaleMatrix(const Vector2<T>& s)
 	{
-		return Matrix<T, 2, 2>(s.x, 0, 0, s.y);
+		return MakeScaleMatrix(s.x, s.y);
 	}
 
 	template <typename T>
 	Matrix<T, 2, 2> Matrix<T, 2, 2>::MakeRotationMatrix(const T& rad)
 	{
-		return Matrix<T, 2, 2>(cos(*rad), -sin(*rad), sin(*rad), cos(*rad));
+		return Matrix<T, 2, 2>(
+			std::cos(rad), -std::sin(rad),
+			std::sin(rad),  std::cos(rad));
 	}
 
 	template <typename T>
 	Matrix<T, 2, 2> operator-(const Matrix<T, 2, 2>& a)
 	{
-		return (*this) * -1;
+		return a.Mul(-1);
 	}
 
 	template <typename T>
@@ -685,7 +688,7 @@ namespace CubbyFlow
 	template <typename T>
 	Matrix<T, 2, 2> operator+(const T a, const Matrix<T, 2, 2>& b)
 	{
-		return b.Add(a);
+		return b.RAdd(a);
 	}
 
 	template <typename T>
@@ -703,23 +706,23 @@ namespace CubbyFlow
 	template <typename T>
 	Matrix<T, 2, 2> operator-(const T a, const Matrix<T, 2, 2>& b)
 	{
-		return b.Rsub(a);
+		return b.RSub(a);
 	}
 
 	template <typename T>
 	Matrix<T, 2, 2> operator*(const Matrix<T, 2, 2>& a, const T b)
 	{
-		return a.Mul(Matrix<T, 2, 2>(b));
+		return a.Mul(b);
 	}
 
 	template <typename T>
 	Matrix<T, 2, 2> operator*(const T a, const Matrix<T, 2, 2>& b)
 	{
-		return b.RMul(Matrix<T, 2 ,2>(a));
+		return b.RMul(a);
 	}
 
 	template <typename T>
-	Matrix<T, 2, 2> operator*(const Matrix<T, 2, 2>& a, const Vector2<T>& b)
+	Vector2<T> operator*(const Matrix<T, 2, 2>& a, const Vector2<T>& b)
 	{
 		return a.Mul(b);
 	}
