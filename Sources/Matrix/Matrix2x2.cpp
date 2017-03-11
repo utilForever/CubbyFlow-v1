@@ -247,109 +247,140 @@ namespace CubbyFlow
 	template <typename T>
 	Vector2<T> Matrix<T, 2, 2>::Mul(const Vector2<T> & v) const
 	{
-		return Vector<T, 2>(m_elements[0] * v.m_elements[0] + m_elements[2] * v.m_elements[1], m_elements[1] * v.m_elements[0] + m_elements[3] * v.m_elements[1]);
+		return Vector<T, 2>(
+			m_elements[0] * v.x + m_elements[1] * v.y,
+			m_elements[2] * v.x + m_elements[3] * v.y);
 	}
 
 	template <typename T>
 	Matrix<T, 2, 2> Matrix<T, 2, 2>::Mul(const Matrix<T, 2, 2>& m) const
 	{
-		assert(m.Cols == 2);
-		return Matrix<T, 2, 2>(m_elements[0] * m.m_elements[0] + m_elements[1] * m.m_elements[2], m_elements[0] * m.m_elements[1] + m_elements[1] * m.m_elements[3], m_elements[2] * m.m_elements[0] + m_elements[3] * m.m_elements[2], m_elements[2] * m.m_elements[1] + m_elements[3] * m.m_elements[3]);
+		return Matrix<T, 2, 2>(
+			m_elements[0] * m.m_elements[0] + m_elements[1] * m.m_elements[2],
+			m_elements[0] * m.m_elements[1] + m_elements[1] * m.m_elements[3],
+			m_elements[2] * m.m_elements[0] + m_elements[3] * m.m_elements[2],
+			m_elements[2] * m.m_elements[1] + m_elements[3] * m.m_elements[3]);
 	}
 
 	template <typename T>
 	Matrix<T, 2, 2> Matrix<T, 2, 2>::Div(T s) const
 	{
-		return Matrix<T, 2, 2>(m_elements[0] / s, m_elements[1] / s, m_elements[2] / s, m_elements[3] / s);
-
+		return Matrix<T, 2, 2>(
+			m_elements[0] / s,
+			m_elements[1] / s,
+			m_elements[2] / s,
+			m_elements[3] / s);
 	}
 
 	template <typename T>
 	Matrix<T, 2, 2> Matrix<T, 2, 2>::RAdd(T s) const
 	{
-		return Matrix<T, 2, 2>(m_elements[0] + s, m_elements[1] + s, m_elements[2] + s, m_elements[3] + s);
+		return Matrix<T, 2, 2>(
+			s + m_elements[0],
+			s + m_elements[1],
+			s + m_elements[2],
+			s + m_elements[3]);
 	}
 
 	template <typename T>
 	Matrix<T, 2, 2> Matrix<T, 2, 2>::RAdd(const Matrix<T, 2, 2>& m) const
 	{
-		return Matrix<T, 2, 2>(m_elements[0] + m.m_elements[0], m_elements[1] + m.m_elements[1], m_elements[2] + m.m_elements[2], m_elements[3] + m.m_elements[3]);
+		return Matrix<T, 2, 2>(
+			m.m_elements[0] + m_elements[0],
+			m.m_elements[1] + m_elements[1],
+			m.m_elements[2] + m_elements[2],
+			m.m_elements[3] + m_elements[3]);
 	}
 
 	template <typename T>
 	Matrix<T, 2, 2> Matrix<T, 2, 2>::RSub(T s) const
 	{
-		return Matrix<T, 2, 2>(s - m_elements[0], s - m_elements[1], s - m_elements[2], s - m_elements[3]);
+		return Matrix<T, 2, 2>(
+			s - m_elements[0],
+			s - m_elements[1],
+			s - m_elements[2],
+			s - m_elements[3]);
 	}
 
 	template <typename T>
 	Matrix<T, 2, 2> Matrix<T, 2, 2>::RSub(const Matrix<T, 2, 2>& m) const
 	{
-		return Matrix<T, 2, 2>(m.m_elements[0] - m_elements[0], m.m_elements[1] - m_elements[1], m.m_elements[2] - m_elements[2], m.m_elements[3] - m_elements[3]);
+		return Matrix<T, 2, 2>(
+			m.m_elements[0] - m_elements[0],
+			m.m_elements[1] - m_elements[1],
+			m.m_elements[2] - m_elements[2],
+			m.m_elements[3] - m_elements[3]);
 	}
 
 	template <typename T>
 	Matrix<T, 2, 2> Matrix<T, 2, 2>::RMul(T s) const
 	{
-		return Matrix<T, 2, 2>(s * m_elements[0], s * m_elements[1], s * m_elements[2], s * m_elements[3]);
+		return Matrix<T, 2, 2>(
+			s * m_elements[0],
+			s * m_elements[1],
+			s * m_elements[2],
+			s * m_elements[3]);
 	}
 
 	template <typename T>
 	Matrix<T, 2, 2> Matrix<T, 2, 2>::RMul(const Matrix<T, 2, 2>& m) const
 	{
-		assert(m.Cols == 2);
-		return Matrix<T, 2, 2>(m.m_elements[0] * m_elements[0] + m.m_elements[1] * m_elements[2], m.m_elements[0] * m_elements[1] + m.m_elements[1] * m_elements[3], m.m_elements[2] * m_elements[0] + m.m_elements[3] * m_elements[2], m.m_elements[2] * m_elements[1] + m.m_elements[3] * m_elements[3]);
+		return m.Mul(*this);
 	}
 
 	template <typename T>
 	Matrix<T, 2, 2> Matrix<T, 2, 2>::RDiv(T s) const
 	{
-		return Matrix<T, 2, 2>(s / m_elements[0], s / m_elements[1], s / m_elements[2], s / m_elements[3]);
+		return Matrix<T, 2, 2>(
+			s / m_elements[0],
+			s / m_elements[1],
+			s / m_elements[2],
+			s / m_elements[3]);
 	}
 
 	template <typename T>
 	void Matrix<T, 2, 2>::IAdd(T s)
 	{
-		for (size_t i = 0; i < 4; i++)
-		{
-			m_elements[i] += s;
-		}
+		m_elements[0] += s;
+		m_elements[1] += s;
+		m_elements[2] += s;
+		m_elements[3] += s;
 	}
 
 	template <typename T>
 	void Matrix<T, 2, 2>::IAdd(const Matrix<T, 2, 2>& m)
 	{
-		for (size_t i = 0; i < 4; i++)
-		{
-			m_elements[i] += m.m_elements[i];
-		}
+		m_elements[0] += m.m_elements[0];
+		m_elements[1] += m.m_elements[1];
+		m_elements[2] += m.m_elements[2];
+		m_elements[3] += m.m_elements[3];
 	}
 
 	template <typename T>
 	void Matrix<T, 2, 2>::ISub(T s)
 	{
-		for (size_t i = 0; i < 4; i++)
-		{
-			m_elements[i] -= s;
-		}
+		m_elements[0] -= s;
+		m_elements[1] -= s;
+		m_elements[2] -= s;
+		m_elements[3] -= s;
 	}
 
 	template <typename T>
 	void Matrix<T, 2, 2>::ISub(const Matrix<T, 2, 2>& m)
 	{
-		for (size_t i = 0; i < 4; i++)
-		{
-			m_elements[i] -= m.m_elements[i];
-		}
+		m_elements[0] -= m.m_elements[0];
+		m_elements[1] -= m.m_elements[1];
+		m_elements[2] -= m.m_elements[2];
+		m_elements[3] -= m.m_elements[3];
 	}
 
 	template <typename T>
 	void Matrix<T, 2, 2>::IMul(T s)
 	{
-		for (size_t i = 0; i < 4; i++)
-		{
-			m_elements[i] *= s;
-		}
+		m_elements[0] *= s;
+		m_elements[1] *= s;
+		m_elements[2] *= s;
+		m_elements[3] *= s;
 	}
 
 	template <typename T>
@@ -361,10 +392,10 @@ namespace CubbyFlow
 	template <typename T>
 	void Matrix<T, 2, 2>::IDiv(T s)
 	{
-		for (size_t i = 0; i < 4; i++)
-		{
-			m_elements[i] /= s;
-		}
+		m_elements[0] /= s;
+		m_elements[1] /= s;
+		m_elements[2] /= s;
+		m_elements[3] /= s;
 	}
 
 	template <typename T>
