@@ -732,5 +732,17 @@ namespace CubbyFlow
 	{
 		return a.Mul(b);
 	}
+
+	template <typename T>
+	Matrix<T, 2, 2> operator/(const Matrix<T, 2, 2>& a, T b)
+	{
+		return a.Div(b);
+	}
+
+	template <typename T>
+	Matrix<T, 2, 2> operator/(T a, const Matrix<T, 2, 2>& b)
+	{
+		return b.RDiv(a);
+	}
 }
 
