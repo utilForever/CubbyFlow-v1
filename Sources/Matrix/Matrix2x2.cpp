@@ -407,8 +407,7 @@ namespace CubbyFlow
 	template <typename T>
 	void Matrix<T, 2, 2>::Invert()
 	{
-		assert(Determinant());
-		Set(Matrix<T, 2, 2>(m_elements[3], -m_elements[1], -m_elements[2], m_elements[1]) / Determinant();
+		Set(Matrix(m_elements[3], -m_elements[1], -m_elements[2], m_elements[1]) / Determinant());
 	}
 
 	template <typename T>
@@ -426,7 +425,7 @@ namespace CubbyFlow
 	template <typename T>
 	T Matrix<T, 2, 2>::Min() const
 	{
-		return std::min_element(m_elements.begin(), m_elements.end()));
+		return std::min_element(m_elements.begin(), m_elements.end());
 	}
 
 	template <typename T>
@@ -438,12 +437,14 @@ namespace CubbyFlow
 	template <typename T>
 	T Matrix<T, 2, 2>::AbsMin() const
 	{
+		// TODO: Consider T is integral type.
 		return std::min({ std::fabs(m_elements[0]), std::fabs(m_elements[1]), std::fabs(m_elements[2]), std::fabs(m_elements[3]) });
 	}
 
 	template <typename T>
 	T Matrix<T, 2, 2>::AbsMax() const
 	{
+		// TODO: Consider T is integral type.
 		return std::max({ std::fabs(m_elements[0]), std::fabs(m_elements[1]), std::fabs(m_elements[2]), std::fabs(m_elements[3]) });
 	}
 
@@ -462,58 +463,77 @@ namespace CubbyFlow
 	template <typename T>
 	Matrix<T, 2, 2> Matrix<T, 2, 2>::Diagonal() const
 	{
-		return Matrix<T, 2, 2>(m_elements[0], 0, 0, m_elements[3]);
+		return Matrix<T, 2, 2>(
+			m_elements[0], 0,
+			0, m_elements[3]);
 	}
 
 	template <typename T>
 	Matrix<T, 2, 2> Matrix<T, 2, 2>::OffDiagonal() const
 	{
-		return Matrix<T, 2, 2>(0, m_elements[1], m_elements[2], 0);
+		return Matrix<T, 2, 2>(
+			0, m_elements[1],
+			m_elements[2], 0);
 	}
 
 	template <typename T>
 	Matrix<T, 2, 2> Matrix<T, 2, 2>::StrictLowerTriangle() const
 	{
-		return Matrix<T, 2, 2>(0, 0, m_elements[2], 0);
+		return Matrix<T, 2, 2>(
+			0, 0,
+			m_elements[2], 0);
 	}
 
 	template <typename T>
 	Matrix<T, 2, 2> Matrix<T, 2, 2>::StrictUpperTriangle() const
 	{
-		return Matrix<T, 2, 2>(0, m_elements[1], 0, 0);
+		return Matrix<T, 2, 2>(
+			0, m_elements[1],
+			0, 0);
 	}
 
 	template <typename T>
 	Matrix<T, 2, 2> Matrix<T, 2, 2>::LowerTriangle() const
 	{
-		return Matrix<T, 2, 2>(m_elements[0], 0, m_elements[2], m_elements[3]);
+		return Matrix<T, 2, 2>(
+			m_elements[0], 0,
+			m_elements[2], m_elements[3]);
 	}
 
 	template <typename T>
 	Matrix<T, 2, 2> Matrix<T, 2, 2>::UpperTriangle() const
 	{
-		return Matrix<T, 2, 2>(m_elements[0], m_elements[1], 0, m_elements[3]);
+		return Matrix<T, 2, 2>(
+			m_elements[0], m_elements[1],
+			0, m_elements[3]);
 	}
 
 	template <typename T>
 	Matrix<T, 2, 2> Matrix<T, 2, 2>::Transposed() const
 	{
-		return Matrix<T, 2, 2>(m_elements[0], m_elements[2], m_elements[1], m_elements[3]);
+		return Matrix<T, 2, 2>(
+			m_elements[0], m_elements[2],
+			m_elements[1], m_elements[3]);
 	}
 
 	template <typename T>
 	Matrix<T, 2, 2> Matrix<T, 2, 2>::Inverse() const
 	{
-		return Matrix<T, 2, 2>(m_elements[3], -m_elements[2], -m_elements[1], m_elements[0]) / Determinant();
+		Matrix m(*this);
+		m.Invert();
+		return m;
 	}
 
 	template <typename T>
 	template <typename U>
 	Matrix<U, 2, 2> Matrix<T, 2, 2>::CastTo() const
 	{
-		return Matrix<U, 2, 2>(static_cast<U>(m_elements[0]), static_cast<U>(m_elements[1]), static_cast<U>(m_elements[2]), static_cast<U>(m_elements[3]));
+		return Matrix<U, 2, 2>(
+			static_cast<U>(m_elements[0]),
+			static_cast<U>(m_elements[1]),
+			static_cast<U>(m_elements[2]),
+			static_cast<U>(m_elements[3]));
 	}
-
 
 	template <typename T>
 	Matrix<T, 2, 2>& Matrix<T, 2, 2>::operator=(const Matrix<T, 2, 2>& m)
