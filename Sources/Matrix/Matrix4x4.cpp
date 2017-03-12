@@ -582,6 +582,7 @@ namespace CubbyFlow
 	template <typename T>
 	T Matrix<T, 4, 4>::AbsMin() const
 	{
+		// TODO: Consider T is integral type.
 		return std::min({ 
 			std::fabs(m_elements[0]), std::fabs(m_elements[1]), std::fabs(m_elements[2]), std::fabs(m_elements[3]), 
 			std::fabs(m_elements[4]), std::fabs(m_elements[5]), std::fabs(m_elements[6]), std::fabs(m_elements[7]), 
@@ -592,6 +593,7 @@ namespace CubbyFlow
 	template <typename T>
 	T Matrix<T, 4, 4>::AbsMax() const
 	{
+		// TODO: Consider T is integral type.
 		return std::max({
 			std::fabs(m_elements[0]), std::fabs(m_elements[1]), std::fabs(m_elements[2]), std::fabs(m_elements[3]),
 			std::fabs(m_elements[4]), std::fabs(m_elements[5]), std::fabs(m_elements[6]), std::fabs(m_elements[7]),
