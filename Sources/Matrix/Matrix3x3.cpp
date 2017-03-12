@@ -49,7 +49,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	Matrix<T, 3, 3>::Matrix(const Matrix<T, 3, 3>& m)
+	Matrix<T, 3, 3>::Matrix(const Matrix& m)
 	{
 		Set(m);
 	}
@@ -120,7 +120,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	void Matrix<T, 3, 3>::Set(const Matrix<T, 3, 3>& m)
+	void Matrix<T, 3, 3>::Set(const Matrix& m)
 	{
 		for (size_t i = 0; i < 9; ++i)
 		{
@@ -173,7 +173,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	bool Matrix<T, 3, 3>::IsSimilar(const Matrix<T, 3, 3>& m, double tol = std::numeric_limits<double>::epsilon()) const
+	bool Matrix<T, 3, 3>::IsSimilar(const Matrix& m, double tol = std::numeric_limits<double>::epsilon()) const
 	{
 		for (size_t i = 0; i < 9; ++i)
 		{
@@ -226,7 +226,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	Matrix<T, 3, 3> Matrix<T, 3, 3>::Add(const Matrix<T, 3, 3>& m) const
+	Matrix<T, 3, 3> Matrix<T, 3, 3>::Add(const Matrix& m) const
 	{
 		return Matrix<T, 3, 3>(
 			m_elements[0] + m.m_elements[0], m_elements[1] + m.m_elements[1], m_elements[2] + m.m_elements[2],
@@ -244,7 +244,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	Matrix<T, 3, 3> Matrix<T, 3, 3>::Sub(const Matrix<T, 3, 3>& m) const
+	Matrix<T, 3, 3> Matrix<T, 3, 3>::Sub(const Matrix& m) const
 	{
 		return Matrix<T, 3, 3>(
 			m_elements[0] - m.m_elements[0], m_elements[1] - m.m_elements[1], m_elements[2] - m.m_elements[2],
@@ -301,67 +301,76 @@ namespace CubbyFlow
 	template <typename T>
 	Matrix<T, 3, 3> Matrix<T, 3, 3>::RAdd(T s) const
 	{
-		return Matrix<T, 3, 3>(m_elements[0] + s, m_elements[1] + s, m_elements[2] + s, m_elements[3] + s, m_elements[4] + s, m_elements[5] + s, m_elements[6] + s, m_elements[7] + s, m_elements[8] + s);
+		return Matrix<T, 3, 3>(
+			s + m_elements[0], s + m_elements[1], s + m_elements[2],
+			s + m_elements[3], s + m_elements[4], s + m_elements[5],
+			s + m_elements[6], s + m_elements[7], s + m_elements[8]);
 	}
 
 	template <typename T>
-	Matrix<T, 3, 3> Matrix<T, 3, 3>::RAdd(const Matrix<T, 3, 3>& m) const
+	Matrix<T, 3, 3> Matrix<T, 3, 3>::RAdd(const Matrix& m) const
 	{
-		return Matrix<T, 3, 3>(m_elements[0] + m.m_elements[0], m_elements[1] + m.m_elements[1], m_elements[2] + m.m_elements[2], m_elements[3] + m.m_elements[3], m_elements[4] + m.m_elements[4], m_elements[5] + m.m_elements[5], m_elements[6] + m.m_elements[6], m_elements[7] + m.m_elements[7], m_elements[8] + m.m_elements[8]);
+		return Matrix<T, 3, 3>(
+			m.m_elements[0] + m_elements[0], m.m_elements[1] + m_elements[1], m.m_elements[2] + m_elements[2],
+			m.m_elements[3] + m_elements[3], m.m_elements[4] + m_elements[4], m.m_elements[5] + m_elements[5],
+			m.m_elements[6] + m_elements[6], m.m_elements[7] + m_elements[7], m.m_elements[8] + m_elements[8]);
 	}
 
 	template <typename T>
 	Matrix<T, 3, 3> Matrix<T, 3, 3>::RSub(T s) const
 	{
-		return Matrix<T, 3, 3>(s - m_elements[0], s - m_elements[1], s - m_elements[2], s - m_elements[3], s - m_elements[4], s - m_elements[5], s - m_elements[6], s - m_elements[7], s - m_elements[8]);
+		return Matrix<T, 3, 3>(
+			s - m_elements[0], s - m_elements[1], s - m_elements[2],
+			s - m_elements[3], s - m_elements[4], s - m_elements[5],
+			s - m_elements[6], s - m_elements[7], s - m_elements[8]);
 	}
 
 	template <typename T>
-	Matrix<T, 3, 3> Matrix<T, 3, 3>::RSub(const Matrix<T, 3, 3>& m) const
+	Matrix<T, 3, 3> Matrix<T, 3, 3>::RSub(const Matrix& m) const
 	{
-		return Matrix<T, 3, 3>(m.m_elements[0] - m_elements[0], m.m_elements[1] - m_elements[1], m.m_elements[2] - m_elements[2], m.m_elements[3] - m_elements[3], m.m_elements[4] - m_elements[4], m.m_elements[5] - m_elements[5], m.m_elements[6] - m_elements[6], m.m_elements[7] - m_elements[7], m.m_elements[8] - m_elements[8]);
+		return Matrix<T, 3, 3>(
+			m.m_elements[0] - m_elements[0], m.m_elements[1] - m_elements[1], m.m_elements[2] - m_elements[2],
+			m.m_elements[3] - m_elements[3], m.m_elements[4] - m_elements[4], m.m_elements[5] - m_elements[5],
+			m.m_elements[6] - m_elements[6], m.m_elements[7] - m_elements[7], m.m_elements[8] - m_elements[8]);
 	}
 
 	template <typename T>
 	Matrix<T, 3, 3> Matrix<T, 3, 3>::RMul(T s) const
 	{
-		return Mul(s);
+		return Matrix<T, 3, 3>(
+			s * m_elements[0], s * m_elements[1], s * m_elements[2],
+			s * m_elements[3], s * m_elements[4], s * m_elements[5],
+			s * m_elements[6], s * m_elements[7], s * m_elements[8]);
 	}
 
 	template <typename T>
-	Matrix<T, 3, 3> Matrix<T, 3, 3>::RMul(const Matrix<T, 3, 3>& m) const
+	Matrix<T, 3, 3> Matrix<T, 3, 3>::RMul(const Matrix& m) const
 	{
-		assert(m.Cols == 3);
-		std::array<T> tmp;
-		for (size_t i = 0; i < 3; i++)
-		{
-			for (size_t j = 0; j < 3; j++)
-			{
-				tmp[i * 3 + j] = m.m_elements[i * 3] * m_elements[i * 3 + j] + m.m_elements[i * 3 + 1] * m_elements[(i+1) * 3 + j] + m.m_elements[i * 3 + 2] * m_elements[(i+2) * 3 + j];
-			}
-		}
-		return Matrix<T, 3, 3>(tmp);
+		return m.Mul(*this);
 	}
 
 	template <typename T>
 	Matrix<T, 3, 3> Matrix<T, 3, 3>::RDiv(T s) const
 	{
-		return Matrix<T, 3, 3>(s / m_elements[0], s / m_elements[1], s / m_elements[2], s / m_elements[3], s / m_elements[4], s / m_elements[5], s / m_elements[6], s / m_elements[7], s / m_elements[8]);
+		return Matrix<T, 3, 3>(
+			s / m_elements[0], s / m_elements[1], s / m_elements[2],
+			s / m_elements[3], s / m_elements[4], s / m_elements[5],
+			s / m_elements[6], s / m_elements[7], s / m_elements[8]);
 	}
 
 	template <typename T>
 	void Matrix<T, 3, 3>::IAdd(T s)
 	{
-		for (size_t i = 0; i < 9; i++)
+		for (size_t i = 0; i < 9; ++i)
 		{
 			m_elements[i] += s;
 		}
 	}
 
 	template <typename T>
-	void Matrix<T, 3, 3>::IAdd(const Matrix<T, 3, 3>& m)
+	void Matrix<T, 3, 3>::IAdd(const Matrix& m)
 	{
-		for (size_t i = 0; i < 9; i++)
+		for (size_t i = 0; i < 9; ++i)
 		{
 			m_elements[i] += m.m_elements[i];
 		}
@@ -370,16 +379,16 @@ namespace CubbyFlow
 	template <typename T>
 	void Matrix<T, 3, 3>::ISub(T s)
 	{
-		for (size_t i = 0; i < 9; i++)
+		for (size_t i = 0; i < 9; ++i)
 		{
 			m_elements[i] -= s;
 		}
 	}
 
 	template <typename T>
-	void Matrix<T, 3, 3>::ISub(const Matrix<T, 3, 3>& m)
+	void Matrix<T, 3, 3>::ISub(const Matrix& m)
 	{
-		for (size_t i = 0; i < 9; i++)
+		for (size_t i = 0; i < 9; ++i)
 		{
 			m_elements[i] -= m.m_elements[i];
 		}
@@ -388,14 +397,14 @@ namespace CubbyFlow
 	template <typename T>
 	void Matrix<T, 3, 3>::IMul(T s)
 	{
-		for (size_t i = 0; i < 9; i++)
+		for (size_t i = 0; i < 9; ++i)
 		{
 			m_elements[i] *= s;
 		}
 	}
 
 	template <typename T>
-	void Matrix<T, 3, 3>::IMul(const Matrix<T, 3, 3>& m)
+	void Matrix<T, 3, 3>::IMul(const Matrix& m)
 	{
 		Set(Mul(m));
 	}
@@ -403,7 +412,7 @@ namespace CubbyFlow
 	template <typename T>
 	void Matrix<T, 3, 3>::IDiv(T s)
 	{
-		for (size_t i = 0; i < 9; i++)
+		for (size_t i = 0; i < 9; ++i)
 		{
 			m_elements[i] /= s;
 		}
@@ -420,33 +429,32 @@ namespace CubbyFlow
 	template <typename T>
 	void Matrix<T, 3, 3>::Invert()
 	{
-		assert(Determinant());
-		
-		std::array<T> tmp, res;
-		for (size_t i = 0; i < 3; i++)
-		{
-			for (size_t j = 0; j < 3; j++)
-			{
-				for (size_t newI = 0; newI < 3; newI++)
-				{
-					for (size_t newJ = 0; newJ < 3; newJ++)
-					{
-						if (i != newI && j != newJ)
-						{
-							tmp.push(m_elements[newI * 3 + newJ]);
-						}
-					}
-				}
-				res[i * 3 + j] = std::pow(-1, i + j) * Matrix<T, 2, 2>(tmp).Determinant();
-			}
-		}
-		Set(res);
+		Matrix m;
+		m.m_elements[0] = m_elements[4] * m_elements[8] - m_elements[5] * m_elements[7];
+		m.m_elements[1] = m_elements[2] * m_elements[7] - m_elements[1] * m_elements[8];
+		m.m_elements[2] = m_elements[1] * m_elements[5] - m_elements[2] * m_elements[4];
+		m.m_elements[3] = m_elements[5] * m_elements[6] - m_elements[3] * m_elements[8];
+		m.m_elements[4] = m_elements[0] * m_elements[8] - m_elements[2] * m_elements[6];
+		m.m_elements[5] = m_elements[2] * m_elements[3] - m_elements[0] * m_elements[5];
+		m.m_elements[6] = m_elements[3] * m_elements[7] - m_elements[4] * m_elements[6];
+		m.m_elements[7] = m_elements[1] * m_elements[6] - m_elements[0] * m_elements[7];
+		m.m_elements[8] = m_elements[0] * m_elements[4] - m_elements[1] * m_elements[3];
+
+		m.IDiv(Determinant());
+		Set(m);
 	}
 
 	template <typename T>
 	T Matrix<T, 3, 3>::Sum() const
 	{
-		return (m_elements[0] + m_elements[1] + m_elements[2] + m_elements[3] + m_elements[4] + m_elements[5] + m_elements[6] + m_elements[7] + m_elements[8]);
+		T sum = 0;
+
+		for (int i = 0; i < 9; ++i)
+		{
+			sum += m_elements[i];
+		}
+
+		return sum;
 	}
 
 	template <typename T>
@@ -470,13 +478,21 @@ namespace CubbyFlow
 	template <typename T>
 	T Matrix<T, 3, 3>::AbsMin() const
 	{
-		return std::min({ std::fabs(m_elements[0]), std::fabs(m_elements[1]), std::fabs(m_elements[2]), std::fabs(m_elements[3]), std::fabs(m_elements[4]), std::fabs(m_elements[5]), std::fabs(m_elements[6]), std::fabs(m_elements[7]), std::fabs(m_elements[8]) });
+		// TODO: Consider T is integral type.
+		return std::min({
+			std::fabs(m_elements[0]), std::fabs(m_elements[1]), std::fabs(m_elements[2]),
+			std::fabs(m_elements[3]), std::fabs(m_elements[4]), std::fabs(m_elements[5]),
+			std::fabs(m_elements[6]), std::fabs(m_elements[7]), std::fabs(m_elements[8]) });
 	}
 
 	template <typename T>
 	T Matrix<T, 3, 3>::AbsMax() const
 	{
-		return std::max({ std::fabs(m_elements[0]), std::fabs(m_elements[1]), std::fabs(m_elements[2]), std::fabs(m_elements[3]), std::fabs(m_elements[4]), std::fabs(m_elements[5]), std::fabs(m_elements[6]), std::fabs(m_elements[7]), std::fabs(m_elements[8]) });
+		// TODO: Consider T is integral type.
+		return std::max({
+			std::fabs(m_elements[0]), std::fabs(m_elements[1]), std::fabs(m_elements[2]),
+			std::fabs(m_elements[3]), std::fabs(m_elements[4]), std::fabs(m_elements[5]),
+			std::fabs(m_elements[6]), std::fabs(m_elements[7]), std::fabs(m_elements[8]) });
 	}
 
 	template <typename T>
@@ -488,139 +504,153 @@ namespace CubbyFlow
 	template <typename T>
 	T Matrix<T, 3, 3>::Determinant() const
 	{
-		return m_elements[0] * (m_elements[4] * m_elements[8] - m_elements[5] * m_elements[7]) - m_elements[1] * (m_elements[3] * m_elements[8] - m_elements[5] * m_elements[6]) + m_elements[2] * (m_elements[3] * m_elements[7] - m_elements[4] * m_elements[6]);
+		return
+			  m_elements[0] * (m_elements[4] * m_elements[8] - m_elements[5] * m_elements[7])
+			- m_elements[1] * (m_elements[3] * m_elements[8] - m_elements[5] * m_elements[6])
+			+ m_elements[2] * (m_elements[3] * m_elements[7] - m_elements[4] * m_elements[6]);
 	}
 
 	template <typename T>
 	Matrix<T, 3, 3> Matrix<T, 3, 3>::Diagonal() const
 	{
-		return Matrix<T, 3, 3>(m_elements[0], 0, 0, 0, m_elements[4], 0, 0, 0, m_elements[8]);
+		return Matrix<T, 3, 3>(
+			m_elements[0], 0, 0,
+			0, m_elements[4], 0,
+			0, 0, m_elements[8]);
 	}
 
 	template <typename T>
 	Matrix<T, 3, 3> Matrix<T, 3, 3>::OffDiagonal() const
 	{
-		return Matrix<T, 3, 3>(0, m_elements[1], m_elements[2], m_elements[3], 0, m_elements[5], m_elements[6], m_elements[7], 0);
+		return Matrix<T, 3, 3>(
+			0, m_elements[1], m_elements[2],
+			m_elements[3], 0, m_elements[5],
+			m_elements[6], m_elements[7], 0);
 	}
 
 	template <typename T>
 	Matrix<T, 3, 3> Matrix<T, 3, 3>::StrictLowerTriangle() const
 	{
-		return Matrix<T, 3, 3>(0, 0, 0, m_elements[3], 0, 0, m_elements[6], m_elements[7], 0);
+		return Matrix<T, 3, 3>(
+			0, 0, 0,
+			m_elements[3], 0, 0,
+			m_elements[6], m_elements[7], 0);
 	}
 
 	template <typename T>
 	Matrix<T, 3, 3> Matrix<T, 3, 3>::StrictUpperTriangle() const
 	{
-		return Matrix<T, 3, 3>(0, m_elements[1], m_elements[2], 0, 0, m_elements[5], 0, 0, 0);
+		return Matrix<T, 3, 3>(
+			0, m_elements[1], m_elements[2],
+			0, 0, m_elements[5],
+			0, 0, 0);
 	}
 
 	template <typename T>
 	Matrix<T, 3, 3> Matrix<T, 3, 3>::LowerTriangle() const
 	{
-		return Matrix<T, 3, 3>(m_elements[0], 0, 0, m_elements[3], m_elements[4], 0, m_elements[6], m_elements[7], m_elements[8]);
+		return Matrix<T, 3, 3>(
+			m_elements[0], 0, 0,
+			m_elements[3], m_elements[4], 0,
+			m_elements[6], m_elements[7], m_elements[8]);
 	}
 
 	template <typename T>
 	Matrix<T, 3, 3> Matrix<T, 3, 3>::UpperTriangle() const
 	{
-		return Matrix<T, 3, 3>(m_elements[0], m_elements[1], m_elements[2], 0, m_elements[4], m_elements[5], 0, 0, m_elements[8]);
+		return Matrix<T, 3, 3>(
+			m_elements[0], m_elements[1], m_elements[2],
+			0, m_elements[4], m_elements[5],
+			0, 0, m_elements[8]);
 	}
 
 	template <typename T>
 	Matrix<T, 3, 3> Matrix<T, 3, 3>::Transposed() const
 	{
-		return Matrix<T, 3, 3>(m_elements[0], m_elements[3], m_elements[6], m_elements[1], m_elements[4], m_elements[7], m_elements[2], m_elements[5], m_elements[8]);
+		return Matrix<T, 3, 3>(
+			m_elements[0], m_elements[3], m_elements[6],
+			m_elements[1], m_elements[4], m_elements[7],
+			m_elements[2], m_elements[5], m_elements[8]);
 	}
 
 	template <typename T>
 	Matrix<T, 3, 3> Matrix<T, 3, 3>::Inverse() const
 	{
-		assert(Determinant());
-
-		std::array<T> tmp, res;
-		for (size_t i = 0; i < 3; i++)
-		{
-			for (size_t j = 0; j < 3; j++)
-			{
-				for (size_t newI = 0; newI < 3; newI++)
-				{
-					for (size_t newJ = 0; newJ < 3; newJ++)
-					{
-						if (i != newI && j != newJ)
-						{
-							tmp.push(m_elements[newI * 3 + newJ]);
-						}
-					}
-				}
-				res[i * 3 + j] = std::pow(-1, i + j) * Matrix<T, 2, 2>(tmp).Determinant();
-			}
-		}
-		return Matrix<T, 3, 3>(res);
+		Matrix m(*this);
+		m.Invert();
+		return m;
 	}
 
 	template <typename T>
 	template <typename U>
 	Matrix<U, 3, 3> Matrix<T, 3, 3>::CastTo() const
 	{
-		return Matrix<U, 3, 3>(static_cast<U>(m_elements[0]), static_cast<U>(m_elements[1]), static_cast<U>(m_elements[2]), static_cast<U>(m_elements[3]), static_cast<U>(m_elements[4]), static_cast<U>(m_elements[5]), static_cast<U>(m_elements[6]), static_cast<U>(m_elements[7])), static_cast<U>(m_elements[8]);
+		return Matrix<U, 3, 3>(
+			static_cast<U>(m_elements[0]),
+			static_cast<U>(m_elements[1]),
+			static_cast<U>(m_elements[2]),
+			static_cast<U>(m_elements[3]),
+			static_cast<U>(m_elements[4]),
+			static_cast<U>(m_elements[5]),
+			static_cast<U>(m_elements[6]),
+			static_cast<U>(m_elements[7]),
+			static_cast<U>(m_elements[8]));
 	}
 
-
 	template <typename T>
-	Matrix<T, 3, 3>& Matrix<T, 3, 3>::operator=(const Matrix<T, 3, 3>& m)
+	Matrix<T, 3, 3>& Matrix<T, 3, 3>::operator=(const Matrix& m)
 	{
 		Set(m);
-		return (*this);
-	}
-
-	template <typename T>
-	Matrix<T, 3, 3>& Matrix<T, 3, 3>::operator+=(const Matrix<T, 3, 3>& m)
-	{
-		IAdd(m);
-		return (*this);
+		return *this;
 	}
 
 	template <typename T>
 	Matrix<T, 3, 3>& Matrix<T, 3, 3>::operator+=(T s)
 	{
 		IAdd(s);
-		return (*this);
+		return *this;
 	}
 
 	template <typename T>
-	Matrix<T, 3, 3>& Matrix<T, 3, 3>::operator-=(const Matrix<T, 3, 3>& m)
+	Matrix<T, 3, 3>& Matrix<T, 3, 3>::operator+=(const Matrix& m)
 	{
-		ISub(m);
-		return (*this);
+		IAdd(m);
+		return *this;
 	}
 
 	template <typename T>
 	Matrix<T, 3, 3>& Matrix<T, 3, 3>::operator-=(T s)
 	{
 		ISub(s);
-		return (*this);
+		return *this;
 	}
 
 	template <typename T>
-	Matrix<T, 3, 3>& Matrix<T, 3, 3>::operator*=(const Matrix<T, 3, 3>& m)
+	Matrix<T, 3, 3>& Matrix<T, 3, 3>::operator-=(const Matrix& m)
 	{
-		IMul(m);
-		return (*this);
+		ISub(m);
+		return *this;
 	}
 
 	template <typename T>
 	Matrix<T, 3, 3>& Matrix<T, 3, 3>::operator*=(T s)
 	{
 		IMul(s);
-		return (*this);
+		return *this;
+	}
+
+	template <typename T>
+	Matrix<T, 3, 3>& Matrix<T, 3, 3>::operator*=(const Matrix& m)
+	{
+		IMul(m);
+		return *this;
 	}
 
 	template <typename T>
 	Matrix<T, 3, 3>& Matrix<T, 3, 3>::operator/=(T s)
 	{
 		IDiv(s);
-		return (*this);
+		return *this;
 	}
 
 	template <typename T>
@@ -650,38 +680,48 @@ namespace CubbyFlow
 	template <typename T>
 	bool Matrix<T, 3, 3>::operator==(const Matrix& m) const
 	{
-		for (size_t i = 0; i < 9; i++)
+		for (size_t i = 0; i < 9; ++i)
 		{
 			if (m_elements[i] != m.m_elements[i])
 			{
 				return false;
 			}
 		}
+
 		return true;
 	}
 
 	template <typename T>
 	bool Matrix<T, 3, 3>::operator!=(const Matrix& m) const
 	{
-		return !((*this) == m);
+		return !(*this == m);
 	}
 
 	template <typename T>
 	Matrix<T, 3, 3> Matrix<T, 3, 3>::MakeZero()
 	{
-		return Matrix<T, 3, 3>(0, 0, 0, 0, 0, 0, 0, 0, 0);
+		return Matrix<T, 3, 3>(
+			0, 0, 0,
+			0, 0, 0,
+			0, 0, 0);
 	}
 
 	template <typename T>
 	Matrix<T, 3, 3> Matrix<T, 3, 3>::MakeIdentity()
 	{
-		return Matrix<T, 3, 3>(1, 0, 0, 0, 1, 0, 0, 0, 1);
+		return Matrix<T, 3, 3>(
+			1, 0, 0,
+			0, 1, 0,
+			0, 0, 1);
 	}
 
 	template <typename T>
 	Matrix<T, 3, 3> Matrix<T, 3, 3>::MakeScaleMatrix(T sx, T sy, T sz)
 	{
-		return Matrix<T, 3, 3>(sx, 0, 0, 0, sy, 0, 0, 0, sz);
+		return Matrix<T, 3, 3>(
+			sx, 0, 0,
+			0, sy, 0,
+			0, 0, sz);
 	}
 
 	template <typename T>
