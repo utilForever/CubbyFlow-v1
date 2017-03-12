@@ -389,7 +389,14 @@ namespace CubbyFlow
 	template <typename T>
 	T Matrix<T, 2, 2>::Sum() const
 	{
-		return (m_elements[0] + m_elements[1] + m_elements[2] + m_elements[3]);
+		T sum = 0;
+
+		for (int i = 0; i < 4; ++i)
+		{
+			sum += m_elements[i];
+		}
+
+		return sum;
 	}
 
 	template <typename T>
@@ -433,7 +440,9 @@ namespace CubbyFlow
 	template <typename T>
 	T Matrix<T, 2, 2>::Determinant() const
 	{
-		return m_elements[0] * m_elements[3] - m_elements[1] * m_elements[2];
+		return
+			  m_elements[0] * m_elements[3]
+			- m_elements[1] * m_elements[2];
 	}
 
 	template <typename T>
