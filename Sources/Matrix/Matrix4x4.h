@@ -135,7 +135,7 @@ namespace CubbyFlow
 		//! Sets this matrix with input 3x3 matrix.
 		//! This method copies 3x3 part only, and other parts are set to 0
 		//! except (3,3) which will be set to 1.
-		void Set(const Matrix3x3<T>& m33);
+		void Set(const Matrix<T, 3, 3>& m33);
 
 		//! Copies from input matrix.
 		void Set(const Matrix& m);
@@ -242,11 +242,6 @@ namespace CubbyFlow
 		//! Multiplies input scalar to this matrix.
 		void IMul(T s);
 
-		//! Multiplies input 3x3 matrix to this matrix.
-		//! This method assumes missing part of the input matrix has 0 for the
-		//! off-diagonal and 1 for the diagonal part.
-		void IMul(const Matrix3x3<T>& m33);
-
 		//! Multiplies input matrix to this matrix.
 		void IMul(const Matrix& m);
 
@@ -333,11 +328,6 @@ namespace CubbyFlow
 
 		//! Multiplication assignment with input matrix.
 		Matrix& operator*=(const Matrix& m);
-
-		//! Multiplication assignment with input 3x3 matrix.
-		//! This method assumes missing part of the input matrix has 0 for the
-		//! off-diagonal and 1 for the diagonal part.
-		Matrix& operator*=(const Matrix3x3<T>& m);
 
 		//! Division assignment with input scalar.
 		Matrix& operator/=(T s);
