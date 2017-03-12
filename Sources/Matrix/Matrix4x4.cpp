@@ -291,7 +291,14 @@ namespace CubbyFlow
 		return m_elements.data();
 	}
 
-	// TODO: Implement Matrix3() method
+	template <typename T>
+	Matrix<T, 3, 3> Matrix<T, 4, 4>::Matrix3() const
+	{
+		return Matrix<T, 3, 3>(
+			m_elements[0], m_elements[1], m_elements[2],
+			m_elements[4], m_elements[5], m_elements[6],
+			m_elements[8], m_elements[9], m_elements[10]);
+	}
 
 	template <typename T>
 	Matrix<T, 4, 4> Matrix<T, 4, 4>::Add(T s) const
