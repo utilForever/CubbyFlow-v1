@@ -425,14 +425,6 @@ namespace CubbyFlow
 
 	//! Returns a * b.
 	template <typename T>
-	Matrix<T, 4, 4> operator*(const Matrix<T, 4, 4>& a, const Matrix3x3<T>& b);
-
-	//! Returns a * b.
-	template <typename T>
-	Matrix<T, 4, 4> operator*(const Matrix3x3<T>& a, const Matrix<T, 4, 4>& b);
-
-	//! Returns a * b.
-	template <typename T>
 	Matrix<T, 4, 4> operator*(const Matrix<T, 4, 4>& a, const Matrix<T, 4, 4>& b);
 
 	//! Returns a / b', where every element of matrix b' is b.
