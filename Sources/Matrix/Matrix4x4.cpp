@@ -192,11 +192,7 @@ namespace CubbyFlow
 	template <typename T>
 	void Matrix<T, 4, 4>::Set(const Matrix& m)
 	{
-		// TODO: Refactor code
-		for (size_t i = 0; i < 16; ++i)
-		{
-			m_elements[i] = m.m_elements[i];
-		}
+		m_elements = m.m_elements;
 	}
 
 	template <typename T>
