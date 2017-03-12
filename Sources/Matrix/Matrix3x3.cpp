@@ -733,15 +733,24 @@ namespace CubbyFlow
 	template <typename T>
 	Matrix<T, 3, 3> Matrix<T, 3, 3>::MakeRotationMatrix(const Vector3<T>& axis, const T rad)
 	{
-		return Matrix<T, 3, 3>(cos(rad) + axis.x * axis.x * (1 - cos(rad)), axis.x * axis.y * (1 - cos(rad)) - axis.z * sin(rad), axis.x * axis.z * (1 - cos(rad)) + axis.y * sin(rad),
-							   axis.y * axis.x * (1 - cos(rad)) + axis.z * sin(rad), cos(rad) + axis.y * axis.y * (1 - cos(rad)), axis.y * axis.z * (1 - cos(rad)) - axis.x * sin(rad),
-							   axis.z * axis.x * (1-cos(rad)) - axis.y * sin(rad), axis.z * axis.y * (1 - cos(rad)) + axis.x * sin(rad), cos(rad) + axis.z * axis.z * (1 - cos(rad)));
+		return Matrix<T, 3, 3>(
+			std::cos(rad) + axis.x * axis.x * (1 - std::cos(rad)),
+			axis.x * axis.y * (1 - std::cos(rad)) - axis.z * std::sin(rad),
+			axis.x * axis.z * (1 - std::cos(rad)) + axis.y * std::sin(rad),
+			
+			axis.y * axis.x * (1 - std::cos(rad)) + axis.z * std::sin(rad), 
+			std::cos(rad) + axis.y * axis.y * (1 - std::cos(rad)),
+			axis.y * axis.z * (1 - std::cos(rad)) - axis.x * std::sin(rad),
+
+			axis.z * axis.x * (1 - std::cos(rad)) - axis.y * std::sin(rad),
+			axis.z * axis.y * (1 - std::cos(rad)) + axis.x * std::sin(rad),
+			std::cos(rad) + axis.z * axis.z * (1 - std::cos(rad)));
 	}
 
 	template <typename T>
 	Matrix<T, 3, 3> operator-(const Matrix<T, 3, 3>& a)
 	{
-		return (*this) * -1;
+		return a.Mul(-1);
 	}
 
 	template <typename T>
@@ -759,7 +768,7 @@ namespace CubbyFlow
 	template <typename T>
 	Matrix<T, 3, 3> operator+(const T a, const Matrix<T, 3, 3>& b)
 	{
-		return b.Add(a);
+		return b.RAdd(a);
 	}
 
 	template <typename T>
@@ -777,25 +786,25 @@ namespace CubbyFlow
 	template <typename T>
 	Matrix<T, 3, 3> operator-(const T a, const Matrix<T, 3, 3>& b)
 	{
-		return b.Rsub(a);
+		return b.RSub(a);
 	}
 
 	template <typename T>
-	Matrix<T, 3, 3> operator*(const Matrix<T, 3, 3>& a, const T b)
-	{
-		return a.Mul(Matrix<T, 3, 3>(b));
-	}
-
-	template <typename T>
-	Matrix<T, 3, 3> operator*(const Matrix<T, 3, 3>& a, const Vector3<T>& b)
+	Matrix<T, 3, 3> operator*(const Matrix<T, 3, 3>& a, T b)
 	{
 		return a.Mul(b);
 	}
 
 	template <typename T>
-	Matrix<T, 3, 3> operator*(const T a, const Matrix<T, 3, 3>& b)
+	Matrix<T, 3, 3> operator*(T a, const Matrix<T, 3, 3>& b)
 	{
-		return b.RMul(Matrix<T, 3, 3>(a));
+		return b.RMul(a);
+	}
+
+	template <typename T>
+	Vector<T, 3> operator*(const Matrix<T, 3, 3>& a, const Vector<T, 3>& b)
+	{
+		return a.Mul(b);
 	}
 
 	template <typename T>
@@ -807,13 +816,13 @@ namespace CubbyFlow
 	template <typename T>
 	Matrix<T, 3, 3> operator/(const Matrix<T, 3, 3>& a, T b)
 	{
-		return a.Div(Matrix<T, 3, 3>(b));
+		return a.Div(b);
 	}
 
 	template <typename T>
 	Matrix<T, 3, 3> operator/(T a, const Matrix<T, 3, 3>& b)
 	{
-		return b.RDiv(Matrix<T, 3, 3>(a));
+		return b.RDiv(a);
 	}
 }
 
