@@ -131,6 +131,8 @@
     <ClInclude Include="..\Sources\Array\ArrayAccessor3.h" />
     <ClInclude Include="..\Sources\Field\Field2.h" />
     <ClInclude Include="..\Sources\Field\Field3.h" />
+    <ClInclude Include="..\Sources\Field\ScalarField2.h" />
+    <ClInclude Include="..\Sources\Field\ScalarField3.h" />
     <ClInclude Include="..\Sources\Field\VectorField2.h" />
     <ClInclude Include="..\Sources\Field\VectorField3.h" />
     <ClInclude Include="..\Sources\Matrix\Matrix.h" />
