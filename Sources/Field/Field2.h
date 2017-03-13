@@ -12,7 +12,8 @@
 namespace CubbyFlow
 {
 	//! Abstract base class for 2-D fields.
-	class Field2 {
+	class Field2
+	{
 	public:
 		Field2();
 		virtual ~Field2();
