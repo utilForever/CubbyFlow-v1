@@ -129,6 +129,8 @@
     <ClInclude Include="..\Sources\Array\ArrayAccessor1.h" />
     <ClInclude Include="..\Sources\Array\ArrayAccessor2.h" />
     <ClInclude Include="..\Sources\Array\ArrayAccessor3.h" />
+    <ClInclude Include="..\Sources\Field\Field2.h" />
+    <ClInclude Include="..\Sources\Field\Field3.h" />
     <ClInclude Include="..\Sources\Matrix\Matrix.h" />
     <ClInclude Include="..\Sources\Matrix\Matrix2x2.h" />
     <ClInclude Include="..\Sources\Matrix\Matrix3x3.h" />

@@ -19,6 +19,9 @@
     <Filter Include="Matrix">
       <UniqueIdentifier>{6a2e4735-c1fb-4d91-adca-a5b79b0b7313}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Field">
+      <UniqueIdentifier>{b8c6f199-2af6-4dad-bd3c-14c813cebdc7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Sources\Array\Array.h">
@@ -101,6 +104,12 @@
     </ClInclude>
     <ClInclude Include="..\Sources\Matrix\Matrix4x4.h">
       <Filter>Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\Field\Field2.h">
+      <Filter>Field</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\Field\Field3.h">
+      <Filter>Field</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
