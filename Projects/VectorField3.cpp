@@ -6,7 +6,7 @@
 > Created Time: 2017/03/14
 > Copyright (c) 2017, Dongmin Kim
 *************************************************************************/
-#include<Field\VectorField3.h>
+#include <Field/VectorField3.h>
 
 namespace CubbyFlow
 {
@@ -22,7 +22,7 @@ namespace CubbyFlow
 
 	double VectorField3::Divergence(const Vector3D& x) const
 	{
-		return 0;
+		return 0.0;
 	}
 
 	Vector3D VectorField3::Curl(const Vector3D& x) const
@@ -32,7 +32,10 @@ namespace CubbyFlow
 
 	std::function<Vector3D(const Vector3D&)> VectorField3::Sampler() const
 	{
-		std::function<Vector3D(const Vector3D&)> tmp;
-		return tmp;
+		const VectorField3* self = this;
+		return [self](const Vector3D& x) -> Vector3D
+		{
+			return self->Sample(x);
+		};
 	}
 }
