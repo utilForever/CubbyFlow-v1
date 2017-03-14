@@ -4,9 +4,9 @@
 > Author: Dongmin Kim
 > Purpose: Abstract base class for 3-D fields.
 > Created Time: 2017/03/14
-> Copyright (c) 2017, Dongmin kim
+> Copyright (c) 2017, Dongmin Kim
 *************************************************************************/
-#include<Field\Field3.h>
+#include <Field/Field3.h>
 
 namespace CubbyFlow
 {
