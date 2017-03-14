@@ -1,12 +1,12 @@
 /*************************************************************************
 > File Name: Field2.cpp
 > Project Name: CubbyFlow
-> Author: Dongmin KIm
+> Author: Dongmin Kim
 > Purpose: Abstract base class for 2-D fields.
 > Created Time: 2017/03/14
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2017, Dongmin Kim
 *************************************************************************/
-#include<Field\Field2.h>
+#include <Field/Field2.h>
 
 namespace CubbyFlow
 {
