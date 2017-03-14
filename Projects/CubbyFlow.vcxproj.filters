@@ -182,5 +182,17 @@
     <ClCompile Include="..\Sources\Vector\Vector4.cpp">
       <Filter>Vector</Filter>
     </ClCompile>
+    <ClCompile Include="Field2.cpp">
+      <Filter>Field</Filter>
+    </ClCompile>
+    <ClCompile Include="Field3.cpp">
+      <Filter>Field</Filter>
+    </ClCompile>
+    <ClCompile Include="VectorField2.cpp">
+      <Filter>Field</Filter>
+    </ClCompile>
+    <ClCompile Include="VectorField3.cpp">
+      <Filter>Field</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
