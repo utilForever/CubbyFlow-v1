@@ -123,6 +123,12 @@
     <ClInclude Include="..\Sources\Field\ScalarField3.h">
       <Filter>Field</Filter>
     </ClInclude>
+    <ClInclude Include="..\Sources\Field\CustomVectorField2.h">
+      <Filter>Field</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\Field\CustomVectorField3.h">
+      <Filter>Field</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Array\Array1.cpp">
