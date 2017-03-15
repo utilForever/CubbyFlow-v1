@@ -129,6 +129,8 @@
     <ClInclude Include="..\Sources\Array\ArrayAccessor1.h" />
     <ClInclude Include="..\Sources\Array\ArrayAccessor2.h" />
     <ClInclude Include="..\Sources\Array\ArrayAccessor3.h" />
+    <ClInclude Include="..\Sources\Field\CustomScalarField2.h" />
+    <ClInclude Include="..\Sources\Field\CustomScalarField3.h" />
     <ClInclude Include="..\Sources\Field\CustomVectorField2.h" />
     <ClInclude Include="..\Sources\Field\CustomVectorField3.h" />
     <ClInclude Include="..\Sources\Field\Field2.h" />
