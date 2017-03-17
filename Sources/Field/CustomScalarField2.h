@@ -62,7 +62,7 @@ namespace CubbyFlow
 		//! Returns the Laplacian at given position \p x.
 		double Laplacian(const Vector2D& x) const override;
 		
-		//! Returns builder fox CustomScalarField2.
+		//! Returns builder for CustomScalarField2.
 		static Builder Builder();
 
 	private:
