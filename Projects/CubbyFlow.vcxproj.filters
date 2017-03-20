@@ -194,25 +194,25 @@
     <ClCompile Include="..\Sources\Vector\Vector4.cpp">
       <Filter>Vector</Filter>
     </ClCompile>
-    <ClCompile Include="Field2.cpp">
+    <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
       <Filter>Field</Filter>
     </ClCompile>
-    <ClCompile Include="Field3.cpp">
+    <ClCompile Include="..\Sources\Field\Field2.cpp">
       <Filter>Field</Filter>
     </ClCompile>
-    <ClCompile Include="VectorField2.cpp">
+    <ClCompile Include="..\Sources\Field\Field3.cpp">
       <Filter>Field</Filter>
     </ClCompile>
-    <ClCompile Include="VectorField3.cpp">
+    <ClCompile Include="..\Sources\Field\ScalarField2.cpp">
       <Filter>Field</Filter>
     </ClCompile>
-    <ClCompile Include="ScalarField2.cpp">
+    <ClCompile Include="..\Sources\Field\ScalarField3.cpp">
       <Filter>Field</Filter>
     </ClCompile>
-    <ClCompile Include="ScalarField3.cpp">
+    <ClCompile Include="..\Sources\Field\VectorField2.cpp">
       <Filter>Field</Filter>
     </ClCompile>
-    <ClCompile Include="CustomScalarField2.cpp">
+    <ClCompile Include="..\Sources\Field\VectorField3.cpp">
       <Filter>Field</Filter>
     </ClCompile>
   </ItemGroup>

@@ -166,6 +166,13 @@
     <ClCompile Include="..\Sources\Array\ArrayAccessor1.cpp" />
     <ClCompile Include="..\Sources\Array\ArrayAccessor2.cpp" />
     <ClCompile Include="..\Sources\Array\ArrayAccessor3.cpp" />
+    <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp" />
+    <ClCompile Include="..\Sources\Field\Field2.cpp" />
+    <ClCompile Include="..\Sources\Field\Field3.cpp" />
+    <ClCompile Include="..\Sources\Field\ScalarField2.cpp" />
+    <ClCompile Include="..\Sources\Field\ScalarField3.cpp" />
+    <ClCompile Include="..\Sources\Field\VectorField2.cpp" />
+    <ClCompile Include="..\Sources\Field\VectorField3.cpp" />
     <ClCompile Include="..\Sources\Matrix\Matrix.cpp" />
     <ClCompile Include="..\Sources\Matrix\Matrix2x2.cpp" />
     <ClCompile Include="..\Sources\Matrix\Matrix3x3.cpp" />
@@ -179,13 +186,6 @@
     <ClCompile Include="..\Sources\Vector\Vector2.cpp" />
     <ClCompile Include="..\Sources\Vector\Vector3.cpp" />
     <ClCompile Include="..\Sources\Vector\Vector4.cpp" />
-    <ClCompile Include="CustomScalarField2.cpp" />
-    <ClCompile Include="Field2.cpp" />
-    <ClCompile Include="Field3.cpp" />
-    <ClCompile Include="ScalarField2.cpp" />
-    <ClCompile Include="ScalarField3.cpp" />
-    <ClCompile Include="VectorField2.cpp" />
-    <ClCompile Include="VectorField3.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
