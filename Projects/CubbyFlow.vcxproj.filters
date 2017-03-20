@@ -22,6 +22,9 @@
     <Filter Include="Field">
       <UniqueIdentifier>{b8c6f199-2af6-4dad-bd3c-14c813cebdc7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Geomtery">
+      <UniqueIdentifier>{35979af0-a3e2-4397-9d98-bbb8d1824924}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Sources\Array\Array.h">
@@ -134,6 +137,12 @@
     </ClInclude>
     <ClInclude Include="..\Sources\Field\CustomScalarField3.h">
       <Filter>Field</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\Geometry\Surface2.h">
+      <Filter>Geomtery</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\Geometry\Surface3.h">
+      <Filter>Geomtery</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
