@@ -4,9 +4,9 @@
 > Author: Dongmin Kim
 > Purpose: Abstract base class for 3-D scalar field.
 > Created Time: 2017/03/16
-> Copyright (c) 2017, Dongmin KIm
+> Copyright (c) 2017, Dongmin Kim
 *************************************************************************/
-#include<Field\ScalarField3.h>
+#include <Field/ScalarField3.h>
 
 namespace CubbyFlow
 {
