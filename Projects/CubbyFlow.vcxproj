@@ -141,6 +141,7 @@
     <ClInclude Include="..\Sources\Field\VectorField3.h" />
     <ClInclude Include="..\Sources\Geometry\Surface2.h" />
     <ClInclude Include="..\Sources\Geometry\Surface3.h" />
+    <ClInclude Include="..\Sources\Math\Quaternion.h" />
     <ClInclude Include="..\Sources\Matrix\Matrix.h" />
     <ClInclude Include="..\Sources\Matrix\Matrix2x2.h" />
     <ClInclude Include="..\Sources\Matrix\Matrix3x3.h" />

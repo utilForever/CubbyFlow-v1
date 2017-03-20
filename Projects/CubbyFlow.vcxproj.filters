@@ -25,6 +25,9 @@
     <Filter Include="Geomtery">
       <UniqueIdentifier>{35979af0-a3e2-4397-9d98-bbb8d1824924}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Math">
+      <UniqueIdentifier>{8470db9a-4058-4955-a16b-1d4a607f68bf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Sources\Array\Array.h">
@@ -143,6 +146,9 @@
     </ClInclude>
     <ClInclude Include="..\Sources\Geometry\Surface3.h">
       <Filter>Geomtery</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\Math\Quaternion.h">
+      <Filter>Math</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
