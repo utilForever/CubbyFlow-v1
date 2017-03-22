@@ -54,7 +54,19 @@ namespace CubbyFlow
 
 	Vector2D CustomScalarField2::Gradient(const Vector2D& x) const
 	{
-		return Vector2D();
+		if (m_customGradientFunction)
+		{
+			return m_customGradientFunction(x);
+		}
+		
+		double left = m_customFunction(x - Vector2D(0.5 * m_resolution, 0.0));
+		double right = m_customFunction(x + Vector2D(0.5 * m_resolution, 0.0));
+		double bottom = m_customFunction(x - Vector2D(0.0, 0.5 * m_resolution));
+		double top = m_customFunction(x + Vector2D(0.0, 0.5 * m_resolution));
+
+		return Vector2D(
+			(right - left) / m_resolution,
+			(top - bottom) / m_resolution);
 	}
 
 	double CustomScalarField2::Laplacian(const Vector2D& x) const
