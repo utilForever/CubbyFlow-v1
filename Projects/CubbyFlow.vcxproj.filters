@@ -242,5 +242,8 @@
     <ClCompile Include="..\Sources\Field\VectorField3.cpp">
       <Filter>Field</Filter>
     </ClCompile>
+    <ClCompile Include="..\Sources\Field\CustomScalarField3.cpp">
+      <Filter>Field</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
