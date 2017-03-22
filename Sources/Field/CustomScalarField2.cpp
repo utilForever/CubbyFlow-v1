@@ -71,7 +71,18 @@ namespace CubbyFlow
 
 	double CustomScalarField2::Laplacian(const Vector2D& x) const
 	{
+		if (m_customLaplacianFunction)
+		{
+			return m_customLaplacianFunction(x);
+		}
 
+		double center = m_customFunction(x);
+		double left = m_customFunction(x - Vector2D(0.5 * m_resolution, 0.0));
+		double right = m_customFunction(x + Vector2D(0.5 * m_resolution, 0.0));
+		double bottom = m_customFunction(x - Vector2D(0.0, 0.5 * m_resolution));
+		double top = m_customFunction(x + Vector2D(0.0, 0.5 * m_resolution));
+
+		return (left + right + bottom + top - 4.0 * center) / (m_resolution * m_resolution);
 	}
 
 	CustomScalarField2::Builder CustomScalarField2::Builder()
