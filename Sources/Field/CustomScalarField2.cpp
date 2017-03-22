@@ -64,9 +64,7 @@ namespace CubbyFlow
 		double bottom = m_customFunction(x - Vector2D(0.0, 0.5 * m_resolution));
 		double top = m_customFunction(x + Vector2D(0.0, 0.5 * m_resolution));
 
-		return Vector2D(
-			(right - left) / m_resolution,
-			(top - bottom) / m_resolution);
+		return Vector2D((right - left) / m_resolution, (top - bottom) / m_resolution);
 	}
 
 	double CustomScalarField2::Laplacian(const Vector2D& x) const
