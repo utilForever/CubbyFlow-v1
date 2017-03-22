@@ -85,7 +85,7 @@ namespace CubbyFlow
 
 	CustomScalarField2::Builder CustomScalarField2::Builder()
 	{
-		return CustomScalarField2::Builder();
+		
 	}
 
 	CustomScalarField2::Builder CustomScalarField2::Builder::WithFunction(const std::function<double(const Vector2D&)>& func)
