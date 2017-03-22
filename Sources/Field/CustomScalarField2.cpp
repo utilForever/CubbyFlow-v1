@@ -88,8 +88,57 @@ namespace CubbyFlow
 		return Builder();
 	}
 
-	CustomScalarField2::Builder CustomScalarField2::Builder::WithFunction(const std::function<double(const Vector2D&)>& func)
+	CustomScalarField2::Builder& CustomScalarField2::Builder::WithFunction(const std::function<double(const Vector2D&)>& func)
 	{
+		m_customFunction = func;
+		return *this;
+	}
 
+	CustomScalarField2::Builder& CustomScalarField2::Builder::WithGradientFunction(const std::function<Vector2D(const Vector2D&)>& func)
+	{
+		m_customGradientFunction = func;
+		return *this;
+	}
+
+	CustomScalarField2::Builder& CustomScalarField2::Builder::WithLaplacianFunction(const std::function<double(const Vector2D&)>& func)
+	{
+		m_customLaplacianFunction = func;
+		return *this;
+	}
+
+	CustomScalarField2::Builder& CustomScalarField2::Builder::WithDerivativeResolution(double resolution)
+	{
+		m_resolution = resolution;
+		return *this;
+	}
+
+	CustomScalarField2 CustomScalarField2::Builder::Build() const
+	{
+		if (m_customLaplacianFunction)
+		{
+			return CustomScalarField2(m_customFunction, m_customGradientFunction, m_customLaplacianFunction);
+		}
+		
+		return CustomScalarField2(m_customFunction, m_customGradientFunction, m_resolution);
+	}
+
+	CustomScalarField2Ptr CustomScalarField2::Builder::MakeShared() const
+	{
+		if (m_customLaplacianFunction)
+		{
+			return std::shared_ptr<CustomScalarField2>(
+				new CustomScalarField2(m_customFunction, m_customGradientFunction, m_customLaplacianFunction),
+				[](CustomScalarField2* obj)
+			{
+				delete obj;
+			});
+		}
+
+		return std::shared_ptr<CustomScalarField2>(
+			new CustomScalarField2(m_customFunction, m_customGradientFunction, m_resolution),
+			[](CustomScalarField2* obj)
+		{
+			delete obj;
+		});
 	}
 }
