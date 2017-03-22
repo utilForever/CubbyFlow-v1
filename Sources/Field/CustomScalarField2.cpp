@@ -83,9 +83,9 @@ namespace CubbyFlow
 		return (left + right + bottom + top - 4.0 * center) / (m_resolution * m_resolution);
 	}
 
-	CustomScalarField2::Builder CustomScalarField2::Builder()
+	CustomScalarField2::Builder CustomScalarField2::GetBuilder()
 	{
-		
+		return Builder();
 	}
 
 	CustomScalarField2::Builder CustomScalarField2::Builder::WithFunction(const std::function<double(const Vector2D&)>& func)
