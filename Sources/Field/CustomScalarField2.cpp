@@ -6,39 +6,50 @@
 > Created Time: 2017/03/16
 > Copyright (c) 2017, Dongmin Kim
 *************************************************************************/
-#include<Field\CustomScalarField2.h>
+#include <Field/CustomScalarField2.h>
 
 namespace CubbyFlow
 {
 	CustomScalarField2::CustomScalarField2(
 		const std::function<double(const Vector2D&)>& customFunction, 
-		double derivativeResolution = 1e-3)
+		double derivativeResolution) :
+		m_customFunction(customFunction),
+		m_resolution(derivativeResolution)
 	{
-		m_customFunction = customFunction;
+		// Do nothing
 	}
 
 	CustomScalarField2::CustomScalarField2(
 		const std::function<double(const Vector2D&)>& customFunction,
 		const std::function<Vector2D(const Vector2D&)>& customGradientFunction,
-		double derivativeResolution = 1e-3)
+		double derivativeResolution) :
+		m_customFunction(customFunction),
+		m_customGradientFunction(customGradientFunction),
+		m_resolution(derivativeResolution)
 	{
-		m_customFunction = customFunction;
-		m_customGradientFunction = customGradientFunction;
+		// Do nothing
 	}
 
 	CustomScalarField2::CustomScalarField2(
 		const std::function<double(const Vector2D&)>& customFunction,
 		const std::function<Vector2D(const Vector2D&)>& customGradientFunction,
-		const std::function<double(const Vector2D&)>& customLaplacianFunction)
+		const std::function<double(const Vector2D&)>& customLaplacianFunction) :
+		m_customFunction(customFunction),
+		m_customGradientFunction(customGradientFunction),
+		m_customLaplacianFunction(customLaplacianFunction),
+		m_resolution(1e-3)
 	{
-		m_customFunction = customFunction;
-		m_customGradientFunction = customGradientFunction;
-		m_customLaplacianFunction = customLaplacianFunction;
+		// Do nothing
 	}
 
 	double CustomScalarField2::Sample(const Vector2D& x) const 
 	{
-		return 0;
+		return m_customFunction(x);
+	}
+
+	std::function<double(const Vector2D&)> CustomScalarField2::Sampler() const
+	{
+		return m_customFunction;
 	}
 
 	Vector2D CustomScalarField2::Gradient(const Vector2D& x) const
