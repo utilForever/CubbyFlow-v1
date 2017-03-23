@@ -10,5 +10,85 @@
 
 namespace CubbyFlow
 {
+	CustomScalarField3::CustomScalarField3(
+		const std::function<double(const Vector3D&)>& customFunction,
+		double derivativeResolution) :
+		m_customFunction(customFunction),
+		m_resolution(derivativeResolution)
+	{
+		// Do nothing
+	}
 
+	CustomScalarField3::CustomScalarField3(
+		const std::function<double(const Vector3D&)>& customFunction,
+		const std::function<Vector3D(const Vector3D&)>& customGradientFunction,
+		double derivativeResolution) :
+		m_customFunction(customFunction),
+		m_customGradientFunction(customGradientFunction),
+		m_resolution(derivativeResolution)
+	{
+		// Do nothing
+	}
+
+	CustomScalarField3::CustomScalarField3(
+		const std::function<double(const Vector3D&)>& customFunction,
+		const std::function<Vector3D(const Vector3D&)>& customGradientFunction,
+		const std::function<double(const Vector3D&)>& customLaplacianFunction) :
+		m_customFunction(customFunction),
+		m_customGradientFunction(customGradientFunction),
+		m_customLaplacianFunction(customLaplacianFunction),
+		m_resolution(1e-3)
+	{
+		// Do nothing
+	}
+
+	double CustomScalarField3::Sample(const Vector3D& x) const
+	{
+		return m_customFunction(x);
+	}
+
+	std::function<double(const Vector3D&)> CustomScalarField3::Sampler() const
+	{
+		return m_customFunction;
+	}
+
+	Vector3D CustomScalarField3::Gradient(const Vector3D& x) const
+	{
+		if (m_customGradientFunction)
+		{
+			return m_customGradientFunction(x);
+		}
+
+		double left	= m_customFunction(x - Vector3D(0.5 * m_resolution, 0.0, 0.0));
+		double right = m_customFunction(x + Vector3D(0.5 * m_resolution, 0.0, 0.0));
+		double bottom = m_customFunction(x - Vector3D(0.0, 0.5 * m_resolution, 0.0));
+		double top = m_customFunction(x + Vector3D(0.0, 0.5 * m_resolution, 0.0));
+		double back = m_customFunction(x - Vector3D(0.0, 0.0, 0.5 * m_resolution));
+		double front = m_customFunction(x + Vector3D(0.0, 0.0, 0.5 * m_resolution));
+
+		return Vector3D((right - left) / m_resolution, (top - bottom) / m_resolution, (front - back) / m_resolution);
+	}
+
+	double CustomScalarField3::Laplacian(const Vector3D& x) const
+	{
+		if (m_customLaplacianFunction)
+		{
+			return m_customLaplacianFunction(x);
+		}
+
+		double center = m_customFunction(x);
+		double left = m_customFunction(x - Vector3D(0.5 * m_resolution, 0.0, 0.0));
+		double right = m_customFunction(x + Vector3D(0.5 * m_resolution, 0.0, 0.0));
+		double bottom = m_customFunction(x - Vector3D(0.0, 0.5 * m_resolution, 0.0));
+		double top = m_customFunction(x + Vector3D(0.0, 0.5 * m_resolution, 0.0));
+		double back = m_customFunction(x - Vector3D(0.0, 0.0, 0.5 * m_resolution));
+		double front = m_customFunction(x + Vector3D(0.0, 0.0, 0.5 * m_resolution));
+
+		return (left + right + bottom + top + back + front - 6.0 * center) / (m_resolution * m_resolution);
+	}
+
+	CustomScalarField3::Builder CustomScalarField3::Builder()
+	{
+		return Builder();
+	}
 }
