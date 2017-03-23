@@ -149,6 +149,9 @@
     <ClInclude Include="..\Sources\Point\Point.h" />
     <ClInclude Include="..\Sources\Point\Point2.h" />
     <ClInclude Include="..\Sources\Point\Point3.h" />
+    <ClInclude Include="..\Sources\Ray\Ray.h" />
+    <ClInclude Include="..\Sources\Ray\Ray2.h" />
+    <ClInclude Include="..\Sources\Ray\Ray3.h" />
     <ClInclude Include="..\Sources\Size\Size.h" />
     <ClInclude Include="..\Sources\Size\Size2.h" />
     <ClInclude Include="..\Sources\Size\Size3.h" />
@@ -170,6 +173,7 @@
     <ClCompile Include="..\Sources\Array\ArrayAccessor2.cpp" />
     <ClCompile Include="..\Sources\Array\ArrayAccessor3.cpp" />
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp" />
+    <ClCompile Include="..\Sources\Field\CustomScalarField3.cpp" />
     <ClCompile Include="..\Sources\Field\Field2.cpp" />
     <ClCompile Include="..\Sources\Field\Field3.cpp" />
     <ClCompile Include="..\Sources\Field\ScalarField2.cpp" />
