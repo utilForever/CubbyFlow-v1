@@ -193,6 +193,8 @@
     <ClCompile Include="..\Sources\Vector\Vector2.cpp" />
     <ClCompile Include="..\Sources\Vector\Vector3.cpp" />
     <ClCompile Include="..\Sources\Vector\Vector4.cpp" />
+    <ClCompile Include="Quaternion.cpp" />
+    <ClCompile Include="Surface.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -99,9 +99,15 @@ namespace CubbyFlow
 		//! Returns this quaternion * vector.
 		Vector3<T> Mul(const Vector3<T>& v) const;
 
+		//! Multiply by Scarlar on element wise
+		Quaternion operator*(const T a) const;
+
+		//! Divide by Scarlar on element wise
+		Quaternion operator*(const T a) const;
+
 		//! Returns this quaternion * other quaternion.
 		Quaternion Mul(const Quaternion& other) const;
-
+		
 		//! Computes the dot product with other quaternion.
 		T Dot(const Quaternion<T>& other);
 
