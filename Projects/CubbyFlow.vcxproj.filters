@@ -230,5 +230,11 @@
     <ClCompile Include="..\Sources\Field\VectorField3.cpp">
       <Filter>Field</Filter>
     </ClCompile>
+    <ClCompile Include="Quaternion.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Surface.cpp">
+      <Filter>Geomtery</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
