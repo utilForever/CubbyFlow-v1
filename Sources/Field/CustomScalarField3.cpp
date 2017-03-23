@@ -91,4 +91,58 @@ namespace CubbyFlow
 	{
 		return Builder();
 	}
+
+	CustomScalarField3::Builder& CustomScalarField3::Builder::WithFunction(const std::function<double(const Vector3D&)>& func)
+	{
+		m_customFunction = func;
+		return *this;
+	}
+
+	CustomScalarField3::Builder& CustomScalarField3::Builder::WithGradientFunction(const std::function<Vector3D(const Vector3D&)>& func)
+	{
+		m_customGradientFunction = func;
+		return *this;
+	}
+
+	CustomScalarField3::Builder& CustomScalarField3::Builder::WithLaplacianFunction(const std::function<double(const Vector3D&)>& func)
+	{
+		m_customLaplacianFunction = func;
+		return *this;
+	}
+
+	CustomScalarField3::Builder& CustomScalarField3::Builder::WithDerivativeResolution(double resolution)
+	{
+		m_resolution = resolution;
+		return *this;
+	}
+
+	CustomScalarField3 CustomScalarField3::Builder::Build() const
+	{
+		if (m_customLaplacianFunction)
+		{
+			return CustomScalarField3(m_customFunction, m_customGradientFunction, m_customLaplacianFunction);
+		}
+
+		return CustomScalarField3(m_customFunction, m_customGradientFunction, m_resolution);
+	}
+
+	CustomScalarField3Ptr CustomScalarField3::Builder::MakeShared() const
+	{
+		if (m_customLaplacianFunction)
+		{
+			return std::shared_ptr<CustomScalarField3>(
+				new CustomScalarField3(m_customFunction, m_customGradientFunction, m_customLaplacianFunction),
+				[](CustomScalarField3* obj)
+			{
+				delete obj;
+			});
+		}
+
+		return std::shared_ptr<CustomScalarField3>(
+			new CustomScalarField3(m_customFunction, m_customGradientFunction, m_resolution),
+			[](CustomScalarField3* obj)
+		{
+			delete obj;
+		});
+	}
 }
