@@ -63,7 +63,7 @@ namespace CubbyFlow
 		double Laplacian(const Vector3D& x) const override;
 
 		//! Returns builder fox CustomScalarField3.
-		static Builder Builder();
+		static Builder GetBuilder();
 
 	private:
 		std::function<double(const Vector3D&)> m_customFunction;

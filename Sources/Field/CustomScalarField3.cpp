@@ -87,7 +87,7 @@ namespace CubbyFlow
 		return (left + right + bottom + top + back + front - 6.0 * center) / (m_resolution * m_resolution);
 	}
 
-	CustomScalarField3::Builder CustomScalarField3::Builder()
+	CustomScalarField3::Builder CustomScalarField3::GetBuilder()
 	{
 		return Builder();
 	}
