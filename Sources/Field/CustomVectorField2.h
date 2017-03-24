@@ -63,7 +63,7 @@ namespace CubbyFlow
 		std::function<Vector2D(const Vector2D&)> Sampler() const override;
 
 		//! Returns builder fox CustomVectorField2.
-		static Builder Builder();
+		static Builder GetBuilder();
 
 	private:
 		std::function<Vector2D(const Vector2D&)> m_customFunction;

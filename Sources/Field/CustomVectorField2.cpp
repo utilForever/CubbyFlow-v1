@@ -81,7 +81,7 @@ namespace CubbyFlow
 		return (top - bottom - right + left) / m_resolution;
 	}
 
-	CustomVectorField2::Builder CustomVectorField2::Builder()
+	CustomVectorField2::Builder CustomVectorField2::GetBuilder()
 	{
 		return Builder();
 	}
