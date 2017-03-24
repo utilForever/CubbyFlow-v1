@@ -1,5 +1,5 @@
 /*************************************************************************
-> File Name: CustomVectorField3.cpp
+> File Name: CustomVectorField2.cpp
 > Project Name: CubbyFlow
 > Author: Chan-Ho Chris Ohk
 > Purpose: 2-D vector field with custom field function.
@@ -84,5 +84,59 @@ namespace CubbyFlow
 	CustomVectorField2::Builder CustomVectorField2::GetBuilder()
 	{
 		return Builder();
+	}
+
+	CustomVectorField2::Builder& CustomVectorField2::Builder::WithFunction(const std::function<Vector2D(const Vector2D&)>& func)
+	{
+		m_customFunction = func;
+		return *this;
+	}
+
+	CustomVectorField2::Builder& CustomVectorField2::Builder::WithDivergenceFunction(const std::function<double(const Vector2D&)>& func)
+	{
+		m_customDivergenceFunction = func;
+		return *this;
+	}
+
+	CustomVectorField2::Builder& CustomVectorField2::Builder::WithCurlFunction(const std::function<double(const Vector2D&)>& func)
+	{
+		m_customCurlFunction = func;
+		return *this;
+	}
+
+	CustomVectorField2::Builder& CustomVectorField2::Builder::WithDerivativeResolution(double resolution)
+	{
+		m_resolution = resolution;
+		return *this;
+	}
+
+	CustomVectorField2 CustomVectorField2::Builder::Build() const
+	{
+		if (m_customCurlFunction)
+		{
+			return CustomVectorField2(m_customFunction, m_customDivergenceFunction, m_customCurlFunction);
+		}
+		
+		return CustomVectorField2(m_customFunction, m_customDivergenceFunction, m_resolution);
+	}
+
+	CustomVectorField2Ptr CustomVectorField2::Builder::MakeShared() const
+	{
+		if (m_customCurlFunction)
+		{
+			return std::shared_ptr<CustomVectorField2>(
+				new CustomVectorField2(m_customFunction, m_customDivergenceFunction, m_customCurlFunction),
+				[](CustomVectorField2* obj)
+			{
+				delete obj;
+			});
+		}
+
+		return std::shared_ptr<CustomVectorField2>(
+			new CustomVectorField2(m_customFunction, m_customDivergenceFunction, m_resolution),
+				[](CustomVectorField2* obj)
+		{
+			delete obj;
+		});
 	}
 }
