@@ -100,7 +100,7 @@ namespace CubbyFlow
 		return Vector3D((Fz_yp - Fz_ym) - (Fy_zp - Fy_zm), (Fx_zp - Fx_zm) - (Fz_xp - Fz_xm), (Fy_xp - Fy_xm) - (Fx_yp - Fx_ym)) / m_resolution;
 	}
 
-	CustomVectorField3::Builder CustomVectorField3::Builder()
+	CustomVectorField3::Builder CustomVectorField3::GetBuilder()
 	{
 		return Builder();
 	}
