@@ -175,6 +175,7 @@
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp" />
     <ClCompile Include="..\Sources\Field\CustomScalarField3.cpp" />
     <ClCompile Include="..\Sources\Field\CustomVectorField2.cpp" />
+    <ClCompile Include="..\Sources\Field\CustomVectorField3.cpp" />
     <ClCompile Include="..\Sources\Field\Field2.cpp" />
     <ClCompile Include="..\Sources\Field\Field3.cpp" />
     <ClCompile Include="..\Sources\Field\ScalarField2.cpp" />
