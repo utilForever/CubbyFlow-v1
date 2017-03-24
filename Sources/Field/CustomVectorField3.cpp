@@ -104,4 +104,58 @@ namespace CubbyFlow
 	{
 		return Builder();
 	}
+
+	CustomVectorField3::Builder& CustomVectorField3::Builder::WithFunction(const std::function<Vector3D(const Vector3D&)>& func)
+	{
+		m_customFunction = func;
+		return *this;
+	}
+
+	CustomVectorField3::Builder& CustomVectorField3::Builder::WithDivergenceFunction(const std::function<double(const Vector3D&)>& func)
+	{
+		m_customDivergenceFunction = func;
+		return *this;
+	}
+
+	CustomVectorField3::Builder& CustomVectorField3::Builder::WithCurlFunction(const std::function<Vector3D(const Vector3D&)>& func)
+	{
+		m_customCurlFunction = func;
+		return *this;
+	}
+
+	CustomVectorField3::Builder& CustomVectorField3::Builder::WithDerivativeResolution(double resolution)
+	{
+		m_resolution = resolution;
+		return *this;
+	}
+
+	CustomVectorField3 CustomVectorField3::Builder::Build() const
+	{
+		if (m_customCurlFunction)
+		{
+			return CustomVectorField3(m_customFunction, m_customDivergenceFunction, m_customCurlFunction);
+		}
+
+		return CustomVectorField3(m_customFunction, m_customDivergenceFunction, m_resolution);
+	}
+
+	CustomVectorField3Ptr CustomVectorField3::Builder::MakeShared() const
+	{
+		if (m_customCurlFunction)
+		{
+			return std::shared_ptr<CustomVectorField3>(
+				new CustomVectorField3(m_customFunction, m_customDivergenceFunction, m_customCurlFunction),
+				[](CustomVectorField3* obj)
+			{
+				delete obj;
+			});
+		}
+
+		return std::shared_ptr<CustomVectorField3>(
+			new CustomVectorField3(m_customFunction, m_customDivergenceFunction, m_resolution),
+			[](CustomVectorField3* obj)
+		{
+			delete obj;
+		});
+	}
 }
