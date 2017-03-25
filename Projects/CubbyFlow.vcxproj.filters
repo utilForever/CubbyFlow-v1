@@ -257,5 +257,14 @@
     <ClCompile Include="..\Sources\Math\Quaternion.cpp">
       <Filter>Math</Filter>
     </ClCompile>
+    <ClCompile Include="Ray.cpp">
+      <Filter>Ray</Filter>
+    </ClCompile>
+    <ClCompile Include="Ray2.cpp">
+      <Filter>Ray</Filter>
+    </ClCompile>
+    <ClCompile Include="Ray3.cpp">
+      <Filter>Ray</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
