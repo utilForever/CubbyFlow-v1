@@ -134,7 +134,7 @@ namespace CubbyFlow
 			}
 
 			Set(from.Dot(to), axis.x, axis.y, axis.z);
-			w += L2Normatrix();
+			w += L2Norm();
 
 			Normalize();
 		}
