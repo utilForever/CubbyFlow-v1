@@ -242,18 +242,20 @@
     <ClCompile Include="..\Sources\Field\VectorField3.cpp">
       <Filter>Field</Filter>
     </ClCompile>
-    <ClCompile Include="Surface.cpp">
-      <Filter>Geomtery</Filter>
-    </ClCompile>
     <ClCompile Include="..\Sources\Field\CustomScalarField3.cpp">
       <Filter>Field</Filter>
     </ClCompile>
-    <ClCompile Include="Quaternion.cpp" />
     <ClCompile Include="..\Sources\Field\CustomVectorField2.cpp">
       <Filter>Field</Filter>
     </ClCompile>
     <ClCompile Include="..\Sources\Field\CustomVectorField3.cpp">
       <Filter>Field</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Geometry\Surface2.cpp">
+      <Filter>Geomtery</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Math\Quaternion.cpp">
+      <Filter>Math</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
