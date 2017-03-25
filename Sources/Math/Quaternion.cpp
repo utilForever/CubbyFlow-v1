@@ -202,25 +202,40 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	Quaternion Quaternion<T>::Normalized() const
+	Quaternion<T> Quaternion<T>::Normalized() const
 	{
-		T Length = sqrt(w * w + x * x + y * y + z * z);
-		return Quaternion<T>(w / Length, x / Length, y / Length, z / Length);
+		Quaternion q(*this);
+		q.Normalize();
+		return q;
 	}
 
 	template <typename T>
 	Vector3<T> Quaternion<T>::Mul(const Vector3<T>& v) const
 	{
-		return this * v * conjugate();
+		T _2xx = 2 * x * x;
+		T _2yy = 2 * y * y;
+		T _2zz = 2 * z * z;
+		T _2xy = 2 * x * y;
+		T _2xz = 2 * x * z;
+		T _2xw = 2 * x * w;
+		T _2yz = 2 * y * z;
+		T _2yw = 2 * y * w;
+		T _2zw = 2 * z * w;
+
+		return Vector3<T>(
+			(1 - _2yy - _2zz) * v.x + (_2xy - _2zw) * v.y + (_2xz + _2yw) * v.z,
+			(_2xy + _2zw) * v.x + (1 - _2zz - _2xx) * v.y + (_2yz - _2xw) * v.z,
+			(_2xz - _2yw) * v.x + (_2yz + _2xw) * v.y + (1 - _2yy - _2xx) * v.z);
 	}
 
+	// NOTE: Check the formula!
 	template <typename T>
-	Quaternion Quaternion<T>::Mul(const Quaternion& other) const
+	Quaternion<T> Quaternion<T>::Mul(const Quaternion& other) const
 	{
 		Vector3<T> v1 = Vector3<T>(x, y, z);
 		Vector3<T> v2 = Vector3<T>(other.x, other.y, other.z);
-		Vecotr3<T> res = v2 * w + v1 * other.w + v1.Cross(v2);
-		return (w * other.w - v1.Dot(v2), res.x, res.y, res.z);
+		Vector3<T> res = v2 * w + v1 * other.w + v1.Cross(v2);
+		return Quaternion(w * other.w - v1.Dot(v2), res.x, res.y, res.z);
 	}
 
 	template <typename T>
@@ -229,22 +244,20 @@ namespace CubbyFlow
 		return w * other.w + x * other.x + y * other.y + z * other.z;
 	}
 
+	// TODO: Check the formula!
 	template <typename T>
-	Quaternion Quaternion<T>::RMul(const Quaternion& other) const
+	Quaternion<T> Quaternion<T>::RMul(const Quaternion& other) const
 	{
 		Vector3<T> v1 = Vector3<T>(x, y, z);
 		Vector3<T> v2 = Vector3<T>(other.x, other.y, other.z);
-		Vecotr3<T> res = v2 * w + v1 * other.w + v2.Cross(v1);
-		return (w * other.w - v1.Dot(v2), res.x, res.y, res.z);
+		Vector3<T> res = v2 * w + v1 * other.w + v2.Cross(v1);
+		return Quaternion(w * other.w - v1.Dot(v2), res.x, res.y, res.z);
 	}
 
 	template <typename T>
 	void Quaternion<T>::IMul(const Quaternion& other)
 	{
-		Vector3<T> v1 = Vector3<T>(x, y, z);
-		Vector3<T> v2 = Vector3<T>(other.x, other.y, other.z);
-		Vecotr3<T> res = v2 * w + v1 * other.w + v1.Cross(v2);
-		Set(w * other.w - v1.Dot(v2), res.x, res.y, res.z);
+		*this = Mul(other);
 	}
 
 	template <typename T>
@@ -329,7 +342,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	T Quaternion<T>::L2Normatrix() const
+	T Quaternion<T>::L2Norm() const
 	{
 		return sqrt(w * w + x * x + y * y + z * z);
 	}
