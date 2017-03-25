@@ -76,10 +76,7 @@ namespace CubbyFlow
 		void Set(const Vector3<T>& from, const Vector3<T>& to);
 
 		//! Sets quaternion with three basis vectors.
-		void Set(
-			const Vector3<T>& rotationBasis0,
-			const Vector3<T>& rotationBasis1,
-			const Vector3<T>& rotationBasis2);
+		void Set(const Vector3<T>& rotationBasis0, const Vector3<T>& rotationBasis1, const Vector3<T>& rotationBasis2);
 
 		//! Sets the quaternion with 3x3 rotational matrix.
 		void Set(const Matrix3x3<T>& matrix);

@@ -67,9 +67,11 @@ namespace CubbyFlow
 
 	template <typename T>
 	void Quaternion<T>::Set(T newW, T newX, T newY, T newZ) 
-		: w(newW), x(newX), y(newY), z(newZ)
 	{
-		// Do nothing
+		w = newW;
+		x = newX;
+		y = newY;
+		z = newZ;
 	}
 
 	template <typename T>
@@ -78,39 +80,118 @@ namespace CubbyFlow
 		assert(list.size() == 4);
 
 		auto inputElem = list.begin();
-		y = static_cast<T>(*(inputElem));
-		x = static_cast<T>(*(++inputElem);
-		y = static_cast<T>(*(++inputElem));
-		z = static_cast<T>(*(++inputElem));
+		y = *inputElem;
+		x = *(++inputElem);
+		y = *(++inputElem);
+		z = *(++inputElem);
 	}
 
 	template <typename T>
 	void Quaternion<T>::Set(const Vector3<T>& axis, T angle)
 	{
-		Set(std::cos(angle / 2), axis.normalized() * std::sin(angle / 2));
+		static const T eps = std::numeric_limits<T>::epsilon();
+
+		T axisLengthSquared = axis.LengthSquared();
+
+		if (axisLengthSquared < eps)
+		{
+			SetIdentity();
+		}
+		else
+		{
+			Vector3<T> normalizedAxis = axis.Normalized();
+			T s = std::sin(angle / 2);
+
+			x = normalizedAxis.x * s;
+			y = normalizedAxis.y * s;
+			z = normalizedAxis.z * s;
+			w = std::cos(angle / 2);
+		}
 	}
 
 	template <typename T>
 	void Quaternion<T>::Set(const Vector3<T>& from, const Vector3<T>& to)
 	{
-		T theta = acos(from.Dot(to) / sqrt(from.SquaredLength + to.SquaredLength));
+		static const T eps = std::numeric_limits<T>::epsilon();
+
 		Vector3<T> axis = from.Cross(to);
-		Set(axis, theta);
+
+		T fromLengthSquared = from.LengthSquared();
+		T toLengthSquared = to.LengthSquared();
+
+		if (fromLengthSquared < eps || toLengthSquared < eps)
+		{
+			SetIdentity();
+		}
+		else
+		{
+			T axisLengthSquared = axis.LengthSquared();
+
+			// In case two vectors are exactly the opposite, pick orthogonal vector for axis.
+			if (axisLengthSquared < eps)
+			{
+				axis = std::get<0>(from.Tangential());
+			}
+
+			Set(from.Dot(to), axis.x, axis.y, axis.z);
+			w += L2Normatrix();
+
+			Normalize();
+		}
+	}
+
+	template <typename T>
+	void Quaternion<T>::Set(const Vector3<T>& rotationBasis0, const Vector3<T>& rotationBasis1, const Vector3<T>& rotationBasis2)
+	{
+		Matrix3x3<T> matrix3;
+
+		matrix3.SetColumn(0, rotationBasis0.Normalized());
+		matrix3.SetColumn(1, rotationBasis1.Normalized());
+		matrix3.SetColumn(2, rotationBasis2.Normalized());
+
+		set(matrix3);
 	}
 
 	template <typename T>
 	void Quaternion<T>::Set(const Matrix3x3<T>& matrix)
 	{
-		w = sqrt(1 + matrix(0, 0) + matrix(1, 1) + matrix(2, 2)) / 2;
-		x = (matrix(2, 1) - matrix(1, 2)) / (4 * w);
-		y = (matrix(0, 2) - matrix(2, 0)) / (4 * w);
-		z = (matrix(1, 0) - matrix(0, 1)) / (4 * w);
-	}
+		static const T eps = std::numeric_limits<T>::epsilon();
+		static const T quater = static_cast<T>(0.25);
 
-	template <typename T>
-	void Quaternion<T>::Set(const Vector3<T>& roationBasis0, const Vector3<T>& rotationBasis1, const Vector3<T>& rotationBasis2)
-	{
+		T onePlusTrace = matrix.trace() + 1;
 
+		if (onePlusTrace > eps)
+		{
+			T S = std::sqrt(onePlusTrace) * 2;
+			w = quater * S;
+			x = (matrix(2, 1) - matrix(1, 2)) / S;
+			y = (matrix(0, 2) - matrix(2, 0)) / S;
+			z = (matrix(1, 0) - matrix(0, 1)) / S;
+		}
+		else if (matrix(0, 0) > matrix(1, 1) && matrix(0, 0) > matrix(2, 2))
+		{
+			T S = std::sqrt(1.0 + matrix(0, 0) - matrix(1, 1) - matrix(2, 2)) * 2;
+			w = (matrix(2, 1) - matrix(1, 2)) / S;
+			x = quater * S;
+			y = (matrix(0, 1) + matrix(1, 0)) / S;
+			z = (matrix(0, 2) + matrix(2, 0)) / S;
+		}
+		else if (matrix(1, 1) > matrix(2, 2))
+		{
+			T S = std::sqrt(1.0 + matrix(1, 1) - matrix(0, 0) - matrix(2, 2)) * 2;
+			w = (matrix(0, 2) - matrix(2, 0)) / S;
+			x = (matrix(0, 1) + matrix(1, 0)) / S;
+			y = quater * S;
+			z = (matrix(1, 2) + matrix(2, 1)) / S;
+		}
+		else
+		{
+			T S = std::sqrt(1.0 + matrix(2, 2) - matrix(0, 0) - matrix(1, 1)) * 2;
+			w = (matrix(1, 0) - matrix(0, 1)) / S;
+			x = (matrix(0, 2) + matrix(2, 0)) / S;
+			y = (matrix(1, 2) + matrix(2, 1)) / S;
+			z = quater * S;
+		}
 	}
 
 	template <typename T>
@@ -248,7 +329,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	T Quaternion<T>::L2Norm() const
+	T Quaternion<T>::L2Normatrix() const
 	{
 		return sqrt(w * w + x * x + y * y + z * z);
 	}
