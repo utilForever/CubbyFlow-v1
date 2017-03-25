@@ -51,10 +51,7 @@ namespace CubbyFlow
 		Quaternion(const Vector3<T>& from, const Vector3<T>& to);
 
 		//! Constructs a quaternion with three basis vectors.
-		Quaternion(
-			const Vector3<T>& axis0,
-			const Vector3<T>& axis1,
-			const Vector3<T>& axis2);
+		Quaternion(const Vector3<T>& axis0, const Vector3<T>& axis1, const Vector3<T>& axis2);
 
 		//! Constructs a quaternion with 3x3 rotational matrix.
 		explicit Quaternion(const Matrix3x3<T>& m33);
