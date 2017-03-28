@@ -129,6 +129,9 @@
     <ClInclude Include="..\Sources\Array\ArrayAccessor1.h" />
     <ClInclude Include="..\Sources\Array\ArrayAccessor2.h" />
     <ClInclude Include="..\Sources\Array\ArrayAccessor3.h" />
+    <ClInclude Include="..\Sources\BoundingBox\BoundingBox.h" />
+    <ClInclude Include="..\Sources\BoundingBox\BoundingBox2.h" />
+    <ClInclude Include="..\Sources\BoundingBox\BoundingBox3.h" />
     <ClInclude Include="..\Sources\Field\CustomScalarField2.h" />
     <ClInclude Include="..\Sources\Field\CustomScalarField3.h" />
     <ClInclude Include="..\Sources\Field\CustomVectorField2.h" />
@@ -155,6 +158,8 @@
     <ClInclude Include="..\Sources\Size\Size.h" />
     <ClInclude Include="..\Sources\Size\Size2.h" />
     <ClInclude Include="..\Sources\Size\Size3.h" />
+    <ClInclude Include="..\Sources\Transform\Transform2.h" />
+    <ClInclude Include="..\Sources\Transform\Transform3.h" />
     <ClInclude Include="..\Sources\Utils\Constants.h" />
     <ClInclude Include="..\Sources\Utils\Macros.h" />
     <ClInclude Include="..\Sources\Utils\MathUtils.h" />

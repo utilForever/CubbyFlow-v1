@@ -31,6 +31,12 @@
     <Filter Include="Ray">
       <UniqueIdentifier>{88c42ed7-3ce4-495c-9f44-df24261a3799}</UniqueIdentifier>
     </Filter>
+    <Filter Include="BoundingBox">
+      <UniqueIdentifier>{00e2a1d5-edab-4842-9dc2-e3dc57eb338a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Transform">
+      <UniqueIdentifier>{54364948-8816-420d-9b91-1058870b6dac}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Sources\Array\Array.h">
@@ -161,6 +167,21 @@
     </ClInclude>
     <ClInclude Include="..\Sources\Ray\Ray3.h">
       <Filter>Ray</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\BoundingBox\BoundingBox.h">
+      <Filter>BoundingBox</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\Transform\Transform3.h">
+      <Filter>Transform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\Transform\Transform2.h">
+      <Filter>Transform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\BoundingBox\BoundingBox2.h">
+      <Filter>BoundingBox</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\BoundingBox\BoundingBox3.h">
+      <Filter>BoundingBox</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
