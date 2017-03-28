@@ -196,15 +196,15 @@
     <ClCompile Include="..\Sources\Point\Point.cpp" />
     <ClCompile Include="..\Sources\Point\Point2.cpp" />
     <ClCompile Include="..\Sources\Point\Point3.cpp" />
+    <ClCompile Include="..\Sources\Ray\Ray.cpp" />
+    <ClCompile Include="..\Sources\Ray\Ray2.cpp" />
+    <ClCompile Include="..\Sources\Ray\Ray3.cpp" />
     <ClCompile Include="..\Sources\Utils\MathUtils.cpp" />
     <ClCompile Include="..\Sources\Utils\Parallel.cpp" />
     <ClCompile Include="..\Sources\Vector\Vector.cpp" />
     <ClCompile Include="..\Sources\Vector\Vector2.cpp" />
     <ClCompile Include="..\Sources\Vector\Vector3.cpp" />
     <ClCompile Include="..\Sources\Vector\Vector4.cpp" />
-    <ClCompile Include="Ray.cpp" />
-    <ClCompile Include="Ray2.cpp" />
-    <ClCompile Include="Ray3.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
