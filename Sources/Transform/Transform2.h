@@ -12,6 +12,7 @@
 #include <BoundingBox/BoundingBox2.h>
 #include <Ray/Ray2.h>
 #include <Vector/Vector2.h>
+#include <Matrix\Matrix2x2.h>
 
 namespace CubbyFlow
 {
