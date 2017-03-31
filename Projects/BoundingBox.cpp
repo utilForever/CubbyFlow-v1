@@ -11,51 +11,51 @@
 namespace CubbyFlow
 {
 	template <typename T, size_t N>
-	BoundingBox::BoundingBox()
+	BoundingBox<T, N>::BoundingBox()
 	{
-
+		// Do nothing
 	}
 
 	template <typename T, size_t N>
-	BoundingBox::BoundingBox(const VectorType& point1, const VectorType& point2)
+	BoundingBox<T, N>::BoundingBox(const VectorType& point1, const VectorType& point2)
 	{
-		lowerCorner = point1;
-		upperCorner = point2;
+		lowerCorner(point1);
+		upperCorner(point2);
 	}
 
 	template <typename T, size_t N>
-	BoundingBox::BoundingBox(const BoundingBox& other)
+	BoundingBox<T, N>::BoundingBox(const BoundingBox& other)
 	{
 		lowerCorner(other.lowerCorner);
 		upperCorner(other.upperCorner);
 	}
 
 	template <typename T, size_t N>
-	bool BoundingBox::Overlaps(const BoundingBox& other) const
+	bool BoundingBox<T, N>::Overlaps(const BoundingBox& other) const
 	{
-		return !(other.point1.x > point2.x || other.point2.x < point1.x || other.point2.y > point1.y || other.point1.y < point1.y);
+		return !(other.point1 > point2.x || other.point2 < point1);
 	}
 
 	template <typename T, size_t N>
-	bool BoundingBox::Contains(const VectorType& point) const
+	bool BoundingBox<T, N>::Contains(const VectorType& point) const
 	{
-		return (point1.x < point.x && point.x < point2.x && point1.y < point.y && point.y < point2.y);
+		return (point1 < point && point < point2);
 	}
 
 	template <typename T, size_t N>
-	VectorType BoundingBox::MidPoint() const
+	VectorType BoundingBox<T, N>::MidPoint() const
 	{
-		return VectorType(point1.x + point2.x, point1.y + point2.y) / 2;
+		return VectorType(point1 + point2) / 2;
 	}
 
 	template <typename T, size_t N>
-	T BoundingBox::DiagonalLength() const
+	T BoundingBox<T, N>::DiagonalLength() const
 	{
 		return point1.DistanceTo(point2);
 	}
 
 	template <typename T, size_t N>
-	T BoundingBox::DiagonalLengthSquared() const
+	T BoundingBox<T, N>::DiagonalLengthSquared() const
 	{
 		return point1.DistanceSquaredTo(point2);
 	}
@@ -72,10 +72,8 @@ namespace CubbyFlow
 	template <typename T, size_t N>
 	void BoundingBox::Merge(const VectorType& point)
 	{
-		point1.x(std::min(point1.x, point.x));
-		point1.y(std::min(point1.y, point.y));
-		point2.x(std::max(point2.x, point.x));
-		point2.y(std::max(point2.y, point.y));
+		point1(std::min(point1, point));
+		point2(std::max(point2, point));
 	}
 
 	template <typename T, size_t N>
@@ -88,9 +86,7 @@ namespace CubbyFlow
 	template <typename T, size_t N>
 	void BoundingBox::Expand(T delta)
 	{
-		point1.x += 2 * delta;
-		point1.y += 2 * delta;
-		point2.x += 2 * delta;
-		point2.y += 2 * delta;
+		point1 += 2 * delta;
+		point2 += 2 * delta;
 	}
 }

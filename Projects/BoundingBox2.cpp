@@ -13,7 +13,7 @@ namespace CubbyFlow
 	template <typename T>
 	BoundingBox<T, 2>::BoundingBox()
 	{
-
+		// Do nothing
 	}
 
 	template <typename T>
@@ -33,19 +33,20 @@ namespace CubbyFlow
 	template <typename T>
 	T BoundingBox<T, 2>::Width() const
 	{
-		return upperCorner[0] - lowerCorner[0];
+		return upperCorner.x - lowerCorner.x;
 	}
 
 	template <typename T>
 	T BoundingBox<T, 2>::Height() const
 	{
-		return upperCorner[1] - lowerCorner[1];
+		return upperCorner.y - lowerCorner.y;
 	}
 
 	template <typename T>
-	T BoundingBox<T, 2>::Length(size_t axis) const
+	T BoundingBox<T, 2>::Length(size_t axis)
 	{
-
+		if (axis == 0) return Width();
+		return Height();
 	}
 
 	template <typename T>
@@ -63,7 +64,7 @@ namespace CubbyFlow
 	template <typename T>
 	bool BoundingBox<T, 2>::Intersects(const Ray2<T>& ray) const
 	{
-
+		double tx1 = (lowerCorner.x-ray.origin.x) * 
 	}
 
 	template <typename T>
@@ -127,6 +128,10 @@ namespace CubbyFlow
 			return lowerCorner;
 		case 1:
 			return Vector2<T>(lowerCorner.x, upperCorner.y);
+		case 2:
+			return Vector2<T>(uppercorner.x, lowerCorner.y);
+		case 3:
+			return upperCorner;
 		}
 	}
 }
