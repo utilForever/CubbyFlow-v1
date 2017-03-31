@@ -39,6 +39,33 @@ namespace CubbyFlow
 	{
 		return 0.0;
 	}
+
+	// MARK: PI
+	//! Float-type PI.
+	constexpr float PI_FLOAT = 3.14159265358979323846264338327950288f;
+	//! Double-type PI.
+	constexpr double PI_DOUBLE = 3.14159265358979323846264338327950288;
+
+	//! PI for type T.
+	template <typename T>
+	constexpr T PI()
+	{
+		return static_cast<T>(PI_DOUBLE);
+	}
+
+	//! Pi for float.
+	template <>
+	constexpr float PI<float>()
+	{
+		return PI_FLOAT;
+	}
+
+	//! Pi for double.
+	template <>
+	constexpr double PI<double>()
+	{
+		return PI_DOUBLE;
+	}
 }
 
 #endif
