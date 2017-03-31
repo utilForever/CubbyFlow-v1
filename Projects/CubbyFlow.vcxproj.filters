@@ -296,5 +296,8 @@
     <ClCompile Include="Transform3.cpp">
       <Filter>Transform</Filter>
     </ClCompile>
+    <ClCompile Include="BoundingBox2.cpp">
+      <Filter>BoundingBox</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

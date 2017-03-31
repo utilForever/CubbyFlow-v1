@@ -12,7 +12,7 @@ namespace CubbyFlow
 {
 	Transform3::Transform3()
 	{
-
+		// Do nothing
 	}
 
 	Transform3::Transform3(const Vector3D& translation, const QuaternionD& orientation)
@@ -36,42 +36,41 @@ namespace CubbyFlow
 		m_orientation = orientation;
 	}
 
-	Vector2D Transform3::ToLocal(const Vector3D& pointInWorld) const
+	Vector3D Transform3::ToLocal(const Vector3D& pointInWorld) const
 	{
-		return Mul(pointInWorld - m_translation);
+		return m_orientation.Inverse.RMul(m_orientation*(pointInWorld - m_translation));
 	}
 
-	Vector2D Transform3::ToLocalDirection(const Vector2D& dirInWorld) const
+	Vector3D Transform3::ToLocalDirection(const Vector3D& dirInWorld) const
 	{
-		return Matrix2x2<double>::MakeRotationMatrix(m_orientation).Mul(dirInWorld);
+		return m_orientation.Inverse.RMul(m_orientation*(dirInWorld));
 	}
 
-	Ray2D Transform3::ToLocal(const Ray2D& rayInWorld) const
+	Ray3D Transform3::ToLocal(const Ray3D& rayInWorld) const
 	{
-		return Ray2D(ToLocal(rayInWorld.origin), ToLocal(rayInWorld.direction));
+		return Ray3D(ToLocal(rayInWorld.origin), ToLocal(rayInWorld.direction));
 	}
 
-	BoundingBox2D Transform3::ToLocal(const BoundingBox2D& bboxInWorld) const
+	BoundingBox3D Transform3::ToLocal(const BoundingBox3D& bboxInWorld) const
 	{
-
 	}
 
-	Vector2D Transform3::ToWorld(const Vector2D& pointInLocal) const
+	Vector3D Transform3::ToWorld(const Vector3D& pointInLocal) const
 	{
-		return Matrix2x2<double>::MakeRotationMatrix(m_orientation).Mul(pointInLocal + m_translation);
+		return m_orientation.Inverse.RMul(m_orientation*(pointInLocal + m_translation));
 	}
 
-	Vector2D Transform3::ToWorldDirection(const Vector2D& dirInLocal) const
+	Vector3D Transform3::ToWorldDirection(const Vector3D& dirInLocal) const
 	{
-		return Matrix2x2<double>::MakeRotationMatrix(m_orientation).Mul(dirInLocal);
+		return m_orientation.Inverse.RMul(m_orientation*(dirInLocal));
 	}
 
-	Ray2D Transform3::ToWorld(const Ray2D& rayInLocal) const
+	Ray3D Transform3::ToWorld(const Ray3D& rayInLocal) const
 	{
-		return Ray2D(ToWorld(rayInLocal.origin), ToWorld(rayInLocal.direction));
+		return Ray3D(ToWorld(rayInLocal.origin), ToWorld(rayInLocal.direction));
 	}
 
-	BoundingBox2D Transform3::ToWorld(const BoundingBox2D& bboxInLocal) const
+	BoundingBox3D Transform3::ToWorld(const BoundingBox3D& bboxInLocal) const
 	{
 
 	}

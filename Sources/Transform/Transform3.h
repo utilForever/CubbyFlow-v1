@@ -13,6 +13,7 @@
 #include <Math/Quaternion.h>
 #include <Ray/Ray3.h>
 #include <Vector/Vector3.h>
+#include <Matrix\Matrix3x3.h>
 
 namespace CubbyFlow
 {
