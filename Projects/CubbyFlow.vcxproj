@@ -207,6 +207,7 @@
     <ClCompile Include="..\Sources\Vector\Vector4.cpp" />
     <ClCompile Include="BoundingBox.cpp" />
     <ClCompile Include="BoundingBox2.cpp" />
+    <ClCompile Include="BoundingBox3.cpp" />
     <ClCompile Include="Transform2.cpp" />
     <ClCompile Include="Transform3.cpp" />
   </ItemGroup>

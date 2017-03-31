@@ -299,5 +299,8 @@
     <ClCompile Include="BoundingBox2.cpp">
       <Filter>BoundingBox</Filter>
     </ClCompile>
+    <ClCompile Include="BoundingBox3.cpp">
+      <Filter>BoundingBox</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
