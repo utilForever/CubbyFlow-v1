@@ -299,5 +299,8 @@
     <ClCompile Include="..\Sources\Field\ConstantScalarField2.cpp">
       <Filter>Field</Filter>
     </ClCompile>
+    <ClCompile Include="..\Sources\Field\ConstantScalarField3.cpp">
+      <Filter>Field</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
