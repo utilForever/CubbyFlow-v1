@@ -189,6 +189,9 @@
     <ClInclude Include="..\Sources\Field\ConstantScalarField3.h">
       <Filter>Field</Filter>
     </ClInclude>
+    <ClInclude Include="..\Sources\Field\ConstantVectorField2.h">
+      <Filter>Field</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Array\Array1.cpp">

@@ -134,6 +134,7 @@
     <ClInclude Include="..\Sources\BoundingBox\BoundingBox3.h" />
     <ClInclude Include="..\Sources\Field\ConstantScalarField2.h" />
     <ClInclude Include="..\Sources\Field\ConstantScalarField3.h" />
+    <ClInclude Include="..\Sources\Field\ConstantVectorField2.h" />
     <ClInclude Include="..\Sources\Field\CustomScalarField2.h" />
     <ClInclude Include="..\Sources\Field\CustomScalarField3.h" />
     <ClInclude Include="..\Sources\Field\CustomVectorField2.h" />
