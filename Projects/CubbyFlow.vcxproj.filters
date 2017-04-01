@@ -183,6 +183,9 @@
     <ClInclude Include="..\Sources\BoundingBox\BoundingBox3.h">
       <Filter>BoundingBox</Filter>
     </ClInclude>
+    <ClInclude Include="..\Sources\Field\ConstantScalarField2.h">
+      <Filter>Field</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Array\Array1.cpp">
