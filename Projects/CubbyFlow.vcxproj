@@ -181,6 +181,7 @@
     <ClCompile Include="..\Sources\Array\ArrayAccessor1.cpp" />
     <ClCompile Include="..\Sources\Array\ArrayAccessor2.cpp" />
     <ClCompile Include="..\Sources\Array\ArrayAccessor3.cpp" />
+    <ClCompile Include="..\Sources\Field\ConstantScalarField2.cpp" />
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp" />
     <ClCompile Include="..\Sources\Field\CustomScalarField3.cpp" />
     <ClCompile Include="..\Sources\Field\CustomVectorField2.cpp" />

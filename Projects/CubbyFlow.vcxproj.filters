@@ -296,5 +296,8 @@
     <ClCompile Include="..\Sources\Ray\Ray3.cpp">
       <Filter>Ray</Filter>
     </ClCompile>
+    <ClCompile Include="..\Sources\Field\ConstantScalarField2.cpp">
+      <Filter>Field</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
