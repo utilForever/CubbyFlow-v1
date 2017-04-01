@@ -305,5 +305,8 @@
     <ClCompile Include="..\Sources\Field\ConstantVectorField2.cpp">
       <Filter>Field</Filter>
     </ClCompile>
+    <ClCompile Include="..\Sources\Field\ConstantVectorField3.cpp">
+      <Filter>Field</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
