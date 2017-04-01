@@ -228,7 +228,7 @@ namespace CubbyFlow
 			(_2xz - _2yw) * v.x + (_2yz + _2xw) * v.y + (1 - _2yy - _2xx) * v.z);
 	}
 
-	// NOTE: Check the formula!
+	// TODO: Check the formula!
 	template <typename T>
 	Quaternion<T> Quaternion<T>::Mul(const Quaternion& other) const
 	{
@@ -269,53 +269,77 @@ namespace CubbyFlow
 	template <typename T>
 	void Quaternion<T>::Rotate(T angleInRadians)
 	{
-		Set(Axis(), Angle() + angledInRadians);
+		Vector3<T> axis;
+		T currentAngle;
+
+		GetAxisAngle(&axis, &currentAngle);
+
+		currentAngle += angleInRadians;
+
+		Set(axis, currentAngle);
 	}
 
 	template <typename T>
 	void Quaternion<T>::Normalize()
 	{
-		T Length = sqrt(x * x + y * y + z * z + w * w);
-		Set(w / Length, x / Length, y / Length, z / Length);
+		T norm = L2Norm();
+
+		if (norm > 0)
+		{
+			w /= norm;
+			x /= norm;
+			y /= norm;
+			z /= norm;
+		}
 	}
 
 	template <typename T>
 	Vector3<T> Quaternion<T>::Axis() const
 	{
-		assert(std::fabs(Normalized.w) > 0.0001);
-		return Vector<T, 3>(Normalized.x, Normalized().y, Normalized.z) / sqrt(1 - Normalized.w * Normalized().w);
+		Vector3<T> result(x, y, z);
+		result.normalize();
+
+		if (2 * std::acos(w) < PI<T>()) {
+			return result;
+		}
+		
+		return -result;
 	}
 
 	template <typename T>
 	T Quaternion<T>::Angle() const
 	{
-		return 2 * std::cos(Normalized().w);
+		T result = 2 * std::acos(w);
+
+		if (result < PI<T>())
+		{
+			return result;
+		}
+
+		// Wrap around
+		return 2 * PI<T>() - result;
 	}
 
 	template <typename T>
 	void Quaternion<T>::GetAxisAngle(Vector3<T>* axis, T* angle) const
 	{
-		axis = Axis();
-		angle = Angle();
+		axis->Set(x, y, z);
+		axis->Normalize();
+		*angle = 2 * std::acos(w);
+
+		if (*angle > PI<T>())
+		{
+			// Wrap around
+			(*axis) = -(*axis);
+			*angle = 2 * PI<T>() - (*angle);
+		}
 	}
 
 	template <typename T>
-	Quaternion Quaternion<T>::operator*(const T a) const
+	Quaternion<T> Quaternion<T>::Inverse() const
 	{
-		return Quaternion(w * a, x * a, y * b, z * a);
-	}
-
-	template <typename T>
-	Quaternion Quaternion<T>::operator/(const T a) const
-	{
-		return Quaternion(w / a, x / a, y / b, z / a);
-	}
-	
-	template <typename T>
-
-	Quaternion Quaternion<T>::Inverse() const
-	{
-		return Quaternion()
+		T denom = w * w + x * x + y * y + z * z;
+		return Quaternion(w / denom, -x / denom, -y / denom, -z / denom);
 	}
 
 	template <typename T>
@@ -331,65 +355,42 @@ namespace CubbyFlow
 	Matrix4x4<T> Quaternion<T>::Matrix4() const
 	{
 		return Matrix4x4<T>(
-			w, z, -y, x,
-			-z, w, x, y,
-			y, x, w, z,
-			-x, -y, -z, w).Cross(Matrix4x4<T>(
-				w, z, -y, x,
-				-z, w, x, -y,
-				y, -x, w, -z,
-				x, y, z, w));
+			1 - 2 * y * y - 2 * z * z, 2 * x * y - 2 * z * w, 2 * x * z + 2 * y * w, 0,
+			2 * x * y + 2 * z * w, 1 - 2 * x * x - 2 * z * z, 2 * y * z - 2 * x * w, 0,
+			2 * x * z + 2 * y * w, 2 * y * z + 2 * x * w, 1 - 2 * x * x - 2 * y * y, 0,
+			0, 0, 0, 1);
 	}
 
 	template <typename T>
 	T Quaternion<T>::L2Norm() const
 	{
-		return sqrt(w * w + x * x + y * y + z * z);
+		return std::sqrt(w * w + x * x + y * y + z * z);
 	}
 
 	template <typename T>
-	Quaternion& Quaternion<T>::operator=(const Quaternion& other)
+	Quaternion<T>& Quaternion<T>::operator=(const Quaternion& other)
 	{
 		Set(other);
-		return (*this);
+		return *this;
 	}
 
 	template <typename T>
-	Quaternion& Quaternion<T>::operator*=(const Quaternion& other)
+	Quaternion<T>& Quaternion<T>::operator*=(const Quaternion& other)
 	{
-		return Mul(other);
+		IMul(other);
+		return *this;
 	}
 
 	template <typename T>
 	T& Quaternion<T>::operator[](size_t i)
 	{
-		switch (i) 
-		{
-		case 0:
-			return w;
-		case 1:
-			return x;
-		case 2:
-			return y;
-		case 3:
-			return z;
-		}
+		return (&w)[i];
 	}
 
 	template <typename T>
 	const T& Quaternion<T>::operator[](size_t i) const
 	{
-		switch (i)
-		{
-		case 0:
-			return w;
-		case 1:
-			return x;
-		case 2:
-			return y;
-		case 3:
-			return z;
-		}
+		return (&w)[i];
 	}
 
 	template <typename T>
@@ -405,9 +406,9 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	Quaternion Quaternion<T>::MakeIdentity()
+	Quaternion<T> Quaternion<T>::MakeIdentity()
 	{
-		Set(0, 0, 0, 1);
+		return Quaternion();
 	}
 
 	template <typename T>
@@ -416,26 +417,53 @@ namespace CubbyFlow
 		const Quaternion<T>& b,
 		T t)
 	{
-		Vector<T, 3> VecA = Vector<T, 3>(a.x, a.y, a.z);
-		Vector<T, 3> VecB = Vector<T, 3>(b.x, b.y, b.z);
+		static const double threshold = 0.01;
+		static const T eps = std::numeric_limits<T>::epsilon();
 
-		double theta = std::acos(VecA.Dot(VecB) / sqrt(VecA.SquaredLength() + VecB.SquaredLength())) / 2;
-		return (a * std::sin((1 - t) * theta) + b * std::sin(t * theta)) / std::sin(theta);
+		T cosHalfAngle = dot(a, b);
+		T weightA, weightB;
+
+		// For better accuracy, return lerp result when a and b are close enough.
+		if (1.0 - std::fabs(cosHalfAngle) < threshold)
+		{
+			weightA = 1.0 - t;
+			weightB = t;
+		}
+		else
+		{
+			T halfAngle = std::acos(cosHalfAngle);
+			T sinHalfAngle = std::sqrt(1 - cosHalfAngle * cosHalfAngle);
+
+			// In case of angle ~ 180, pick middle value.
+			// If not, perform slerp.
+			if (std::fabs(sinHalfAngle) < eps)
+			{
+				weightA = static_cast<T>(0.5);
+				weightB = static_cast<T>(0.5);
+			}
+			else
+			{
+				weightA = std::sin((1 - t) * halfAngle) / sinHalfAngle;
+				weightB = std::sin(t * halfAngle) / sinHalfAngle;
+			}
+		}
+
+		return Quaternion<T>(
+			weightA * a.w + weightB * b.w,
+			weightA * a.x + weightB * b.x,
+			weightA * a.y + weightB * b.y,
+			weightA * a.z + weightB * b.z);
 	}
 
 	template <typename T>
 	Vector<T, 3> operator*(const Quaternion<T>& q, const Vector<T, 3>& v)
 	{
-		return q.Matrix3().Cross(v);
+		return q.Mul(v);
 	}
 	
 	template <typename T>
 	Quaternion<T> operator*(const Quaternion<T>& a, const Quaternion<T>& b)
 	{
-		return Quaterinon<T>(
-			a.w * b.w - a.x * b.x - a.y * b.y - a.z * b.z,
-			a.w * b.x + a.x * b.w - a.y * b.z + a.z * b.y,
-			a.w * b.y + a.x * b.z + a.y * b.w - a.z * b.x,
-			a.w * b.z - a.x * b.y + a.y * b.x + a.z * b.w);
+		return a.Mul(b);
 	}
 }
