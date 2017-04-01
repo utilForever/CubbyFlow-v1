@@ -54,7 +54,7 @@ namespace CubbyFlow
 		ConstantScalarField2Ptr MakeShared() const;
 
 	private:
-		double _value = 0.0;
+		double m_value = 0.0;
 	};
 }
 
