@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['uppercorner',['upperCorner',['../class_cubby_flow_1_1_bounding_box.html#adbc41ad56163dd3369ff0bd5cb4c3ce3',1,'CubbyFlow::BoundingBox::upperCorner()'],['../class_cubby_flow_1_1_bounding_box_3_01_t_00_012_01_4.html#a2d21f147795c963766b85557a82540f0',1,'CubbyFlow::BoundingBox&lt; T, 2 &gt;::upperCorner()'],['../class_cubby_flow_1_1_bounding_box_3_01_t_00_013_01_4.html#a6cf6f5bd9f04bd7bf305dc469bb88895',1,'CubbyFlow::BoundingBox&lt; T, 3 &gt;::upperCorner()']]]
+  ['m_5fisnormalflipped',['m_isNormalFlipped',['../class_cubby_flow_1_1_surface_builder_base2.html#ad75d16b69cf411f1612a9badc34cacdd',1,'CubbyFlow::SurfaceBuilderBase2::m_isNormalFlipped()'],['../class_cubby_flow_1_1_surface_builder_base3.html#ae91cc64b468f9831f1e2f2ba3746d286',1,'CubbyFlow::SurfaceBuilderBase3::m_isNormalFlipped()']]],
+  ['m_5ftransform',['m_transform',['../class_cubby_flow_1_1_surface_builder_base2.html#ae768677f2798746bb18540755d75ba93',1,'CubbyFlow::SurfaceBuilderBase2::m_transform()'],['../class_cubby_flow_1_1_surface_builder_base3.html#ada5c4237bebb7ac9b5e4a96b07a23d8f',1,'CubbyFlow::SurfaceBuilderBase3::m_transform()']]]
 ];

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['w',['w',['../class_cubby_flow_1_1_quaternion.html#abb692a5a178d7cb324be4892bdc0f4bc',1,'CubbyFlow::Quaternion::w()'],['../class_cubby_flow_1_1_vector_3_01_t_00_014_01_4.html#a6b69d5b18c183ae285b72f436f0dbc39',1,'CubbyFlow::Vector&lt; T, 4 &gt;::w()']]]
+  ['near',['near',['../struct_cubby_flow_1_1_bounding_box_ray_intersection2.html#a6f3aa8342f0563c63e8a0c192657ecf4',1,'CubbyFlow::BoundingBoxRayIntersection2::near()'],['../struct_cubby_flow_1_1_bounding_box_ray_intersection3.html#a5bbd46ee177fe24dfa901bbcc2d829b3',1,'CubbyFlow::BoundingBoxRayIntersection3::near()']]],
+  ['normal',['normal',['../struct_cubby_flow_1_1_surface_ray_intersection2.html#a57c7fee5f88fbf440e96c80aeebbd794',1,'CubbyFlow::SurfaceRayIntersection2::normal()'],['../struct_cubby_flow_1_1_surface_ray_intersection3.html#a28c621be75d3b43b7b96d298ee2a36c5',1,'CubbyFlow::SurfaceRayIntersection3::normal()']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['far',['far',['../struct_cubby_flow_1_1_bounding_box_ray_intersection2.html#ab113f866e9a5fe5d8fec830c49b3ed57',1,'CubbyFlow::BoundingBoxRayIntersection2::far()'],['../struct_cubby_flow_1_1_bounding_box_ray_intersection3.html#acc4e6bb6fd0c170f981327c98d7839a7',1,'CubbyFlow::BoundingBoxRayIntersection3::far()']]]
+  ['direction',['direction',['../class_cubby_flow_1_1_ray_3_01_t_00_012_01_4.html#a8492bc57fa61a45b8924906ef3b1c2ad',1,'CubbyFlow::Ray&lt; T, 2 &gt;::direction()'],['../class_cubby_flow_1_1_ray_3_01_t_00_013_01_4.html#a66868b6f0fc1a11619db73d5913421ad',1,'CubbyFlow::Ray&lt; T, 3 &gt;::direction()']]]
 ];
