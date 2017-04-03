@@ -9,6 +9,9 @@
 #ifndef CUBBYFLOW_SURFACE2_H
 #define CUBBYFLOW_SURFACE2_H
 
+#include <BoundingBox/BoundingBox2.h>
+#include <Ray/Ray2.h>
+#include <Transform/Transform2.h>
 #include <Vector/Vector2.h>
 
 #include <limits>
@@ -139,7 +142,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	T& SurfaceBuilderBase2<T>::withTransform(const Transform2& transform)
+	T& SurfaceBuilderBase2<T>::WithTransform(const Transform2& transform)
 	{
 		m_transform = transform;
 		return static_cast<T&>(*this);
