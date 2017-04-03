@@ -9,6 +9,9 @@
 #ifndef CUBBYFLOW_SURFACE3_H
 #define CUBBYFLOW_SURFACE3_H
 
+#include <BoundingBox/BoundingBox3.h>
+#include <Ray/Ray3.h>
+#include <Transform/Transform3.h>
 #include <Vector/Vector3.h>
 
 #include <limits>
@@ -132,7 +135,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	T& SurfaceBuilderBase3<T>::withOrientation(const QuaternionD& orientation)
+	T& SurfaceBuilderBase3<T>::WithOrientation(const QuaternionD& orientation)
 	{
 		m_transform.SetOrientation(orientation);
 		return static_cast<T&>(*this);
