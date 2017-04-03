@@ -195,6 +195,9 @@
     <ClInclude Include="..\Sources\Field\ConstantVectorField3.h">
       <Filter>Field</Filter>
     </ClInclude>
+    <ClInclude Include="..\Sources\Geometry\SurfaceSet2.h">
+      <Filter>Geomtery</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Array\Array1.cpp">
