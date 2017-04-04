@@ -81,8 +81,7 @@ namespace CubbyFlow
 	};
 
 	//! Shared pointer for the Triangle3 type.
-	typedef std::shared_ptr<Triangle3> Triangle3Ptr;
-
+	using Triangle3Ptr = std::shared_ptr<Triangle3>;
 
 	//!
 	//! \brief Front-end to create Triangle3 objects step by step.
