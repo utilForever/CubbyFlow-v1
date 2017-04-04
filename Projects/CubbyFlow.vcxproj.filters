@@ -210,6 +210,9 @@
     <ClInclude Include="..\Sources\Geometry\Triangle3.h">
       <Filter>Geomtery</Filter>
     </ClInclude>
+    <ClInclude Include="..\Sources\Geometry\TriangleMesh3.h">
+      <Filter>Geomtery</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Array\Array1.cpp">
