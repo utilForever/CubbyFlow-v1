@@ -204,6 +204,9 @@
     <ClInclude Include="..\Sources\Geometry\Sphere2.h">
       <Filter>Geomtery</Filter>
     </ClInclude>
+    <ClInclude Include="..\Sources\Geometry\Sphere3.h">
+      <Filter>Geomtery</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Array\Array1.cpp">
