@@ -146,6 +146,7 @@
     <ClInclude Include="..\Sources\Field\ScalarField3.h" />
     <ClInclude Include="..\Sources\Field\VectorField2.h" />
     <ClInclude Include="..\Sources\Field\VectorField3.h" />
+    <ClInclude Include="..\Sources\Geometry\Sphere2.h" />
     <ClInclude Include="..\Sources\Geometry\Surface2.h" />
     <ClInclude Include="..\Sources\Geometry\Surface3.h" />
     <ClInclude Include="..\Sources\Geometry\SurfaceSet2.h" />
