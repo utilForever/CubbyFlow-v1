@@ -326,5 +326,20 @@
     <ClCompile Include="..\Sources\Field\ConstantVectorField3.cpp">
       <Filter>Field</Filter>
     </ClCompile>
+    <ClCompile Include="BoundingBox.cpp">
+      <Filter>BoundingBox</Filter>
+    </ClCompile>
+    <ClCompile Include="BoundingBox2.cpp">
+      <Filter>BoundingBox</Filter>
+    </ClCompile>
+    <ClCompile Include="BoudingBox3.cpp">
+      <Filter>BoundingBox</Filter>
+    </ClCompile>
+    <ClCompile Include="Transform2.cpp">
+      <Filter>Transform</Filter>
+    </ClCompile>
+    <ClCompile Include="Transform3.cpp">
+      <Filter>Transform</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
