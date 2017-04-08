@@ -6,58 +6,100 @@
 > Created Time: 2017/03/30
 > Copyright (c) 2017, Dongmin Kim
 *************************************************************************/
-#include <BoundingBox\BoundingBox.h>
+#include <BoundingBox/BoundingBox.h>
+
+#include <Utils/MathUtils.h>
 
 namespace CubbyFlow
 {
 	template <typename T, size_t N>
 	BoundingBox<T, N>::BoundingBox()
 	{
-		// Do nothing
+		Reset();
 	}
 
 	template <typename T, size_t N>
 	BoundingBox<T, N>::BoundingBox(const VectorType& point1, const VectorType& point2)
 	{
-		lowerCorner(point1);
-		upperCorner(point2);
+		for (size_t i = 0; i < N; ++i)
+		{
+			lowerCorner[i] = std::min(point1[i], point2[i]);
+			upperCorner[i] = std::max(point1[i], point2[i]);
+		}
 	}
 
 	template <typename T, size_t N>
-	BoundingBox<T, N>::BoundingBox(const BoundingBox& other)
+	BoundingBox<T, N>::BoundingBox(const BoundingBox& other) :
+		lowerCorner(other.lowerCorner), upperCorner(other.upperCorner)
 	{
-		lowerCorner(other.lowerCorner);
-		upperCorner(other.upperCorner);
+		// Do nothing
 	}
 
 	template <typename T, size_t N>
 	bool BoundingBox<T, N>::Overlaps(const BoundingBox& other) const
 	{
-		return !(other.point1 > point2.x || other.point2 < point1);
+		for (size_t i = 0; i < N; ++i)
+		{
+			if (upperCorner[i] < other.lowerCorner[i] || lowerCorner[i] > other.upperCorner[i])
+			{
+				return false;
+			}
+		}
+
+		return true;
 	}
 
 	template <typename T, size_t N>
 	bool BoundingBox<T, N>::Contains(const VectorType& point) const
 	{
-		return (point1 < point && point < point2);
+		for (size_t i = 0; i < N; ++i)
+		{
+			if (upperCorner[i] < point[i] || lowerCorner[i] > point[i])
+			{
+				return false;
+			}
+		}
+
+		return true;
 	}
 
 	template <typename T, size_t N>
-	VectorType BoundingBox<T, N>::MidPoint() const
+	Vector<T, N> BoundingBox<T, N>::MidPoint() const
 	{
-		return VectorType(point1 + point2) / 2;
+		Vector<T, N> result;
+
+		for (size_t i = 0; i < N; ++i)
+		{
+			result[i] = (upperCorner[i] + lowerCorner[i]) / 2;
+		}
+
+		return result;
 	}
 
 	template <typename T, size_t N>
 	T BoundingBox<T, N>::DiagonalLength() const
 	{
-		return point1.DistanceTo(point2);
+		T result = 0;
+
+		for (size_t i = 0; i < N; ++i)
+		{
+			result += Square(upperCorner[i] - lowerCorner[i]);
+		}
+
+		return std::sqrt(result);
 	}
 
 	template <typename T, size_t N>
 	T BoundingBox<T, N>::DiagonalLengthSquared() const
 	{
-		return point1.DistanceSquaredTo(point2);
+		T result = 0;
+
+		for (size_t i = 0; i < N; ++i)
+		{
+			result += square(upperCorner[i] - lowerCorner[i]);
+		}
+
+		return result;
 	}
 
 	template <typename T, size_t N>
