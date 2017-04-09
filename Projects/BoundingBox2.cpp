@@ -6,28 +6,30 @@
 > Created Time: 2017/03/31
 > Copyright (c) 2017, Dongmin Kim
 *************************************************************************/
-#include <BoundingBox\BoundingBox2.h>
+#include <BoundingBox/BoundingBox2.h>
 
 namespace CubbyFlow
 {
 	template <typename T>
 	BoundingBox<T, 2>::BoundingBox()
 	{
-		// Do nothing
+		Reset();
 	}
 
 	template <typename T>
 	BoundingBox<T, 2>::BoundingBox(const Vector2<T>& point1, const Vector2<T>& point2)
 	{
-		lowerCorner(point1);
-		upperCorner(point2);
+		lowerCorner.x = std::min(point1.x, point2.x);
+		lowerCorner.y = std::min(point1.y, point2.y);
+		upperCorner.x = std::max(point1.x, point2.x);
+		upperCorner.y = std::max(point1.y, point2.y);
 	}
 
 	template <typename T>
-	BoundingBox<T, 2>::BoundingBox(const BoundingBox& other)
+	BoundingBox<T, 2>::BoundingBox(const BoundingBox& other) :
+		lowerCorner(other.lowerCorner), upperCorner(other.upperCorner)
 	{
-		lowerCorner(other.lowerCorner);
-		upperCorner(other.upperCorner);
+		// Do nothing
 	}
 
 	template <typename T>
@@ -45,88 +47,146 @@ namespace CubbyFlow
 	template <typename T>
 	T BoundingBox<T, 2>::Length(size_t axis)
 	{
-		if (axis == 0) return Width();
-		return Height();
+		return upperCorner[axis] - lowerCorner[axis];
 	}
 
 	template <typename T>
 	bool BoundingBox<T, 2>::Overlaps(const BoundingBox& other) const
 	{
-		return !(other.lowerCorner.x > upperCorner.x || other.upperCorner.x < lowerCorner.x || other.upperCorner.y > lowerCorner.y || other.lowerCorner.y < lowerCorner.y);
+		if (upperCorner.x < other.lowerCorner.x || lowerCorner.x > other.upperCorner.x)
+		{
+			return false;
+		}
+
+		if (upperCorner.y < other.lowerCorner.y || lowerCorner.y > other.upperCorner.y)
+		{
+			return false;
+		}
+
+		return true;
 	}
 
 	template <typename T>
 	bool BoundingBox<T, 2>::Contains(const Vector2<T>& point) const
 	{
-		return (lowerCorner.x < point.x && point.x < upperCorner.x && lowerCorner.y < point.y && point.y < upperCorner.y);
+		if (upperCorner.x < point.x || lowerCorner.x > point.x)
+		{
+			return false;
+		}
+
+		if (upperCorner.y < point.y || lowerCorner.y > point.y)
+		{
+			return false;
+		}
+
+		return true;
 	}
 
 	template <typename T>
 	bool BoundingBox<T, 2>::Intersects(const Ray2<T>& ray) const
 	{
+		T min = 0;
+		T max = std::numeric_limits<T>::max();
+
+		const Vector2<T>& rayInvDir = ray.direction.rdiv(1);
+
+		for (size_t i = 0; i < 2; ++i)
+		{
+			T near = (lowerCorner[i] - ray.origin[i]) * rayInvDir[i];
+			T far = (upperCorner[i] - ray.origin[i]) * rayInvDir[i];
+
+			if (near > far)
+			{
+				std::swap(near, far);
+			}
+
+			min = std::max(near, min);
+			max = std::min(far, max);
+
+			if (min > max)
+			{
+				return false;
+			}
+		}
+
+		return true;
 	}
 
 	template <typename T>
 	Vector2<T> BoundingBox<T, 2>::MidPoint() const
 	{
-		return (lowerCorner + upperCorner) / 2;
+		return (upperCorner + lowerCorner) / static_cast<T>(2);
 	}
 
 	template <typename T>
 	T BoundingBox<T, 2>::DiagonalLength() const
 	{
-		return lowerCorner.DistanceTo(upperCorner);
+		return (upperCorner - lowerCorner).Length();
 	}
 
 	template <typename T>
 	T BoundingBox<T, 2>::DiagonalLengthSquared() const
 	{
-		return lowerCorner.DistanceSquaredTo(upperCorner);
+		return (upperCorner - lowerCorner).LengthSquared();
 	}
 
 	template <typename T>
 	void BoundingBox<T, 2>::Reset()
 	{
-		lowerCorner(-_LIMITS_(T));
-		upperCorner(_LIMITS_(T));
+		lowerCorner.x = std::numeric_limits<T>::max();
+		lowerCorner.y = std::numeric_limits<T>::max();
+		upperCorner.x = -std::numeric_limits<T>::max();
+		upperCorner.y = -std::numeric_limits<T>::max();
 	}
 
 	template <typename T>
 	void BoundingBox<T, 2>::Merge(const Vector2<T>& point)
 	{
-		point1.x(std::min(lowerCorner.x, point.x));
-		point1.y(std::min(lowerCorner.y, point.y));
-		point2.x(std::max(upperCorner.x, point.x));
-		point2.y(std::max(upperCorner.y, point.y));
+		lowerCorner.x = std::min(lowerCorner.x, point.x);
+		lowerCorner.y = std::min(lowerCorner.y, point.y);
+		upperCorner.x = std::max(upperCorner.x, point.x);
+		upperCorner.y = std::max(upperCorner.y, point.y);
 	}
 
 	template <typename T>
 	void BoundingBox<T, 2>::Merge(const BoundingBox& other)
 	{
-		Merge(other.lowerCorner);
-		Merge(other.upperCorner);
+		lowerCorner.x = std::min(lowerCorner.x, other.lowerCorner.x);
+		lowerCorner.y = std::min(lowerCorner.y, other.lowerCorner.y);
+		upperCorner.x = std::max(upperCorner.x, other.upperCorner.x);
+		upperCorner.y = std::max(upperCorner.y, other.upperCorner.y);
 	}
 
 	template <typename T>
 	void BoundingBox<T, 2>::Expand(T delta)
 	{
-		lowerCorner += delta * 2;
-		upperCorner += delta * 2;
+		lowerCorner -= delta;
+		upperCorner += delta;
 	}
 
 	template <typename T>
 	Vector2<T> BoundingBox<T, 2>::Corner(size_t idx) const
 	{
-		switch (idx)
+		Vector2<T> result;
+
+		if (idx & 1)
 		{
-		case 0:
-			return lowerCorner;
-		case 1:
-			return Vector2<T>(lowerCorner.x, upperCorner.y);
-		case 2:
-			return Vector2<T>(uppercorner.x, lowerCorner.y);
-		case 3:
-			return upperCorner;
+			result.x = upperCorner.x;
 		}
+		else
+		{
+			result.x = lowerCorner.x;
+		}
+
+		if (idx & 2)
+		{
+			result.y = upperCorner.y;
+		}
+		else
+		{
+			result.y = lowerCorner.y;
+		}
+
+		return result;
 	}
 }
