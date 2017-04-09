@@ -10,6 +10,7 @@
 
 namespace CubbyFlow
 {
+
 	Transform3::Transform3()
 	{
 		// Do nothing
