@@ -113,6 +113,52 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
+	BoundingBoxRayIntersection2<T> BoundingBox<T, 2>::ClosestIntersection(const Ray2<T>& ray) const
+	{
+		BoundingBoxRayIntersection2<T> intersection;
+
+		T min = 0;
+		T max = std::numeric_limits<T>::max();
+
+		const Vector2<T>& rayInvDir = ray.direction.RDiv(1);
+
+		for (size_t i = 0; i < 2; ++i)
+		{
+			T near = (lowerCorner[i] - ray.origin[i]) * rayInvDir[i];
+			T far = (upperCorner[i] - ray.origin[i]) * rayInvDir[i];
+
+			if (near > far)
+			{
+				std::swap(near, far);
+			}
+
+			min = std::max(near, min);
+			max = std::min(far, max);
+
+			if (min > max)
+			{
+				intersection.isIntersecting = false;
+				return intersection;
+			}
+		}
+
+		intersection.isIntersecting = true;
+
+		if (Contains(ray.origin))
+		{
+			intersection.near = max;
+			intersection.far = std::numeric_limits<T>::max();
+		}
+		else
+		{
+			intersection.near = min;
+			intersection.far = max;
+		}
+
+		return intersection;
+	}
+
+	template <typename T>
 	Vector2<T> BoundingBox<T, 2>::MidPoint() const
 	{
 		return (upperCorner + lowerCorner) / static_cast<T>(2);
