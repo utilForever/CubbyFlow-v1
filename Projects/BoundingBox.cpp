@@ -103,32 +103,42 @@ namespace CubbyFlow
 	}
 
 	template <typename T, size_t N>
-	void BoundingBox::Reset()
+	void BoundingBox<T, N>::Reset()
 	{
-		point1.x(-_LIMITS_(T));
-		point1.y(-_LIMITS_(T));
-		point2.x(_LIMITS_(T));
-		point2.y(_LIMITS_(T));
+		for (size_t i = 0; i < N; ++i)
+		{
+			lowerCorner[i] = std::numeric_limits<T>::max();
+			upperCorner[i] = -std::numeric_limits<T>::max();
+		}
 	}
 
 	template <typename T, size_t N>
-	void BoundingBox::Merge(const VectorType& point)
+	void BoundingBox<T, N>::Merge(const VectorType& point)
 	{
-		point1(std::min(point1, point));
-		point2(std::max(point2, point));
+		for (size_t i = 0; i < N; ++i)
+		{
+			lowerCorner[i] = std::min(lowerCorner[i], point[i]);
+			upperCorner[i] = std::max(upperCorner[i], point[i]);
+		}
 	}
 
 	template <typename T, size_t N>
-	void BoundingBox::Merge(const BoundingBox& other)
+	void BoundingBox<T, N>::Merge(const BoundingBox& other)
 	{
-		Merge(other.point1);
-		Merge(other.point2);
+		for (size_t i = 0; i < N; ++i)
+		{
+			lowerCorner[i] = std::min(lowerCorner[i], other.lowerCorner[i]);
+			upperCorner[i] = std::max(upperCorner[i], other.upperCorner[i]);
+		}
 	}
 
 	template <typename T, size_t N>
-	void BoundingBox::Expand(T delta)
+	void BoundingBox<T, N>::Expand(T delta)
 	{
-		point1 += 2 * delta;
-		point2 += 2 * delta;
+		for (size_t i = 0; i < N; ++i)
+		{
+			lowerCorner[i] -= delta;
+			upperCorner[i] += delta;
+		}
 	}
 }
