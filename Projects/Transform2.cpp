@@ -53,7 +53,7 @@ namespace CubbyFlow
 
 	BoundingBox2D Transform2::ToLocal(const BoundingBox2D& bboxInWorld) const
 	{
-
+		return BoundingBox2D(bboxInWorld);
 	}
 
 	Vector2D Transform2::ToWorld(const Vector2D& pointInLocal) const
@@ -73,6 +73,6 @@ namespace CubbyFlow
 
 	BoundingBox2D Transform2::ToWorld(const BoundingBox2D& bboxInLocal) const
 	{
-
+		return bboxInLocal;
 	}
 }

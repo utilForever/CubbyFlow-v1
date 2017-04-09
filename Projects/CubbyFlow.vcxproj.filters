@@ -341,5 +341,8 @@
     <ClCompile Include="BoundingBox3.cpp">
       <Filter>BoundingBox</Filter>
     </ClCompile>
+    <ClCompile Include="Surface3.cpp">
+      <Filter>Geomtery</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

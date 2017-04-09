@@ -39,12 +39,12 @@ namespace CubbyFlow
 
 	Vector3D Transform3::ToLocal(const Vector3D& pointInWorld) const
 	{
-		return m_orientation.Inverse.RMul(m_orientation*(pointInWorld - m_translation));
+		return m_orientation.Inverse().Mul(m_orientation * m_orientation.Mul(pointInWorld - m_translation));
 	}
 
 	Vector3D Transform3::ToLocalDirection(const Vector3D& dirInWorld) const
 	{
-		return m_orientation.Inverse.RMul(m_orientation*(dirInWorld));
+		return m_orientation.Inverse().Mul(m_orientation * dirInWorld);
 	}
 
 	Ray3D Transform3::ToLocal(const Ray3D& rayInWorld) const
@@ -58,12 +58,12 @@ namespace CubbyFlow
 
 	Vector3D Transform3::ToWorld(const Vector3D& pointInLocal) const
 	{
-		return m_orientation.Inverse.RMul(m_orientation*(pointInLocal + m_translation));
+		return m_orientation.Inverse().Mul(m_orientation*(pointInLocal + m_translation));
 	}
 
 	Vector3D Transform3::ToWorldDirection(const Vector3D& dirInLocal) const
 	{
-		return m_orientation.Inverse.RMul(m_orientation*(dirInLocal));
+		return m_orientation.Inverse().Mul(m_orientation*(dirInLocal));
 	}
 
 	Ray3D Transform3::ToWorld(const Ray3D& rayInLocal) const

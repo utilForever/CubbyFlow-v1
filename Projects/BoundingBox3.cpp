@@ -31,25 +31,25 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	BoundingBox<T, 3>::Width() const
+	T BoundingBox<T, 3>::Width() const
 	{
 		return upperCorner.x - lowerCorner.x;
 	}
 
 	template <typename T>
-	BoundingBox<T, 3>::Height() const
+	T BoundingBox<T, 3>::Height() const
 	{
 		return upperCorner.y - lowerCorner.y;
 	}
 
 	template <typename T>
-	BoundingBox<T, 3>::Depth() const
+	T BoundingBox<T, 3>::Depth() const
 	{
 		return upperCorner.z - lowerCorner.z;
 	}
 
 	template <typename T>
-	BoundingBox<T, 3>::Length(size_t axis)
+	T BoundingBox<T, 3>::Length(size_t axis)
 	{
 		switch (axis)
 		{
