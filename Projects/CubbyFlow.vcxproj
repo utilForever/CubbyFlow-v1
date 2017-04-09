@@ -187,6 +187,9 @@
     <ClCompile Include="..\Sources\Array\ArrayAccessor1.cpp" />
     <ClCompile Include="..\Sources\Array\ArrayAccessor2.cpp" />
     <ClCompile Include="..\Sources\Array\ArrayAccessor3.cpp" />
+    <ClCompile Include="..\Sources\BoundingBox\BoundingBox.cpp" />
+    <ClCompile Include="..\Sources\BoundingBox\BoundingBox2.cpp" />
+    <ClCompile Include="..\Sources\BoundingBox\BoundingBox3.cpp" />
     <ClCompile Include="..\Sources\Field\ConstantScalarField2.cpp" />
     <ClCompile Include="..\Sources\Field\ConstantScalarField3.cpp" />
     <ClCompile Include="..\Sources\Field\ConstantVectorField2.cpp" />
@@ -212,17 +215,14 @@
     <ClCompile Include="..\Sources\Point\Point3.cpp" />
     <ClCompile Include="..\Sources\Ray\Ray2.cpp" />
     <ClCompile Include="..\Sources\Ray\Ray3.cpp" />
+    <ClCompile Include="..\Sources\Transform\Transform2.cpp" />
+    <ClCompile Include="..\Sources\Transform\Transform3.cpp" />
     <ClCompile Include="..\Sources\Utils\MathUtils.cpp" />
     <ClCompile Include="..\Sources\Utils\Parallel.cpp" />
     <ClCompile Include="..\Sources\Vector\Vector.cpp" />
     <ClCompile Include="..\Sources\Vector\Vector2.cpp" />
     <ClCompile Include="..\Sources\Vector\Vector3.cpp" />
     <ClCompile Include="..\Sources\Vector\Vector4.cpp" />
-    <ClCompile Include="BoundingBox3.cpp" />
-    <ClCompile Include="BoundingBox.cpp" />
-    <ClCompile Include="BoundingBox2.cpp" />
-    <ClCompile Include="Transform2.cpp" />
-    <ClCompile Include="Transform3.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
