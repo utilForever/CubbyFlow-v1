@@ -205,6 +205,7 @@
     <ClCompile Include="..\Sources\Field\VectorField2.cpp" />
     <ClCompile Include="..\Sources\Field\VectorField3.cpp" />
     <ClCompile Include="..\Sources\Geometry\Surface2.cpp" />
+    <ClCompile Include="..\Sources\Geometry\Surface3.cpp" />
     <ClCompile Include="..\Sources\Math\Quaternion.cpp" />
     <ClCompile Include="..\Sources\Matrix\Matrix.cpp" />
     <ClCompile Include="..\Sources\Matrix\Matrix2x2.cpp" />

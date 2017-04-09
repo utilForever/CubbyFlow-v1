@@ -341,7 +341,7 @@
     <ClCompile Include="..\Sources\Transform\Transform3.cpp">
       <Filter>Transform</Filter>
     </ClCompile>
-    <ClCompile Include="Surface3.cpp">
+    <ClCompile Include="..\Sources\Geometry\Surface3.cpp">
       <Filter>Geomtery</Filter>
     </ClCompile>
   </ItemGroup>
