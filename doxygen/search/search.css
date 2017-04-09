@@ -7,7 +7,7 @@
 #MSearchBox {
     white-space : nowrap;
     float: none;
-    margin-top: 8px;
+    margin-top: 16px;
     right: 0px;
     width: 170px;
     height: 24px;
@@ -63,7 +63,7 @@
     display:block;
     position:absolute;
     right:10px;
-    top:8px;
+    top:16px;
     width:20px;
     height:19px;
     background:url('search_r.png') no-repeat;
@@ -94,6 +94,10 @@
 }
 
 /*---------------- Search filter selection */
+
+#content .row .col-sm-12 {
+    position: unset !important;
+}
 
 #MSearchSelectWindow {
     display: none;
