@@ -57,7 +57,13 @@ namespace CubbyFlow
 
 	SurfaceRayIntersection3 Surface3::ClosestIntersection(const Ray3D& ray) const
 	{
-	
+		auto result = ClosestIntersectionLocal(transform.ToLocal(ray));
+
+		result.point = transform.ToWorld(result.point);
+		result.normal = transform.ToWorldDirection(result.normal);
+		result.normal *= (isNormalFlipped) ? -1.0 : 1.0;
+
+		return result;
 	}
 
 	bool Surface3::IntersectsLocal(const Ray3D& ray) const
