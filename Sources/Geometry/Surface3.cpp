@@ -6,7 +6,7 @@
 > Created Time: 2017/04/09
 > Copyright (c) 2017, Dongmin Kim
 *************************************************************************/
-#include <Geometry\Surface3.h>
+#include <Geometry/Surface3.h>
 
 namespace CubbyFlow
 {
@@ -29,30 +29,22 @@ namespace CubbyFlow
 
 	Vector3D Surface3::ClosestPoint(const Vector3D& otherPoint) const
 	{
-		Vector3D normal = transform.Translation();
-		double t = normal.Dot(otherPoint) / normal.LengthSquared();
-		return otherPoint - normal * t;
+		return transform.ToWorld(ClosestPointLocal(transform.ToLocal(otherPoint)));
 	}
 
 	BoundingBox3D Surface3::BoundingBox() const
 	{
-		return BoundingBox3D(Vector3D(0, 0, 0), Vector3D(transform.Translation().x, transform.Translation().y, transform.Translation().z));
+		return transform.ToWorld(BoundingBoxLocal());
 	}
 
 	bool Surface3::Intersects(const Ray3D& ray) const
 	{
-		Vector3D normal = transform.Translation();
-		return normal.Dot(ray.origin) * normal.Dot(ray.direction) < 0;
+		return IntersectsLocal(transform.ToLocal(ray));
 	}
 
 	double Surface3::ClosestDistance(const Vector3D& otherPoint) const
 	{
-		ClosestDistanceLocal(transform.ToLocal(otherPoint));
-	}
-
-	Vector3D Surface3::ClosestNormal(const Vector3D& otherPoint) const
-	{
-		transform.ToWorld(ClosestPointLocal(transform.ToLocal(otherPoint)));
+		return ClosestDistanceLocal(transform.ToLocal(otherPoint));
 	}
 
 	SurfaceRayIntersection3 Surface3::ClosestIntersection(const Ray3D& ray) const
@@ -63,6 +55,13 @@ namespace CubbyFlow
 		result.normal = transform.ToWorldDirection(result.normal);
 		result.normal *= (isNormalFlipped) ? -1.0 : 1.0;
 
+		return result;
+	}
+
+	Vector3D Surface3::ClosestNormal(const Vector3D& otherPoint) const
+	{
+		auto result = transform.ToWorldDirection(ClosestNormalLocal(transform.ToLocal(otherPoint)));
+		result *= (isNormalFlipped) ? -1.0 : 1.0;
 		return result;
 	}
 
