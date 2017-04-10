@@ -13,8 +13,7 @@ namespace CubbyFlow
 	Surface2::Surface2(const Transform2& transform_, bool isNormalFlipped_) :
 		transform(transform_), isNormalFlipped(isNormalFlipped_)
 	{
-		this->transform = transform;
-		this->isNormalFlipped = isNormalFlipped;
+		// Do nothing
 	}
 
 	Surface2::Surface2(const Surface2& other) :
@@ -30,9 +29,7 @@ namespace CubbyFlow
 
 	Vector2D Surface2::ClosestPoint(const Vector2D& otherPoint) const
 	{
-		Vector2D normal = transform.Translation();
-		double t = normal.Dot(otherPoint) / normal.LengthSquared();
-		return otherPoint - normal * t;
+		return transform.ToWorld(ClosestPointLocal(transform.ToLocal(otherPoint)));
 	}
 
 	BoundingBox2D Surface2::BoundingBox() const
@@ -68,14 +65,14 @@ namespace CubbyFlow
 		return result;
 	}
 
-	bool Surface2::IntersectsLocal(const Ray2D& rayLocal) const
+	bool Surface2::IntersectsLocal(const Ray2D& ray) const
 	{
-		auto result = ClosestIntersectionLocal(rayLocal);
+		auto result = ClosestIntersectionLocal(ray);
 		return result.isIntersecting;
 	}
 
-	double Surface2::ClosestDistanceLocal(const Vector2D& otherPointLocal) const
+	double Surface2::ClosestDistanceLocal(const Vector2D& otherPoint) const
 	{
-		return otherPointLocal.DistanceTo(ClosestPointLocal(otherPointLocal));
+		return otherPoint.DistanceTo(ClosestPointLocal(otherPoint));
 	}
 }
