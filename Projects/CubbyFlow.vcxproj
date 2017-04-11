@@ -204,6 +204,7 @@
     <ClCompile Include="..\Sources\Field\ScalarField3.cpp" />
     <ClCompile Include="..\Sources\Field\VectorField2.cpp" />
     <ClCompile Include="..\Sources\Field\VectorField3.cpp" />
+    <ClCompile Include="..\Sources\Geometry\Sphere2.cpp" />
     <ClCompile Include="..\Sources\Geometry\Surface2.cpp" />
     <ClCompile Include="..\Sources\Geometry\Surface3.cpp" />
     <ClCompile Include="..\Sources\Math\Quaternion.cpp" />
