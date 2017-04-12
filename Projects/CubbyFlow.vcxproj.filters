@@ -350,5 +350,8 @@
     <ClCompile Include="Sphere3.cpp">
       <Filter>Geomtery</Filter>
     </ClCompile>
+    <ClCompile Include="..\Sources\Geometry\SurfaceSet2.cpp">
+      <Filter>Geomtery</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

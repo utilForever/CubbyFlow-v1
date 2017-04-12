@@ -207,6 +207,7 @@
     <ClCompile Include="..\Sources\Geometry\Sphere2.cpp" />
     <ClCompile Include="..\Sources\Geometry\Surface2.cpp" />
     <ClCompile Include="..\Sources\Geometry\Surface3.cpp" />
+    <ClCompile Include="..\Sources\Geometry\SurfaceSet2.cpp" />
     <ClCompile Include="..\Sources\Math\Quaternion.cpp" />
     <ClCompile Include="..\Sources\Matrix\Matrix.cpp" />
     <ClCompile Include="..\Sources\Matrix\Matrix2x2.cpp" />
