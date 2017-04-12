@@ -6,8 +6,8 @@
 > Created Time: 2017/04/11
 > Copyright (c) 2017, Dongmin Kim
 *************************************************************************/
-#include<Geometry\Sphere3.h>
-#include<Utils\MathUtils.h>
+#include <Geometry/Sphere3.h>
+#include <Utils/MathUtils.h>
 
 namespace CubbyFlow
 {
@@ -39,12 +39,22 @@ namespace CubbyFlow
 		return std::fabs(center.DistanceTo(otherPoint) - radius);
 	}
 
+	Vector3D Sphere3::ClosestNormalLocal(const Vector3D& otherPoint) const
+	{
+		if (center.IsSimilar(otherPoint))
+		{
+			return Vector3D(1, 0, 0);
+		}
+
+		return (otherPoint - center).Normalized();
+	}
+
 	bool Sphere3::IntersectsLocal(const Ray3D& ray) const
 	{
 		Vector3D r = ray.origin - center;
 		double b = ray.direction.Dot(r);
 		double c = r.LengthSquared() - Square(radius);
-		double d = Square(b) - c;
+		double d = b * b - c;
 
 		if (d > 0.0)
 		{
@@ -66,29 +76,13 @@ namespace CubbyFlow
 		return false;
 	}
 
-	BoundingBox3D Sphere3::BoundingBoxLocal() const
-	{
-		Vector3D r(radius, radius, radius);
-		return BoundingBox3D(center - r, center + r);
-	}
-
-	Vector3D Sphere3::ClosestNormalLocal(const Vector3D& otherPoint) const
-	{
-		if (center.IsSimilar(otherPoint))
-		{
-			return Vector3D(1, 0, 0);
-		}
-
-		return (otherPoint - center).Normalized();
-	}
-
 	SurfaceRayIntersection3 Sphere3::ClosestIntersectionLocal(const Ray3D& ray) const
 	{
 		SurfaceRayIntersection3 intersection;
 		Vector3D r = ray.origin - center;
 		double b = ray.direction.Dot(r);
 		double c = r.LengthSquared() - Square(radius);
-		double d = Square(b) - c;
+		double d = b * b - c;
 
 		if (d > 0.0)
 		{
@@ -112,6 +106,18 @@ namespace CubbyFlow
 				intersection.point = ray.origin + min * ray.direction;
 			}
 		}
+		else
+		{
+			intersection.isIntersecting = false;
+		}
+
+		return intersection;
+	}
+
+	BoundingBox3D Sphere3::BoundingBoxLocal() const
+	{
+		Vector3D r(radius, radius, radius);
+		return BoundingBox3D(center - r, center + r);
 	}
 
 	Sphere3::Builder Sphere3::GetBuilder()
