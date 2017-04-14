@@ -347,13 +347,13 @@
     <ClCompile Include="..\Sources\Geometry\Sphere2.cpp">
       <Filter>Geomtery</Filter>
     </ClCompile>
-    <ClCompile Include="Sphere3.cpp">
-      <Filter>Geomtery</Filter>
-    </ClCompile>
     <ClCompile Include="..\Sources\Geometry\SurfaceSet2.cpp">
       <Filter>Geomtery</Filter>
     </ClCompile>
-    <ClCompile Include="SurfaceSet3.cpp">
+    <ClCompile Include="..\Sources\Geometry\Sphere3.cpp">
+      <Filter>Geomtery</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Geometry\SurfaceSet3.cpp">
       <Filter>Geomtery</Filter>
     </ClCompile>
   </ItemGroup>
