@@ -174,16 +174,16 @@ namespace CubbyFlow
 		T* Data();
 
 		//! Returns the begin iterator of the array.
-		typename ContainerType::iterator Begin();
+		typename ContainerType::iterator begin();
 
 		//! Returns the begin const iterator of the array.
-		typename ContainerType::const_iterator Begin() const;
+		typename ContainerType::const_iterator begin() const;
 
 		//! Returns the end iterator of the array.
-		typename ContainerType::iterator End();
+		typename ContainerType::iterator end();
 
 		//! Returns the end const iterator of the array.
-		typename ContainerType::const_iterator End() const;
+		typename ContainerType::const_iterator end() const;
 
 		//! Returns the const raw pointer to the array data.
 		const T* const Data() const;
