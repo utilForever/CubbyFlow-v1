@@ -211,6 +211,7 @@
     <ClCompile Include="..\Sources\Geometry\SurfaceSet2.cpp" />
     <ClCompile Include="..\Sources\Geometry\SurfaceSet3.cpp" />
     <ClCompile Include="..\Sources\Geometry\Triangle3.cpp" />
+    <ClCompile Include="..\Sources\Geometry\TriangleMesh3.cpp" />
     <ClCompile Include="..\Sources\Math\Quaternion.cpp" />
     <ClCompile Include="..\Sources\Matrix\Matrix.cpp" />
     <ClCompile Include="..\Sources\Matrix\Matrix2x2.cpp" />
