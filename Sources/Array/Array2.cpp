@@ -188,25 +188,25 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	typename Array<T, 2>::ContainerType::iterator Array<T, 2>::Begin()
+	typename Array<T, 2>::ContainerType::iterator Array<T, 2>::begin()
 	{
 		return m_data.begin();
 	}
 
 	template <typename T>
-	typename Array<T, 2>::ContainerType::const_iterator Array<T, 2>::Begin() const
+	typename Array<T, 2>::ContainerType::const_iterator Array<T, 2>::begin() const
 	{
 		return m_data.cbegin();
 	}
 
 	template <typename T>
-	typename Array<T, 2>::ContainerType::iterator Array<T, 2>::End()
+	typename Array<T, 2>::ContainerType::iterator Array<T, 2>::end()
 	{
 		return m_data.end();
 	}
 
 	template <typename T>
-	typename Array<T, 2>::ContainerType::const_iterator Array<T, 2>::End() const
+	typename Array<T, 2>::ContainerType::const_iterator Array<T, 2>::end() const
 	{
 		return m_data.cend();
 	}
