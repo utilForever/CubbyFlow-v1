@@ -85,7 +85,19 @@ $(function() {
 <p>Abstract base class for 3-D surface.  
  <a href="class_cubby_flow_1_1_surface3.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_surface3_8h_source.html">Geometry/Surface3.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="_surface3_8h_source.html">Surface/Surface3.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for CubbyFlow::Surface3:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_cubby_flow_1_1_surface3.png" usemap="#CubbyFlow::Surface3_map" alt=""/>
+  <map id="CubbyFlow::Surface3_map" name="CubbyFlow::Surface3_map">
+<area href="class_cubby_flow_1_1_sphere3.html" title="3-D sphere geometry. " alt="CubbyFlow::Sphere3" shape="rect" coords="0,56,166,80"/>
+<area href="class_cubby_flow_1_1_surface_set3.html" title="3-D surface set. " alt="CubbyFlow::SurfaceSet3" shape="rect" coords="176,56,342,80"/>
+<area href="class_cubby_flow_1_1_triangle3.html" title="3-D triangle geometry. " alt="CubbyFlow::Triangle3" shape="rect" coords="352,56,518,80"/>
+<area href="class_cubby_flow_1_1_triangle_mesh3.html" title="3-D triangle mesh geometry. " alt="CubbyFlow::TriangleMesh3" shape="rect" coords="528,56,694,80"/>
+</map>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -95,9 +107,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6e4cdab622a695ca973156937dbdc23f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_surface3.html#a6e4cdab622a695ca973156937dbdc23f">Surface3</a> (const <a class="el" href="class_cubby_flow_1_1_surface3.html">Surface3</a> &amp;other)</td></tr>
 <tr class="memdesc:a6e4cdab622a695ca973156937dbdc23f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor.  <a href="#a6e4cdab622a695ca973156937dbdc23f">More...</a><br /></td></tr>
 <tr class="separator:a6e4cdab622a695ca973156937dbdc23f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af888b361f006413c0410e28bd8a0e749"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_surface3.html#af888b361f006413c0410e28bd8a0e749">~Surface3</a> ()</td></tr>
-<tr class="memdesc:af888b361f006413c0410e28bd8a0e749"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <a href="#af888b361f006413c0410e28bd8a0e749">More...</a><br /></td></tr>
-<tr class="separator:af888b361f006413c0410e28bd8a0e749"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5cc97cad8bb814afde79dd98f388a10"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_surface3.html#ab5cc97cad8bb814afde79dd98f388a10">~Surface3</a> ()</td></tr>
+<tr class="memdesc:ab5cc97cad8bb814afde79dd98f388a10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <a href="#ab5cc97cad8bb814afde79dd98f388a10">More...</a><br /></td></tr>
+<tr class="separator:ab5cc97cad8bb814afde79dd98f388a10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f79075265ef5687285f25c038a43c62"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_cubby_flow.html#a7a0f165a2c76a196c9e23978ff7f2dcb">Vector3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_surface3.html#a5f79075265ef5687285f25c038a43c62">ClosestPoint</a> (const <a class="el" href="namespace_cubby_flow.html#a7a0f165a2c76a196c9e23978ff7f2dcb">Vector3D</a> &amp;otherPoint) const</td></tr>
 <tr class="memdesc:a5f79075265ef5687285f25c038a43c62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the closest point from the given point <code>otherPoint</code> to the surface.  <a href="#a5f79075265ef5687285f25c038a43c62">More...</a><br /></td></tr>
 <tr class="separator:a5f79075265ef5687285f25c038a43c62"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,10 +148,10 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a19502ab96303f8f4f396cb852e033429"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c653e839ad4ffa1cc4f77feae9eb003"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespace_cubby_flow.html#a7a0f165a2c76a196c9e23978ff7f2dcb">Vector3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_surface3.html#a2c653e839ad4ffa1cc4f77feae9eb003">ClosestNormalLocal</a> (const <a class="el" href="namespace_cubby_flow.html#a7a0f165a2c76a196c9e23978ff7f2dcb">Vector3D</a> &amp;otherPoint) const =0</td></tr>
 <tr class="separator:a2c653e839ad4ffa1cc4f77feae9eb003"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2cc35ec974a836008c5d6d75d2fc5b9d"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_surface3.html#a2cc35ec974a836008c5d6d75d2fc5b9d">IntersectsLocal</a> (const <a class="el" href="namespace_cubby_flow.html#a41873be70f319c9b87d3d65b92c3ae12">Ray3D</a> &amp;ray) const</td></tr>
-<tr class="separator:a2cc35ec974a836008c5d6d75d2fc5b9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a202b77abb01b3fe7a688f339bc9dcab2"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_surface3.html#a202b77abb01b3fe7a688f339bc9dcab2">ClosestDistanceLocal</a> (const <a class="el" href="namespace_cubby_flow.html#a7a0f165a2c76a196c9e23978ff7f2dcb">Vector3D</a> &amp;otherPoint) const</td></tr>
-<tr class="separator:a202b77abb01b3fe7a688f339bc9dcab2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85d28813d56dcbaa5ca4822deed06632"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_surface3.html#a85d28813d56dcbaa5ca4822deed06632">IntersectsLocal</a> (const <a class="el" href="namespace_cubby_flow.html#a41873be70f319c9b87d3d65b92c3ae12">Ray3D</a> &amp;ray) const</td></tr>
+<tr class="separator:a85d28813d56dcbaa5ca4822deed06632"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9b4bb2bf02f3cf776d512f8877d086d"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_surface3.html#ad9b4bb2bf02f3cf776d512f8877d086d">ClosestDistanceLocal</a> (const <a class="el" href="namespace_cubby_flow.html#a7a0f165a2c76a196c9e23978ff7f2dcb">Vector3D</a> &amp;otherPoint) const</td></tr>
+<tr class="separator:ad9b4bb2bf02f3cf776d512f8877d086d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstract base class for 3-D surface. </p>
@@ -194,8 +206,8 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="af888b361f006413c0410e28bd8a0e749"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af888b361f006413c0410e28bd8a0e749">&#9670;&nbsp;</a></span>~Surface3()</h2>
+<a id="ab5cc97cad8bb814afde79dd98f388a10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5cc97cad8bb814afde79dd98f388a10">&#9670;&nbsp;</a></span>~Surface3()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -204,7 +216,7 @@ Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual CubbyFlow::Surface3::~Surface3 </td>
+          <td class="memname">CubbyFlow::Surface3::~Surface3 </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -266,6 +278,8 @@ Protected Member Functions</h2></td></tr>
 
 <p>Returns the bounding box of this surface object in local frame. </p>
 
+<p>Implemented in <a class="el" href="class_cubby_flow_1_1_triangle_mesh3.html#ac65142dec82387683744b528c65b2d0c">CubbyFlow::TriangleMesh3</a>, and <a class="el" href="class_cubby_flow_1_1_triangle3.html#a16936f46de4a96d2ff562f3bf1ffba18">CubbyFlow::Triangle3</a>.</p>
+
 </div>
 </div>
 <a id="a5d481073926bbf73660fad13de66341b"></a>
@@ -287,8 +301,8 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a202b77abb01b3fe7a688f339bc9dcab2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a202b77abb01b3fe7a688f339bc9dcab2">&#9670;&nbsp;</a></span>ClosestDistanceLocal()</h2>
+<a id="ad9b4bb2bf02f3cf776d512f8877d086d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9b4bb2bf02f3cf776d512f8877d086d">&#9670;&nbsp;</a></span>ClosestDistanceLocal()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -297,7 +311,7 @@ Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual double CubbyFlow::Surface3::ClosestDistanceLocal </td>
+          <td class="memname">double CubbyFlow::Surface3::ClosestDistanceLocal </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="namespace_cubby_flow.html#a7a0f165a2c76a196c9e23978ff7f2dcb">Vector3D</a> &amp;&#160;</td>
           <td class="paramname"><em>otherPoint</em></td><td>)</td>
@@ -311,6 +325,8 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Returns the closest distance from the given point <code>otherPoint</code> to the point on the surface in local frame. </p>
+
+<p>Reimplemented in <a class="el" href="class_cubby_flow_1_1_triangle_mesh3.html#a4876847dc579e545c9d852e41aaeeb10">CubbyFlow::TriangleMesh3</a>.</p>
 
 </div>
 </div>
@@ -360,6 +376,8 @@ Protected Member Functions</h2></td></tr>
 
 <p>Returns the closest intersection point for given <code>ray</code> in local frame. </p>
 
+<p>Implemented in <a class="el" href="class_cubby_flow_1_1_triangle_mesh3.html#a3d054b93522236ebf2bbc23d0c9ee3ed">CubbyFlow::TriangleMesh3</a>, and <a class="el" href="class_cubby_flow_1_1_triangle3.html#a3eac2bb4acc4a7ac41c76148e89b79e5">CubbyFlow::Triangle3</a>.</p>
+
 </div>
 </div>
 <a id="a852dc7af2975b43239aa842e2bc5238d"></a>
@@ -405,6 +423,8 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Returns the normal to the closest point on the surface from the given point <code>otherPoint</code> in local frame. </p>
+
+<p>Implemented in <a class="el" href="class_cubby_flow_1_1_triangle_mesh3.html#a8d88c9df5b8250c4c9d397760d77abef">CubbyFlow::TriangleMesh3</a>, and <a class="el" href="class_cubby_flow_1_1_triangle3.html#aff3fc17d6ff1c1470e8682750b093384">CubbyFlow::Triangle3</a>.</p>
 
 </div>
 </div>
@@ -453,6 +473,8 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Returns the closest point from the given point <code>otherPoint</code> to the surface in local frame. </p>
 
+<p>Implemented in <a class="el" href="class_cubby_flow_1_1_triangle_mesh3.html#aca5c90e0f69528248ada45ba96e99e54">CubbyFlow::TriangleMesh3</a>, and <a class="el" href="class_cubby_flow_1_1_triangle3.html#ac6c164ef0f66da406ec5e4277249ee49">CubbyFlow::Triangle3</a>.</p>
+
 </div>
 </div>
 <a id="a532a8a7919dd408e458872a5ef7fd04d"></a>
@@ -475,8 +497,8 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a2cc35ec974a836008c5d6d75d2fc5b9d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2cc35ec974a836008c5d6d75d2fc5b9d">&#9670;&nbsp;</a></span>IntersectsLocal()</h2>
+<a id="a85d28813d56dcbaa5ca4822deed06632"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85d28813d56dcbaa5ca4822deed06632">&#9670;&nbsp;</a></span>IntersectsLocal()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -485,7 +507,7 @@ Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool CubbyFlow::Surface3::IntersectsLocal </td>
+          <td class="memname">bool CubbyFlow::Surface3::IntersectsLocal </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="namespace_cubby_flow.html#a41873be70f319c9b87d3d65b92c3ae12">Ray3D</a> &amp;&#160;</td>
           <td class="paramname"><em>ray</em></td><td>)</td>
@@ -499,6 +521,8 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Returns true if the given <code>ray</code> intersects with this surface object in local frame. </p>
+
+<p>Reimplemented in <a class="el" href="class_cubby_flow_1_1_triangle_mesh3.html#a94bac596e8ce46304325daf6bea1fce5">CubbyFlow::TriangleMesh3</a>, and <a class="el" href="class_cubby_flow_1_1_triangle3.html#a4fefab4e31f9213f0cc079a28f68ae55">CubbyFlow::Triangle3</a>.</p>
 
 </div>
 </div>
@@ -535,8 +559,9 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>Geometry/<a class="el" href="_surface3_8h_source.html">Surface3.h</a></li>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>Surface/<a class="el" href="_surface3_8h_source.html">Surface3.h</a></li>
+<li>Surface/<a class="el" href="_surface3_8cpp.html">Surface3.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.8-->
@@ -547,7 +572,7 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 3 2017 23:09:34 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Apr 16 2017 12:59:51 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

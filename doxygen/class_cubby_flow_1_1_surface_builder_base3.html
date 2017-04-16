@@ -84,7 +84,7 @@ $(function() {
 <p>Base class for 3-D surface builder.  
  <a href="class_cubby_flow_1_1_surface_builder_base3.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_surface3_8h_source.html">Geometry/Surface3.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="_surface3_8h_source.html">Surface/Surface3.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -94,9 +94,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a62b55196e93a14ca3a3d42103c96539c"><td class="memItemLeft" align="right" valign="top">DerivedBuilder &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_surface_builder_base3.html#a62b55196e93a14ca3a3d42103c96539c">WithTranslation</a> (const <a class="el" href="namespace_cubby_flow.html#a7a0f165a2c76a196c9e23978ff7f2dcb">Vector3D</a> &amp;translation)</td></tr>
 <tr class="memdesc:a62b55196e93a14ca3a3d42103c96539c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns builder with translation.  <a href="#a62b55196e93a14ca3a3d42103c96539c">More...</a><br /></td></tr>
 <tr class="separator:a62b55196e93a14ca3a3d42103c96539c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16bb8a4773e2509c23d33b4ddde53ad3"><td class="memItemLeft" align="right" valign="top">DerivedBuilder &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_surface_builder_base3.html#a16bb8a4773e2509c23d33b4ddde53ad3">WithOrientation</a> (const <a class="el" href="namespace_cubby_flow.html#afde25bbbacb3ff035a5e6df8d7d0b363">QuaternionD</a> &amp;orientation)</td></tr>
-<tr class="memdesc:a16bb8a4773e2509c23d33b4ddde53ad3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns builder with orientation.  <a href="#a16bb8a4773e2509c23d33b4ddde53ad3">More...</a><br /></td></tr>
-<tr class="separator:a16bb8a4773e2509c23d33b4ddde53ad3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3baff44dfa9beec6884244bd3e40f7d6"><td class="memItemLeft" align="right" valign="top">DerivedBuilder &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_surface_builder_base3.html#a3baff44dfa9beec6884244bd3e40f7d6">WithOrientation</a> (const <a class="el" href="namespace_cubby_flow.html#afde25bbbacb3ff035a5e6df8d7d0b363">QuaternionD</a> &amp;orientation)</td></tr>
+<tr class="memdesc:a3baff44dfa9beec6884244bd3e40f7d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns builder with orientation.  <a href="#a3baff44dfa9beec6884244bd3e40f7d6">More...</a><br /></td></tr>
+<tr class="separator:a3baff44dfa9beec6884244bd3e40f7d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac277427ede60ce9832f1f7238bbe7efb"><td class="memItemLeft" align="right" valign="top">DerivedBuilder &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_surface_builder_base3.html#ac277427ede60ce9832f1f7238bbe7efb">WithTransform</a> (const <a class="el" href="class_cubby_flow_1_1_transform3.html">Transform3</a> &amp;transform)</td></tr>
 <tr class="memdesc:ac277427ede60ce9832f1f7238bbe7efb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns builder with transform.  <a href="#ac277427ede60ce9832f1f7238bbe7efb">More...</a><br /></td></tr>
 <tr class="separator:ac277427ede60ce9832f1f7238bbe7efb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,16 +136,16 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a16bb8a4773e2509c23d33b4ddde53ad3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16bb8a4773e2509c23d33b4ddde53ad3">&#9670;&nbsp;</a></span>WithOrientation()</h2>
+<a id="a3baff44dfa9beec6884244bd3e40f7d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3baff44dfa9beec6884244bd3e40f7d6">&#9670;&nbsp;</a></span>WithOrientation()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename DerivedBuilder &gt; </div>
+template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">DerivedBuilder&amp; <a class="el" href="class_cubby_flow_1_1_surface_builder_base3.html">CubbyFlow::SurfaceBuilderBase3</a>&lt; DerivedBuilder &gt;::WithOrientation </td>
+          <td class="memname">T &amp; <a class="el" href="class_cubby_flow_1_1_surface_builder_base3.html">CubbyFlow::SurfaceBuilderBase3</a>&lt; T &gt;::WithOrientation </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="namespace_cubby_flow.html#afde25bbbacb3ff035a5e6df8d7d0b363">QuaternionD</a> &amp;&#160;</td>
           <td class="paramname"><em>orientation</em></td><td>)</td>
@@ -209,7 +209,7 @@ template&lt;typename T &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename DerivedBuilder &gt; </div>
+template&lt;typename DerivedBuilder&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -233,7 +233,7 @@ template&lt;typename DerivedBuilder &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename DerivedBuilder &gt; </div>
+template&lt;typename DerivedBuilder&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -252,7 +252,7 @@ template&lt;typename DerivedBuilder &gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Geometry/<a class="el" href="_surface3_8h_source.html">Surface3.h</a></li>
+<li>Surface/<a class="el" href="_surface3_8h_source.html">Surface3.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.8-->
@@ -263,7 +263,7 @@ template&lt;typename DerivedBuilder &gt; </div>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 3 2017 23:09:34 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Apr 16 2017 12:59:51 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

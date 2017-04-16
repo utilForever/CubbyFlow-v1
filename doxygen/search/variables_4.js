@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['gray_5fscale_5ftable',['GRAY_SCALE_TABLE',['../main_8cpp.html#a830564be4d5489527cc889e898347a60',1,'main.cpp']]],
-  ['gray_5fscale_5ftable_5fsize',['GRAY_SCALE_TABLE_SIZE',['../main_8cpp.html#acc3d0b12fe68ebfc3ed7b77b1819b1b4',1,'main.cpp']]]
+  ['far',['far',['../struct_cubby_flow_1_1_bounding_box_ray_intersection2.html#ab113f866e9a5fe5d8fec830c49b3ed57',1,'CubbyFlow::BoundingBoxRayIntersection2::far()'],['../struct_cubby_flow_1_1_bounding_box_ray_intersection3.html#acc4e6bb6fd0c170f981327c98d7839a7',1,'CubbyFlow::BoundingBoxRayIntersection3::far()']]]
 ];

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['near',['near',['../struct_cubby_flow_1_1_bounding_box_ray_intersection2.html#a6f3aa8342f0563c63e8a0c192657ecf4',1,'CubbyFlow::BoundingBoxRayIntersection2::near()'],['../struct_cubby_flow_1_1_bounding_box_ray_intersection3.html#a5bbd46ee177fe24dfa901bbcc2d829b3',1,'CubbyFlow::BoundingBoxRayIntersection3::near()']]],
-  ['normal',['normal',['../struct_cubby_flow_1_1_surface_ray_intersection2.html#a57c7fee5f88fbf440e96c80aeebbd794',1,'CubbyFlow::SurfaceRayIntersection2::normal()'],['../struct_cubby_flow_1_1_surface_ray_intersection3.html#a28c621be75d3b43b7b96d298ee2a36c5',1,'CubbyFlow::SurfaceRayIntersection3::normal()']]]
+  ['m_5fisnormalflipped',['m_isNormalFlipped',['../class_cubby_flow_1_1_surface_builder_base2.html#ad75d16b69cf411f1612a9badc34cacdd',1,'CubbyFlow::SurfaceBuilderBase2::m_isNormalFlipped()'],['../class_cubby_flow_1_1_surface_builder_base3.html#ae91cc64b468f9831f1e2f2ba3746d286',1,'CubbyFlow::SurfaceBuilderBase3::m_isNormalFlipped()']]],
+  ['m_5ftransform',['m_transform',['../class_cubby_flow_1_1_surface_builder_base2.html#ae768677f2798746bb18540755d75ba93',1,'CubbyFlow::SurfaceBuilderBase2::m_transform()'],['../class_cubby_flow_1_1_surface_builder_base3.html#ada5c4237bebb7ac9b5e4a96b07a23d8f',1,'CubbyFlow::SurfaceBuilderBase3::m_transform()']]]
 ];
