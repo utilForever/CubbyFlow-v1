@@ -10,7 +10,10 @@
 #include <Utils/MathUtils.h>
 #include <Utils/Parallel.h>
 
+#include <obj/obj_parser.hpp>
+
 #include <cassert>
+#include <iostream>
 
 namespace CubbyFlow
 {
@@ -597,151 +600,222 @@ namespace CubbyFlow
 
 	bool TriangleMesh3::ReadObj(std::istream* stream)
 	{
-		//obj::obj_parser parser(
-		//	obj::obj_parser::triangulate_faces
-		//	| obj::obj_parser::translate_negative_indices);
+		obj::obj_parser parser(obj::obj_parser::triangulate_faces | obj::obj_parser::translate_negative_indices);
 
-		//parser.info_callback(
-		//	[](size_t lineNumber, const std::string& message) {
-		//	std::cout << lineNumber << " " << message << std::endl;
-		//});
-		//parser.warning_callback(
-		//	[](size_t lineNumber, const std::string& message) {
-		//	std::cerr << lineNumber << " " << message << std::endl;
-		//});
-		//parser.error_callback([](size_t lineNumber, const std::string& message) {
-		//	std::cerr << lineNumber << " " << message << std::endl;
-		//});
+		parser.info_callback([](size_t lineNumber, const std::string& message)
+		{
+			std::cout << lineNumber << " " << message << "\n";
+		});
+		
+		parser.warning_callback([](size_t lineNumber, const std::string& message)
+		{
+			std::cerr << lineNumber << " " << message << "\n";
+		});
+		
+		parser.error_callback([](size_t lineNumber, const std::string& message)
+		{
+			std::cerr << lineNumber << " " << message << "\n";
+		});
 
-		//parser.geometric_vertex_callback(
-		//	[this](obj::float_type x, obj::float_type y, obj::float_type z) {
-		//	addPoint({ x, y, z });
-		//});
+		parser.geometric_vertex_callback([this](obj::float_type x, obj::float_type y, obj::float_type z)
+		{
+			AddPoint({ x, y, z });
+		});
 
-		//parser.texture_vertex_callback(
-		//	[this](obj::float_type u, obj::float_type v) {
-		//	addUv({ u, v });
-		//});
+		parser.texture_vertex_callback([this](obj::float_type u, obj::float_type v)
+		{
+			AddUV({ u, v });
+		});
 
-		//parser.vertex_normal_callback(
-		//	[this](obj::float_type nx, obj::float_type ny, obj::float_type nz) {
-		//	addNormal({ nx, ny, nz });
-		//});
+		parser.vertex_normal_callback([this](obj::float_type nx, obj::float_type ny, obj::float_type nz)
+		{
+			AddNormal({ nx, ny, nz });
+		});
 
-		//parser.face_callbacks(
-		//	// triangular_face_geometric_vertices_callback_type
-		//	[this](obj::index_type v0, obj::index_type v1, obj::index_type v2) {
-		//	addPointTriangle({ v0 - 1, v1 - 1, v2 - 1 });
-		//},
-		//	// triangular_face_geometric_vertices_texture_vertices_callback_type
-		//	[this](const obj::index_2_tuple_type& v0_vt0,
-		//		const obj::index_2_tuple_type& v1_vt1,
-		//		const obj::index_2_tuple_type& v2_vt2) {
-		//	addPointUvTriangle(
-		//	{
-		//		std::get<0>(v0_vt0) - 1,
-		//		std::get<0>(v1_vt1) - 1,
-		//		std::get<0>(v2_vt2) - 1
-		//	},
-		//	{
-		//		std::get<1>(v0_vt0) - 1,
-		//		std::get<1>(v1_vt1) - 1,
-		//		std::get<1>(v2_vt2) - 1
-		//	});
-		//},
-		//	// triangular_face_geometric_vertices_vertex_normals_callback_type
-		//	[this](const obj::index_2_tuple_type& v0_vn0,
-		//		const obj::index_2_tuple_type& v1_vn1,
-		//		const obj::index_2_tuple_type& v2_vn2) {
-		//	addPointNormalTriangle(
-		//	{
-		//		std::get<0>(v0_vn0) - 1,
-		//		std::get<0>(v1_vn1) - 1,
-		//		std::get<0>(v2_vn2) - 1
-		//	},
-		//	{
-		//		std::get<1>(v0_vn0) - 1,
-		//		std::get<1>(v1_vn1) - 1,
-		//		std::get<1>(v2_vn2) - 1
-		//	});
-		//},
-		//	// triangular_face_geometric_vertices_texture_vertices_vertex_normals...
-		//	[this](const obj::index_3_tuple_type& v0_vt0_vn0,
-		//		const obj::index_3_tuple_type& v1_vt1_vn1,
-		//		const obj::index_3_tuple_type& v2_vt2_vn2) {
-		//	addPointNormalUvTriangle(
-		//	{
-		//		std::get<0>(v0_vt0_vn0) - 1,
-		//		std::get<0>(v1_vt1_vn1) - 1,
-		//		std::get<0>(v2_vt2_vn2) - 1
-		//	},
-		//	{
-		//		std::get<1>(v0_vt0_vn0) - 1,
-		//		std::get<1>(v1_vt1_vn1) - 1,
-		//		std::get<1>(v2_vt2_vn2) - 1
-		//	},
-		//	{
-		//		std::get<2>(v0_vt0_vn0) - 1,
-		//		std::get<2>(v1_vt1_vn1) - 1,
-		//		std::get<2>(v2_vt2_vn2) - 1
-		//	});
-		//},
-		//	// quadrilateral_face_geometric_vertices_callback_type
-		//	[](obj::index_type, obj::index_type, obj::index_type, obj::index_type) {
-		//},
-		//	// quadrilateral_face_geometric_vertices_texture_vertices_callback_type
-		//	[](const obj::index_2_tuple_type&,
-		//		const obj::index_2_tuple_type&,
-		//		const obj::index_2_tuple_type&,
-		//		const obj::index_2_tuple_type&) {},
-		//	// quadrilateral_face_geometric_vertices_vertex_normals_callback_type
-		//	[](const obj::index_2_tuple_type&,
-		//		const obj::index_2_tuple_type&,
-		//		const obj::index_2_tuple_type&,
-		//		const obj::index_2_tuple_type&) {},
-		//	// quadrilateral_face_geometric_vertices_texture_vertices_vertex_norm...
-		//	[](const obj::index_3_tuple_type&,
-		//		const obj::index_3_tuple_type&,
-		//		const obj::index_3_tuple_type&,
-		//		const obj::index_3_tuple_type&) {},
-		//	// polygonal_face_geometric_vertices_begin_callback_type
-		//	[](obj::index_type, obj::index_type, obj::index_type) {},
-		//	// polygonal_face_geometric_vertices_vertex_callback_type
-		//	[](obj::index_type) {},
-		//	// polygonal_face_geometric_vertices_end_callback_type
-		//	[]() {},
-		//	// polygonal_face_geometric_vertices_texture_vertices_begin_callback_...
-		//	[](const obj::index_2_tuple_type&,
-		//		const obj::index_2_tuple_type&,
-		//		const obj::index_2_tuple_type&) {},
-		//	// polygonal_face_geometric_vertices_texture_vertices_vertex_callback...
-		//	[](const obj::index_2_tuple_type&) {},
-		//	// polygonal_face_geometric_vertices_texture_vertices_end_callback_type
-		//	[]() {},
-		//	// polygonal_face_geometric_vertices_vertex_normals_begin_callback_type
-		//	[](const obj::index_2_tuple_type&,
-		//		const obj::index_2_tuple_type&,
-		//		const obj::index_2_tuple_type&) {},
-		//	// polygonal_face_geometric_vertices_vertex_normals_vertex_callback_type
-		//	[](const obj::index_2_tuple_type&) {},
-		//	// polygonal_face_geometric_vertices_vertex_normals_end_callback_type
-		//	[]() {},
-		//	// polygonal_face_geometric_vertices_texture_vertices_vertex_normals_...
-		//	[](const obj::index_3_tuple_type&,
-		//		const obj::index_3_tuple_type&,
-		//		const obj::index_3_tuple_type&) {},
-		//	// polygonal_face_geometric_vertices_texture_vertices_vertex_normals_...
-		//	[](const obj::index_3_tuple_type&) {},
-		//	// polygonal_face_geometric_vertices_texture_vertices_vertex_normals_...
-		//	[]() {});
-		//parser.group_name_callback([](const std::string&) {});
-		//parser.smoothing_group_callback([](obj::size_type) {});
-		//parser.object_name_callback([](const std::string&) {});
-		//parser.material_library_callback([](const std::string&) {});
-		//parser.material_name_callback([](const std::string&) {});
-		//parser.comment_callback([](const std::string&) {});
+		parser.face_callbacks(
+			// triangular_face_geometric_vertices_callback_type
+			[this](obj::index_type v0, obj::index_type v1, obj::index_type v2)
+		{
+			AddPointTriangle({ v0 - 1, v1 - 1, v2 - 1 });
+		},
+			// triangular_face_geometric_vertices_texture_vertices_callback_type
+			[this](const obj::index_2_tuple_type& v0_vt0,
+				const obj::index_2_tuple_type& v1_vt1,
+				const obj::index_2_tuple_type& v2_vt2)
+		{
+			AddPointUvTriangle(
+			{
+				std::get<0>(v0_vt0) - 1,
+				std::get<0>(v1_vt1) - 1,
+				std::get<0>(v2_vt2) - 1
+			},
+			{
+				std::get<1>(v0_vt0) - 1,
+				std::get<1>(v1_vt1) - 1,
+				std::get<1>(v2_vt2) - 1
+			});
+		},
+			// triangular_face_geometric_vertices_vertex_normals_callback_type
+			[this](const obj::index_2_tuple_type& v0_vn0,
+				const obj::index_2_tuple_type& v1_vn1,
+				const obj::index_2_tuple_type& v2_vn2)
+		{
+			AddPointNormalTriangle(
+			{
+				std::get<0>(v0_vn0) - 1,
+				std::get<0>(v1_vn1) - 1,
+				std::get<0>(v2_vn2) - 1
+			},
+			{
+				std::get<1>(v0_vn0) - 1,
+				std::get<1>(v1_vn1) - 1,
+				std::get<1>(v2_vn2) - 1
+			});
+		},
+			// triangular_face_geometric_vertices_texture_vertices_vertex_normals...
+			[this](const obj::index_3_tuple_type& v0_vt0_vn0,
+				const obj::index_3_tuple_type& v1_vt1_vn1,
+				const obj::index_3_tuple_type& v2_vt2_vn2)
+		{
+			AddPointNormalUvTriangle(
+			{
+				std::get<0>(v0_vt0_vn0) - 1,
+				std::get<0>(v1_vt1_vn1) - 1,
+				std::get<0>(v2_vt2_vn2) - 1
+			},
+			{
+				std::get<1>(v0_vt0_vn0) - 1,
+				std::get<1>(v1_vt1_vn1) - 1,
+				std::get<1>(v2_vt2_vn2) - 1
+			},
+			{
+				std::get<2>(v0_vt0_vn0) - 1,
+				std::get<2>(v1_vt1_vn1) - 1,
+				std::get<2>(v2_vt2_vn2) - 1
+			});
+		},
+			// quadrilateral_face_geometric_vertices_callback_type
+			[](obj::index_type, obj::index_type, obj::index_type, obj::index_type)
+		{
+			// Do nothing
+		},
+			// quadrilateral_face_geometric_vertices_texture_vertices_callback_type
+			[](const obj::index_2_tuple_type&,
+				const obj::index_2_tuple_type&,
+				const obj::index_2_tuple_type&,
+				const obj::index_2_tuple_type&)
+		{
+			// Do nothing
+		},
+			// quadrilateral_face_geometric_vertices_vertex_normals_callback_type
+			[](const obj::index_2_tuple_type&,
+				const obj::index_2_tuple_type&,
+				const obj::index_2_tuple_type&,
+				const obj::index_2_tuple_type&)
+		{
+			// Do nothing
+		},
+			// quadrilateral_face_geometric_vertices_texture_vertices_vertex_norm...
+			[](const obj::index_3_tuple_type&,
+				const obj::index_3_tuple_type&,
+				const obj::index_3_tuple_type&,
+				const obj::index_3_tuple_type&)
+		{
+			// Do nothing
+		},
+			// polygonal_face_geometric_vertices_begin_callback_type
+			[](obj::index_type, obj::index_type, obj::index_type)
+		{
+			// Do nothing
+		},
+			// polygonal_face_geometric_vertices_vertex_callback_type
+			[](obj::index_type)
+		{
+			// Do nothing
+		},
+			// polygonal_face_geometric_vertices_end_callback_type
+			[]()
+		{
+			// Do nothing
+		},
+			// polygonal_face_geometric_vertices_texture_vertices_begin_callback_...
+			[](const obj::index_2_tuple_type&,
+				const obj::index_2_tuple_type&,
+				const obj::index_2_tuple_type&)
+		{
+			// Do nothing
+		},
+			// polygonal_face_geometric_vertices_texture_vertices_vertex_callback...
+			[](const obj::index_2_tuple_type&)
+		{
+			// Do nothing
+		},
+			// polygonal_face_geometric_vertices_texture_vertices_end_callback_type
+			[]()
+		{
+			// Do nothing
+		},
+			// polygonal_face_geometric_vertices_vertex_normals_begin_callback_type
+			[](const obj::index_2_tuple_type&,
+				const obj::index_2_tuple_type&,
+				const obj::index_2_tuple_type&)
+		{
+			// Do nothing
+		},
+			// polygonal_face_geometric_vertices_vertex_normals_vertex_callback_type
+			[](const obj::index_2_tuple_type&)
+		{
+			// Do nothing
+		},
+			// polygonal_face_geometric_vertices_vertex_normals_end_callback_type
+			[]()
+		{
+			// Do nothing
+		},
+			// polygonal_face_geometric_vertices_texture_vertices_vertex_normals_...
+			[](const obj::index_3_tuple_type&,
+				const obj::index_3_tuple_type&,
+				const obj::index_3_tuple_type&)
+		{
+			// Do nothing
+		},
+			// polygonal_face_geometric_vertices_texture_vertices_vertex_normals_...
+			[](const obj::index_3_tuple_type&)
+		{
+			// Do nothing
+		},
+			// polygonal_face_geometric_vertices_texture_vertices_vertex_normals_...
+			[]()
+		{
+			// Do nothing
+		});
 
-		//return parser.parse(*stream);
+		parser.group_name_callback([](const std::string&)
+		{
+			// Do nothing
+		});
+		parser.smoothing_group_callback([](obj::size_type)
+		{
+			// Do nothing
+		});
+		parser.object_name_callback([](const std::string&)
+		{
+			// Do nothing
+		});
+		parser.material_library_callback([](const std::string&)
+		{
+			// Do nothing
+		});
+		parser.material_name_callback([](const std::string&)
+		{
+			// Do nothing
+		});
+		parser.comment_callback([](const std::string&)
+		{
+			// Do nothing
+		});
+
+		return parser.parse(*stream);
 	}
 
 	TriangleMesh3& TriangleMesh3::operator=(const TriangleMesh3& other)
