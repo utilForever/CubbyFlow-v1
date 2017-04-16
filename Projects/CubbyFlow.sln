@@ -1,11 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.9
+VisualStudioVersion = 15.0.26403.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HelloFluidSim", "Examples\HelloFluidSim\HelloFluidSim.vcxproj", "{81FE7037-3E24-410B-99BA-00755D2E2449}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CubbyFlow", "CubbyFlow.vcxproj", "{67F165E0-323E-4FB0-BA14-285063218ED8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{79C970BF-72C5-403D-AC4D-854913DF4AF5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{90533EBA-91EB-4211-8BE6-D635881E33FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,5 +38,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{81FE7037-3E24-410B-99BA-00755D2E2449} = {79C970BF-72C5-403D-AC4D-854913DF4AF5}
 	EndGlobalSection
 EndGlobal
