@@ -319,7 +319,7 @@ namespace CubbyFlow
 		return m_normals.Size();
 	}
 
-	size_t TriangleMesh3::NumberOfUvs() const
+	size_t TriangleMesh3::NumberOfUVs() const
 	{
 		return m_uvs.Size();
 	}
@@ -371,7 +371,7 @@ namespace CubbyFlow
 		m_normalIndices.Append(newNormalIndices);
 	}
 
-	void TriangleMesh3::AddPointNormalUvTriangle(
+	void TriangleMesh3::AddPointNormalUVTriangle(
 		const Point3UI& newPointIndices,
 		const Point3UI& newNormalIndices,
 		const Point3UI& newUVIndices)
@@ -385,7 +385,7 @@ namespace CubbyFlow
 		m_uvIndices.Append(newUVIndices);
 	}
 
-	void TriangleMesh3::AddPointUvTriangle(
+	void TriangleMesh3::AddPointUVTriangle(
 		const Point3UI& newPointIndices,
 		const Point3UI& newUvIndices)
 	{
@@ -531,7 +531,7 @@ namespace CubbyFlow
 		});
 	}
 
-	void TriangleMesh3::Rotate(const Quaternion<double>& q)
+	void TriangleMesh3::Rotate(const QuaternionD& q)
 	{
 		ParallelFor(ZERO_SIZE, NumberOfPoints(),
 			[this, q](size_t i)
@@ -643,7 +643,7 @@ namespace CubbyFlow
 				const obj::index_2_tuple_type& v1_vt1,
 				const obj::index_2_tuple_type& v2_vt2)
 		{
-			AddPointUvTriangle(
+			AddPointUVTriangle(
 			{
 				std::get<0>(v0_vt0) - 1,
 				std::get<0>(v1_vt1) - 1,
@@ -677,7 +677,7 @@ namespace CubbyFlow
 				const obj::index_3_tuple_type& v1_vt1_vn1,
 				const obj::index_3_tuple_type& v2_vt2_vn2)
 		{
-			AddPointNormalUvTriangle(
+			AddPointNormalUVTriangle(
 			{
 				std::get<0>(v0_vt0_vn0) - 1,
 				std::get<0>(v1_vt1_vn1) - 1,
