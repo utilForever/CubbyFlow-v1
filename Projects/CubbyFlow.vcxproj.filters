@@ -22,9 +22,6 @@
     <Filter Include="Field">
       <UniqueIdentifier>{b8c6f199-2af6-4dad-bd3c-14c813cebdc7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Geomtery">
-      <UniqueIdentifier>{35979af0-a3e2-4397-9d98-bbb8d1824924}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Math">
       <UniqueIdentifier>{8470db9a-4058-4955-a16b-1d4a607f68bf}</UniqueIdentifier>
     </Filter>
@@ -39,6 +36,9 @@
     </Filter>
     <Filter Include="Surface">
       <UniqueIdentifier>{e0c0a01c-f0ab-4375-8fc3-81473906cad6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Geometry">
+      <UniqueIdentifier>{35979af0-a3e2-4397-9d98-bbb8d1824924}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -193,16 +193,16 @@
       <Filter>Field</Filter>
     </ClInclude>
     <ClInclude Include="..\Sources\Geometry\Sphere2.h">
-      <Filter>Geomtery</Filter>
+      <Filter>Geometry</Filter>
     </ClInclude>
     <ClInclude Include="..\Sources\Geometry\Sphere3.h">
-      <Filter>Geomtery</Filter>
+      <Filter>Geometry</Filter>
     </ClInclude>
     <ClInclude Include="..\Sources\Geometry\Triangle3.h">
-      <Filter>Geomtery</Filter>
+      <Filter>Geometry</Filter>
     </ClInclude>
     <ClInclude Include="..\Sources\Geometry\TriangleMesh3.h">
-      <Filter>Geomtery</Filter>
+      <Filter>Geometry</Filter>
     </ClInclude>
     <ClInclude Include="..\Sources\Surface\Surface2.h">
       <Filter>Surface</Filter>
@@ -342,16 +342,16 @@
       <Filter>Transform</Filter>
     </ClCompile>
     <ClCompile Include="..\Sources\Geometry\Sphere2.cpp">
-      <Filter>Geomtery</Filter>
+      <Filter>Geometry</Filter>
     </ClCompile>
     <ClCompile Include="..\Sources\Geometry\Sphere3.cpp">
-      <Filter>Geomtery</Filter>
+      <Filter>Geometry</Filter>
     </ClCompile>
     <ClCompile Include="..\Sources\Geometry\Triangle3.cpp">
-      <Filter>Geomtery</Filter>
+      <Filter>Geometry</Filter>
     </ClCompile>
     <ClCompile Include="..\Sources\Geometry\TriangleMesh3.cpp">
-      <Filter>Geomtery</Filter>
+      <Filter>Geometry</Filter>
     </ClCompile>
     <ClCompile Include="..\Sources\Surface\Surface2.cpp">
       <Filter>Surface</Filter>
