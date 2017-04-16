@@ -377,5 +377,8 @@
     <ClCompile Include="..\Sources\Surface\SurfaceSet3.cpp">
       <Filter>Surface</Filter>
     </ClCompile>
+    <ClCompile Include="..\Sources\Surface\Implicit\ImplicitSurface2.cpp">
+      <Filter>Surface\Implicit</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
