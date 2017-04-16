@@ -148,10 +148,6 @@
     <ClInclude Include="..\Sources\Field\VectorField3.h" />
     <ClInclude Include="..\Sources\Geometry\Sphere2.h" />
     <ClInclude Include="..\Sources\Geometry\Sphere3.h" />
-    <ClInclude Include="..\Sources\Geometry\Surface2.h" />
-    <ClInclude Include="..\Sources\Geometry\Surface3.h" />
-    <ClInclude Include="..\Sources\Geometry\SurfaceSet2.h" />
-    <ClInclude Include="..\Sources\Geometry\SurfaceSet3.h" />
     <ClInclude Include="..\Sources\Geometry\Triangle3.h" />
     <ClInclude Include="..\Sources\Geometry\TriangleMesh3.h" />
     <ClInclude Include="..\Sources\Math\Quaternion.h" />
@@ -168,6 +164,10 @@
     <ClInclude Include="..\Sources\Size\Size.h" />
     <ClInclude Include="..\Sources\Size\Size2.h" />
     <ClInclude Include="..\Sources\Size\Size3.h" />
+    <ClInclude Include="..\Sources\Surface\Surface2.h" />
+    <ClInclude Include="..\Sources\Surface\Surface3.h" />
+    <ClInclude Include="..\Sources\Surface\SurfaceSet2.h" />
+    <ClInclude Include="..\Sources\Surface\SurfaceSet3.h" />
     <ClInclude Include="..\Sources\Transform\Transform2.h" />
     <ClInclude Include="..\Sources\Transform\Transform3.h" />
     <ClInclude Include="..\Sources\Utils\Constants.h" />
@@ -206,10 +206,6 @@
     <ClCompile Include="..\Sources\Field\VectorField3.cpp" />
     <ClCompile Include="..\Sources\Geometry\Sphere2.cpp" />
     <ClCompile Include="..\Sources\Geometry\Sphere3.cpp" />
-    <ClCompile Include="..\Sources\Geometry\Surface2.cpp" />
-    <ClCompile Include="..\Sources\Geometry\Surface3.cpp" />
-    <ClCompile Include="..\Sources\Geometry\SurfaceSet2.cpp" />
-    <ClCompile Include="..\Sources\Geometry\SurfaceSet3.cpp" />
     <ClCompile Include="..\Sources\Geometry\Triangle3.cpp" />
     <ClCompile Include="..\Sources\Geometry\TriangleMesh3.cpp" />
     <ClCompile Include="..\Sources\Math\Quaternion.cpp" />
@@ -222,6 +218,10 @@
     <ClCompile Include="..\Sources\Point\Point3.cpp" />
     <ClCompile Include="..\Sources\Ray\Ray2.cpp" />
     <ClCompile Include="..\Sources\Ray\Ray3.cpp" />
+    <ClCompile Include="..\Sources\Surface\Surface2.cpp" />
+    <ClCompile Include="..\Sources\Surface\Surface3.cpp" />
+    <ClCompile Include="..\Sources\Surface\SurfaceSet2.cpp" />
+    <ClCompile Include="..\Sources\Surface\SurfaceSet3.cpp" />
     <ClCompile Include="..\Sources\Transform\Transform2.cpp" />
     <ClCompile Include="..\Sources\Transform\Transform3.cpp" />
     <ClCompile Include="..\Sources\Utils\MathUtils.cpp" />
