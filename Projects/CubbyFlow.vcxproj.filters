@@ -40,6 +40,9 @@
     <Filter Include="Geometry">
       <UniqueIdentifier>{35979af0-a3e2-4397-9d98-bbb8d1824924}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Surface\Implicit">
+      <UniqueIdentifier>{e0a81b04-6d80-4c54-a6bc-4d280d6a1ac8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Sources\Array\Array.h">
@@ -215,6 +218,9 @@
     </ClInclude>
     <ClInclude Include="..\Sources\Surface\SurfaceSet3.h">
       <Filter>Surface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\Surface\Implicit\ImplicitSurface2.h">
+      <Filter>Surface\Implicit</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
