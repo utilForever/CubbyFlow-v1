@@ -6,7 +6,7 @@
 > Created Time: 2017/04/12
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Geometry/SurfaceSet2.h>
+#include <Surface/SurfaceSet2.h>
 
 namespace CubbyFlow
 {

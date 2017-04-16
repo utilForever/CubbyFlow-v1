@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_SURFACE_SET2_H
 #define CUBBYFLOW_SURFACE_SET2_H
 
-#include <Geometry/Surface2.h>
+#include <Surface/Surface2.h>
 
 #include <vector>
 

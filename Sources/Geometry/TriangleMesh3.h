@@ -10,9 +10,9 @@
 #define CUBBYFLOW_TRIANGLE_MESH3_H
 
 #include <Array/Array1.h>
-#include <Geometry/Surface3.h>
 #include <Geometry/Triangle3.h>
 #include <Point/Point3.h>
+#include <Surface/Surface3.h>
 
 namespace CubbyFlow
 {
