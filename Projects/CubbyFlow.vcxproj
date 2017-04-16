@@ -166,6 +166,7 @@
     <ClInclude Include="..\Sources\Size\Size3.h" />
     <ClInclude Include="..\Sources\Surface\Implicit\ImplicitSurface2.h" />
     <ClInclude Include="..\Sources\Surface\Implicit\ImplicitSurfaceSet2.h" />
+    <ClInclude Include="..\Sources\Surface\Implicit\SurfaceToImplicit2.h" />
     <ClInclude Include="..\Sources\Surface\Surface2.h" />
     <ClInclude Include="..\Sources\Surface\Surface3.h" />
     <ClInclude Include="..\Sources\Surface\SurfaceSet2.h" />
