@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_SPHERE3_H
 #define CUBBYFLOW_SPHERE3_H
 
-#include <Geometry/Surface3.h>
+#include <Surface/Surface3.h>
 
 namespace CubbyFlow
 {

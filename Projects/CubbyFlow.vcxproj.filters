@@ -22,9 +22,6 @@
     <Filter Include="Field">
       <UniqueIdentifier>{b8c6f199-2af6-4dad-bd3c-14c813cebdc7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Geomtery">
-      <UniqueIdentifier>{35979af0-a3e2-4397-9d98-bbb8d1824924}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Math">
       <UniqueIdentifier>{8470db9a-4058-4955-a16b-1d4a607f68bf}</UniqueIdentifier>
     </Filter>
@@ -36,6 +33,15 @@
     </Filter>
     <Filter Include="Transform">
       <UniqueIdentifier>{54364948-8816-420d-9b91-1058870b6dac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Surface">
+      <UniqueIdentifier>{e0c0a01c-f0ab-4375-8fc3-81473906cad6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Geometry">
+      <UniqueIdentifier>{35979af0-a3e2-4397-9d98-bbb8d1824924}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Surface\Implicit">
+      <UniqueIdentifier>{e0a81b04-6d80-4c54-a6bc-4d280d6a1ac8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -150,12 +156,6 @@
     <ClInclude Include="..\Sources\Field\CustomScalarField3.h">
       <Filter>Field</Filter>
     </ClInclude>
-    <ClInclude Include="..\Sources\Geometry\Surface2.h">
-      <Filter>Geomtery</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Sources\Geometry\Surface3.h">
-      <Filter>Geomtery</Filter>
-    </ClInclude>
     <ClInclude Include="..\Sources\Math\Quaternion.h">
       <Filter>Math</Filter>
     </ClInclude>
@@ -195,23 +195,38 @@
     <ClInclude Include="..\Sources\Field\ConstantVectorField3.h">
       <Filter>Field</Filter>
     </ClInclude>
-    <ClInclude Include="..\Sources\Geometry\SurfaceSet2.h">
-      <Filter>Geomtery</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Sources\Geometry\SurfaceSet3.h">
-      <Filter>Geomtery</Filter>
-    </ClInclude>
     <ClInclude Include="..\Sources\Geometry\Sphere2.h">
-      <Filter>Geomtery</Filter>
+      <Filter>Geometry</Filter>
     </ClInclude>
     <ClInclude Include="..\Sources\Geometry\Sphere3.h">
-      <Filter>Geomtery</Filter>
+      <Filter>Geometry</Filter>
     </ClInclude>
     <ClInclude Include="..\Sources\Geometry\Triangle3.h">
-      <Filter>Geomtery</Filter>
+      <Filter>Geometry</Filter>
     </ClInclude>
     <ClInclude Include="..\Sources\Geometry\TriangleMesh3.h">
-      <Filter>Geomtery</Filter>
+      <Filter>Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\Surface\Surface2.h">
+      <Filter>Surface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\Surface\Surface3.h">
+      <Filter>Surface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\Surface\SurfaceSet2.h">
+      <Filter>Surface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\Surface\SurfaceSet3.h">
+      <Filter>Surface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\Surface\Implicit\ImplicitSurface2.h">
+      <Filter>Surface\Implicit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\Surface\Implicit\ImplicitSurfaceSet2.h">
+      <Filter>Surface\Implicit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\Surface\Implicit\SurfaceToImplicit2.h">
+      <Filter>Surface\Implicit</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -302,9 +317,6 @@
     <ClCompile Include="..\Sources\Field\CustomVectorField3.cpp">
       <Filter>Field</Filter>
     </ClCompile>
-    <ClCompile Include="..\Sources\Geometry\Surface2.cpp">
-      <Filter>Geomtery</Filter>
-    </ClCompile>
     <ClCompile Include="..\Sources\Math\Quaternion.cpp">
       <Filter>Math</Filter>
     </ClCompile>
@@ -341,20 +353,38 @@
     <ClCompile Include="..\Sources\Transform\Transform3.cpp">
       <Filter>Transform</Filter>
     </ClCompile>
-    <ClCompile Include="..\Sources\Geometry\Surface3.cpp">
-      <Filter>Geomtery</Filter>
-    </ClCompile>
     <ClCompile Include="..\Sources\Geometry\Sphere2.cpp">
-      <Filter>Geomtery</Filter>
+      <Filter>Geometry</Filter>
     </ClCompile>
-    <ClCompile Include="Sphere3.cpp">
-      <Filter>Geomtery</Filter>
+    <ClCompile Include="..\Sources\Geometry\Sphere3.cpp">
+      <Filter>Geometry</Filter>
     </ClCompile>
-    <ClCompile Include="..\Sources\Geometry\SurfaceSet2.cpp">
-      <Filter>Geomtery</Filter>
+    <ClCompile Include="..\Sources\Geometry\Triangle3.cpp">
+      <Filter>Geometry</Filter>
     </ClCompile>
-    <ClCompile Include="SurfaceSet3.cpp">
-      <Filter>Geomtery</Filter>
+    <ClCompile Include="..\Sources\Geometry\TriangleMesh3.cpp">
+      <Filter>Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Surface\Surface2.cpp">
+      <Filter>Surface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Surface\Surface3.cpp">
+      <Filter>Surface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Surface\SurfaceSet2.cpp">
+      <Filter>Surface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Surface\SurfaceSet3.cpp">
+      <Filter>Surface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Surface\Implicit\ImplicitSurface2.cpp">
+      <Filter>Surface\Implicit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Surface\Implicit\ImplicitSurfaceSet2.cpp">
+      <Filter>Surface\Implicit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Surface\Implicit\SurfaceToImplicit2.cpp">
+      <Filter>Surface\Implicit</Filter>
     </ClCompile>
     <ClCompile Include="Triangle.cpp">
       <Filter>Geomtery</Filter>

@@ -69,8 +69,8 @@ namespace CubbyFlow
 		{
 			auto cornerInLocal = ToLocal(bboxInWorld.Corner(i));
 
-			bboxInLocal.lowerCorner	= std::min(bboxInLocal.lowerCorner, cornerInLocal);
-			bboxInLocal.upperCorner = std::max(bboxInLocal.upperCorner, cornerInLocal);
+			bboxInLocal.lowerCorner	= Min(bboxInLocal.lowerCorner, cornerInLocal);
+			bboxInLocal.upperCorner = Max(bboxInLocal.upperCorner, cornerInLocal);
 		}
 
 		return bboxInLocal;
@@ -100,8 +100,8 @@ namespace CubbyFlow
 		for (size_t i = 0; i < 8; ++i)
 		{
 			auto cornerInWorld = ToWorld(bboxInLocal.Corner(i));
-			bboxInWorld.lowerCorner	= std::min(bboxInWorld.lowerCorner, cornerInWorld);
-			bboxInWorld.upperCorner	= std::max(bboxInWorld.upperCorner, cornerInWorld);
+			bboxInWorld.lowerCorner	= Min(bboxInWorld.lowerCorner, cornerInWorld);
+			bboxInWorld.upperCorner	= Max(bboxInWorld.upperCorner, cornerInWorld);
 		}
 
 		return bboxInWorld;

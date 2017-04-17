@@ -69,16 +69,16 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\Sources</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\Sources;..\Libraries\obj</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\Sources</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\Sources;..\Libraries\obj</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\Sources</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\Sources;..\Libraries\obj</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\Sources</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\Sources;..\Libraries\obj</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -148,10 +148,6 @@
     <ClInclude Include="..\Sources\Field\VectorField3.h" />
     <ClInclude Include="..\Sources\Geometry\Sphere2.h" />
     <ClInclude Include="..\Sources\Geometry\Sphere3.h" />
-    <ClInclude Include="..\Sources\Geometry\Surface2.h" />
-    <ClInclude Include="..\Sources\Geometry\Surface3.h" />
-    <ClInclude Include="..\Sources\Geometry\SurfaceSet2.h" />
-    <ClInclude Include="..\Sources\Geometry\SurfaceSet3.h" />
     <ClInclude Include="..\Sources\Geometry\Triangle3.h" />
     <ClInclude Include="..\Sources\Geometry\TriangleMesh3.h" />
     <ClInclude Include="..\Sources\Math\Quaternion.h" />
@@ -168,6 +164,13 @@
     <ClInclude Include="..\Sources\Size\Size.h" />
     <ClInclude Include="..\Sources\Size\Size2.h" />
     <ClInclude Include="..\Sources\Size\Size3.h" />
+    <ClInclude Include="..\Sources\Surface\Implicit\ImplicitSurface2.h" />
+    <ClInclude Include="..\Sources\Surface\Implicit\ImplicitSurfaceSet2.h" />
+    <ClInclude Include="..\Sources\Surface\Implicit\SurfaceToImplicit2.h" />
+    <ClInclude Include="..\Sources\Surface\Surface2.h" />
+    <ClInclude Include="..\Sources\Surface\Surface3.h" />
+    <ClInclude Include="..\Sources\Surface\SurfaceSet2.h" />
+    <ClInclude Include="..\Sources\Surface\SurfaceSet3.h" />
     <ClInclude Include="..\Sources\Transform\Transform2.h" />
     <ClInclude Include="..\Sources\Transform\Transform3.h" />
     <ClInclude Include="..\Sources\Utils\Constants.h" />
@@ -205,9 +208,9 @@
     <ClCompile Include="..\Sources\Field\VectorField2.cpp" />
     <ClCompile Include="..\Sources\Field\VectorField3.cpp" />
     <ClCompile Include="..\Sources\Geometry\Sphere2.cpp" />
-    <ClCompile Include="..\Sources\Geometry\Surface2.cpp" />
-    <ClCompile Include="..\Sources\Geometry\Surface3.cpp" />
-    <ClCompile Include="..\Sources\Geometry\SurfaceSet2.cpp" />
+    <ClCompile Include="..\Sources\Geometry\Sphere3.cpp" />
+    <ClCompile Include="..\Sources\Geometry\Triangle3.cpp" />
+    <ClCompile Include="..\Sources\Geometry\TriangleMesh3.cpp" />
     <ClCompile Include="..\Sources\Math\Quaternion.cpp" />
     <ClCompile Include="..\Sources\Matrix\Matrix.cpp" />
     <ClCompile Include="..\Sources\Matrix\Matrix2x2.cpp" />
@@ -218,6 +221,13 @@
     <ClCompile Include="..\Sources\Point\Point3.cpp" />
     <ClCompile Include="..\Sources\Ray\Ray2.cpp" />
     <ClCompile Include="..\Sources\Ray\Ray3.cpp" />
+    <ClCompile Include="..\Sources\Surface\Implicit\ImplicitSurface2.cpp" />
+    <ClCompile Include="..\Sources\Surface\Implicit\ImplicitSurfaceSet2.cpp" />
+    <ClCompile Include="..\Sources\Surface\Implicit\SurfaceToImplicit2.cpp" />
+    <ClCompile Include="..\Sources\Surface\Surface2.cpp" />
+    <ClCompile Include="..\Sources\Surface\Surface3.cpp" />
+    <ClCompile Include="..\Sources\Surface\SurfaceSet2.cpp" />
+    <ClCompile Include="..\Sources\Surface\SurfaceSet3.cpp" />
     <ClCompile Include="..\Sources\Transform\Transform2.cpp" />
     <ClCompile Include="..\Sources\Transform\Transform3.cpp" />
     <ClCompile Include="..\Sources\Utils\MathUtils.cpp" />
@@ -226,9 +236,6 @@
     <ClCompile Include="..\Sources\Vector\Vector2.cpp" />
     <ClCompile Include="..\Sources\Vector\Vector3.cpp" />
     <ClCompile Include="..\Sources\Vector\Vector4.cpp" />
-    <ClCompile Include="Sphere3.cpp" />
-    <ClCompile Include="SurfaceSet3.cpp" />
-    <ClCompile Include="Triangle.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

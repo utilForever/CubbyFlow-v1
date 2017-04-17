@@ -10,9 +10,9 @@
 #define CUBBYFLOW_TRIANGLE_MESH3_H
 
 #include <Array/Array1.h>
-#include <Geometry/Surface3.h>
 #include <Geometry/Triangle3.h>
 #include <Point/Point3.h>
+#include <Surface/Surface3.h>
 
 namespace CubbyFlow
 {
@@ -116,7 +116,7 @@ namespace CubbyFlow
 		size_t NumberOfNormals() const;
 
 		//! Returns number of UV coordinates.
-		size_t NumberOfUvs() const;
+		size_t NumberOfUVs() const;
 
 		//! Returns number of triangles.
 		size_t NumberOfTriangles() const;
@@ -145,15 +145,15 @@ namespace CubbyFlow
 			const Point3UI& newNormalIndices);
 
 		//! Adds a triangle with point, normal, and UV.
-		void AddPointNormalUvTriangle(
+		void AddPointNormalUVTriangle(
 			const Point3UI& newPointIndices,
 			const Point3UI& newNormalIndices,
-			const Point3UI& newUvIndices);
+			const Point3UI& newUVIndices);
 
 		//! Adds a triangle with point and UV.
-		void AddPointUvTriangle(
+		void AddPointUVTriangle(
 			const Point3UI& newPointIndices,
-			const Point3UI& newUvIndices);
+			const Point3UI& newUVIndices);
 
 		//! Add a triangle.
 		void AddTriangle(const Triangle3& tri);

@@ -6,7 +6,7 @@
 > Created Time: 2017/04/14
 > Copyright (c) 2017, Dongmin Kim
 *************************************************************************/
-#include<Geometry\SurfaceSet3.h>
+#include <Surface/SurfaceSet3.h>
 
 namespace CubbyFlow
 {
@@ -49,17 +49,17 @@ namespace CubbyFlow
 	{
 		Vector3D result(std::numeric_limits<double>::max(), std::numeric_limits<double>::max(), std::numeric_limits<double>::max());
 		
-		double minimum_distance = std::numeric_limits<double>::max();
+		double minimumDistance = std::numeric_limits<double>::max();
 
 		for (const auto& surface : m_surfaces)
 		{
-			Vector3D localClosetPoint = surface->ClosestPoint(otherPoint);
+			Vector3D localClosestPoint = surface->ClosestPoint(otherPoint);
 			double localDistance = surface->ClosestDistance(otherPoint);
 
-			if (localDistance < minimum_distance)
+			if (localDistance < minimumDistance)
 			{
-				result = localClosetPoint;
-				minimum_distance = localDistance;
+				result = localClosestPoint;
+				minimumDistance = localDistance;
 			}
 		}
 
@@ -105,7 +105,9 @@ namespace CubbyFlow
 		for (const auto& surface : m_surfaces)
 		{
 			if (surface->Intersects(ray))
+			{
 				return true;
+			}
 		}
 
 		return false;
@@ -161,7 +163,8 @@ namespace CubbyFlow
 	SurfaceSet3Ptr SurfaceSet3::Builder::MakeShared() const
 	{
 		return std::shared_ptr<SurfaceSet3>(new SurfaceSet3(m_surfaces, m_transform, m_isNormalFlipped),
-			[](SurfaceSet3* obj) {
+			[](SurfaceSet3* obj)
+		{
 			delete obj;
 		});
 	}
