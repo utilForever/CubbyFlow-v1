@@ -1,12 +1,12 @@
 /*************************************************************************
-> File Name: ImplicitSurfaceSet3.cpp
+> File Name: SurfaceToImplicit3.cpp
 > Project Name: CubbyFlow
 > Author: Dongmin Kim
-> Purpose: 3-D implicit surface set.
+> Purpose: 3-D implicit surface wrapper for generic Surface3 instance.
 > Created Time: 2017/04/18
 > Copyright (c) 2017, Dongmin Kim
 *************************************************************************/
-#include<Surface\Implicit\SurfaceToImplicit3.h>
+#include <Surface/Implicit/SurfaceToImplicit3.h>
 
 namespace CubbyFlow
 {
@@ -28,6 +28,11 @@ namespace CubbyFlow
 	Surface3Ptr SurfaceToImplicit3::GetSurface() const
 	{
 		return m_surface;
+	}
+
+	SurfaceToImplicit3::Builder SurfaceToImplicit3::GetBuilder()
+	{
+		return Builder();
 	}
 
 	Vector3D SurfaceToImplicit3::ClosestPointLocal(const Vector3D& otherPoint) const
