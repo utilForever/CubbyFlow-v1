@@ -227,6 +227,7 @@
     <ClCompile Include="..\Sources\Surface\Implicit\ImplicitSurface3.cpp" />
     <ClCompile Include="..\Sources\Surface\Implicit\ImplicitSurfaceSet2.cpp" />
     <ClCompile Include="..\Sources\Surface\Implicit\SurfaceToImplicit2.cpp" />
+    <ClCompile Include="..\Sources\Surface\Implicit\SurfaceToImplicit3.cpp" />
     <ClCompile Include="..\Sources\Surface\Surface2.cpp" />
     <ClCompile Include="..\Sources\Surface\Surface3.cpp" />
     <ClCompile Include="..\Sources\Surface\SurfaceSet2.cpp" />

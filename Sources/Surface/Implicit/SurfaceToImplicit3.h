@@ -10,7 +10,7 @@
 #define CUBBYFLOW_IMPLICIT_SURFACE_SET2_H
 
 #include <Surface\Implicit\ImplicitSurface3.h>
-
+#include <Vector\Vector3.h>
 #include <vector>
 
 namespace CubbyFlow

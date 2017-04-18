@@ -25,7 +25,8 @@ namespace CubbyFlow
 		// Do nothing
 	}
 
-	Surface2Ptr SurfaceToImplicit2::GetSurface() const {
+	Surface2Ptr SurfaceToImplicit2::GetSurface() const
+	{
 		return m_surface;
 	}
 
