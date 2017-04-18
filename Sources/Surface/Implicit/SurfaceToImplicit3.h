@@ -1,17 +1,15 @@
 /*************************************************************************
-> File Name: ImplicitSurfaceSet3.h
+> File Name: SurfaceToImplicit3.h
 > Project Name: CubbyFlow
 > Author: Dongmin Kim
-> Purpose: 3-D implicit surface set.
+> Purpose: 3-D implicit surface wrapper for generic Surface3 instance.
 > Created Time: 2017/04/18
 > Copyright (c) 2017, Dongmin Kim
 *************************************************************************/
-#ifndef CUBBYFLOW_IMPLICIT_SURFACE_SET2_H
-#define CUBBYFLOW_IMPLICIT_SURFACE_SET2_H
+#ifndef CUBBYFLOW_SURFACE_TO_IMPLICIT3_H
+#define CUBBYFLOW_SURFACE_TO_IMPLICIT3_H
 
-#include <Surface\Implicit\ImplicitSurface3.h>
-#include <Vector\Vector3.h>
-#include <vector>
+#include <Surface/Implicit/ImplicitSurface3.h>
 
 namespace CubbyFlow
 {
@@ -32,6 +30,9 @@ namespace CubbyFlow
 			const Transform3& transform = Transform3(),
 			bool isNormalFlipped = false);
 
+		//! Copy constructor.
+		SurfaceToImplicit3(const SurfaceToImplicit3& other);
+
 		//! Returns the raw surface instance.
 		Surface3Ptr GetSurface() const;
 
@@ -43,7 +44,7 @@ namespace CubbyFlow
 
 		double ClosestDistanceLocal(const Vector3D& otherPoint) const override;
 
-		bool IntersectsLocal(const Ray3D& ray) const;
+		bool IntersectsLocal(const Ray3D& ray) const override;
 
 		BoundingBox3D BoundingBoxLocal() const override;
 
