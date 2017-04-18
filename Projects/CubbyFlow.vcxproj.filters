@@ -228,10 +228,10 @@
     <ClInclude Include="..\Sources\Surface\Implicit\SurfaceToImplicit2.h">
       <Filter>Surface\Implicit</Filter>
     </ClInclude>
-    <ClInclude Include="ImplicitSurface3.h">
+    <ClInclude Include="..\Sources\Surface\Implicit\SurfaceToImplicit3.h">
       <Filter>Surface\Implicit</Filter>
     </ClInclude>
-    <ClInclude Include="..\Sources\Surface\Implicit\SurfaceToImplicit3.h">
+    <ClInclude Include="..\Sources\Surface\Implicit\ImplicitSurface3.h">
       <Filter>Surface\Implicit</Filter>
     </ClInclude>
   </ItemGroup>
