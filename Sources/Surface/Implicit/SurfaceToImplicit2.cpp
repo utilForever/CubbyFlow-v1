@@ -30,6 +30,11 @@ namespace CubbyFlow
 		return m_surface;
 	}
 
+	SurfaceToImplicit2::Builder SurfaceToImplicit2::GetBuilder()
+	{
+		return Builder();
+	}
+
 	Vector2D SurfaceToImplicit2::ClosestPointLocal(const Vector2D& otherPoint) const
 	{
 		return m_surface->ClosestPoint(otherPoint);
