@@ -22,10 +22,10 @@ namespace CubbyFlow
 			const Transform3& transform = Transform3(),
 			bool isNormalFlipped = false);
 		
-		//! Copy constructor
+		//! Copy constructor.
 		ImplicitSurface3(const ImplicitSurface3& other);
 
-		//! Default destructor
+		//! Default destructor.
 		virtual ~ImplicitSurface3();
 
 		//! Returns signed distance from the given given point \p otherPoint.
