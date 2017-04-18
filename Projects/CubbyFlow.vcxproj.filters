@@ -231,6 +231,9 @@
     <ClInclude Include="ImplicitSurface3.h">
       <Filter>Surface\Implicit</Filter>
     </ClInclude>
+    <ClInclude Include="..\Sources\Surface\Implicit\SurfaceToImplicit3.h">
+      <Filter>Surface\Implicit</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Array\Array1.cpp">

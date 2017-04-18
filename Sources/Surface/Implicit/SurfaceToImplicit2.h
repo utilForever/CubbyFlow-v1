@@ -36,7 +36,7 @@ namespace CubbyFlow
 		//! Returns the raw surface instance.
 		Surface2Ptr GetSurface() const;
 
-		//! Returns builder fox SurfaceToImplicit2.
+		//! Returns builder for SurfaceToImplicit2.
 		static Builder GetBuilder();
 
 	protected:
