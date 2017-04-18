@@ -228,6 +228,9 @@
     <ClInclude Include="..\Sources\Surface\Implicit\SurfaceToImplicit2.h">
       <Filter>Surface\Implicit</Filter>
     </ClInclude>
+    <ClInclude Include="ImplicitSurface3.h">
+      <Filter>Surface\Implicit</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Array\Array1.cpp">
@@ -385,9 +388,6 @@
     </ClCompile>
     <ClCompile Include="..\Sources\Surface\Implicit\SurfaceToImplicit2.cpp">
       <Filter>Surface\Implicit</Filter>
-    </ClCompile>
-    <ClCompile Include="Triangle.cpp">
-      <Filter>Geomtery</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
