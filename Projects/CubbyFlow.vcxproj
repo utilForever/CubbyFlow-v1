@@ -223,6 +223,7 @@
     <ClCompile Include="..\Sources\Ray\Ray2.cpp" />
     <ClCompile Include="..\Sources\Ray\Ray3.cpp" />
     <ClCompile Include="..\Sources\Surface\Implicit\ImplicitSurface2.cpp" />
+    <ClCompile Include="..\Sources\Surface\Implicit\ImplicitSurface3.cpp" />
     <ClCompile Include="..\Sources\Surface\Implicit\ImplicitSurfaceSet2.cpp" />
     <ClCompile Include="..\Sources\Surface\Implicit\SurfaceToImplicit2.cpp" />
     <ClCompile Include="..\Sources\Surface\Surface2.cpp" />
