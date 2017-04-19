@@ -3,11 +3,13 @@
 > Project Name: CubbyFlow
 > Author: Chan-Ho Chris Ohk
 > Purpose: Abstract base class for animation-related class.
-> Created Time: 2017/02/04
+> Created Time: 2017/04/19
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_ANIMATION_H
 #define CUBBYFLOW_ANIMATION_H
+
+#include <Animation/Frame.h>
 
 #include <memory>
 
@@ -42,7 +44,7 @@ namespace CubbyFlow
 		//!     state for given Frame instance \p frame.
 		//!
 		//! This function is called from Animation::update when state of this class
-		//! instance needs to be updated. Thus, the inherited class should overrride
+		//! instance needs to be updated. Thus, the inherited class should override
 		//! this function and implement its logic for updating the animation state.
 		//!
 		virtual void OnUpdate(const Frame& frame) = 0;
