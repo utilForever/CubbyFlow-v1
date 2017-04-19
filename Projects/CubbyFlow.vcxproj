@@ -121,6 +121,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\Sources\Animation\Animation.h" />
     <ClInclude Include="..\Sources\Array\Array.h" />
     <ClInclude Include="..\Sources\Array\Array1.h" />
     <ClInclude Include="..\Sources\Array\Array2.h" />
