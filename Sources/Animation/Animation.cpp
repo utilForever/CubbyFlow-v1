@@ -7,6 +7,7 @@
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <Animation/Animation.h>
+#include <Utils/Timer.h>
 
 namespace CubbyFlow
 {
