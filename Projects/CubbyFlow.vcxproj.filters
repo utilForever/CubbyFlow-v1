@@ -407,5 +407,8 @@
     <ClCompile Include="..\Sources\Surface\Implicit\SurfaceToImplicit3.cpp">
       <Filter>Surface\Implicit</Filter>
     </ClCompile>
+    <ClCompile Include="..\Sources\Animation\Frame.cpp">
+      <Filter>Animation</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
