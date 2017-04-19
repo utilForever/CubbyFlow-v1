@@ -243,6 +243,9 @@
     <ClInclude Include="..\Sources\Animation\Frame.h">
       <Filter>Animation</Filter>
     </ClInclude>
+    <ClInclude Include="..\Sources\Utils\Timer.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Array\Array1.cpp">
