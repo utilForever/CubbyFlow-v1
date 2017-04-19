@@ -410,5 +410,8 @@
     <ClCompile Include="..\Sources\Animation\Frame.cpp">
       <Filter>Animation</Filter>
     </ClCompile>
+    <ClCompile Include="..\Sources\Animation\Animation.cpp">
+      <Filter>Animation</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
