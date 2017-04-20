@@ -234,6 +234,9 @@
     <ClInclude Include="..\Sources\Surface\Implicit\SurfaceToImplicit3.h">
       <Filter>Surface\Implicit</Filter>
     </ClInclude>
+    <ClInclude Include="..\Sources\Surface\Implicit\ImplicitSurfaceSet3.h">
+      <Filter>Surface\Implicit</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Array\Array1.cpp">
@@ -396,6 +399,9 @@
       <Filter>Surface\Implicit</Filter>
     </ClCompile>
     <ClCompile Include="..\Sources\Surface\Implicit\SurfaceToImplicit3.cpp">
+      <Filter>Surface\Implicit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Surface\Implicit\ImplicitSurfaceSet3.cpp">
       <Filter>Surface\Implicit</Filter>
     </ClCompile>
   </ItemGroup>

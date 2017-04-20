@@ -166,6 +166,7 @@
     <ClInclude Include="..\Sources\Size\Size3.h" />
     <ClInclude Include="..\Sources\Surface\Implicit\ImplicitSurface2.h" />
     <ClInclude Include="..\Sources\Surface\Implicit\ImplicitSurfaceSet2.h" />
+    <ClInclude Include="..\Sources\Surface\Implicit\ImplicitSurfaceSet3.h" />
     <ClInclude Include="..\Sources\Surface\Implicit\SurfaceToImplicit3.h" />
     <ClInclude Include="..\Sources\Surface\Implicit\SurfaceToImplicit2.h" />
     <ClInclude Include="..\Sources\Surface\Surface2.h" />
@@ -226,6 +227,7 @@
     <ClCompile Include="..\Sources\Surface\Implicit\ImplicitSurface2.cpp" />
     <ClCompile Include="..\Sources\Surface\Implicit\ImplicitSurface3.cpp" />
     <ClCompile Include="..\Sources\Surface\Implicit\ImplicitSurfaceSet2.cpp" />
+    <ClCompile Include="..\Sources\Surface\Implicit\ImplicitSurfaceSet3.cpp" />
     <ClCompile Include="..\Sources\Surface\Implicit\SurfaceToImplicit2.cpp" />
     <ClCompile Include="..\Sources\Surface\Implicit\SurfaceToImplicit3.cpp" />
     <ClCompile Include="..\Sources\Surface\Surface2.cpp" />
