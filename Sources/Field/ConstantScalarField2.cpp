@@ -36,8 +36,7 @@ namespace CubbyFlow
 	{
 		return Builder();
 	}
-
-
+	
 	ConstantScalarField2::Builder& ConstantScalarField2::Builder::WithValue(double value)
 	{
 		m_value = value;

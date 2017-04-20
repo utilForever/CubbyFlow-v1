@@ -43,6 +43,9 @@
     <Filter Include="Surface\Implicit">
       <UniqueIdentifier>{e0a81b04-6d80-4c54-a6bc-4d280d6a1ac8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Animation">
+      <UniqueIdentifier>{66527e50-1573-4ed5-9787-547eb1e6ca10}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Sources\Array\Array.h">
@@ -228,14 +231,20 @@
     <ClInclude Include="..\Sources\Surface\Implicit\SurfaceToImplicit2.h">
       <Filter>Surface\Implicit</Filter>
     </ClInclude>
-    <ClInclude Include="ImplicitSurface3.h">
-      <Filter>Surface\Implicit</Filter>
-    </ClInclude>
     <ClInclude Include="..\Sources\Surface\Implicit\SurfaceToImplicit3.h">
       <Filter>Surface\Implicit</Filter>
     </ClInclude>
-    <ClInclude Include="..\Sources\Surface\Implicit\ImplicitSurfaceSet3.h">
+    <ClInclude Include="..\Sources\Surface\Implicit\ImplicitSurface3.h">
       <Filter>Surface\Implicit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\Animation\Animation.h">
+      <Filter>Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\Animation\Frame.h">
+      <Filter>Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\Utils\Timer.h">
+      <Filter>Utils</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -401,8 +410,11 @@
     <ClCompile Include="..\Sources\Surface\Implicit\SurfaceToImplicit3.cpp">
       <Filter>Surface\Implicit</Filter>
     </ClCompile>
-    <ClCompile Include="..\Sources\Surface\Implicit\ImplicitSurfaceSet3.cpp">
-      <Filter>Surface\Implicit</Filter>
+    <ClCompile Include="..\Sources\Animation\Frame.cpp">
+      <Filter>Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Animation\Animation.cpp">
+      <Filter>Animation</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

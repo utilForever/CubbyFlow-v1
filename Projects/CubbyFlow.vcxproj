@@ -121,6 +121,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\Sources\Animation\Animation.h" />
+    <ClInclude Include="..\Sources\Animation\Frame.h" />
     <ClInclude Include="..\Sources\Array\Array.h" />
     <ClInclude Include="..\Sources\Array\Array1.h" />
     <ClInclude Include="..\Sources\Array\Array2.h" />
@@ -165,6 +167,7 @@
     <ClInclude Include="..\Sources\Size\Size2.h" />
     <ClInclude Include="..\Sources\Size\Size3.h" />
     <ClInclude Include="..\Sources\Surface\Implicit\ImplicitSurface2.h" />
+    <ClInclude Include="..\Sources\Surface\Implicit\ImplicitSurface3.h" />
     <ClInclude Include="..\Sources\Surface\Implicit\ImplicitSurfaceSet2.h" />
     <ClInclude Include="..\Sources\Surface\Implicit\ImplicitSurfaceSet3.h" />
     <ClInclude Include="..\Sources\Surface\Implicit\SurfaceToImplicit3.h" />
@@ -179,14 +182,16 @@
     <ClInclude Include="..\Sources\Utils\Macros.h" />
     <ClInclude Include="..\Sources\Utils\MathUtils.h" />
     <ClInclude Include="..\Sources\Utils\Parallel.h" />
+    <ClInclude Include="..\Sources\Utils\Timer.h" />
     <ClInclude Include="..\Sources\Utils\TypeHelpers.h" />
     <ClInclude Include="..\Sources\Vector\Vector.h" />
     <ClInclude Include="..\Sources\Vector\Vector2.h" />
     <ClInclude Include="..\Sources\Vector\Vector3.h" />
     <ClInclude Include="..\Sources\Vector\Vector4.h" />
-    <ClInclude Include="ImplicitSurface3.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Sources\Animation\Animation.cpp" />
+    <ClCompile Include="..\Sources\Animation\Frame.cpp" />
     <ClCompile Include="..\Sources\Array\Array1.cpp" />
     <ClCompile Include="..\Sources\Array\Array2.cpp" />
     <ClCompile Include="..\Sources\Array\Array3.cpp" />
