@@ -6,7 +6,8 @@
 > Created Time: 2017/04/18
 > Copyright (c) 2017, Dongmin Kim
 *************************************************************************/
-#include <Surface\Implicit\ImplicitSurfaceSet3.h>
+#include <Surface/Implicit/ImplicitSurfaceSet3.h>
+#include <Surface/Implicit/SurfaceToImplicit3.h>
 
 namespace CubbyFlow
 {
@@ -95,7 +96,7 @@ namespace CubbyFlow
 		return minimumDistance;
 	}
 
-	Vector2D ImplicitSurfaceSet3::ClosestNormalLocal(const Vector3D& otherPoint) const
+	Vector3D ImplicitSurfaceSet3::ClosestNormalLocal(const Vector3D& otherPoint) const
 	{
 		Vector3D result(1, 0, 0);
 		double minimumDistance = std::numeric_limits<double>::max();
