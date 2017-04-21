@@ -10,6 +10,7 @@
 #define CUBBYFLOW_IMPLICIT_SURFACE_SET3_H
 
 #include <Surface\Implicit\ImplicitSurface3.h>
+
 #include <vector>
 
 namespace CubbyFlow
@@ -49,7 +50,6 @@ namespace CubbyFlow
 
 		//! Returns the i-th implicit surface.
 		const ImplicitSurface3Ptr& SurfaceAt(size_t i) const;
-
 
 		//! Adds an explicit surface instance.
 		void AddExplicitSurface(const Surface3Ptr& surface);
