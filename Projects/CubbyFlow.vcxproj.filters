@@ -247,7 +247,7 @@
       <Filter>Utils</Filter>
     </ClInclude>
     <ClInclude Include="..\Sources\Surface\Implicit\ImplicitSurfaceSet3.h">
-      <Filter>Surface</Filter>
+      <Filter>Surface\Implicit</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
