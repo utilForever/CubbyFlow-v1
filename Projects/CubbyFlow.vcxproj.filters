@@ -246,6 +246,9 @@
     <ClInclude Include="..\Sources\Utils\Timer.h">
       <Filter>Utils</Filter>
     </ClInclude>
+    <ClInclude Include="..\Sources\Surface\Implicit\ImplicitSurfaceSet3.h">
+      <Filter>Surface</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Array\Array1.cpp">
@@ -415,6 +418,9 @@
     </ClCompile>
     <ClCompile Include="..\Sources\Animation\Animation.cpp">
       <Filter>Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Surface\Implicit\ImplicitSurfaceSet3.cpp">
+      <Filter>Surface\Implicit</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
