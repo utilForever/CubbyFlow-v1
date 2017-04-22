@@ -249,6 +249,9 @@
     <ClInclude Include="..\Sources\Surface\Implicit\ImplicitSurfaceSet3.h">
       <Filter>Surface\Implicit</Filter>
     </ClInclude>
+    <ClInclude Include="..\Sources\Animation\PhysicsAnimation.h">
+      <Filter>Animation</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Array\Array1.cpp">
