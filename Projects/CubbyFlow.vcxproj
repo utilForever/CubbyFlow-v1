@@ -193,6 +193,7 @@
   <ItemGroup>
     <ClCompile Include="..\Sources\Animation\Animation.cpp" />
     <ClCompile Include="..\Sources\Animation\Frame.cpp" />
+    <ClCompile Include="..\Sources\Animation\PhysicsAnimation.cpp" />
     <ClCompile Include="..\Sources\Array\Array1.cpp" />
     <ClCompile Include="..\Sources\Array\Array2.cpp" />
     <ClCompile Include="..\Sources\Array\Array3.cpp" />

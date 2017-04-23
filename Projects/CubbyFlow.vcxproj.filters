@@ -428,5 +428,8 @@
     <ClCompile Include="..\Sources\Utils\Timer.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
+    <ClCompile Include="..\Sources\Animation\PhysicsAnimation.cpp">
+      <Filter>Animation</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
