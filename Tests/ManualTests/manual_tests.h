@@ -166,4 +166,11 @@ inline void CreateDirectory(const std::string& dirName)
 		std::string m_currentTestDir; \
     }; \
 
+#define CUBBYFLOW_BEGIN_TEST_F(TestSetName, TestCaseName) \
+    TEST_F(TestSetName##Tests, TestCaseName) \
+	{ \
+        CreateTestDirectory(#TestCaseName);
+
+#define CUBBYFLOW_END_TEST_F }
+
 #endif
