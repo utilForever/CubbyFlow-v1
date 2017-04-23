@@ -180,6 +180,7 @@
     <ClInclude Include="..\Sources\Transform\Transform2.h" />
     <ClInclude Include="..\Sources\Transform\Transform3.h" />
     <ClInclude Include="..\Sources\Utils\Constants.h" />
+    <ClInclude Include="..\Sources\Utils\Logger.h" />
     <ClInclude Include="..\Sources\Utils\Macros.h" />
     <ClInclude Include="..\Sources\Utils\MathUtils.h" />
     <ClInclude Include="..\Sources\Utils\Parallel.h" />

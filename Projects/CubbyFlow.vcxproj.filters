@@ -252,6 +252,9 @@
     <ClInclude Include="..\Sources\Animation\PhysicsAnimation.h">
       <Filter>Animation</Filter>
     </ClInclude>
+    <ClInclude Include="..\Sources\Utils\Logger.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Array\Array1.cpp">
