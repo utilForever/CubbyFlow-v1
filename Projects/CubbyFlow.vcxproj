@@ -244,6 +244,7 @@
     <ClCompile Include="..\Sources\Surface\SurfaceSet3.cpp" />
     <ClCompile Include="..\Sources\Transform\Transform2.cpp" />
     <ClCompile Include="..\Sources\Transform\Transform3.cpp" />
+    <ClCompile Include="..\Sources\Utils\Logger.cpp" />
     <ClCompile Include="..\Sources\Utils\MathUtils.cpp" />
     <ClCompile Include="..\Sources\Utils\Parallel.cpp" />
     <ClCompile Include="..\Sources\Utils\Timer.cpp" />

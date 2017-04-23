@@ -434,5 +434,8 @@
     <ClCompile Include="..\Sources\Animation\PhysicsAnimation.cpp">
       <Filter>Animation</Filter>
     </ClCompile>
+    <ClCompile Include="..\Sources\Utils\Logger.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
