@@ -7,6 +7,7 @@
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <Animation/PhysicsAnimation.h>
+#include <Utils/Logger.h>
 #include <Utils/Timer.h>
 
 namespace CubbyFlow
@@ -96,30 +97,30 @@ namespace CubbyFlow
 
 		if (m_isUsingFixedSubTimeSteps)
 		{
-			//JET_INFO << "Using fixed sub-timesteps: " << m_numberOfFixedSubTimeSteps;
+			CUBBYFLOW_INFO << "Using fixed sub-timesteps: " << m_numberOfFixedSubTimeSteps;
 
 			// Perform fixed time-stepping
 			const double actualTimeInterval	= timeIntervalInSeconds	/ static_cast<double>(m_numberOfFixedSubTimeSteps);
 
 			for (unsigned int i = 0; i < m_numberOfFixedSubTimeSteps; ++i)
 			{
-				//JET_INFO << "Begin onAdvanceTimeStep: " << actualTimeInterval
-				//	<< " (1/" << 1.0 / actualTimeInterval
-				//	<< ") seconds";
+				CUBBYFLOW_INFO << "Begin onAdvanceTimeStep: " << actualTimeInterval
+					<< " (1/" << 1.0 / actualTimeInterval
+					<< ") seconds";
 
 				Timer timer;
 				OnAdvanceTimeStep(actualTimeInterval);
 
-				//JET_INFO << "End onAdvanceTimeStep (took "
-				//	<< timer.DurationInSeconds()
-				//	<< " seconds)";
+				CUBBYFLOW_INFO << "End onAdvanceTimeStep (took "
+					<< timer.DurationInSeconds()
+					<< " seconds)";
 
 				m_currentTime += actualTimeInterval;
 			}
 		}
 		else
 		{
-			//JET_INFO << "Using adaptive sub-timesteps";
+			CUBBYFLOW_INFO << "Using adaptive sub-timesteps";
 
 			// Perform adaptive time-stepping
 			double remainingTime = timeIntervalInSeconds;
@@ -128,18 +129,18 @@ namespace CubbyFlow
 				unsigned int numSteps = NumberOfSubTimeSteps(remainingTime);
 				double actualTimeInterval = remainingTime / static_cast<double>(numSteps);
 
-				//JET_INFO << "Number of remaining sub-timesteps: " << numSteps;
+				CUBBYFLOW_INFO << "Number of remaining sub-timesteps: " << numSteps;
 
-				//JET_INFO << "Begin onAdvanceTimeStep: " << actualTimeInterval
-				//	<< " (1/" << 1.0 / actualTimeInterval
-				//	<< ") seconds";
+				CUBBYFLOW_INFO << "Begin onAdvanceTimeStep: " << actualTimeInterval
+					<< " (1/" << 1.0 / actualTimeInterval
+					<< ") seconds";
 
 				Timer timer;
 				OnAdvanceTimeStep(actualTimeInterval);
 
-				//JET_INFO << "End onAdvanceTimeStep (took "
-				//	<< timer.DurationInSeconds()
-				//	<< " seconds)";
+				CUBBYFLOW_INFO << "End onAdvanceTimeStep (took "
+					<< timer.DurationInSeconds()
+					<< " seconds)";
 
 				remainingTime -= actualTimeInterval;
 				m_currentTime += actualTimeInterval;

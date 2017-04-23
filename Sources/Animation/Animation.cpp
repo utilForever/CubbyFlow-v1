@@ -7,6 +7,7 @@
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <Animation/Animation.h>
+#include <Utils/Logger.h>
 #include <Utils/Timer.h>
 
 namespace CubbyFlow
@@ -21,19 +22,18 @@ namespace CubbyFlow
 		// Do nothing
 	}
 
-	// TODO: Implement Logger class
 	void Animation::Update(const Frame& frame)
 	{
 		Timer timer;
 
-		//JET_INFO << "Begin updating frame: " << frame.index
-		//	<< " timeIntervalInSeconds: " << frame.timeIntervalInSeconds
-		//	<< " (1/" << 1.0 / frame.timeIntervalInSeconds
-		//	<< ") seconds";
+		CUBBYFLOW_INFO << "Begin updating frame: " << frame.index
+			<< " timeIntervalInSeconds: " << frame.timeIntervalInSeconds
+			<< " (1/" << 1.0 / frame.timeIntervalInSeconds
+			<< ") seconds";
 
 		OnUpdate(frame);
 
-		//JET_INFO << "End updating frame (took " << timer.durationInSeconds()
-		//	<< " seconds)";
+		CUBBYFLOW_INFO << "End updating frame (took " << timer.DurationInSeconds()
+			<< " seconds)";
 	}
 }
