@@ -1,3 +1,9 @@
 [submodule "Libraries/gtest/googletest"]
 	path = Libraries/gtest/googletest
 	url = http://www.github.com/google/googletest
+[submodule "Libraries/cnpy/cnpy"]
+	path = Libraries/cnpy/cnpy
+	url = http://www.github.com/rogersce/cnpy
+[submodule "Libraries/pystring/pystring"]
+	path = Libraries/pystring/pystring
+	url = http://www.github.com/imageworks/pystring
