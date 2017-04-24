@@ -6,12 +6,17 @@
 #ifndef CUBBYFLOW_MANUAL_TEST_H
 #define CUBBYFLOW_MANUAL_TEST_H
 
+#include <Array/ArrayAccessor1.h>
+#include <Array/ArrayAccessor2.h>
+#include <Array/ArrayAccessor3.h>
+#include <Geometry/TriangleMesh3.h>
 #include <Utils/Macros.h>
 
 #include <cnpy/cnpy.h>
 #include <gtest/gtest.h>
 #include <pystring/pystring.h>
 
+#include <fstream>
 #include <string>
 #include <vector>
 #ifdef CUBBYFLOW_WINDOWS
@@ -71,28 +76,28 @@ inline void CreateDirectory(const std::string& dirName)
         template <typename T> \
         void SaveData(const ConstArrayAccessor1<T>& data, const std::string& name) \
 		{ \
-            std::string fileName = getFullFilePath(name); \
-            unsigned int dim[1] = { static_cast<unsigned int>(data.size()) }; \
-            cnpy::npy_save(fileName, data.data(), dim, 1, "w"); \
+            std::string fileName = GetFullFilePath(name); \
+            unsigned int dim[1] = { static_cast<unsigned int>(data.Size()) }; \
+            cnpy::npy_save(fileName, data.Data(), dim, 1, "w"); \
         } \
 		\
         template <typename T> \
         void SaveData(const ConstArrayAccessor1<T>& data, size_t size, const std::string& name) \
 		{ \
-            std::string fileName = getFullFilePath(name); \
+            std::string fileName = GetFullFilePath(name); \
             unsigned int dim[1] = { static_cast<unsigned int>(size) }; \
-            cnpy::npy_save(fileName, data.data(), dim, 1, "w"); \
+            cnpy::npy_save(fileName, data.Data(), dim, 1, "w"); \
         } \
 		\
         template <typename T> \
         void SaveData(const ConstArrayAccessor2<T>& data, const std::string& name) \
 		{ \
-            std::string fileName = getFullFilePath(name); \
+            std::string fileName = GetFullFilePath(name); \
             unsigned int dim[2] = { \
                 static_cast<unsigned int>(data.height()), \
                 static_cast<unsigned int>(data.width()) \
             }; \
-            cnpy::npy_save(fileName, data.data(), dim, 2, "w"); \
+            cnpy::npy_save(fileName, data.Data(), dim, 2, "w"); \
         } \
 		\
         template <typename T> \
@@ -108,11 +113,11 @@ inline void CreateDirectory(const std::string& dirName)
 		{ \
             std::string fileName = GetFullFilePath(name); \
             unsigned int dim[3] = { \
-                static_cast<unsigned int>(data.depth()), \
-                static_cast<unsigned int>(data.height()), \
-                static_cast<unsigned int>(data.width()) \
+                static_cast<unsigned int>(data.Depth()), \
+                static_cast<unsigned int>(data.Height()), \
+                static_cast<unsigned int>(data.Width()) \
             }; \
-            cnpy::npy_save(fileName, data.data(), dim, 3, "w"); \
+            cnpy::npy_save(fileName, data.Data(), dim, 3, "w"); \
         } \
 		\
         template <typename T> \
@@ -120,16 +125,16 @@ inline void CreateDirectory(const std::string& dirName)
 		{ \
             char fileName[256]; \
             snprintf(fileName, sizeof(fileName), "data.#grid3,%04d.npy", frameNum); \
-            saveData(data, fileName); \
+            SaveData(data, fileName); \
         } \
 		\
         template <typename ParticleSystem> \
-        void SaveParticleDataXy(const std::shared_ptr<ParticleSystem>& particles, unsigned int frameNum) \
+        void SaveParticleDataXY(const std::shared_ptr<ParticleSystem>& particles, unsigned int frameNum) \
 		{ \
             size_t n = particles->NumberOfParticles(); \
             Array1<double> x(n); \
             Array1<double> y(n); \
-            auto positions = particles->positions(); \
+            auto positions = particles->Positions(); \
 			\
             for (size_t i = 0; i < n; ++i) \
 			{ \
@@ -139,25 +144,25 @@ inline void CreateDirectory(const std::string& dirName)
 			\
             char fileName[256]; \
             snprintf(fileName, sizeof(fileName), "data.#point2,%04d,x.npy", frameNum); \
-            SaveData(x.constAccessor(), fileName); \
+            SaveData(x.ConstAccessor(), fileName); \
             snprintf(fileName, sizeof(fileName), "data.#point2,%04d,y.npy", frameNum); \
-            SaveData(y.constAccessor(), fileName); \
+            SaveData(y.ConstAccessor(), fileName); \
         } \
 		\
         void SaveTriangleMeshData(const TriangleMesh3& data, const std::string& name) \
 		{ \
-            std::string fileName = getFullFilePath(name); \
+            std::string fileName = GetFullFilePath(name); \
             std::ofstream file(fileName.c_str()); \
             if (file) \
 			{ \
-                data.writeObj(&file); \
+                data.WriteObj(&file); \
                 file.close(); \
             } \
         } \
 		\
         std::string GetTestDirectoryName(const std::string& name) \
 		{ \
-            return pystring::os::path::join(_testCollectionDir, name); \
+            return pystring::os::path::join(m_testCollectionDir, name); \
         } \
 	\
 	private: \
