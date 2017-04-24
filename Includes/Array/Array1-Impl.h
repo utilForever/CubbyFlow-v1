@@ -1,12 +1,13 @@
 /*************************************************************************
-> File Name: Array1.cpp
+> File Name: Array1-Impl.h
 > Project Name: CubbyFlow
 > Author: Chan-Ho Chris Ohk
 > Purpose: 1-D array class.
 > Created Time: 2017/01/24
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Array/Array1.h>
+#ifndef CUBBYFLOW_ARRAY1_IMPL_H
+#define CUBBYFLOW_ARRAY1_IMPL_H
 
 #include <cassert>
 
@@ -53,11 +54,11 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	void Array<T ,1>::Set(const std::initializer_list<T>& list)
+	void Array<T, 1>::Set(const std::initializer_list<T>& list)
 	{
 		size_t size = list.size();
 		Resize(size);
-		
+
 		auto colIter = list.begin();
 		for (size_t i = 0; i < size; ++i)
 		{
@@ -237,3 +238,5 @@ namespace CubbyFlow
 		return ConstAccessor();
 	}
 }
+
+#endif

@@ -358,4 +358,6 @@ namespace CubbyFlow
 	template <typename T> using Array2 = Array<T, 2>;
 }
 
+#include <Array/Array2-Impl.h>
+
 #endif

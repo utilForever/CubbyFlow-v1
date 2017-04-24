@@ -381,4 +381,6 @@ namespace CubbyFlow
 	template <typename T> using Array3 = Array<T, 3>;
 }
 
+#include <Array/Array3-Impl.h>
+
 #endif

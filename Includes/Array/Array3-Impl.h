@@ -1,12 +1,13 @@
 /*************************************************************************
-> File Name: Array3.cpp
+> File Name: Array3-Impl.h
 > Project Name: CubbyFlow
 > Author: Chan-Ho Chris Ohk, Dongmin Kim
 > Purpose: 3-D array class.
 > Created Time: 2017/01/25
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Array/Array3.h>
+#ifndef CUBBYFLOW_ARRAY3_IMPL_H
+#define CUBBYFLOW_ARRAY3_IMPL_H
 
 #include <algorithm>
 #include <cassert>
@@ -349,3 +350,5 @@ namespace CubbyFlow
 		return ConstAccessor();
 	}
 }
+
+#endif

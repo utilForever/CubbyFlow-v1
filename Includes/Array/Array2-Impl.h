@@ -1,12 +1,13 @@
 /*************************************************************************
-> File Name: Array2.cpp
+> File Name: Array2-Impl.h
 > Project Name: CubbyFlow
 > Author: Chan-Ho Chris Ohk
 > Purpose: 2-D array class.
 > Created Time: 2017/01/25
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Array/Array2.h>
+#ifndef CUBBYFLOW_ARRAY2_IMPL_H
+#define CUBBYFLOW_ARRAY2_IMPL_H
 
 #include <algorithm>
 #include <cassert>
@@ -331,3 +332,5 @@ namespace CubbyFlow
 		return ConstAccessor();
 	}
 }
+
+#endif
