@@ -57,158 +57,198 @@
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\Builds\Common.props" />
+    <Import Project="..\Builds\Debug.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\Builds\Common.props" />
+    <Import Project="..\Builds\Release.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\Builds\Common.props" />
+    <Import Project="..\Builds\Debug.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\Builds\Common.props" />
+    <Import Project="..\Builds\Release.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\Sources;..\Libraries\obj</IncludePath>
-    <OutDir>$(SolutionDir)obj\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)obj\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\Includes;..\Sources;..\Libraries\obj</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\Sources;..\Libraries\obj</IncludePath>
-    <OutDir>$(SolutionDir)obj\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)obj\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\Includes;..\Sources;..\Libraries\obj</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\Sources;..\Libraries\obj</IncludePath>
-    <OutDir>$(SolutionDir)obj\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)obj\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\Includes;..\Sources;..\Libraries\obj</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\Sources;..\Libraries\obj</IncludePath>
-    <OutDir>$(SolutionDir)obj\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)obj\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\Includes;..\Sources;..\Libraries\obj</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <MinimalRebuild>false</MinimalRebuild>
     </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <PostBuildEvent>
+      <Command>mkdir $(SolutionDir)Results\$(Platform)\$(Configuration)\Includes\
+xcopy /y $(SolutionDir)obj\$(Platform)\$(Configuration)\CubbyFlow.lib $(SolutionDir)Results\$(Platform)\$(Configuration)\
+xcopy /y $(SolutionDir)obj\$(Platform)\$(Configuration)\CubbyFlow.pdb $(SolutionDir)Results\$(Platform)\$(Configuration)\
+xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configuration)\Includes</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <MinimalRebuild>false</MinimalRebuild>
     </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <PostBuildEvent>
+      <Command>mkdir $(SolutionDir)Results\$(Platform)\$(Configuration)\Includes\
+xcopy /y $(SolutionDir)obj\$(Platform)\$(Configuration)\CubbyFlow.lib $(SolutionDir)Results\$(Platform)\$(Configuration)\
+xcopy /y $(SolutionDir)obj\$(Platform)\$(Configuration)\CubbyFlow.pdb $(SolutionDir)Results\$(Platform)\$(Configuration)\
+xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configuration)\Includes</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
+    <PostBuildEvent>
+      <Command>mkdir $(SolutionDir)Results\$(Platform)\$(Configuration)\Includes\
+xcopy /y $(SolutionDir)obj\$(Platform)\$(Configuration)\CubbyFlow.lib $(SolutionDir)Results\$(Platform)\$(Configuration)\
+xcopy /y $(SolutionDir)obj\$(Platform)\$(Configuration)\CubbyFlow.pdb $(SolutionDir)Results\$(Platform)\$(Configuration)\
+xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configuration)\Includes</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
+    <PostBuildEvent>
+      <Command>mkdir $(SolutionDir)Results\$(Platform)\$(Configuration)\Includes\
+xcopy /y $(SolutionDir)obj\$(Platform)\$(Configuration)\CubbyFlow.lib $(SolutionDir)Results\$(Platform)\$(Configuration)\
+xcopy /y $(SolutionDir)obj\$(Platform)\$(Configuration)\CubbyFlow.pdb $(SolutionDir)Results\$(Platform)\$(Configuration)\
+xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configuration)\Includes</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\Sources\Animation\Animation.h" />
-    <ClInclude Include="..\Sources\Animation\Frame.h" />
-    <ClInclude Include="..\Sources\Animation\PhysicsAnimation.h" />
-    <ClInclude Include="..\Sources\Array\Array.h" />
-    <ClInclude Include="..\Sources\Array\Array1.h" />
-    <ClInclude Include="..\Sources\Array\Array2.h" />
-    <ClInclude Include="..\Sources\Array\Array3.h" />
-    <ClInclude Include="..\Sources\Array\ArrayAccessor.h" />
-    <ClInclude Include="..\Sources\Array\ArrayAccessor1.h" />
-    <ClInclude Include="..\Sources\Array\ArrayAccessor2.h" />
-    <ClInclude Include="..\Sources\Array\ArrayAccessor3.h" />
-    <ClInclude Include="..\Sources\BoundingBox\BoundingBox.h" />
-    <ClInclude Include="..\Sources\BoundingBox\BoundingBox2.h" />
-    <ClInclude Include="..\Sources\BoundingBox\BoundingBox3.h" />
-    <ClInclude Include="..\Sources\Field\ConstantScalarField2.h" />
-    <ClInclude Include="..\Sources\Field\ConstantScalarField3.h" />
-    <ClInclude Include="..\Sources\Field\ConstantVectorField2.h" />
-    <ClInclude Include="..\Sources\Field\ConstantVectorField3.h" />
-    <ClInclude Include="..\Sources\Field\CustomScalarField2.h" />
-    <ClInclude Include="..\Sources\Field\CustomScalarField3.h" />
-    <ClInclude Include="..\Sources\Field\CustomVectorField2.h" />
-    <ClInclude Include="..\Sources\Field\CustomVectorField3.h" />
-    <ClInclude Include="..\Sources\Field\Field2.h" />
-    <ClInclude Include="..\Sources\Field\Field3.h" />
-    <ClInclude Include="..\Sources\Field\ScalarField2.h" />
-    <ClInclude Include="..\Sources\Field\ScalarField3.h" />
-    <ClInclude Include="..\Sources\Field\VectorField2.h" />
-    <ClInclude Include="..\Sources\Field\VectorField3.h" />
-    <ClInclude Include="..\Sources\Geometry\Sphere2.h" />
-    <ClInclude Include="..\Sources\Geometry\Sphere3.h" />
-    <ClInclude Include="..\Sources\Geometry\Triangle3.h" />
-    <ClInclude Include="..\Sources\Geometry\TriangleMesh3.h" />
-    <ClInclude Include="..\Sources\Math\Quaternion.h" />
-    <ClInclude Include="..\Sources\Matrix\Matrix.h" />
-    <ClInclude Include="..\Sources\Matrix\Matrix2x2.h" />
-    <ClInclude Include="..\Sources\Matrix\Matrix3x3.h" />
-    <ClInclude Include="..\Sources\Matrix\Matrix4x4.h" />
-    <ClInclude Include="..\Sources\Point\Point.h" />
-    <ClInclude Include="..\Sources\Point\Point2.h" />
-    <ClInclude Include="..\Sources\Point\Point3.h" />
-    <ClInclude Include="..\Sources\Ray\Ray.h" />
-    <ClInclude Include="..\Sources\Ray\Ray2.h" />
-    <ClInclude Include="..\Sources\Ray\Ray3.h" />
-    <ClInclude Include="..\Sources\Size\Size.h" />
-    <ClInclude Include="..\Sources\Size\Size2.h" />
-    <ClInclude Include="..\Sources\Size\Size3.h" />
-    <ClInclude Include="..\Sources\Surface\Implicit\ImplicitSurface2.h" />
-    <ClInclude Include="..\Sources\Surface\Implicit\ImplicitSurface3.h" />
-    <ClInclude Include="..\Sources\Surface\Implicit\ImplicitSurfaceSet2.h" />
-    <ClInclude Include="..\Sources\Surface\Implicit\ImplicitSurfaceSet3.h" />
-    <ClInclude Include="..\Sources\Surface\Implicit\SurfaceToImplicit3.h" />
-    <ClInclude Include="..\Sources\Surface\Implicit\SurfaceToImplicit2.h" />
-    <ClInclude Include="..\Sources\Surface\Surface2.h" />
-    <ClInclude Include="..\Sources\Surface\Surface3.h" />
-    <ClInclude Include="..\Sources\Surface\SurfaceSet2.h" />
-    <ClInclude Include="..\Sources\Surface\SurfaceSet3.h" />
-    <ClInclude Include="..\Sources\Transform\Transform2.h" />
-    <ClInclude Include="..\Sources\Transform\Transform3.h" />
-    <ClInclude Include="..\Sources\Utils\Constants.h" />
-    <ClInclude Include="..\Sources\Utils\Logger.h" />
-    <ClInclude Include="..\Sources\Utils\Macros.h" />
-    <ClInclude Include="..\Sources\Utils\MathUtils.h" />
-    <ClInclude Include="..\Sources\Utils\Parallel.h" />
-    <ClInclude Include="..\Sources\Utils\Timer.h" />
-    <ClInclude Include="..\Sources\Utils\TypeHelpers.h" />
-    <ClInclude Include="..\Sources\Vector\Vector.h" />
-    <ClInclude Include="..\Sources\Vector\Vector2.h" />
-    <ClInclude Include="..\Sources\Vector\Vector3.h" />
-    <ClInclude Include="..\Sources\Vector\Vector4.h" />
+    <ClInclude Include="..\Includes\Animation\Animation.h" />
+    <ClInclude Include="..\Includes\Animation\Frame.h" />
+    <ClInclude Include="..\Includes\Animation\PhysicsAnimation.h" />
+    <ClInclude Include="..\Includes\Array\Array.h" />
+    <ClInclude Include="..\Includes\Array\Array1-Impl.h" />
+    <ClInclude Include="..\Includes\Array\Array1.h" />
+    <ClInclude Include="..\Includes\Array\Array2-Impl.h" />
+    <ClInclude Include="..\Includes\Array\Array2.h" />
+    <ClInclude Include="..\Includes\Array\Array3-Impl.h" />
+    <ClInclude Include="..\Includes\Array\Array3.h" />
+    <ClInclude Include="..\Includes\Array\ArrayAccessor.h" />
+    <ClInclude Include="..\Includes\Array\ArrayAccessor1-Impl.h" />
+    <ClInclude Include="..\Includes\Array\ArrayAccessor1.h" />
+    <ClInclude Include="..\Includes\Array\ArrayAccessor2-Impl.h" />
+    <ClInclude Include="..\Includes\Array\ArrayAccessor2.h" />
+    <ClInclude Include="..\Includes\Array\ArrayAccessor3-Impl.h" />
+    <ClInclude Include="..\Includes\Array\ArrayAccessor3.h" />
+    <ClInclude Include="..\Includes\BoundingBox\BoundingBox.h" />
+    <ClInclude Include="..\Includes\BoundingBox\BoundingBox2.h" />
+    <ClInclude Include="..\Includes\BoundingBox\BoundingBox3.h" />
+    <ClInclude Include="..\Includes\Field\ConstantScalarField2.h" />
+    <ClInclude Include="..\Includes\Field\ConstantScalarField3.h" />
+    <ClInclude Include="..\Includes\Field\ConstantVectorField2.h" />
+    <ClInclude Include="..\Includes\Field\ConstantVectorField3.h" />
+    <ClInclude Include="..\Includes\Field\CustomScalarField2.h" />
+    <ClInclude Include="..\Includes\Field\CustomScalarField3.h" />
+    <ClInclude Include="..\Includes\Field\CustomVectorField2.h" />
+    <ClInclude Include="..\Includes\Field\CustomVectorField3.h" />
+    <ClInclude Include="..\Includes\Field\Field2.h" />
+    <ClInclude Include="..\Includes\Field\Field3.h" />
+    <ClInclude Include="..\Includes\Field\ScalarField2.h" />
+    <ClInclude Include="..\Includes\Field\ScalarField3.h" />
+    <ClInclude Include="..\Includes\Field\VectorField2.h" />
+    <ClInclude Include="..\Includes\Field\VectorField3.h" />
+    <ClInclude Include="..\Includes\Geometry\Sphere2.h" />
+    <ClInclude Include="..\Includes\Geometry\Sphere3.h" />
+    <ClInclude Include="..\Includes\Geometry\Triangle3.h" />
+    <ClInclude Include="..\Includes\Geometry\TriangleMesh3.h" />
+    <ClInclude Include="..\Includes\Math\Quaternion.h" />
+    <ClInclude Include="..\Includes\Matrix\Matrix.h" />
+    <ClInclude Include="..\Includes\Matrix\Matrix2x2.h" />
+    <ClInclude Include="..\Includes\Matrix\Matrix3x3.h" />
+    <ClInclude Include="..\Includes\Matrix\Matrix4x4.h" />
+    <ClInclude Include="..\Includes\Point\Point.h" />
+    <ClInclude Include="..\Includes\Point\Point2.h" />
+    <ClInclude Include="..\Includes\Point\Point3.h" />
+    <ClInclude Include="..\Includes\Ray\Ray.h" />
+    <ClInclude Include="..\Includes\Ray\Ray2.h" />
+    <ClInclude Include="..\Includes\Ray\Ray3.h" />
+    <ClInclude Include="..\Includes\Size\Size.h" />
+    <ClInclude Include="..\Includes\Size\Size2.h" />
+    <ClInclude Include="..\Includes\Size\Size3.h" />
+    <ClInclude Include="..\Includes\Surface\Implicit\ImplicitSurface2.h" />
+    <ClInclude Include="..\Includes\Surface\Implicit\ImplicitSurface3.h" />
+    <ClInclude Include="..\Includes\Surface\Implicit\ImplicitSurfaceSet2.h" />
+    <ClInclude Include="..\Includes\Surface\Implicit\ImplicitSurfaceSet3.h" />
+    <ClInclude Include="..\Includes\Surface\Implicit\SurfaceToImplicit2.h" />
+    <ClInclude Include="..\Includes\Surface\Implicit\SurfaceToImplicit3.h" />
+    <ClInclude Include="..\Includes\Surface\Surface2.h" />
+    <ClInclude Include="..\Includes\Surface\Surface3.h" />
+    <ClInclude Include="..\Includes\Surface\SurfaceSet2.h" />
+    <ClInclude Include="..\Includes\Surface\SurfaceSet3.h" />
+    <ClInclude Include="..\Includes\Transform\Transform2.h" />
+    <ClInclude Include="..\Includes\Transform\Transform3.h" />
+    <ClInclude Include="..\Includes\Utils\Constants.h" />
+    <ClInclude Include="..\Includes\Utils\Logger.h" />
+    <ClInclude Include="..\Includes\Utils\Macros.h" />
+    <ClInclude Include="..\Includes\Utils\MathUtils.h" />
+    <ClInclude Include="..\Includes\Utils\Parallel.h" />
+    <ClInclude Include="..\Includes\Utils\Timer.h" />
+    <ClInclude Include="..\Includes\Utils\TypeHelpers.h" />
+    <ClInclude Include="..\Includes\Vector\Vector.h" />
+    <ClInclude Include="..\Includes\Vector\Vector2.h" />
+    <ClInclude Include="..\Includes\Vector\Vector3.h" />
+    <ClInclude Include="..\Includes\Vector\Vector4.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Animation\Animation.cpp" />
     <ClCompile Include="..\Sources\Animation\Frame.cpp" />
     <ClCompile Include="..\Sources\Animation\PhysicsAnimation.cpp" />
-    <ClCompile Include="..\Sources\Array\Array1.cpp" />
-    <ClCompile Include="..\Sources\Array\Array2.cpp" />
-    <ClCompile Include="..\Sources\Array\Array3.cpp" />
-    <ClCompile Include="..\Sources\Array\ArrayAccessor1.cpp" />
-    <ClCompile Include="..\Sources\Array\ArrayAccessor2.cpp" />
-    <ClCompile Include="..\Sources\Array\ArrayAccessor3.cpp" />
     <ClCompile Include="..\Sources\BoundingBox\BoundingBox.cpp" />
     <ClCompile Include="..\Sources\BoundingBox\BoundingBox2.cpp" />
     <ClCompile Include="..\Sources\BoundingBox\BoundingBox3.cpp" />
