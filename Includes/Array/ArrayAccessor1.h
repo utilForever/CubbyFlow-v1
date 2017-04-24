@@ -283,4 +283,6 @@ namespace CubbyFlow
 	template <typename T> using ConstArrayAccessor1 = ConstArrayAccessor<T, 1>;
 }
 
+#include <Array/ArrayAccessor1-Impl.h>
+
 #endif

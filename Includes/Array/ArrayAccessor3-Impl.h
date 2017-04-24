@@ -1,12 +1,14 @@
 /*************************************************************************
-> File Name: ArrayAccessor3.cpp
+> File Name: ArrayAccessor3-Impl.h
 > Project Name: CubbyFlow
-> Author: Chan-Ho Chris Ohk, Kim Dongmin
+> Author: Chan-Ho Chris Ohk, Dongmin Kim
 > Purpose: 3-D array accessor class.
 > Created Time: 2017/01/28
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Array/ArrayAccessor3.h>
+#ifndef CUBBYFLOW_ARRAY_ACCESSOR3_IMPL_H
+#define CUBBYFLOW_ARRAY_ACCESSOR3_IMPL_H
+
 #include <Utils/Constants.h>
 
 #include <algorithm>
@@ -172,7 +174,7 @@ namespace CubbyFlow
 					func(At(i, j, k));
 				}
 			}
-		}		
+		}
 	}
 
 	template <typename T>
@@ -441,3 +443,5 @@ namespace CubbyFlow
 		return m_data[Index(pt)];
 	}
 }
+
+#endif

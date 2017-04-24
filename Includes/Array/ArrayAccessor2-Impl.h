@@ -1,12 +1,14 @@
 /*************************************************************************
-> File Name: ArrayAccessor2.cpp
+> File Name: ArrayAccessor2-Impl.h
 > Project Name: CubbyFlow
 > Author: Chan-Ho Chris Ohk, Dongmin Kim
 > Purpose: 2-D array accessor class.
 > Created Time: 2017/01/28
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Array/ArrayAccessor2.h>
+#ifndef CUBBYFLOW_ARRAY_ACCESSOR2_IMPL_H
+#define CUBBYFLOW_ARRAY_ACCESSOR2_IMPL_H
+
 #include <Utils/Constants.h>
 
 #include <algorithm>
@@ -415,3 +417,5 @@ namespace CubbyFlow
 		return m_data[Index(i, j)];
 	}
 }
+
+#endif

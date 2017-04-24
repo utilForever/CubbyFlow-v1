@@ -1,12 +1,14 @@
 /*************************************************************************
-> File Name: ArrayAccessor1.cpp
+> File Name: ArrayAccessor1-Impl.h
 > Project Name: CubbyFlow
 > Author: Chan-Ho Chris Ohk
 > Purpose: 1-D array accessor class.
 > Created Time: 2017/01/28
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Array/ArrayAccessor1.h>
+#ifndef CUBBYFLOW_ARRAY_ACCESSOR1_IMPL_H
+#define CUBBYFLOW_ARRAY_ACCESSOR1_IMPL_H
+
 #include <Utils/Constants.h>
 
 #include <algorithm>
@@ -257,3 +259,5 @@ namespace CubbyFlow
 		return m_data[i];
 	}
 }
+
+#endif
