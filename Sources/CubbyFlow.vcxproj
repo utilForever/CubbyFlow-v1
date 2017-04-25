@@ -186,8 +186,11 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Array\ArrayAccessor2.h" />
     <ClInclude Include="..\Includes\Array\ArrayAccessor3-Impl.h" />
     <ClInclude Include="..\Includes\Array\ArrayAccessor3.h" />
+    <ClInclude Include="..\Includes\BoundingBox\BoundingBox-Impl.h" />
     <ClInclude Include="..\Includes\BoundingBox\BoundingBox.h" />
+    <ClInclude Include="..\Includes\BoundingBox\BoundingBox2-Impl.h" />
     <ClInclude Include="..\Includes\BoundingBox\BoundingBox2.h" />
+    <ClInclude Include="..\Includes\BoundingBox\BoundingBox3-Impl.h" />
     <ClInclude Include="..\Includes\BoundingBox\BoundingBox3.h" />
     <ClInclude Include="..\Includes\Field\ConstantScalarField2.h" />
     <ClInclude Include="..\Includes\Field\ConstantScalarField3.h" />
@@ -249,9 +252,6 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="..\Sources\Animation\Animation.cpp" />
     <ClCompile Include="..\Sources\Animation\Frame.cpp" />
     <ClCompile Include="..\Sources\Animation\PhysicsAnimation.cpp" />
-    <ClCompile Include="..\Sources\BoundingBox\BoundingBox.cpp" />
-    <ClCompile Include="..\Sources\BoundingBox\BoundingBox2.cpp" />
-    <ClCompile Include="..\Sources\BoundingBox\BoundingBox3.cpp" />
     <ClCompile Include="..\Sources\Field\ConstantScalarField2.cpp" />
     <ClCompile Include="..\Sources\Field\ConstantScalarField3.cpp" />
     <ClCompile Include="..\Sources\Field\ConstantVectorField2.cpp" />

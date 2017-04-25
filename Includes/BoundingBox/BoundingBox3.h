@@ -131,4 +131,6 @@ namespace CubbyFlow
 	using BoundingBoxRayIntersection3D = BoundingBoxRayIntersection3<double>;
 }
 
+#include <BoundingBox/BoundingBox3-Impl.h>
+
 #endif

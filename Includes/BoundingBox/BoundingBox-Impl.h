@@ -1,12 +1,13 @@
 /*************************************************************************
-> File Name: BoundingBox.cpp
+> File Name: BoundingBox-Impl.h
 > Project Name: CubbyFlow
 > Author: Dongmin Kim
 > Purpose: Generic N-D axis-aligned bounding box class.
 > Created Time: 2017/03/30
 > Copyright (c) 2017, Dongmin Kim
 *************************************************************************/
-#include <BoundingBox/BoundingBox.h>
+#ifndef CUBBYFLOW_BOUNDING_BOX_IMPL_H
+#define CUBBYFLOW_BOUNDING_BOX_IMPL_H
 
 #include <Utils/MathUtils.h>
 
@@ -142,3 +143,5 @@ namespace CubbyFlow
 		}
 	}
 }
+
+#endif

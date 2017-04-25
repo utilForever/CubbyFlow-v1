@@ -73,4 +73,6 @@ namespace CubbyFlow
 	};
 }
 
+#include <BoundingBox/BoundingBox-Impl.h>
+
 #endif

@@ -273,6 +273,15 @@
     <ClInclude Include="..\Includes\Array\ArrayAccessor3-Impl.h">
       <Filter>Array</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\BoundingBox\BoundingBox2-Impl.h">
+      <Filter>BoundingBox</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\BoundingBox\BoundingBox3-Impl.h">
+      <Filter>BoundingBox</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\BoundingBox\BoundingBox-Impl.h">
+      <Filter>BoundingBox</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Point\Point.cpp">
@@ -364,15 +373,6 @@
     </ClCompile>
     <ClCompile Include="..\Sources\Field\ConstantVectorField3.cpp">
       <Filter>Field</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sources\BoundingBox\BoundingBox.cpp">
-      <Filter>BoundingBox</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sources\BoundingBox\BoundingBox2.cpp">
-      <Filter>BoundingBox</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sources\BoundingBox\BoundingBox3.cpp">
-      <Filter>BoundingBox</Filter>
     </ClCompile>
     <ClCompile Include="..\Sources\Transform\Transform2.cpp">
       <Filter>Transform</Filter>
