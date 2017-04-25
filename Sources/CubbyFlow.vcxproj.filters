@@ -297,6 +297,12 @@
     <ClInclude Include="..\Includes\Math\Quaternion-Impl.h">
       <Filter>Math</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Ray\Ray2-Impl.h">
+      <Filter>Ray</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Ray\Ray3-Impl.h">
+      <Filter>Ray</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Point\Point.cpp">
@@ -355,12 +361,6 @@
     </ClCompile>
     <ClCompile Include="..\Sources\Field\CustomVectorField3.cpp">
       <Filter>Field</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sources\Ray\Ray2.cpp">
-      <Filter>Ray</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sources\Ray\Ray3.cpp">
-      <Filter>Ray</Filter>
     </ClCompile>
     <ClCompile Include="..\Sources\Field\ConstantScalarField2.cpp">
       <Filter>Field</Filter>
