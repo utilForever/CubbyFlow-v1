@@ -294,6 +294,9 @@
     <ClInclude Include="..\Includes\Vector\Vector4.h">
       <Filter>Vector</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Math\Quaternion-Impl.h">
+      <Filter>Math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Point\Point.cpp">
@@ -352,9 +355,6 @@
     </ClCompile>
     <ClCompile Include="..\Sources\Field\CustomVectorField3.cpp">
       <Filter>Field</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sources\Math\Quaternion.cpp">
-      <Filter>Math</Filter>
     </ClCompile>
     <ClCompile Include="..\Sources\Ray\Ray2.cpp">
       <Filter>Ray</Filter>
