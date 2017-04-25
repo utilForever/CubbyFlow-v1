@@ -14,32 +14,27 @@
 namespace CubbyFlow
 {
 	template <typename T>
-	Matrix<T, 3, 3>::Matrix() :
-		m_elements(1, 0, 0,
-				   0, 1, 0,
-				   0, 0, 1)
+	Matrix<T, 3, 3>::Matrix()
 	{
-		// Do nothing
+		Set(1, 0, 0,
+			0, 1, 0,
+			0, 0, 1);
 	}
 
 	template <typename T>
-	Matrix<T, 3, 3>::Matrix(T s) :
-		m_elements(s, s, s,
-				   s, s, s,
-				   s, s, s)
+	Matrix<T, 3, 3>::Matrix(T s)
 	{
-		// Do nothing
+		Set(s);
 	}
 
 	template <typename T>
 	Matrix<T, 3, 3>::Matrix(T m00, T m01, T m02, 
 							T m10, T m11, T m12, 
-							T m20, T m21, T m22) :
-		m_elements(m00, m01, m02, 
-			       m10, m11, m12, 
-				   m20, m21, m22)
+							T m20, T m21, T m22)
 	{
-		// Do nothing
+		Set(m00, m01, m02,
+			m10, m11, m12,
+			m20, m21, m22);
 	}
 
 	template <typename T>
