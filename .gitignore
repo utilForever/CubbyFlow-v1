@@ -250,5 +250,5 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
-/Projects/ImplicitSurface3.cpp
-/Projects/ImplicitSurface3.cpp
+
+*.npy
