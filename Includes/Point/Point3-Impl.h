@@ -1,13 +1,15 @@
 /*************************************************************************
-> File Name: Point3.cpp
+> File Name: Point3-Impl.h
 > Project Name: CubbyFlow
 > Author: Chan-Ho Chris Ohk
 > Purpose: 3-D point class.
 > Created Time: 2017/02/03
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
+#ifndef CUBBYFLOW_POINT3_IMPL_H
+#define CUBBYFLOW_POINT3_IMPL_H
+
 #include <Point/Point2.h>
-#include <Point/Point3.h>
 
 #include <cassert>
 
@@ -548,3 +550,5 @@ namespace CubbyFlow
 		return Point<T, 3>(std::floor(a.x), std::floor(a.y), std::floor(a.z));
 	}
 }
+
+#endif

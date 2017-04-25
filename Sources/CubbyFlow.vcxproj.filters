@@ -135,15 +135,6 @@
     <ClInclude Include="..\Includes\Matrix\Matrix4x4.h">
       <Filter>Matrix</Filter>
     </ClInclude>
-    <ClInclude Include="..\Includes\Point\Point.h">
-      <Filter>Point</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Includes\Point\Point2.h">
-      <Filter>Point</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Includes\Point\Point3.h">
-      <Filter>Point</Filter>
-    </ClInclude>
     <ClInclude Include="..\Includes\Ray\Ray.h">
       <Filter>Ray</Filter>
     </ClInclude>
@@ -303,17 +294,26 @@
     <ClInclude Include="..\Includes\Ray\Ray3-Impl.h">
       <Filter>Ray</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Point\Point2.h">
+      <Filter>Point</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Point\Point2-Impl.h">
+      <Filter>Point</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Point\Point3.h">
+      <Filter>Point</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Point\Point3-Impl.h">
+      <Filter>Point</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Point\Point-Impl.h">
+      <Filter>Point</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Point\Point.h">
+      <Filter>Point</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Sources\Point\Point.cpp">
-      <Filter>Point</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sources\Point\Point2.cpp">
-      <Filter>Point</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sources\Point\Point3.cpp">
-      <Filter>Point</Filter>
-    </ClCompile>
     <ClCompile Include="..\Sources\Utils\Parallel.cpp">
       <Filter>Utils</Filter>
     </ClCompile>

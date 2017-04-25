@@ -317,4 +317,6 @@ namespace CubbyFlow
 	using Point3UI = Point3<size_t>;
 }
 
+#include <Point/Point3-Impl.h>
+
 #endif
