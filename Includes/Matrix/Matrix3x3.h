@@ -410,4 +410,6 @@ namespace CubbyFlow
 	using Matrix3x3D = Matrix3x3<double>;
 }
 
+#include <Matrix/Matrix3x3-Impl.h>
+
 #endif

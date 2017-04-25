@@ -1,12 +1,13 @@
 /*************************************************************************
-> File Name: Matrix3x3.cpp
+> File Name: Matrix3x3-Impl.h
 > Project Name: CubbyFlow
 > Author: Dongmin Kim
 > Purpose: 3-D matrix class.
 > Created Time: 2017/03/07
 > Copyright (c) 2017, Dongmin Kim
 *************************************************************************/
-#include <Matrix/Matrix3x3.h>
+#ifndef CUBBYFLOW_MATRIX3X3_IMPL_H
+#define CUBBYFLOW_MATRIX3X3_IMPL_H
 
 #include <cassert>
 
@@ -823,3 +824,4 @@ namespace CubbyFlow
 	}
 }
 
+#endif

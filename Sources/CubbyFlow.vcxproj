@@ -212,9 +212,13 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Geometry\TriangleMesh3.h" />
     <ClInclude Include="..\Includes\Math\Quaternion-Impl.h" />
     <ClInclude Include="..\Includes\Math\Quaternion.h" />
+    <ClInclude Include="..\Includes\Matrix\Matrix-Impl.h" />
     <ClInclude Include="..\Includes\Matrix\Matrix.h" />
+    <ClInclude Include="..\Includes\Matrix\Matrix2x2-Impl.h" />
     <ClInclude Include="..\Includes\Matrix\Matrix2x2.h" />
+    <ClInclude Include="..\Includes\Matrix\Matrix3x3-Impl.h" />
     <ClInclude Include="..\Includes\Matrix\Matrix3x3.h" />
+    <ClInclude Include="..\Includes\Matrix\Matrix4x4-Impl.h" />
     <ClInclude Include="..\Includes\Matrix\Matrix4x4.h" />
     <ClInclude Include="..\Includes\Point\Point-Impl.h" />
     <ClInclude Include="..\Includes\Point\Point.h" />
@@ -280,10 +284,6 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="..\Sources\Geometry\Sphere3.cpp" />
     <ClCompile Include="..\Sources\Geometry\Triangle3.cpp" />
     <ClCompile Include="..\Sources\Geometry\TriangleMesh3.cpp" />
-    <ClCompile Include="..\Sources\Matrix\Matrix.cpp" />
-    <ClCompile Include="..\Sources\Matrix\Matrix2x2.cpp" />
-    <ClCompile Include="..\Sources\Matrix\Matrix3x3.cpp" />
-    <ClCompile Include="..\Sources\Matrix\Matrix4x4.cpp" />
     <ClCompile Include="..\Sources\Surface\Implicit\ImplicitSurface2.cpp" />
     <ClCompile Include="..\Sources\Surface\Implicit\ImplicitSurface3.cpp" />
     <ClCompile Include="..\Sources\Surface\Implicit\ImplicitSurfaceSet2.cpp" />

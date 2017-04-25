@@ -123,18 +123,6 @@
     <ClInclude Include="..\Includes\Math\Quaternion.h">
       <Filter>Math</Filter>
     </ClInclude>
-    <ClInclude Include="..\Includes\Matrix\Matrix.h">
-      <Filter>Matrix</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Includes\Matrix\Matrix2x2.h">
-      <Filter>Matrix</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Includes\Matrix\Matrix3x3.h">
-      <Filter>Matrix</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Includes\Matrix\Matrix4x4.h">
-      <Filter>Matrix</Filter>
-    </ClInclude>
     <ClInclude Include="..\Includes\Ray\Ray.h">
       <Filter>Ray</Filter>
     </ClInclude>
@@ -312,6 +300,30 @@
     <ClInclude Include="..\Includes\Point\Point.h">
       <Filter>Point</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Matrix\Matrix4x4-Impl.h">
+      <Filter>Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Matrix\Matrix-Impl.h">
+      <Filter>Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Matrix\Matrix.h">
+      <Filter>Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Matrix\Matrix2x2.h">
+      <Filter>Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Matrix\Matrix2x2-Impl.h">
+      <Filter>Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Matrix\Matrix3x3.h">
+      <Filter>Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Matrix\Matrix3x3-Impl.h">
+      <Filter>Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Matrix\Matrix4x4.h">
+      <Filter>Matrix</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Utils\Parallel.cpp">
@@ -319,18 +331,6 @@
     </ClCompile>
     <ClCompile Include="..\Sources\Utils\MathUtils.cpp">
       <Filter>Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sources\Matrix\Matrix2x2.cpp">
-      <Filter>Matrix</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sources\Matrix\Matrix3x3.cpp">
-      <Filter>Matrix</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sources\Matrix\Matrix.cpp">
-      <Filter>Matrix</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sources\Matrix\Matrix4x4.cpp">
-      <Filter>Matrix</Filter>
     </ClCompile>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
       <Filter>Field</Filter>

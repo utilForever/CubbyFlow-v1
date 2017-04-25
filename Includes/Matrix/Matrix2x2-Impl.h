@@ -1,12 +1,13 @@
 /*************************************************************************
-> File Name: Matrix2x2.cpp
+> File Name: Matrix2x2-Impl.h
 > Project Name: CubbyFlow
 > Author: Dongmin Kim
 > Purpose: 2-D matrix class.
 > Created Time: 2017/03/06
 > Copyright (c) 2017, Dongmin Kim
 *************************************************************************/
-#include <Matrix/Matrix2x2.h>
+#ifndef CUBBYFLOW_MATRIX2X2_IMPL_H
+#define CUBBYFLOW_MATRIX2X2_IMPL_H
 
 #include <cassert>
 #include <complex.h>
@@ -728,3 +729,4 @@ namespace CubbyFlow
 	}
 }
 
+#endif
