@@ -1,12 +1,13 @@
 /*************************************************************************
-> File Name: Vector3.cpp
+> File Name: Vector3-Impl.h
 > Project Name: CubbyFlow
 > Author: Dongmin Kim
 > Purpose: 3-D vector class.
 > Created Time: 2017/02/22
 > Copyright (c) 2017, Dongmin Kim
 *************************************************************************/
-#include <Vector/Vector3.h>
+#ifndef CUBBYFLOW_VECTOR3_IMPL_H
+#define CUBBYFLOW_VECTOR3_IMPL_H
 
 #include <Utils/MathUtils.h>
 
@@ -658,3 +659,5 @@ namespace CubbyFlow
 		return a3 * Cubic(f) + a2 * Square(f) + a1 * f + a0;
 	}
 }
+
+#endif

@@ -243,9 +243,13 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Utils\Parallel.h" />
     <ClInclude Include="..\Includes\Utils\Timer.h" />
     <ClInclude Include="..\Includes\Utils\TypeHelpers.h" />
+    <ClInclude Include="..\Includes\Vector\Vector-Impl.h" />
     <ClInclude Include="..\Includes\Vector\Vector.h" />
+    <ClInclude Include="..\Includes\Vector\Vector2-Impl.h" />
     <ClInclude Include="..\Includes\Vector\Vector2.h" />
+    <ClInclude Include="..\Includes\Vector\Vector3-Impl.h" />
     <ClInclude Include="..\Includes\Vector\Vector3.h" />
+    <ClInclude Include="..\Includes\Vector\Vector4-Impl.h" />
     <ClInclude Include="..\Includes\Vector\Vector4.h" />
   </ItemGroup>
   <ItemGroup>
@@ -296,10 +300,6 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="..\Sources\Utils\MathUtils.cpp" />
     <ClCompile Include="..\Sources\Utils\Parallel.cpp" />
     <ClCompile Include="..\Sources\Utils\Timer.cpp" />
-    <ClCompile Include="..\Sources\Vector\Vector.cpp" />
-    <ClCompile Include="..\Sources\Vector\Vector2.cpp" />
-    <ClCompile Include="..\Sources\Vector\Vector3.cpp" />
-    <ClCompile Include="..\Sources\Vector\Vector4.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

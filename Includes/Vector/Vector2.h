@@ -364,4 +364,6 @@ namespace CubbyFlow
 		T f);
 }
 
+#include <Vector/Vector2-Impl.h>
+
 #endif

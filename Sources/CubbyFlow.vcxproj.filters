@@ -219,18 +219,6 @@
     <ClInclude Include="..\Includes\Utils\TypeHelpers.h">
       <Filter>Utils</Filter>
     </ClInclude>
-    <ClInclude Include="..\Includes\Vector\Vector.h">
-      <Filter>Vector</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Includes\Vector\Vector2.h">
-      <Filter>Vector</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Includes\Vector\Vector3.h">
-      <Filter>Vector</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Includes\Vector\Vector4.h">
-      <Filter>Vector</Filter>
-    </ClInclude>
     <ClInclude Include="..\Includes\Array\Array.h">
       <Filter>Array</Filter>
     </ClInclude>
@@ -282,6 +270,30 @@
     <ClInclude Include="..\Includes\BoundingBox\BoundingBox-Impl.h">
       <Filter>BoundingBox</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Vector\Vector4-Impl.h">
+      <Filter>Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vector\Vector-Impl.h">
+      <Filter>Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vector\Vector.h">
+      <Filter>Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vector\Vector2.h">
+      <Filter>Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vector\Vector2-Impl.h">
+      <Filter>Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vector\Vector3.h">
+      <Filter>Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vector\Vector3-Impl.h">
+      <Filter>Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vector\Vector4.h">
+      <Filter>Vector</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Point\Point.cpp">
@@ -295,15 +307,6 @@
     </ClCompile>
     <ClCompile Include="..\Sources\Utils\Parallel.cpp">
       <Filter>Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sources\Vector\Vector.cpp">
-      <Filter>Vector</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sources\Vector\Vector2.cpp">
-      <Filter>Vector</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sources\Vector\Vector3.cpp">
-      <Filter>Vector</Filter>
     </ClCompile>
     <ClCompile Include="..\Sources\Utils\MathUtils.cpp">
       <Filter>Utils</Filter>
@@ -319,9 +322,6 @@
     </ClCompile>
     <ClCompile Include="..\Sources\Matrix\Matrix4x4.cpp">
       <Filter>Matrix</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sources\Vector\Vector4.cpp">
-      <Filter>Vector</Filter>
     </ClCompile>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
       <Filter>Field</Filter>

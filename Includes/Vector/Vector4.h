@@ -360,4 +360,6 @@ namespace CubbyFlow
 		T f);
 }
 
+#include <Vector/Vector4-Impl.h>
+
 #endif
