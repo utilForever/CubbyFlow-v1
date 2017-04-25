@@ -81,4 +81,6 @@ namespace CubbyFlow
 	};
 }
 
+#include <Vector/Vector-Impl.h>
+
 #endif

@@ -37,4 +37,6 @@ namespace CubbyFlow
 	};
 }
 
+#include <Matrix/Matrix-Impl.h>
+
 #endif

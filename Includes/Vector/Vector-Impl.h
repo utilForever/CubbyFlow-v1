@@ -1,12 +1,13 @@
 /*************************************************************************
-> File Name: Vector.cpp
+> File Name: Vector-Impl.h
 > Project Name: CubbyFlow
 > Author: Dongmin Kim
 > Purpose: Generic N-D vector class.
 > Created Time: 2017/02/19
 > Copyright (c) 2017, Dongmin Kim
 *************************************************************************/
-#include <Vector/Vector.h>
+#ifndef CUBBYFLOW_VECTOR_IMPL_H
+#define CUBBYFLOW_VECTOR_IMPL_H
 
 namespace CubbyFlow
 {
@@ -104,3 +105,5 @@ namespace CubbyFlow
 		m_elements[i] = v;
 	}
 }
+
+#endif

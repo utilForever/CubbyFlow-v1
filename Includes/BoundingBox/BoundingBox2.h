@@ -128,4 +128,6 @@ namespace CubbyFlow
 	using BoundingBoxRayIntersection2D = BoundingBoxRayIntersection2<double>;
 }
 
+#include <BoundingBox/BoundingBox2-Impl.h>
+
 #endif

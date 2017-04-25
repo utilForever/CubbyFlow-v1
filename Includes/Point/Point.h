@@ -71,4 +71,6 @@ namespace CubbyFlow
 	};
 }
 
+#include <Point/Point-Impl.h>
+
 #endif

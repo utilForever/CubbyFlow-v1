@@ -1,5 +1,5 @@
 /*************************************************************************
-> File Name: Point.h
+> File Name: Point2.h
 > Project Name: CubbyFlow
 > Author: Chan-Ho Chris Ohk
 > Purpose: 2-D point class.
@@ -306,5 +306,7 @@ namespace CubbyFlow
 	//! Unsigned integer-type 2D point.
 	using Point2UI = Point2<size_t>;
 }
+
+#include <Point/Point2-Impl.h>
 
 #endif

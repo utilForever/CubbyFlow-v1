@@ -1,12 +1,13 @@
 /*************************************************************************
-> File Name: Matrix.cpp
+> File Name: Matrix-Impl.h
 > Project Name: CubbyFlow
 > Author: Dongmin Kim
 > Purpose: Static-sized M x N matrix class.
 > Created Time: 2017/03/06
 > Copyright (c) 2017, Dongmin Kim
 *************************************************************************/
-#include <Matrix/Matrix.h>
+#ifndef CUBBYFLOW_MATRIX_IMPL_H
+#define CUBBYFLOW_MATRIX_IMPL_H
 
 namespace CubbyFlow
 {
@@ -17,3 +18,5 @@ namespace CubbyFlow
 		// Do nothing
 	}
 }	
+
+#endif

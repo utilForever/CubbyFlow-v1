@@ -442,4 +442,6 @@ namespace CubbyFlow
 	using Matrix4x4D = Matrix4x4<double>;
 }
 
+#include <Matrix/Matrix4x4-Impl.h>
+
 #endif

@@ -1,12 +1,13 @@
 /*************************************************************************
-> File Name: Point.cpp
+> File Name: Point-Impl.h
 > Project Name: CubbyFlow
 > Author: Chan-Ho Chris Ohk
 > Purpose: Generic N-D point class.
 > Created Time: 2017/02/03
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Point/Point.h>
+#ifndef CUBBYFLOW_POINT_IMPL_H
+#define CUBBYFLOW_POINT_IMPL_H
 
 #include <cassert>
 
@@ -113,3 +114,5 @@ namespace CubbyFlow
 		m_elements[i] = v;
 	}
 }
+
+#endif

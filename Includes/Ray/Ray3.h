@@ -55,4 +55,6 @@ namespace CubbyFlow
 	using Ray3D = Ray3<double>;
 }
 
+#include <Ray/Ray3-Impl.h>
+
 #endif

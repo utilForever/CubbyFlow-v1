@@ -395,4 +395,6 @@ namespace CubbyFlow
 	using Matrix2x2D = Matrix2x2<double>;
 }
 
+#include <Matrix/Matrix2x2-Impl.h>
+
 #endif

@@ -123,27 +123,6 @@
     <ClInclude Include="..\Includes\Math\Quaternion.h">
       <Filter>Math</Filter>
     </ClInclude>
-    <ClInclude Include="..\Includes\Matrix\Matrix.h">
-      <Filter>Matrix</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Includes\Matrix\Matrix2x2.h">
-      <Filter>Matrix</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Includes\Matrix\Matrix3x3.h">
-      <Filter>Matrix</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Includes\Matrix\Matrix4x4.h">
-      <Filter>Matrix</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Includes\Point\Point.h">
-      <Filter>Point</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Includes\Point\Point2.h">
-      <Filter>Point</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Includes\Point\Point3.h">
-      <Filter>Point</Filter>
-    </ClInclude>
     <ClInclude Include="..\Includes\Ray\Ray.h">
       <Filter>Ray</Filter>
     </ClInclude>
@@ -219,18 +198,6 @@
     <ClInclude Include="..\Includes\Utils\TypeHelpers.h">
       <Filter>Utils</Filter>
     </ClInclude>
-    <ClInclude Include="..\Includes\Vector\Vector.h">
-      <Filter>Vector</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Includes\Vector\Vector2.h">
-      <Filter>Vector</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Includes\Vector\Vector3.h">
-      <Filter>Vector</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Includes\Vector\Vector4.h">
-      <Filter>Vector</Filter>
-    </ClInclude>
     <ClInclude Include="..\Includes\Array\Array.h">
       <Filter>Array</Filter>
     </ClInclude>
@@ -273,46 +240,97 @@
     <ClInclude Include="..\Includes\Array\ArrayAccessor3-Impl.h">
       <Filter>Array</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\BoundingBox\BoundingBox2-Impl.h">
+      <Filter>BoundingBox</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\BoundingBox\BoundingBox3-Impl.h">
+      <Filter>BoundingBox</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\BoundingBox\BoundingBox-Impl.h">
+      <Filter>BoundingBox</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vector\Vector4-Impl.h">
+      <Filter>Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vector\Vector-Impl.h">
+      <Filter>Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vector\Vector.h">
+      <Filter>Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vector\Vector2.h">
+      <Filter>Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vector\Vector2-Impl.h">
+      <Filter>Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vector\Vector3.h">
+      <Filter>Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vector\Vector3-Impl.h">
+      <Filter>Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vector\Vector4.h">
+      <Filter>Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Math\Quaternion-Impl.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Ray\Ray2-Impl.h">
+      <Filter>Ray</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Ray\Ray3-Impl.h">
+      <Filter>Ray</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Point\Point2.h">
+      <Filter>Point</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Point\Point2-Impl.h">
+      <Filter>Point</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Point\Point3.h">
+      <Filter>Point</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Point\Point3-Impl.h">
+      <Filter>Point</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Point\Point-Impl.h">
+      <Filter>Point</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Point\Point.h">
+      <Filter>Point</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Matrix\Matrix4x4-Impl.h">
+      <Filter>Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Matrix\Matrix-Impl.h">
+      <Filter>Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Matrix\Matrix.h">
+      <Filter>Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Matrix\Matrix2x2.h">
+      <Filter>Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Matrix\Matrix2x2-Impl.h">
+      <Filter>Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Matrix\Matrix3x3.h">
+      <Filter>Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Matrix\Matrix3x3-Impl.h">
+      <Filter>Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Matrix\Matrix4x4.h">
+      <Filter>Matrix</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Sources\Point\Point.cpp">
-      <Filter>Point</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sources\Point\Point2.cpp">
-      <Filter>Point</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sources\Point\Point3.cpp">
-      <Filter>Point</Filter>
-    </ClCompile>
     <ClCompile Include="..\Sources\Utils\Parallel.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
-    <ClCompile Include="..\Sources\Vector\Vector.cpp">
-      <Filter>Vector</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sources\Vector\Vector2.cpp">
-      <Filter>Vector</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sources\Vector\Vector3.cpp">
-      <Filter>Vector</Filter>
-    </ClCompile>
     <ClCompile Include="..\Sources\Utils\MathUtils.cpp">
       <Filter>Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sources\Matrix\Matrix2x2.cpp">
-      <Filter>Matrix</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sources\Matrix\Matrix3x3.cpp">
-      <Filter>Matrix</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sources\Matrix\Matrix.cpp">
-      <Filter>Matrix</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sources\Matrix\Matrix4x4.cpp">
-      <Filter>Matrix</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sources\Vector\Vector4.cpp">
-      <Filter>Vector</Filter>
     </ClCompile>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
       <Filter>Field</Filter>
@@ -344,15 +362,6 @@
     <ClCompile Include="..\Sources\Field\CustomVectorField3.cpp">
       <Filter>Field</Filter>
     </ClCompile>
-    <ClCompile Include="..\Sources\Math\Quaternion.cpp">
-      <Filter>Math</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sources\Ray\Ray2.cpp">
-      <Filter>Ray</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sources\Ray\Ray3.cpp">
-      <Filter>Ray</Filter>
-    </ClCompile>
     <ClCompile Include="..\Sources\Field\ConstantScalarField2.cpp">
       <Filter>Field</Filter>
     </ClCompile>
@@ -364,15 +373,6 @@
     </ClCompile>
     <ClCompile Include="..\Sources\Field\ConstantVectorField3.cpp">
       <Filter>Field</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sources\BoundingBox\BoundingBox.cpp">
-      <Filter>BoundingBox</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sources\BoundingBox\BoundingBox2.cpp">
-      <Filter>BoundingBox</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sources\BoundingBox\BoundingBox3.cpp">
-      <Filter>BoundingBox</Filter>
     </ClCompile>
     <ClCompile Include="..\Sources\Transform\Transform2.cpp">
       <Filter>Transform</Filter>

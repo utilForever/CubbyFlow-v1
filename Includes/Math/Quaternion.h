@@ -186,4 +186,6 @@ namespace CubbyFlow
 	using QuaternionD = Quaternion<double>;
 }
 
+#include <Math/Quaternion-Impl.h>
+
 #endif

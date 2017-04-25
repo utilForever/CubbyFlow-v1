@@ -1,12 +1,13 @@
 /*************************************************************************
-> File Name: Matrix4x4.cpp
+> File Name: Matrix4x4-Impl.h
 > Project Name: CubbyFlow
 > Author: Dongmin Kim
 > Purpose: 4-D matrix class.
 > Created Time: 2017/03/08
 > Copyright (c) 2017, Dongmin Kim
 *************************************************************************/
-#include <Matrix/Matrix4x4.h>
+#ifndef CUBBYFLOW_MATRIX4X4_IMPL_H
+#define CUBBYFLOW_MATRIX4X4_IMPL_H
 
 #include <cassert>
 
@@ -947,3 +948,4 @@ namespace CubbyFlow
 	}
 }
 
+#endif
