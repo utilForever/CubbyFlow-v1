@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['origin',['origin',['../class_cubby_flow_1_1_ray_3_01_t_00_012_01_4.html#aa0156640f486f7bf770aa543b9590453',1,'CubbyFlow::Ray&lt; T, 2 &gt;::origin()'],['../class_cubby_flow_1_1_ray_3_01_t_00_013_01_4.html#ab6b2e99bc5c53f9422c9117101f5783d',1,'CubbyFlow::Ray&lt; T, 3 &gt;::origin()']]]
+  ['radius',['radius',['../class_cubby_flow_1_1_sphere2.html#a881bd9a5216b1c15c71d46d78ac45c87',1,'CubbyFlow::Sphere2::radius()'],['../class_cubby_flow_1_1_sphere3.html#a1be2dd091cfd7c801b457c4d8e759d10',1,'CubbyFlow::Sphere3::radius()']]]
 ];

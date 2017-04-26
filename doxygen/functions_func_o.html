@@ -76,6 +76,15 @@ $(function() {
 , <a class="el" href="class_cubby_flow_1_1_matrix_3_01_t_00_013_00_013_01_4.html#abfaf6a7e108125a22ed91e0f196e5dd2">CubbyFlow::Matrix&lt; T, 3, 3 &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_matrix_3_01_t_00_014_00_014_01_4.html#a4d8c5260c4b94758ec1bed7f7a04c0c8">CubbyFlow::Matrix&lt; T, 4, 4 &gt;</a>
 </li>
+<li>OnAdvanceTimeStep()
+: <a class="el" href="class_cubby_flow_1_1_physics_animation.html#a2465b4d5d02b859015783568ab9edaf4">CubbyFlow::PhysicsAnimation</a>
+</li>
+<li>OnInitialize()
+: <a class="el" href="class_cubby_flow_1_1_physics_animation.html#a3e393f2ee087974334e09237ffb2ebb9">CubbyFlow::PhysicsAnimation</a>
+</li>
+<li>OnUpdate()
+: <a class="el" href="class_cubby_flow_1_1_animation.html#ad5b7c20fc54f65e440d7c4cb0bc1bcdf">CubbyFlow::Animation</a>
+</li>
 <li>operator ArrayAccessor1&lt; T &gt;()
 : <a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#a5d71de7a8de420b373f111fa050d3f8c">CubbyFlow::Array&lt; T, 1 &gt;</a>
 </li>
@@ -116,8 +125,8 @@ $(function() {
 </li>
 <li>operator()()
 : <a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_012_01_4.html#ac6a95c42b8bfdce82af4e0c4f84ebf4c">CubbyFlow::Array&lt; T, 2 &gt;</a>
-, <a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_013_01_4.html#af0c3ada879bf1a8ec2d2245e6bee7486">CubbyFlow::Array&lt; T, 3 &gt;</a>
-, <a class="el" href="class_cubby_flow_1_1_array_accessor_3_01_t_00_012_01_4.html#a039d275dea2d3dd923c38257c595cc0e">CubbyFlow::ArrayAccessor&lt; T, 2 &gt;</a>
+, <a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_013_01_4.html#a54cff10f6d94ffd0e65c851aec421ffe">CubbyFlow::Array&lt; T, 3 &gt;</a>
+, <a class="el" href="class_cubby_flow_1_1_array_accessor_3_01_t_00_012_01_4.html#ae2fb87e3d469353d086539e6d6756496">CubbyFlow::ArrayAccessor&lt; T, 2 &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_array_accessor_3_01_t_00_013_01_4.html#a56615ef30a5a9e82bcb120c49765a276">CubbyFlow::ArrayAccessor&lt; T, 3 &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_const_array_accessor_3_01_t_00_012_01_4.html#abc3bd3d4b836c809428c3dd6b43b80e9">CubbyFlow::ConstArrayAccessor&lt; T, 2 &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_const_array_accessor_3_01_t_00_013_01_4.html#a7b451a9845fd9d2ace1956c35f5fec17">CubbyFlow::ConstArrayAccessor&lt; T, 3 &gt;</a>
@@ -134,7 +143,10 @@ $(function() {
 , <a class="el" href="class_cubby_flow_1_1_quaternion.html#a0704c1f21fd1dff2f510422a7f6c7f3e">CubbyFlow::Quaternion&lt; T &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_vector_3_01_t_00_012_01_4.html#a83b4398c59ac52c135c112d2223f60ce">CubbyFlow::Vector&lt; T, 2 &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_vector_3_01_t_00_013_01_4.html#a94194d9415a36dfd946aee92ea4bc075">CubbyFlow::Vector&lt; T, 3 &gt;</a>
-, <a class="el" href="class_cubby_flow_1_1_vector_3_01_t_00_014_01_4.html#abc4364e32e5de3cc25bc0876771dc385">CubbyFlow::Vector&lt; T, 4 &gt;</a>
+, <a class="el" href="class_cubby_flow_1_1_vector_3_01_t_00_014_01_4.html#a408e8e06b4844a94e546c43e63752905">CubbyFlow::Vector&lt; T, 4 &gt;</a>
+</li>
+<li>operator++()
+: <a class="el" href="struct_cubby_flow_1_1_frame.html#a001636d3e7c9550238135cf222446759">CubbyFlow::Frame</a>
 </li>
 <li>operator+=()
 : <a class="el" href="class_cubby_flow_1_1_matrix_3_01_t_00_012_00_012_01_4.html#a536445c5a0f654f477cb4a68d096c9bc">CubbyFlow::Matrix&lt; T, 2, 2 &gt;</a>
@@ -161,30 +173,33 @@ $(function() {
 , <a class="el" href="class_cubby_flow_1_1_matrix_3_01_t_00_013_00_013_01_4.html#add5de9e1d6f27409596db25ceebc28c1">CubbyFlow::Matrix&lt; T, 3, 3 &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_matrix_3_01_t_00_014_00_014_01_4.html#a2d0e8c7a4017cd9bd73ce70847786a58">CubbyFlow::Matrix&lt; T, 4, 4 &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_point_3_01_t_00_012_01_4.html#a5a943f60d8e5690b2c449f81ead84341">CubbyFlow::Point&lt; T, 2 &gt;</a>
-, <a class="el" href="class_cubby_flow_1_1_point_3_01_t_00_013_01_4.html#a04dc4af458393fa3df6a5300a2023d92">CubbyFlow::Point&lt; T, 3 &gt;</a>
+, <a class="el" href="class_cubby_flow_1_1_point_3_01_t_00_013_01_4.html#ac5da2dd335fd8a9d10f4e28b111b23e6">CubbyFlow::Point&lt; T, 3 &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_vector_3_01_t_00_012_01_4.html#aca632044060436357c830ee1bf0b8af4">CubbyFlow::Vector&lt; T, 2 &gt;</a>
-, <a class="el" href="class_cubby_flow_1_1_vector_3_01_t_00_013_01_4.html#a0f4f8b13c5a719cf606ff80a8b1ef2ad">CubbyFlow::Vector&lt; T, 3 &gt;</a>
+, <a class="el" href="class_cubby_flow_1_1_vector_3_01_t_00_013_01_4.html#a514176e22e4f6923831769c5e2d79231">CubbyFlow::Vector&lt; T, 3 &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_vector_3_01_t_00_014_01_4.html#a7add15f4c4e1d19ee298b8a53ed56832">CubbyFlow::Vector&lt; T, 4 &gt;</a>
 </li>
+<li>operator&lt;&lt;()
+: <a class="el" href="class_cubby_flow_1_1_logger.html#a2f0029901d8d265e55757258ea852c66">CubbyFlow::Logger</a>
+</li>
 <li>operator=()
-: <a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#a4920121b869f5e8dbf73c90d9cf5db08">CubbyFlow::Array&lt; T, 1 &gt;</a>
+: <a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#a9bb7042c654c175caa35d6623d74082c">CubbyFlow::Array&lt; T, 1 &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_012_01_4.html#ab6c2c22165cd088e028187ce8d8a805a">CubbyFlow::Array&lt; T, 2 &gt;</a>
-, <a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_013_01_4.html#a5286edd97b1e530949a2be6e44d57f6b">CubbyFlow::Array&lt; T, 3 &gt;</a>
+, <a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_013_01_4.html#ac1ce702f6ccd14e8a14a3ec699ef547f">CubbyFlow::Array&lt; T, 3 &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_array_accessor_3_01_t_00_011_01_4.html#ad4d0fa59774247f3e03301223abe9be0">CubbyFlow::ArrayAccessor&lt; T, 1 &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_array_accessor_3_01_t_00_012_01_4.html#a913a4ec8a9191adb1eaf8f7e7f46f2cd">CubbyFlow::ArrayAccessor&lt; T, 2 &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_array_accessor_3_01_t_00_013_01_4.html#a71f226657aa5f8b45c6edfa34d2542cd">CubbyFlow::ArrayAccessor&lt; T, 3 &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_matrix_3_01_t_00_012_00_012_01_4.html#a7404839fc980754871264763991e9039">CubbyFlow::Matrix&lt; T, 2, 2 &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_matrix_3_01_t_00_013_00_013_01_4.html#aaa27aab14f10789aa280b24667da50ce">CubbyFlow::Matrix&lt; T, 3, 3 &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_matrix_3_01_t_00_014_00_014_01_4.html#a12ce276e86f1d5e84cfc66b8ad84fe4f">CubbyFlow::Matrix&lt; T, 4, 4 &gt;</a>
-, <a class="el" href="class_cubby_flow_1_1_point.html#a5f6a04a25c075f0edaf381f5ae03d39d">CubbyFlow::Point&lt; T, N &gt;</a>
+, <a class="el" href="class_cubby_flow_1_1_point.html#a48b44a2e1a10c7bd86459b755598e632">CubbyFlow::Point&lt; T, N &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_point_3_01_t_00_012_01_4.html#a0c69cffdcd23cc55ab7796d1233e288e">CubbyFlow::Point&lt; T, 2 &gt;</a>
-, <a class="el" href="class_cubby_flow_1_1_point_3_01_t_00_013_01_4.html#a49e1e834d25d8ddcb06f2433d514c4eb">CubbyFlow::Point&lt; T, 3 &gt;</a>
+, <a class="el" href="class_cubby_flow_1_1_point_3_01_t_00_013_01_4.html#aef516accc81017519604f8f707c950c2">CubbyFlow::Point&lt; T, 3 &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_quaternion.html#a0f17e96465112d886a6711844b6c742c">CubbyFlow::Quaternion&lt; T &gt;</a>
-, <a class="el" href="class_cubby_flow_1_1_triangle_mesh3.html#a1f8385b5ba1201d11081e223f8e3d46e">CubbyFlow::TriangleMesh3</a>
-, <a class="el" href="class_cubby_flow_1_1_vector.html#a7a8e6754a3555f8ce56e9afdb7b0cd86">CubbyFlow::Vector&lt; T, N &gt;</a>
-, <a class="el" href="class_cubby_flow_1_1_vector_3_01_t_00_012_01_4.html#a967ca749b3c9b626f12c06e4ca43f1ba">CubbyFlow::Vector&lt; T, 2 &gt;</a>
+, <a class="el" href="class_cubby_flow_1_1_triangle_mesh3.html#a4eebc330c426a1b250b65797ee8d9b84">CubbyFlow::TriangleMesh3</a>
+, <a class="el" href="class_cubby_flow_1_1_vector.html#a6f2fc4351732f5e31bfaa4658fed5d7a">CubbyFlow::Vector&lt; T, N &gt;</a>
+, <a class="el" href="class_cubby_flow_1_1_vector_3_01_t_00_012_01_4.html#a9e3c16cf6b20c09ad754b1390af85225">CubbyFlow::Vector&lt; T, 2 &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_vector_3_01_t_00_013_01_4.html#add6e34d43d669b16fd719ae812a9ca87">CubbyFlow::Vector&lt; T, 3 &gt;</a>
-, <a class="el" href="class_cubby_flow_1_1_vector_3_01_t_00_014_01_4.html#ac5089e95426fc99273b79d00f7d60dd4">CubbyFlow::Vector&lt; T, 4 &gt;</a>
+, <a class="el" href="class_cubby_flow_1_1_vector_3_01_t_00_014_01_4.html#a8728ee79a522778bdea8946db101fc76">CubbyFlow::Vector&lt; T, 4 &gt;</a>
 </li>
 <li>operator==()
 : <a class="el" href="class_cubby_flow_1_1_matrix_3_01_t_00_012_00_012_01_4.html#aab59e7d186a1f733677a0c53c9049dd3">CubbyFlow::Matrix&lt; T, 2, 2 &gt;</a>
@@ -198,30 +213,30 @@ $(function() {
 , <a class="el" href="class_cubby_flow_1_1_vector_3_01_t_00_014_01_4.html#a208b42ce80860a5b729c1c21111a0b9b">CubbyFlow::Vector&lt; T, 4 &gt;</a>
 </li>
 <li>operator[]()
-: <a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#a250d9d18b52e346c173a37514694f90a">CubbyFlow::Array&lt; T, 1 &gt;</a>
+: <a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#a1c834ea7876cb9bdd17f1859ce7739f9">CubbyFlow::Array&lt; T, 1 &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_012_01_4.html#aa5008ef1ea100f0a613de9cd7bfda044">CubbyFlow::Array&lt; T, 2 &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_013_01_4.html#aa52a2691e7b1641788c83e27bb0cbf53">CubbyFlow::Array&lt; T, 3 &gt;</a>
-, <a class="el" href="class_cubby_flow_1_1_array_accessor_3_01_t_00_011_01_4.html#ac3d9f400c34f2a04765eafb2a7dd73ef">CubbyFlow::ArrayAccessor&lt; T, 1 &gt;</a>
-, <a class="el" href="class_cubby_flow_1_1_array_accessor_3_01_t_00_012_01_4.html#a392b27579463f0294933e84f9b2e6a4d">CubbyFlow::ArrayAccessor&lt; T, 2 &gt;</a>
-, <a class="el" href="class_cubby_flow_1_1_array_accessor_3_01_t_00_013_01_4.html#a4d00d61d03613ce10db959fc7e47172a">CubbyFlow::ArrayAccessor&lt; T, 3 &gt;</a>
+, <a class="el" href="class_cubby_flow_1_1_array_accessor_3_01_t_00_011_01_4.html#a8f3781d8882578879acae7a00d469132">CubbyFlow::ArrayAccessor&lt; T, 1 &gt;</a>
+, <a class="el" href="class_cubby_flow_1_1_array_accessor_3_01_t_00_012_01_4.html#ad0bb92f104b9455128702ef80a987894">CubbyFlow::ArrayAccessor&lt; T, 2 &gt;</a>
+, <a class="el" href="class_cubby_flow_1_1_array_accessor_3_01_t_00_013_01_4.html#a4068c604ed698e996c08604c1a60907b">CubbyFlow::ArrayAccessor&lt; T, 3 &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_const_array_accessor_3_01_t_00_011_01_4.html#ab73c0c319aa36c4914303ae1dd231293">CubbyFlow::ConstArrayAccessor&lt; T, 1 &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_const_array_accessor_3_01_t_00_012_01_4.html#a51f680dd644149daa7ae5dfbb9ab91f4">CubbyFlow::ConstArrayAccessor&lt; T, 2 &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_const_array_accessor_3_01_t_00_013_01_4.html#a98d304f831fabbf5bb3086f83c2280a6">CubbyFlow::ConstArrayAccessor&lt; T, 3 &gt;</a>
-, <a class="el" href="class_cubby_flow_1_1_matrix_3_01_t_00_012_00_012_01_4.html#a14a756665fb638df2fcf947c7c25f695">CubbyFlow::Matrix&lt; T, 2, 2 &gt;</a>
-, <a class="el" href="class_cubby_flow_1_1_matrix_3_01_t_00_013_00_013_01_4.html#a26dbd75e716f01cf1944e50b2acebebb">CubbyFlow::Matrix&lt; T, 3, 3 &gt;</a>
+, <a class="el" href="class_cubby_flow_1_1_matrix_3_01_t_00_012_00_012_01_4.html#a14391a9c1e2ee06a3b58408262442fa2">CubbyFlow::Matrix&lt; T, 2, 2 &gt;</a>
+, <a class="el" href="class_cubby_flow_1_1_matrix_3_01_t_00_013_00_013_01_4.html#af733626823ec1fe389960aa5b58ef2c8">CubbyFlow::Matrix&lt; T, 3, 3 &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_matrix_3_01_t_00_014_00_014_01_4.html#a4268d9e9fa3df87526fa790156f2dd33">CubbyFlow::Matrix&lt; T, 4, 4 &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_point.html#a5ba0fdd483cd22d3f8406fad5477c1f8">CubbyFlow::Point&lt; T, N &gt;</a>
-, <a class="el" href="class_cubby_flow_1_1_point_3_01_t_00_012_01_4.html#a54750ca3ff00c32a644c4c7efc69a5ae">CubbyFlow::Point&lt; T, 2 &gt;</a>
+, <a class="el" href="class_cubby_flow_1_1_point_3_01_t_00_012_01_4.html#ac292a56588d33bf381915ee21b9dce1b">CubbyFlow::Point&lt; T, 2 &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_point_3_01_t_00_013_01_4.html#a35c4ea5754a3892ca7e53efed1276a50">CubbyFlow::Point&lt; T, 3 &gt;</a>
-, <a class="el" href="class_cubby_flow_1_1_quaternion.html#a794e3a994579c862bcb7c469cd6457b5">CubbyFlow::Quaternion&lt; T &gt;</a>
-, <a class="el" href="class_cubby_flow_1_1_vector.html#a8f82e3e6639288d41a008c65a83cd80c">CubbyFlow::Vector&lt; T, N &gt;</a>
+, <a class="el" href="class_cubby_flow_1_1_quaternion.html#adc3510b91769ea5b8bd9c29e8dbe127f">CubbyFlow::Quaternion&lt; T &gt;</a>
+, <a class="el" href="class_cubby_flow_1_1_vector.html#a67489333d6c26987f905e705f3526877">CubbyFlow::Vector&lt; T, N &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_vector_3_01_t_00_012_01_4.html#a03b76e1003b01652f5f2855cede7dca3">CubbyFlow::Vector&lt; T, 2 &gt;</a>
-, <a class="el" href="class_cubby_flow_1_1_vector_3_01_t_00_013_01_4.html#a9be1c2fa7bc1e7312c8fc421219a245e">CubbyFlow::Vector&lt; T, 3 &gt;</a>
+, <a class="el" href="class_cubby_flow_1_1_vector_3_01_t_00_013_01_4.html#a18d12cd0095ec1561292c528b8fdc4cf">CubbyFlow::Vector&lt; T, 3 &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_vector_3_01_t_00_014_01_4.html#a4c93eb67dc0add688937902567e45312">CubbyFlow::Vector&lt; T, 4 &gt;</a>
 </li>
 <li>Orientation()
 : <a class="el" href="class_cubby_flow_1_1_transform2.html#a27e0d0c34c5fa78fa2349444924924a8">CubbyFlow::Transform2</a>
-, <a class="el" href="class_cubby_flow_1_1_transform3.html#abd2ca70b94a65e58b28ff102f1ea0fec">CubbyFlow::Transform3</a>
+, <a class="el" href="class_cubby_flow_1_1_transform3.html#ae0648eb9897f154a1811a05d0d042afe">CubbyFlow::Transform3</a>
 </li>
 <li>Overlaps()
 : <a class="el" href="class_cubby_flow_1_1_bounding_box.html#a957673cbe015e86d65a515fdf3edb012">CubbyFlow::BoundingBox&lt; T, N &gt;</a>
@@ -238,7 +253,7 @@ $(function() {
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 16 2017 12:59:55 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Apr 26 2017 23:22:16 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

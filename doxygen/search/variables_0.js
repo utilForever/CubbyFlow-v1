@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['buffer_5fsize',['BUFFER_SIZE',['../main_8cpp.html#aa05373761d6a51e6b3816a4606d3bef0',1,'main.cpp']]]
+  ['center',['center',['../class_cubby_flow_1_1_sphere2.html#a3ba58a5f24749a8b77a0168bc93f0c34',1,'CubbyFlow::Sphere2::center()'],['../class_cubby_flow_1_1_sphere3.html#ab750f634c13ec7c060e22800acdf379f',1,'CubbyFlow::Sphere3::center()']]]
 ];

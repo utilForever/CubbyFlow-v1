@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['lowercorner',['lowerCorner',['../class_cubby_flow_1_1_bounding_box.html#ab56a48512a0565f92db45fb3a8f412e5',1,'CubbyFlow::BoundingBox::lowerCorner()'],['../class_cubby_flow_1_1_bounding_box_3_01_t_00_012_01_4.html#a3b6b998614cf89eedce9e98384cadb52',1,'CubbyFlow::BoundingBox&lt; T, 2 &gt;::lowerCorner()'],['../class_cubby_flow_1_1_bounding_box_3_01_t_00_013_01_4.html#ad0aadad2df1bfbf6dfdcaecceb7ce998',1,'CubbyFlow::BoundingBox&lt; T, 3 &gt;::lowerCorner()']]]
+  ['near',['near',['../struct_cubby_flow_1_1_bounding_box_ray_intersection2.html#a6f3aa8342f0563c63e8a0c192657ecf4',1,'CubbyFlow::BoundingBoxRayIntersection2::near()'],['../struct_cubby_flow_1_1_bounding_box_ray_intersection3.html#a5bbd46ee177fe24dfa901bbcc2d829b3',1,'CubbyFlow::BoundingBoxRayIntersection3::near()']]],
+  ['normal',['normal',['../struct_cubby_flow_1_1_surface_ray_intersection2.html#a57c7fee5f88fbf440e96c80aeebbd794',1,'CubbyFlow::SurfaceRayIntersection2::normal()'],['../struct_cubby_flow_1_1_surface_ray_intersection3.html#a28c621be75d3b43b7b96d298ee2a36c5',1,'CubbyFlow::SurfaceRayIntersection3::normal()']]],
+  ['normals',['normals',['../class_cubby_flow_1_1_triangle3.html#a59efa166c1baed374af1eca693763f79',1,'CubbyFlow::Triangle3']]]
 ];

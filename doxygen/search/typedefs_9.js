@@ -11,5 +11,6 @@ var searchData=
   ['surface3ptr',['Surface3Ptr',['../namespace_cubby_flow.html#a4ad83d545ff738537881aa95fd2ba79a',1,'CubbyFlow']]],
   ['surfaceset2ptr',['SurfaceSet2Ptr',['../namespace_cubby_flow.html#a0cf6d51b78e63738173e39e99efbb9a7',1,'CubbyFlow']]],
   ['surfaceset3ptr',['SurfaceSet3Ptr',['../namespace_cubby_flow.html#a206dd7a97c5a1e91c83760f1dbc2bad5',1,'CubbyFlow']]],
-  ['surfacetoimplicit2ptr',['SurfaceToImplicit2Ptr',['../namespace_cubby_flow.html#a1a5cfc08fbee96f07c9cf27d8664ec69',1,'CubbyFlow']]]
+  ['surfacetoimplicit2ptr',['SurfaceToImplicit2Ptr',['../namespace_cubby_flow.html#a1a5cfc08fbee96f07c9cf27d8664ec69',1,'CubbyFlow']]],
+  ['surfacetoimplicit3ptr',['SurfaceToImplicit3Ptr',['../namespace_cubby_flow.html#a34f20e24d010e1c66b88fdbb73d9c5eb',1,'CubbyFlow']]]
 ];
