@@ -28,7 +28,7 @@ namespace CubbyFlow
 {
 	namespace fbs
 	{
-		struct ParticleSystyemData2;
+		struct ParticleSystemData2;
 	}
 }
 
