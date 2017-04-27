@@ -252,6 +252,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Utils\Macros.h" />
     <ClInclude Include="..\Includes\Utils\MathUtils.h" />
     <ClInclude Include="..\Includes\Utils\Parallel.h" />
+    <ClInclude Include="..\Includes\Utils\Serialization.h" />
     <ClInclude Include="..\Includes\Utils\Timer.h" />
     <ClInclude Include="..\Includes\Utils\TypeHelpers.h" />
     <ClInclude Include="..\Includes\Vector\Vector-Impl.h" />

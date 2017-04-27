@@ -330,6 +330,9 @@
     <ClInclude Include="..\Includes\Particles\ParticleSystemData2.h">
       <Filter>Particles</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Utils\Serialization.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Utils\Parallel.cpp">
