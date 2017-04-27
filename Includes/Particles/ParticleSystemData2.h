@@ -10,6 +10,7 @@
 #define CUBBYFLOW_PARTICLE_SYSTEM_DATA2_H
 
 #include <Array/Array1.h>
+#include <Utils/Serialization.h>
 #include <Vector/Vector2.h>
 
 #include <memory>
