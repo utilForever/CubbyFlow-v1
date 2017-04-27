@@ -46,6 +46,9 @@
     <Filter Include="Animation">
       <UniqueIdentifier>{66527e50-1573-4ed5-9787-547eb1e6ca10}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Particles">
+      <UniqueIdentifier>{260fb7af-6a14-44bc-a6e8-38f14a0bc129}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Includes\Animation\Animation.h">
@@ -323,6 +326,9 @@
     </ClInclude>
     <ClInclude Include="..\Includes\Matrix\Matrix4x4.h">
       <Filter>Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Particles\ParticleSystemData2.h">
+      <Filter>Particles</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
