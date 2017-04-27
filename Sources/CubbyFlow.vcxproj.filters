@@ -49,6 +49,9 @@
     <Filter Include="Particle">
       <UniqueIdentifier>{260fb7af-6a14-44bc-a6e8-38f14a0bc129}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Particle\Searcher">
+      <UniqueIdentifier>{3b4547be-315d-4ac4-94fa-320c0f2f0a3c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Includes\Animation\Animation.h">
@@ -335,6 +338,9 @@
     </ClInclude>
     <ClInclude Include="..\Includes\Particle\ParticleSystemData2.h">
       <Filter>Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Particle\Searcher\PointNeighborSearcher2.h">
+      <Filter>Particle\Searcher</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
