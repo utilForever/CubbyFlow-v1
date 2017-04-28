@@ -458,5 +458,8 @@
     <ClCompile Include="Particle\Searcher\PointNeighborSearcher2.cpp">
       <Filter>Particle\Searcher</Filter>
     </ClCompile>
+    <ClCompile Include="Particle\ParticleSystemData2.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
