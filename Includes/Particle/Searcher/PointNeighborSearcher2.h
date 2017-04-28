@@ -81,6 +81,8 @@ namespace CubbyFlow
 	class PointNeighborSearcherBuilder2
 	{
 	public:
+		virtual ~PointNeighborSearcherBuilder2();
+
 		//! Returns shared pointer of PointNeighborSearcher2 type.
 		virtual PointNeighborSearcher2Ptr BuildPointNeighborSearcher() const = 0;
 	};
