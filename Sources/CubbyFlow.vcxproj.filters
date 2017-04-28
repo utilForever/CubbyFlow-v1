@@ -342,6 +342,9 @@
     <ClInclude Include="..\Includes\Particle\Searcher\PointNeighborSearcher2.h">
       <Filter>Particle\Searcher</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Array\ArraySamplers.h">
+      <Filter>Array</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Utils\Parallel.cpp">

@@ -186,6 +186,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Array\ArrayAccessor2.h" />
     <ClInclude Include="..\Includes\Array\ArrayAccessor3-Impl.h" />
     <ClInclude Include="..\Includes\Array\ArrayAccessor3.h" />
+    <ClInclude Include="..\Includes\Array\ArraySamplers.h" />
     <ClInclude Include="..\Includes\BoundingBox\BoundingBox-Impl.h" />
     <ClInclude Include="..\Includes\BoundingBox\BoundingBox.h" />
     <ClInclude Include="..\Includes\BoundingBox\BoundingBox2-Impl.h" />
