@@ -304,6 +304,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="..\Sources\Utils\MathUtils.cpp" />
     <ClCompile Include="..\Sources\Utils\Parallel.cpp" />
     <ClCompile Include="..\Sources\Utils\Timer.cpp" />
+    <ClCompile Include="Particle\Searcher\PointNeighborSearcher2.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

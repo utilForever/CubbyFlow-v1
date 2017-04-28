@@ -455,5 +455,8 @@
     <ClCompile Include="..\Sources\Utils\Logger.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
+    <ClCompile Include="Particle\Searcher\PointNeighborSearcher2.cpp">
+      <Filter>Particle\Searcher</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
