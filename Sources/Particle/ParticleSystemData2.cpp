@@ -8,6 +8,10 @@
 //*************************************************************************/
 //#include <Particle/ParticleSystemData2.h>
 //#include <Particle/Searcher/PointNeighborSearcher2.h>
+//#include <Utils/Logger.h>
+//#include <Utils/Parallel.h>
+//#include <Utils/Timer.h>
+//#include <Vector/Vector2.h>
 //
 //namespace CubbyFlow
 //{
@@ -78,7 +82,8 @@
 //		return attrIdx;
 //	}
 //
-//	double ParticleSystemData2::Radius() const {
+//	double ParticleSystemData2::Radius() const
+//	{
 //		return m_radius;
 //	}
 //
@@ -97,116 +102,130 @@
 //		m_mass = std::max(newMass, 0.0);
 //	}
 //
-//	ConstArrayAccessor1<Vector2D> ParticleSystemData2::positions() const {
+//	ConstArrayAccessor1<Vector2D> ParticleSystemData2::Positions() const 
+//	{
 //		return VectorDataAt(m_positionIdx);
 //	}
 //
-//	ArrayAccessor1<Vector2D> ParticleSystemData2::positions() {
+//	ArrayAccessor1<Vector2D> ParticleSystemData2::Positions()
+//	{
 //		return VectorDataAt(m_positionIdx);
 //	}
 //
-//	ConstArrayAccessor1<Vector2D> ParticleSystemData2::velocities() const {
+//	ConstArrayAccessor1<Vector2D> ParticleSystemData2::Velocities() const
+//	{
 //		return VectorDataAt(m_velocityIdx);
 //	}
 //
-//	ArrayAccessor1<Vector2D> ParticleSystemData2::velocities() {
+//	ArrayAccessor1<Vector2D> ParticleSystemData2::Velocities()
+//	{
 //		return VectorDataAt(m_velocityIdx);
 //	}
 //
-//	ConstArrayAccessor1<Vector2D> ParticleSystemData2::forces() const {
+//	ConstArrayAccessor1<Vector2D> ParticleSystemData2::Forces() const
+//	{
 //		return VectorDataAt(m_forceIdx);
 //	}
 //
-//	ArrayAccessor1<Vector2D> ParticleSystemData2::forces() {
+//	ArrayAccessor1<Vector2D> ParticleSystemData2::Forces()
+//	{
 //		return VectorDataAt(m_forceIdx);
 //	}
 //
-//	ConstArrayAccessor1<double> ParticleSystemData2::scalarDataAt(
-//		size_t idx) const {
-//		return m_scalarDataList[idx].constAccessor();
+//	ConstArrayAccessor1<double> ParticleSystemData2::ScalarDataAt(size_t idx) const
+//	{
+//		return m_scalarDataList[idx].ConstAccessor();
 //	}
 //
-//	ArrayAccessor1<double> ParticleSystemData2::scalarDataAt(size_t idx) {
-//		return m_scalarDataList[idx].accessor();
+//	ArrayAccessor1<double> ParticleSystemData2::ScalarDataAt(size_t idx)
+//	{
+//		return m_scalarDataList[idx].Accessor();
 //	}
 //
-//	ConstArrayAccessor1<Vector2D> ParticleSystemData2::VectorDataAt(
-//		size_t idx) const {
-//		return m_vectorDataList[idx].constAccessor();
+//	ConstArrayAccessor1<Vector2D> ParticleSystemData2::VectorDataAt(size_t idx) const
+//	{
+//		return m_vectorDataList[idx].ConstAccessor();
 //	}
 //
-//	ArrayAccessor1<Vector2D> ParticleSystemData2::VectorDataAt(size_t idx) {
-//		return m_vectorDataList[idx].accessor();
+//	ArrayAccessor1<Vector2D> ParticleSystemData2::VectorDataAt(size_t idx)
+//	{
+//		return m_vectorDataList[idx].Accessor();
 //	}
 //
-//	void ParticleSystemData2::addParticle(
+//	void ParticleSystemData2::AddParticle(
 //		const Vector2D& newPosition,
 //		const Vector2D& newVelocity,
-//		const Vector2D& newForce) {
+//		const Vector2D& newForce)
+//	{
 //		Array1<Vector2D> newPositions = { newPosition };
 //		Array1<Vector2D> newVelocities = { newVelocity };
 //		Array1<Vector2D> newForces = { newForce };
 //
-//		addParticles(
-//			newPositions.constAccessor(),
-//			newVelocities.constAccessor(),
-//			newForces.constAccessor());
+//		AddParticles(
+//			newPositions.ConstAccessor(),
+//			newVelocities.ConstAccessor(),
+//			newForces.ConstAccessor());
 //	}
 //
-//	void ParticleSystemData2::addParticles(
+//	void ParticleSystemData2::AddParticles(
 //		const ConstArrayAccessor1<Vector2D>& newPositions,
 //		const ConstArrayAccessor1<Vector2D>& newVelocities,
-//		const ConstArrayAccessor1<Vector2D>& newForces) {
+//		const ConstArrayAccessor1<Vector2D>& newForces)
+//	{
 //		JET_THROW_INVALID_ARG_IF(
-//			newVelocities.size() > 0
-//			&& newVelocities.size() != newPositions.size());
+//			newVelocities.Size() > 0
+//			&& newVelocities.Size() != newPositions.Size());
 //		JET_THROW_INVALID_ARG_IF(
-//			newForces.size() > 0 && newForces.size() != newPositions.size());
+//			newForces.Size() > 0 && newForces.Size() != newPositions.Size());
 //
 //		size_t oldNumberOfParticles = NumberOfParticles();
-//		size_t newNumberOfParticles = oldNumberOfParticles + newPositions.size();
+//		size_t newNumberOfParticles = oldNumberOfParticles + newPositions.Size();
 //
-//		resize(newNumberOfParticles);
+//		Resize(newNumberOfParticles);
 //
-//		auto pos = positions();
-//		auto vel = velocities();
-//		auto frc = forces();
+//		auto pos = Positions();
+//		auto vel = Velocities();
+//		auto frc = Forces();
 //
-//		parallelFor(kZeroSize, newPositions.size(),
-//			[&](size_t i) {
+//		ParallelFor(ZERO_SIZE, newPositions.Size(), [&](size_t i)
+//		{
 //			pos[i + oldNumberOfParticles] = newPositions[i];
 //		});
 //
-//		if (newVelocities.size() > 0) {
-//			parallelFor(kZeroSize, newPositions.size(),
-//				[&](size_t i) {
+//		if (newVelocities.Size() > 0)
+//		{
+//			ParallelFor(ZERO_SIZE, newPositions.Size(), [&](size_t i)
+//			{
 //				vel[i + oldNumberOfParticles] = newVelocities[i];
 //			});
 //		}
 //
-//		if (newForces.size() > 0) {
-//			parallelFor(kZeroSize, newPositions.size(),
-//				[&](size_t i) {
+//		if (newForces.Size() > 0)
+//		{
+//			ParallelFor(ZERO_SIZE, newPositions.Size(), [&](size_t i)
+//			{
 //				frc[i + oldNumberOfParticles] = newForces[i];
 //			});
 //		}
 //	}
 //
-//	const PointNeighborSearcher2Ptr& ParticleSystemData2::neighborSearcher() const {
+//	const PointNeighborSearcher2Ptr& ParticleSystemData2::NeighborSearcher() const
+//	{
 //		return m_neighborSearcher;
 //	}
 //
-//	void ParticleSystemData2::setNeighborSearcher(
-//		const PointNeighborSearcher2Ptr& newNeighborSearcher) {
+//	void ParticleSystemData2::SetNeighborSearcher(const PointNeighborSearcher2Ptr& newNeighborSearcher)
+//	{
 //		m_neighborSearcher = newNeighborSearcher;
 //	}
 //
-//	const std::vector<std::vector<size_t>>&
-//		ParticleSystemData2::neighborLists() const {
-//		return _neighborLists;
+//	const std::vector<std::vector<size_t>>& ParticleSystemData2::NeighborLists() const
+//	{
+//		return m_neighborLists;
 //	}
 //
-//	void ParticleSystemData2::buildNeighborSearcher(double maxSearchRadius) {
+//	void ParticleSystemData2::BuildNeighborSearcher(double maxSearchRadius)
+//	{
 //		Timer timer;
 //
 //		// Use PointParallelHashGridSearcher2 by default
@@ -215,9 +234,9 @@
 //			DEFAULT_HASH_GRID_RESOLUTION,
 //			2.0 * maxSearchRadius);
 //
-//		m_neighborSearcher->build(positions());
+//		m_neighborSearcher->Build(Positions());
 //
-//		JET_INFO << "Building neighbor searcher took: "
+//		CUBBYFLOW_INFO << "Building neighbor searcher took: "
 //			<< timer.durationInSeconds()
 //			<< " seconds";
 //	}
@@ -225,33 +244,34 @@
 //	void ParticleSystemData2::buildNeighborLists(double maxSearchRadius) {
 //		Timer timer;
 //
-//		_neighborLists.resize(NumberOfParticles());
+//		m_neighborLists.resize(NumberOfParticles());
 //
-//		auto points = positions();
+//		auto points = Positions();
 //		for (size_t i = 0; i < NumberOfParticles(); ++i) {
 //			Vector2D origin = points[i];
-//			_neighborLists[i].clear();
+//			m_neighborLists[i].clear();
 //
-//			m_neighborSearcher->forEachNearbyPoint(
+//			m_neighborSearcher->ForEachNearbyPoint(
 //				origin,
 //				maxSearchRadius,
 //				[&](size_t j, const Vector2D&) {
 //				if (i != j) {
-//					_neighborLists[i].push_back(j);
+//					m_neighborLists[i].push_back(j);
 //				}
 //			});
 //		}
 //
-//		JET_INFO << "Building neighbor list took: "
-//			<< timer.durationInSeconds()
+//		CUBBYFLOW_INFO << "Building neighbor list took: "
+//			<< timer.DurationInSeconds()
 //			<< " seconds";
 //	}
 //
-//	void ParticleSystemData2::serialize(std::vector<uint8_t>* buffer) const {
+//	void ParticleSystemData2::Serialize(std::vector<uint8_t>* buffer) const
+//	{
 //		flatbuffers::FlatBufferBuilder builder(1024);
 //		flatbuffers::Offset<fbs::ParticleSystemData2> fbsParticleSystemData;
 //
-//		serializeParticleSystemData(&builder, &fbsParticleSystemData);
+//		SerializeParticleSystemData(&builder, &fbsParticleSystemData);
 //
 //		builder.Finish(fbsParticleSystemData);
 //
@@ -262,12 +282,14 @@
 //		memcpy(buffer->data(), buf, size);
 //	}
 //
-//	void ParticleSystemData2::deserialize(const std::vector<uint8_t>& buffer) {
+//	void ParticleSystemData2::Deserialize(const std::vector<uint8_t>& buffer)
+//	{
 //		auto fbsParticleSystemData = fbs::GetParticleSystemData2(buffer.data());
-//		deserializeParticleSystemData(fbsParticleSystemData);
+//		DeserializeParticleSystemData(fbsParticleSystemData);
 //	}
 //
-//	void ParticleSystemData2::set(const ParticleSystemData2& other) {
+//	void ParticleSystemData2::Set(const ParticleSystemData2& other)
+//	{
 //		m_radius = other.m_radius;
 //		m_mass = other.m_mass;
 //		m_positionIdx = other.m_positionIdx;
@@ -275,58 +297,60 @@
 //		m_forceIdx = other.m_forceIdx;
 //		m_numberOfParticles = other.m_numberOfParticles;
 //
-//		for (auto& attr : other.m_scalarDataList) {
+//		for (auto& attr : other.m_scalarDataList)
+//		{
 //			m_scalarDataList.emplace_back(attr);
 //		}
 //
-//		for (auto& attr : other.m_vectorDataList) {
+//		for (auto& attr : other.m_vectorDataList)
+//		{
 //			m_vectorDataList.emplace_back(attr);
 //		}
 //
-//		m_neighborSearcher = other.m_neighborSearcher->clone();
-//		_neighborLists = other._neighborLists;
+//		m_neighborSearcher = other.m_neighborSearcher->Clone();
+//		m_neighborLists = other.m_neighborLists;
 //	}
 //
-//	ParticleSystemData2& ParticleSystemData2::operator=(
-//		const ParticleSystemData2& other) {
-//		set(other);
+//	ParticleSystemData2& ParticleSystemData2::operator=(const ParticleSystemData2& other)
+//	{
+//		Set(other);
 //		return *this;
 //	}
 //
-//	void ParticleSystemData2::serializeParticleSystemData(
+//	void ParticleSystemData2::SerializeParticleSystemData(
 //		flatbuffers::FlatBufferBuilder* builder,
 //		flatbuffers::Offset<fbs::ParticleSystemData2>* fbsParticleSystemData)
-//		const {
+//		const
+//	{
 //		// Copy data
 //		std::vector<flatbuffers::Offset<fbs::ScalarParticleData2>> scalarDataList;
-//		for (const auto& scalarData : m_scalarDataList) {
-//			auto fbsScalarData = fbs::CreateScalarParticleData2(
-//				*builder,
-//				builder->CreateVector(scalarData.data(), scalarData.size()));
+//		for (const auto& scalarData : m_scalarDataList)
+//		{
+//			auto fbsScalarData = fbs::CreateScalarParticleData2(*builder,
+//				builder->CreateVector(scalarData.Data(), scalarData.Size()));
 //			scalarDataList.push_back(fbsScalarData);
 //		}
 //		auto fbsScalarDataList = builder->CreateVector(scalarDataList);
 //
 //		std::vector<flatbuffers::Offset<fbs::VectorParticleData2>> vectorDataList;
-//		for (const auto& vectorData : m_vectorDataList) {
+//		for (const auto& vectorData : m_vectorDataList)
+//		{
 //			std::vector<fbs::Vector2D> newVectorData;
-//			for (const auto& v : vectorData) {
+//			for (const auto& v : vectorData)
+//			{
 //				newVectorData.push_back(jetToFbs(v));
 //			}
 //
-//			auto fbsVectorData = fbs::CreateVectorParticleData2(
-//				*builder,
-//				builder->CreateVectorOfStructs(
-//					newVectorData.data(), newVectorData.size()));
+//			auto fbsVectorData = fbs::CreateVectorParticleData2(*builder,
+//				builder->CreateVectorOfStructs(newVectorData.data(), newVectorData.size()));
 //			vectorDataList.push_back(fbsVectorData);
 //		}
 //		auto fbsVectorDataList = builder->CreateVector(vectorDataList);
 //
 //		// Copy neighbor searcher
-//		auto neighborSearcherType
-//			= builder->CreateString(m_neighborSearcher->typeName());
+//		auto neighborSearcherType = builder->CreateString(m_neighborSearcher->TypeName());
 //		std::vector<uint8_t> neighborSearcherSerialized;
-//		m_neighborSearcher->serialize(&neighborSearcherSerialized);
+//		m_neighborSearcher->Serialize(&neighborSearcherSerialized);
 //		auto fbsNeighborSearcher = fbs::CreatePointNeighborSearcherSerialized2(
 //			*builder,
 //			neighborSearcherType,
@@ -336,11 +360,11 @@
 //
 //		// Copy neighbor lists
 //		std::vector<flatbuffers::Offset<fbs::ParticleNeighborList2>> neighborLists;
-//		for (const auto& neighbors : _neighborLists) {
+//		for (const auto& neighbors : m_neighborLists)
+//		{
 //			std::vector<uint64_t> neighbors64(neighbors.begin(), neighbors.end());
 //			flatbuffers::Offset<fbs::ParticleNeighborList2> fbsNeighborList
-//				= fbs::CreateParticleNeighborList2(
-//					*builder,
+//				= fbs::CreateParticleNeighborList2(*builder,
 //					builder->CreateVector(neighbors64.data(), neighbors64.size()));
 //			neighborLists.push_back(fbsNeighborList);
 //		}
@@ -361,8 +385,8 @@
 //			fbsNeighborLists);
 //	}
 //
-//	void ParticleSystemData2::deserializeParticleSystemData(
-//		const fbs::ParticleSystemData2* fbsParticleSystemData) {
+//	void ParticleSystemData2::DeserializeParticleSystemData(const fbs::ParticleSystemData2* fbsParticleSystemData)
+//	{
 //		m_scalarDataList.clear();
 //		m_vectorDataList.clear();
 //
@@ -375,52 +399,57 @@
 //
 //		// Copy data
 //		auto fbsScalarDataList = fbsParticleSystemData->scalarDataList();
-//		for (const auto& fbsScalarData : (*fbsScalarDataList)) {
+//		for (const auto& fbsScalarData : (*fbsScalarDataList))
+//		{
 //			auto data = fbsScalarData->data();
 //
 //			m_scalarDataList.push_back(ScalarData(data->size()));
 //
 //			auto& newData = *(m_scalarDataList.rbegin());
 //
-//			for (uint32_t i = 0; i < data->size(); ++i) {
+//			for (uint32_t i = 0; i < data->size(); ++i)
+//			{
 //				newData[i] = data->Get(i);
 //			}
 //		}
 //
 //		auto fbsVectorDataList = fbsParticleSystemData->vectorDataList();
-//		for (const auto& fbsVectorData : (*fbsVectorDataList)) {
+//		for (const auto& fbsVectorData : (*fbsVectorDataList))
+//		{
 //			auto data = fbsVectorData->data();
 //
 //			m_vectorDataList.push_back(VectorData(data->size()));
 //			auto& newData = *(m_vectorDataList.rbegin());
-//			for (uint32_t i = 0; i < data->size(); ++i) {
+//			for (uint32_t i = 0; i < data->size(); ++i)
+//			{
 //				newData[i] = fbsToJet(*data->Get(i));
 //			}
 //		}
 //
-//		m_numberOfParticles = m_vectorDataList[0].size();
+//		m_numberOfParticles = m_vectorDataList[0].Size();
 //
 //		// Copy neighbor searcher
-//		auto fbsNeighborSearcher = fbsParticleSystemData->neighborSearcher();
-//		m_neighborSearcher
-//			= Factory::buildPointNeighborSearcher2(
-//				fbsNeighborSearcher->type()->c_str());
+//		auto fbsNeighborSearcher = fbsParticleSystemData->NeighborSearcher();
+//		m_neighborSearcher = Factory::BuildPointNeighborSearcher2(fbsNeighborSearcher->Type()->c_str());
 //		std::vector<uint8_t> neighborSearcherSerialized(
-//			fbsNeighborSearcher->data()->begin(),
-//			fbsNeighborSearcher->data()->end());
-//		m_neighborSearcher->deserialize(neighborSearcherSerialized);
+//			fbsNeighborSearcher->Data()->Begin(),
+//			fbsNeighborSearcher->Data()->End());
+//		m_neighborSearcher->Deserialize(neighborSearcherSerialized);
 //
 //		// Copy neighbor list
-//		auto fbsNeighborLists = fbsParticleSystemData->neighborLists();
-//		_neighborLists.resize(fbsNeighborLists->size());
-//		for (uint32_t i = 0; i < fbsNeighborLists->size(); ++i) {
+//		auto fbsNeighborLists = fbsParticleSystemData->NeighborLists();
+//		m_neighborLists.resize(fbsNeighborLists->size());
+//		
+//		for (uint32_t i = 0; i < fbsNeighborLists->size(); ++i)
+//		{
 //			auto fbsNeighborList = fbsNeighborLists->Get(i);
-//			_neighborLists[i].resize(fbsNeighborList->data()->size());
+//			m_neighborLists[i].resize(fbsNeighborList->Data()->Size());
 //			std::transform(
-//				fbsNeighborList->data()->begin(),
-//				fbsNeighborList->data()->end(),
-//				_neighborLists[i].begin(),
-//				[](uint64_t val) {
+//				fbsNeighborList->Data()->Begin(),
+//				fbsNeighborList->Data()->End(),
+//				m_neighborLists[i].begin(),
+//				[](uint64_t val)
+//			{
 //				return static_cast<size_t>(val);
 //			});
 //		}
