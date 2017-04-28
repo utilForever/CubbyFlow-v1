@@ -3,7 +3,7 @@
 > Project Name: CubbyFlow
 > Author: Chan-Ho Chris Ohk
 > Purpose: Generic N-D nearest array sampler class.
-> Created Time: 2017/01/28
+> Created Time: 2017/04/29
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_ARRAY_SAMPLERS_H
