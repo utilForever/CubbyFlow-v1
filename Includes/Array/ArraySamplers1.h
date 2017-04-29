@@ -10,6 +10,7 @@
 #define CUBBYFLOW_ARRAY_SAMPLERS1_H
 
 #include <Array/ArrayAccessor1.h>
+#include <Array/ArraySamplers.h>
 
 #include <functional>
 
@@ -159,5 +160,7 @@ namespace CubbyFlow
 	template <typename T, typename R>
 	using CubicArraySampler1 = CubicArraySampler<T, R, 1>;
 }
+
+#include <Array/ArraySamplers1-Impl.h>
 
 #endif
