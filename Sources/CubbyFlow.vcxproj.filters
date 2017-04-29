@@ -357,6 +357,9 @@
     <ClInclude Include="..\Includes\Array\ArraySamplers1-Impl.h">
       <Filter>Array</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Array\ArrayUtils.h">
+      <Filter>Array</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Utils\Parallel.cpp">
