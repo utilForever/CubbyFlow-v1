@@ -6,7 +6,7 @@
 > Created Time: 2017/04/28
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Particle/Searcher/PointNeighborSearcher2.h>
+#include <Searcher/PointNeighborSearcher2.h>
 
 namespace CubbyFlow
 {
