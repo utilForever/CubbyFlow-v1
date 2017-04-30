@@ -138,4 +138,6 @@ namespace CubbyFlow
 	void ConvertToCSV(const ArrayType& data, std::ostream* stream);
 }
 
+#include <Array/ArrayUtils-Impl.h>
+
 #endif
