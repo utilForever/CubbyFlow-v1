@@ -240,6 +240,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Ray\Ray3-Impl.h" />
     <ClInclude Include="..\Includes\Ray\Ray3.h" />
     <ClInclude Include="..\Includes\Searcher\PointNeighborSearcher2.h" />
+    <ClInclude Include="..\Includes\Searcher\PointParallelHashGridSearcher2.h" />
     <ClInclude Include="..\Includes\Size\Size.h" />
     <ClInclude Include="..\Includes\Size\Size2.h" />
     <ClInclude Include="..\Includes\Size\Size3.h" />
