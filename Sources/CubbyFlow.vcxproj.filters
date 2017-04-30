@@ -49,8 +49,8 @@
     <Filter Include="Particle">
       <UniqueIdentifier>{260fb7af-6a14-44bc-a6e8-38f14a0bc129}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Particle\Searcher">
-      <UniqueIdentifier>{3b4547be-315d-4ac4-94fa-320c0f2f0a3c}</UniqueIdentifier>
+    <Filter Include="Searcher">
+      <UniqueIdentifier>{67a78e8f-ef0b-4bcf-b3f0-62309465fb60}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -339,9 +339,6 @@
     <ClInclude Include="..\Includes\Particle\ParticleSystemData2.h">
       <Filter>Particle</Filter>
     </ClInclude>
-    <ClInclude Include="..\Includes\Particle\Searcher\PointNeighborSearcher2.h">
-      <Filter>Particle\Searcher</Filter>
-    </ClInclude>
     <ClInclude Include="..\Includes\Array\ArraySamplers.h">
       <Filter>Array</Filter>
     </ClInclude>
@@ -362,6 +359,9 @@
     </ClInclude>
     <ClInclude Include="..\Includes\Array\ArrayUtils-Impl.h">
       <Filter>Array</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Searcher\PointNeighborSearcher2.h">
+      <Filter>Searcher</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -476,11 +476,11 @@
     <ClCompile Include="..\Sources\Utils\Logger.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
-    <ClCompile Include="Particle\Searcher\PointNeighborSearcher2.cpp">
-      <Filter>Particle\Searcher</Filter>
-    </ClCompile>
     <ClCompile Include="Particle\ParticleSystemData2.cpp">
       <Filter>Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="Searcher\PointNeighborSearcher2.cpp">
+      <Filter>Searcher</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

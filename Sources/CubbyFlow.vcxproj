@@ -228,7 +228,6 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Matrix\Matrix4x4-Impl.h" />
     <ClInclude Include="..\Includes\Matrix\Matrix4x4.h" />
     <ClInclude Include="..\Includes\Particle\ParticleSystemData2.h" />
-    <ClInclude Include="..\Includes\Particle\Searcher\PointNeighborSearcher2.h" />
     <ClInclude Include="..\Includes\Point\Point-Impl.h" />
     <ClInclude Include="..\Includes\Point\Point.h" />
     <ClInclude Include="..\Includes\Point\Point2-Impl.h" />
@@ -240,6 +239,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Ray\Ray2.h" />
     <ClInclude Include="..\Includes\Ray\Ray3-Impl.h" />
     <ClInclude Include="..\Includes\Ray\Ray3.h" />
+    <ClInclude Include="..\Includes\Searcher\PointNeighborSearcher2.h" />
     <ClInclude Include="..\Includes\Size\Size.h" />
     <ClInclude Include="..\Includes\Size\Size2.h" />
     <ClInclude Include="..\Includes\Size\Size3.h" />
@@ -312,7 +312,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="..\Sources\Utils\Parallel.cpp" />
     <ClCompile Include="..\Sources\Utils\Timer.cpp" />
     <ClCompile Include="Particle\ParticleSystemData2.cpp" />
-    <ClCompile Include="Particle\Searcher\PointNeighborSearcher2.cpp" />
+    <ClCompile Include="Searcher\PointNeighborSearcher2.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
