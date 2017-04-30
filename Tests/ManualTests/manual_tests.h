@@ -19,6 +19,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <experimental/filesystem>
 #ifdef CUBBYFLOW_WINDOWS
 #include <direct.h>
 #else
@@ -34,6 +35,12 @@ inline void CreateDirectory(const std::string& dirName)
 	pystring::split(dirName, tokens, "/");
 	std::string partialDir;
 
+    for (const auto& token : tokens)
+    {
+        std::experimental::filesystem::create_directory(token);
+    }
+
+#ifdef LAGACY_CODE
 	for (const auto& token : tokens)
 	{
 		partialDir = pystring::os::path::join(partialDir, token);
@@ -43,6 +50,7 @@ inline void CreateDirectory(const std::string& dirName)
 		mkdir(partialDir.c_str(), S_IRWXU | S_IRWXG | S_IRWXO);
 #endif
 	}
+#endif
 }
 
 #define CUBBYFLOW_TESTS(TestSetName) \
