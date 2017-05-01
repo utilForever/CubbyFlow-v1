@@ -14,7 +14,7 @@
 #include <Vector/Vector2.h>
 #include <Vector/Vector3.h>
 
-#include <Flatbuffers/generated/basic_types_generated.h>
+#include <Flatbuffers/generated/BasicTypes_generated.h>
 
 namespace CubbyFlow
 {
