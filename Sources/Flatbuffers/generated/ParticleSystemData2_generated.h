@@ -205,16 +205,16 @@ struct ParticleSystemData2 FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table 
            VerifyField<uint64_t>(verifier, VT_VELOCITYIDX) &&
            VerifyField<uint64_t>(verifier, VT_FORCEIDX) &&
            VerifyField<flatbuffers::uoffset_t>(verifier, VT_SCALARDATALIST) &&
-           verifier.Verify(scalarDataList()) &&
-           verifier.VerifyVectorOfTables(scalarDataList()) &&
+           verifier.Verify(ScalarDataList()) &&
+           verifier.VerifyVectorOfTables(ScalarDataList()) &&
            VerifyField<flatbuffers::uoffset_t>(verifier, VT_VECTORDATALIST) &&
-           verifier.Verify(vectorDataList()) &&
-           verifier.VerifyVectorOfTables(vectorDataList()) &&
+           verifier.Verify(VectorDataList()) &&
+           verifier.VerifyVectorOfTables(VectorDataList()) &&
            VerifyField<flatbuffers::uoffset_t>(verifier, VT_NEIGHBORSEARCHER) &&
-           verifier.VerifyTable(neighborSearcher()) &&
+           verifier.VerifyTable(NeighborSearcher()) &&
            VerifyField<flatbuffers::uoffset_t>(verifier, VT_NEIGHBORLISTS) &&
-           verifier.Verify(neighborLists()) &&
-           verifier.VerifyVectorOfTables(neighborLists()) &&
+           verifier.Verify(NeighborLists()) &&
+           verifier.VerifyVectorOfTables(NeighborLists()) &&
            verifier.EndTable();
   }
 };

@@ -34,15 +34,15 @@ struct PointParallelHashGridSearcher2 FLATBUFFERS_FINAL_CLASS : private flatbuff
            VerifyField<double>(verifier, VT_GRIDSPACING) &&
            VerifyField<CubbyFlow::fbs::Size2>(verifier, VT_RESOLUTION) &&
            VerifyField<flatbuffers::uoffset_t>(verifier, VT_POINTS) &&
-           verifier.Verify(points()) &&
+           verifier.Verify(Points()) &&
            VerifyField<flatbuffers::uoffset_t>(verifier, VT_KEYS) &&
-           verifier.Verify(keys()) &&
+           verifier.Verify(Keys()) &&
            VerifyField<flatbuffers::uoffset_t>(verifier, VT_STARTINDEXTABLE) &&
-           verifier.Verify(startIndexTable()) &&
+           verifier.Verify(StartIndexTable()) &&
            VerifyField<flatbuffers::uoffset_t>(verifier, VT_ENDINDEXTABLE) &&
-           verifier.Verify(endIndexTable()) &&
+           verifier.Verify(EndIndexTable()) &&
            VerifyField<flatbuffers::uoffset_t>(verifier, VT_SORTEDINDICES) &&
-           verifier.Verify(sortedIndices()) &&
+           verifier.Verify(SortedIndices()) &&
            verifier.EndTable();
   }
 };
