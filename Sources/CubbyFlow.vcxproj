@@ -257,6 +257,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Transform\Transform2.h" />
     <ClInclude Include="..\Includes\Transform\Transform3.h" />
     <ClInclude Include="..\Includes\Utils\Constants.h" />
+    <ClInclude Include="..\Includes\Utils\FlatbuffersHelper.h" />
     <ClInclude Include="..\Includes\Utils\Logger.h" />
     <ClInclude Include="..\Includes\Utils\Macros.h" />
     <ClInclude Include="..\Includes\Utils\MathUtils.h" />
