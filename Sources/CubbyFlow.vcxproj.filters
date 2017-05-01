@@ -494,5 +494,8 @@
     <ClCompile Include="..\Includes\Searcher\PointParallelHashGridSearcher2.cpp">
       <Filter>Searcher</Filter>
     </ClCompile>
+    <ClCompile Include="Utils\Factory.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
