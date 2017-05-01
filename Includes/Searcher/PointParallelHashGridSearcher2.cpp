@@ -7,8 +7,13 @@
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <Searcher/PointParallelHashGridSearcher2.h>
+#include <Utils/FlatbuffersHelper.h>
 #include <Utils/Logger.h>
 #include <Utils/Parallel.h>
+
+#include <Flatbuffers/generated/PointParallelHashGridSearcher2_generated.h>
+
+#include <flatbuffers/flatbuffers.h>
 
 namespace CubbyFlow
 {
@@ -317,19 +322,16 @@ namespace CubbyFlow
 		std::vector<fbs::Vector2D> points;
 		for (const auto& pt : m_points)
 		{
-			points.push_back(jetToFbs(pt));
+			points.push_back(CubbyFlowToFlatbuffers(pt));
 		}
 
 		auto fbsPoints = builder.CreateVectorOfStructs(points.data(), points.size());
 
 		// Copy key/tables
 		std::vector<uint64_t> keys(m_keys.begin(), m_keys.end());
-		std::vector<uint64_t> startIndexTable(
-			m_startIndexTable.begin(), m_startIndexTable.end());
-		std::vector<uint64_t> endIndexTable(
-			m_endIndexTable.begin(), m_endIndexTable.end());
-		std::vector<uint64_t> sortedIndices(
-			m_sortedIndices.begin(), m_sortedIndices.end());
+		std::vector<uint64_t> startIndexTable(m_startIndexTable.begin(), m_startIndexTable.end());
+		std::vector<uint64_t> endIndexTable(m_endIndexTable.begin(), m_endIndexTable.end());
+		std::vector<uint64_t> sortedIndices(m_sortedIndices.begin(), m_sortedIndices.end());
 
 		auto fbsKeys = builder.CreateVector(keys.data(), keys.size());
 		auto fbsStartIndexTable = builder.CreateVector(startIndexTable.data(), startIndexTable.size());
@@ -361,41 +363,41 @@ namespace CubbyFlow
 		auto fbsSearcher = fbs::GetPointParallelHashGridSearcher2(buffer.data());
 
 		// Copy simple data
-		auto res = fbsToJet(*fbsSearcher->resolution());
+		auto res = FlatbuffersToCubbyFlow(*fbsSearcher->Resolution());
 		m_resolution.Set({ res.x, res.y });
-		m_gridSpacing = fbsSearcher->gridSpacing();
+		m_gridSpacing = fbsSearcher->GridSpacing();
 
 		// Copy points
-		auto fbsPoints = fbsSearcher->points();
+		auto fbsPoints = fbsSearcher->Points();
 		m_points.resize(fbsPoints->size());
 		for (uint32_t i = 0; i < fbsPoints->size(); ++i)
 		{
-			m_points[i] = fbsToJet(*fbsPoints->Get(i));
+			m_points[i] = FlatbuffersToCubbyFlow(*fbsPoints->Get(i));
 		}
 
 		// Copy key/tables
-		auto fbsKeys = fbsSearcher->keys();
+		auto fbsKeys = fbsSearcher->Keys();
 		m_keys.resize(fbsKeys->size());
 		for (uint32_t i = 0; i < fbsKeys->size(); ++i)
 		{
 			m_keys[i] = static_cast<size_t>(fbsKeys->Get(i));
 		}
 
-		auto fbsStartIndexTable = fbsSearcher->startIndexTable();
+		auto fbsStartIndexTable = fbsSearcher->StartIndexTable();
 		m_startIndexTable.resize(fbsStartIndexTable->size());
 		for (uint32_t i = 0; i < fbsStartIndexTable->size(); ++i)
 		{
 			m_startIndexTable[i] = static_cast<size_t>(fbsStartIndexTable->Get(i));
 		}
 
-		auto fbsEndIndexTable = fbsSearcher->endIndexTable();
+		auto fbsEndIndexTable = fbsSearcher->EndIndexTable();
 		m_endIndexTable.resize(fbsEndIndexTable->size());
 		for (uint32_t i = 0; i < fbsEndIndexTable->size(); ++i)
 		{
 			m_endIndexTable[i] = static_cast<size_t>(fbsEndIndexTable->Get(i));
 		}
 
-		auto fbsSortedIndices = fbsSearcher->sortedIndices();
+		auto fbsSortedIndices = fbsSearcher->SortedIndices();
 		m_sortedIndices.resize(fbsSortedIndices->size());
 		for (uint32_t i = 0; i < fbsSortedIndices->size(); ++i)
 		{
