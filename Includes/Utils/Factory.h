@@ -15,6 +15,7 @@ namespace CubbyFlow
 {
 	class Factory
 	{
+	public:
 		static PointNeighborSearcher2Ptr BuildPointNeighborSearcher2(const std::string& name);
 	};
 }
