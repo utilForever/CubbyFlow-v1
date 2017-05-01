@@ -485,5 +485,8 @@
     <ClCompile Include="Searcher\PointNeighborSearcher2.cpp">
       <Filter>Searcher</Filter>
     </ClCompile>
+    <ClCompile Include="..\Includes\Searcher\PointParallelHashGridSearcher2.cpp">
+      <Filter>Searcher</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
