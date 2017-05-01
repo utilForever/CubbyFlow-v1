@@ -40,6 +40,34 @@ namespace CubbyFlow
 		return 0.0;
 	}
 
+	// MARK: One
+	//! One size_t.
+	constexpr size_t ONE_SIZE = 1;
+
+	//! One ssize_t.
+	constexpr ssize_t ONE_SSIZE = 1;
+
+	//! One for type T.
+	template <typename T>
+	constexpr T One()
+	{
+		return 1;
+	}
+
+	//! One for float.
+	template <>
+	constexpr float One<float>()
+	{
+		return 1.f;
+	}
+
+	//! One for double.
+	template <>
+	constexpr double One<double>()
+	{
+		return 1.0;
+	}
+
 	// MARK: PI
 	//! Float-type PI.
 	constexpr float PI_FLOAT = 3.14159265358979323846264338327950288f;
