@@ -500,5 +500,8 @@
     <ClCompile Include="Utils\Factory.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
+    <ClCompile Include="Searcher\PointNeighborSearcher3.cpp">
+      <Filter>Searcher</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
