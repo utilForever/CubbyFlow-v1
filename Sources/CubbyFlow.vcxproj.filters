@@ -378,6 +378,9 @@
     <ClInclude Include="..\Includes\Searcher\PointParallelHashGridSearcher3.h">
       <Filter>Searcher</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Particle\ParticleSystemData3.h">
+      <Filter>Particle</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Utils\Parallel.cpp">
