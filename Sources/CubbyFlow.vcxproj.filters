@@ -524,5 +524,8 @@
     <ClCompile Include="Particle\ParticleSystemData3.cpp">
       <Filter>Particle</Filter>
     </ClCompile>
+    <ClCompile Include="Collider\Collider2.cpp">
+      <Filter>Collider</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
