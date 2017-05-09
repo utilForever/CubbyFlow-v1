@@ -61,11 +61,11 @@ struct VectorParticleData2 FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table 
   enum {
     VT_DATA = 4
   };
-  const flatbuffers::Vector<const CubbyFlow::fbs::Vector2D *> *data() const { return GetPointer<const flatbuffers::Vector<const CubbyFlow::fbs::Vector2D *> *>(VT_DATA); }
+  const flatbuffers::Vector<const CubbyFlow::fbs::Vector2D *> *Data() const { return GetPointer<const flatbuffers::Vector<const CubbyFlow::fbs::Vector2D *> *>(VT_DATA); }
   bool Verify(flatbuffers::Verifier &verifier) const {
     return VerifyTableStart(verifier) &&
            VerifyField<flatbuffers::uoffset_t>(verifier, VT_DATA) &&
-           verifier.Verify(data()) &&
+           verifier.Verify(Data()) &&
            verifier.EndTable();
   }
 };
