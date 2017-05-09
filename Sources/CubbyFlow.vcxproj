@@ -199,6 +199,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\BoundingBox\BoundingBox2.h" />
     <ClInclude Include="..\Includes\BoundingBox\BoundingBox3-Impl.h" />
     <ClInclude Include="..\Includes\BoundingBox\BoundingBox3.h" />
+    <ClInclude Include="..\Includes\Collider\Collider2.h" />
     <ClInclude Include="..\Includes\Field\ConstantScalarField2.h" />
     <ClInclude Include="..\Includes\Field\ConstantScalarField3.h" />
     <ClInclude Include="..\Includes\Field\ConstantVectorField2.h" />

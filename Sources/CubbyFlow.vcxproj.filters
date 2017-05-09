@@ -52,6 +52,9 @@
     <Filter Include="Searcher">
       <UniqueIdentifier>{67a78e8f-ef0b-4bcf-b3f0-62309465fb60}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Collider">
+      <UniqueIdentifier>{8d1047ba-9c15-4fe7-8253-95e130bfd0b0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Includes\Animation\Animation.h">
@@ -380,6 +383,9 @@
     </ClInclude>
     <ClInclude Include="..\Includes\Particle\ParticleSystemData3.h">
       <Filter>Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Collider\Collider2.h">
+      <Filter>Collider</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
