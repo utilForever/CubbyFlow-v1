@@ -244,21 +244,23 @@ namespace CubbyFlow
 			<< " seconds";
 	}
 
-	void ParticleSystemData2::BuildNeighborLists(double maxSearchRadius) {
+	void ParticleSystemData2::BuildNeighborLists(double maxSearchRadius)
+	{
 		Timer timer;
 
 		m_neighborLists.resize(NumberOfParticles());
 
 		auto points = Positions();
-		for (size_t i = 0; i < NumberOfParticles(); ++i) {
+
+		for (size_t i = 0; i < NumberOfParticles(); ++i)
+		{
 			Vector2D origin = points[i];
 			m_neighborLists[i].clear();
 
-			m_neighborSearcher->ForEachNearbyPoint(
-				origin,
-				maxSearchRadius,
-				[&](size_t j, const Vector2D&) {
-				if (i != j) {
+			m_neighborSearcher->ForEachNearbyPoint(origin, maxSearchRadius, [&](size_t j, const Vector2D&)
+			{
+				if (i != j)
+				{
 					m_neighborLists[i].push_back(j);
 				}
 			});
@@ -355,8 +357,7 @@ namespace CubbyFlow
 		std::vector<uint8_t> neighborSearcherSerialized;
 		m_neighborSearcher->Serialize(&neighborSearcherSerialized);
 		auto fbsNeighborSearcher = fbs::CreatePointNeighborSearcherSerialized2(
-			*builder,
-			neighborSearcherType,
+			*builder, neighborSearcherType,
 			builder->CreateVector(
 				neighborSearcherSerialized.data(),
 				neighborSearcherSerialized.size()));
@@ -419,7 +420,7 @@ namespace CubbyFlow
 		auto fbsVectorDataList = fbsParticleSystemData->VectorDataList();
 		for (const auto& fbsVectorData : (*fbsVectorDataList))
 		{
-			auto data = fbsVectorData->data();
+			auto data = fbsVectorData->Data();
 
 			m_vectorDataList.push_back(VectorData(data->size()));
 			auto& newData = *(m_vectorDataList.rbegin());
