@@ -323,6 +323,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="..\Sources\Utils\Parallel.cpp" />
     <ClCompile Include="..\Sources\Utils\Timer.cpp" />
     <ClCompile Include="Collider\Collider2.cpp" />
+    <ClCompile Include="Collider\ColliderSet2.cpp" />
     <ClCompile Include="Particle\ParticleSystemData2.cpp" />
     <ClCompile Include="Particle\ParticleSystemData3.cpp" />
     <ClCompile Include="Searcher\PointNeighborSearcher2.cpp" />
