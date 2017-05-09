@@ -387,6 +387,9 @@
     <ClInclude Include="..\Includes\Collider\Collider2.h">
       <Filter>Collider</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Collider\Collider3.h">
+      <Filter>Collider</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Utils\Parallel.cpp">
