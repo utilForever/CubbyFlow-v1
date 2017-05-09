@@ -512,5 +512,8 @@
     <ClCompile Include="Searcher\PointParallelHashGridSearcher3.cpp">
       <Filter>Searcher</Filter>
     </ClCompile>
+    <ClCompile Include="Particle\ParticleSystemData3.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
