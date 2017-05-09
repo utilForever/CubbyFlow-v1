@@ -10,6 +10,7 @@
 #define CUBBYFLOW_FACTORY_H
 
 #include <Searcher/PointNeighborSearcher2.h>
+#include <Searcher/PointNeighborSearcher3.h>
 
 namespace CubbyFlow
 {
@@ -17,6 +18,7 @@ namespace CubbyFlow
 	{
 	public:
 		static PointNeighborSearcher2Ptr BuildPointNeighborSearcher2(const std::string& name);
+		static PointNeighborSearcher3Ptr BuildPointNeighborSearcher3(const std::string& name);
 	};
 }
 
