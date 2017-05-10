@@ -49,8 +49,8 @@ namespace CubbyFlow
 		//! Returns sampled value at point \p pt.
 		T operator()(R pt) const;
 
-		//! Returns the nearest array index for point \p x.
-		void GetCoordinate(R x, size_t* i) const;
+		//! Returns the nearest array index for point \p pt.
+		void GetCoordinate(R pt, size_t* i) const;
 
 		//! Returns a function object that wraps this instance.
 		std::function<T(R)> Functor() const;
@@ -99,7 +99,7 @@ namespace CubbyFlow
 		T operator()(R pt) const;
 
 		//! Returns the indices of points and their sampling weight for given point.
-		void GetCoordinatesAndWeights(R x, size_t* i0, size_t* i1, T* weight0, T* weight1) const;
+		void GetCoordinatesAndWeights(R pt, size_t* i0, size_t* i1, T* weight0, T* weight1) const;
 
 		//! Returns a function object that wraps this instance.
 		std::function<T(R)> Functor() const;
