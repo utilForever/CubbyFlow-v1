@@ -232,6 +232,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Matrix\Matrix4x4-Impl.h" />
     <ClInclude Include="..\Includes\Matrix\Matrix4x4.h" />
     <ClInclude Include="..\Includes\Particle\ParticleEmitter2.h" />
+    <ClInclude Include="..\Includes\Particle\ParticleEmitter3.h" />
     <ClInclude Include="..\Includes\Particle\ParticleSystemData2.h" />
     <ClInclude Include="..\Includes\Particle\ParticleSystemData3.h" />
     <ClInclude Include="..\Includes\Point\Point-Impl.h" />
