@@ -3,11 +3,13 @@
 > Project Name: CubbyFlow
 > Author: Dongmin Kim
 > Purpose: 2-D nearest array sampler class.
-> Created Time: 2017/05/01
+> Created Time: 2017/05/10
 > Copyright (c) 2017, Dongmin Kim
 *************************************************************************/
 #ifndef CUBBYFLOW_ARRAY_SAMPLERS2_IMPL_H
 #define CUBBYFLOW_ARRAY_SAMPLERS2_IMPL_H
+
+#include <Utils/MathUtils.h>
 
 namespace CubbyFlow
 {
@@ -39,33 +41,39 @@ namespace CubbyFlow
 		assert(m_gridSpacing.x > std::numeric_limits<R>::epsilon());
 		assert(m_gridSpacing.y > std::numeric_limits<R>::epsilon());
 		
-		R normalized = (*pt - m_origin) / m_gridSpacing;
+		Vector2<R> normalizedX = (*pt - m_origin) / m_gridSpacing;
 
-		Vector2<T> iSize = static_cast<ssize_t>(m_accessor.Size());
+		ssize_t iSize = static_cast<ssize_t>(m_accessor.Size().x);
+		ssize_t jSize = static_cast<ssize_t>(m_accessor.Size().y);
 
-		GetBarycentric(normalizedX, 0, iSize, &i, &fx);
+		GetBarycentric(normalizedX.x, 0, iSize, &i, &fx);
+		GetBarycentric(normalizedX.y, 0, jSize, &j, &fy);
 
 		i = std::min(static_cast<ssize_t>(i + fx + 0.5), iSize - 1);
+		j = std::min(static_cast<ssize_t>(j + fy + 0.5), jSize - 1);
 
-		return m_accessor[i];
+		return m_accessor(i, j);
 	}
 
 	template <typename T, typename R>
-	void NearestArraySampler<T, R, 2>::GetCoordinate(
-		const Vector2<R>& pt,
-		Point2UI* index) const
+	void NearestArraySampler<T, R, 2>::GetCoordinate(const Vector2<R>& pt, Point2UI* index) const
 	{
-		R fx;
+		ssize_t i, j;
+		R fx, fy;
 
-		assert(m_gridSpacing > std::numeric_limits<R>::epsilon());
-		R normalizedX = (x - m_origin) / m_gridSpacing;
+		assert(m_gridSpacing.x > std::numeric_limits<R>::epsilon());
+		assert(m_gridSpacing.y > std::numeric_limits<R>::epsilon());
+		
+		Vector2<R> normalizedX = (pt - m_origin) / m_gridSpacing;
 
-		ssize_t iSize = static_cast<ssize_t>(m_accessor.Size());
+		ssize_t iSize = static_cast<ssize_t>(m_accessor.Size().x);
+		ssize_t jSize = static_cast<ssize_t>(m_accessor.Size().y);
 
-		ssize_t _i;
-		GetBarycentric(normalizedX, 0, iSize, &_i, &fx);
+		GetBarycentric(normalizedX.x, 0, iSize, &i, &fx);
+		GetBarycentric(normalizedX.y, 0, jSize, &j, &fy);
 
-		*i = std::min(static_cast<ssize_t>(_i + fx + 0.5), iSize - 1);
+		index->x = std::min(static_cast<ssize_t>(i + fx + 0.5), iSize - 1);
+		index->y = std::min(static_cast<ssize_t>(j + fy + 0.5), jSize - 1);
 	}
 
 	template <typename T, typename R>
@@ -97,19 +105,24 @@ namespace CubbyFlow
 	template <typename T, typename R>
 	T LinearArraySampler<T, R, 2>::operator()(const Vector2<R>& pt) const
 	{
-		ssize_t i;
-		R fx;
+		ssize_t i, j;
+		R fx, fy;
 
-		assert(m_gridSpacing > std::numeric_limits<R>::epsilon());
-		R normalizedX = (x - m_origin) / m_gridSpacing;
+		assert(m_gridSpacing.x > std::numeric_limits<R>::epsilon());
+		assert(m_gridSpacing.y > std::numeric_limits<R>::epsilon());
 
-		ssize_t iSize = static_cast<ssize_t>(m_accessor.Size());
+		Vector2<R> normalizedX = (pt - m_origin) / m_gridSpacing;
 
-		GetBarycentric(normalizedX, 0, iSize, &i, &fx);
+		ssize_t iSize = static_cast<ssize_t>(m_accessor.Size().x);
+		ssize_t jSize = static_cast<ssize_t>(m_accessor.Size().y);
+
+		GetBarycentric(normalizedX.x, 0, iSize, &i, &fx);
+		GetBarycentric(normalizedX.y, 0, jSize, &j, &fy);
 
 		ssize_t ip1 = std::min(i + 1, iSize - 1);
+		ssize_t jp1 = std::min(j + 1, jSize - 1);
 
-		return Lerp(m_accessor[i], m_accessor[ip1], fx);
+		return BiLerp(m_accessor(i, j), m_accessor(ip1, j), m_accessor(i, jp1), m_accessor(ip1, jp1), fx, fy);
 	}
 
 	template <typename T, typename R>
@@ -118,22 +131,32 @@ namespace CubbyFlow
 		std::array<Point2UI, 4>* indices,
 		std::array<R, 4>* weights) const
 	{
-		ssize_t i;
-		R fx;
+		ssize_t i, j;
+		R fx, fy;
 
-		assert(m_gridSpacing > std::numeric_limits<R>::epsilon());
-		R normalizedX = (x - m_origin) / m_gridSpacing;
+		assert(m_gridSpacing.x > std::numeric_limits<R>::epsilon());
+		assert(m_gridSpacing.y > std::numeric_limits<R>::epsilon());
 
-		ssize_t iSize = static_cast<ssize_t>(m_accessor.Size());
+		Vector2<R> normalizedX = (pt - m_origin) / m_gridSpacing;
 
-		GetBarycentric(normalizedX, 0, iSize, &i, &fx);
+		ssize_t iSize = static_cast<ssize_t>(m_accessor.Size().x);
+		ssize_t jSize = static_cast<ssize_t>(m_accessor.Size().y);
+
+		GetBarycentric(normalizedX.x, 0, iSize, &i, &fx);
+		GetBarycentric(normalizedX.y, 0, jSize, &j, &fy);
 
 		ssize_t ip1 = std::min(i + 1, iSize - 1);
+		ssize_t jp1 = std::min(j + 1, jSize - 1);
 
-		*i0 = i;
-		*i1 = ip1;
-		*weight0 = 1 - fx;
-		*weight1 = fx;
+		(*indices)[0] = Point2UI(i, j);
+		(*indices)[1] = Point2UI(ip1, j);
+		(*indices)[2] = Point2UI(i, jp1);
+		(*indices)[3] = Point2UI(ip1, jp1);
+
+		(*weights)[0] = (1 - fx) * (1 - fy);
+		(*weights)[1] = fx * (1 - fy);
+		(*weights)[2] = (1 - fx) * fy;
+		(*weights)[3] = fx * fy;
 	}
 
 	template <typename T, typename R>
@@ -163,27 +186,36 @@ namespace CubbyFlow
 	}
 
 	template <typename T, typename R>
-	T CubicArraySampler<T, R, 2>::operator(const Vector2<R>& pt) const
+	T CubicArraySampler<T, R, 2>::operator()(const Vector2<R>& pt) const
 	{
-		ssize_t i;
-		ssize_t iSize = static_cast<ssize_t>(m_accessor.Size());
-		R fx;
+		ssize_t i, j;
+		R fx, fy;
 
-		assert(m_gridSpacing > std::numeric_limits<R>::epsilon());
-		R normalizedX = (x - m_origin) / m_gridSpacing;
+		assert(m_gridSpacing.x > std::numeric_limits<R>::epsilon());
+		assert(m_gridSpacing.y > std::numeric_limits<R>::epsilon());
 
-		GetBarycentric(normalizedX, 0, iSize, &i, &fx);
+		Vector2<R> normalizedX = (pt - m_origin) / m_gridSpacing;
 
-		ssize_t im1 = std::max(i - 1, ZERO_SSIZE);
-		ssize_t ip1 = std::min(i + 1, iSize - 1);
-		ssize_t ip2 = std::min(i + 2, iSize - 1);
+		ssize_t iSize = static_cast<ssize_t>(m_accessor.Size().x);
+		ssize_t jSize = static_cast<ssize_t>(m_accessor.Size().y);
 
-		return MonotonicCatmullRom(
-			m_accessor[im1],
-			m_accessor[i],
-			m_accessor[ip1],
-			m_accessor[ip2],
-			fx);
+		GetBarycentric(normalizedX.x, 0, static_cast<ssize_t>(m_accessor.Width()), &i, &fx);
+		GetBarycentric(normalizedX.y, 0, static_cast<ssize_t>(m_accessor.Height()), &j, &fy);
+
+		ssize_t is[4] = { std::max(i - 1, ZERO_SSIZE), i, std::min(i + 1, iSize - 1), std::min(i + 2, iSize - 1) };
+		ssize_t js[4] = { std::max(j - 1, ZERO_SSIZE), j, std::min(j + 1, jSize - 1), std::min(j + 2, jSize - 1) };
+
+		// Calculate in i direction first
+		T values[4];
+		for (int n = 0; n < 4; ++n)
+		{
+			values[n] = MonotonicCatmullRom(
+				m_accessor(is[0], js[n]), m_accessor(is[1], js[n]),
+				m_accessor(is[2], js[n]), m_accessor(is[3], js[n]),
+				fx);
+		}
+
+		return MonotonicCatmullRom(values[0], values[1], values[2], values[3], fy);
 	}
 
 	template <typename T, typename R>
