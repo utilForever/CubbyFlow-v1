@@ -405,6 +405,9 @@
     <ClInclude Include="..\Includes\Particle\ParticleEmitterSet2.h">
       <Filter>Particle</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Particle\ParticleEmitterSet3.h">
+      <Filter>Particle</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Utils\Parallel.cpp">
