@@ -366,6 +366,9 @@
     <ClInclude Include="..\Includes\Searcher\PointParallelHashGridSearcher2.h">
       <Filter>Searcher</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Array\ArraySamplers2-Impl.h">
+      <Filter>Array</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Utils\Parallel.cpp">

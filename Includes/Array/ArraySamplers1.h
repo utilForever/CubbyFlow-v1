@@ -88,7 +88,7 @@ namespace CubbyFlow
 		//! \param[in]  gridOrigin  The grid origin.
 		//!
 		explicit LinearArraySampler(
-			const ConstArrayAccessor1<T>& accessor,
+			const ConstArrayAccessor1<T>& accesor,
 			R gridSpacing,
 			R gridOrigin);
 
