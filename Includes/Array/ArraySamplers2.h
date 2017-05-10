@@ -10,6 +10,7 @@
 #define CUBBYFLOW_ARRAY_SAMPLERS2_H
 
 #include <Array/ArrayAccessor2.h>
+#include <Array/ArraySamplers.h>
 #include <Vector/Vector2.h>
 
 #include <functional>
@@ -49,7 +50,7 @@ namespace CubbyFlow
 		//! Returns sampled value at point \p pt.
 		T operator()(const Vector2<R>& pt) const;
 
-		//! Returns the nearest array index for point \p x.
+		//! Returns the nearest array index for point \p pt.
 		void GetCoordinate(const Vector2<R>& pt, Point2UI* index) const;
 
 		//! Returns a function object that wraps this instance.
@@ -163,5 +164,7 @@ namespace CubbyFlow
 	template <typename T, typename R>
 	using CubicArraySampler2 = CubicArraySampler<T, R, 2>;
 }
+
+#include <Array/ArraySamplers2-Impl.h>
 
 #endif
