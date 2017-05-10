@@ -200,6 +200,10 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\BoundingBox\BoundingBox2.h" />
     <ClInclude Include="..\Includes\BoundingBox\BoundingBox3-Impl.h" />
     <ClInclude Include="..\Includes\BoundingBox\BoundingBox3.h" />
+    <ClInclude Include="..\Includes\Collider\Collider2.h" />
+    <ClInclude Include="..\Includes\Collider\Collider3.h" />
+    <ClInclude Include="..\Includes\Collider\ColliderSet2.h" />
+    <ClInclude Include="..\Includes\Collider\ColliderSet3.h" />
     <ClInclude Include="..\Includes\Field\ConstantScalarField2.h" />
     <ClInclude Include="..\Includes\Field\ConstantScalarField3.h" />
     <ClInclude Include="..\Includes\Field\ConstantVectorField2.h" />
@@ -228,7 +232,12 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Matrix\Matrix3x3.h" />
     <ClInclude Include="..\Includes\Matrix\Matrix4x4-Impl.h" />
     <ClInclude Include="..\Includes\Matrix\Matrix4x4.h" />
+    <ClInclude Include="..\Includes\Particle\ParticleEmitter2.h" />
+    <ClInclude Include="..\Includes\Particle\ParticleEmitter3.h" />
+    <ClInclude Include="..\Includes\Particle\ParticleEmitterSet2.h" />
+    <ClInclude Include="..\Includes\Particle\ParticleEmitterSet3.h" />
     <ClInclude Include="..\Includes\Particle\ParticleSystemData2.h" />
+    <ClInclude Include="..\Includes\Particle\ParticleSystemData3.h" />
     <ClInclude Include="..\Includes\Point\Point-Impl.h" />
     <ClInclude Include="..\Includes\Point\Point.h" />
     <ClInclude Include="..\Includes\Point\Point2-Impl.h" />
@@ -241,7 +250,9 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Ray\Ray3-Impl.h" />
     <ClInclude Include="..\Includes\Ray\Ray3.h" />
     <ClInclude Include="..\Includes\Searcher\PointNeighborSearcher2.h" />
+    <ClInclude Include="..\Includes\Searcher\PointNeighborSearcher3.h" />
     <ClInclude Include="..\Includes\Searcher\PointParallelHashGridSearcher2.h" />
+    <ClInclude Include="..\Includes\Searcher\PointParallelHashGridSearcher3.h" />
     <ClInclude Include="..\Includes\Size\Size.h" />
     <ClInclude Include="..\Includes\Size\Size2.h" />
     <ClInclude Include="..\Includes\Size\Size3.h" />
@@ -258,6 +269,8 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Transform\Transform2.h" />
     <ClInclude Include="..\Includes\Transform\Transform3.h" />
     <ClInclude Include="..\Includes\Utils\Constants.h" />
+    <ClInclude Include="..\Includes\Utils\Factory.h" />
+    <ClInclude Include="..\Includes\Utils\FlatbuffersHelper.h" />
     <ClInclude Include="..\Includes\Utils\Logger.h" />
     <ClInclude Include="..\Includes\Utils\Macros.h" />
     <ClInclude Include="..\Includes\Utils\MathUtils.h" />
@@ -314,8 +327,14 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="..\Sources\Utils\MathUtils.cpp" />
     <ClCompile Include="..\Sources\Utils\Parallel.cpp" />
     <ClCompile Include="..\Sources\Utils\Timer.cpp" />
+    <ClCompile Include="Collider\Collider2.cpp" />
+    <ClCompile Include="Collider\ColliderSet2.cpp" />
     <ClCompile Include="Particle\ParticleSystemData2.cpp" />
+    <ClCompile Include="Particle\ParticleSystemData3.cpp" />
     <ClCompile Include="Searcher\PointNeighborSearcher2.cpp" />
+    <ClCompile Include="Searcher\PointNeighborSearcher3.cpp" />
+    <ClCompile Include="Searcher\PointParallelHashGridSearcher3.cpp" />
+    <ClCompile Include="Utils\Factory.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

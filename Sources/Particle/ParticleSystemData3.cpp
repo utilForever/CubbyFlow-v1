@@ -1,59 +1,60 @@
 /*************************************************************************
-> File Name: ParticleSystemData2.cpp
+> File Name: ParticleSystemData3.cpp
 > Project Name: CubbyFlow
 > Author: Chan-Ho Chris Ohk
-> Purpose: 2-D particle system data.
-> Created Time: 2017/04/28
+> Purpose: 3-D particle system data.
+> Created Time: 2017/05/09
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Particle/ParticleSystemData2.h>
-#include <Searcher/PointNeighborSearcher2.h>
-#include <Searcher/PointParallelHashGridSearcher2.h>
+#include <Particle/ParticleSystemData3.h>
+#include <Searcher/PointNeighborSearcher3.h>
+#include <Searcher/PointParallelHashGridSearcher3.h>
 #include <Utils/Factory.h>
 #include <Utils/FlatbuffersHelper.h>
 #include <Utils/Logger.h>
 #include <Utils/Parallel.h>
 #include <Utils/Timer.h>
-#include <Vector/Vector2.h>
+#include <Vector/Vector3.h>
 
-#include <Flatbuffers/generated/ParticleSystemData2_generated.h>
+#include <Flatbuffers/generated/ParticleSystemData3_generated.h>
 
 namespace CubbyFlow
 {
 	static const size_t DEFAULT_HASH_GRID_RESOLUTION = 64;
 
-	ParticleSystemData2::ParticleSystemData2() :
-		ParticleSystemData2(0)
+	ParticleSystemData3::ParticleSystemData3() :
+		ParticleSystemData3(0)
 	{
 		// Do nothing
 	}
 
-	ParticleSystemData2::ParticleSystemData2(size_t numberOfParticles)
+	ParticleSystemData3::ParticleSystemData3(size_t NumberOfParticles)
 	{
 		m_positionIdx = AddVectorData();
 		m_velocityIdx = AddVectorData();
 		m_forceIdx = AddVectorData();
 
-		// Use PointParallelHashGridSearcher2 by default
-		m_neighborSearcher = std::make_shared<PointParallelHashGridSearcher2>(
+		// Use PointParallelHashGridSearcher3 by default
+		m_neighborSearcher = std::make_shared<PointParallelHashGridSearcher3>(
+			DEFAULT_HASH_GRID_RESOLUTION,
 			DEFAULT_HASH_GRID_RESOLUTION,
 			DEFAULT_HASH_GRID_RESOLUTION,
 			2.0 * m_radius);
 
-		Resize(numberOfParticles);
+		Resize(NumberOfParticles);
 	}
 
-	ParticleSystemData2::ParticleSystemData2(const ParticleSystemData2& other)
+	ParticleSystemData3::ParticleSystemData3(const ParticleSystemData3& other)
 	{
 		Set(other);
 	}
 
-	ParticleSystemData2::~ParticleSystemData2()
+	ParticleSystemData3::~ParticleSystemData3()
 	{
 		// Do nothing
 	}
 
-	void ParticleSystemData2::Resize(size_t newNumberOfParticles)
+	void ParticleSystemData3::Resize(size_t newNumberOfParticles)
 	{
 		m_numberOfParticles = newNumberOfParticles;
 
@@ -64,112 +65,115 @@ namespace CubbyFlow
 
 		for (auto& attr : m_vectorDataList)
 		{
-			attr.Resize(newNumberOfParticles, Vector2D());
+			attr.Resize(newNumberOfParticles, Vector3D());
 		}
 	}
 
-	size_t ParticleSystemData2::NumberOfParticles() const
+	size_t ParticleSystemData3::NumberOfParticles() const
 	{
 		return m_numberOfParticles;
 	}
 
-	size_t ParticleSystemData2::AddScalarData(double initialVal)
+	size_t ParticleSystemData3::AddScalarData(double initialVal)
 	{
 		size_t attrIdx = m_scalarDataList.size();
 		m_scalarDataList.emplace_back(NumberOfParticles(), initialVal);
 		return attrIdx;
 	}
 
-	size_t ParticleSystemData2::AddVectorData(const Vector2D& initialVal)
+	size_t ParticleSystemData3::AddVectorData(const Vector3D& initialVal)
 	{
 		size_t attrIdx = m_vectorDataList.size();
 		m_vectorDataList.emplace_back(NumberOfParticles(), initialVal);
 		return attrIdx;
 	}
 
-	double ParticleSystemData2::Radius() const
+	double ParticleSystemData3::Radius() const
 	{
 		return m_radius;
 	}
 
-	void ParticleSystemData2::SetRadius(double newRadius)
+	void ParticleSystemData3::SetRadius(double newRadius)
 	{
 		m_radius = std::max(newRadius, 0.0);
 	}
 
-	double ParticleSystemData2::Mass() const
+	double ParticleSystemData3::Mass() const
 	{
 		return m_mass;
 	}
 
-	void ParticleSystemData2::SetMass(double newMass)
+	void ParticleSystemData3::SetMass(double newMass)
 	{
 		m_mass = std::max(newMass, 0.0);
 	}
 
-	ConstArrayAccessor1<Vector2D> ParticleSystemData2::Positions() const 
+	ConstArrayAccessor1<Vector3D> ParticleSystemData3::Positions() const
 	{
 		return VectorDataAt(m_positionIdx);
 	}
 
-	ArrayAccessor1<Vector2D> ParticleSystemData2::Positions()
+	ArrayAccessor1<Vector3D> ParticleSystemData3::Positions()
 	{
 		return VectorDataAt(m_positionIdx);
 	}
 
-	ConstArrayAccessor1<Vector2D> ParticleSystemData2::Velocities() const
+	ConstArrayAccessor1<Vector3D> ParticleSystemData3::Velocities() const
 	{
 		return VectorDataAt(m_velocityIdx);
 	}
 
-	ArrayAccessor1<Vector2D> ParticleSystemData2::Velocities()
+	ArrayAccessor1<Vector3D> ParticleSystemData3::Velocities()
 	{
 		return VectorDataAt(m_velocityIdx);
 	}
 
-	ConstArrayAccessor1<Vector2D> ParticleSystemData2::Forces() const
+	ConstArrayAccessor1<Vector3D> ParticleSystemData3::Forces() const
 	{
 		return VectorDataAt(m_forceIdx);
 	}
 
-	ArrayAccessor1<Vector2D> ParticleSystemData2::Forces()
+	ArrayAccessor1<Vector3D> ParticleSystemData3::Forces()
 	{
 		return VectorDataAt(m_forceIdx);
 	}
 
-	ConstArrayAccessor1<double> ParticleSystemData2::ScalarDataAt(size_t idx) const
+	ConstArrayAccessor1<double> ParticleSystemData3::ScalarDataAt(size_t idx) const
 	{
 		return m_scalarDataList[idx].ConstAccessor();
 	}
 
-	ArrayAccessor1<double> ParticleSystemData2::ScalarDataAt(size_t idx)
+	ArrayAccessor1<double> ParticleSystemData3::ScalarDataAt(size_t idx)
 	{
 		return m_scalarDataList[idx].Accessor();
 	}
 
-	ConstArrayAccessor1<Vector2D> ParticleSystemData2::VectorDataAt(size_t idx) const
+	ConstArrayAccessor1<Vector3D> ParticleSystemData3::VectorDataAt(size_t idx) const
 	{
 		return m_vectorDataList[idx].ConstAccessor();
 	}
 
-	ArrayAccessor1<Vector2D> ParticleSystemData2::VectorDataAt(size_t idx)
+	ArrayAccessor1<Vector3D> ParticleSystemData3::VectorDataAt(size_t idx)
 	{
 		return m_vectorDataList[idx].Accessor();
 	}
 
-	void ParticleSystemData2::AddParticle(const Vector2D& newPosition, const Vector2D& newVelocity, const Vector2D& newForce)
+	void ParticleSystemData3::AddParticle(
+		const Vector3D& newPosition,
+		const Vector3D& newVelocity,
+		const Vector3D& newForce)
 	{
-		Array1<Vector2D> newPositions = { newPosition };
-		Array1<Vector2D> newVelocities = { newVelocity };
-		Array1<Vector2D> newForces = { newForce };
+		Array1<Vector3D> newPositions = { newPosition };
+		Array1<Vector3D> newVelocities = { newVelocity };
+		Array1<Vector3D> newForces = { newForce };
 
 		AddParticles(newPositions.ConstAccessor(), newVelocities.ConstAccessor(), newForces.ConstAccessor());
 	}
 
-	void ParticleSystemData2::AddParticles(
-		const ConstArrayAccessor1<Vector2D>& newPositions,
-		const ConstArrayAccessor1<Vector2D>& newVelocities,
-		const ConstArrayAccessor1<Vector2D>& newForces)
+	void ParticleSystemData3::AddParticles(
+		const ConstArrayAccessor1<Vector3D>& newPositions,
+		const ConstArrayAccessor1<Vector3D>& newVelocities,
+		const ConstArrayAccessor1<Vector3D>& newForces)
 	{
 		if (newVelocities.Size() > 0 && newVelocities.Size() != newPositions.Size())
 		{
@@ -190,7 +194,7 @@ namespace CubbyFlow
 		auto vel = Velocities();
 		auto frc = Forces();
 
-		ParallelFor(ZERO_SIZE, newPositions.Size(), [&](size_t i)
+		ParallelFor(ZERO_SIZE, newPositions.Size(),	[&](size_t i)
 		{
 			pos[i + oldNumberOfParticles] = newPositions[i];
 		});
@@ -212,27 +216,28 @@ namespace CubbyFlow
 		}
 	}
 
-	const PointNeighborSearcher2Ptr& ParticleSystemData2::NeighborSearcher() const
+	const PointNeighborSearcher3Ptr& ParticleSystemData3::NeighborSearcher() const
 	{
 		return m_neighborSearcher;
 	}
 
-	void ParticleSystemData2::SetNeighborSearcher(const PointNeighborSearcher2Ptr& newNeighborSearcher)
+	void ParticleSystemData3::SetNeighborSearcher(const PointNeighborSearcher3Ptr& newNeighborSearcher)
 	{
 		m_neighborSearcher = newNeighborSearcher;
 	}
 
-	const std::vector<std::vector<size_t>>& ParticleSystemData2::NeighborLists() const
+	const std::vector<std::vector<size_t>>& ParticleSystemData3::NeighborLists() const
 	{
 		return m_neighborLists;
 	}
 
-	void ParticleSystemData2::BuildNeighborSearcher(double maxSearchRadius)
+	void ParticleSystemData3::BuildNeighborSearcher(double maxSearchRadius)
 	{
 		Timer timer;
 
-		// Use PointParallelHashGridSearcher2 by default
-		m_neighborSearcher = std::make_shared<PointParallelHashGridSearcher2>(
+		// Use PointParallelHashGridSearcher3 by default
+		m_neighborSearcher = std::make_shared<PointParallelHashGridSearcher3>(
+			DEFAULT_HASH_GRID_RESOLUTION,
 			DEFAULT_HASH_GRID_RESOLUTION,
 			DEFAULT_HASH_GRID_RESOLUTION,
 			2.0 * maxSearchRadius);
@@ -244,7 +249,7 @@ namespace CubbyFlow
 			<< " seconds";
 	}
 
-	void ParticleSystemData2::BuildNeighborLists(double maxSearchRadius)
+	void ParticleSystemData3::BuildNeighborLists(double maxSearchRadius)
 	{
 		Timer timer;
 
@@ -254,10 +259,10 @@ namespace CubbyFlow
 
 		for (size_t i = 0; i < NumberOfParticles(); ++i)
 		{
-			Vector2D origin = points[i];
+			Vector3D origin = points[i];
 			m_neighborLists[i].clear();
 
-			m_neighborSearcher->ForEachNearbyPoint(origin, maxSearchRadius, [&](size_t j, const Vector2D&)
+			m_neighborSearcher->ForEachNearbyPoint(origin, maxSearchRadius, [&](size_t j, const Vector3D&)
 			{
 				if (i != j)
 				{
@@ -271,10 +276,10 @@ namespace CubbyFlow
 			<< " seconds";
 	}
 
-	void ParticleSystemData2::Serialize(std::vector<uint8_t>* buffer) const
+	void ParticleSystemData3::Serialize(std::vector<uint8_t>* buffer) const
 	{
 		flatbuffers::FlatBufferBuilder builder(1024);
-		flatbuffers::Offset<fbs::ParticleSystemData2> fbsParticleSystemData;
+		flatbuffers::Offset<fbs::ParticleSystemData3> fbsParticleSystemData;
 
 		SerializeParticleSystemData(&builder, &fbsParticleSystemData);
 
@@ -287,13 +292,13 @@ namespace CubbyFlow
 		memcpy(buffer->data(), buf, size);
 	}
 
-	void ParticleSystemData2::Deserialize(const std::vector<uint8_t>& buffer)
+	void ParticleSystemData3::Deserialize(const std::vector<uint8_t>& buffer)
 	{
-		auto fbsParticleSystemData = fbs::GetParticleSystemData2(buffer.data());
+		auto fbsParticleSystemData = fbs::GetParticleSystemData3(buffer.data());
 		DeserializeParticleSystemData(fbsParticleSystemData);
 	}
 
-	void ParticleSystemData2::Set(const ParticleSystemData2& other)
+	void ParticleSystemData3::Set(const ParticleSystemData3& other)
 	{
 		m_radius = other.m_radius;
 		m_mass = other.m_mass;
@@ -316,37 +321,37 @@ namespace CubbyFlow
 		m_neighborLists = other.m_neighborLists;
 	}
 
-	ParticleSystemData2& ParticleSystemData2::operator=(const ParticleSystemData2& other)
+	ParticleSystemData3& ParticleSystemData3::operator=(const ParticleSystemData3& other)
 	{
 		Set(other);
 		return *this;
 	}
 
-	void ParticleSystemData2::SerializeParticleSystemData(
+	void ParticleSystemData3::SerializeParticleSystemData(
 		flatbuffers::FlatBufferBuilder* builder,
-		flatbuffers::Offset<fbs::ParticleSystemData2>* fbsParticleSystemData)
+		flatbuffers::Offset<fbs::ParticleSystemData3>* fbsParticleSystemData)
 		const
 	{
 		// Copy data
-		std::vector<flatbuffers::Offset<fbs::ScalarParticleData2>> scalarDataList;
+		std::vector<flatbuffers::Offset<fbs::ScalarParticleData3>> scalarDataList;
 		for (const auto& scalarData : m_scalarDataList)
 		{
-			auto fbsScalarData = fbs::CreateScalarParticleData2(*builder,
+			auto fbsScalarData = fbs::CreateScalarParticleData3(*builder,
 				builder->CreateVector(scalarData.Data(), scalarData.Size()));
 			scalarDataList.push_back(fbsScalarData);
 		}
 		auto fbsScalarDataList = builder->CreateVector(scalarDataList);
 
-		std::vector<flatbuffers::Offset<fbs::VectorParticleData2>> vectorDataList;
+		std::vector<flatbuffers::Offset<fbs::VectorParticleData3>> vectorDataList;
 		for (const auto& vectorData : m_vectorDataList)
 		{
-			std::vector<fbs::Vector2D> newVectorData;
+			std::vector<fbs::Vector3D> newVectorData;
 			for (const auto& v : vectorData)
 			{
 				newVectorData.push_back(CubbyFlowToFlatbuffers(v));
 			}
 
-			auto fbsVectorData = fbs::CreateVectorParticleData2(*builder,
+			auto fbsVectorData = fbs::CreateVectorParticleData3(*builder,
 				builder->CreateVectorOfStructs(newVectorData.data(), newVectorData.size()));
 			vectorDataList.push_back(fbsVectorData);
 		}
@@ -356,19 +361,19 @@ namespace CubbyFlow
 		auto neighborSearcherType = builder->CreateString(m_neighborSearcher->TypeName());
 		std::vector<uint8_t> neighborSearcherSerialized;
 		m_neighborSearcher->Serialize(&neighborSearcherSerialized);
-		auto fbsNeighborSearcher = fbs::CreatePointNeighborSearcherSerialized2(
+		auto fbsNeighborSearcher = fbs::CreatePointNeighborSearcherSerialized3(
 			*builder, neighborSearcherType,
 			builder->CreateVector(
 				neighborSearcherSerialized.data(),
 				neighborSearcherSerialized.size()));
 
 		// Copy neighbor lists
-		std::vector<flatbuffers::Offset<fbs::ParticleNeighborList2>> neighborLists;
+		std::vector<flatbuffers::Offset<fbs::ParticleNeighborList3>> neighborLists;
 		for (const auto& neighbors : m_neighborLists)
 		{
 			std::vector<uint64_t> neighbors64(neighbors.begin(), neighbors.end());
-			flatbuffers::Offset<fbs::ParticleNeighborList2> fbsNeighborList
-				= fbs::CreateParticleNeighborList2(*builder,
+			flatbuffers::Offset<fbs::ParticleNeighborList3> fbsNeighborList
+				= fbs::CreateParticleNeighborList3( *builder,
 					builder->CreateVector(neighbors64.data(), neighbors64.size()));
 			neighborLists.push_back(fbsNeighborList);
 		}
@@ -376,7 +381,7 @@ namespace CubbyFlow
 		auto fbsNeighborLists = builder->CreateVector(neighborLists);
 
 		// Copy the searcher
-		*fbsParticleSystemData = fbs::CreateParticleSystemData2(
+		*fbsParticleSystemData = fbs::CreateParticleSystemData3(
 			*builder,
 			m_radius,
 			m_mass,
@@ -389,7 +394,7 @@ namespace CubbyFlow
 			fbsNeighborLists);
 	}
 
-	void ParticleSystemData2::DeserializeParticleSystemData(const fbs::ParticleSystemData2* fbsParticleSystemData)
+	void ParticleSystemData3::DeserializeParticleSystemData(const fbs::ParticleSystemData3* fbsParticleSystemData)
 	{
 		m_scalarDataList.clear();
 		m_vectorDataList.clear();
@@ -434,7 +439,7 @@ namespace CubbyFlow
 
 		// Copy neighbor searcher
 		auto fbsNeighborSearcher = fbsParticleSystemData->NeighborSearcher();
-		m_neighborSearcher = Factory::BuildPointNeighborSearcher2(fbsNeighborSearcher->Type()->c_str());
+		m_neighborSearcher = Factory::BuildPointNeighborSearcher3(fbsNeighborSearcher->Type()->c_str());
 		std::vector<uint8_t> neighborSearcherSerialized(
 			fbsNeighborSearcher->Data()->begin(),
 			fbsNeighborSearcher->Data()->end());
@@ -443,7 +448,7 @@ namespace CubbyFlow
 		// Copy neighbor list
 		auto fbsNeighborLists = fbsParticleSystemData->NeighborLists();
 		m_neighborLists.resize(fbsNeighborLists->size());
-		
+
 		for (uint32_t i = 0; i < fbsNeighborLists->size(); ++i)
 		{
 			auto fbsNeighborList = fbsNeighborLists->Get(i);

@@ -52,6 +52,9 @@
     <Filter Include="Searcher">
       <UniqueIdentifier>{67a78e8f-ef0b-4bcf-b3f0-62309465fb60}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Collider">
+      <UniqueIdentifier>{8d1047ba-9c15-4fe7-8253-95e130bfd0b0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Includes\Animation\Animation.h">
@@ -366,8 +369,44 @@
     <ClInclude Include="..\Includes\Searcher\PointParallelHashGridSearcher2.h">
       <Filter>Searcher</Filter>
     </ClInclude>
-    <ClInclude Include="..\Includes\Array\ArraySamplers2-Impl.h">
-      <Filter>Array</Filter>
+    <ClInclude Include="..\Includes\Utils\FlatbuffersHelper.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Utils\Factory.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Searcher\PointNeighborSearcher3.h">
+      <Filter>Searcher</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Searcher\PointParallelHashGridSearcher3.h">
+      <Filter>Searcher</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Particle\ParticleSystemData3.h">
+      <Filter>Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Collider\Collider2.h">
+      <Filter>Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Collider\Collider3.h">
+      <Filter>Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Collider\ColliderSet2.h">
+      <Filter>Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Collider\ColliderSet3.h">
+      <Filter>Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Particle\ParticleEmitter2.h">
+      <Filter>Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Particle\ParticleEmitter3.h">
+      <Filter>Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Particle\ParticleEmitterSet2.h">
+      <Filter>Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Particle\ParticleEmitterSet3.h">
+      <Filter>Particle</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -490,6 +529,24 @@
     </ClCompile>
     <ClCompile Include="..\Includes\Searcher\PointParallelHashGridSearcher2.cpp">
       <Filter>Searcher</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\Factory.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Searcher\PointNeighborSearcher3.cpp">
+      <Filter>Searcher</Filter>
+    </ClCompile>
+    <ClCompile Include="Searcher\PointParallelHashGridSearcher3.cpp">
+      <Filter>Searcher</Filter>
+    </ClCompile>
+    <ClCompile Include="Particle\ParticleSystemData3.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="Collider\Collider2.cpp">
+      <Filter>Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="Collider\ColliderSet2.cpp">
+      <Filter>Collider</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

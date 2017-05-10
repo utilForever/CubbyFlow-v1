@@ -1,44 +1,45 @@
 /*************************************************************************
-> File Name: PointParallelHashGridSearcher2.cpp
+> File Name: PointParallelHashGridSearcher3.cpp
 > Project Name: CubbyFlow
 > Author: Chan-Ho Chris Ohk
-> Purpose: Parallel version of hash grid-based 2-D point searcher.
-> Created Time: 2017/04/30
+> Purpose: Parallel version of hash grid-based 3-D point searcher.
+> Created Time: 2017/05/07
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Searcher/PointParallelHashGridSearcher2.h>
+#include <Searcher/PointParallelHashGridSearcher3.h>
 #include <Utils/FlatbuffersHelper.h>
 #include <Utils/Logger.h>
 #include <Utils/Parallel.h>
 
-#include <Flatbuffers/generated/PointParallelHashGridSearcher2_generated.h>
+#include <Flatbuffers/generated/PointParallelHashGridSearcher3_generated.h>
 
 #include <flatbuffers/flatbuffers.h>
 
 namespace CubbyFlow
 {
-	PointParallelHashGridSearcher2::PointParallelHashGridSearcher2(const Size2& resolution, double gridSpacing) :
-		PointParallelHashGridSearcher2(resolution.x, resolution.y, gridSpacing)
+	PointParallelHashGridSearcher3::PointParallelHashGridSearcher3(const Size3& resolution, double gridSpacing) :
+		PointParallelHashGridSearcher3(resolution.x, resolution.y, resolution.z, gridSpacing)
 	{
 		// Do nothing
 	}
 
-	PointParallelHashGridSearcher2::PointParallelHashGridSearcher2(size_t resolutionX, size_t resolutionY, double gridSpacing) :
+	PointParallelHashGridSearcher3::PointParallelHashGridSearcher3(size_t resolutionX, size_t resolutionY, size_t resolutionZ, double gridSpacing) :
 		m_gridSpacing(gridSpacing)
 	{
 		m_resolution.x = std::max(static_cast<ssize_t>(resolutionX), ONE_SSIZE);
 		m_resolution.y = std::max(static_cast<ssize_t>(resolutionY), ONE_SSIZE);
+		m_resolution.z = std::max(static_cast<ssize_t>(resolutionZ), ONE_SSIZE);
 
-		m_startIndexTable.resize(m_resolution.x * m_resolution.y, std::numeric_limits<size_t>::max());
-		m_endIndexTable.resize(m_resolution.x * m_resolution.y, std::numeric_limits<size_t>::max());
+		m_startIndexTable.resize(m_resolution.x * m_resolution.y * m_resolution.z, std::numeric_limits<size_t>::max());
+		m_endIndexTable.resize(m_resolution.x * m_resolution.y * m_resolution.z, std::numeric_limits<size_t>::max());
 	}
 
-	PointParallelHashGridSearcher2::PointParallelHashGridSearcher2(const PointParallelHashGridSearcher2& other)
+	PointParallelHashGridSearcher3::PointParallelHashGridSearcher3(const PointParallelHashGridSearcher3& other)
 	{
 		Set(other);
 	}
 
-	void PointParallelHashGridSearcher2::Build(const ConstArrayAccessor1<Vector2D>& points)
+	void PointParallelHashGridSearcher3::Build(const ConstArrayAccessor1<Vector3D>& points)
 	{
 		m_points.clear();
 		m_keys.clear();
@@ -49,8 +50,8 @@ namespace CubbyFlow
 		// Allocate memory chunks
 		size_t numberOfPoints = points.Size();
 		std::vector<size_t> tempKeys(numberOfPoints);
-		m_startIndexTable.resize(m_resolution.x * m_resolution.y);
-		m_endIndexTable.resize(m_resolution.x * m_resolution.y);
+		m_startIndexTable.resize(m_resolution.x * m_resolution.y * m_resolution.z);
+		m_endIndexTable.resize(m_resolution.x * m_resolution.y * m_resolution.z);
 		ParallelFill(m_startIndexTable.begin(), m_startIndexTable.end(), std::numeric_limits<size_t>::max());
 		ParallelFill(m_endIndexTable.begin(), m_endIndexTable.end(), std::numeric_limits<size_t>::max());
 		m_keys.resize(numberOfPoints);
@@ -127,14 +128,14 @@ namespace CubbyFlow
 		CUBBYFLOW_INFO << "Max number of points per bucket: " << maxNumberOfPointsPerBucket;
 	}
 
-	void PointParallelHashGridSearcher2::ForEachNearbyPoint(const Vector2D& origin, double radius, const ForEachNearbyPointFunc& callback) const
+	void PointParallelHashGridSearcher3::ForEachNearbyPoint(const Vector3D& origin, double radius, const ForEachNearbyPointFunc& callback) const
 	{
-		size_t nearbyKeys[4];
+		size_t nearbyKeys[8];
 		GetNearbyKeys(origin, nearbyKeys);
 
 		const double queryRadiusSquared = radius * radius;
 
-		for (int i = 0; i < 4; ++i)
+		for (int i = 0; i < 8; ++i)
 		{
 			size_t nearbyKey = nearbyKeys[i];
 			size_t start = m_startIndexTable[nearbyKey];
@@ -148,9 +149,9 @@ namespace CubbyFlow
 
 			for (size_t j = start; j < end; ++j)
 			{
-				Vector2D direction = m_points[j] - origin;
+				Vector3D direction = m_points[j] - origin;
 				double distanceSquared = direction.LengthSquared();
-				
+			
 				if (distanceSquared <= queryRadiusSquared)
 				{
 					callback(m_sortedIndices[j], m_points[j]);
@@ -159,14 +160,14 @@ namespace CubbyFlow
 		}
 	}
 
-	bool PointParallelHashGridSearcher2::HasNearbyPoint(const Vector2D& origin, double radius) const
+	bool PointParallelHashGridSearcher3::HasNearbyPoint(const Vector3D& origin, double radius) const
 	{
-		size_t nearbyKeys[4];
+		size_t nearbyKeys[8];
 		GetNearbyKeys(origin, nearbyKeys);
 
 		const double queryRadiusSquared = radius * radius;
 
-		for (int i = 0; i < 4; ++i)
+		for (int i = 0; i < 8; ++i)
 		{
 			size_t nearbyKey = nearbyKeys[i];
 			size_t start = m_startIndexTable[nearbyKey];
@@ -180,7 +181,7 @@ namespace CubbyFlow
 
 			for (size_t j = start; j < end; ++j)
 			{
-				Vector2D direction = m_points[j] - origin;
+				Vector3D direction = m_points[j] - origin;
 				double distanceSquared = direction.LengthSquared();
 				
 				if (distanceSquared <= queryRadiusSquared)
@@ -193,48 +194,50 @@ namespace CubbyFlow
 		return false;
 	}
 
-	const std::vector<size_t>& PointParallelHashGridSearcher2::Keys() const
+	const std::vector<size_t>& PointParallelHashGridSearcher3::Keys() const
 	{
 		return m_keys;
 	}
 
-	const std::vector<size_t>& PointParallelHashGridSearcher2::StartIndexTable() const
+	const std::vector<size_t>& PointParallelHashGridSearcher3::StartIndexTable() const
 	{
 		return m_startIndexTable;
 	}
 
-	const std::vector<size_t>& PointParallelHashGridSearcher2::EndIndexTable() const
+	const std::vector<size_t>& PointParallelHashGridSearcher3::EndIndexTable() const
 	{
 		return m_endIndexTable;
 	}
 
-	const std::vector<size_t>& PointParallelHashGridSearcher2::SortedIndices() const
+	const std::vector<size_t>& PointParallelHashGridSearcher3::SortedIndices() const
 	{
 		return m_sortedIndices;
 	}
 
-	Point2I PointParallelHashGridSearcher2::GetBucketIndex(const Vector2D& position) const
+	Point3I PointParallelHashGridSearcher3::GetBucketIndex(const Vector3D& position) const
 	{
-		Point2I bucketIndex;
-
+		Point3I bucketIndex;
+		
 		bucketIndex.x = static_cast<ssize_t>(std::floor(position.x / m_gridSpacing));
 		bucketIndex.y = static_cast<ssize_t>(std::floor(position.y / m_gridSpacing));
+		bucketIndex.z = static_cast<ssize_t>(std::floor(position.z / m_gridSpacing));
 		
 		return bucketIndex;
 	}
 
-	size_t PointParallelHashGridSearcher2::GetHashKeyFromPosition(const Vector2D& position) const
+	size_t PointParallelHashGridSearcher3::GetHashKeyFromPosition(const Vector3D& position) const
 	{
-		Point2I bucketIndex = GetBucketIndex(position);
+		Point3I bucketIndex = GetBucketIndex(position);
 		return GetHashKeyFromBucketIndex(bucketIndex);
 	}
 
-	size_t PointParallelHashGridSearcher2::GetHashKeyFromBucketIndex(const Point2I& bucketIndex) const
+	size_t PointParallelHashGridSearcher3::GetHashKeyFromBucketIndex(const Point3I& bucketIndex) const
 	{
-		Point2I wrappedIndex;
-
+		Point3I wrappedIndex;
+		
 		wrappedIndex.x = bucketIndex.x % m_resolution.x;
 		wrappedIndex.y = bucketIndex.y % m_resolution.y;
+		wrappedIndex.z = bucketIndex.z % m_resolution.z;
 		
 		if (wrappedIndex.x < 0)
 		{
@@ -244,63 +247,90 @@ namespace CubbyFlow
 		{
 			wrappedIndex.y += m_resolution.y;
 		}
+		if (wrappedIndex.z < 0)
+		{
+			wrappedIndex.z += m_resolution.z;
+		}
 
-		return static_cast<size_t>(wrappedIndex.y*m_resolution.x + wrappedIndex.x);
+		return static_cast<size_t>((wrappedIndex.z * m_resolution.y + wrappedIndex.y) * m_resolution.x + wrappedIndex.x);
 	}
 
-	void PointParallelHashGridSearcher2::GetNearbyKeys(const Vector2D& position, size_t* nearbyKeys) const
+	void PointParallelHashGridSearcher3::GetNearbyKeys(const Vector3D& position, size_t* nearbyKeys) const
 	{
-		Point2I originIndex = GetBucketIndex(position), nearbyBucketIndices[4];
+		Point3I originIndex = GetBucketIndex(position), nearbyBucketIndices[8];
 
-		for (int i = 0; i < 4; ++i)
+		for (int i = 0; i < 8; ++i)
 		{
 			nearbyBucketIndices[i] = originIndex;
 		}
 
 		if ((originIndex.x + 0.5f) * m_gridSpacing <= position.x)
 		{
-			nearbyBucketIndices[2].x += 1;
-			nearbyBucketIndices[3].x += 1;
+			nearbyBucketIndices[4].x += 1;
+			nearbyBucketIndices[5].x += 1;
+			nearbyBucketIndices[6].x += 1;
+			nearbyBucketIndices[7].x += 1;
 		}
 		else
 		{
-			nearbyBucketIndices[2].x -= 1;
-			nearbyBucketIndices[3].x -= 1;
+			nearbyBucketIndices[4].x -= 1;
+			nearbyBucketIndices[5].x -= 1;
+			nearbyBucketIndices[6].x -= 1;
+			nearbyBucketIndices[7].x -= 1;
 		}
 
 		if ((originIndex.y + 0.5f) * m_gridSpacing <= position.y)
 		{
-			nearbyBucketIndices[1].y += 1;
+			nearbyBucketIndices[2].y += 1;
 			nearbyBucketIndices[3].y += 1;
+			nearbyBucketIndices[6].y += 1;
+			nearbyBucketIndices[7].y += 1;
 		}
 		else
 		{
-			nearbyBucketIndices[1].y -= 1;
+			nearbyBucketIndices[2].y -= 1;
 			nearbyBucketIndices[3].y -= 1;
+			nearbyBucketIndices[6].y -= 1;
+			nearbyBucketIndices[7].y -= 1;
 		}
 
-		for (int i = 0; i < 4; ++i)
+		if ((originIndex.z + 0.5f) * m_gridSpacing <= position.z)
+		{
+			nearbyBucketIndices[1].z += 1;
+			nearbyBucketIndices[3].z += 1;
+			nearbyBucketIndices[5].z += 1;
+			nearbyBucketIndices[7].z += 1;
+		}
+		else
+		{
+			nearbyBucketIndices[1].z -= 1;
+			nearbyBucketIndices[3].z -= 1;
+			nearbyBucketIndices[5].z -= 1;
+			nearbyBucketIndices[7].z -= 1;
+		}
+
+		for (int i = 0; i < 8; ++i)
 		{
 			nearbyKeys[i] = GetHashKeyFromBucketIndex(nearbyBucketIndices[i]);
 		}
 	}
 
-	PointNeighborSearcher2Ptr PointParallelHashGridSearcher2::Clone() const
+	PointNeighborSearcher3Ptr PointParallelHashGridSearcher3::Clone() const
 	{
-		return std::shared_ptr<PointParallelHashGridSearcher2>(
-			new PointParallelHashGridSearcher2(*this), [](PointParallelHashGridSearcher2* obj)
+		return std::shared_ptr<PointParallelHashGridSearcher3>(
+			new PointParallelHashGridSearcher3(*this), [](PointParallelHashGridSearcher3* obj)
 		{
 			delete obj;
 		});
 	}
 
-	PointParallelHashGridSearcher2& PointParallelHashGridSearcher2::operator=(const PointParallelHashGridSearcher2& other)
+	PointParallelHashGridSearcher3& PointParallelHashGridSearcher3::operator=(const PointParallelHashGridSearcher3& other)
 	{
 		Set(other);
 		return *this;
 	}
 
-	void PointParallelHashGridSearcher2::Set(const PointParallelHashGridSearcher2& other)
+	void PointParallelHashGridSearcher3::Set(const PointParallelHashGridSearcher3& other)
 	{
 		m_gridSpacing = other.m_gridSpacing;
 		m_resolution = other.m_resolution;
@@ -311,15 +341,15 @@ namespace CubbyFlow
 		m_sortedIndices = other.m_sortedIndices;
 	}
 
-	void PointParallelHashGridSearcher2::Serialize(std::vector<uint8_t>* buffer) const
+	void PointParallelHashGridSearcher3::Serialize(std::vector<uint8_t>* buffer) const
 	{
 		flatbuffers::FlatBufferBuilder builder(1024);
 
 		// Copy simple data
-		auto fbsResolution = fbs::Size2(m_resolution.x, m_resolution.y);
+		auto fbsResolution = fbs::Size3(m_resolution.x, m_resolution.y, m_resolution.z);
 
 		// Copy points
-		std::vector<fbs::Vector2D> points;
+		std::vector<fbs::Vector3D> points;
 		for (const auto& pt : m_points)
 		{
 			points.push_back(CubbyFlowToFlatbuffers(pt));
@@ -339,7 +369,7 @@ namespace CubbyFlow
 		auto fbsSortedIndices = builder.CreateVector(sortedIndices.data(), sortedIndices.size());
 
 		// Copy the searcher
-		auto fbsSearcher = fbs::CreatePointParallelHashGridSearcher2(
+		auto fbsSearcher = fbs::CreatePointParallelHashGridSearcher3(
 			builder,
 			m_gridSpacing,
 			&fbsResolution,
@@ -358,13 +388,13 @@ namespace CubbyFlow
 		memcpy(buffer->data(), buf, size);
 	}
 
-	void PointParallelHashGridSearcher2::Deserialize(const std::vector<uint8_t>& buffer)
+	void PointParallelHashGridSearcher3::Deserialize(const std::vector<uint8_t>& buffer)
 	{
-		auto fbsSearcher = fbs::GetPointParallelHashGridSearcher2(buffer.data());
+		auto fbsSearcher = fbs::GetPointParallelHashGridSearcher3(buffer.data());
 
 		// Copy simple data
 		auto res = FlatbuffersToCubbyFlow(*fbsSearcher->Resolution());
-		m_resolution.Set({ res.x, res.y });
+		m_resolution.Set({ res.x, res.y, res.z });
 		m_gridSpacing = fbsSearcher->GridSpacing();
 
 		// Copy points
@@ -405,38 +435,38 @@ namespace CubbyFlow
 		}
 	}
 
-	PointParallelHashGridSearcher2::Builder PointParallelHashGridSearcher2::GetBuilder()
+	PointParallelHashGridSearcher3::Builder PointParallelHashGridSearcher3::GetBuilder()
 	{
 		return Builder();
 	}
-
-	PointParallelHashGridSearcher2::Builder& PointParallelHashGridSearcher2::Builder::WithResolution(const Size2& resolution)
+	
+	PointParallelHashGridSearcher3::Builder& PointParallelHashGridSearcher3::Builder::WithResolution(const Size3& resolution)
 	{
 		m_resolution = resolution;
 		return *this;
 	}
 
-	PointParallelHashGridSearcher2::Builder& PointParallelHashGridSearcher2::Builder::WithGridSpacing(double gridSpacing)
+	PointParallelHashGridSearcher3::Builder& PointParallelHashGridSearcher3::Builder::WithGridSpacing(double gridSpacing)
 	{
 		m_gridSpacing = gridSpacing;
 		return *this;
 	}
 
-	PointParallelHashGridSearcher2 PointParallelHashGridSearcher2::Builder::Build() const
+	PointParallelHashGridSearcher3 PointParallelHashGridSearcher3::Builder::Build() const
 	{
-		return PointParallelHashGridSearcher2(m_resolution, m_gridSpacing);
+		return PointParallelHashGridSearcher3(m_resolution, m_gridSpacing);
 	}
 
-	PointParallelHashGridSearcher2Ptr PointParallelHashGridSearcher2::Builder::MakeShared() const
+	PointParallelHashGridSearcher3Ptr PointParallelHashGridSearcher3::Builder::MakeShared() const
 	{
-		return std::shared_ptr<PointParallelHashGridSearcher2>(
-			new PointParallelHashGridSearcher2(m_resolution, m_gridSpacing), [](PointParallelHashGridSearcher2* obj)
+		return std::shared_ptr<PointParallelHashGridSearcher3>(
+			new PointParallelHashGridSearcher3(m_resolution, m_gridSpacing), [](PointParallelHashGridSearcher3* obj)
 		{
 			delete obj;
 		});
 	}
 
-	PointNeighborSearcher2Ptr PointParallelHashGridSearcher2::Builder::BuildPointNeighborSearcher() const
+	PointNeighborSearcher3Ptr PointParallelHashGridSearcher3::Builder::BuildPointNeighborSearcher() const
 	{
 		return MakeShared();
 	}
