@@ -9,6 +9,8 @@
 #ifndef CUBBYFLOW_ARRAY_SAMPLERS1_IMPL_H
 #define CUBBYFLOW_ARRAY_SAMPLERS1_IMPL_H
 
+#include <Utils/MathUtils.h>
+
 namespace CubbyFlow
 {
 	template <typename T, typename R>
@@ -31,13 +33,14 @@ namespace CubbyFlow
 	}
 
 	template <typename T, typename R>
-	T NearestArraySampler<T, R, 1>::operator()(R x) const
+	T NearestArraySampler<T, R, 1>::operator()(R pt) const
 	{
 		ssize_t i;
 		R fx;
 
 		assert(m_gridSpacing > std::numeric_limits<R>::epsilon());
-		R normalizedX = (x - m_origin) / m_gridSpacing;
+
+		R normalizedX = (pt - m_origin) / m_gridSpacing;
 
 		ssize_t iSize = static_cast<ssize_t>(m_accessor.Size());
 
@@ -49,19 +52,20 @@ namespace CubbyFlow
 	}
 
 	template <typename T, typename R>
-	void NearestArraySampler<T, R, 1>::GetCoordinate(R x, size_t* i) const
+	void NearestArraySampler<T, R, 1>::GetCoordinate(R pt, size_t* index) const
 	{
+		ssize_t i;
 		R fx;
 
 		assert(m_gridSpacing > std::numeric_limits<R>::epsilon());
-		R normalizedX = (x - m_origin) / m_gridSpacing;
+		
+		R normalizedX = (pt - m_origin) / m_gridSpacing;
 
 		ssize_t iSize = static_cast<ssize_t>(m_accessor.Size());
 
-		ssize_t _i;
-		GetBarycentric(normalizedX, 0, iSize, &_i, &fx);
+		GetBarycentric(normalizedX, 0, iSize, &i, &fx);
 
-		*i = std::min(static_cast<ssize_t>(_i + fx + 0.5), iSize - 1);
+		*index = std::min(static_cast<ssize_t>(i + fx + 0.5), iSize - 1);
 	}
 
 	template <typename T, typename R>
@@ -91,13 +95,14 @@ namespace CubbyFlow
 	}
 
 	template <typename T, typename R>
-	T LinearArraySampler<T, R, 1>::operator()(R x) const
+	T LinearArraySampler<T, R, 1>::operator()(R pt) const
 	{
 		ssize_t i;
 		R fx;
 
 		assert(m_gridSpacing > std::numeric_limits<R>::epsilon());
-		R normalizedX = (x - m_origin) / m_gridSpacing;
+
+		R normalizedX = (pt - m_origin) / m_gridSpacing;
 
 		ssize_t iSize = static_cast<ssize_t>(m_accessor.Size());
 
@@ -109,13 +114,14 @@ namespace CubbyFlow
 	}
 
 	template <typename T, typename R>
-	void LinearArraySampler<T, R, 1>::GetCoordinatesAndWeights(R x, size_t* i0, size_t* i1, T* weight0, T* weight1) const
+	void LinearArraySampler<T, R, 1>::GetCoordinatesAndWeights(R pt, size_t* i0, size_t* i1, T* weight0, T* weight1) const
 	{
 		ssize_t i;
 		R fx;
 
 		assert(m_gridSpacing > std::numeric_limits<R>::epsilon());
-		R normalizedX = (x - m_origin) / m_gridSpacing;
+
+		R normalizedX = (pt - m_origin) / m_gridSpacing;
 
 		ssize_t iSize = static_cast<ssize_t>(m_accessor.Size());
 
@@ -159,11 +165,13 @@ namespace CubbyFlow
 	T CubicArraySampler<T, R, 1>::operator()(R x) const
 	{
 		ssize_t i;
-		ssize_t iSize = static_cast<ssize_t>(m_accessor.Size());
 		R fx;
 
 		assert(m_gridSpacing > std::numeric_limits<R>::epsilon());
+
 		R normalizedX = (x - m_origin) / m_gridSpacing;
+
+		ssize_t iSize = static_cast<ssize_t>(m_accessor.Size());
 
 		GetBarycentric(normalizedX, 0, iSize, &i, &fx);
 
