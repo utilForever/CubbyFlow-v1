@@ -396,6 +396,9 @@
     <ClInclude Include="..\Includes\Collider\ColliderSet3.h">
       <Filter>Collider</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Particle\ParticleEmitter2.h">
+      <Filter>Particle</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Utils\Parallel.cpp">
