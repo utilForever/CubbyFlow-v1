@@ -33,7 +33,7 @@ namespace CubbyFlow
 		{
 			REGISTER_POINT_NEIGHBOR_SEARCHER2_BUILDER(PointParallelHashGridSearcher2)
 
-			REGISTER_POINT_NEIGHBOR_SEARCHER2_BUILDER(PointParallelHashGridSearcher3)
+			REGISTER_POINT_NEIGHBOR_SEARCHER3_BUILDER(PointParallelHashGridSearcher3)
 		}
 	};
 
