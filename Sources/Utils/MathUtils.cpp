@@ -163,4 +163,33 @@ namespace CubbyFlow
 
 		*i -= offset;
 	}
+
+	template<typename S, typename T>
+	inline S Lerp(const S& value0, const S& value1, T f)
+	{
+		return (1 - f) * value0 + f * value1;
+	}
+
+	template<typename S, typename T>
+	inline S BiLerp(
+		const S& f00, const S& f10,
+		const S& f01, const S& f11,
+		T tx, T ty)
+	{
+		return Lerp(Lerp(f00, f10, tx), Lerp(f01, f11, tx), ty);
+	}
+
+	template<typename S, typename T>
+	inline S TriLerp(
+		const S& f000, const S& f100,
+		const S& f010, const S& f110,
+		const S& f001, const S& f101,
+		const S& f011, const S& f111,
+		T tx, T ty, T fz)
+	{
+		return Lerp(
+			BiLerp(f000, f100, f010, f110, tx, ty),
+			BiLerp(f001, f101, f011, f111, tx, ty),
+			fz);
+	}
 }

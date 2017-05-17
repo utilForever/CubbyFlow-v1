@@ -160,6 +160,37 @@ namespace CubbyFlow
 	//!
 	template<class T>
 	inline void GetBarycentric(T x, ssize_t iLow, ssize_t iHigh, ssize_t* i, T* t);
+
+	//!
+	//! \brief      Computes linear interpolation.
+	//!
+	//! \param[in]  f0    The first value.
+	//! \param[in]  f1    The second value.
+	//! \param[in]  t     Relative offset [0, 1] from the first value.
+	//!
+	//! \tparam     S     Input value type.
+	//! \tparam     T     Offset type.
+	//!
+	//! \return     The interpolated value.
+	//!
+	template<typename S, typename T>
+	inline S Lerp(const S& f0, const S& f1, T t);
+
+	//! \brief      Computes bilinear interpolation.
+	template<typename S, typename T>
+	inline S BiLerp(
+		const S& f00, const S& f10,
+		const S& f01, const S& f11,
+		T tx, T ty);
+
+	//! \brief      Computes trilinear interpolation.
+	template<typename S, typename T>
+	inline S TriLerp(
+		const S& f000, const S& f100,
+		const S& f010, const S& f110,
+		const S& f001, const S& f101,
+		const S& f011, const S& f111,
+		T tx, T ty, T tz);
 }
 
 #endif
