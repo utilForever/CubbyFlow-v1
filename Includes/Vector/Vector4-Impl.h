@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_VECTOR4_IMPL_H
 #define CUBBYFLOW_VECTOR4_IMPL_H
 
-#include <Utils/MathUtils.h>
+#include <Math/MathUtils.h>
 
 #include <cassert>
 

@@ -7,7 +7,7 @@
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <Geometry/TriangleMesh3.h>
-#include <Utils/MathUtils.h>
+#include <Math/MathUtils.h>
 #include <Utils/Parallel.h>
 
 #include <obj/obj_parser.hpp>

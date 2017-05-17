@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_ARRAY_SAMPLERS1_IMPL_H
 #define CUBBYFLOW_ARRAY_SAMPLERS1_IMPL_H
 
-#include <Utils/MathUtils.h>
+#include <Math/MathUtils.h>
 
 namespace CubbyFlow
 {

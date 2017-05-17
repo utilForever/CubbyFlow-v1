@@ -7,7 +7,7 @@
 > Copyright (c) 2017, Dongmin Kim
 *************************************************************************/
 #include <Geometry/Sphere3.h>
-#include <Utils/MathUtils.h>
+#include <Math/MathUtils.h>
 
 namespace CubbyFlow
 {
