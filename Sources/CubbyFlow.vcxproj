@@ -222,6 +222,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Geometry\Sphere3.h" />
     <ClInclude Include="..\Includes\Geometry\Triangle3.h" />
     <ClInclude Include="..\Includes\Geometry\TriangleMesh3.h" />
+    <ClInclude Include="..\Includes\Math\MathUtils-Impl.h" />
     <ClInclude Include="..\Includes\Math\Quaternion-Impl.h" />
     <ClInclude Include="..\Includes\Math\Quaternion.h" />
     <ClInclude Include="..\Includes\Matrix\Matrix-Impl.h" />
@@ -324,7 +325,6 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="..\Sources\Transform\Transform2.cpp" />
     <ClCompile Include="..\Sources\Transform\Transform3.cpp" />
     <ClCompile Include="..\Sources\Utils\Logger.cpp" />
-    <ClCompile Include="..\Sources\Utils\MathUtils.cpp" />
     <ClCompile Include="..\Sources\Utils\Parallel.cpp" />
     <ClCompile Include="..\Sources\Utils\Timer.cpp" />
     <ClCompile Include="Collider\Collider2.cpp" />

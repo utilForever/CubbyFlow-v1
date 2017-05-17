@@ -193,6 +193,4 @@ namespace CubbyFlow
 		T tx, T ty, T tz);
 }
 
-#include <Math/MathUtils-Impl.h>
-
 #endif

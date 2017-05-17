@@ -6,7 +6,8 @@
 > Created Time: 2017/02/27
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Utils/MathUtils.h>
+#ifndef CUBBYFLOW_MATH_UTILS_IMPL_H
+#define CUBBYFLOW_MATH_UTILS_IMPL_H
 
 #include <algorithm>
 
@@ -193,3 +194,5 @@ namespace CubbyFlow
 			fz);
 	}
 }
+
+#endif
