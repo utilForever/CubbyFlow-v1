@@ -9,6 +9,8 @@
 #ifndef CUBBYFLOW_MATH_UTILS_H
 #define CUBBYFLOW_MATH_UTILS_H
 
+#include <Utils/Macros.h>
+
 namespace CubbyFlow
 {
 	//!
@@ -144,6 +146,20 @@ namespace CubbyFlow
 	//!
 	template <typename T>
 	inline T Clamp(T val, T low, T high);
+
+	//!
+	//! \brief      Gets the barycentric coordinate.
+	//!
+	//! \param[in]  x     The input value.
+	//! \param[in]  iLow  The lowest index.
+	//! \param[in]  iHigh The highest index.
+	//! \param      i     The output index.
+	//! \param      t     The offset from \p i.
+	//!
+	//! \tparam     T     Value type.
+	//!
+	template<class T>
+	inline void GetBarycentric(T x, ssize_t iLow, ssize_t iHigh, ssize_t* i, T* t);
 }
 
 #endif

@@ -8,6 +8,8 @@
 *************************************************************************/
 #include <Utils/MathUtils.h>
 
+#include <algorithm>
+
 namespace CubbyFlow
 {
 	template <typename T>
@@ -127,5 +129,38 @@ namespace CubbyFlow
 		}
 		
 		return val;
+	}
+
+	template<typename T>
+	inline void GetBarycentric(T x, ssize_t iLow, ssize_t iHigh, ssize_t* i, T* f)
+	{
+		T s = std::floor(x);
+		*i = static_cast<ssize_t>(s);
+
+		ssize_t offset = -iLow;
+		iLow += offset;
+		iHigh += offset;
+
+		if (iLow == iHigh)
+		{
+			*i = iLow;
+			*f = 0;
+		}
+		else if (*i < iLow)
+		{
+			*i = iLow;
+			*f = 0;
+		}
+		else if (*i > iHigh - 1)
+		{
+			*i = iHigh - 1;
+			*f = 1;
+		}
+		else
+		{
+			*f = static_cast<T>(x - s);
+		}
+
+		*i -= offset;
 	}
 }
