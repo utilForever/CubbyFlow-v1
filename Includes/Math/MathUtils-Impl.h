@@ -193,6 +193,51 @@ namespace CubbyFlow
 			BiLerp(f001, f101, f011, f111, tx, ty),
 			fz);
 	}
+
+	template <typename S, typename T>
+	inline S CatmullRom(const S& f0, const S& f1, const S& f2, const S& f3, T f)
+	{
+		S d1 = (f2 - f0) / 2;
+		S d2 = (f3 - f1) / 2;
+		S D1 = f2 - f1;
+
+		S a3 = d1 + d2 - 2 * D1;
+		S a2 = 3 * D1 - 2 * d1 - d2;
+		S a1 = d1;
+		S a0 = f1;
+
+		return a3 * Cubic(f) + a2 * Square(f) + a1 * f + a0;
+	}
+
+	template <typename T>
+	inline T MonotonicCatmullRom(const T& f0, const T& f1, const T& f2, const T& f3, T f)
+	{
+		T d1 = (f2 - f0) / 2;
+		T d2 = (f3 - f1) / 2;
+		T D1 = f2 - f1;
+
+		if (std::fabs(D1) < std::numeric_limits<double>::epsilon())
+		{
+			d1 = d2 = 0;
+		}
+
+		if (Sign(D1) != Sign(d1))
+		{
+			d1 = 0;
+		}
+
+		if (Sign(D1) != Sign(d2))
+		{
+			d2 = 0;
+		}
+
+		T a3 = d1 + d2 - 2 * D1;
+		T a2 = 3 * D1 - 2 * d1 - d2;
+		T a1 = d1;
+		T a0 = f1;
+
+		return a3 * Cubic(f) + a2 * Square(f) + a1 * f + a0;
+	}
 }
 
 #endif
