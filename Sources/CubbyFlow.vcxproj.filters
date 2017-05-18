@@ -408,10 +408,10 @@
     <ClInclude Include="..\Includes\Array\ArraySamplers2-Impl.h">
       <Filter>Array</Filter>
     </ClInclude>
-    <ClInclude Include="..\Includes\Utils\MathUtils.h">
+    <ClInclude Include="..\Includes\Math\MathUtils-Impl.h">
       <Filter>Math</Filter>
     </ClInclude>
-    <ClInclude Include="..\Includes\Math\MathUtils-Impl.h">
+    <ClInclude Include="..\Includes\Math\MathUtils.h">
       <Filter>Math</Filter>
     </ClInclude>
   </ItemGroup>

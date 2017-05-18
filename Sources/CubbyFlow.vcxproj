@@ -223,6 +223,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Geometry\Triangle3.h" />
     <ClInclude Include="..\Includes\Geometry\TriangleMesh3.h" />
     <ClInclude Include="..\Includes\Math\MathUtils-Impl.h" />
+    <ClInclude Include="..\Includes\Math\MathUtils.h" />
     <ClInclude Include="..\Includes\Math\Quaternion-Impl.h" />
     <ClInclude Include="..\Includes\Math\Quaternion.h" />
     <ClInclude Include="..\Includes\Matrix\Matrix-Impl.h" />
@@ -274,7 +275,6 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Utils\FlatbuffersHelper.h" />
     <ClInclude Include="..\Includes\Utils\Logger.h" />
     <ClInclude Include="..\Includes\Utils\Macros.h" />
-    <ClInclude Include="..\Includes\Utils\MathUtils.h" />
     <ClInclude Include="..\Includes\Utils\Parallel.h" />
     <ClInclude Include="..\Includes\Utils\Serialization-Impl.h" />
     <ClInclude Include="..\Includes\Utils\Serialization.h" />

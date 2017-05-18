@@ -191,6 +191,16 @@ namespace CubbyFlow
 		const S& f001, const S& f101,
 		const S& f011, const S& f111,
 		T tx, T ty, T tz);
+
+	//! \brief      Computes Catmull-Rom interpolation.
+	template <typename S, typename T>
+	inline S CatmullRom(const S& f0, const S& f1, const S& f2, const S& f3, T t);
+
+	//! \brief      Computes monotonic Catmull-Rom interpolation.
+	template <typename T>
+	inline T MonotonicCatmullRom(const T& f0, const T& f1, const T& f2, const T& f3, T t);
 }
+
+#include <Math/MathUtils-Impl.h>
 
 #endif
