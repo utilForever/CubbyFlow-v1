@@ -122,7 +122,10 @@ namespace CubbyFlow
 		ssize_t ip1 = std::min(i + 1, iSize - 1);
 		ssize_t jp1 = std::min(j + 1, jSize - 1);
 
-		return BiLerp(m_accessor(i, j), m_accessor(ip1, j), m_accessor(i, jp1), m_accessor(ip1, jp1), fx, fy);
+		return BiLerp(
+			m_accessor(i, j), m_accessor(ip1, j),
+			m_accessor(i, jp1), m_accessor(ip1, jp1),
+			fx, fy);
 	}
 
 	template <typename T, typename R>
@@ -207,11 +210,14 @@ namespace CubbyFlow
 
 		// Calculate in i direction first
 		T values[4];
+
 		for (int n = 0; n < 4; ++n)
 		{
 			values[n] = MonotonicCatmullRom(
-				m_accessor(is[0], js[n]), m_accessor(is[1], js[n]),
-				m_accessor(is[2], js[n]), m_accessor(is[3], js[n]),
+				m_accessor(is[0], js[n]),
+				m_accessor(is[1], js[n]),
+				m_accessor(is[2], js[n]),
+				m_accessor(is[3], js[n]),
 				fx);
 		}
 
