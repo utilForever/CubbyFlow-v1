@@ -414,6 +414,9 @@
     <ClInclude Include="..\Includes\Math\MathUtils.h">
       <Filter>Math</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Array\ArraySamplers3-Impl.h">
+      <Filter>Array</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Utils\Parallel.cpp">
