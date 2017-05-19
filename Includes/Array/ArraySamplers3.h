@@ -164,4 +164,6 @@ namespace CubbyFlow
 	using CubicArraySampler3 = CubicArraySampler<T, R, 3>;
 }
 
+#include <Array/ArraySamplers3-Impl.h>
+
 #endif
