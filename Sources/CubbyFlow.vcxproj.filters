@@ -563,5 +563,8 @@
     <ClCompile Include="Collider\Collider3.cpp">
       <Filter>Collider</Filter>
     </ClCompile>
+    <ClCompile Include="Collider\ColliderSet3.cpp">
+      <Filter>Collider</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
