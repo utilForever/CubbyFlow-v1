@@ -333,6 +333,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="Collider\ColliderSet2.cpp" />
     <ClCompile Include="Collider\ColliderSet3.cpp" />
     <ClCompile Include="Particle\ParticleEmitter2.cpp" />
+    <ClCompile Include="Particle\ParticleEmitter3.cpp" />
     <ClCompile Include="Particle\ParticleEmitterSet2.cpp" />
     <ClCompile Include="Particle\ParticleSystemData2.cpp" />
     <ClCompile Include="Particle\ParticleSystemData3.cpp" />
