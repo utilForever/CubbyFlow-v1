@@ -94,6 +94,10 @@ namespace CubbyFlow
 	{
 		return PI_DOUBLE;
 	}
+
+	// MARK: Physics
+	//! Gravity.
+	constexpr double GRAVITY = -9.8;
 }
 
 #endif
