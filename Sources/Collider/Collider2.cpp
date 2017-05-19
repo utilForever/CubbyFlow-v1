@@ -99,8 +99,7 @@ namespace CubbyFlow
 		// If the new candidate position of the particle is on the other side of
 		// the surface OR the new distance to the surface is less than the
 		// particle's radius, this particle is in colliding state.
-		return (position - colliderPoint.point).Dot(colliderPoint.normal) < 0.0 ||
-			colliderPoint.distance < radius;
+		return (position - colliderPoint.point).Dot(colliderPoint.normal) < 0.0 || colliderPoint.distance < radius;
 	}
 
 	void Collider2::Update(double currentTimeInSeconds, double timeIntervalInSeconds)
