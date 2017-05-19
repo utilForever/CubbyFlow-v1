@@ -554,5 +554,8 @@
     <ClCompile Include="Particle\ParticleEmitter2.cpp">
       <Filter>Particle</Filter>
     </ClCompile>
+    <ClCompile Include="Particle\ParticleEmitterSet2.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
