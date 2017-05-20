@@ -420,6 +420,9 @@
     <ClInclude Include="..\Includes\Particle\ParticleSystemSolver2.h">
       <Filter>Particle</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Particle\ParticleSystemSolver3.h">
+      <Filter>Particle</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Utils\Parallel.cpp">
