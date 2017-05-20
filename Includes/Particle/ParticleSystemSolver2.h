@@ -46,7 +46,7 @@ namespace CubbyFlow
 		virtual ~ParticleSystemSolver2();
 
 		//! Returns the drag coefficient.
-		double DragCoefficient() const;
+		double GetDragCoefficient() const;
 
 		//!
 		//! \brief      Sets the drag coefficient.
@@ -58,8 +58,8 @@ namespace CubbyFlow
 		//!
 		void SetDragCoefficient(double newDragCoefficient);
 
-		//! Sets the restitution coefficient.
-		double RestitutionCoefficient() const;
+		//! Gets the restitution coefficient.
+		double GetRestitutionCoefficient() const;
 
 		//!
 		//! \brief      Sets the restitution coefficient.
@@ -86,7 +86,7 @@ namespace CubbyFlow
 		//!
 		//! \return     The particle system data.
 		//!
-		const ParticleSystemData2Ptr& ParticleSystemData() const;
+		const ParticleSystemData2Ptr& GetParticleSystemData() const;
 
 		//! Returns the collider.
 		const Collider2Ptr& GetCollider() const;
@@ -137,9 +137,7 @@ namespace CubbyFlow
 
 		//! Resolves any collisions occurred by the particles where the particle
 		//! state is given by the position and velocity arrays.
-		void ResolveCollision(
-			ArrayAccessor1<Vector2D> newPositions,
-			ArrayAccessor1<Vector2D> newVelocities);
+		void ResolveCollision(ArrayAccessor1<Vector2D> newPositions, ArrayAccessor1<Vector2D> newVelocities);
 
 		//! Assign a new particle system data.
 		void SetParticleSystemData(const ParticleSystemData2Ptr& newParticles);
