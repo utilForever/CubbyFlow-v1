@@ -399,7 +399,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	bool Vector<T, 3>::IsSimilar(const Vector& other, T epsilon = std::numeric_limits<T>::epsilon()) const
+	bool Vector<T, 3>::IsSimilar(const Vector& other, T epsilon) const
 	{
 		return (std::fabs(x - other.x) < epsilon && std::fabs(y - other.y) < epsilon && std::fabs(z - other.z) < epsilon);
 	}
