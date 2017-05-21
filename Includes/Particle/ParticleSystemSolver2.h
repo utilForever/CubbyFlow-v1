@@ -137,7 +137,9 @@ namespace CubbyFlow
 
 		//! Resolves any collisions occurred by the particles where the particle
 		//! state is given by the position and velocity arrays.
-		void ResolveCollision(ArrayAccessor1<Vector2D> newPositions, ArrayAccessor1<Vector2D> newVelocities);
+		void ResolveCollision(
+			ArrayAccessor1<Vector2D> newPositions,
+			ArrayAccessor1<Vector2D> newVelocities);
 
 		//! Assign a new particle system data.
 		void SetParticleSystemData(const ParticleSystemData2Ptr& newParticles);
@@ -162,9 +164,9 @@ namespace CubbyFlow
 
 		void TimeIntegration(double timeStepInSeconds);
 
-		void UpdateCollider(double timeStepInSeconds);
+		void UpdateCollider(double timeStepInSeconds) const;
 
-		void UpdateEmitter(double timeStepInSeconds);
+		void UpdateEmitter(double timeStepInSeconds) const;
 	};
 
 	//! Shared pointer type for the ParticleSystemSolver2.
