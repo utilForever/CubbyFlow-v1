@@ -6,6 +6,8 @@
 #ifndef CUBBYFLOW_MANUAL_TEST_H
 #define CUBBYFLOW_MANUAL_TEST_H
 
+#define LAGACY_CODE 0
+
 #include <Array/ArrayAccessor1.h>
 #include <Array/ArrayAccessor2.h>
 #include <Array/ArrayAccessor3.h>
@@ -19,6 +21,10 @@
 #include <fstream>
 #include <string>
 #include <vector>
+
+#if LAGACY_CODE == 0
+#include <experimental/filesystem>
+#endif
 #ifdef CUBBYFLOW_WINDOWS
 #include <direct.h>
 #else
@@ -34,6 +40,7 @@ inline void CreateDirectory(const std::string& dirName)
 	pystring::split(dirName, tokens, "/");
 	std::string partialDir;
 
+#if (LAGACY_CODE == 1)
 	for (const auto& token : tokens)
 	{
 		partialDir = pystring::os::path::join(partialDir, token);
@@ -43,6 +50,12 @@ inline void CreateDirectory(const std::string& dirName)
 		mkdir(partialDir.c_str(), S_IRWXU | S_IRWXG | S_IRWXO);
 #endif
 	}
+#else //LAGACY_CODE == 1
+    for (const auto& token : tokens)
+    {
+        std::experimental::filesystem::create_directory(token);
+    }
+#endif // LAGACY_CODE != 1
 }
 
 #define CUBBYFLOW_TESTS(TestSetName) \
