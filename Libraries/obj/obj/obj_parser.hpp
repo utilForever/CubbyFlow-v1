@@ -7,7 +7,7 @@
 
 #include <functional>
 
-#include <obj/obj.hpp>
+#include "obj.hpp"
 
 namespace obj {
 

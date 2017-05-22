@@ -1,0 +1,588 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Array">
+      <UniqueIdentifier>{42b4cbb6-09f9-41f2-a4c1-4b6c3f5d413e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{ee0d78ce-8c31-45de-997a-0974a148889e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Size">
+      <UniqueIdentifier>{7086aa98-35e6-4dcd-a24c-0082f7ce1648}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Point">
+      <UniqueIdentifier>{99e5baf1-50a1-4cd4-9cdc-825cb8c33b80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vector">
+      <UniqueIdentifier>{2a9323e0-24d8-40e1-8075-5276f4af16aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Matrix">
+      <UniqueIdentifier>{6a2e4735-c1fb-4d91-adca-a5b79b0b7313}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Field">
+      <UniqueIdentifier>{b8c6f199-2af6-4dad-bd3c-14c813cebdc7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math">
+      <UniqueIdentifier>{8470db9a-4058-4955-a16b-1d4a607f68bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ray">
+      <UniqueIdentifier>{88c42ed7-3ce4-495c-9f44-df24261a3799}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BoundingBox">
+      <UniqueIdentifier>{00e2a1d5-edab-4842-9dc2-e3dc57eb338a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Transform">
+      <UniqueIdentifier>{54364948-8816-420d-9b91-1058870b6dac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Surface">
+      <UniqueIdentifier>{e0c0a01c-f0ab-4375-8fc3-81473906cad6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Geometry">
+      <UniqueIdentifier>{35979af0-a3e2-4397-9d98-bbb8d1824924}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Surface\Implicit">
+      <UniqueIdentifier>{e0a81b04-6d80-4c54-a6bc-4d280d6a1ac8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Animation">
+      <UniqueIdentifier>{66527e50-1573-4ed5-9787-547eb1e6ca10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Particle">
+      <UniqueIdentifier>{260fb7af-6a14-44bc-a6e8-38f14a0bc129}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Searcher">
+      <UniqueIdentifier>{67a78e8f-ef0b-4bcf-b3f0-62309465fb60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Collider">
+      <UniqueIdentifier>{8d1047ba-9c15-4fe7-8253-95e130bfd0b0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Includes\Animation\Animation.h">
+      <Filter>Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Animation\Frame.h">
+      <Filter>Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Animation\PhysicsAnimation.h">
+      <Filter>Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\BoundingBox\BoundingBox.h">
+      <Filter>BoundingBox</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\BoundingBox\BoundingBox2.h">
+      <Filter>BoundingBox</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\BoundingBox\BoundingBox3.h">
+      <Filter>BoundingBox</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Field\ConstantScalarField2.h">
+      <Filter>Field</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Field\ConstantScalarField3.h">
+      <Filter>Field</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Field\ConstantVectorField2.h">
+      <Filter>Field</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Field\ConstantVectorField3.h">
+      <Filter>Field</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Field\CustomScalarField2.h">
+      <Filter>Field</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Field\CustomScalarField3.h">
+      <Filter>Field</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Field\CustomVectorField2.h">
+      <Filter>Field</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Field\CustomVectorField3.h">
+      <Filter>Field</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Field\Field2.h">
+      <Filter>Field</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Field\Field3.h">
+      <Filter>Field</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Field\ScalarField2.h">
+      <Filter>Field</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Field\ScalarField3.h">
+      <Filter>Field</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Field\VectorField2.h">
+      <Filter>Field</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Field\VectorField3.h">
+      <Filter>Field</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Geometry\Sphere2.h">
+      <Filter>Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Geometry\Sphere3.h">
+      <Filter>Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Geometry\Triangle3.h">
+      <Filter>Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Geometry\TriangleMesh3.h">
+      <Filter>Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Math\Quaternion.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Ray\Ray.h">
+      <Filter>Ray</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Ray\Ray2.h">
+      <Filter>Ray</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Ray\Ray3.h">
+      <Filter>Ray</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Size\Size.h">
+      <Filter>Size</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Size\Size2.h">
+      <Filter>Size</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Size\Size3.h">
+      <Filter>Size</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Surface\Surface2.h">
+      <Filter>Surface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Surface\Surface3.h">
+      <Filter>Surface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Surface\SurfaceSet2.h">
+      <Filter>Surface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Surface\SurfaceSet3.h">
+      <Filter>Surface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Surface\Implicit\ImplicitSurface2.h">
+      <Filter>Surface\Implicit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Surface\Implicit\ImplicitSurface3.h">
+      <Filter>Surface\Implicit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Surface\Implicit\ImplicitSurfaceSet2.h">
+      <Filter>Surface\Implicit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Surface\Implicit\ImplicitSurfaceSet3.h">
+      <Filter>Surface\Implicit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Surface\Implicit\SurfaceToImplicit2.h">
+      <Filter>Surface\Implicit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Surface\Implicit\SurfaceToImplicit3.h">
+      <Filter>Surface\Implicit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Transform\Transform2.h">
+      <Filter>Transform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Transform\Transform3.h">
+      <Filter>Transform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Utils\Constants.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Utils\Logger.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Utils\Macros.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Utils\Parallel.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Utils\Timer.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Utils\TypeHelpers.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Array\Array.h">
+      <Filter>Array</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Array\Array1.h">
+      <Filter>Array</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Array\Array1-Impl.h">
+      <Filter>Array</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Array\Array2.h">
+      <Filter>Array</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Array\Array2-Impl.h">
+      <Filter>Array</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Array\Array3.h">
+      <Filter>Array</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Array\Array3-Impl.h">
+      <Filter>Array</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Array\ArrayAccessor.h">
+      <Filter>Array</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Array\ArrayAccessor1.h">
+      <Filter>Array</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Array\ArrayAccessor1-Impl.h">
+      <Filter>Array</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Array\ArrayAccessor2.h">
+      <Filter>Array</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Array\ArrayAccessor2-Impl.h">
+      <Filter>Array</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Array\ArrayAccessor3.h">
+      <Filter>Array</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Array\ArrayAccessor3-Impl.h">
+      <Filter>Array</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\BoundingBox\BoundingBox2-Impl.h">
+      <Filter>BoundingBox</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\BoundingBox\BoundingBox3-Impl.h">
+      <Filter>BoundingBox</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\BoundingBox\BoundingBox-Impl.h">
+      <Filter>BoundingBox</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vector\Vector4-Impl.h">
+      <Filter>Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vector\Vector-Impl.h">
+      <Filter>Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vector\Vector.h">
+      <Filter>Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vector\Vector2.h">
+      <Filter>Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vector\Vector2-Impl.h">
+      <Filter>Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vector\Vector3.h">
+      <Filter>Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vector\Vector3-Impl.h">
+      <Filter>Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vector\Vector4.h">
+      <Filter>Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Math\Quaternion-Impl.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Ray\Ray2-Impl.h">
+      <Filter>Ray</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Ray\Ray3-Impl.h">
+      <Filter>Ray</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Point\Point2.h">
+      <Filter>Point</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Point\Point2-Impl.h">
+      <Filter>Point</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Point\Point3.h">
+      <Filter>Point</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Point\Point3-Impl.h">
+      <Filter>Point</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Point\Point-Impl.h">
+      <Filter>Point</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Point\Point.h">
+      <Filter>Point</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Matrix\Matrix4x4-Impl.h">
+      <Filter>Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Matrix\Matrix-Impl.h">
+      <Filter>Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Matrix\Matrix.h">
+      <Filter>Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Matrix\Matrix2x2.h">
+      <Filter>Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Matrix\Matrix2x2-Impl.h">
+      <Filter>Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Matrix\Matrix3x3.h">
+      <Filter>Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Matrix\Matrix3x3-Impl.h">
+      <Filter>Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Matrix\Matrix4x4.h">
+      <Filter>Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Utils\Serialization.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Utils\Serialization-Impl.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Particle\ParticleSystemData2.h">
+      <Filter>Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Array\ArraySamplers.h">
+      <Filter>Array</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Array\ArraySamplers1.h">
+      <Filter>Array</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Array\ArraySamplers2.h">
+      <Filter>Array</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Array\ArraySamplers3.h">
+      <Filter>Array</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Array\ArraySamplers1-Impl.h">
+      <Filter>Array</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Array\ArrayUtils.h">
+      <Filter>Array</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Array\ArrayUtils-Impl.h">
+      <Filter>Array</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Searcher\PointNeighborSearcher2.h">
+      <Filter>Searcher</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Searcher\PointParallelHashGridSearcher2.h">
+      <Filter>Searcher</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Utils\FlatbuffersHelper.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Utils\Factory.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Searcher\PointNeighborSearcher3.h">
+      <Filter>Searcher</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Searcher\PointParallelHashGridSearcher3.h">
+      <Filter>Searcher</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Particle\ParticleSystemData3.h">
+      <Filter>Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Collider\Collider2.h">
+      <Filter>Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Collider\Collider3.h">
+      <Filter>Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Collider\ColliderSet2.h">
+      <Filter>Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Collider\ColliderSet3.h">
+      <Filter>Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Particle\ParticleEmitter2.h">
+      <Filter>Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Particle\ParticleEmitter3.h">
+      <Filter>Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Particle\ParticleEmitterSet2.h">
+      <Filter>Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Particle\ParticleEmitterSet3.h">
+      <Filter>Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Array\ArraySamplers2-Impl.h">
+      <Filter>Array</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Math\MathUtils-Impl.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Math\MathUtils.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Array\ArraySamplers3-Impl.h">
+      <Filter>Array</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Particle\ParticleSystemSolver2.h">
+      <Filter>Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Particle\ParticleSystemSolver3.h">
+      <Filter>Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Searcher\PointHashGridSearcher2.h">
+      <Filter>Searcher</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Sources\Utils\Parallel.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
+      <Filter>Field</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Field\Field2.cpp">
+      <Filter>Field</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Field\Field3.cpp">
+      <Filter>Field</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Field\ScalarField2.cpp">
+      <Filter>Field</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Field\ScalarField3.cpp">
+      <Filter>Field</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Field\VectorField2.cpp">
+      <Filter>Field</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Field\VectorField3.cpp">
+      <Filter>Field</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Field\CustomScalarField3.cpp">
+      <Filter>Field</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Field\CustomVectorField2.cpp">
+      <Filter>Field</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Field\CustomVectorField3.cpp">
+      <Filter>Field</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Field\ConstantScalarField2.cpp">
+      <Filter>Field</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Field\ConstantScalarField3.cpp">
+      <Filter>Field</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Field\ConstantVectorField2.cpp">
+      <Filter>Field</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Field\ConstantVectorField3.cpp">
+      <Filter>Field</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Transform\Transform2.cpp">
+      <Filter>Transform</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Transform\Transform3.cpp">
+      <Filter>Transform</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Geometry\Sphere2.cpp">
+      <Filter>Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Geometry\Sphere3.cpp">
+      <Filter>Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Geometry\Triangle3.cpp">
+      <Filter>Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Geometry\TriangleMesh3.cpp">
+      <Filter>Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Surface\Surface2.cpp">
+      <Filter>Surface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Surface\Surface3.cpp">
+      <Filter>Surface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Surface\SurfaceSet2.cpp">
+      <Filter>Surface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Surface\SurfaceSet3.cpp">
+      <Filter>Surface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Surface\Implicit\ImplicitSurface2.cpp">
+      <Filter>Surface\Implicit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Surface\Implicit\ImplicitSurfaceSet2.cpp">
+      <Filter>Surface\Implicit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Surface\Implicit\SurfaceToImplicit2.cpp">
+      <Filter>Surface\Implicit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Surface\Implicit\ImplicitSurface3.cpp">
+      <Filter>Surface\Implicit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Surface\Implicit\SurfaceToImplicit3.cpp">
+      <Filter>Surface\Implicit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Animation\Frame.cpp">
+      <Filter>Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Animation\Animation.cpp">
+      <Filter>Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Surface\Implicit\ImplicitSurfaceSet3.cpp">
+      <Filter>Surface\Implicit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Utils\Timer.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Animation\PhysicsAnimation.cpp">
+      <Filter>Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Utils\Logger.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Particle\ParticleSystemData2.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="Searcher\PointNeighborSearcher2.cpp">
+      <Filter>Searcher</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Includes\Searcher\PointParallelHashGridSearcher2.cpp">
+      <Filter>Searcher</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\Factory.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Searcher\PointNeighborSearcher3.cpp">
+      <Filter>Searcher</Filter>
+    </ClCompile>
+    <ClCompile Include="Searcher\PointParallelHashGridSearcher3.cpp">
+      <Filter>Searcher</Filter>
+    </ClCompile>
+    <ClCompile Include="Particle\ParticleSystemData3.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="Collider\Collider2.cpp">
+      <Filter>Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="Collider\ColliderSet2.cpp">
+      <Filter>Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="Particle\ParticleEmitter2.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="Particle\ParticleEmitterSet2.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="Collider\Collider3.cpp">
+      <Filter>Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="Collider\ColliderSet3.cpp">
+      <Filter>Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="Particle\ParticleEmitter3.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="Particle\ParticleEmitterSet3.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="Particle\ParticleSystemSolver2.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

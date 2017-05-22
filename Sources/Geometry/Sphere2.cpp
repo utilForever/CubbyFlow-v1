@@ -7,7 +7,7 @@
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <Geometry/Sphere2.h>
-#include <Utils/MathUtils.h>
+#include <Math/MathUtils.h>
 
 namespace CubbyFlow
 {

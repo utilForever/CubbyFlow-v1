@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{67F165E0-323E-4FB0-BA14-285063218ED8}</ProjectGuid>
+    <RootNamespace>CubbyFlow</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\Builds\Common.props" />
+    <Import Project="..\Builds\Debug.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\Builds\Common.props" />
+    <Import Project="..\Builds\Release.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\Builds\Common.props" />
+    <Import Project="..\Builds\Debug.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\Builds\Common.props" />
+    <Import Project="..\Builds\Release.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\Includes;..\Sources;..\Libraries\obj;..\Libraries</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\Includes;..\Sources;..\Libraries\obj;..\Libraries</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\Includes;..\Sources;..\Libraries\obj;..\Libraries</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\Includes;..\Sources;..\Libraries\obj;..\Libraries</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <MinimalRebuild>false</MinimalRebuild>
+      <AdditionalOptions>/std:c++17 %(AdditionalOptions)</AdditionalOptions>
+      <PreprocessorDefinitions>_HAS_CXX17;WIN32;_DEBUG;_LIB;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <PostBuildEvent>
+      <Command>mkdir $(SolutionDir)Results\$(Platform)\$(Configuration)\Includes\
+xcopy /y $(SolutionDir)obj\$(Platform)\$(Configuration)\CubbyFlow.lib $(SolutionDir)Results\$(Platform)\$(Configuration)\
+xcopy /y $(SolutionDir)obj\$(Platform)\$(Configuration)\CubbyFlow.pdb $(SolutionDir)Results\$(Platform)\$(Configuration)\
+xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configuration)\Includes</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <MinimalRebuild>false</MinimalRebuild>
+      <AdditionalOptions>/std:c++17 %(AdditionalOptions)</AdditionalOptions>
+      <PreprocessorDefinitions>_HAS_CXX17;WIN32;_DEBUG;_LIB;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <PostBuildEvent>
+      <Command>mkdir $(SolutionDir)Results\$(Platform)\$(Configuration)\Includes\
+xcopy /y $(SolutionDir)obj\$(Platform)\$(Configuration)\CubbyFlow.lib $(SolutionDir)Results\$(Platform)\$(Configuration)\
+xcopy /y $(SolutionDir)obj\$(Platform)\$(Configuration)\CubbyFlow.pdb $(SolutionDir)Results\$(Platform)\$(Configuration)\
+xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configuration)\Includes</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalOptions>/std:c++17 %(AdditionalOptions)</AdditionalOptions>
+      <PreprocessorDefinitions>_HAS_CXX17;WIN32;NDEBUG;_LIB;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <PostBuildEvent>
+      <Command>mkdir $(SolutionDir)Results\$(Platform)\$(Configuration)\Includes\
+xcopy /y $(SolutionDir)obj\$(Platform)\$(Configuration)\CubbyFlow.lib $(SolutionDir)Results\$(Platform)\$(Configuration)\
+xcopy /y $(SolutionDir)obj\$(Platform)\$(Configuration)\CubbyFlow.pdb $(SolutionDir)Results\$(Platform)\$(Configuration)\
+xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configuration)\Includes</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalOptions>/std:c++17 %(AdditionalOptions)</AdditionalOptions>
+      <PreprocessorDefinitions>_HAS_CXX17;WIN32;NDEBUG;_LIB;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <PostBuildEvent>
+      <Command>mkdir $(SolutionDir)Results\$(Platform)\$(Configuration)\Includes\
+xcopy /y $(SolutionDir)obj\$(Platform)\$(Configuration)\CubbyFlow.lib $(SolutionDir)Results\$(Platform)\$(Configuration)\
+xcopy /y $(SolutionDir)obj\$(Platform)\$(Configuration)\CubbyFlow.pdb $(SolutionDir)Results\$(Platform)\$(Configuration)\
+xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configuration)\Includes</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Includes\Animation\Animation.h" />
+    <ClInclude Include="..\Includes\Animation\Frame.h" />
+    <ClInclude Include="..\Includes\Animation\PhysicsAnimation.h" />
+    <ClInclude Include="..\Includes\Array\Array.h" />
+    <ClInclude Include="..\Includes\Array\Array1-Impl.h" />
+    <ClInclude Include="..\Includes\Array\Array1.h" />
+    <ClInclude Include="..\Includes\Array\Array2-Impl.h" />
+    <ClInclude Include="..\Includes\Array\Array2.h" />
+    <ClInclude Include="..\Includes\Array\Array3-Impl.h" />
+    <ClInclude Include="..\Includes\Array\Array3.h" />
+    <ClInclude Include="..\Includes\Array\ArrayAccessor.h" />
+    <ClInclude Include="..\Includes\Array\ArrayAccessor1-Impl.h" />
+    <ClInclude Include="..\Includes\Array\ArrayAccessor1.h" />
+    <ClInclude Include="..\Includes\Array\ArrayAccessor2-Impl.h" />
+    <ClInclude Include="..\Includes\Array\ArrayAccessor2.h" />
+    <ClInclude Include="..\Includes\Array\ArrayAccessor3-Impl.h" />
+    <ClInclude Include="..\Includes\Array\ArrayAccessor3.h" />
+    <ClInclude Include="..\Includes\Array\ArraySamplers.h" />
+    <ClInclude Include="..\Includes\Array\ArraySamplers1-Impl.h" />
+    <ClInclude Include="..\Includes\Array\ArraySamplers1.h" />
+    <ClInclude Include="..\Includes\Array\ArraySamplers2-Impl.h" />
+    <ClInclude Include="..\Includes\Array\ArraySamplers2.h" />
+    <ClInclude Include="..\Includes\Array\ArraySamplers3-Impl.h" />
+    <ClInclude Include="..\Includes\Array\ArraySamplers3.h" />
+    <ClInclude Include="..\Includes\Array\ArrayUtils-Impl.h" />
+    <ClInclude Include="..\Includes\Array\ArrayUtils.h" />
+    <ClInclude Include="..\Includes\BoundingBox\BoundingBox-Impl.h" />
+    <ClInclude Include="..\Includes\BoundingBox\BoundingBox.h" />
+    <ClInclude Include="..\Includes\BoundingBox\BoundingBox2-Impl.h" />
+    <ClInclude Include="..\Includes\BoundingBox\BoundingBox2.h" />
+    <ClInclude Include="..\Includes\BoundingBox\BoundingBox3-Impl.h" />
+    <ClInclude Include="..\Includes\BoundingBox\BoundingBox3.h" />
+    <ClInclude Include="..\Includes\Collider\Collider2.h" />
+    <ClInclude Include="..\Includes\Collider\Collider3.h" />
+    <ClInclude Include="..\Includes\Collider\ColliderSet2.h" />
+    <ClInclude Include="..\Includes\Collider\ColliderSet3.h" />
+    <ClInclude Include="..\Includes\Field\ConstantScalarField2.h" />
+    <ClInclude Include="..\Includes\Field\ConstantScalarField3.h" />
+    <ClInclude Include="..\Includes\Field\ConstantVectorField2.h" />
+    <ClInclude Include="..\Includes\Field\ConstantVectorField3.h" />
+    <ClInclude Include="..\Includes\Field\CustomScalarField2.h" />
+    <ClInclude Include="..\Includes\Field\CustomScalarField3.h" />
+    <ClInclude Include="..\Includes\Field\CustomVectorField2.h" />
+    <ClInclude Include="..\Includes\Field\CustomVectorField3.h" />
+    <ClInclude Include="..\Includes\Field\Field2.h" />
+    <ClInclude Include="..\Includes\Field\Field3.h" />
+    <ClInclude Include="..\Includes\Field\ScalarField2.h" />
+    <ClInclude Include="..\Includes\Field\ScalarField3.h" />
+    <ClInclude Include="..\Includes\Field\VectorField2.h" />
+    <ClInclude Include="..\Includes\Field\VectorField3.h" />
+    <ClInclude Include="..\Includes\Geometry\Sphere2.h" />
+    <ClInclude Include="..\Includes\Geometry\Sphere3.h" />
+    <ClInclude Include="..\Includes\Geometry\Triangle3.h" />
+    <ClInclude Include="..\Includes\Geometry\TriangleMesh3.h" />
+    <ClInclude Include="..\Includes\Math\MathUtils-Impl.h" />
+    <ClInclude Include="..\Includes\Math\MathUtils.h" />
+    <ClInclude Include="..\Includes\Math\Quaternion-Impl.h" />
+    <ClInclude Include="..\Includes\Math\Quaternion.h" />
+    <ClInclude Include="..\Includes\Matrix\Matrix-Impl.h" />
+    <ClInclude Include="..\Includes\Matrix\Matrix.h" />
+    <ClInclude Include="..\Includes\Matrix\Matrix2x2-Impl.h" />
+    <ClInclude Include="..\Includes\Matrix\Matrix2x2.h" />
+    <ClInclude Include="..\Includes\Matrix\Matrix3x3-Impl.h" />
+    <ClInclude Include="..\Includes\Matrix\Matrix3x3.h" />
+    <ClInclude Include="..\Includes\Matrix\Matrix4x4-Impl.h" />
+    <ClInclude Include="..\Includes\Matrix\Matrix4x4.h" />
+    <ClInclude Include="..\Includes\Particle\ParticleEmitter2.h" />
+    <ClInclude Include="..\Includes\Particle\ParticleEmitter3.h" />
+    <ClInclude Include="..\Includes\Particle\ParticleEmitterSet2.h" />
+    <ClInclude Include="..\Includes\Particle\ParticleEmitterSet3.h" />
+    <ClInclude Include="..\Includes\Particle\ParticleSystemData2.h" />
+    <ClInclude Include="..\Includes\Particle\ParticleSystemData3.h" />
+    <ClInclude Include="..\Includes\Particle\ParticleSystemSolver2.h" />
+    <ClInclude Include="..\Includes\Particle\ParticleSystemSolver3.h" />
+    <ClInclude Include="..\Includes\Point\Point-Impl.h" />
+    <ClInclude Include="..\Includes\Point\Point.h" />
+    <ClInclude Include="..\Includes\Point\Point2-Impl.h" />
+    <ClInclude Include="..\Includes\Point\Point2.h" />
+    <ClInclude Include="..\Includes\Point\Point3-Impl.h" />
+    <ClInclude Include="..\Includes\Point\Point3.h" />
+    <ClInclude Include="..\Includes\Ray\Ray.h" />
+    <ClInclude Include="..\Includes\Ray\Ray2-Impl.h" />
+    <ClInclude Include="..\Includes\Ray\Ray2.h" />
+    <ClInclude Include="..\Includes\Ray\Ray3-Impl.h" />
+    <ClInclude Include="..\Includes\Ray\Ray3.h" />
+    <ClInclude Include="..\Includes\Searcher\PointHashGridSearcher2.h" />
+    <ClInclude Include="..\Includes\Searcher\PointNeighborSearcher2.h" />
+    <ClInclude Include="..\Includes\Searcher\PointNeighborSearcher3.h" />
+    <ClInclude Include="..\Includes\Searcher\PointParallelHashGridSearcher2.h" />
+    <ClInclude Include="..\Includes\Searcher\PointParallelHashGridSearcher3.h" />
+    <ClInclude Include="..\Includes\Size\Size.h" />
+    <ClInclude Include="..\Includes\Size\Size2.h" />
+    <ClInclude Include="..\Includes\Size\Size3.h" />
+    <ClInclude Include="..\Includes\Surface\Implicit\ImplicitSurface2.h" />
+    <ClInclude Include="..\Includes\Surface\Implicit\ImplicitSurface3.h" />
+    <ClInclude Include="..\Includes\Surface\Implicit\ImplicitSurfaceSet2.h" />
+    <ClInclude Include="..\Includes\Surface\Implicit\ImplicitSurfaceSet3.h" />
+    <ClInclude Include="..\Includes\Surface\Implicit\SurfaceToImplicit2.h" />
+    <ClInclude Include="..\Includes\Surface\Implicit\SurfaceToImplicit3.h" />
+    <ClInclude Include="..\Includes\Surface\Surface2.h" />
+    <ClInclude Include="..\Includes\Surface\Surface3.h" />
+    <ClInclude Include="..\Includes\Surface\SurfaceSet2.h" />
+    <ClInclude Include="..\Includes\Surface\SurfaceSet3.h" />
+    <ClInclude Include="..\Includes\Transform\Transform2.h" />
+    <ClInclude Include="..\Includes\Transform\Transform3.h" />
+    <ClInclude Include="..\Includes\Utils\Constants.h" />
+    <ClInclude Include="..\Includes\Utils\Factory.h" />
+    <ClInclude Include="..\Includes\Utils\FlatbuffersHelper.h" />
+    <ClInclude Include="..\Includes\Utils\Logger.h" />
+    <ClInclude Include="..\Includes\Utils\Macros.h" />
+    <ClInclude Include="..\Includes\Utils\Parallel.h" />
+    <ClInclude Include="..\Includes\Utils\Serialization-Impl.h" />
+    <ClInclude Include="..\Includes\Utils\Serialization.h" />
+    <ClInclude Include="..\Includes\Utils\Timer.h" />
+    <ClInclude Include="..\Includes\Utils\TypeHelpers.h" />
+    <ClInclude Include="..\Includes\Vector\Vector-Impl.h" />
+    <ClInclude Include="..\Includes\Vector\Vector.h" />
+    <ClInclude Include="..\Includes\Vector\Vector2-Impl.h" />
+    <ClInclude Include="..\Includes\Vector\Vector2.h" />
+    <ClInclude Include="..\Includes\Vector\Vector3-Impl.h" />
+    <ClInclude Include="..\Includes\Vector\Vector3.h" />
+    <ClInclude Include="..\Includes\Vector\Vector4-Impl.h" />
+    <ClInclude Include="..\Includes\Vector\Vector4.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Includes\Searcher\PointParallelHashGridSearcher2.cpp" />
+    <ClCompile Include="..\Sources\Animation\Animation.cpp" />
+    <ClCompile Include="..\Sources\Animation\Frame.cpp" />
+    <ClCompile Include="..\Sources\Animation\PhysicsAnimation.cpp" />
+    <ClCompile Include="..\Sources\Field\ConstantScalarField2.cpp" />
+    <ClCompile Include="..\Sources\Field\ConstantScalarField3.cpp" />
+    <ClCompile Include="..\Sources\Field\ConstantVectorField2.cpp" />
+    <ClCompile Include="..\Sources\Field\ConstantVectorField3.cpp" />
+    <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp" />
+    <ClCompile Include="..\Sources\Field\CustomScalarField3.cpp" />
+    <ClCompile Include="..\Sources\Field\CustomVectorField2.cpp" />
+    <ClCompile Include="..\Sources\Field\CustomVectorField3.cpp" />
+    <ClCompile Include="..\Sources\Field\Field2.cpp" />
+    <ClCompile Include="..\Sources\Field\Field3.cpp" />
+    <ClCompile Include="..\Sources\Field\ScalarField2.cpp" />
+    <ClCompile Include="..\Sources\Field\ScalarField3.cpp" />
+    <ClCompile Include="..\Sources\Field\VectorField2.cpp" />
+    <ClCompile Include="..\Sources\Field\VectorField3.cpp" />
+    <ClCompile Include="..\Sources\Geometry\Sphere2.cpp" />
+    <ClCompile Include="..\Sources\Geometry\Sphere3.cpp" />
+    <ClCompile Include="..\Sources\Geometry\Triangle3.cpp" />
+    <ClCompile Include="..\Sources\Geometry\TriangleMesh3.cpp" />
+    <ClCompile Include="..\Sources\Surface\Implicit\ImplicitSurface2.cpp" />
+    <ClCompile Include="..\Sources\Surface\Implicit\ImplicitSurface3.cpp" />
+    <ClCompile Include="..\Sources\Surface\Implicit\ImplicitSurfaceSet2.cpp" />
+    <ClCompile Include="..\Sources\Surface\Implicit\ImplicitSurfaceSet3.cpp" />
+    <ClCompile Include="..\Sources\Surface\Implicit\SurfaceToImplicit2.cpp" />
+    <ClCompile Include="..\Sources\Surface\Implicit\SurfaceToImplicit3.cpp" />
+    <ClCompile Include="..\Sources\Surface\Surface2.cpp" />
+    <ClCompile Include="..\Sources\Surface\Surface3.cpp" />
+    <ClCompile Include="..\Sources\Surface\SurfaceSet2.cpp" />
+    <ClCompile Include="..\Sources\Surface\SurfaceSet3.cpp" />
+    <ClCompile Include="..\Sources\Transform\Transform2.cpp" />
+    <ClCompile Include="..\Sources\Transform\Transform3.cpp" />
+    <ClCompile Include="..\Sources\Utils\Logger.cpp" />
+    <ClCompile Include="..\Sources\Utils\Parallel.cpp" />
+    <ClCompile Include="..\Sources\Utils\Timer.cpp" />
+    <ClCompile Include="Collider\Collider2.cpp" />
+    <ClCompile Include="Collider\Collider3.cpp" />
+    <ClCompile Include="Collider\ColliderSet2.cpp" />
+    <ClCompile Include="Collider\ColliderSet3.cpp" />
+    <ClCompile Include="Particle\ParticleEmitter2.cpp" />
+    <ClCompile Include="Particle\ParticleEmitter3.cpp" />
+    <ClCompile Include="Particle\ParticleEmitterSet2.cpp" />
+    <ClCompile Include="Particle\ParticleEmitterSet3.cpp" />
+    <ClCompile Include="Particle\ParticleSystemData2.cpp" />
+    <ClCompile Include="Particle\ParticleSystemData3.cpp" />
+    <ClCompile Include="Particle\ParticleSystemSolver2.cpp" />
+    <ClCompile Include="Searcher\PointNeighborSearcher2.cpp" />
+    <ClCompile Include="Searcher\PointNeighborSearcher3.cpp" />
+    <ClCompile Include="Searcher\PointParallelHashGridSearcher3.cpp" />
+    <ClCompile Include="Utils\Factory.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
