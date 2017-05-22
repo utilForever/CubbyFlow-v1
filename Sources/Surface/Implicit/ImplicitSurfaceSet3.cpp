@@ -209,6 +209,5 @@ namespace CubbyFlow
 		{
 			delete obj;
 		});
-
 	}
 }
