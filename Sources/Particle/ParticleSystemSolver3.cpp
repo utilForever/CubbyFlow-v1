@@ -267,7 +267,7 @@ namespace CubbyFlow
 		});
 	}
 
-	void ParticleSystemSolver3::UpdateCollider(double timeStepInSeconds)
+	void ParticleSystemSolver3::UpdateCollider(double timeStepInSeconds) const
 	{
 		if (m_collider != nullptr)
 		{
@@ -275,7 +275,7 @@ namespace CubbyFlow
 		}
 	}
 
-	void ParticleSystemSolver3::UpdateEmitter(double timeStepInSeconds)
+	void ParticleSystemSolver3::UpdateEmitter(double timeStepInSeconds) const
 	{
 		if (m_emitter != nullptr)
 		{

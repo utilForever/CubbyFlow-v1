@@ -162,9 +162,9 @@ namespace CubbyFlow
 		
 		void TimeIntegration(double timeStepInSeconds);
 
-		void UpdateCollider(double timeStepInSeconds);
+		void UpdateCollider(double timeStepInSeconds) const;
 
-		void UpdateEmitter(double timeStepInSeconds);
+		void UpdateEmitter(double timeStepInSeconds) const;
 	};
 
 	//! Shared pointer type for the ParticleSystemSolver3.
