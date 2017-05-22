@@ -584,5 +584,8 @@
     <ClCompile Include="Particle\ParticleSystemSolver2.cpp">
       <Filter>Particle</Filter>
     </ClCompile>
+    <ClCompile Include="Particle\ParticleSystemSolver3.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
