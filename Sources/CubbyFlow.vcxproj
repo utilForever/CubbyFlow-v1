@@ -352,6 +352,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="Particle\ParticleSystemData3.cpp" />
     <ClCompile Include="Particle\ParticleSystemSolver2.cpp" />
     <ClCompile Include="Particle\ParticleSystemSolver3.cpp" />
+    <ClCompile Include="PointHashGridSearcher2.cpp" />
     <ClCompile Include="Searcher\PointNeighborSearcher2.cpp" />
     <ClCompile Include="Searcher\PointNeighborSearcher3.cpp" />
     <ClCompile Include="Searcher\PointParallelHashGridSearcher3.cpp" />

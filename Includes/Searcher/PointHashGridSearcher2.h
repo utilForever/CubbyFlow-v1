@@ -130,7 +130,7 @@ namespace CubbyFlow
 		//!
 		//! \return     Copy of this object.
 		//!
-		PointNeighborSearcher2Ptr Clone() const override;
+		PointHashGridSearcher2Ptr Clone() const override;
 
 		//! Assignment operator.
 		PointHashGridSearcher2& operator=(const PointHashGridSearcher2& other);

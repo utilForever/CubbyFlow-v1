@@ -590,5 +590,8 @@
     <ClCompile Include="Particle\ParticleSystemSolver3.cpp">
       <Filter>Particle</Filter>
     </ClCompile>
+    <ClCompile Include="PointHashGridSearcher2.cpp">
+      <Filter>Searcher</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
