@@ -303,7 +303,6 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Vector\Vector4.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Includes\Searcher\PointParallelHashGridSearcher2.cpp" />
     <ClCompile Include="..\Sources\Animation\Animation.cpp" />
     <ClCompile Include="..\Sources\Animation\Frame.cpp" />
     <ClCompile Include="..\Sources\Animation\PhysicsAnimation.cpp" />
@@ -352,10 +351,11 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="Particle\ParticleSystemData3.cpp" />
     <ClCompile Include="Particle\ParticleSystemSolver2.cpp" />
     <ClCompile Include="Particle\ParticleSystemSolver3.cpp" />
-    <ClCompile Include="PointHashGridSearcher2.cpp" />
-    <ClCompile Include="PointHashGridSearcher3.cpp" />
+    <ClCompile Include="Searcher\PointHashGridSearcher2.cpp" />
+    <ClCompile Include="Searcher\PointHashGridSearcher3.cpp" />
     <ClCompile Include="Searcher\PointNeighborSearcher2.cpp" />
     <ClCompile Include="Searcher\PointNeighborSearcher3.cpp" />
+    <ClCompile Include="Searcher\PointParallelHashGridSearcher2.cpp" />
     <ClCompile Include="Searcher\PointParallelHashGridSearcher3.cpp" />
     <ClCompile Include="Utils\Factory.cpp" />
   </ItemGroup>

@@ -545,9 +545,6 @@
     <ClCompile Include="Searcher\PointNeighborSearcher2.cpp">
       <Filter>Searcher</Filter>
     </ClCompile>
-    <ClCompile Include="..\Includes\Searcher\PointParallelHashGridSearcher2.cpp">
-      <Filter>Searcher</Filter>
-    </ClCompile>
     <ClCompile Include="Utils\Factory.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
@@ -590,10 +587,13 @@
     <ClCompile Include="Particle\ParticleSystemSolver3.cpp">
       <Filter>Particle</Filter>
     </ClCompile>
-    <ClCompile Include="PointHashGridSearcher2.cpp">
+    <ClCompile Include="Searcher\PointHashGridSearcher2.cpp">
       <Filter>Searcher</Filter>
     </ClCompile>
-    <ClCompile Include="PointHashGridSearcher3.cpp">
+    <ClCompile Include="Searcher\PointHashGridSearcher3.cpp">
+      <Filter>Searcher</Filter>
+    </ClCompile>
+    <ClCompile Include="Searcher\PointParallelHashGridSearcher2.cpp">
       <Filter>Searcher</Filter>
     </ClCompile>
   </ItemGroup>
