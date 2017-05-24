@@ -593,5 +593,8 @@
     <ClCompile Include="PointHashGridSearcher2.cpp">
       <Filter>Searcher</Filter>
     </ClCompile>
+    <ClCompile Include="PointHashGridSearcher3.cpp">
+      <Filter>Searcher</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

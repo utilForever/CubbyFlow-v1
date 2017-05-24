@@ -130,7 +130,7 @@ namespace CubbyFlow
 		//!
 		//! \return     Copy of this object.
 		//!
-		PointHashGridSearcher2Ptr Clone() const override;
+		PointNeighborSearcher2Ptr Clone() const override;
 
 		//! Assignment operator.
 		PointHashGridSearcher2& operator=(const PointHashGridSearcher2& other);
@@ -179,7 +179,7 @@ namespace CubbyFlow
 		//! Builds shared pointer of PointHashGridSearcher2 instance.
 		PointHashGridSearcher2Ptr MakeShared() const;
 
-		//! Returns shared pointer of PointNeighborSearcher3 type.
+		//! Returns shared pointer of PointNeighborSearcher2 type.
 		PointNeighborSearcher2Ptr BuildPointNeighborSearcher() const override;
 
 	private:
