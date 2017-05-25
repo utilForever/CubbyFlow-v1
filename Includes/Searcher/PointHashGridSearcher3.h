@@ -156,7 +156,7 @@ namespace CubbyFlow
 
 		size_t GetHashKeyFromPosition(const Vector3D& position) const;
 
-		void GetNearbyKeys(const Vector3D& position, size_t* bucketIndices) const;
+		void GetNearbyKeys(const Vector3D& position, size_t* nearbyKeys) const;
 	};
 
 	//! Shared pointer for the PointHashGridSearcher3 type.
