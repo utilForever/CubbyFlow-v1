@@ -91,7 +91,7 @@ namespace CubbyFlow
 	{
 		if (m_buckets.empty())
 		{
-			return;
+			return false;
 		}
 
 		size_t nearbyKeys[4];
@@ -201,8 +201,10 @@ namespace CubbyFlow
 	{
 		flatbuffers::FlatBufferBuilder builder(1024);
 
+		// Copy simple data
 		auto fbsResolution = fbs::Size3(m_resolution.x, m_resolution.y, m_resolution.z);
 
+		// Copy points
 		std::vector<fbs::Vector3D> points;
 		for (const auto& pt : m_points)
 		{
@@ -210,10 +212,28 @@ namespace CubbyFlow
 		}
 
 		auto fbsPoints = builder.CreateVectorOfStructs(points.data(), points.size());
-		auto fbsSearcher = fbs::CreatePointHashGridSearcher3(bulider, m_resolution, m_gridSpacing);
+
+		// Copy buckets
+		std::vector<flatbuffers::Offset<fbs::PointHashGridSearcherBucket3>> buckets;
+		for (const auto& bucket : m_buckets)
+		{
+			std::vector<uint64_t> bucket64(bucket.begin(), bucket.end());
+			flatbuffers::Offset<fbs::PointHashGridSearcherBucket3> fbsBucket
+				= fbs::CreatePointHashGridSearcherBucket3(
+					builder,
+					builder.CreateVector(bucket64.data(), bucket64.size()));
+			buckets.push_back(fbsBucket);
+		}
+
+		auto fbsBuckets = builder.CreateVector(buckets);
+
+		// Copy the searcher
+		auto fbsSearcher = fbs::CreatePointHashGridSearcher3(
+			builder, m_gridSpacing, &fbsResolution, fbsPoints, fbsBuckets);
+
 		builder.Finish(fbsSearcher);
 
-		uint8_t *buf = builder.GetBufferPointer();
+		uint8_t* buf = builder.GetBufferPointer();
 		size_t size = builder.GetSize();
 
 		buffer->resize(size);
@@ -224,16 +244,34 @@ namespace CubbyFlow
 	{
 		auto fbsSearcher = fbs::GetPointHashGridSearcher3(buffer.data());
 
+		// Copy simple data
 		auto res = FlatbuffersToCubbyFlow(*fbsSearcher->Resolution());
-		m_resolution.Set({ res.x, res.y });
+		m_resolution.Set({ res.x, res.y, res.z });
 		m_gridSpacing = fbsSearcher->GridSpacing();
 
+		// Copy points
 		auto fbsPoints = fbsSearcher->Points();
 		m_points.resize(fbsPoints->size());
-
 		for (uint32_t i = 0; i < fbsPoints->size(); ++i)
 		{
 			m_points[i] = FlatbuffersToCubbyFlow(*fbsPoints->Get(i));
+		}
+
+		// Copy buckets
+		auto fbsBuckets = fbsSearcher->Buckets();
+		m_buckets.resize(fbsBuckets->size());
+		for (uint32_t i = 0; i < fbsBuckets->size(); ++i)
+		{
+			auto fbsBucket = fbsBuckets->Get(i);
+			m_buckets[i].resize(fbsBucket->Data()->size());
+			std::transform(
+				fbsBucket->Data()->begin(),
+				fbsBucket->Data()->end(),
+				m_buckets[i].begin(),
+				[](uint64_t val)
+			{
+				return static_cast<size_t>(val);
+			});
 		}
 	}
 
