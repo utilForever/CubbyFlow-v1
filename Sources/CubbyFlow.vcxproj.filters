@@ -432,6 +432,9 @@
     <ClInclude Include="..\Includes\Searcher\PointSimpleListSearcher2.h">
       <Filter>Searcher</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Searcher\PointSimpleListSearcher3.h">
+      <Filter>Searcher</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Utils\Parallel.cpp">
