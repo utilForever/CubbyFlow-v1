@@ -11,8 +11,6 @@
 
 #include <Flatbuffers/generated/PointSimpleListSearcher2_generated.h>
 
-#include <flatbuffers/flatbuffers.h>
-
 namespace CubbyFlow
 {
 	PointSimpleListSearcher2::PointSimpleListSearcher2()
@@ -92,19 +90,19 @@ namespace CubbyFlow
 
 		// Copy points
 		std::vector<fbs::Vector2D> points;
-		for (const auto& pt : m_points) {
-			points.push_back(jetToFbs(pt));
+		for (const auto& pt : m_points)
+		{
+			points.push_back(CubbyFlowToFlatbuffers(pt));
 		}
 
-		auto fbsPoints
-			= builder.CreateVectorOfStructs(points.data(), points.size());
+		auto fbsPoints = builder.CreateVectorOfStructs(points.data(), points.size());
 
 		// Copy the searcher
 		auto fbsSearcher = fbs::CreatePointSimpleListSearcher2(builder, fbsPoints);
 
 		builder.Finish(fbsSearcher);
 
-		uint8_t *buf = builder.GetBufferPointer();
+		uint8_t* buf = builder.GetBufferPointer();
 		size_t size = builder.GetSize();
 
 		buffer->resize(size);
@@ -116,10 +114,11 @@ namespace CubbyFlow
 		auto fbsSearcher = fbs::GetPointSimpleListSearcher2(buffer.data());
 
 		// Copy points
-		auto fbsPoints = fbsSearcher->points();
+		auto fbsPoints = fbsSearcher->Points();
 		m_points.resize(fbsPoints->size());
-		for (uint32_t i = 0; i < fbsPoints->size(); ++i) {
-			m_points[i] = fbsToJet(*fbsPoints->Get(i));
+		for (uint32_t i = 0; i < fbsPoints->size(); ++i)
+		{
+			m_points[i] = FlatbuffersToCubbyFlow(*fbsPoints->Get(i));
 		}
 	}
 
