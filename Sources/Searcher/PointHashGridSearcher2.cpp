@@ -11,8 +11,6 @@
 
 #include <Flatbuffers/generated/PointHashGridSearcher2_generated.h>
 
-#include <flatbuffers/flatbuffers.h>
-
 namespace CubbyFlow
 {
 	PointHashGridSearcher2::PointHashGridSearcher2(const Size2& resolution, double gridSpacing) :
@@ -205,8 +203,7 @@ namespace CubbyFlow
 			points.push_back(CubbyFlowToFlatbuffers(pt));
 		}
 
-		auto fbsPoints
-			= builder.CreateVectorOfStructs(points.data(), points.size());
+		auto fbsPoints = builder.CreateVectorOfStructs(points.data(), points.size());
 
 		// Copy buckets
 		std::vector<flatbuffers::Offset<fbs::PointHashGridSearcherBucket2>> buckets;
@@ -240,12 +237,12 @@ namespace CubbyFlow
 		auto fbsSearcher = fbs::GetPointHashGridSearcher2(buffer.data());
 
 		// Copy simple data
-		auto res = FlatbuffersToCubbyFlow(*fbsSearcher->resolution());
+		auto res = FlatbuffersToCubbyFlow(*fbsSearcher->Resolution());
 		m_resolution.Set({ res.x, res.y });
-		m_gridSpacing = fbsSearcher->gridSpacing();
+		m_gridSpacing = fbsSearcher->GridSpacing();
 
 		// Copy points
-		auto fbsPoints = fbsSearcher->points();
+		auto fbsPoints = fbsSearcher->Points();
 		m_points.resize(fbsPoints->size());
 		for (uint32_t i = 0; i < fbsPoints->size(); ++i)
 		{
@@ -253,15 +250,15 @@ namespace CubbyFlow
 		}
 
 		// Copy buckets
-		auto fbsBuckets = fbsSearcher->buckets();
-		m_buckets.resize(fbsBuckets->size());
+		auto fbsBuckets = fbsSearcher->Buckets();
+		m_buckets.resize(fbsBuckets->size());		
 		for (uint32_t i = 0; i < fbsBuckets->size(); ++i)
 		{
 			auto fbsBucket = fbsBuckets->Get(i);
-			m_buckets[i].resize(fbsBucket->data()->size());
+			m_buckets[i].resize(fbsBucket->Data()->size());			
 			std::transform(
-				fbsBucket->data()->begin(),
-				fbsBucket->data()->end(),
+				fbsBucket->Data()->begin(),
+				fbsBucket->Data()->end(),
 				m_buckets[i].begin(),
 				[](uint64_t val)
 			{
