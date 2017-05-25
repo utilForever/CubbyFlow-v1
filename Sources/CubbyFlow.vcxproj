@@ -359,6 +359,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="Searcher\PointNeighborSearcher3.cpp" />
     <ClCompile Include="Searcher\PointParallelHashGridSearcher2.cpp" />
     <ClCompile Include="Searcher\PointParallelHashGridSearcher3.cpp" />
+    <ClCompile Include="Searcher\PointSimpleListSearcher2.cpp" />
     <ClCompile Include="Utils\Factory.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
