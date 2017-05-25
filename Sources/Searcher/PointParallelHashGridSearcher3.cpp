@@ -151,7 +151,6 @@ namespace CubbyFlow
 			{
 				Vector3D direction = m_points[j] - origin;
 				double distanceSquared = direction.LengthSquared();
-			
 				if (distanceSquared <= queryRadiusSquared)
 				{
 					callback(m_sortedIndices[j], m_points[j]);
@@ -183,7 +182,6 @@ namespace CubbyFlow
 			{
 				Vector3D direction = m_points[j] - origin;
 				double distanceSquared = direction.LengthSquared();
-				
 				if (distanceSquared <= queryRadiusSquared)
 				{
 					return true;
