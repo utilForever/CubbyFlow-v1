@@ -5,7 +5,7 @@
 
 #include "flatbuffers/flatbuffers.h"
 
-#include "basic_types_generated.h"
+#include "BasicTypes_generated.h"
 
 namespace CubbyFlow {
 namespace fbs {
