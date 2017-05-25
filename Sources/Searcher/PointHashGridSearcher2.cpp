@@ -90,7 +90,7 @@ namespace CubbyFlow
 	{
 		if (m_buckets.empty())
 		{
-			return;
+			return false;
 		}
 
 		size_t nearbyKeys[4];
@@ -225,7 +225,7 @@ namespace CubbyFlow
 
 		builder.Finish(fbsSearcher);
 
-		uint8_t *buf = builder.GetBufferPointer();
+		uint8_t* buf = builder.GetBufferPointer();
 		size_t size = builder.GetSize();
 
 		buffer->resize(size);
