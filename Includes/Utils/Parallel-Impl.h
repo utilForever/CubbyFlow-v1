@@ -142,7 +142,7 @@ namespace CubbyFlow
 		{
 			for (IndexType k = k1; k < k2; ++k)
 			{
-				func(k);
+				function(k);
 			}
 		};
 
