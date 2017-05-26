@@ -9,7 +9,6 @@
 #ifndef CUBBYFLOW_PARALLEL_IMPL_H
 #define CUBBYFLOW_PARALLEL_IMPL_H
 
-#include <Utils/Parallel.h>
 #include <Utils/Constants.h>
 
 #include <algorithm>
@@ -45,6 +44,7 @@ namespace CubbyFlow
 					temp[tempi] = a[i2];
 					i2++;
 				}
+
 				tempi++;
 			}
 
@@ -101,6 +101,137 @@ namespace CubbyFlow
 				Merge(a, size, temp, compareFunction);
 			}
 		}
+	}
+
+	template <typename RandomIterator, typename T>
+	void ParallelFill(const RandomIterator& begin, const RandomIterator& end, const T& value)
+	{
+		auto diff = end - begin;
+		if (diff <= 0)
+		{
+			return;
+		}
+
+		size_t size = static_cast<size_t>(diff);
+		ParallelFor(ZERO_SIZE, size, [begin, value](size_t i)
+		{
+			begin[i] = value;
+		});
+	}
+
+	// Adopted from http://ideone.com/Z7zldb
+	template <typename IndexType, typename Function>
+	void ParallelFor(IndexType beginIndex, IndexType endIndex, const Function& function)
+	{
+		if (beginIndex > endIndex)
+		{
+			return;
+		}
+
+		// Estimate number of threads in the pool
+		static const unsigned int numThreadsHint = std::thread::hardware_concurrency();
+		static const unsigned int numThreads = (numThreadsHint == 0u ? 8u : numThreadsHint);
+
+		// Size of a slice for the range functions
+		IndexType n = endIndex - beginIndex + 1;
+		IndexType slice = static_cast<IndexType>(std::round(n / static_cast<double>(numThreads)));
+		slice = std::max(slice, IndexType(1));
+
+		// [Helper] Inner loop
+		auto launchRange = [&function](IndexType k1, IndexType k2)
+		{
+			for (IndexType k = k1; k < k2; ++k)
+			{
+				func(k);
+			}
+		};
+
+		// Create pool and launch jobs
+		std::vector<std::thread> pool;
+		pool.reserve(numThreads);
+		IndexType i1 = beginIndex;
+		IndexType i2 = std::min(beginIndex + slice, endIndex);
+
+		for (unsigned int i = 0; i + 1 < numThreads && i1 < endIndex; ++i)
+		{
+			pool.emplace_back(launchRange, i1, i2);
+			i1 = i2;
+			i2 = std::min(i2 + slice, endIndex);
+		}
+
+		if (i1 < endIndex)
+		{
+			pool.emplace_back(launchRange, i1, endIndex);
+		}
+
+		// Wait for jobs to finish
+		for (std::thread &t : pool)
+		{
+			if (t.joinable())
+			{
+				t.join();
+			}
+		}
+	}
+
+	template <typename IndexType, typename Function>
+	void ParallelFor(
+		IndexType beginIndexX, IndexType endIndexX,
+		IndexType beginIndexY, IndexType endIndexY,
+		const Function& function)
+	{
+		ParallelFor(beginIndexY, endIndexY, [&](size_t j)
+		{
+			for (IndexType i = beginIndexX; i < endIndexX; ++i)
+			{
+				function(i, j);
+			}
+		});
+	}
+
+	template <typename IndexType, typename Function>
+	void ParallelFor(
+		IndexType beginIndexX, IndexType endIndexX,
+		IndexType beginIndexY, IndexType endIndexY,
+		IndexType beginIndexZ, IndexType endIndexZ,
+		const Function& function)
+	{
+		ParallelFor(beginIndexZ, endIndexZ, [&](size_t k)
+		{
+			for (IndexType j = beginIndexY; j < endIndexY; ++j)
+			{
+				for (IndexType i = beginIndexX; i < endIndexX; ++i)
+				{
+					function(i, j, k);
+				}
+			}
+		});
+	}
+
+	template<typename RandomIterator>
+	void ParallelSort(RandomIterator begin, RandomIterator end)
+	{
+		ParallelSort(begin, end, std::less<typename std::iterator_traits<RandomIterator>::value_type>());
+	}
+
+	template<typename RandomIterator, typename CompareFunction>
+	void ParallelSort(RandomIterator begin, RandomIterator end, CompareFunction compareFunction)
+	{
+		if (begin > end)
+		{
+			return;
+		}
+
+		size_t size = static_cast<size_t>(end - begin);
+
+		using value_type = typename std::iterator_traits<RandomIterator>::value_type;
+		std::vector<value_type> temp(size);
+
+		// Estimate number of threads in the pool
+		static const unsigned int numThreadsHint = std::thread::hardware_concurrency();
+		static const unsigned int numThreads = (numThreadsHint == 0u ? 8u : numThreadsHint);
+
+		Internal::ParallelMergeSort(begin, size, temp.begin(), numThreads, compareFunction);
 	}
 }
 
