@@ -435,11 +435,11 @@
     <ClInclude Include="..\Includes\Searcher\PointSimpleListSearcher3.h">
       <Filter>Searcher</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Utils\Parallel-Impl.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Sources\Utils\Parallel.cpp">
-      <Filter>Utils</Filter>
-    </ClCompile>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
       <Filter>Field</Filter>
     </ClCompile>

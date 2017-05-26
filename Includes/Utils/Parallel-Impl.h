@@ -1,11 +1,14 @@
 /*************************************************************************
-> File Name: Parallel.cpp
+> File Name: Parallel-Impl.h
 > Project Name: CubbyFlow
 > Author: Chan-Ho Chris Ohk
 > Purpose: Parallel functions for CubbyFlow.
 > Created Time: 2017/02/05
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
+#ifndef CUBBYFLOW_PARALLEL_IMPL_H
+#define CUBBYFLOW_PARALLEL_IMPL_H
+
 #include <Utils/Parallel.h>
 #include <Utils/Constants.h>
 
@@ -100,3 +103,5 @@ namespace CubbyFlow
 		}
 	}
 }
+
+#endif
