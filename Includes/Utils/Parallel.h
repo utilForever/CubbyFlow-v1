@@ -46,6 +46,29 @@ namespace CubbyFlow
 	void ParallelFor(IndexType beginIndex, IndexType endIndex, const Function& function);
 
 	//!
+	//! \brief      Makes a 2D nested for-loop in parallel.
+	//!
+	//! This function makes a 2D nested for-loop specified by begin and end indices
+	//! for each dimension. X will be the inner-most loop while Y is the outer-most.
+	//! The order of the visit is not guaranteed due to the nature of parallel
+	//! execution.
+	//!
+	//! \param[in]  beginIndexX The begin index in X dimension.
+	//! \param[in]  endIndexX   The end index in X dimension.
+	//! \param[in]  beginIndexY The begin index in Y dimension.
+	//! \param[in]  endIndexY   The end index in Y dimension.
+	//! \param[in]  function    The function to call for each index (i, j).
+	//!
+	//! \tparam     IndexType   Index type.
+	//! \tparam     Function    Function type.
+	//!
+	template <typename IndexType, typename Function>
+	void ParallelFor(
+		IndexType beginIndexX, IndexType endIndexX,
+		IndexType beginIndexY, IndexType endIndexY,
+		const Function& function);
+
+	//!
 	//! \brief      Makes a 3D nested for-loop in parallel.
 	//!
 	//! This function makes a 3D nested for-loop specified by begin and end indices
@@ -101,5 +124,7 @@ namespace CubbyFlow
 	template<typename RandomIterator, typename CompareFunction>
 	void ParallelSort(RandomIterator begin, RandomIterator end, CompareFunction compare);
 }
+
+#include <Utils/Parallel-Impl.h>
 
 #endif
