@@ -605,5 +605,8 @@
     <ClCompile Include="Searcher\PointSimpleListSearcher2.cpp">
       <Filter>Searcher</Filter>
     </ClCompile>
+    <ClCompile Include="Searcher\PointSimpleListSearcher3.cpp">
+      <Filter>Searcher</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

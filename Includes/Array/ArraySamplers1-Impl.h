@@ -63,7 +63,7 @@ namespace CubbyFlow
 
 		ssize_t iSize = static_cast<ssize_t>(m_accessor.Size());
 
-		GetBarycentric(normalizedX, 0, iSize, &i, &fx);
+		GetBary		centric(normalizedX, 0, iSize, &i, &fx);
 
 		*index = std::min(static_cast<ssize_t>(i + fx + 0.5), iSize - 1);
 	}
