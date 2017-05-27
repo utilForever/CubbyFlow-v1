@@ -362,6 +362,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="Searcher\PointSimpleListSearcher3.cpp" />
     <ClCompile Include="Searcher\PointSimpleListSearcher2.cpp" />
     <ClCompile Include="Utils\Factory.cpp" />
+    <ClCompile Include="Utils\Serialization.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

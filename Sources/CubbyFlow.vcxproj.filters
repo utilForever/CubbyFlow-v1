@@ -608,5 +608,8 @@
     <ClCompile Include="Searcher\PointSimpleListSearcher3.cpp">
       <Filter>Searcher</Filter>
     </ClCompile>
+    <ClCompile Include="Utils\Serialization.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
