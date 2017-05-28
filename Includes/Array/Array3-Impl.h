@@ -173,7 +173,7 @@ namespace CubbyFlow
 	template <typename T>
 	Size3 Array<T, 3>::Size() const
 	{
-		return m_data.size();
+		return m_size;
 	}
 
 	template <typename T>
