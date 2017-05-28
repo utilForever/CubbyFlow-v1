@@ -11,6 +11,9 @@
     <ClCompile Include="Array2Tests.cpp">
       <Filter>Array</Filter>
     </ClCompile>
+    <ClCompile Include="Array3Tests.cpp">
+      <Filter>Array</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
