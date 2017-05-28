@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="UnitTests.cpp" />
+    <ClCompile Include="pch.cpp">
+      <Filter>Precompiled Header</Filter>
+    </ClCompile>
+    <ClCompile Include="Array1Tests.cpp">
+      <Filter>Array</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Precompiled Header">
+      <UniqueIdentifier>{f774d5c9-ada5-441c-907f-fc5aafb4e28c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Array">
+      <UniqueIdentifier>{432ed43d-85ba-43a4-a39d-5a4d2de8b37d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h">
+      <Filter>Precompiled Header</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
