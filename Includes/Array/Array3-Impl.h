@@ -73,12 +73,12 @@ namespace CubbyFlow
 		auto depthIter = list.begin();
 		for (size_t k = 0; k < depth; ++k)
 		{
-			assert(Depth() == depthIter->size());
+			assert(height == depthIter->size());
 
 			auto heightIter = depthIter->begin();
 			for (size_t j = 0; j < height; ++j)
 			{
-				assert(Height() == heightIter->size());
+				assert(width == heightIter->size());
 			
 				auto widthIter = heightIter->begin();
 				for (size_t i = 0; i < width; ++i)
