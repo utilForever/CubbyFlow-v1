@@ -620,5 +620,8 @@
     <ClCompile Include="Utils\Serialization.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
+    <ClCompile Include="SPH\SPHStdKernel2.cpp">
+      <Filter>SPH</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
