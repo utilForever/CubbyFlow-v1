@@ -7,7 +7,6 @@ using namespace CubbyFlow;
 
 TEST(Array2, Constructors)
 {
-
 	Array2<float> arr1;
 	EXPECT_EQ(0u, arr1.Width());
 	EXPECT_EQ(0u, arr1.Height());
