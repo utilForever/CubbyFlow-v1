@@ -274,6 +274,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Size\Size2.h" />
     <ClInclude Include="..\Includes\Size\Size3.h" />
     <ClInclude Include="..\Includes\SPH\SPHStdKernel2.h" />
+    <ClInclude Include="..\Includes\SPH\SPHStdKernel3.h" />
     <ClInclude Include="..\Includes\Surface\Implicit\ImplicitSurface2.h" />
     <ClInclude Include="..\Includes\Surface\Implicit\ImplicitSurface3.h" />
     <ClInclude Include="..\Includes\Surface\Implicit\ImplicitSurfaceSet2.h" />

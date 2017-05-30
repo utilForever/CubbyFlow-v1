@@ -444,6 +444,9 @@
     <ClInclude Include="..\Includes\SPH\SPHStdKernel2.h">
       <Filter>SPH</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\SPH\SPHStdKernel3.h">
+      <Filter>SPH</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
