@@ -187,7 +187,7 @@ namespace CubbyFlow
 
 	private:
 		//! Target density of this particle system in kg/m^2.
-		double m_targetDensity = kWaterDensity;
+		double m_targetDensity = WATER_DENSITY;
 
 		//! Target spacing of this particle system in meters.
 		double m_targetSpacing = 0.1;
