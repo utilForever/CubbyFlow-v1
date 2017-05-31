@@ -17,25 +17,25 @@
 
 namespace CubbyFlow
 {
-	SphStdKernel2::SphStdKernel2() :
+	SPHStdKernel2::SPHStdKernel2() :
 		h(0), h2(0), h3(0), h4(0)
 	{
 		// Do nothing
 	}
 
-	SphStdKernel2::SphStdKernel2(double h_) :
+	SPHStdKernel2::SPHStdKernel2(double h_) :
 		h(h_), h2(h * h), h3(h2 * h), h4(h2 * h2)
 	{
 		// Do nothing
 	}
 
-	SphStdKernel2::SphStdKernel2(const SphStdKernel2& other) :
+	SPHStdKernel2::SPHStdKernel2(const SPHStdKernel2& other) :
 		h(other.h), h2(other.h2), h3(other.h3), h4(other.h4)
 	{
 		// Do nothing
 	}
 
-	double SphStdKernel2::operator()(double distance) const
+	double SPHStdKernel2::operator()(double distance) const
 	{
 		double distanceSquared = distance * distance;
 
@@ -48,7 +48,7 @@ namespace CubbyFlow
 		return 4.0 / (PI_DOUBLE * h2) * x * x * x;
 	}
 
-	double SphStdKernel2::FirstDerivative(double distance) const
+	double SPHStdKernel2::FirstDerivative(double distance) const
 	{
 		if (distance >= h)
 		{
@@ -59,7 +59,7 @@ namespace CubbyFlow
 		return -24.0 * distance / (PI_DOUBLE * h4) * x * x;
 	}
 
-	Vector2D SphStdKernel2::Gradient(const Vector2D& point) const
+	Vector2D SPHStdKernel2::Gradient(const Vector2D& point) const
 	{
 		double dist = point.Length();
 
@@ -71,12 +71,12 @@ namespace CubbyFlow
 		return Vector2D(0, 0);
 	}
 
-	Vector2D SphStdKernel2::Gradient(double distance, const Vector2D& directionToCenter) const
+	Vector2D SPHStdKernel2::Gradient(double distance, const Vector2D& directionToCenter) const
 	{
 		return -FirstDerivative(distance) * directionToCenter;
 	}
 
-	double SphStdKernel2::SecondDerivative(double distance) const
+	double SPHStdKernel2::SecondDerivative(double distance) const
 	{
 		double distanceSquared = distance * distance;
 
@@ -89,25 +89,25 @@ namespace CubbyFlow
 		return 24.0 / (PI_DOUBLE * h4) * (1 - x) * (5 * x - 1);
 	}
 	
-	SphSpikyKernel2::SphSpikyKernel2() :
+	SPHSpikyKernel2::SPHSpikyKernel2() :
 		h(0), h2(0), h3(0), h4(0), h5(0)
 	{
 		// Do nothing
 	}
 
-	SphSpikyKernel2::SphSpikyKernel2(double h_) :
+	SPHSpikyKernel2::SPHSpikyKernel2(double h_) :
 		h(h_), h2(h * h), h3(h2 * h), h4(h2 * h2), h5(h3 * h2)
 	{
 		// Do nothing
 	}
 
-	SphSpikyKernel2::SphSpikyKernel2(const SphSpikyKernel2& other) :
+	SPHSpikyKernel2::SPHSpikyKernel2(const SPHSpikyKernel2& other) :
 		h(other.h), h2(other.h2), h3(other.h3), h4(other.h4), h5(other.h5)
 	{
 		// Do nothing
 	}
 
-	double SphSpikyKernel2::operator()(double distance) const
+	double SPHSpikyKernel2::operator()(double distance) const
 	{
 		if (distance >= h)
 		{
@@ -118,7 +118,7 @@ namespace CubbyFlow
 		return 10.0 / (PI_DOUBLE * h2) * x * x * x;
 	}
 
-	double SphSpikyKernel2::FirstDerivative(double distance) const
+	double SPHSpikyKernel2::FirstDerivative(double distance) const
 	{
 		if (distance >= h)
 		{
@@ -129,7 +129,7 @@ namespace CubbyFlow
 		return -30.0 / (PI_DOUBLE * h3) * x * x;
 	}
 
-	Vector2D SphSpikyKernel2::Gradient(const Vector2D& point) const
+	Vector2D SPHSpikyKernel2::Gradient(const Vector2D& point) const
 	{
 		double dist = point.Length();
 		
@@ -141,12 +141,12 @@ namespace CubbyFlow
 		return Vector2D(0, 0);
 	}
 
-	Vector2D SphSpikyKernel2::Gradient(double distance, const Vector2D& directionToCenter) const
+	Vector2D SPHSpikyKernel2::Gradient(double distance, const Vector2D& directionToCenter) const
 	{
 		return -FirstDerivative(distance) * directionToCenter;
 	}
 
-	double SphSpikyKernel2::SecondDerivative(double distance) const
+	double SPHSpikyKernel2::SecondDerivative(double distance) const
 	{
 		if (distance >= h)
 		{
