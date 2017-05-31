@@ -98,6 +98,12 @@ namespace CubbyFlow
 	// MARK: Physics
 	//! Gravity.
 	constexpr double GRAVITY = -9.8;
+
+	//! Water density.
+	constexpr double WATER_DENSITY = 1000.0;
+
+	//! Speed of sound in water at 20 degrees Celsius.
+	constexpr double SPEED_OF_SOUND_IN_WATER = 1482.0;
 }
 
 #endif
