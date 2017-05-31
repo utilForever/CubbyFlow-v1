@@ -27,7 +27,7 @@ namespace CubbyFlow
 	//!     Proceedings of the 2003 ACM SIGGRAPH/Eurographics symposium on Computer
 	//!     animation. Eurographics Association, 2003.
 	//!
-	struct SphStdKernel3
+	struct SPHStdKernel3
 	{
 		//! Kernel radius.
 		double h;
@@ -42,13 +42,13 @@ namespace CubbyFlow
 		double h5;
 
 		//! Constructs a kernel object with zero radius.
-		SphStdKernel3();
+		SPHStdKernel3();
 
 		//! Constructs a kernel object with given radius.
-		explicit SphStdKernel3(double kernelRadius);
+		explicit SPHStdKernel3(double kernelRadius);
 
 		//! Copy constructor
-		SphStdKernel3(const SphStdKernel3& other);
+		SPHStdKernel3(const SPHStdKernel3& other);
 
 		//! Returns kernel function value at given distance.
 		double operator()(double distance) const;
@@ -74,7 +74,7 @@ namespace CubbyFlow
 	//!     Proceedings of the 2003 ACM SIGGRAPH/Eurographics symposium on Computer
 	//!     animation. Eurographics Association, 2003.
 	//!
-	struct SphSpikyKernel3
+	struct SPHSpikyKernel3
 	{
 		//! Kernel radius.
 		double h;
@@ -92,13 +92,13 @@ namespace CubbyFlow
 		double h5;
 
 		//! Constructs a kernel object with zero radius.
-		SphSpikyKernel3();
+		SPHSpikyKernel3();
 
 		//! Constructs a kernel object with given radius.
-		explicit SphSpikyKernel3(double kernelRadius);
+		explicit SPHSpikyKernel3(double kernelRadius);
 
 		//! Copy constructor
-		SphSpikyKernel3(const SphSpikyKernel3& other);
+		SPHSpikyKernel3(const SPHSpikyKernel3& other);
 
 		//! Returns kernel function value at given distance.
 		double operator()(double distance) const;
