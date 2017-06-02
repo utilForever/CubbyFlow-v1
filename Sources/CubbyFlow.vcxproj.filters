@@ -58,6 +58,9 @@
     <Filter Include="SPH">
       <UniqueIdentifier>{402d7c92-0a46-4d1e-ac86-81818a8b0055}</UniqueIdentifier>
     </Filter>
+    <Filter Include="PointGenerator">
+      <UniqueIdentifier>{869999c1-7c14-4ba2-9aff-37e1ec1d8b2d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Includes\Animation\Animation.h">
@@ -452,6 +455,9 @@
     </ClInclude>
     <ClInclude Include="..\Includes\SPH\SPHSystemData3.h">
       <Filter>SPH</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\PointGenerator\PointGenerator2.h">
+      <Filter>PointGenerator</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
