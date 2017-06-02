@@ -7,6 +7,7 @@
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <BoundingBox/BoundingBox2.h>
+#include <PointGenerator/TrianglePointGenerator.h>
 #include <SPH/SPHStdKernel2.h>
 #include <SPH/SPHSystemData2.h>
 
@@ -263,10 +264,10 @@ namespace CubbyFlow
 		Array1<Vector2D> points;
 		TrianglePointGenerator pointsGenerator;
 		BoundingBox2D sampleBound(
-			Vector2D(-1.5*m_kernelRadius, -1.5*m_kernelRadius),
-			Vector2D(1.5*m_kernelRadius, 1.5*m_kernelRadius));
+			Vector2D(-1.5 * m_kernelRadius, -1.5 * m_kernelRadius),
+			Vector2D(1.5 * m_kernelRadius, 1.5 * m_kernelRadius));
 
-		pointsGenerator.generate(sampleBound, m_targetSpacing, &points);
+		pointsGenerator.Generate(sampleBound, m_targetSpacing, &points);
 
 		double maxNumberDensity = 0.0;
 		SPHStdKernel2 kernel(m_kernelRadius);
@@ -295,7 +296,7 @@ namespace CubbyFlow
 	void SPHSystemData2::Serialize(std::vector<uint8_t>* buffer) const
 	{
 		flatbuffers::FlatBufferBuilder builder(1024);
-		flatbuffers::OffSet<fbs::ParticleSystemData2> fbsParticleSystemData;
+		flatbuffers::Offset<fbs::ParticleSystemData2> fbsParticleSystemData;
 
 		SerializeParticleSystemData(&builder, &fbsParticleSystemData);
 
