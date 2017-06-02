@@ -6,7 +6,6 @@
 > Created Time: 2017/05/31
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
-
 #ifndef CUBBYFLOW_SPH_SYSTEM_DATA2_H
 #define CUBBYFLOW_SPH_SYSTEM_DATA2_H
 
