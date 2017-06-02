@@ -641,5 +641,8 @@
     <ClCompile Include="SPH\SPHSystemData2.cpp">
       <Filter>SPH</Filter>
     </ClCompile>
+    <ClCompile Include="PointGenerator\PointGenerator2.cpp">
+      <Filter>PointGenerator</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
