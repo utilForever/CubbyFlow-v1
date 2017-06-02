@@ -6,8 +6,11 @@
 > Created Time: 2017/05/31
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
-
+#include <BoundingBox/BoundingBox2.h>
+#include <SPH/SPHStdKernel2.h>
 #include <SPH/SPHSystemData2.h>
+
+#include <Flatbuffers/generated/SPHSystemData2_generated.h>
 
 namespace CubbyFlow
 {
@@ -34,7 +37,7 @@ namespace CubbyFlow
 	}
 
 	void SPHSystemData2::SetRadius(double newRadius) {
-		// Interprete it as Setting target spacing
+		// Interpret it as Setting target spacing
 		SetTargetSpacing(newRadius);
 	}
 
@@ -184,7 +187,7 @@ namespace CubbyFlow
 				sum
 					+= d[i] * m
 					* (values[i] / Square(d[i]) + values[j] / Square(d[j]))
-					* kernel.gradient(dist, dir);
+					* kernel.Gradient(dist, dir);
 			}
 		}
 
@@ -206,7 +209,7 @@ namespace CubbyFlow
 			Vector2D neighborPosition = p[j];
 			double dist = origin.DistanceTo(neighborPosition);
 			sum +=
-				m * (values[j] - values[i]) / d[j] * kernel.secondDerivative(dist);
+				m * (values[j] - values[i]) / d[j] * kernel.SecondDerivative(dist);
 		}
 
 		return sum;
@@ -227,7 +230,7 @@ namespace CubbyFlow
 			Vector2D neighborPosition = p[j];
 			double dist = origin.DistanceTo(neighborPosition);
 			sum +=
-				m * (values[j] - values[i]) / d[j] * kernel.secondDerivative(dist);
+				m * (values[j] - values[i]) / d[j] * kernel.SecondDerivative(dist);
 		}
 
 		return sum;
@@ -265,7 +268,7 @@ namespace CubbyFlow
 			maxNumberDensity = std::max(maxNumberDensity, sum);
 		}
 
-		JET_ASSERT(maxNumberDensity > 0);
+		assert(maxNumberDensity > 0);
 
 		double newMass = m_targetDensity / maxNumberDensity;
 
@@ -300,17 +303,17 @@ namespace CubbyFlow
 	void SPHSystemData2::Deserialize(const std::vector<uint8_t>& buffer) {
 		auto fbsSPHSystemData = fbs::GetSPHSystemData2(buffer.data());
 
-		auto base = fbsSPHSystemData->base();
+		auto base = fbsSPHSystemData->Base();
 		DeserializeParticleSystemData(base);
 
 		// SPH specific
-		m_targetDensity = fbsSPHSystemData->targetDensity();
-		m_targetSpacing = fbsSPHSystemData->targetSpacing();
+		m_targetDensity = fbsSPHSystemData->TargetDensity();
+		m_targetSpacing = fbsSPHSystemData->TargetSpacing();
 		m_kernelRadiusOverTargetSpacing
-			= fbsSPHSystemData->kernelRadiusOverTargetSpacing();
-		m_kernelRadius = fbsSPHSystemData->kernelRadius();
-		m_pressureIdx = static_cast<size_t>(fbsSPHSystemData->pressureIdx());
-		m_densityIdx = static_cast<size_t>(fbsSPHSystemData->densityIdx());
+			= fbsSPHSystemData->KernelRadiusOverTargetSpacing();
+		m_kernelRadius = fbsSPHSystemData->KernelRadius();
+		m_pressureIdx = static_cast<size_t>(fbsSPHSystemData->PressureIdx());
+		m_densityIdx = static_cast<size_t>(fbsSPHSystemData->DensityIdx());
 	}
 
 	void SPHSystemData2::Set(const SPHSystemData2& other) {
