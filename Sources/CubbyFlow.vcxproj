@@ -253,6 +253,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Particle\ParticleSystemSolver3.h" />
     <ClInclude Include="..\Includes\PointGenerator\PointGenerator2.h" />
     <ClInclude Include="..\Includes\PointGenerator\PointGenerator3.h" />
+    <ClInclude Include="..\Includes\PointGenerator\TrianglePointGenerator.h" />
     <ClInclude Include="..\Includes\Point\Point-Impl.h" />
     <ClInclude Include="..\Includes\Point\Point.h" />
     <ClInclude Include="..\Includes\Point\Point2-Impl.h" />
