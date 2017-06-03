@@ -471,6 +471,9 @@
     <ClInclude Include="..\Includes\SPH\SPHSolver3.h">
       <Filter>SPH</Filter>
     </ClInclude>
+    <ClInclude Include="Utils\PhysicsHelpers.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">

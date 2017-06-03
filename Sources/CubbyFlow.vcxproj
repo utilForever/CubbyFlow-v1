@@ -313,6 +313,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Vector\Vector3.h" />
     <ClInclude Include="..\Includes\Vector\Vector4-Impl.h" />
     <ClInclude Include="..\Includes\Vector\Vector4.h" />
+    <ClInclude Include="Utils\PhysicsHelpers.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Animation\Animation.cpp" />
