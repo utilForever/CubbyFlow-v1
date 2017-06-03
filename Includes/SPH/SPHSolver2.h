@@ -1,5 +1,5 @@
 /*************************************************************************
-> File Name: SPHSolver2.cpp
+> File Name: SPHSolver2.h
 > Project Name: CubbyFlow
 > Author: Chan-Ho Chris Ohk
 > Purpose: 2-D SPH solver.
