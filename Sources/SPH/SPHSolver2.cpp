@@ -9,6 +9,7 @@
 #include <SPH/SPHSolver2.h>
 #include <SPH/SPHStdKernel2.h>
 #include <Utils/Logger.h>
+#include <Utils/PhysicsHelpers.h>
 #include <Utils/Timer.h>
 
 namespace CubbyFlow
