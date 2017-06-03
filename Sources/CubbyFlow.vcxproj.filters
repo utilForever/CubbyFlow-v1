@@ -465,6 +465,9 @@
     <ClInclude Include="..\Includes\PointGenerator\TrianglePointGenerator.h">
       <Filter>PointGenerator</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\SPH\SPHSolver2.h">
+      <Filter>SPH</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
