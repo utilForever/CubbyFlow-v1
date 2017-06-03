@@ -106,10 +106,10 @@ namespace CubbyFlow
 	{
 		auto particles = GetSPHSystemData();
 		size_t numberOfParticles = particles->NumberOfParticles();
-		auto f = particles->Forces();
+		auto f = particles->GetForces();
 
 		const double kernelRadius = particles->GetKernelRadius();
-		const double mass = particles->Mass();
+		const double mass = particles->GetMass();
 
 		double maxForceMagnitude = 0.0;
 
@@ -174,10 +174,10 @@ namespace CubbyFlow
 	void SPHSolver2::AccumulatePressureForce([[maybe_unused]] double timeStepInSeconds)
 	{
 		auto particles = GetSPHSystemData();
-		auto x = particles->Positions();
+		auto x = particles->GetPositions();
 		auto d = particles->GetDensities();
 		auto p = particles->GetPressures();
-		auto f = particles->Forces();
+		auto f = particles->GetForces();
 
 		ComputePressure();
 		AccumulatePressureForce(x, d, p, f);
@@ -210,7 +210,7 @@ namespace CubbyFlow
 		auto particles = GetSPHSystemData();
 		size_t numberOfParticles = particles->NumberOfParticles();
 
-		const double massSquared = Square(particles->Mass());
+		const double massSquared = Square(particles->GetMass());
 		const SPHSpikyKernel2 kernel(particles->GetKernelRadius());
 
 		ParallelFor(ZERO_SIZE, numberOfParticles, [&](size_t i)
@@ -233,12 +233,12 @@ namespace CubbyFlow
 	{
 		auto particles = GetSPHSystemData();
 		size_t numberOfParticles = particles->NumberOfParticles();
-		auto x = particles->Positions();
-		auto v = particles->Velocities();
+		auto x = particles->GetPositions();
+		auto v = particles->GetVelocities();
 		auto d = particles->GetDensities();
-		auto f = particles->Forces();
+		auto f = particles->GetForces();
 
-		const double massSquared = Square(particles->Mass());
+		const double massSquared = Square(particles->GetMass());
 		const SPHSpikyKernel2 kernel(particles->GetKernelRadius());
 
 		ParallelFor(ZERO_SIZE, numberOfParticles, [&](size_t i)
@@ -257,11 +257,11 @@ namespace CubbyFlow
 	{
 		auto particles = GetSPHSystemData();
 		size_t numberOfParticles = particles->NumberOfParticles();
-		auto x = particles->Positions();
-		auto v = particles->Velocities();
+		auto x = particles->GetPositions();
+		auto v = particles->GetVelocities();
 		auto d = particles->GetDensities();
 
-		const double mass = particles->Mass();
+		const double mass = particles->GetMass();
 		const SPHSpikyKernel2 kernel(particles->GetKernelRadius());
 
 		Array1<Vector2D> smoothedVelocities(numberOfParticles);

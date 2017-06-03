@@ -148,7 +148,7 @@ namespace CubbyFlow
 	void ParticleSystemSolver2::BeginAdvanceTimeStep(double timeStepInSeconds)
 	{
 		// Clear forces
-		auto forces = m_particleSystemData->Forces();
+		auto forces = m_particleSystemData->GetForces();
 		SetRange1(forces.Size(), Vector2D(), &forces);
 
 		// Update collider and emitter
@@ -174,8 +174,8 @@ namespace CubbyFlow
 	{
 		// Update data
 		size_t n = m_particleSystemData->NumberOfParticles();
-		auto positions = m_particleSystemData->Positions();
-		auto velocities = m_particleSystemData->Velocities();
+		auto positions = m_particleSystemData->GetPositions();
+		auto velocities = m_particleSystemData->GetVelocities();
 
 		ParallelFor(ZERO_SIZE, n, [&](size_t i)
 		{
@@ -208,7 +208,7 @@ namespace CubbyFlow
 		if (m_collider != nullptr)
 		{
 			size_t numberOfParticles = m_particleSystemData->NumberOfParticles();
-			const double radius = m_particleSystemData->Radius();
+			const double radius = m_particleSystemData->GetRadius();
 
 			ParallelFor(ZERO_SIZE, numberOfParticles, [&](size_t i)
 			{
@@ -229,10 +229,10 @@ namespace CubbyFlow
 	void ParticleSystemSolver2::AccumulateExternalForces()
 	{
 		size_t n = m_particleSystemData->NumberOfParticles();
-		auto forces = m_particleSystemData->Forces();
-		auto velocities = m_particleSystemData->Velocities();
-		auto positions = m_particleSystemData->Positions();
-		const double mass = m_particleSystemData->Mass();
+		auto forces = m_particleSystemData->GetForces();
+		auto velocities = m_particleSystemData->GetVelocities();
+		auto positions = m_particleSystemData->GetPositions();
+		const double mass = m_particleSystemData->GetMass();
 
 		ParallelFor(ZERO_SIZE, n, [&](size_t i)
 		{
@@ -250,10 +250,10 @@ namespace CubbyFlow
 	void ParticleSystemSolver2::TimeIntegration(double timeStepInSeconds)
 	{
 		size_t n = m_particleSystemData->NumberOfParticles();
-		auto forces = m_particleSystemData->Forces();
-		auto velocities = m_particleSystemData->Velocities();
-		auto positions = m_particleSystemData->Positions();
-		const double mass = m_particleSystemData->Mass();
+		auto forces = m_particleSystemData->GetForces();
+		auto velocities = m_particleSystemData->GetVelocities();
+		auto positions = m_particleSystemData->GetPositions();
+		const double mass = m_particleSystemData->GetMass();
 
 		ParallelFor(ZERO_SIZE, n, [&](size_t i)
 		{
