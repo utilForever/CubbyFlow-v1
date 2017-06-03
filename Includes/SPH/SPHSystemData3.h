@@ -178,7 +178,7 @@ namespace CubbyFlow
 	};
 
 	//! Shared pointer for the SPHSystemData3 type.
-	using SphSystemData3Ptr = std::shared_ptr<SPHSystemData3>;
+	using SPHSystemData3Ptr = std::shared_ptr<SPHSystemData3>;
 }
 
 #endif
