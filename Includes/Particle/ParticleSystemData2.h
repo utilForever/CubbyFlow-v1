@@ -102,34 +102,34 @@ namespace CubbyFlow
 		size_t AddVectorData(const Vector2D& initialVal = Vector2D());
 
 		//! Returns the radius of the particles.
-		double Radius() const;
+		double GetRadius() const;
 
 		//! Sets the radius of the particles.
 		virtual void SetRadius(double newRadius);
 
 		//! Returns the mass of the particles.
-		double Mass() const;
+		double GetMass() const;
 
 		//! Sets the mass of the particles.
 		virtual void SetMass(double newMass);
 
 		//! Returns the position array (immutable).
-		ConstArrayAccessor1<Vector2D> Positions() const;
+		ConstArrayAccessor1<Vector2D> GetPositions() const;
 
 		//! Returns the position array (mutable).
-		ArrayAccessor1<Vector2D> Positions();
+		ArrayAccessor1<Vector2D> GetPositions();
 
 		//! Returns the velocity array (immutable).
-		ConstArrayAccessor1<Vector2D> Velocities() const;
+		ConstArrayAccessor1<Vector2D> GetVelocities() const;
 
 		//! Returns the velocity array (mutable).
-		ArrayAccessor1<Vector2D> Velocities();
+		ArrayAccessor1<Vector2D> GetVelocities();
 
 		//! Returns the force array (immutable).
-		ConstArrayAccessor1<Vector2D> Forces() const;
+		ConstArrayAccessor1<Vector2D> GetForces() const;
 
 		//! Returns the force array (mutable).
-		ArrayAccessor1<Vector2D> Forces();
+		ArrayAccessor1<Vector2D> GetForces();
 
 		//! Returns custom scalar data layer at given index (immutable).
 		ConstArrayAccessor1<double> ScalarDataAt(size_t idx) const;
@@ -188,7 +188,7 @@ namespace CubbyFlow
 		//!
 		//! \return     Current neighbor searcher.
 		//!
-		const PointNeighborSearcher2Ptr& NeighborSearcher() const;
+		const PointNeighborSearcher2Ptr& GetNeighborSearcher() const;
 
 		//! Sets neighbor searcher.
 		void SetNeighborSearcher(const PointNeighborSearcher2Ptr& newNeighborSearcher);

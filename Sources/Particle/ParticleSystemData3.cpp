@@ -88,7 +88,7 @@ namespace CubbyFlow
 		return attrIdx;
 	}
 
-	double ParticleSystemData3::Radius() const
+	double ParticleSystemData3::GetRadius() const
 	{
 		return m_radius;
 	}
@@ -98,7 +98,7 @@ namespace CubbyFlow
 		m_radius = std::max(newRadius, 0.0);
 	}
 
-	double ParticleSystemData3::Mass() const
+	double ParticleSystemData3::GetMass() const
 	{
 		return m_mass;
 	}
@@ -108,32 +108,32 @@ namespace CubbyFlow
 		m_mass = std::max(newMass, 0.0);
 	}
 
-	ConstArrayAccessor1<Vector3D> ParticleSystemData3::Positions() const
+	ConstArrayAccessor1<Vector3D> ParticleSystemData3::GetPositions() const
 	{
 		return VectorDataAt(m_positionIdx);
 	}
 
-	ArrayAccessor1<Vector3D> ParticleSystemData3::Positions()
+	ArrayAccessor1<Vector3D> ParticleSystemData3::GetPositions()
 	{
 		return VectorDataAt(m_positionIdx);
 	}
 
-	ConstArrayAccessor1<Vector3D> ParticleSystemData3::Velocities() const
+	ConstArrayAccessor1<Vector3D> ParticleSystemData3::GetVelocities() const
 	{
 		return VectorDataAt(m_velocityIdx);
 	}
 
-	ArrayAccessor1<Vector3D> ParticleSystemData3::Velocities()
+	ArrayAccessor1<Vector3D> ParticleSystemData3::GetVelocities()
 	{
 		return VectorDataAt(m_velocityIdx);
 	}
 
-	ConstArrayAccessor1<Vector3D> ParticleSystemData3::Forces() const
+	ConstArrayAccessor1<Vector3D> ParticleSystemData3::GetForces() const
 	{
 		return VectorDataAt(m_forceIdx);
 	}
 
-	ArrayAccessor1<Vector3D> ParticleSystemData3::Forces()
+	ArrayAccessor1<Vector3D> ParticleSystemData3::GetForces()
 	{
 		return VectorDataAt(m_forceIdx);
 	}
@@ -190,9 +190,9 @@ namespace CubbyFlow
 
 		Resize(newNumberOfParticles);
 
-		auto pos = Positions();
-		auto vel = Velocities();
-		auto frc = Forces();
+		auto pos = GetPositions();
+		auto vel = GetVelocities();
+		auto frc = GetForces();
 
 		ParallelFor(ZERO_SIZE, newPositions.Size(),	[&](size_t i)
 		{
@@ -216,7 +216,7 @@ namespace CubbyFlow
 		}
 	}
 
-	const PointNeighborSearcher3Ptr& ParticleSystemData3::NeighborSearcher() const
+	const PointNeighborSearcher3Ptr& ParticleSystemData3::GetNeighborSearcher() const
 	{
 		return m_neighborSearcher;
 	}
@@ -242,7 +242,7 @@ namespace CubbyFlow
 			DEFAULT_HASH_GRID_RESOLUTION,
 			2.0 * maxSearchRadius);
 
-		m_neighborSearcher->Build(Positions());
+		m_neighborSearcher->Build(GetPositions());
 
 		CUBBYFLOW_INFO << "Building neighbor searcher took: "
 			<< timer.DurationInSeconds()
@@ -255,7 +255,7 @@ namespace CubbyFlow
 
 		m_neighborLists.resize(NumberOfParticles());
 
-		auto points = Positions();
+		auto points = GetPositions();
 
 		for (size_t i = 0; i < NumberOfParticles(); ++i)
 		{

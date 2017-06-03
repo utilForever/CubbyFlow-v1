@@ -471,6 +471,9 @@
     <ClInclude Include="..\Includes\SPH\SPHSolver3.h">
       <Filter>SPH</Filter>
     </ClInclude>
+    <ClInclude Include="Utils\PhysicsHelpers.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
@@ -659,10 +662,7 @@
     <ClCompile Include="PointGenerator\TrianglePointGenerator.cpp">
       <Filter>PointGenerator</Filter>
     </ClCompile>
-    <ClCompile Include="SPH\SPHStdKernel3.cpp">
-      <Filter>SPH</Filter>
-    </ClCompile>
-    <ClCompile Include="SPH\SPHSystemData3.cpp">
+    <ClCompile Include="SPH\SPHSolver2.cpp">
       <Filter>SPH</Filter>
     </ClCompile>
   </ItemGroup>

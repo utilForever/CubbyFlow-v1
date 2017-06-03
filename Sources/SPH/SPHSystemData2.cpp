@@ -48,7 +48,7 @@ namespace CubbyFlow
 
 	void SPHSystemData2::SetMass(double newMass)
 	{
-		double incRatio = newMass / Mass();
+		double incRatio = newMass / GetMass();
 		m_targetDensity *= incRatio;
 		ParticleSystemData2::SetMass(newMass);
 	}
@@ -75,9 +75,9 @@ namespace CubbyFlow
 
 	void SPHSystemData2::UpdateDensities()
 	{
-		auto p = Positions();
+		auto p = GetPositions();
 		auto d = GetDensities();
-		const double m = Mass();
+		const double m = GetMass();
 
 		ParallelFor(ZERO_SIZE, NumberOfParticles(), [&](size_t i)
 		{
@@ -136,7 +136,7 @@ namespace CubbyFlow
 		double sum = 0.0;
 		SPHStdKernel2 kernel(m_kernelRadius);
 
-		NeighborSearcher()->ForEachNearbyPoint(origin, m_kernelRadius,
+		GetNeighborSearcher()->ForEachNearbyPoint(origin, m_kernelRadius,
 			[&](size_t, const Vector2D& neighborPosition)
 		{
 			double dist = origin.DistanceTo(neighborPosition);
@@ -151,9 +151,9 @@ namespace CubbyFlow
 		double sum = 0.0;
 		auto d = GetDensities();
 		SPHStdKernel2 kernel(m_kernelRadius);
-		const double m = Mass();
+		const double m = GetMass();
 
-		NeighborSearcher()->ForEachNearbyPoint(origin, m_kernelRadius,
+		GetNeighborSearcher()->ForEachNearbyPoint(origin, m_kernelRadius,
 			[&](size_t i, const Vector2D& neighborPosition)
 		{
 			double dist = origin.DistanceTo(neighborPosition);
@@ -170,9 +170,9 @@ namespace CubbyFlow
 		Vector2D sum;
 		auto d = GetDensities();
 		SPHStdKernel2 kernel(m_kernelRadius);
-		const double m = Mass();
+		const double m = GetMass();
 
-		NeighborSearcher()->ForEachNearbyPoint(origin, m_kernelRadius,
+		GetNeighborSearcher()->ForEachNearbyPoint(origin, m_kernelRadius,
 			[&](size_t i, const Vector2D& neighborPosition)
 		{
 			double dist = origin.DistanceTo(neighborPosition);
@@ -187,12 +187,12 @@ namespace CubbyFlow
 	Vector2D SPHSystemData2::GradientAt(size_t i, const ConstArrayAccessor1<double>& values) const
 	{
 		Vector2D sum;
-		auto p = Positions();
+		auto p = GetPositions();
 		auto d = GetDensities();
 		const auto& neighbors = NeighborLists()[i];
 		Vector2D origin = p[i];
 		SPHSpikyKernel2 kernel(m_kernelRadius);
-		const double m = Mass();
+		const double m = GetMass();
 
 		for (size_t j : neighbors)
 		{
@@ -212,12 +212,12 @@ namespace CubbyFlow
 	double SPHSystemData2::LaplacianAt(size_t i, const ConstArrayAccessor1<double>& values) const
 	{
 		double sum = 0.0;
-		auto p = Positions();
+		auto p = GetPositions();
 		auto d = GetDensities();
 		const auto& neighbors = NeighborLists()[i];
 		Vector2D origin = p[i];
 		SPHSpikyKernel2 kernel(m_kernelRadius);
-		const double m = Mass();
+		const double m = GetMass();
 
 		for (size_t j : neighbors)
 		{
@@ -232,12 +232,12 @@ namespace CubbyFlow
 	Vector2D SPHSystemData2::LaplacianAt(size_t i, const ConstArrayAccessor1<Vector2D>& values) const
 	{
 		Vector2D sum;
-		auto p = Positions();
+		auto p = GetPositions();
 		auto d = GetDensities();
 		const auto& neighbors = NeighborLists()[i];
 		Vector2D origin = p[i];
 		SPHSpikyKernel2 kernel(m_kernelRadius);
-		const double m = Mass();
+		const double m = GetMass();
 
 		for (size_t j : neighbors)
 		{
