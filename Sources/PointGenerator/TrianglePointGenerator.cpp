@@ -41,4 +41,5 @@ namespace CubbyFlow
 			hasOffset = !hasOffset;
 		}
 	}
-}
+	
+}	
