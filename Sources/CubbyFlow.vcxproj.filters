@@ -474,6 +474,9 @@
     <ClInclude Include="Utils\PhysicsHelpers.h">
       <Filter>Utils</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\PointGenerator\BccLatticePointGenerator.h">
+      <Filter>PointGenerator</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
