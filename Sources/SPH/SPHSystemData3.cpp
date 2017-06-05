@@ -7,11 +7,11 @@
 > Copyright (c) 2017, Dongmin Kim
 *************************************************************************/
 #include <BoundingBox/BoundingBox3.h>
-#include <PointGenerator/TrianglePointGenerator.h>
+#include <PointGenerator/BccLatticePointGenerator.h>
 #include <SPH/SPHStdKernel3.h>
 #include <SPH/SPHSystemData3.h>
 
-#include <Flatbuffers/generated/SPHSystemData2_generated.h>
+#include <Flatbuffers/generated/SPHSystemData3_generated.h>
 
 namespace CubbyFlow
 {
@@ -48,7 +48,7 @@ namespace CubbyFlow
 
 	void SPHSystemData3::SetMass(double newMass)
 	{
-		double incRatio = newMass / Mass();
+		double incRatio = newMass / GetMass();
 		m_targetDensity *= incRatio;
 		ParticleSystemData3::SetMass(newMass);
 	}
@@ -75,9 +75,9 @@ namespace CubbyFlow
 
 	void SPHSystemData3::UpdateDensities()
 	{
-		auto p = Positions();
+		auto p = GetPositions();
 		auto d = GetDensities();
-		const double m = Mass();
+		const double m = GetMass();
 
 		ParallelFor(ZERO_SIZE, NumberOfParticles(), [&](size_t i)
 		{
@@ -136,7 +136,7 @@ namespace CubbyFlow
 		double sum = 0.0;
 		SPHStdKernel3 kernel(m_kernelRadius);
 
-		NeighborSearcher()->ForEachNearbyPoint(origin, m_kernelRadius,
+		GetNeighborSearcher()->ForEachNearbyPoint(origin, m_kernelRadius,
 			[&](size_t, const Vector3D& neighborPosition)
 		{
 			double dist = origin.DistanceTo(neighborPosition);
@@ -151,9 +151,9 @@ namespace CubbyFlow
 		double sum = 0.0;
 		auto d = GetDensities();
 		SPHStdKernel3 kernel(m_kernelRadius);
-		const double m = Mass();
+		const double m = GetMass();
 
-		NeighborSearcher()->ForEachNearbyPoint(origin, m_kernelRadius,
+		GetNeighborSearcher()->ForEachNearbyPoint(origin, m_kernelRadius,
 			[&](size_t i, const Vector3D& neighborPosition)
 		{
 			double dist = origin.DistanceTo(neighborPosition);
@@ -170,9 +170,9 @@ namespace CubbyFlow
 		Vector3D sum;
 		auto d = GetDensities();
 		SPHStdKernel3 kernel(m_kernelRadius);
-		const double m = Mass();
+		const double m = GetMass();
 
-		NeighborSearcher()->ForEachNearbyPoint(origin, m_kernelRadius,
+		GetNeighborSearcher()->ForEachNearbyPoint(origin, m_kernelRadius,
 			[&](size_t i, const Vector3D& neighborPosition)
 		{
 			double dist = origin.DistanceTo(neighborPosition);
@@ -187,12 +187,12 @@ namespace CubbyFlow
 	Vector3D SPHSystemData3::GradientAt(size_t i, const ConstArrayAccessor1<double>& values) const
 	{
 		Vector3D sum;
-		auto p = Positions();
+		auto p = GetPositions();
 		auto d = GetDensities();
 		const auto& neighbors = NeighborLists()[i];
 		Vector3D origin = p[i];
 		SPHSpikyKernel3 kernel(m_kernelRadius);
-		const double m = Mass();
+		const double m = GetMass();
 
 		for (size_t j : neighbors)
 		{
@@ -212,12 +212,12 @@ namespace CubbyFlow
 	double SPHSystemData3::LaplacianAt(size_t i, const ConstArrayAccessor1<double>& values) const
 	{
 		double sum = 0.0;
-		auto p = Positions();
+		auto p = GetPositions();
 		auto d = GetDensities();
 		const auto& neighbors = NeighborLists()[i];
 		Vector3D origin = p[i];
 		SPHSpikyKernel3 kernel(m_kernelRadius);
-		const double m = Mass();
+		const double m = GetMass();
 
 		for (size_t j : neighbors)
 		{
@@ -232,12 +232,12 @@ namespace CubbyFlow
 	Vector3D SPHSystemData3::LaplacianAt(size_t i, const ConstArrayAccessor1<Vector3D>& values) const
 	{
 		Vector3D sum;
-		auto p = Positions();
+		auto p = GetPositions();
 		auto d = GetDensities();
 		const auto& neighbors = NeighborLists()[i];
 		Vector3D origin = p[i];
 		SPHSpikyKernel3 kernel(m_kernelRadius);
-		const double m = Mass();
+		const double m = GetMass();
 
 		for (size_t j : neighbors)
 		{
@@ -262,7 +262,7 @@ namespace CubbyFlow
 	void SPHSystemData3::ComputeMass()
 	{
 		Array1<Vector3D> points;
-		TrianglePointGenerator pointsGenerator;
+		BccLatticePointGenerator pointsGenerator;
 		BoundingBox3D sampleBound(
 			Vector3D(-1.5 * m_kernelRadius, -1.5 * m_kernelRadius, -1.5 * m_kernelRadius),
 			Vector3D(1.5 * m_kernelRadius, 1.5 * m_kernelRadius, 1.5 * m_kernelRadius));
