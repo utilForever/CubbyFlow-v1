@@ -106,7 +106,7 @@ namespace CubbyFlow
 		size_t size = builder.GetSize();
 
 		buffer->resize(size);
-		memcpy(buffer->data(), buf, size);1
+		memcpy(buffer->data(), buf, size);
 	}
 
 	void PointSimpleListSearcher3::Deserialize(const std::vector<uint8_t>& buffer)
