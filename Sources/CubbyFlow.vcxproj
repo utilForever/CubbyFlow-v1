@@ -364,6 +364,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="Particle\ParticleSystemData3.cpp" />
     <ClCompile Include="Particle\ParticleSystemSolver2.cpp" />
     <ClCompile Include="Particle\ParticleSystemSolver3.cpp" />
+    <ClCompile Include="PointGenerator\BccLatticePointGenerator.cpp" />
     <ClCompile Include="PointGenerator\PointGenerator2.cpp" />
     <ClCompile Include="PointGenerator\PointGenerator3.cpp" />
     <ClCompile Include="PointGenerator\TrianglePointGenerator.cpp" />

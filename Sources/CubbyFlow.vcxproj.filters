@@ -674,5 +674,8 @@
     <ClCompile Include="SPH\SPHStdKernel3.cpp">
       <Filter>SPH</Filter>
     </ClCompile>
+    <ClCompile Include="PointGenerator\BccLatticePointGenerator.cpp">
+      <Filter>PointGenerator</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
