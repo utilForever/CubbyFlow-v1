@@ -7,11 +7,11 @@
 > Copyright (c) 2017, Dongmin Kim
 *************************************************************************/
 #include <BoundingBox/BoundingBox3.h>
-#include <PointGenerator/TrianglePointGenerator.h>
+#include <PointGenerator/BccLatticePointGenerator.h>
 #include <SPH/SPHStdKernel3.h>
 #include <SPH/SPHSystemData3.h>
 
-#include <Flatbuffers/generated/SPHSystemData2_generated.h>
+#include <Flatbuffers/generated/SPHSystemData3_generated.h>
 
 namespace CubbyFlow
 {
@@ -262,7 +262,7 @@ namespace CubbyFlow
 	void SPHSystemData3::ComputeMass()
 	{
 		Array1<Vector3D> points;
-		TrianglePointGenerator pointsGenerator;
+		BccLatticePointGenerator pointsGenerator;
 		BoundingBox3D sampleBound(
 			Vector3D(-1.5 * m_kernelRadius, -1.5 * m_kernelRadius, -1.5 * m_kernelRadius),
 			Vector3D(1.5 * m_kernelRadius, 1.5 * m_kernelRadius, 1.5 * m_kernelRadius));
