@@ -114,7 +114,7 @@ namespace CubbyFlow
 		void SetTimeStepLimitScale(double newScale);
 
 		//! Returns the SPH system data.
-		SPHSystemData3Ptr SPHSystemData() const;
+		SPHSystemData3Ptr GetSPHSystemData() const;
 
 		//! Returns builder fox SPHSolver3.
 		static Builder GetBuilder();

@@ -665,5 +665,14 @@
     <ClCompile Include="SPH\SPHSolver2.cpp">
       <Filter>SPH</Filter>
     </ClCompile>
+    <ClCompile Include="SPH\SPHSystemData3.cpp">
+      <Filter>SPH</Filter>
+    </ClCompile>
+    <ClCompile Include="SPH\SPHStdKernel3.cpp">
+      <Filter>SPH</Filter>
+    </ClCompile>
+    <ClCompile Include="SPHSolver3.cpp">
+      <Filter>SPH</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
