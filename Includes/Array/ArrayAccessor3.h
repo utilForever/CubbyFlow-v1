@@ -301,10 +301,10 @@ namespace CubbyFlow
 		const T& At(size_t i, size_t j, size_t k) const;
 
 		//! Returns the begin iterator of the array.
-		const T* const Begin() const;
+		const T* const begin() const;
 
 		//! Returns the end iterator of the array.
-		const T* const End() const;
+		const T* const end() const;
 
 		//! Returns the size of the array.
 		Size3 Size() const;

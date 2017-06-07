@@ -317,13 +317,13 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	const T* const ConstArrayAccessor<T, 2>::Begin() const
+	const T* const ConstArrayAccessor<T, 2>::begin() const
 	{
 		return m_data;
 	}
 
 	template <typename T>
-	const T* const ConstArrayAccessor<T, 2>::End() const
+	const T* const ConstArrayAccessor<T, 2>::end() const
 	{
 		return m_data + Width() * Height();
 	}
