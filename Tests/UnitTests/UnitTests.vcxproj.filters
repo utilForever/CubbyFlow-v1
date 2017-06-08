@@ -23,6 +23,9 @@
     <ClCompile Include="ArrayAccessor3Tests.cpp">
       <Filter>Array</Filter>
     </ClCompile>
+    <ClCompile Include="ArraySamplersTest.cpp">
+      <Filter>Array</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
