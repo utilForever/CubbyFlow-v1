@@ -20,6 +20,9 @@
     <ClCompile Include="ArrayAccessor2Tests.cpp">
       <Filter>Array</Filter>
     </ClCompile>
+    <ClCompile Include="ArrayAccessor3Tests.cpp">
+      <Filter>Array</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
