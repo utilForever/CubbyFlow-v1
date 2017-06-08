@@ -10,6 +10,7 @@
 #define CUBBYFLOW_ARRAY_ACCESSOR2_IMPL_H
 
 #include <Utils/Constants.h>
+#include <Utils/Parallel.h>
 
 #include <algorithm>
 #include <cassert>
@@ -285,8 +286,8 @@ namespace CubbyFlow
 	template <typename T>
 	ConstArrayAccessor<T, 2>::ConstArrayAccessor(const ArrayAccessor<T, 2>& other)
 	{
-		m_size = other.m_size;
-		m_data = other.m_data;
+		m_size = other.Size();
+		m_data = other.Data();
 	}
 
 	template <typename T>
