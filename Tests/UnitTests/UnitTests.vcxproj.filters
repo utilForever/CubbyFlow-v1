@@ -17,6 +17,9 @@
     <ClCompile Include="ArrayAccessor1Tests.cpp">
       <Filter>Array</Filter>
     </ClCompile>
+    <ClCompile Include="ArrayAccessor2Tests.cpp">
+      <Filter>Array</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
