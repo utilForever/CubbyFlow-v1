@@ -10,6 +10,7 @@
 #define CUBBYFLOW_ARRAY_ACCESSOR3_IMPL_H
 
 #include <Utils/Constants.h>
+#include <Utils/Parallel.h>
 
 #include <algorithm>
 #include <cassert>
