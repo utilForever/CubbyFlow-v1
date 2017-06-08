@@ -41,7 +41,7 @@ namespace CubbyFlow
 		assert(m_gridSpacing.x > std::numeric_limits<R>::epsilon());
 		assert(m_gridSpacing.y > std::numeric_limits<R>::epsilon());
 		
-		Vector2<R> normalizedX = (*pt - m_origin) / m_gridSpacing;
+		Vector2<R> normalizedX = (pt - m_origin) / m_gridSpacing;
 
 		ssize_t iSize = static_cast<ssize_t>(m_accessor.Size().x);
 		ssize_t jSize = static_cast<ssize_t>(m_accessor.Size().y);
