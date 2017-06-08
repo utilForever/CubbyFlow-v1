@@ -23,7 +23,10 @@
     <ClCompile Include="ArrayAccessor3Tests.cpp">
       <Filter>Array</Filter>
     </ClCompile>
-    <ClCompile Include="ArraySamplersTest.cpp">
+    <ClCompile Include="ArraySamplersTests.cpp">
+      <Filter>Array</Filter>
+    </ClCompile>
+    <ClCompile Include="ArrayUtilsTests.cpp">
       <Filter>Array</Filter>
     </ClCompile>
   </ItemGroup>
