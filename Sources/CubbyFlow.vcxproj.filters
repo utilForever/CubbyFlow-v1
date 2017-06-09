@@ -483,6 +483,9 @@
     <ClInclude Include="..\Includes\PCISPH\PCISPHSolver2.h">
       <Filter>PCISPH</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\PCISPH\PCISPHSolver3.h">
+      <Filter>PCISPH</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
