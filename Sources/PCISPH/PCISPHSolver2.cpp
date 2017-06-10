@@ -173,7 +173,7 @@ namespace CubbyFlow
 		m_densityErrors.Resize(numberOfParticles);
 	}
 
-	double PCISPHSolver2::ComputeDelta(double timeStepInSeconds)
+	double PCISPHSolver2::ComputeDelta(double timeStepInSeconds) const
 	{
 		auto particles = GetSPHSystemData();
 		const double kernelRadius = particles->GetKernelRadius();
@@ -214,7 +214,7 @@ namespace CubbyFlow
 		return (std::fabs(denom) > 0.0) ? -1 / (ComputeBeta(timeStepInSeconds) * denom) : 0;
 	}
 
-	double PCISPHSolver2::ComputeBeta(double timeStepInSeconds)
+	double PCISPHSolver2::ComputeBeta(double timeStepInSeconds) const
 	{
 		auto particles = GetSPHSystemData();
 		return 2.0 * Square(particles->GetMass() * timeStepInSeconds / particles->GetTargetDensity());

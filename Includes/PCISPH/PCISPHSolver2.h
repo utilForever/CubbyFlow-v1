@@ -75,8 +75,8 @@ namespace CubbyFlow
 		ParticleSystemData2::VectorData m_pressureForces;
 		ParticleSystemData2::ScalarData m_densityErrors;
 
-		double ComputeDelta(double timeStepInSeconds);
-		double ComputeBeta(double timeStepInSeconds);
+		double ComputeDelta(double timeStepInSeconds) const;
+		double ComputeBeta(double timeStepInSeconds) const;
 	};
 
 	//! Shared pointer type for the PCISPHSolver2.
