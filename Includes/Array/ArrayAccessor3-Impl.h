@@ -10,6 +10,7 @@
 #define CUBBYFLOW_ARRAY_ACCESSOR3_IMPL_H
 
 #include <Utils/Constants.h>
+#include <Utils/Parallel.h>
 
 #include <algorithm>
 #include <cassert>
@@ -101,25 +102,25 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	T* const ArrayAccessor<T, 3>::Begin() const
+	T* const ArrayAccessor<T, 3>::begin() const
 	{
 		return m_data;
 	}
 
 	template <typename T>
-	T* const ArrayAccessor<T, 3>::End() const
+	T* const ArrayAccessor<T, 3>::end() const
 	{
 		return m_data + Width() * Height() * Depth();
 	}
 
 	template <typename T>
-	T* ArrayAccessor<T, 3>::Begin()
+	T* ArrayAccessor<T, 3>::begin()
 	{
 		return m_data;
 	}
 
 	template <typename T>
-	T* ArrayAccessor<T, 3>::End()
+	T* ArrayAccessor<T, 3>::end()
 	{
 		return m_data + Width() * Height() * Depth();
 	}
@@ -331,13 +332,13 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	const T* const ConstArrayAccessor<T, 3>::Begin() const
+	const T* const ConstArrayAccessor<T, 3>::begin() const
 	{
 		return m_data;
 	}
 
 	template <typename T>
-	const T* const ConstArrayAccessor<T, 3>::End() const
+	const T* const ConstArrayAccessor<T, 3>::end() const
 	{
 		return m_data + Width() * Height() * Depth();
 	}

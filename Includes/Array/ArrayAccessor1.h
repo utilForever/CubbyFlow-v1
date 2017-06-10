@@ -50,16 +50,16 @@ namespace CubbyFlow
 		const T& At(size_t i) const;
 
 		//! Returns the begin iterator of the array.
-		T* const Begin() const;
+		T* const begin() const;
 
 		//! Returns the end iterator of the array.
-		T* const End() const;
+		T* const end() const;
 
 		//! Returns the begin iterator of the array.
-		T* Begin();
+		T* begin();
 
 		//! Returns the end iterator of the array.
-		T* End();
+		T* end();
 
 		//! Returns size of the array.
 		size_t Size() const;
@@ -201,10 +201,10 @@ namespace CubbyFlow
 		const T& At(size_t i) const;
 
 		//! Returns the begin iterator of the array.
-		const T* const Begin() const;
+		const T* const begin() const;
 
 		//! Returns the end iterator of the array.
-		const T* const End() const;
+		const T* const end() const;
 
 		//! Returns size of the array.
 		size_t Size() const;

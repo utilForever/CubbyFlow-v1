@@ -10,6 +10,7 @@
 #define CUBBYFLOW_ARRAY_ACCESSOR2_IMPL_H
 
 #include <Utils/Constants.h>
+#include <Utils/Parallel.h>
 
 #include <algorithm>
 #include <cassert>
@@ -101,25 +102,25 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	T* const ArrayAccessor<T, 2>::Begin() const
+	T* const ArrayAccessor<T, 2>::begin() const
 	{
 		return m_data;
 	}
 
 	template <typename T>
-	T* const ArrayAccessor<T, 2>::End() const
+	T* const ArrayAccessor<T, 2>::end() const
 	{
 		return m_data + Width() * Height();
 	}
 
 	template <typename T>
-	T* ArrayAccessor<T, 2>::Begin()
+	T* ArrayAccessor<T, 2>::begin()
 	{
 		return m_data;
 	}
 
 	template <typename T>
-	T* ArrayAccessor<T, 2>::End()
+	T* ArrayAccessor<T, 2>::end()
 	{
 		return m_data + Width() * Height();
 	}
@@ -285,8 +286,8 @@ namespace CubbyFlow
 	template <typename T>
 	ConstArrayAccessor<T, 2>::ConstArrayAccessor(const ArrayAccessor<T, 2>& other)
 	{
-		m_size = other.m_size;
-		m_data = other.m_data;
+		m_size = other.Size();
+		m_data = other.Data();
 	}
 
 	template <typename T>
@@ -317,13 +318,13 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	const T* const ConstArrayAccessor<T, 2>::Begin() const
+	const T* const ConstArrayAccessor<T, 2>::begin() const
 	{
 		return m_data;
 	}
 
 	template <typename T>
-	const T* const ConstArrayAccessor<T, 2>::End() const
+	const T* const ConstArrayAccessor<T, 2>::end() const
 	{
 		return m_data + Width() * Height();
 	}

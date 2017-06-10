@@ -251,6 +251,8 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Particle\ParticleSystemData3.h" />
     <ClInclude Include="..\Includes\Particle\ParticleSystemSolver2.h" />
     <ClInclude Include="..\Includes\Particle\ParticleSystemSolver3.h" />
+    <ClInclude Include="..\Includes\PCISPH\PCISPHSolver2.h" />
+    <ClInclude Include="..\Includes\PCISPH\PCISPHSolver3.h" />
     <ClInclude Include="..\Includes\PointGenerator\BccLatticePointGenerator.h" />
     <ClInclude Include="..\Includes\PointGenerator\PointGenerator2.h" />
     <ClInclude Include="..\Includes\PointGenerator\PointGenerator3.h" />
@@ -364,6 +366,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="Particle\ParticleSystemData3.cpp" />
     <ClCompile Include="Particle\ParticleSystemSolver2.cpp" />
     <ClCompile Include="Particle\ParticleSystemSolver3.cpp" />
+    <ClCompile Include="PCISPH\PCISPHSolver2.cpp" />
     <ClCompile Include="PointGenerator\BccLatticePointGenerator.cpp" />
     <ClCompile Include="PointGenerator\PointGenerator2.cpp" />
     <ClCompile Include="PointGenerator\PointGenerator3.cpp" />

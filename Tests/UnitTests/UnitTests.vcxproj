@@ -51,6 +51,11 @@
     <ClCompile Include="Array1Tests.cpp" />
     <ClCompile Include="Array2Tests.cpp" />
     <ClCompile Include="Array3Tests.cpp" />
+    <ClCompile Include="ArrayAccessor1Tests.cpp" />
+    <ClCompile Include="ArrayAccessor2Tests.cpp" />
+    <ClCompile Include="ArrayAccessor3Tests.cpp" />
+    <ClCompile Include="ArraySamplersTests.cpp" />
+    <ClCompile Include="ArrayUtilsTests.cpp" />
     <ClCompile Include="UnitTests.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
