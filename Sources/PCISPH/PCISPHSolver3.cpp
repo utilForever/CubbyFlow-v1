@@ -173,7 +173,7 @@ namespace CubbyFlow
 		m_densityErrors.Resize(numberOfParticles);
 	}
 
-	double PCISPHSolver3::ComputeDelta(double timeStepInSeconds)
+	double PCISPHSolver3::ComputeDelta(double timeStepInSeconds) const
 	{
 		auto particles = GetSPHSystemData();
 		const double kernelRadius = particles->GetKernelRadius();
@@ -190,7 +190,7 @@ namespace CubbyFlow
 
 		double denom = 0;
 		Vector3D denom1;
-		double denom3 = 0;
+		double denom2 = 0;
 
 		for (size_t i = 0; i < points.Size(); ++i)
 		{
@@ -205,16 +205,16 @@ namespace CubbyFlow
 				// grad(Wij)
 				Vector3D gradWij = kernel.Gradient(distance, direction);
 				denom1 += gradWij;
-				denom3 += gradWij.Dot(gradWij);
+				denom2 += gradWij.Dot(gradWij);
 			}
 		}
 
-		denom += -denom1.Dot(denom1) - denom3;
+		denom += -denom1.Dot(denom1) - denom2;
 
 		return (std::fabs(denom) > 0.0) ? -1 / (ComputeBeta(timeStepInSeconds) * denom) : 0;
 	}
 
-	double PCISPHSolver3::ComputeBeta(double timeStepInSeconds)
+	double PCISPHSolver3::ComputeBeta(double timeStepInSeconds) const
 	{
 		auto particles = GetSPHSystemData();
 		return 2.0 * Square(particles->GetMass() * timeStepInSeconds / particles->GetTargetDensity());
