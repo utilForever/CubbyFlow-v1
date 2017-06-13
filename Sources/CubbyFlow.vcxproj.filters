@@ -689,7 +689,6 @@
     <ClCompile Include="PCISPH\PCISPHSolver2.cpp">
       <Filter>PCISPH</Filter>
     </ClCompile>
-    <ClCompile Include="SPHSolver3.cpp" />
     <ClCompile Include="SPH\SPHSolver3.cpp">
       <Filter>SPH</Filter>
     </ClCompile>
