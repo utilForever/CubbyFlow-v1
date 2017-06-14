@@ -401,15 +401,13 @@ namespace CubbyFlow
 	template <typename T>
 	T Matrix<T, 2, 2>::Min() const
 	{
-		T min = m_elements[std::min_element(m_elements.begin(), m_elements.end()) - m_elements.begin()];
-		return min;
+		return m_elements[std::min_element(m_elements.begin(), m_elements.end()) - m_elements.begin()];
 	}
 
 	template <typename T>
 	T Matrix<T, 2, 2>::Max() const
 	{
-		T max = m_elements[std::max_element(m_elements.begin(), m_elements.end()) - m_elements.begin()];
-		return max;
+		return m_elements[std::max_element(m_elements.begin(), m_elements.end()) - m_elements.begin()];
 	}
 
 	template <typename T>
