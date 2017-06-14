@@ -12,10 +12,12 @@
 namespace CubbyFlow
 {
 	template<typename T, size_t M, size_t N>
-	Matrix<T, M, N>::Matrix() :
-		elements(0)
+	Matrix<T, M, N>::Matrix()
 	{
-		// Do nothing
+		for (auto& elem : elements)
+		{
+			elem = 0;
+		}
 	}
 }	
 
