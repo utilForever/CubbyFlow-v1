@@ -9,34 +9,30 @@
 #ifndef CUBBYFLOW_MATRIX2X2_IMPL_H
 #define CUBBYFLOW_MATRIX2X2_IMPL_H
 
+#include <algorithm>
 #include <cassert>
-#include <complex.h>
 
 namespace CubbyFlow
 {
 	template <typename T>
-	Matrix<T, 2, 2>::Matrix() :
-		m_elements(1, 0,
-				   0, 1)
+	Matrix<T, 2, 2>::Matrix()
 	{
-		// Do nothing
+		Set(1, 0,
+			0, 1);
 	}
 
 	template <typename T>
-	Matrix<T, 2, 2>::Matrix(T s) :
-		m_elements(s, s,
-				   s, s)
+	Matrix<T, 2, 2>::Matrix(T s)
 	{
-		// Do nothing
+		Set(s);
 	}
 
 	template <typename T>
 	Matrix<T, 2, 2>::Matrix(T m00, T m01,
-							T m10, T m11) :
-		m_elements(m00, m01,
-				   m10, m11)
+							T m10, T m11)
 	{
-		// Do nothing
+		Set(m00, m01,
+			m10, m11);
 	}
 
 	template <typename T>
@@ -53,11 +49,10 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	Matrix<T, 2, 2>::Matrix(const T* arr) :
-		m_elements(arr[0], arr[1],
-				   arr[2], arr[3])
+	Matrix<T, 2, 2>::Matrix(const T* arr)
 	{
-		// Do nothing
+		Set(arr[0], arr[1],
+			arr[2], arr[3]);
 	}
 
 	template <typename T>
@@ -381,7 +376,7 @@ namespace CubbyFlow
 	template <typename T>
 	void Matrix<T, 2, 2>::Invert()
 	{
-		Set(Matrix(m_elements[3], -m_elements[1], -m_elements[2], m_elements[1]) / Determinant());
+		Set(Matrix(m_elements[3], -m_elements[1], -m_elements[2], m_elements[0]) / Determinant());
 	}
 
 	template <typename T>
@@ -406,13 +401,15 @@ namespace CubbyFlow
 	template <typename T>
 	T Matrix<T, 2, 2>::Min() const
 	{
-		return std::min_element(m_elements.begin(), m_elements.end());
+		T min = m_elements[std::min_element(m_elements.begin(), m_elements.end()) - m_elements.begin()];
+		return min;
 	}
 
 	template <typename T>
 	T Matrix<T, 2, 2>::Max() const
 	{
-		return std::max_element(m_elements.begin(), m_elements.end());
+		T max = m_elements[std::max_element(m_elements.begin(), m_elements.end()) - m_elements.begin()];
+		return max;
 	}
 
 	template <typename T>
