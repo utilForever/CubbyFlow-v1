@@ -29,6 +29,9 @@
     <ClCompile Include="ArrayUtilsTests.cpp">
       <Filter>Array</Filter>
     </ClCompile>
+    <ClCompile Include="MatrixTests.cpp">
+      <Filter>Matrix</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -39,6 +42,9 @@
     </Filter>
     <Filter Include="Array">
       <UniqueIdentifier>{432ed43d-85ba-43a4-a39d-5a4d2de8b37d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Matrix">
+      <UniqueIdentifier>{b9fac7fc-fd4e-4db0-8158-2ec5537f25b0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
