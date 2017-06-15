@@ -68,6 +68,18 @@ namespace CubbyFlow
 	inline T AbsMin(T x, T y, T z, T w);
 
 	//!
+	//! \brief      Returns the absolute minimum value among the elements in std::array.
+	//!
+	//! \param[in]  arr     The array.
+	//!
+	//! \tparam     T     Value type.
+	//!
+	//! \return     The absolute minimum.
+	//!
+	template <typename T, int N>
+	inline T AbsMin(std::array<T, N> arr);
+
+	//!
 	//! \brief      Returns the absolute maximum value among the two inputs.
 	//!
 	//! \param[in]  x     The first value.
@@ -108,6 +120,18 @@ namespace CubbyFlow
 	//!
 	template <typename T>
 	inline T AbsMax(T x, T y, T z, T w);
+
+	//!
+	//! \brief      Returns the absolute maximum value among the elements in std::array.
+	//!
+	//! \param[in]  arr     The array.
+	//!
+	//! \tparam     T     Value type.
+	//!
+	//! \return     The absolute maximum.
+	//!
+	template <typename T, int N>
+	inline T AbsMax(std::array<T, N> arr);
 
 	//!
 	//! \brief      Returns the square of \p x.
