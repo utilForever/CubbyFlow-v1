@@ -51,12 +51,9 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	Matrix<T, 3, 3>::Matrix(const T* arr) :
-		m_elements(arr[0], arr[1], arr[2],
-				   arr[3], arr[4], arr[5],
-				   arr[6], arr[7], arr[8])
+	Matrix<T, 3, 3>::Matrix(const T* arr)
 	{
-		// Do nothing
+		Set(arr);
 	}
 
 	template <typename T>
@@ -273,9 +270,9 @@ namespace CubbyFlow
 			for (size_t j = 0; j < 3; ++j)
 			{
 				tmp.m_elements[i * 3 + j] =
-					m_elements[i * 3] * m.m_elements[i * 3 + j]
-					+ m_elements[i * 3 + 1] * m.m_elements[(i + 1) * 3 + j]
-					+ m_elements[i * 3 + 2] * m.m_elements[(i + 2) * 3 + j];
+					m_elements[i * 3] * m.m_elements[j]
+					+ m_elements[i * 3 + 1] * m.m_elements[j + 3]
+					+ m_elements[i * 3 + 2] * m.m_elements[j + 6];
 			}
 		}
 
@@ -459,33 +456,25 @@ namespace CubbyFlow
 	template <typename T>
 	T Matrix<T, 3, 3>::Min() const
 	{
-		return std::min_element(m_elements.begin(), m_elements.end());
+		return m_elements[std::min_element(m_elements.begin(), m_elements.end()) - m_elements.begin()];
 	}
 
 	template <typename T>
 	T Matrix<T, 3, 3>::Max() const
 	{
-		return std::max_element(m_elements.begin(), m_elements.end());
+		return m_elements[std::max_element(m_elements.begin(), m_elements.end()) - m_elements.begin()];
 	}
 
 	template <typename T>
 	T Matrix<T, 3, 3>::AbsMin() const
 	{
-		// TODO: Consider T is integral type.
-		return std::min({
-			std::fabs(m_elements[0]), std::fabs(m_elements[1]), std::fabs(m_elements[2]),
-			std::fabs(m_elements[3]), std::fabs(m_elements[4]), std::fabs(m_elements[5]),
-			std::fabs(m_elements[6]), std::fabs(m_elements[7]), std::fabs(m_elements[8]) });
+		return CubbyFlow::AbsMin(m_elements);
 	}
 
 	template <typename T>
 	T Matrix<T, 3, 3>::AbsMax() const
 	{
-		// TODO: Consider T is integral type.
-		return std::max({
-			std::fabs(m_elements[0]), std::fabs(m_elements[1]), std::fabs(m_elements[2]),
-			std::fabs(m_elements[3]), std::fabs(m_elements[4]), std::fabs(m_elements[5]),
-			std::fabs(m_elements[6]), std::fabs(m_elements[7]), std::fabs(m_elements[8]) });
+		return CubbyFlow::AbsMax(m_elements);
 	}
 
 	template <typename T>
