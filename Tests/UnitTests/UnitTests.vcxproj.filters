@@ -38,6 +38,9 @@
     <ClCompile Include="Matrix3x3Tests.cpp">
       <Filter>Matrix</Filter>
     </ClCompile>
+    <ClCompile Include="Matrix4x4Tests.cpp">
+      <Filter>Matrix</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
