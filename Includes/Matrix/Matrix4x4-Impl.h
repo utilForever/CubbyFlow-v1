@@ -14,35 +14,26 @@
 namespace CubbyFlow
 {
 	template <typename T>
-	Matrix<T, 4, 4>::Matrix() :
-		m_elements(1, 0, 0, 0,
-				   0, 1, 0, 0,
-				   0, 0, 1, 0,
-				   0, 0, 0, 1)
+	Matrix<T, 4, 4>::Matrix()
 	{
-		// Do nothing
+		Set(1, 0, 0, 0,
+			0, 1, 0, 0,
+			0, 0, 1, 0,
+			0, 0, 0, 1);
 	}
 
 	template <typename T>
-	Matrix<T, 4, 4>::Matrix(T s) :
-		m_elements(s, s, s, s, 
-				   s, s, s, s, 
-				   s, s, s, s,
-				   s, s, s, s)
+	Matrix<T, 4, 4>::Matrix(T s)
 	{
-		// Do nothing
+		Set(s);
 	}
 
 	template <typename T>
 	Matrix<T, 4, 4>::Matrix(T m00, T m01, T m02,
 							T m10, T m11, T m12,
-							T m20, T m21, T m22) :
-		m_elements(m00, m01, m02, 0,
-	    		   m10, m11, m12, 0, 
-				   m20, m21, m22, 0,
-				   0,   0,   0,   1)
+							T m20, T m21, T m22)
 	{
-		// Do nothing
+		Set(m00, m01, m02, m10, m11, m12, m20, m21, m22);
 	}
 
 	template <typename T>
@@ -50,13 +41,9 @@ namespace CubbyFlow
 				T m00, T m01, T m02, T m03,
 				T m10, T m11, T m12, T m13,
 				T m20, T m21, T m22, T m23,
-				T m30, T m31, T m32, T m33) :
-		m_elements(m00, m01, m02, m03,
-				   m10, m11, m12, m13,
-				   m20, m21, m22, m23,
-				   m30, m31, m32, m33)
+				T m30, T m31, T m32, T m33)
 	{
-		// Do nothing
+		Set(m00, m01, m02, m03, m10, m11, m12, m13, m20, m21, m22, m23, m30, m31, m32, m33);
 	}
 
 	template <typename T>
@@ -184,10 +171,10 @@ namespace CubbyFlow
 	void Matrix<T, 4, 4>::Set(const Matrix<T, 3, 3>& m33)
 	{
 		Set(
-			m33.m_elements[0], m33.m_elements[1], m33.m_elements[2], 0,
-			m33.m_elements[3], m33.m_elements[4], m33.m_elements[5], 0,
-			m33.m_elements[6], m33.m_elements[7], m33.m_elements[8], 0,
-			0,				   0,				  0,				 1);
+			m33[0], m33[1], m33[2], 0,
+			m33[3], m33[4], m33[5], 0,
+			m33[6], m33[7], m33[8], 0,
+			0,		0,		0,		1);
 	}
 
 	template <typename T>
@@ -571,35 +558,25 @@ namespace CubbyFlow
 	template <typename T>
 	T Matrix<T, 4, 4>::Min() const
 	{
-		return std::min_element(m_elements.begin(), m_elements.end());
+		return m_elements[std::min_element(m_elements.begin(), m_elements.end()) - m_elements.begin()];
 	}
 
 	template <typename T>
 	T Matrix<T, 4, 4>::Max() const
 	{
-		return std::max_element(m_elements.begin(), m_elements.end());
+		return m_elements[std::max_element(m_elements.begin(), m_elements.end()) - m_elements.begin()];
 	}
 
 	template <typename T>
 	T Matrix<T, 4, 4>::AbsMin() const
 	{
-		// TODO: Consider T is integral type.
-		return std::min({ 
-			std::fabs(m_elements[0]), std::fabs(m_elements[1]), std::fabs(m_elements[2]), std::fabs(m_elements[3]), 
-			std::fabs(m_elements[4]), std::fabs(m_elements[5]), std::fabs(m_elements[6]), std::fabs(m_elements[7]), 
-			std::fabs(m_elements[8]), std::fabs(m_elements[9]), std::fabs(m_elements[10]), std::fabs(m_elements[11]),
-			std::fabs(m_elements[12]), std::fabs(m_elements[13]), std::fabs(m_elements[14]), std::fabs(m_elements[15]) });
+		return CubbyFlow::AbsMin(m_elements);
 	}
 
 	template <typename T>
 	T Matrix<T, 4, 4>::AbsMax() const
 	{
-		// TODO: Consider T is integral type.
-		return std::max({
-			std::fabs(m_elements[0]), std::fabs(m_elements[1]), std::fabs(m_elements[2]), std::fabs(m_elements[3]),
-			std::fabs(m_elements[4]), std::fabs(m_elements[5]), std::fabs(m_elements[6]), std::fabs(m_elements[7]),
-			std::fabs(m_elements[8]), std::fabs(m_elements[9]), std::fabs(m_elements[10]), std::fabs(m_elements[11]),
-			std::fabs(m_elements[12]), std::fabs(m_elements[13]), std::fabs(m_elements[14]), std::fabs(m_elements[15]) });
+		return CubbyFlow::AbsMax(m_elements);
 	}
 
 	template <typename T>
