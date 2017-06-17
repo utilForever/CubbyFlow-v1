@@ -390,7 +390,7 @@ namespace CubbyFlow
 		return Matrix<T, 4, 4>(
 			m.m_elements[0] + m_elements[0], m.m_elements[1] + m_elements[1], m.m_elements[2] + m_elements[2], m.m_elements[3] + m_elements[3],
 			m.m_elements[4] + m_elements[4], m.m_elements[5] + m_elements[5], m.m_elements[6] + m_elements[6], m.m_elements[7] + m_elements[7],
-			m.m_elements[8] + m_elements[8], m.m_elements[9] + m_elements[9], m.m_elements[10] + m_elements[10], m.m_elements[11] + m_elements[12],
+			m.m_elements[8] + m_elements[8], m.m_elements[9] + m_elements[9], m.m_elements[10] + m_elements[10], m.m_elements[11] + m_elements[11],
 			m.m_elements[12] + m_elements[12], m.m_elements[13] + m_elements[13], m.m_elements[14] + m_elements[14], m.m_elements[15] + m_elements[15]);
 	}
 
@@ -410,7 +410,7 @@ namespace CubbyFlow
 		return Matrix<T, 4, 4>(
 			m.m_elements[0] - m_elements[0], m.m_elements[1] - m_elements[1], m.m_elements[2] - m_elements[2], m.m_elements[3] - m_elements[3],
 			m.m_elements[4] - m_elements[4], m.m_elements[5] - m_elements[5], m.m_elements[6] - m_elements[6], m.m_elements[7] - m_elements[7], 
-			m.m_elements[8] - m_elements[8], m.m_elements[9] - m_elements[9], m.m_elements[10] - m_elements[10], m.m_elements[11] - m_elements[12],
+			m.m_elements[8] - m_elements[8], m.m_elements[9] - m_elements[9], m.m_elements[10] - m_elements[10], m.m_elements[11] - m_elements[11],
 			m.m_elements[12] - m_elements[12], m.m_elements[13] - m_elements[13], m.m_elements[14] - m_elements[14], m.m_elements[15] - m_elements[15]);
 	}
 
@@ -626,7 +626,7 @@ namespace CubbyFlow
 			0, 0, 0, 0, 
 			m_elements[4], 0, 0, 0,
 			m_elements[8], m_elements[9], 0, 0,
-			m_elements[12], m_elements[13], m_elements[14], m_elements[15]);
+			m_elements[12], m_elements[13], m_elements[14], 0);
 	}
 
 	template <typename T>
