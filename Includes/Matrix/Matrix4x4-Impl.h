@@ -354,10 +354,10 @@ namespace CubbyFlow
 			for (size_t j = 0; j < 4; ++j)
 			{
 				tmp.m_elements[i * 4 + j] =
-					  m_elements[i * 4] * m.m_elements[i * 4 + j]
-					+ m_elements[i * 4 + 1] * m.m_elements[(i + 1) * 4 + j]
-					+ m_elements[i * 4 + 2] * m.m_elements[(i + 2) * 4 + j]
-					+ m_elements[i * 4 + 3] * m.m_elements[(i + 3) * 4 + j];
+					  m_elements[i * 4]		* m.m_elements[j]
+					+ m_elements[i * 4 + 1] * m.m_elements[j + 4]
+					+ m_elements[i * 4 + 2] * m.m_elements[j + 8]
+					+ m_elements[i * 4 + 3] * m.m_elements[j + 12];
 			}
 		}
 
