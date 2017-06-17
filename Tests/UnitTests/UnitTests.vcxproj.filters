@@ -41,6 +41,9 @@
     <ClCompile Include="Matrix4x4Tests.cpp">
       <Filter>Matrix</Filter>
     </ClCompile>
+    <ClCompile Include="VectorTests.cpp">
+      <Filter>Vector</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -54,6 +57,9 @@
     </Filter>
     <Filter Include="Matrix">
       <UniqueIdentifier>{b9fac7fc-fd4e-4db0-8158-2ec5537f25b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vector">
+      <UniqueIdentifier>{86f6bb7b-895f-4d87-a2cf-d1def9deb345}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
