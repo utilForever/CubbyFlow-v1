@@ -47,6 +47,9 @@
     <ClCompile Include="Vector2Tests.cpp">
       <Filter>Vector</Filter>
     </ClCompile>
+    <ClCompile Include="Vector3Tests.cpp">
+      <Filter>Vector</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
