@@ -30,8 +30,8 @@ TEST(Vector2, SetMethods)
 	EXPECT_FLOAT_EQ(4.f, vec.x);
 	EXPECT_FLOAT_EQ(2.f, vec.y);
 
-	auto lst = { 0.f, 5.f };
-	vec.Set(lst);
+	auto list = { 0.f, 5.f };
+	vec.Set(list);
 	EXPECT_FLOAT_EQ(0.f, vec.x);
 	EXPECT_FLOAT_EQ(5.f, vec.y);
 
