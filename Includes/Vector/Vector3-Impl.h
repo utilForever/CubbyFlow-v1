@@ -105,9 +105,10 @@ namespace CubbyFlow
 	template <typename T>
 	void Vector<T, 3>::Normalize()
 	{
-		x /= Length();
-		y /= Length();
-		z /= Length();
+		T length = Length();
+		x /= length;
+		y /= length;
+		z /= length;
 	}
 
 	template <typename T>
@@ -293,13 +294,13 @@ namespace CubbyFlow
 	template <typename T>
 	T Vector<T, 3>::Min() const
 	{
-		return std::min(x, y, z);
+		return std::min({ x, y, z });
 	}
 
 	template <typename T>
 	T Vector<T, 3>::Max() const
 	{
-		return std::max(x, y, z);
+		return std::max({ x, y, z });
 	}
 
 	template <typename T>
