@@ -86,8 +86,9 @@ namespace CubbyFlow
 	template <typename T>
 	void Vector<T, 2>::Normalize()
 	{
-		x /= Length();
-		y /= Length();
+		T length = Length();
+		x /= length;
+		y /= length;
 	}
 
 	template <typename T>
