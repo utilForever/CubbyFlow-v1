@@ -286,22 +286,25 @@ TEST(Vector2, MinMaxFunction)
 	EXPECT_EQ(Vector2F(5.f, 3.f), maxVector);
 }
 
-TEST(Vector2, ClampFunction) {
+TEST(Vector2, ClampFunction)
+{
 	Vector2F vec(2.f, 4.f), low(3.f, -1.f), high(5.f, 2.f);
-	Vector2F clampedVec = clamp(vec, low, high);
+	Vector2F clampedVec = Clamp(vec, low, high);
 	EXPECT_EQ(Vector2F(3.f, 2.f), clampedVec);
 }
 
-TEST(Vector2, CeilFloorFunction) {
+TEST(Vector2, CeilFloorFunction)
+{
 	Vector2F vec(2.2f, 4.7f);
-	Vector2F ceilVec = ceil(vec);
+	Vector2F ceilVec = Ceil(vec);
 	EXPECT_EQ(Vector2F(3.f, 5.f), ceilVec);
 
-	Vector2F floorVec = floor(vec);
+	Vector2F floorVec = Floor(vec);
 	EXPECT_EQ(Vector2F(2.f, 4.f), floorVec);
 }
 
-TEST(Vector2, BinaryOperators) {
+TEST(Vector2, BinaryOperators)
+{
 	Vector2F vec(3.f, 9.f);
 	vec = vec + 4.f;
 	EXPECT_FLOAT_EQ(7.f, vec.x);
@@ -335,16 +338,16 @@ TEST(Vector2, BinaryOperators) {
 	EXPECT_FLOAT_EQ(1.f, vec.x);
 	EXPECT_FLOAT_EQ(3.f, vec.y);
 
-	Vector2D v = Vector2D(2.0, 1.0).normalized();
-	Vector2D normal = Vector2D(1.0, 1.0).normalized();
+	Vector2D v = Vector2D(2.0, 1.0).Normalized();
+	Vector2D normal = Vector2D(1.0, 1.0).Normalized();
 
-	Vector2D reflected = v.reflected(normal);
-	Vector2D reflectedAnswer = Vector2D(-1.0, -2.0).normalized();
-	EXPECT_NEAR(reflected.distanceTo(reflectedAnswer), 0.0, 1e-9);
+	Vector2D reflected = v.Reflected(normal);
+	Vector2D reflectedAnswer = Vector2D(-1.0, -2.0).Normalized();
+	EXPECT_NEAR(reflected.DistanceTo(reflectedAnswer), 0.0, 1e-9);
 
-	Vector2D projected = v.projected(normal);
-	EXPECT_NEAR(projected.dot(normal), 0.0, 1e-9);
+	Vector2D projected = v.Projected(normal);
+	EXPECT_NEAR(projected.Dot(normal), 0.0, 1e-9);
 
-	Vector2D tangential = normal.tangential();
-	EXPECT_NEAR(tangential.dot(normal), 0.0, 1e-9);
+	Vector2D tangential = normal.Tangential();
+	EXPECT_NEAR(tangential.Dot(normal), 0.0, 1e-9);
 }
