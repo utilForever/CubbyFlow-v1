@@ -486,6 +486,12 @@
     <ClInclude Include="..\Includes\PCISPH\PCISPHSolver3.h">
       <Filter>PCISPH</Filter>
     </ClInclude>
+    <ClInclude Include="Blas.h">
+      <Filter>Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="cg.h">
+      <Filter>Geometry</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
@@ -694,6 +700,12 @@
     </ClCompile>
     <ClCompile Include="PCISPH\PCISPHSolver3.cpp">
       <Filter>PCISPH</Filter>
+    </ClCompile>
+    <ClCompile Include="Blas.cpp">
+      <Filter>Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="cg.cpp">
+      <Filter>Geometry</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

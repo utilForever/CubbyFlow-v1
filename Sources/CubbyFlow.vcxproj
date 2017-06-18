@@ -316,6 +316,8 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Vector\Vector3.h" />
     <ClInclude Include="..\Includes\Vector\Vector4-Impl.h" />
     <ClInclude Include="..\Includes\Vector\Vector4.h" />
+    <ClInclude Include="Blas.h" />
+    <ClInclude Include="cg.h" />
     <ClInclude Include="Utils\PhysicsHelpers.h" />
   </ItemGroup>
   <ItemGroup>
@@ -354,6 +356,8 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="..\Sources\Transform\Transform3.cpp" />
     <ClCompile Include="..\Sources\Utils\Logger.cpp" />
     <ClCompile Include="..\Sources\Utils\Timer.cpp" />
+    <ClCompile Include="Blas.cpp" />
+    <ClCompile Include="cg.cpp" />
     <ClCompile Include="Collider\Collider2.cpp" />
     <ClCompile Include="Collider\Collider3.cpp" />
     <ClCompile Include="Collider\ColliderSet2.cpp" />
