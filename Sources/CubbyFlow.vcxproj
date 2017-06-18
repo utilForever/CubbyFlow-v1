@@ -364,6 +364,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="Collider\Collider3.cpp" />
     <ClCompile Include="Collider\ColliderSet2.cpp" />
     <ClCompile Include="Collider\ColliderSet3.cpp" />
+    <ClCompile Include="Geometry\Plane2.cpp" />
     <ClCompile Include="Particle\ParticleEmitter2.cpp" />
     <ClCompile Include="Particle\ParticleEmitter3.cpp" />
     <ClCompile Include="Particle\ParticleEmitterSet2.cpp" />

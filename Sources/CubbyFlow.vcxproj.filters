@@ -492,6 +492,8 @@
     <ClInclude Include="..\Includes\Geometry\Plane3.h">
       <Filter>Geometry</Filter>
     </ClInclude>
+    <ClInclude Include="Blas.h" />
+    <ClInclude Include="cg.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
@@ -700,6 +702,11 @@
     </ClCompile>
     <ClCompile Include="PCISPH\PCISPHSolver3.cpp">
       <Filter>PCISPH</Filter>
+    </ClCompile>
+    <ClCompile Include="Blas.cpp" />
+    <ClCompile Include="cg.cpp" />
+    <ClCompile Include="Geometry\Plane2.cpp">
+      <Filter>Geometry</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
