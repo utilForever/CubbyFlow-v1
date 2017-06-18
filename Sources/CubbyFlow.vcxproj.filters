@@ -708,5 +708,8 @@
     <ClCompile Include="Geometry\Plane2.cpp">
       <Filter>Geometry</Filter>
     </ClCompile>
+    <ClCompile Include="Geometry\Plane3.cpp">
+      <Filter>Geometry</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
