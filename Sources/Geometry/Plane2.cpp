@@ -68,23 +68,20 @@ namespace CubbyFlow
 
 	BoundingBox2D Plane2::BoundingBoxLocal() const
 	{
-		if (std::fabs(normal.Dot(Vector2D(1, 0)) - 1.0) < std::numeric_limits<double>::epsilon())
+		static const double eps = std::numeric_limits<double>::epsilon();
+		static const double dmax = std::numeric_limits<double>::max();
+
+		if (std::fabs(normal.Dot(Vector2D(1, 0)) - 1.0) < eps)
 		{
-			return BoundingBox2D(
-				point - Vector2D(0, std::numeric_limits<double>::max()),
-				point + Vector2D(0, std::numeric_limits<double>::max()));
+			return BoundingBox2D(point - Vector2D(0, dmax), point + Vector2D(0, dmax));
 		}
 		
-		if (std::fabs(normal.Dot(Vector2D(0, 1)) - 1.0) < std::numeric_limits<double>::epsilon())
+		if (std::fabs(normal.Dot(Vector2D(0, 1)) - 1.0) < eps)
 		{
-			return BoundingBox2D(
-				point - Vector2D(std::numeric_limits<double>::max(), 0),
-				point + Vector2D(std::numeric_limits<double>::max(), 0));
+			return BoundingBox2D(point - Vector2D(dmax, 0), point + Vector2D(dmax, 0));
 		}
 		
-		return BoundingBox2D(
-			Vector2D(std::numeric_limits<double>::max(), std::numeric_limits<double>::max()),
-			Vector2D(std::numeric_limits<double>::max(), std::numeric_limits<double>::max()));
+		return BoundingBox2D(Vector2D(dmax, dmax), Vector2D(dmax, dmax));
 	}
 
 	Plane2::Builder Plane2::GetBuilder()
