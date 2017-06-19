@@ -494,6 +494,15 @@
     </ClInclude>
     <ClInclude Include="Blas.h" />
     <ClInclude Include="cg.h" />
+    <ClInclude Include="FdmJacobiSolver3.h">
+      <Filter>Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Fdm.h">
+      <Filter>Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="FdmBlas3.h">
+      <Filter>Vector</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
@@ -710,6 +719,9 @@
     </ClCompile>
     <ClCompile Include="Geometry\Plane3.cpp">
       <Filter>Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="FdmBlas3.cpp">
+      <Filter>Vector</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

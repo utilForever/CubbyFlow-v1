@@ -10,23 +10,20 @@
 #include <limits>
 
 namespace CUBBYFLOW {
-
-	template <
-		typename BlasType,
-		typename PrecondType>
-		void pcg(
-			const typename BlasType::MatrixType& A,
-			const typename BlasType::VectorType& b,
-			unsigned int maxNumberOfIterations,
-			double tolerance,
-			PrecondType* M,
-			typename BlasType::VectorType* x,
-			typename BlasType::VectorType* r,
-			typename BlasType::VectorType* d,
-			typename BlasType::VectorType* q,
-			typename BlasType::VectorType* s,
-			unsigned int* lastNumberOfIterations,
-			double* lastResidualNorm) {
+	template <typename BlasType, typename PrecondType>
+	void pcg(
+		const typename BlasType::MatrixType& A,
+		const typename BlasType::VectorType& b,
+		unsigned int maxNumberOfIterations,
+		double tolerance,
+		PrecondType* M,
+		typename BlasType::VectorType* x,
+		typename BlasType::VectorType* r,
+		typename BlasType::VectorType* d,
+		typename BlasType::VectorType* q,
+		typename BlasType::VectorType* s,
+		unsigned int* lastNumberOfIterations,
+		double* lastResidualNorm) {
 		// Clear
 		BlasType::set(0, r);
 		BlasType::set(0, d);
