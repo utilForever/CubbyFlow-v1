@@ -506,6 +506,9 @@
     <ClInclude Include="FdmLinearSystemSolver3.h">
       <Filter>Vector</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Particle\VolumeParticleEmitter2.h">
+      <Filter>Particle</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
