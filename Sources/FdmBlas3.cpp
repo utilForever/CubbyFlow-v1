@@ -56,7 +56,17 @@ namespace CUBBYFLOW
 		const FdmVector3& v, 
 		FdmVector3* result)
 	{
-		*result = m * v;
+		Size3 size = m.size();
+		m.parallelForEachIndex([&](size_t i, size_t j, size_t k) {
+			(*result)(i, j, k)
+				= m(i, j, k).center * v(i, j, k)
+				+ ((i > 0) ? m(i - 1, j, k).right * v(i - 1, j, k) : 0.0)
+				+ ((i + 1 < size.x) ? m(i, j, k).right * v(i + 1, j, k) : 0.0)
+				+ ((j > 0) ? m(i, j - 1, k).up * v(i, j - 1, k) : 0.0)
+				+ ((j + 1 < size.y) ? m(i, j, k).up * v(i, j + 1, k) : 0.0)
+				+ ((k > 0) ? m(i, j, k - 1).front * v(i, j, k - 1) : 0.0)
+				+ ((k + 1 < size.z) ? m(i, j, k).front * v(i, j, k + 1) : 0.0);
+		})
 	}
 
 	template <typename T, typename FdmMatrixRow3>
