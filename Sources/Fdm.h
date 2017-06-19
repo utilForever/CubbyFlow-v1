@@ -11,7 +11,7 @@
 
 #include "../Includes/Array/Array3.h"
 
-namespace CUBBYFLOW
+namespace CubbyFlow
 {
 	template<typename T>
 	typedef Array3<double> FdmVector3;

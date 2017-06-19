@@ -323,6 +323,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="Fdm.h" />
     <ClInclude Include="FdmBlas3.h" />
     <ClInclude Include="FdmJacobiSolver3.h" />
+    <ClInclude Include="FdmLinearSystemSolver3.h" />
     <ClInclude Include="Utils\PhysicsHelpers.h" />
   </ItemGroup>
   <ItemGroup>
@@ -368,6 +369,8 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="Collider\ColliderSet2.cpp" />
     <ClCompile Include="Collider\ColliderSet3.cpp" />
     <ClCompile Include="FdmBlas3.cpp" />
+    <ClCompile Include="FdmJacobiSolver3.cpp" />
+    <ClCompile Include="FdmLinearSystemSolver3.cpp" />
     <ClCompile Include="Geometry\Plane2.cpp" />
     <ClCompile Include="Geometry\Plane3.cpp" />
     <ClCompile Include="Particle\ParticleEmitter2.cpp" />

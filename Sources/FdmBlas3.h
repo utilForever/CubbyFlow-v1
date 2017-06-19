@@ -11,7 +11,7 @@
 
 #include "Blas.h"
 #include "Fdm.h"
-namespace CUBBYFLOW
+namespace CubbyFlow
 {
 	//!
 	//! \brief Fdm Blas class.

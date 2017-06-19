@@ -8,7 +8,7 @@
 *************************************************************************/
 #include"FdmBlas3.h"
 
-namespace CUBBYFLOW
+namespace CubbyFlow
 {
 	template <typename T, typename FdmMatrixRow3>
 	void FdmBlas3<T, FdmMatrixRow3>::set(double s, FdmVector3* result)
