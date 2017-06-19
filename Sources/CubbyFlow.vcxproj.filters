@@ -501,6 +501,9 @@
     <ClInclude Include="FdmBlas3.h" />
     <ClInclude Include="FdmJacobiSolver3.h" />
     <ClInclude Include="FdmLinearSystemSolver3.h" />
+    <ClInclude Include="..\Includes\Particle\VolumeParticleEmitter3.h">
+      <Filter>Particle</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
