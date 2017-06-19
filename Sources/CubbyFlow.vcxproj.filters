@@ -494,21 +494,13 @@
     </ClInclude>
     <ClInclude Include="Blas.h" />
     <ClInclude Include="cg.h" />
-    <ClInclude Include="FdmJacobiSolver3.h">
-      <Filter>Vector</Filter>
-    </ClInclude>
-    <ClInclude Include="Fdm.h">
-      <Filter>Vector</Filter>
-    </ClInclude>
-    <ClInclude Include="FdmBlas3.h">
-      <Filter>Vector</Filter>
-    </ClInclude>
-    <ClInclude Include="FdmLinearSystemSolver3.h">
-      <Filter>Vector</Filter>
-    </ClInclude>
     <ClInclude Include="..\Includes\Particle\VolumeParticleEmitter2.h">
       <Filter>Particle</Filter>
     </ClInclude>
+    <ClInclude Include="Fdm.h" />
+    <ClInclude Include="FdmBlas3.h" />
+    <ClInclude Include="FdmJacobiSolver3.h" />
+    <ClInclude Include="FdmLinearSystemSolver3.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
@@ -726,14 +718,8 @@
     <ClCompile Include="Geometry\Plane3.cpp">
       <Filter>Geometry</Filter>
     </ClCompile>
-    <ClCompile Include="FdmBlas3.cpp">
-      <Filter>Vector</Filter>
-    </ClCompile>
-    <ClCompile Include="FdmLinearSystemSolver3.cpp">
-      <Filter>Vector</Filter>
-    </ClCompile>
-    <ClCompile Include="FdmJacobiSolver3.cpp">
-      <Filter>Vector</Filter>
-    </ClCompile>
+    <ClCompile Include="FdmBlas3.cpp" />
+    <ClCompile Include="FdmJacobiSolver3.cpp" />
+    <ClCompile Include="FdmLinearSystemSolver3.cpp" />
   </ItemGroup>
 </Project>
