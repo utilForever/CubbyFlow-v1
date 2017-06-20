@@ -72,7 +72,7 @@ namespace CubbyFlow
 		void SetJitter(double newJitter);
 
 		//! Returns true if particles should be emitted just once.
-		bool IsOneShot() const;
+		bool GetIsOneShot() const;
 
 		//!
 		//! \brief      Sets the flag to true if particles are emitted just once.
@@ -86,7 +86,7 @@ namespace CubbyFlow
 		void SetIsOneShot(bool newValue);
 
 		//! Returns true if particles can be overlapped.
-		bool AllowOverlapping() const;
+		bool GetAllowOverlapping() const;
 
 		//!
 		//! \brief      Sets the flag to true if particles can overlap each other.
