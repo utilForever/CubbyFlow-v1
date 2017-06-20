@@ -724,5 +724,8 @@
     <ClCompile Include="FdmBlas3.cpp" />
     <ClCompile Include="FdmJacobiSolver3.cpp" />
     <ClCompile Include="FdmLinearSystemSolver3.cpp" />
+    <ClCompile Include="Particle\VolumeParticleEmitter2.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
