@@ -65,7 +65,7 @@ namespace CubbyFlow
 
 	unsigned int PhysicsAnimation::NumberOfSubTimeSteps(double timeIntervalInSeconds) const
 	{
-		// TODO: Change it to [[unused_variable]] in C++17
+		// TODO: Change it to [[maybe_unused]] in C++17
 		// UNUSED_VARIABLE(timeIntervalInSeconds);
 
 		// Returns number of fixed sub-timesteps by default
