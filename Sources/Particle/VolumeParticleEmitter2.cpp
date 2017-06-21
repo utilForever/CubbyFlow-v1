@@ -78,6 +78,7 @@ namespace CubbyFlow
 				Vector2D randomDir = rotationMatrix * Vector2D();
 				Vector2D offset = maxJitterDist * randomDir;
 				Vector2D candidate = point + offset;
+				
 				if (m_implicitSurface->SignedDistance(candidate) <= 0.0)
 				{
 					if (m_numberOfEmittedParticles < m_maxNumberOfParticles)
@@ -100,6 +101,7 @@ namespace CubbyFlow
 			PointHashGridSearcher2 neighborSearcher(
 				Size2(DEFAULT_HASH_GRID_RESOLUTION, DEFAULT_HASH_GRID_RESOLUTION),
 				2.0 * m_spacing);
+			
 			if (!m_allowOverlapping)
 			{
 				neighborSearcher.Build(particles->GetPositions());
@@ -112,6 +114,7 @@ namespace CubbyFlow
 				Vector2D randomDir = rotationMatrix * Vector2D();
 				Vector2D offset = maxJitterDist * randomDir;
 				Vector2D candidate = point + offset;
+
 				if (m_implicitSurface->SignedDistance(candidate) <= 0.0 &&
 					(!m_allowOverlapping && !neighborSearcher.HasNearbyPoint(candidate, m_spacing)))
 				{
