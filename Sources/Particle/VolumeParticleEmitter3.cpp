@@ -10,6 +10,7 @@
 #include <PointGenerator/BccLatticePointGenerator.h>
 #include <Searcher/PointHashGridSearcher3.h>
 #include <Surface/Implicit/SurfaceToImplicit3.h>
+#include <Utils/Samplers.h>
 
 namespace CubbyFlow
 {
