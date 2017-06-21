@@ -727,5 +727,8 @@
     <ClCompile Include="Particle\VolumeParticleEmitter2.cpp">
       <Filter>Particle</Filter>
     </ClCompile>
+    <ClCompile Include="Particle\VolumeParticleEmitter3.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
