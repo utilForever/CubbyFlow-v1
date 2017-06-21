@@ -308,6 +308,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Utils\Macros.h" />
     <ClInclude Include="..\Includes\Utils\Parallel-Impl.h" />
     <ClInclude Include="..\Includes\Utils\Parallel.h" />
+    <ClInclude Include="..\Includes\Utils\Samplers.h" />
     <ClInclude Include="..\Includes\Utils\Serialization-Impl.h" />
     <ClInclude Include="..\Includes\Utils\Serialization.h" />
     <ClInclude Include="..\Includes\Utils\Timer.h" />
