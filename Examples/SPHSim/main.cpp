@@ -11,6 +11,7 @@
 //#include <PCISPH/PCISPHSolver3.h>
 //#include <Geometry/Plane3.h>
 //#include <Geometry/Sphere3.h>
+//#include <Particle/VolumeParticleEmitter3.h>
 //#include <SPH/SPHSolver3.h>
 //#include <Surface/Implicit/ImplicitSurfaceSet3.h>
 //
@@ -142,14 +143,14 @@
 //        .WithExplicitSurfaces({plane, sphere})
 //        .MakeShared();
 //
-//    auto emitter = VolumeParticleEmitter3::builder()
-//        .withSurface(surfaceSet)
-//        .withSpacing(targetSpacing)
-//        .withMaxRegion(sourceBound)
-//        .withIsOneShot(true)
-//        .makeShared();
+//    auto emitter = VolumeParticleEmitter3::GetBuilder()
+//        .WithSurface(surfaceSet)
+//        .WithSpacing(targetSpacing)
+//        .WithMaxRegion(sourceBound)
+//        .WithIsOneShot(true)
+//        .MakeShared();
 //
-//    solver->setEmitter(emitter);
+//    solver->SetEmitter(emitter);
 //
 //    // Build collider
 //    auto box = Box3::builder()
