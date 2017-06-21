@@ -144,7 +144,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	bool Matrix<T, 2, 2>::IsSimilar(const Matrix& m, double tol = std::numeric_limits<double>::epsilon()) const
+	bool Matrix<T, 2, 2>::IsSimilar(const Matrix& m, double tol) const
 	{
 		for (size_t i = 0; i < 4; ++i)
 		{
