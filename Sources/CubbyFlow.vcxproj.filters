@@ -510,6 +510,9 @@
     <ClInclude Include="..\Includes\Utils\Samplers-Impl.h">
       <Filter>Utils</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Geometry\Box2.h">
+      <Filter>Geometry</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
