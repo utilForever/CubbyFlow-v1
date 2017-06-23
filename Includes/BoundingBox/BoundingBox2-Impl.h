@@ -89,7 +89,7 @@ namespace CubbyFlow
 		T min = 0;
 		T max = std::numeric_limits<T>::max();
 
-		const Vector2<T>& rayInvDir = ray.direction.rdiv(1);
+		const Vector2<T>& rayInvDir = ray.direction.RDiv(1);
 
 		for (size_t i = 0; i < 2; ++i)
 		{
