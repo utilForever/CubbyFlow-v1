@@ -416,6 +416,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="Collider\Collider3.cpp" />
     <ClCompile Include="Collider\ColliderSet2.cpp" />
     <ClCompile Include="Collider\ColliderSet3.cpp" />
+    <ClCompile Include="Collider\RigidBodyCollider2.cpp" />
     <ClCompile Include="FdmBlas3.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>

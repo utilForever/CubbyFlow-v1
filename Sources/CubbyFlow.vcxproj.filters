@@ -748,5 +748,8 @@
     <ClCompile Include="Particle\VolumeParticleEmitter3.cpp">
       <Filter>Particle</Filter>
     </ClCompile>
+    <ClCompile Include="Collider\RigidBodyCollider2.cpp">
+      <Filter>Collider</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
