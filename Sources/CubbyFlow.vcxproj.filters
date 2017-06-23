@@ -757,5 +757,8 @@
     <ClCompile Include="Geometry\Box2.cpp">
       <Filter>Geometry</Filter>
     </ClCompile>
+    <ClCompile Include="Geometry\Box3.cpp">
+      <Filter>Geometry</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
