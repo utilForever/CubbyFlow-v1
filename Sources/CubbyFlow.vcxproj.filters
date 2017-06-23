@@ -751,5 +751,8 @@
     <ClCompile Include="Collider\RigidBodyCollider2.cpp">
       <Filter>Collider</Filter>
     </ClCompile>
+    <ClCompile Include="Collider\RigidBodyCollider3.cpp">
+      <Filter>Collider</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
