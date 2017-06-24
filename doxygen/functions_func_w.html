@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.1</a>
+                    <a class="navbar-brand">CubbyFlow v0.2</a>
                 </div>
             </div>
         </nav>
@@ -81,9 +81,26 @@ $(function() {
 , <a class="el" href="class_cubby_flow_1_1_const_array_accessor_3_01_t_00_012_01_4.html#a552eb382bb5773b4e095218c9f2b2066">CubbyFlow::ConstArrayAccessor&lt; T, 2 &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_const_array_accessor_3_01_t_00_013_01_4.html#ae799248c241c16c52f59ccb60136bc04">CubbyFlow::ConstArrayAccessor&lt; T, 3 &gt;</a>
 </li>
+<li>WithAllowOverlapping()
+: <a class="el" href="class_cubby_flow_1_1_volume_particle_emitter2_1_1_builder.html#ac966551721cc619b2e9960c9a8f4856b">CubbyFlow::VolumeParticleEmitter2::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_volume_particle_emitter3_1_1_builder.html#adca4638aa32cf52855bc9328758bd34f">CubbyFlow::VolumeParticleEmitter3::Builder</a>
+</li>
+<li>WithAngularVelocity()
+: <a class="el" href="class_cubby_flow_1_1_rigid_body_collider2_1_1_builder.html#acc6c70c215793068232341dd75662243">CubbyFlow::RigidBodyCollider2::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_rigid_body_collider3_1_1_builder.html#a2244620e08f557a2f2a1d86c86799dd7">CubbyFlow::RigidBodyCollider3::Builder</a>
+</li>
+<li>WithBoundingBox()
+: <a class="el" href="class_cubby_flow_1_1_box2_1_1_builder.html#a8b58f4623d80cf7a882dc69e36567e2f">CubbyFlow::Box2::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_box3_1_1_builder.html#a6e7c928052bb9ee000ae78529fb9ea72">CubbyFlow::Box3::Builder</a>
+</li>
 <li>WithCenter()
-: <a class="el" href="class_cubby_flow_1_1_sphere2_1_1_builder.html#a2f2847ece257e2fc994163aefec21255">CubbyFlow::Sphere2::Builder</a>
+: <a class="el" href="class_cubby_flow_1_1_cylinder3_1_1_builder.html#a5b71b6d4ed6882c112bfc66957c1b672">CubbyFlow::Cylinder3::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_sphere2_1_1_builder.html#a2f2847ece257e2fc994163aefec21255">CubbyFlow::Sphere2::Builder</a>
 , <a class="el" href="class_cubby_flow_1_1_sphere3_1_1_builder.html#a3a4602eaa103cae7a4caa6f699e428c5">CubbyFlow::Sphere3::Builder</a>
+</li>
+<li>WithColliders()
+: <a class="el" href="class_cubby_flow_1_1_collider_set2_1_1_builder.html#a2c2457d5b2447ca1b54fac2ae2f3074b">CubbyFlow::ColliderSet2::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_collider_set3_1_1_builder.html#a36f462179f9f6dddc19232febc44f1c7">CubbyFlow::ColliderSet3::Builder</a>
 </li>
 <li>WithCurlFunction()
 : <a class="el" href="class_cubby_flow_1_1_custom_vector_field2_1_1_builder.html#a60d7cb041fdde32b86a773841de676fa">CubbyFlow::CustomVectorField2::Builder</a>
@@ -99,6 +116,10 @@ $(function() {
 : <a class="el" href="class_cubby_flow_1_1_custom_vector_field2_1_1_builder.html#aa612a92689b5af113c114bc4d7709946">CubbyFlow::CustomVectorField2::Builder</a>
 , <a class="el" href="class_cubby_flow_1_1_custom_vector_field3_1_1_builder.html#a2f330f9f12c78feaeda6bc2fb7e3d9b6">CubbyFlow::CustomVectorField3::Builder</a>
 </li>
+<li>WithEmitters()
+: <a class="el" href="class_cubby_flow_1_1_particle_emitter_set2_1_1_builder.html#a79880054446e223f54b75e94e92b9548">CubbyFlow::ParticleEmitterSet2::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_particle_emitter_set3_1_1_builder.html#a6a2509bd94e758ab6e94dd47f99e9c4d">CubbyFlow::ParticleEmitterSet3::Builder</a>
+</li>
 <li>WithExplicitSurfaces()
 : <a class="el" href="class_cubby_flow_1_1_implicit_surface_set2_1_1_builder.html#aa95864f77c9c46681356e0e9be56d39e">CubbyFlow::ImplicitSurfaceSet2::Builder</a>
 , <a class="el" href="class_cubby_flow_1_1_implicit_surface_set3_1_1_builder.html#a486f41f2f7694e70c32fc3e37e4c8caa">CubbyFlow::ImplicitSurfaceSet3::Builder</a>
@@ -113,13 +134,62 @@ $(function() {
 : <a class="el" href="class_cubby_flow_1_1_custom_scalar_field2_1_1_builder.html#aa8fb70f8abacd5717cf215a169054632">CubbyFlow::CustomScalarField2::Builder</a>
 , <a class="el" href="class_cubby_flow_1_1_custom_scalar_field3_1_1_builder.html#a5a3f4a38b88ec2616bc79078f197104e">CubbyFlow::CustomScalarField3::Builder</a>
 </li>
+<li>WithGridSpacing()
+: <a class="el" href="class_cubby_flow_1_1_point_hash_grid_searcher2_1_1_builder.html#a311ad5287311216a179fbb175ef1c1dd">CubbyFlow::PointHashGridSearcher2::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_point_hash_grid_searcher3_1_1_builder.html#ab589ba0b06aad422c4b9f739a9cedd2b">CubbyFlow::PointHashGridSearcher3::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_point_parallel_hash_grid_searcher2_1_1_builder.html#aa1b2867a74b78264159b7c62cce74b78">CubbyFlow::PointParallelHashGridSearcher2::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_point_parallel_hash_grid_searcher3_1_1_builder.html#aad2820c00cc668e8bd9bbeffd0332bae">CubbyFlow::PointParallelHashGridSearcher3::Builder</a>
+</li>
+<li>WithHeight()
+: <a class="el" href="class_cubby_flow_1_1_cylinder3_1_1_builder.html#ae6a54d7dbc30ba1b12ca48ce49dd5374">CubbyFlow::Cylinder3::Builder</a>
+</li>
+<li>WithImplicitSurface()
+: <a class="el" href="class_cubby_flow_1_1_volume_particle_emitter2_1_1_builder.html#ac5a983e0d49cbfa38bc36388e4d15842">CubbyFlow::VolumeParticleEmitter2::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_volume_particle_emitter3_1_1_builder.html#a0f612f3fe30cc52fb51b36891acab45e">CubbyFlow::VolumeParticleEmitter3::Builder</a>
+</li>
+<li>WithInitialVelocity()
+: <a class="el" href="class_cubby_flow_1_1_volume_particle_emitter2_1_1_builder.html#a7ad2e68a3f3dff11e77b2b51a7dfbbd2">CubbyFlow::VolumeParticleEmitter2::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_volume_particle_emitter3_1_1_builder.html#a53f039291bf1602aac0edf9a5c1417b5">CubbyFlow::VolumeParticleEmitter3::Builder</a>
+</li>
 <li>WithIsNormalFlipped()
 : <a class="el" href="class_cubby_flow_1_1_surface_builder_base2.html#ad50a74fe63a92e2b3a24763a0a0db214">CubbyFlow::SurfaceBuilderBase2&lt; DerivedBuilder &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_surface_builder_base3.html#aa5842a88500c44908af3539ca857fe61">CubbyFlow::SurfaceBuilderBase3&lt; DerivedBuilder &gt;</a>
 </li>
+<li>WithIsOneShot()
+: <a class="el" href="class_cubby_flow_1_1_volume_particle_emitter2_1_1_builder.html#acef07452c67c66b17ec76b619a40d033">CubbyFlow::VolumeParticleEmitter2::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_volume_particle_emitter3_1_1_builder.html#a60e2270d174a800fabf5b23089e69d83">CubbyFlow::VolumeParticleEmitter3::Builder</a>
+</li>
+<li>WithJitter()
+: <a class="el" href="class_cubby_flow_1_1_volume_particle_emitter2_1_1_builder.html#a54edcde3a06ecf16999b58c3ad4bd617">CubbyFlow::VolumeParticleEmitter2::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_volume_particle_emitter3_1_1_builder.html#ac9b6fefbddec996431e170301165e1af">CubbyFlow::VolumeParticleEmitter3::Builder</a>
+</li>
 <li>WithLaplacianFunction()
 : <a class="el" href="class_cubby_flow_1_1_custom_scalar_field2_1_1_builder.html#ad7cb445b031b3f2e5d620574e0b68db6">CubbyFlow::CustomScalarField2::Builder</a>
 , <a class="el" href="class_cubby_flow_1_1_custom_scalar_field3_1_1_builder.html#a03de86a21d63e841dd8a119fe7a3bda8">CubbyFlow::CustomScalarField3::Builder</a>
+</li>
+<li>WithLinearVelocity()
+: <a class="el" href="class_cubby_flow_1_1_rigid_body_collider2_1_1_builder.html#ab0957d9b96ea158c0f6d3af99b408837">CubbyFlow::RigidBodyCollider2::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_rigid_body_collider3_1_1_builder.html#a974733b2f8a1e522ccd8b56859217582">CubbyFlow::RigidBodyCollider3::Builder</a>
+</li>
+<li>WithLowerCorner()
+: <a class="el" href="class_cubby_flow_1_1_box2_1_1_builder.html#abbf4576202189d2f75e2307e2935582b">CubbyFlow::Box2::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_box3_1_1_builder.html#a6529b0f6f15d4d43a574741209e94f08">CubbyFlow::Box3::Builder</a>
+</li>
+<li>WithMass()
+: <a class="el" href="class_cubby_flow_1_1_particle_system_solver_builder_base2.html#ad54ec48d99daa28bda3658b7af4d64fc">CubbyFlow::ParticleSystemSolverBuilderBase2&lt; DerivedBuilder &gt;</a>
+, <a class="el" href="class_cubby_flow_1_1_particle_system_solver_builder_base3.html#a0ed9900491ccdb2bb5a8b01ba2457120">CubbyFlow::ParticleSystemSolverBuilderBase3&lt; DerivedBuilder &gt;</a>
+</li>
+<li>WithMaxNumberOfParticles()
+: <a class="el" href="class_cubby_flow_1_1_volume_particle_emitter2_1_1_builder.html#aba8b71ac114ce1374112b62a9782a9f6">CubbyFlow::VolumeParticleEmitter2::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_volume_particle_emitter3_1_1_builder.html#ab5758de48244b7bc86d6d8f1491dcbe3">CubbyFlow::VolumeParticleEmitter3::Builder</a>
+</li>
+<li>WithMaxRegion()
+: <a class="el" href="class_cubby_flow_1_1_volume_particle_emitter2_1_1_builder.html#a000e466d8f10531e8f951591be52ed76">CubbyFlow::VolumeParticleEmitter2::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_volume_particle_emitter3_1_1_builder.html#a615d55b669c2bd18cc312792ceeaccfc">CubbyFlow::VolumeParticleEmitter3::Builder</a>
+</li>
+<li>WithNormal()
+: <a class="el" href="class_cubby_flow_1_1_plane2_1_1_builder.html#ac036edeca4c6b8a2230754444b9ca6a1">CubbyFlow::Plane2::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_plane3_1_1_builder.html#a987804bfbd8f44163b1a8f768b3f6ce2">CubbyFlow::Plane3::Builder</a>
 </li>
 <li>WithNormalIndices()
 : <a class="el" href="class_cubby_flow_1_1_triangle_mesh3_1_1_builder.html#a74f680af31302eb1a01a59297e2520a6">CubbyFlow::TriangleMesh3::Builder</a>
@@ -132,6 +202,10 @@ $(function() {
 : <a class="el" href="class_cubby_flow_1_1_surface_builder_base2.html#a18203f7a8644610eb35d43a5380d9e75">CubbyFlow::SurfaceBuilderBase2&lt; DerivedBuilder &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_surface_builder_base3.html#a3baff44dfa9beec6884244bd3e40f7d6">CubbyFlow::SurfaceBuilderBase3&lt; DerivedBuilder &gt;</a>
 </li>
+<li>WithPoint()
+: <a class="el" href="class_cubby_flow_1_1_plane2_1_1_builder.html#ac54cc7208a125da9826f69e903877056">CubbyFlow::Plane2::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_plane3_1_1_builder.html#a1eab431fc7a691510e05f48c35c780e1">CubbyFlow::Plane3::Builder</a>
+</li>
 <li>WithPointIndices()
 : <a class="el" href="class_cubby_flow_1_1_triangle_mesh3_1_1_builder.html#a1b00f97dee20da75bd27a7c22694957d">CubbyFlow::TriangleMesh3::Builder</a>
 </li>
@@ -140,18 +214,51 @@ $(function() {
 , <a class="el" href="class_cubby_flow_1_1_triangle_mesh3_1_1_builder.html#a65b1ebd7d0b06b807ecee2b2e0d01623">CubbyFlow::TriangleMesh3::Builder</a>
 </li>
 <li>WithRadius()
-: <a class="el" href="class_cubby_flow_1_1_sphere2_1_1_builder.html#a9798d2f4695234cd07ef9614073df1ad">CubbyFlow::Sphere2::Builder</a>
+: <a class="el" href="class_cubby_flow_1_1_cylinder3_1_1_builder.html#a092a36ee3bc397a5daf9766b1c7d39cf">CubbyFlow::Cylinder3::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_particle_system_solver_builder_base2.html#a08a3ee86758d83c827eceaa54a7513b8">CubbyFlow::ParticleSystemSolverBuilderBase2&lt; DerivedBuilder &gt;</a>
+, <a class="el" href="class_cubby_flow_1_1_particle_system_solver_builder_base3.html#a51ffa67259bfc3b4f388d3b694c4a524">CubbyFlow::ParticleSystemSolverBuilderBase3&lt; DerivedBuilder &gt;</a>
+, <a class="el" href="class_cubby_flow_1_1_sphere2_1_1_builder.html#a9798d2f4695234cd07ef9614073df1ad">CubbyFlow::Sphere2::Builder</a>
 , <a class="el" href="class_cubby_flow_1_1_sphere3_1_1_builder.html#aa63276e50ad1cca0d8b3dc7a80308aa3">CubbyFlow::Sphere3::Builder</a>
 </li>
+<li>WithRandomSeed()
+: <a class="el" href="class_cubby_flow_1_1_volume_particle_emitter2_1_1_builder.html#aad481a961cf27cb658d07f6e557e855e">CubbyFlow::VolumeParticleEmitter2::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_volume_particle_emitter3_1_1_builder.html#a913abf81de3c9938a135c590eec7a6ad">CubbyFlow::VolumeParticleEmitter3::Builder</a>
+</li>
+<li>WithRelativeKernelRadius()
+: <a class="el" href="class_cubby_flow_1_1_s_p_h_solver_builder_base2.html#a5c6a1793bae4b974db253f82f3d4b0ff">CubbyFlow::SPHSolverBuilderBase2&lt; DerivedBuilder &gt;</a>
+, <a class="el" href="class_cubby_flow_1_1_s_p_h_solver_builder_base3.html#abe28d4a5310505792dce223dc6728bf4">CubbyFlow::SPHSolverBuilderBase3&lt; DerivedBuilder &gt;</a>
+</li>
+<li>WithResolution()
+: <a class="el" href="class_cubby_flow_1_1_point_hash_grid_searcher2_1_1_builder.html#a619037f6ff666a2dc4a8d8c73f3c5681">CubbyFlow::PointHashGridSearcher2::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_point_hash_grid_searcher3_1_1_builder.html#add7c4892bf7f946bc4e8065f0819e586">CubbyFlow::PointHashGridSearcher3::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_point_parallel_hash_grid_searcher2_1_1_builder.html#a0266a7d52c5f747713e565712512320c">CubbyFlow::PointParallelHashGridSearcher2::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_point_parallel_hash_grid_searcher3_1_1_builder.html#a0334e23332a5047736635c3e4f8ad5eb">CubbyFlow::PointParallelHashGridSearcher3::Builder</a>
+</li>
+<li>WithSpacing()
+: <a class="el" href="class_cubby_flow_1_1_volume_particle_emitter2_1_1_builder.html#a269b581a65d2ee1c7e36e8917d3ae4ab">CubbyFlow::VolumeParticleEmitter2::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_volume_particle_emitter3_1_1_builder.html#a18be73709139008f1791a12a328b8ea9">CubbyFlow::VolumeParticleEmitter3::Builder</a>
+</li>
 <li>WithSurface()
-: <a class="el" href="class_cubby_flow_1_1_surface_to_implicit2_1_1_builder.html#a97c5540e73e1327db75e1ac5893c29e6">CubbyFlow::SurfaceToImplicit2::Builder</a>
+: <a class="el" href="class_cubby_flow_1_1_rigid_body_collider2_1_1_builder.html#a4ec756bee92897190e30d150e886fc96">CubbyFlow::RigidBodyCollider2::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_rigid_body_collider3_1_1_builder.html#aadf45fa2d29bbf5b448176cf50806ab2">CubbyFlow::RigidBodyCollider3::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_surface_to_implicit2_1_1_builder.html#a97c5540e73e1327db75e1ac5893c29e6">CubbyFlow::SurfaceToImplicit2::Builder</a>
 , <a class="el" href="class_cubby_flow_1_1_surface_to_implicit3_1_1_builder.html#aa71922b345c5ff7fb7e4978d5c081d5f">CubbyFlow::SurfaceToImplicit3::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_volume_particle_emitter2_1_1_builder.html#a084d92be70ec6e86d8baf26c6361824a">CubbyFlow::VolumeParticleEmitter2::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_volume_particle_emitter3_1_1_builder.html#a6f16ad13afe8b9cd13b01be2f40e3382">CubbyFlow::VolumeParticleEmitter3::Builder</a>
 </li>
 <li>WithSurfaces()
 : <a class="el" href="class_cubby_flow_1_1_implicit_surface_set2_1_1_builder.html#a91c0f6914feaacf59a69606e5acd8f58">CubbyFlow::ImplicitSurfaceSet2::Builder</a>
 , <a class="el" href="class_cubby_flow_1_1_implicit_surface_set3_1_1_builder.html#a65e323a0347cad93648692fba5236139">CubbyFlow::ImplicitSurfaceSet3::Builder</a>
 , <a class="el" href="class_cubby_flow_1_1_surface_set2_1_1_builder.html#af5b916c479b8542bbc210675f9b8a8be">CubbyFlow::SurfaceSet2::Builder</a>
 , <a class="el" href="class_cubby_flow_1_1_surface_set3_1_1_builder.html#a9338a27a18a32da7366963e444ce7f75">CubbyFlow::SurfaceSet3::Builder</a>
+</li>
+<li>WithTargetDensity()
+: <a class="el" href="class_cubby_flow_1_1_s_p_h_solver_builder_base2.html#a205d17f65ebad0c78172e54cb8c0d436">CubbyFlow::SPHSolverBuilderBase2&lt; DerivedBuilder &gt;</a>
+, <a class="el" href="class_cubby_flow_1_1_s_p_h_solver_builder_base3.html#a12cffefeacbbe54086fb0fe8dabd2cbe">CubbyFlow::SPHSolverBuilderBase3&lt; DerivedBuilder &gt;</a>
+</li>
+<li>WithTargetSpacing()
+: <a class="el" href="class_cubby_flow_1_1_s_p_h_solver_builder_base2.html#a400982e80cea21e99b2d09c0a9a6ce2d">CubbyFlow::SPHSolverBuilderBase2&lt; DerivedBuilder &gt;</a>
+, <a class="el" href="class_cubby_flow_1_1_s_p_h_solver_builder_base3.html#ac34c8eafe3b3a4f98e5da01573324380">CubbyFlow::SPHSolverBuilderBase3&lt; DerivedBuilder &gt;</a>
 </li>
 <li>WithTransform()
 : <a class="el" href="class_cubby_flow_1_1_surface_builder_base2.html#a6f111d12ed558e342b2595d8945c4565">CubbyFlow::SurfaceBuilderBase2&lt; DerivedBuilder &gt;</a>
@@ -160,6 +267,10 @@ $(function() {
 <li>WithTranslation()
 : <a class="el" href="class_cubby_flow_1_1_surface_builder_base2.html#a7b245fd9529c43a1268aeec7d2d5895b">CubbyFlow::SurfaceBuilderBase2&lt; DerivedBuilder &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_surface_builder_base3.html#a62b55196e93a14ca3a3d42103c96539c">CubbyFlow::SurfaceBuilderBase3&lt; DerivedBuilder &gt;</a>
+</li>
+<li>WithUpperCorner()
+: <a class="el" href="class_cubby_flow_1_1_box2_1_1_builder.html#a17208b5f84ac2e51a67a032ac4368d67">CubbyFlow::Box2::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_box3_1_1_builder.html#a807e1516fd261f8d879fff440adbc7d5">CubbyFlow::Box3::Builder</a>
 </li>
 <li>WithUvIndices()
 : <a class="el" href="class_cubby_flow_1_1_triangle_mesh3_1_1_builder.html#a853074a6210ab371f51169485a043ac1">CubbyFlow::TriangleMesh3::Builder</a>
@@ -189,7 +300,7 @@ $(function() {
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 26 2017 23:22:16 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jun 24 2017 23:10:36 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

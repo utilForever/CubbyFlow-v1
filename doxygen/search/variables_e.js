@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['x',['x',['../class_cubby_flow_1_1_quaternion.html#a9318003a2d33e675f8319bdf01a4d5f3',1,'CubbyFlow::Quaternion::x()'],['../class_cubby_flow_1_1_point_3_01_t_00_012_01_4.html#a0b0f17c83e9d727b697d735cad0cb221',1,'CubbyFlow::Point&lt; T, 2 &gt;::x()'],['../class_cubby_flow_1_1_point_3_01_t_00_013_01_4.html#a91f0169a450754c28c29979cd1822816',1,'CubbyFlow::Point&lt; T, 3 &gt;::x()'],['../class_cubby_flow_1_1_vector_3_01_t_00_012_01_4.html#a48299f2404a65c1e029276f394dd539a',1,'CubbyFlow::Vector&lt; T, 2 &gt;::x()'],['../class_cubby_flow_1_1_vector_3_01_t_00_013_01_4.html#a87bd2d4d3a2954158f5db56c1bbf363c',1,'CubbyFlow::Vector&lt; T, 3 &gt;::x()'],['../class_cubby_flow_1_1_vector_3_01_t_00_014_01_4.html#a194dd4b68a66207fa8dcb707512b8ab7',1,'CubbyFlow::Vector&lt; T, 4 &gt;::x()']]]
+  ['radius',['radius',['../class_cubby_flow_1_1_cylinder3.html#a44f7ab856aba7a7f22662ef22a4b498a',1,'CubbyFlow::Cylinder3::radius()'],['../class_cubby_flow_1_1_sphere2.html#a881bd9a5216b1c15c71d46d78ac45c87',1,'CubbyFlow::Sphere2::radius()'],['../class_cubby_flow_1_1_sphere3.html#a1be2dd091cfd7c801b457c4d8e759d10',1,'CubbyFlow::Sphere3::radius()']]]
 ];

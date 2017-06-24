@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['center',['center',['../class_cubby_flow_1_1_sphere2.html#a3ba58a5f24749a8b77a0168bc93f0c34',1,'CubbyFlow::Sphere2::center()'],['../class_cubby_flow_1_1_sphere3.html#ab750f634c13ec7c060e22800acdf379f',1,'CubbyFlow::Sphere3::center()']]]
+  ['angularvelocity',['angularVelocity',['../class_cubby_flow_1_1_rigid_body_collider2.html#aef4ff38f15cbf999b76ac3aa3d40815c',1,'CubbyFlow::RigidBodyCollider2::angularVelocity()'],['../class_cubby_flow_1_1_rigid_body_collider3.html#a4a3a77574cf60532243970e5e7c07df5',1,'CubbyFlow::RigidBodyCollider3::angularVelocity()']]]
 ];

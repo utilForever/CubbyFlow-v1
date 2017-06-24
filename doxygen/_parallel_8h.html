@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.1</a>
+                    <a class="navbar-brand">CubbyFlow v0.2</a>
                 </div>
             </div>
         </nav>
@@ -79,7 +79,8 @@ $(function() {
 <div class="title">Parallel.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
+<div class="textblock"><code>#include &lt;<a class="el" href="_parallel-_impl_8h_source.html">Utils/Parallel-Impl.h</a>&gt;</code><br />
+</div>
 <p><a href="_parallel_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -97,6 +98,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a8c2a40ed442165560dc066a9f31d6c31"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_cubby_flow.html#a8c2a40ed442165560dc066a9f31d6c31">CubbyFlow::ParallelFor</a> (IndexType beginIndex, IndexType endIndex, const Function &amp;function)</td></tr>
 <tr class="memdesc:a8c2a40ed442165560dc066a9f31d6c31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes a for-loop from <code>beginIndex</code> <code>to</code> endIndex in parallel.  <a href="namespace_cubby_flow.html#a8c2a40ed442165560dc066a9f31d6c31">More...</a><br /></td></tr>
 <tr class="separator:a8c2a40ed442165560dc066a9f31d6c31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0068e766d01040ec88e573516434e3e2"><td class="memTemplParams" colspan="2">template&lt;typename IndexType , typename Function &gt; </td></tr>
+<tr class="memitem:a0068e766d01040ec88e573516434e3e2"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_cubby_flow.html#a0068e766d01040ec88e573516434e3e2">CubbyFlow::ParallelFor</a> (IndexType beginIndexX, IndexType endIndexX, IndexType beginIndexY, IndexType endIndexY, const Function &amp;function)</td></tr>
+<tr class="memdesc:a0068e766d01040ec88e573516434e3e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes a 2D nested for-loop in parallel.  <a href="namespace_cubby_flow.html#a0068e766d01040ec88e573516434e3e2">More...</a><br /></td></tr>
+<tr class="separator:a0068e766d01040ec88e573516434e3e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0b192df986d6c922bf1f6cf46b22f53"><td class="memTemplParams" colspan="2">template&lt;typename IndexType , typename Function &gt; </td></tr>
 <tr class="memitem:aa0b192df986d6c922bf1f6cf46b22f53"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_cubby_flow.html#aa0b192df986d6c922bf1f6cf46b22f53">CubbyFlow::ParallelFor</a> (IndexType beginIndexX, IndexType endIndexX, IndexType beginIndexY, IndexType endIndexY, IndexType beginIndexZ, IndexType endIndexZ, const Function &amp;function)</td></tr>
 <tr class="memdesc:aa0b192df986d6c922bf1f6cf46b22f53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes a 3D nested for-loop in parallel.  <a href="namespace_cubby_flow.html#aa0b192df986d6c922bf1f6cf46b22f53">More...</a><br /></td></tr>
@@ -119,7 +124,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 26 2017 23:22:11 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jun 24 2017 23:10:26 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['elements',['elements',['../class_cubby_flow_1_1_matrix.html#a05cf3c53ed4a9a1528117f27b1bc5cca',1,'CubbyFlow::Matrix']]],
-  ['errorlogger',['errorLogger',['../namespace_cubby_flow.html#a70b0cbcffaee94e2cb27971b29d9610d',1,'CubbyFlow']]]
+  ['center',['center',['../class_cubby_flow_1_1_cylinder3.html#a018f77cd7272554f94915f51c08d334c',1,'CubbyFlow::Cylinder3::center()'],['../class_cubby_flow_1_1_sphere2.html#a3ba58a5f24749a8b77a0168bc93f0c34',1,'CubbyFlow::Sphere2::center()'],['../class_cubby_flow_1_1_sphere3.html#ab750f634c13ec7c060e22800acdf379f',1,'CubbyFlow::Sphere3::center()']]]
 ];
