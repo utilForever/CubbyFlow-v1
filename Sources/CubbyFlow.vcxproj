@@ -231,6 +231,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Field\VectorField3.h" />
     <ClInclude Include="..\Includes\Geometry\Box2.h" />
     <ClInclude Include="..\Includes\Geometry\Box3.h" />
+    <ClInclude Include="..\Includes\Geometry\Cylinder3.h" />
     <ClInclude Include="..\Includes\Geometry\Plane2.h" />
     <ClInclude Include="..\Includes\Geometry\Plane3.h" />
     <ClInclude Include="..\Includes\Geometry\Sphere2.h" />

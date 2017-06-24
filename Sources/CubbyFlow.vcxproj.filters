@@ -522,6 +522,9 @@
     <ClInclude Include="..\Includes\Collider\RigidBodyCollider3.h">
       <Filter>Collider</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Geometry\Cylinder3.h">
+      <Filter>Geometry</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
