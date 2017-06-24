@@ -41,7 +41,7 @@ namespace CubbyFlow
 		T cosAngle_2 = std::cos(angle / 2);
 		T y = 1 - (1 - cosAngle_2) * u1;
 		T r = std::sqrt(std::max<T>(0, 1 - y * y));
-		T phi = static_cast<T>(2.0 * PI) * u2;
+		T phi = static_cast<T>(2.0 * PI<T>()) * u2;
 		T x = r * std::cos(phi);
 		T z = r * std::sin(phi);
 		auto ts = axis.Tangential();
@@ -54,7 +54,7 @@ namespace CubbyFlow
 	{
 		T y = u1;
 		T r = std::sqrt(std::max<T>(0, 1 - y * y));
-		T phi = static_cast<T>(2.0 * PI) * u2;
+		T phi = static_cast<T>(2.0 * PI<T>()) * u2;
 		T x = r * std::cos(phi);
 		T z = r * std::sin(phi);
 		auto ts = normal.Tangential();
@@ -65,7 +65,7 @@ namespace CubbyFlow
 	template <typename T>
 	inline Vector3<T> CosineWeightedSampleHemisphere(T u1, T u2, const Vector3<T>& normal)
 	{
-		T phi = static_cast<T>(2.0 * PI) * u1;
+		T phi = static_cast<T>(2.0 * PI<T>()) * u1;
 		T y = std::sqrt(u2);
 		T theta = std::acos(y);
 		T x = std::cos(phi) * std::sin(theta);
@@ -77,11 +77,11 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	inline Vector3<T> uniformSampleSphere(T u1, T u2)
+	inline Vector3<T> UniformSampleSphere(T u1, T u2)
 	{
 		T y = 1 - 2 * u1;
 		T r = std::sqrt(std::max<T>(0, 1 - y * y));
-		T phi = static_cast<T>(2.0 * PI) * u2;
+		T phi = static_cast<T>(2.0 * PI<T>()) * u2;
 		T x = r * std::cos(phi);
 		T z = r * std::sin(phi);
 
@@ -92,7 +92,7 @@ namespace CubbyFlow
 	inline Vector2<T> UniformSampleDisk(T u1, T u2)
 	{
 		T r = std::sqrt(u1);
-		T theta = static_cast<T>(2.0 * PI) * u2;
+		T theta = static_cast<T>(2.0 * PI<T>()) * u2;
 
 		return Vector2<T>(r * std::cos(theta), r * std::sin(theta));
 	}
