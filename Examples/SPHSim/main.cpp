@@ -11,6 +11,7 @@
 #include <Particle/ParticleSystemData3.h>
 #include <PCISPH/PCISPHSolver3.h>
 #include <Geometry/Box3.h>
+#include <Geometry/Cylinder3.h>
 #include <Geometry/Plane3.h>
 #include <Geometry/Sphere3.h>
 #include <Particle/VolumeParticleEmitter3.h>
@@ -276,38 +277,38 @@ void RunExample3(const std::string& rootDir, double targetSpacing, unsigned int 
     solver->SetEmitter(emitter);
 
     // Build collider
- //   auto cyl1 = Cylinder3::builder()
- //       .withCenter({1, 0.375, 0.375})
- //       .withRadius(0.1)
- //       .withHeight(0.75)
- //       .makeShared();
+    auto cyl1 = Cylinder3::GetBuilder()
+        .WithCenter({1, 0.375, 0.375})
+        .WithRadius(0.1)
+        .WithHeight(0.75)
+        .MakeShared();
 
- //   auto cyl2 = Cylinder3::builder()
- //       .withCenter({1.5, 0.375, 0.75})
- //       .withRadius(0.1)
- //       .withHeight(0.75)
- //       .makeShared();
+    auto cyl2 = Cylinder3::GetBuilder()
+        .WithCenter({1.5, 0.375, 0.75})
+        .WithRadius(0.1)
+        .WithHeight(0.75)
+        .MakeShared();
 
- //   auto cyl3 = Cylinder3::builder()
- //       .withCenter({2, 0.375, 1.125})
- //       .withRadius(0.1)
- //       .withHeight(0.75)
- //       .makeShared();
+    auto cyl3 = Cylinder3::GetBuilder()
+        .WithCenter({2, 0.375, 1.125})
+        .WithRadius(0.1)
+        .WithHeight(0.75)
+        .MakeShared();
 
- //   auto box = Box3::GetBuilder()
- //       .WithIsNormalFlipped(true)
- //       .WithBoundingBox(domain)
- //       .MakeShared();
+    auto box = Box3::GetBuilder()
+        .WithIsNormalFlipped(true)
+        .WithBoundingBox(domain)
+        .MakeShared();
 
-	//auto surfaceSet = ImplicitSurfaceSet3::GetBuilder()
-	//	.WithExplicitSurfaces({ cyl1, cyl2, cyl3, box })
-	//	.MakeShared();
+	auto surfaceSet = ImplicitSurfaceSet3::GetBuilder()
+		.WithExplicitSurfaces({ cyl1, cyl2, cyl3, box })
+		.MakeShared();
 
- //   auto collider = RigidBodyCollider3::GetBuilder()
- //       .WithSurface(surfaceSet)
- //       .MakeShared();
+    auto collider = RigidBodyCollider3::GetBuilder()
+        .WithSurface(surfaceSet)
+        .MakeShared();
 
- //   solver->SetCollider(collider);
+    solver->SetCollider(collider);
 
     // Print simulation info
     printf("Running example 3 (dam-breaking with PCISPH)\n");
