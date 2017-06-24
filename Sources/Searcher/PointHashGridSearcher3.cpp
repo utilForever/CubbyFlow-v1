@@ -288,7 +288,7 @@ namespace CubbyFlow
 
 	void PointHashGridSearcher3::GetNearbyKeys(const Vector3D& position, size_t* nearbyKeys) const
 	{
-		Point3I originIndex = GetBucketIndex(position), nearbyBucketIndices[4];
+		Point3I originIndex = GetBucketIndex(position), nearbyBucketIndices[8];
 
 		for (int i = 0; i < 8; ++i)
 		{
