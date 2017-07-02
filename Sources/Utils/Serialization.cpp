@@ -10,6 +10,8 @@
 
 #include <Flatbuffers/generated/FlatData_generated.h>
 
+#include <vector>
+
 namespace CubbyFlow
 {
 	void Serialize(const Serializable* serializable, std::vector<uint8_t>* buffer)
@@ -40,7 +42,7 @@ namespace CubbyFlow
 	void Deserialize(const std::vector<uint8_t>& buffer, std::vector<uint8_t>* data)
 	{
 		auto fbsData = fbs::GetFlatData(buffer.data());
-		data->resize(fbsData->Data()->size());
-		std::copy(fbsData->Data()->begin(), fbsData->Data()->end(), data->begin());
+		data->resize(fbsData->data()->size());
+		std::copy(fbsData->data()->begin(), fbsData->data()->end(), data->begin());
 	}
 }
