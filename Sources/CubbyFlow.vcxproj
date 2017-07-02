@@ -152,6 +152,9 @@ xcopy /y $(SolutionDir)obj\$(Platform)\$(Configuration)\CubbyFlow.lib $(Solution
 xcopy /y $(SolutionDir)obj\$(Platform)\$(Configuration)\CubbyFlow.pdb $(SolutionDir)Results\$(Platform)\$(Configuration)\
 xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configuration)\Includes</Command>
     </PostBuildEvent>
+    <Lib>
+      <LinkTimeCodeGeneration>true</LinkTimeCodeGeneration>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
