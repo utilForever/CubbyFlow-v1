@@ -1,7 +1,7 @@
 namespace CubbyFlow.fbs;
 
 table FlatData {
-    m_data:[ubyte];
+    data:[ubyte];
 }
 
 root_type FlatData;

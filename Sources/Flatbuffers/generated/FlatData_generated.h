@@ -15,13 +15,13 @@ struct FlatData FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
   enum {
     VT_DATA = 4
   };
-  const flatbuffers::Vector<uint8_t> *Data() const {
+  const flatbuffers::Vector<uint8_t> *data() const {
     return GetPointer<const flatbuffers::Vector<uint8_t> *>(VT_DATA);
   }
   bool Verify(flatbuffers::Verifier &verifier) const {
     return VerifyTableStart(verifier) &&
            VerifyOffset(verifier, VT_DATA) &&
-           verifier.Verify(Data()) &&
+           verifier.Verify(data()) &&
            verifier.EndTable();
   }
 };
@@ -29,8 +29,8 @@ struct FlatData FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
 struct FlatDataBuilder {
   flatbuffers::FlatBufferBuilder &fbb_;
   flatbuffers::uoffset_t start_;
-  void add_Data(flatbuffers::Offset<flatbuffers::Vector<uint8_t>> Data) {
-    fbb_.AddOffset(FlatData::VT_DATA, Data);
+  void add_data(flatbuffers::Offset<flatbuffers::Vector<uint8_t>> data) {
+    fbb_.AddOffset(FlatData::VT_DATA, data);
   }
   FlatDataBuilder(flatbuffers::FlatBufferBuilder &_fbb)
         : fbb_(_fbb) {
@@ -46,18 +46,18 @@ struct FlatDataBuilder {
 
 inline flatbuffers::Offset<FlatData> CreateFlatData(
     flatbuffers::FlatBufferBuilder &_fbb,
-    flatbuffers::Offset<flatbuffers::Vector<uint8_t>> Data = 0) {
+    flatbuffers::Offset<flatbuffers::Vector<uint8_t>> data = 0) {
   FlatDataBuilder builder_(_fbb);
-  builder_.add_Data(Data);
+  builder_.add_data(data);
   return builder_.Finish();
 }
 
 inline flatbuffers::Offset<FlatData> CreateFlatDataDirect(
     flatbuffers::FlatBufferBuilder &_fbb,
-    const std::vector<uint8_t> *Data = nullptr) {
+    const std::vector<uint8_t> *data = nullptr) {
   return CubbyFlow::fbs::CreateFlatData(
       _fbb,
-      Data ? _fbb.CreateVector<uint8_t>(*Data) : 0);
+      data ? _fbb.CreateVector<uint8_t>(*data) : 0);
 }
 
 inline const CubbyFlow::fbs::FlatData *GetFlatData(const void *buf) {
