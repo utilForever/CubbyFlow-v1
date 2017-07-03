@@ -104,6 +104,34 @@ namespace CubbyFlow
 
 	//! Speed of sound in water at 20 degrees Celsius.
 	constexpr double SPEED_OF_SOUND_IN_WATER = 1482.0;
+
+	// MARK: Common enums
+	//! No direction.
+	constexpr int DIRECTION_NONE = 0;
+
+	//! Left direction.
+	constexpr int DIRECTION_LEFT = 1 << 0;
+
+	//! RIght direction.
+	constexpr int DIRECTION_RIGHT = 1 << 1;
+
+	//! Down direction.
+	constexpr int DIRECTION_DOWN = 1 << 2;
+
+	//! Up direction.
+	constexpr int DIRECTION_UP = 1 << 3;
+
+	//! Back direction.
+	constexpr int DIRECTION_BACK = 1 << 4;
+
+	//! Front direction.
+	constexpr int DIRECTION_FRONT = 1 << 5;
+
+	//! All direction.
+	constexpr int DIRECTION_ALL =
+		DIRECTION_LEFT | DIRECTION_RIGHT |
+		DIRECTION_DOWN | DIRECTION_UP |
+		DIRECTION_BACK | DIRECTION_FRONT;
 }
 
 #endif
