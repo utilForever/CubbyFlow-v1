@@ -324,7 +324,7 @@ int main(int argc, char* argv[])
     unsigned int numberOfFrames = 100;
     double fps = 60.0;
     int exampleNum = 1;
-    std::string logFilename = APP_NAME ".log";
+    std::string logFileName = APP_NAME ".log";
     std::string outputDir = APP_NAME "_output";
     std::string format = "xyz";
 
@@ -348,7 +348,7 @@ int main(int argc, char* argv[])
 	{
         switch (opt)
 		{
-            case 's':
+        	case 's':
                 targetSpacing = atof(optarg);
                 break;
             case 'f':
@@ -361,7 +361,7 @@ int main(int argc, char* argv[])
                 exampleNum = atoi(optarg);
                 break;
             case 'l':
-                logFilename = optarg;
+                logFileName = optarg;
                 break;
             case 'o':
                 outputDir = optarg;
@@ -389,7 +389,7 @@ int main(int argc, char* argv[])
     mkdir(outputDir.c_str(), S_IRWXU | S_IRWXG | S_IRWXO);
 #endif
 
-    std::ofstream logFile(logFilename.c_str());
+    std::ofstream logFile(logFileName.c_str());
     if (logFile)
 	{
         Logging::SetAllStream(&logFile);
