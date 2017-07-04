@@ -64,6 +64,9 @@
     <Filter Include="PCISPH">
       <UniqueIdentifier>{e0623ba4-97d3-46f5-82bd-2396d4791a3a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Grid">
+      <UniqueIdentifier>{e1cdcc58-20e4-4dcc-b323-5abdf33411fa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Includes\Animation\Animation.h">
@@ -524,6 +527,9 @@
     </ClInclude>
     <ClInclude Include="..\Includes\Geometry\Cylinder3.h">
       <Filter>Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Grid\Grid2.h">
+      <Filter>Grid</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
