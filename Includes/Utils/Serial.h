@@ -110,12 +110,12 @@ namespace CubbyFlow
 	//! takes extra compare function which returns true if the first argument is
 	//! less than the second argument.
 	//!
-	//! \param[in]  begin           The begin random access iterator.
-	//! \param[in]  end             The end random access iterator.
-	//! \param[in]  compare         The compare function.
+	//! \param[in]  begin				The begin random access iterator.
+	//! \param[in]  end					The end random access iterator.
+	//! \param[in]  sortingFunction		The sorting function.
 	//!
 	//! \tparam     RandomIterator  Iterator type.
-	//! \tparam     CompareFunction Compare function type.
+	//! \tparam     SortingFunction Sorting function type.
 	//!
 	template<typename RandomIterator, typename SortingFunction>
 	void SerialSort(RandomIterator begin, RandomIterator end,
