@@ -537,6 +537,9 @@
     <ClInclude Include="..\Includes\Utils\Serial.h">
       <Filter>Utils</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Utils\Serial-Impl.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
