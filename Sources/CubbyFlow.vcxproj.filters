@@ -781,5 +781,8 @@
     <ClCompile Include="Geometry\Cylinder3.cpp">
       <Filter>Geometry</Filter>
     </ClCompile>
+    <ClCompile Include="Grid\Grid2.cpp">
+      <Filter>Grid</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
