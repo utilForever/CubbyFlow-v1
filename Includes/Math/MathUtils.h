@@ -14,6 +14,20 @@
 namespace CubbyFlow
 {
 	//!
+	//! \brief      Returns true if \p x and \p y are similar.
+	//!
+	//! \param[in]  x     The first value.
+	//! \param[in]  y     The second value.
+	//! \param[in]  eps   The tolerance.
+	//!
+	//! \tparam     T     Value type.
+	//!
+	//! \return     True if similar.
+	//!
+	template <typename T>
+	inline bool Similar(T x, T y, T eps = std::numeric_limits<T>::epsilon());
+
+	//!
 	//! \brief      Returns the sign of the value.
 	//!
 	//! \param[in]  x     Input value.

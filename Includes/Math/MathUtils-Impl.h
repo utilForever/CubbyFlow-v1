@@ -14,6 +14,12 @@
 namespace CubbyFlow
 {
 	template <typename T>
+	inline bool Similar(T x, T y, T eps)
+	{
+		return (std::abs(x - y) <= eps);
+	}
+
+	template <typename T>
 	inline T Sign(T x)
 	{
 		if (x >= 0)
