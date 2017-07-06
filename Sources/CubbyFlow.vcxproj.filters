@@ -784,5 +784,8 @@
     <ClCompile Include="Grid\Grid2.cpp">
       <Filter>Grid</Filter>
     </ClCompile>
+    <ClCompile Include="Grid\Grid3.cpp">
+      <Filter>Grid</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
