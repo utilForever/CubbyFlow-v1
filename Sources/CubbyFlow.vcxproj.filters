@@ -796,5 +796,8 @@
     <ClCompile Include="Grid\Grid3.cpp">
       <Filter>Grid</Filter>
     </ClCompile>
+    <ClCompile Include="Math\FDMUtils.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
