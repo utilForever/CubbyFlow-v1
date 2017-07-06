@@ -2,24 +2,29 @@ include "BasicTypes.fbs";
 
 namespace CubbyFlow.fbs;
 
-table ScalarParticleData2 {
+table ScalarParticleData2
+{
     data:[double];
 }
 
-table VectorParticleData2 {
+table VectorParticleData2
+{
     data:[Vector2D];
 }
 
-table PointNeighborSearcherSerialized2 {
+table PointNeighborSearcherSerialized2
+{
     type:string;
     data:[ubyte];
 }
 
-table ParticleNeighborList2 {
+table ParticleNeighborList2
+{
     data:[ulong];
 }
 
-table ParticleSystemData2 {
+table ParticleSystemData2
+{
     radius:double;
     mass:double;
     positionIdx:ulong;

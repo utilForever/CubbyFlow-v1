@@ -2,7 +2,8 @@ include "ParticleSystemData3.fbs";
 
 namespace CubbyFlow.fbs;
 
-table SPHSystemData3 {
+table SPHSystemData3
+{
     base:ParticleSystemData3;
     targetDensity:double;
     targetSpacing:double;

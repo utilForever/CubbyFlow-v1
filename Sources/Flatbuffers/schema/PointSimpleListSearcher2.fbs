@@ -2,7 +2,8 @@ include "BasicTypes.fbs";
 
 namespace CubbyFlow.fbs;
 
-table PointSimpleListSearcher2 {
+table PointSimpleListSearcher2
+{
     points:[Vector2D];
 }
 

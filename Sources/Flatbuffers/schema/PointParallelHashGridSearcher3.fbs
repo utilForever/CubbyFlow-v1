@@ -2,7 +2,8 @@ include "BasicTypes.fbs";
 
 namespace CubbyFlow.fbs;
 
-table PointParallelHashGridSearcher3 {
+table PointParallelHashGridSearcher3
+{
     gridSpacing:double;
     resolution:Size3;
     points:[Vector3D];
