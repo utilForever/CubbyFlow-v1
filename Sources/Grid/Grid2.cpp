@@ -54,7 +54,9 @@ namespace CubbyFlow
 
 	void Grid2::ForEachCellIndex(const std::function<void(size_t, size_t)>& func) const
 	{
-		SerialFor(ZERO_SIZE, m_resolution.x, ZERO_SIZE, m_resolution.y,
+		SerialFor(
+			ZERO_SIZE, m_resolution.x,
+			ZERO_SIZE, m_resolution.y,
 			[this, &func](size_t i, size_t j)
 		{
 			func(i, j);
@@ -63,7 +65,9 @@ namespace CubbyFlow
 
 	void Grid2::ParallelForEachCellIndex(const std::function<void(size_t, size_t)>& func) const
 	{
-		ParallelFor(ZERO_SIZE, m_resolution.x, ZERO_SIZE, m_resolution.y,
+		ParallelFor(
+			ZERO_SIZE, m_resolution.x,
+			ZERO_SIZE, m_resolution.y,
 			[this, &func](size_t i, size_t j)
 		{
 			func(i, j);
