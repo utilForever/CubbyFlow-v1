@@ -245,6 +245,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Grid\Grid3.h" />
     <ClInclude Include="..\Includes\Grid\ScalarGrid2.h" />
     <ClInclude Include="..\Includes\Grid\ScalarGrid3.h" />
+    <ClInclude Include="..\Includes\Math\FDMUtils.h" />
     <ClInclude Include="..\Includes\Math\MathUtils-Impl.h" />
     <ClInclude Include="..\Includes\Math\MathUtils.h" />
     <ClInclude Include="..\Includes\Math\Quaternion-Impl.h" />
