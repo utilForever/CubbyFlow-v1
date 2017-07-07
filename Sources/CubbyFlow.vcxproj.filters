@@ -549,6 +549,9 @@
     <ClInclude Include="..\Includes\Math\FDMUtils.h">
       <Filter>Math</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Grid\VertexCenteredScalarGrid2.h">
+      <Filter>Grid</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
