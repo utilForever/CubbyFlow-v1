@@ -166,6 +166,7 @@ namespace CubbyFlow
 	void ScalarGrid2::Fill(const std::function<double(const Vector2D&)>& func)
 	{
 		DataPositionFunc pos = GetDataPosition();
+		
 		ParallelFor(
 			ZERO_SIZE, m_data.Width(),
 			ZERO_SIZE, m_data.Height(),
