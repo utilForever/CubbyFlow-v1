@@ -82,9 +82,7 @@ namespace CubbyFlow
 	//! Shared pointer for the VertexCenteredScalarGrid2 type.
 	using VertexCenteredScalarGrid2Ptr = std::shared_ptr<VertexCenteredScalarGrid2>;
 
-	//!
-	//! \brief Front-end to create VertexCenteredScalarGrid2 objects step by step.
-	//!
+	//! A grid builder class that returns 2-D vertex-centered scalar grid.
 	class VertexCenteredScalarGrid2::Builder final : public ScalarGridBuilder2
 	{
 	public:
