@@ -564,6 +564,9 @@
     <ClInclude Include="..\Includes\MarchingCube\MarchingCubesTable.h">
       <Filter>MarchingCubes</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\MarchingCube\MarchingSquaresTable.h">
+      <Filter>MarchingCubes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
