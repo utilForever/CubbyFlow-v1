@@ -561,10 +561,10 @@
     <ClInclude Include="..\Includes\MarchingCubes\MarchingCubes.h">
       <Filter>MarchingCubes</Filter>
     </ClInclude>
-    <ClInclude Include="..\Includes\MarchingCube\MarchingCubesTable.h">
+    <ClInclude Include="..\Includes\MarchingCubes\MarchingCubesTable.h">
       <Filter>MarchingCubes</Filter>
     </ClInclude>
-    <ClInclude Include="..\Includes\MarchingCube\MarchingSquaresTable.h">
+    <ClInclude Include="..\Includes\MarchingCubes\MarchingSquaresTable.h">
       <Filter>MarchingCubes</Filter>
     </ClInclude>
   </ItemGroup>
