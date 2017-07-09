@@ -9,6 +9,9 @@
 #include <Array/Array1.h>
 #include <BoundingBox/BoundingBox3.h>
 #include <Geometry/TriangleMesh3.h>
+#include <Grid/ScalarGrid3.h>
+#include <Grid/VertexCenteredScalarGrid3.h>
+#include <MarchingCubes/MarchingCubes.h>
 #include <Size/Size3.h>
 #include <SPH/SPHSystemData3.h>
 #include <Utils/Serialization.h>
@@ -63,9 +66,9 @@ void TriangulateAndSave(const ScalarGrid3& sdf, const std::string& objFileName)
 {
 	TriangleMesh3 mesh;
     MarchingCubes(
-        sdf.ConstDataAccessor(),
+        sdf.GetConstDataAccessor(),
         sdf.GridSpacing(),
-        sdf.DataOrigin(),
+        sdf.GetDataOrigin(),
         &mesh,
         0.0,
 		DIRECTION_ALL);
@@ -100,7 +103,7 @@ void ParticlesToObj(
     sphParticles.UpdateDensities();
 
     VertexCenteredScalarGrid3 sdf(resolution, gridSpacing, origin);
-    PrintInfo(resolution, sdf.GetBoundingBox(), gridSpacing, sphParticles.NumberOfParticles());
+    PrintInfo(resolution, sdf.BoundingBox(), gridSpacing, sphParticles.NumberOfParticles());
 
     Array1<double> constData(sphParticles.NumberOfParticles(), 1.0);
     sdf.Fill([&](const Vector3D& pt)
