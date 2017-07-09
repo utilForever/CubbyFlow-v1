@@ -248,6 +248,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Grid\VertexCenteredScalarGrid2.h" />
     <ClInclude Include="..\Includes\Grid\VertexCenteredScalarGrid3.h" />
     <ClInclude Include="..\Includes\MarchingCubes\MarchingCubes.h" />
+    <ClInclude Include="..\Includes\MarchingCube\MarchingCubesTable.h" />
     <ClInclude Include="..\Includes\Math\FDMUtils.h" />
     <ClInclude Include="..\Includes\Math\MathUtils-Impl.h" />
     <ClInclude Include="..\Includes\Math\MathUtils.h" />
