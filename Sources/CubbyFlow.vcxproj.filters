@@ -67,6 +67,9 @@
     <Filter Include="Grid">
       <UniqueIdentifier>{e1cdcc58-20e4-4dcc-b323-5abdf33411fa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="MarchingCubes">
+      <UniqueIdentifier>{518811c7-e8b4-4905-8fe4-c4791e0fbcb0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Includes\Animation\Animation.h">
@@ -554,6 +557,9 @@
     </ClInclude>
     <ClInclude Include="..\Includes\Grid\VertexCenteredScalarGrid3.h">
       <Filter>Grid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\MarchingCubes\MarchingCubes.h">
+      <Filter>MarchingCubes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
