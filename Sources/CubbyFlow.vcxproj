@@ -463,6 +463,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="Grid\ScalarGrid3.cpp" />
     <ClCompile Include="Grid\VertexCenteredScalarGrid2.cpp" />
     <ClCompile Include="Grid\VertexCenteredScalarGrid3.cpp" />
+    <ClCompile Include="MarchingCubes\MarchingCubes.cpp" />
     <ClCompile Include="Math\FDMUtils.cpp" />
     <ClCompile Include="Particle\ParticleEmitter2.cpp" />
     <ClCompile Include="Particle\ParticleEmitter3.cpp" />
