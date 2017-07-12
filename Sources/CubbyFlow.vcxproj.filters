@@ -573,6 +573,9 @@
     <ClInclude Include="..\Includes\LevelSet\LevelSetUtils.h">
       <Filter>LevelSet</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\LevelSet\LevelSetUtils-Impl.h">
+      <Filter>LevelSet</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
