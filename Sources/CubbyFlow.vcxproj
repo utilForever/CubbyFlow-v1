@@ -247,6 +247,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Grid\ScalarGrid3.h" />
     <ClInclude Include="..\Includes\Grid\VertexCenteredScalarGrid2.h" />
     <ClInclude Include="..\Includes\Grid\VertexCenteredScalarGrid3.h" />
+    <ClInclude Include="..\Includes\LevelSet\LevelSetUtils.h" />
     <ClInclude Include="..\Includes\MarchingCubes\MarchingCubes.h" />
     <ClInclude Include="..\Includes\MarchingCubes\MarchingCubesTable.h" />
     <ClInclude Include="..\Includes\MarchingCubes\MarchingSquaresTable.h" />

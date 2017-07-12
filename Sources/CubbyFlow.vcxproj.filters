@@ -70,6 +70,9 @@
     <Filter Include="MarchingCubes">
       <UniqueIdentifier>{518811c7-e8b4-4905-8fe4-c4791e0fbcb0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="LevelSet">
+      <UniqueIdentifier>{bf156606-74d5-4a60-ab42-e68a30ecaf49}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Includes\Animation\Animation.h">
@@ -566,6 +569,9 @@
     </ClInclude>
     <ClInclude Include="..\Includes\MarchingCubes\MarchingSquaresTable.h">
       <Filter>MarchingCubes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\LevelSet\LevelSetUtils.h">
+      <Filter>LevelSet</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
