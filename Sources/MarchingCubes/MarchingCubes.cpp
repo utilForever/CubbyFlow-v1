@@ -252,7 +252,8 @@ namespace CubbyFlow
 				{
 					face[j] = vID;
 				}
-				else {
+				else
+				{
 					// if vertex does not exist...
 					face[j] = mesh->NumberOfPoints();
 					mesh->AddNormal(normal);
@@ -278,136 +279,147 @@ namespace CubbyFlow
 
 	static void SingleCube(
 		const std::array<double, 8>& data,
-		const std::array<size_t, 12>& edgeIds,
+		const std::array<size_t, 12>& edgeIDs,
 		const std::array<Vector3D, 8>& normals,
 		const BoundingBox3D& bound,
 		MarchingCubeVertexMap* vertexMap,
 		TriangleMesh3* mesh,
 		double isoValue)
 	{
-		int itrVertex, itrEdge, itrTri;
-		int idxFlagSize = 0, idxEdgeFlags = 0;
+		int idxFlagSize = 0;
 		int idxVertexOfTheEdge[2];
 
-		Vector3D pos, pos0, pos1, normal, normal0, normal1;
-		double phi0, phi1;
-		double alpha;
 		Vector3D e[12], n[12];
 
 		// Which vertices are inside? If i-th vertex is inside, mark '1' at i-th
 		// bit. of 'idxFlagSize'.
-		for (itrVertex = 0; itrVertex < 8; itrVertex++) {
-			if (data[itrVertex] <= isoValue) {
-				idxFlagSize |= 1 << itrVertex;
+		for (int iterVertex = 0; iterVertex < 8; ++iterVertex)
+		{
+			if (data[iterVertex] <= isoValue)
+			{
+				idxFlagSize |= 1 << iterVertex;
 			}
 		}
 
 		// If the cube is entirely inside or outside of the surface, there is no job
 		// to be done in t1his marching-cube cell.
-		if (idxFlagSize == 0 || idxFlagSize == 255) {
+		if (idxFlagSize == 0 || idxFlagSize == 255)
+		{
 			return;
 		}
 
 		// If there are vertices which is inside the surface...
 		// Which edges intersect the surface? If i-th edge intersects the surface,
 		// mark '1' at i-th bit of 'itrEdgeFlags'
-		idxEdgeFlags = cubeEdgeFlags[idxFlagSize];
+		int idxEdgeFlags = cubeEdgeFlags[idxFlagSize];
 
 		// Find the point of intersection of the surface with each edge
-		for (itrEdge = 0; itrEdge < 12; itrEdge++) {
+		for (int iterEdge = 0; iterEdge < 12; ++iterEdge)
+		{
 			// If there is an intersection on this edge
-			if (idxEdgeFlags & (1 << itrEdge)) {
-				idxVertexOfTheEdge[0] = edgeConnection[itrEdge][0];
-				idxVertexOfTheEdge[1] = edgeConnection[itrEdge][1];
+			if (idxEdgeFlags & (1 << iterEdge))
+			{
+				idxVertexOfTheEdge[0] = edgeConnection[iterEdge][0];
+				idxVertexOfTheEdge[1] = edgeConnection[iterEdge][1];
 
 				// cube vertex ordering to x-major ordering
 				static int indexMap[8] = { 0, 1, 5, 4, 2, 3, 7, 6 };
 
 				// Find the phi = 0 position
-				pos0 = bound.corner(indexMap[idxVertexOfTheEdge[0]]);
-				pos1 = bound.corner(indexMap[idxVertexOfTheEdge[1]]);
+				Vector3D pos0 = bound.Corner(indexMap[idxVertexOfTheEdge[0]]);
+				Vector3D pos1 = bound.Corner(indexMap[idxVertexOfTheEdge[1]]);
 
-				normal0 = normals[idxVertexOfTheEdge[0]];
-				normal1 = normals[idxVertexOfTheEdge[1]];
+				Vector3D normal0 = normals[idxVertexOfTheEdge[0]];
+				Vector3D normal1 = normals[idxVertexOfTheEdge[1]];
 
-				phi0 = data[idxVertexOfTheEdge[0]] - isoValue;
-				phi1 = data[idxVertexOfTheEdge[1]] - isoValue;
+				double phi0 = data[idxVertexOfTheEdge[0]] - isoValue;
+				double phi1 = data[idxVertexOfTheEdge[1]] - isoValue;
 
-				alpha = distanceToZeroLevelSet(phi0, phi1);
+				double alpha = DistanceToZeroLevelSet(phi0, phi1);
 
-				if (alpha < 0.000001) {
+				if (alpha < 0.000001)
+				{
 					alpha = 0.000001;
 				}
-				if (alpha > 0.999999) {
+				if (alpha > 0.999999)
+				{
 					alpha = 0.999999;
 				}
 
-				pos = (1.0 - alpha) * pos0 + alpha * pos1;
-				normal = (1.0 - alpha) * normal0 + alpha * normal1;
+				Vector3D pos = (1.0 - alpha) * pos0 + alpha * pos1;
+				Vector3D normal = (1.0 - alpha) * normal0 + alpha * normal1;
 
-				e[itrEdge] = pos;
-				n[itrEdge] = normal;
+				e[iterEdge] = pos;
+				n[iterEdge] = normal;
 			}
 		}
 
 		// Make triangles
-		for (itrTri = 0; itrTri < 5; ++itrTri) {
+		for (int iterTri = 0; iterTri < 5; ++iterTri)
+		{
 			// If there isn't any triangle to be made, escape this loop.
-			if (triangleConnectionTable3D[idxFlagSize][3 * itrTri] < 0) {
+			if (triangleConnectionTable3D[idxFlagSize][3 * iterTri] < 0)
+			{
 				break;
 			}
 
 			Point3UI face;
 
-			for (int j = 0; j < 3; j++) {
-				int k = 3 * itrTri + j;
-				MarchingCubeVertexHashKey vKey
-					= edgeIds[triangleConnectionTable3D[idxFlagSize][k]];
-				MarchingCubeVertexID vId;
-				if (QueryVertexID(*vertexMap, vKey, &vId)) {
-					face[j] = vId;
+			for (int j = 0; j < 3; ++j)
+			{
+				int k = 3 * iterTri + j;
+				MarchingCubeVertexHashKey vKey = edgeIDs[triangleConnectionTable3D[idxFlagSize][k]];
+				MarchingCubeVertexID vID;
+
+				if (QueryVertexID(*vertexMap, vKey, &vID))
+				{
+					face[j] = vID;
 				}
-				else {
+				else
+				{
 					// If vertex does not exist from the map
-					face[j] = mesh->numberOfPoints();
-					mesh->addNormal(
-						SafeNormalize(
-							n[triangleConnectionTable3D[idxFlagSize][k]]));
-					mesh->addPoint(
-						e[triangleConnectionTable3D[idxFlagSize][k]]);
-					mesh->addUv(Vector2D());
+					face[j] = mesh->NumberOfPoints();
+					mesh->AddNormal(SafeNormalize(n[triangleConnectionTable3D[idxFlagSize][k]]));
+					mesh->AddPoint(e[triangleConnectionTable3D[idxFlagSize][k]]);
+					mesh->AddUV(Vector2D());
 					vertexMap->insert(std::make_pair(vKey, face[j]));
 				}
 			}
-			mesh->addPointNormalUvTriangle(face, face, face);
+
+			mesh->AddPointNormalUVTriangle(face, face, face);
 		}
 	}
 
-	void marchingCubes(
+	void MarchingCubes(
 		const ConstArrayAccessor3<double>& grid,
 		const Vector3D& gridSize,
 		const Vector3D& origin,
 		TriangleMesh3* mesh,
 		double isoValue,
-		int bndFlag) {
+		int bndFlag)
+	{
 		MarchingCubeVertexMap vertexMap;
 
-		const Size3 dim = grid.size();
+		const Size3 dim = grid.Size();
 		const Vector3D invGridSize = 1.0 / gridSize;
 
-		auto pos = [origin, gridSize](ssize_t i, ssize_t j, ssize_t k) {
+		auto pos = [origin, gridSize](ssize_t i, ssize_t j, ssize_t k)
+		{
 			return origin + gridSize * Vector3D({ i, j, k });
 		};
 
-		ssize_t dimx = static_cast<ssize_t>(dim.x);
-		ssize_t dimy = static_cast<ssize_t>(dim.y);
-		ssize_t dimz = static_cast<ssize_t>(dim.z);
+		ssize_t dimX = static_cast<ssize_t>(dim.x);
+		ssize_t dimY = static_cast<ssize_t>(dim.y);
+		ssize_t dimZ = static_cast<ssize_t>(dim.z);
 
-		for (ssize_t k = 0; k < dimz - 1; ++k) {
-			for (ssize_t j = 0; j < dimy - 1; ++j) {
-				for (ssize_t i = 0; i < dimx - 1; ++i) {
+		for (ssize_t k = 0; k < dimZ - 1; ++k)
+		{
+			for (ssize_t j = 0; j < dimY - 1; ++j)
+			{
+				for (ssize_t i = 0; i < dimX - 1; ++i)
+				{
 					std::array<double, 8> data;
-					std::array<size_t, 12> edgeIds;
+					std::array<size_t, 12> edgeIDs;
 					std::array<Vector3D, 8>  normals;
 					BoundingBox3D bound;
 
@@ -429,269 +441,233 @@ namespace CubbyFlow
 					normals[7] = Grad(grid, i, j + 1, k + 1, invGridSize);
 					normals[6] = Grad(grid, i + 1, j + 1, k + 1, invGridSize);
 
-					for (int e = 0; e < 12; e++) {
-						edgeIds[e] = GlobalEdgeID(i, j, k, dim, e);
+					for (int e = 0; e < 12; ++e)
+					{
+						edgeIDs[e] = GlobalEdgeID(i, j, k, dim, e);
 					}
 
 					bound.lowerCorner = pos(i, j, k);
 					bound.upperCorner = pos(i + 1, j + 1, k + 1);
 
-					SingleCube(
-						data,
-						edgeIds,
-						normals,
-						bound,
-						&vertexMap,
-						mesh,
-						isoValue);
-				}  // i
-			}  // j
-		}  // k
+					SingleCube(data, edgeIDs, normals, bound, &vertexMap, mesh, isoValue);
+				}
+			}
+		}
 
-		   // Construct boundaries parallel to x-y plane
+		// Construct boundaries parallel to x-y plane
 		vertexMap.clear();
-		if (bndFlag
-			& (kDirectionBack | kDirectionFront)) {
-			for (ssize_t j = 0; j < dimy - 1; ++j) {
-				for (ssize_t i = 0; i < dimx - 1; ++i) {
+
+		if (bndFlag & (DIRECTION_BACK | DIRECTION_FRONT))
+		{
+			for (ssize_t j = 0; j < dimY - 1; ++j)
+			{
+				for (ssize_t i = 0; i < dimX - 1; ++i)
+				{
 					ssize_t k = 0;
 
 					std::array<double, 4> data;
-					std::array<size_t, 8> vertexAndEdgeIds;
+					std::array<size_t, 8> vertexAndEdgeIDs;
 					std::array<Vector3D, 4> corners;
 					Vector3D normal;
-					BoundingBox2D bound;
 
 					data[0] = grid(i + 1, j, k);
 					data[1] = grid(i, j, k);
 					data[2] = grid(i, j + 1, k);
 					data[3] = grid(i + 1, j + 1, k);
 
-					if (bndFlag & kDirectionBack) {
+					if (bndFlag & DIRECTION_BACK)
+					{
 						normal = Vector3D(0, 0, -1);
 
-						vertexAndEdgeIds[0] = GlobalVertexID(i, j, k, dim, 1);
-						vertexAndEdgeIds[1] = GlobalVertexID(i, j, k, dim, 0);
-						vertexAndEdgeIds[2] = GlobalVertexID(i, j, k, dim, 4);
-						vertexAndEdgeIds[3] = GlobalVertexID(i, j, k, dim, 5);
-						vertexAndEdgeIds[4] = GlobalEdgeID(i, j, k, dim, 0);
-						vertexAndEdgeIds[5] = GlobalEdgeID(i, j, k, dim, 8);
-						vertexAndEdgeIds[6] = GlobalEdgeID(i, j, k, dim, 4);
-						vertexAndEdgeIds[7] = GlobalEdgeID(i, j, k, dim, 9);
+						vertexAndEdgeIDs[0] = GlobalVertexID(i, j, k, dim, 1);
+						vertexAndEdgeIDs[1] = GlobalVertexID(i, j, k, dim, 0);
+						vertexAndEdgeIDs[2] = GlobalVertexID(i, j, k, dim, 4);
+						vertexAndEdgeIDs[3] = GlobalVertexID(i, j, k, dim, 5);
+						vertexAndEdgeIDs[4] = GlobalEdgeID(i, j, k, dim, 0);
+						vertexAndEdgeIDs[5] = GlobalEdgeID(i, j, k, dim, 8);
+						vertexAndEdgeIDs[6] = GlobalEdgeID(i, j, k, dim, 4);
+						vertexAndEdgeIDs[7] = GlobalEdgeID(i, j, k, dim, 9);
 
 						corners[0] = pos(i + 1, j, k);
 						corners[1] = pos(i, j, k);
 						corners[2] = pos(i, j + 1, k);
 						corners[3] = pos(i + 1, j + 1, k);
 
-						SingleSquare(
-							data,
-							vertexAndEdgeIds,
-							normal,
-							corners,
-							&vertexMap,
-							mesh,
-							isoValue);
+						SingleSquare(data, vertexAndEdgeIDs, normal, corners, &vertexMap, mesh, isoValue);
 					}
 
-					k = dimz - 2;
+					k = dimZ - 2;
 					data[0] = grid(i, j, k + 1);
 					data[1] = grid(i + 1, j, k + 1);
 					data[2] = grid(i + 1, j + 1, k + 1);
 					data[3] = grid(i, j + 1, k + 1);
 
-					if (bndFlag & kDirectionFront) {
+					if (bndFlag & DIRECTION_FRONT)
+					{
 						normal = Vector3D(0, 0, 1);
 
-						vertexAndEdgeIds[0] = GlobalVertexID(i, j, k, dim, 3);
-						vertexAndEdgeIds[1] = GlobalVertexID(i, j, k, dim, 2);
-						vertexAndEdgeIds[2] = GlobalVertexID(i, j, k, dim, 6);
-						vertexAndEdgeIds[3] = GlobalVertexID(i, j, k, dim, 7);
-						vertexAndEdgeIds[4] = GlobalEdgeID(i, j, k, dim, 2);
-						vertexAndEdgeIds[5] = GlobalEdgeID(i, j, k, dim, 10);
-						vertexAndEdgeIds[6] = GlobalEdgeID(i, j, k, dim, 6);
-						vertexAndEdgeIds[7] = GlobalEdgeID(i, j, k, dim, 11);
+						vertexAndEdgeIDs[0] = GlobalVertexID(i, j, k, dim, 3);
+						vertexAndEdgeIDs[1] = GlobalVertexID(i, j, k, dim, 2);
+						vertexAndEdgeIDs[2] = GlobalVertexID(i, j, k, dim, 6);
+						vertexAndEdgeIDs[3] = GlobalVertexID(i, j, k, dim, 7);
+						vertexAndEdgeIDs[4] = GlobalEdgeID(i, j, k, dim, 2);
+						vertexAndEdgeIDs[5] = GlobalEdgeID(i, j, k, dim, 10);
+						vertexAndEdgeIDs[6] = GlobalEdgeID(i, j, k, dim, 6);
+						vertexAndEdgeIDs[7] = GlobalEdgeID(i, j, k, dim, 11);
 
 						corners[0] = pos(i, j, k + 1);
 						corners[1] = pos(i + 1, j, k + 1);
 						corners[2] = pos(i + 1, j + 1, k + 1);
 						corners[3] = pos(i, j + 1, k + 1);
 
-						SingleSquare(
-							data,
-							vertexAndEdgeIds,
-							normal,
-							corners,
-							&vertexMap,
-							mesh,
-							isoValue);
+						SingleSquare(data, vertexAndEdgeIDs, normal, corners, &vertexMap, mesh, isoValue);
 					}
-				}  // i
-			}  // j
+				}
+			}
 		}
 
 		// Construct boundaries parallel to y-z plane
 		vertexMap.clear();
-		if (bndFlag
-			& (kDirectionLeft | kDirectionRight)) {
-			for (ssize_t k = 0; k < dimz - 1; ++k) {
-				for (ssize_t j = 0; j < dimy - 1; ++j) {
+
+		if (bndFlag & (DIRECTION_LEFT | DIRECTION_RIGHT))
+		{
+			for (ssize_t k = 0; k < dimZ - 1; ++k)
+			{
+				for (ssize_t j = 0; j < dimY - 1; ++j)
+				{
 					ssize_t i = 0;
 
 					std::array<double, 4> data;
-					std::array<size_t, 8> vertexAndEdgeIds;
+					std::array<size_t, 8> vertexAndEdgeIDs;
 					std::array<Vector3D, 4> corners;
 					Vector3D normal;
-					BoundingBox2D bound;
 
 					data[0] = grid(i, j, k);
 					data[1] = grid(i, j, k + 1);
 					data[2] = grid(i, j + 1, k + 1);
 					data[3] = grid(i, j + 1, k);
 
-					if (bndFlag & kDirectionLeft) {
+					if (bndFlag & DIRECTION_LEFT)
+					{
 						normal = Vector3D(-1, 0, 0);
 
-						vertexAndEdgeIds[0] = GlobalVertexID(i, j, k, dim, 0);
-						vertexAndEdgeIds[1] = GlobalVertexID(i, j, k, dim, 3);
-						vertexAndEdgeIds[2] = GlobalVertexID(i, j, k, dim, 7);
-						vertexAndEdgeIds[3] = GlobalVertexID(i, j, k, dim, 4);
-						vertexAndEdgeIds[4] = GlobalEdgeID(i, j, k, dim, 3);
-						vertexAndEdgeIds[5] = GlobalEdgeID(i, j, k, dim, 11);
-						vertexAndEdgeIds[6] = GlobalEdgeID(i, j, k, dim, 7);
-						vertexAndEdgeIds[7] = GlobalEdgeID(i, j, k, dim, 8);
+						vertexAndEdgeIDs[0] = GlobalVertexID(i, j, k, dim, 0);
+						vertexAndEdgeIDs[1] = GlobalVertexID(i, j, k, dim, 3);
+						vertexAndEdgeIDs[2] = GlobalVertexID(i, j, k, dim, 7);
+						vertexAndEdgeIDs[3] = GlobalVertexID(i, j, k, dim, 4);
+						vertexAndEdgeIDs[4] = GlobalEdgeID(i, j, k, dim, 3);
+						vertexAndEdgeIDs[5] = GlobalEdgeID(i, j, k, dim, 11);
+						vertexAndEdgeIDs[6] = GlobalEdgeID(i, j, k, dim, 7);
+						vertexAndEdgeIDs[7] = GlobalEdgeID(i, j, k, dim, 8);
 
 						corners[0] = pos(i, j, k);
 						corners[1] = pos(i, j, k + 1);
 						corners[2] = pos(i, j + 1, k + 1);
 						corners[3] = pos(i, j + 1, k);
 
-						SingleSquare(
-							data,
-							vertexAndEdgeIds,
-							normal,
-							corners,
-							&vertexMap,
-							mesh,
-							isoValue);
+						SingleSquare(data, vertexAndEdgeIDs, normal, corners, &vertexMap, mesh, isoValue);
 					}
 
-					i = dimx - 2;
+					i = dimX - 2;
 					data[0] = grid(i + 1, j, k + 1);
 					data[1] = grid(i + 1, j, k);
 					data[2] = grid(i + 1, j + 1, k);
 					data[3] = grid(i + 1, j + 1, k + 1);
 
-					if (bndFlag & kDirectionRight) {
+					if (bndFlag & DIRECTION_RIGHT)
+					{
 						normal = Vector3D(1, 0, 0);
 
-						vertexAndEdgeIds[0] = GlobalVertexID(i, j, k, dim, 2);
-						vertexAndEdgeIds[1] = GlobalVertexID(i, j, k, dim, 1);
-						vertexAndEdgeIds[2] = GlobalVertexID(i, j, k, dim, 5);
-						vertexAndEdgeIds[3] = GlobalVertexID(i, j, k, dim, 6);
-						vertexAndEdgeIds[4] = GlobalEdgeID(i, j, k, dim, 1);
-						vertexAndEdgeIds[5] = GlobalEdgeID(i, j, k, dim, 7);
-						vertexAndEdgeIds[6] = GlobalEdgeID(i, j, k, dim, 5);
-						vertexAndEdgeIds[7] = GlobalEdgeID(i, j, k, dim, 10);
+						vertexAndEdgeIDs[0] = GlobalVertexID(i, j, k, dim, 2);
+						vertexAndEdgeIDs[1] = GlobalVertexID(i, j, k, dim, 1);
+						vertexAndEdgeIDs[2] = GlobalVertexID(i, j, k, dim, 5);
+						vertexAndEdgeIDs[3] = GlobalVertexID(i, j, k, dim, 6);
+						vertexAndEdgeIDs[4] = GlobalEdgeID(i, j, k, dim, 1);
+						vertexAndEdgeIDs[5] = GlobalEdgeID(i, j, k, dim, 7);
+						vertexAndEdgeIDs[6] = GlobalEdgeID(i, j, k, dim, 5);
+						vertexAndEdgeIDs[7] = GlobalEdgeID(i, j, k, dim, 10);
 
 						corners[0] = pos(i + 1, j, k + 1);
 						corners[1] = pos(i + 1, j, k);
 						corners[2] = pos(i + 1, j + 1, k);
 						corners[3] = pos(i + 1, j + 1, k + 1);
 
-						SingleSquare(
-							data,
-							vertexAndEdgeIds,
-							normal,
-							corners,
-							&vertexMap,
-							mesh,
-							isoValue);
+						SingleSquare(data, vertexAndEdgeIDs, normal, corners, &vertexMap, mesh, isoValue);
 					}
-				}  // j
-			}  // k
+				}
+			}
 		}
 
 		// Construct boundaries parallel to x-z plane
 		vertexMap.clear();
-		if (bndFlag
-			& (kDirectionDown | kDirectionUp)) {
-			for (ssize_t k = 0; k < dimz - 1; ++k) {
-				for (ssize_t i = 0; i < dimx - 1; ++i) {
+
+		if (bndFlag & (DIRECTION_DOWN | DIRECTION_UP))
+		{
+			for (ssize_t k = 0; k < dimZ - 1; ++k)
+			{
+				for (ssize_t i = 0; i < dimX - 1; ++i)
+				{
 					ssize_t j = 0;
 
 					std::array<double, 4> data;
-					std::array<size_t, 8> vertexAndEdgeIds;
+					std::array<size_t, 8> vertexAndEdgeIDs;
 					std::array<Vector3D, 4> corners;
 					Vector3D normal;
-					BoundingBox2D bound;
 
 					data[0] = grid(i, j, k);
 					data[1] = grid(i + 1, j, k);
 					data[2] = grid(i + 1, j, k + 1);
 					data[3] = grid(i, j, k + 1);
 
-					if (bndFlag & kDirectionDown) {
+					if (bndFlag & DIRECTION_DOWN)
+					{
 						normal = Vector3D(0, -1, 0);
 
-						vertexAndEdgeIds[0] = GlobalVertexID(i, j, k, dim, 0);
-						vertexAndEdgeIds[1] = GlobalVertexID(i, j, k, dim, 1);
-						vertexAndEdgeIds[2] = GlobalVertexID(i, j, k, dim, 2);
-						vertexAndEdgeIds[3] = GlobalVertexID(i, j, k, dim, 3);
-						vertexAndEdgeIds[4] = GlobalEdgeID(i, j, k, dim, 0);
-						vertexAndEdgeIds[5] = GlobalEdgeID(i, j, k, dim, 1);
-						vertexAndEdgeIds[6] = GlobalEdgeID(i, j, k, dim, 2);
-						vertexAndEdgeIds[7] = GlobalEdgeID(i, j, k, dim, 3);
+						vertexAndEdgeIDs[0] = GlobalVertexID(i, j, k, dim, 0);
+						vertexAndEdgeIDs[1] = GlobalVertexID(i, j, k, dim, 1);
+						vertexAndEdgeIDs[2] = GlobalVertexID(i, j, k, dim, 2);
+						vertexAndEdgeIDs[3] = GlobalVertexID(i, j, k, dim, 3);
+						vertexAndEdgeIDs[4] = GlobalEdgeID(i, j, k, dim, 0);
+						vertexAndEdgeIDs[5] = GlobalEdgeID(i, j, k, dim, 1);
+						vertexAndEdgeIDs[6] = GlobalEdgeID(i, j, k, dim, 2);
+						vertexAndEdgeIDs[7] = GlobalEdgeID(i, j, k, dim, 3);
 
 						corners[0] = pos(i, j, k);
 						corners[1] = pos(i + 1, j, k);
 						corners[2] = pos(i + 1, j, k + 1);
 						corners[3] = pos(i, j, k + 1);
 
-						SingleSquare(
-							data,
-							vertexAndEdgeIds,
-							normal,
-							corners,
-							&vertexMap,
-							mesh,
-							isoValue);
+						SingleSquare(data, vertexAndEdgeIDs, normal, corners, &vertexMap, mesh, isoValue);
 					}
 
-					j = dimy - 2;
+					j = dimY - 2;
 					data[0] = grid(i + 1, j + 1, k);
 					data[1] = grid(i, j + 1, k);
 					data[2] = grid(i, j + 1, k + 1);
 					data[3] = grid(i + 1, j + 1, k + 1);
 
-					if (bndFlag & kDirectionUp) {
+					if (bndFlag & DIRECTION_UP)
+					{
 						normal = Vector3D(0, 1, 0);
 
-						vertexAndEdgeIds[0] = GlobalVertexID(i, j, k, dim, 5);
-						vertexAndEdgeIds[1] = GlobalVertexID(i, j, k, dim, 4);
-						vertexAndEdgeIds[2] = GlobalVertexID(i, j, k, dim, 7);
-						vertexAndEdgeIds[3] = GlobalVertexID(i, j, k, dim, 6);
-						vertexAndEdgeIds[4] = GlobalEdgeID(i, j, k, dim, 4);
-						vertexAndEdgeIds[5] = GlobalEdgeID(i, j, k, dim, 7);
-						vertexAndEdgeIds[6] = GlobalEdgeID(i, j, k, dim, 6);
-						vertexAndEdgeIds[7] = GlobalEdgeID(i, j, k, dim, 5);
+						vertexAndEdgeIDs[0] = GlobalVertexID(i, j, k, dim, 5);
+						vertexAndEdgeIDs[1] = GlobalVertexID(i, j, k, dim, 4);
+						vertexAndEdgeIDs[2] = GlobalVertexID(i, j, k, dim, 7);
+						vertexAndEdgeIDs[3] = GlobalVertexID(i, j, k, dim, 6);
+						vertexAndEdgeIDs[4] = GlobalEdgeID(i, j, k, dim, 4);
+						vertexAndEdgeIDs[5] = GlobalEdgeID(i, j, k, dim, 7);
+						vertexAndEdgeIDs[6] = GlobalEdgeID(i, j, k, dim, 6);
+						vertexAndEdgeIDs[7] = GlobalEdgeID(i, j, k, dim, 5);
 
 						corners[0] = pos(i + 1, j + 1, k);
 						corners[1] = pos(i, j + 1, k);
 						corners[2] = pos(i, j + 1, k + 1);
 						corners[3] = pos(i + 1, j + 1, k + 1);
 
-						SingleSquare(
-							data,
-							vertexAndEdgeIds,
-							normal,
-							corners,
-							&vertexMap,
-							mesh,
-							isoValue);
+						SingleSquare(data, vertexAndEdgeIDs, normal, corners, &vertexMap, mesh, isoValue);
 					}
-				}  // i
-			}  // k
+				}
+			}
 		}
 	}
 }
