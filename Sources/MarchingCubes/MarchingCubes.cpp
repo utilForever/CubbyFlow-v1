@@ -20,6 +20,7 @@
 //
 // This code is public domain.
 
+#include <LevelSet/LevelSetUtils.h>
 #include <MarchingCubes/MarchingCubes.h>
 #include <MarchingCubes/MarchingCubesTable.h>
 #include <MarchingCubes/MarchingSquaresTable.h>
