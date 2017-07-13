@@ -22,6 +22,9 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PerformanceTests", "Tests\PerformanceTests\PerformanceTests.vcxproj", "{01EE6200-8E03-4EFE-BDBA-75496195EA66}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CubbyFlow", "Sources\CubbyFlow.vcxproj", "{67F165E0-323E-4FB0-BA14-285063218ED8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2DB3FEE3-C5A0-4AEC-ACDF-A8EA0D27E6B8} = {2DB3FEE3-C5A0-4AEC-ACDF-A8EA0D27E6B8}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTests", "Tests\UnitTests\UnitTests.vcxproj", "{AFADDDFC-4C6E-49EC-A6B0-B8612CDE6AD4}"
 EndProject
@@ -32,6 +35,12 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SPHSim", "Examples\SPHSim\SPHSim.vcxproj", "{72DA0BC1-81A5-4313-842A-4CB91B8FB3F7}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Particles2Obj", "Examples\Particles2Obj\Particles2Obj.vcxproj", "{0A3D8C7F-5999-47B2-A696-D0D422AB92B9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A581EA54-58DB-4AF7-972A-202927F26BD0} = {A581EA54-58DB-4AF7-972A-202927F26BD0}
+		{18ECE3D3-8250-4073-9F0B-2CAA62F80E2A} = {18ECE3D3-8250-4073-9F0B-2CAA62F80E2A}
+		{67F165E0-323E-4FB0-BA14-285063218ED8} = {67F165E0-323E-4FB0-BA14-285063218ED8}
+		{2DB3FEE3-C5A0-4AEC-ACDF-A8EA0D27E6B8} = {2DB3FEE3-C5A0-4AEC-ACDF-A8EA0D27E6B8}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

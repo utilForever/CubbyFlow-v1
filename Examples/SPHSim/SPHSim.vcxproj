@@ -103,8 +103,7 @@
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <PostBuildEvent>
-      <Command>echo $(SolutionDir)obj\$(Platform)\$(Configuration)\SphSim.exe %%* &gt; $(SolutionDir)bin\sph_sim.bat
-$(Command)</Command>
+      <Command>echo $(SolutionDir)obj\$(Platform)\$(Configuration)\SPHSim.exe %%* &gt; $(SolutionDir)Bins\SPHSim.bat</Command>
     </PostBuildEvent>
     <Link>
       <AdditionalDependencies>CubbyFlow.lib;Winix.lib;pystring.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -117,8 +116,7 @@ $(Command)</Command>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <PostBuildEvent>
-      <Command>echo $(SolutionDir)obj\$(Platform)\$(Configuration)\SphSim.exe %%* &gt; $(SolutionDir)bin\sph_sim.bat
-$(Command)</Command>
+      <Command>echo $(SolutionDir)obj\$(Platform)\$(Configuration)\SPHSim.exe %%* &gt; $(SolutionDir)Bins\SPHSim.bat</Command>
     </PostBuildEvent>
     <Link>
       <AdditionalDependencies>CubbyFlow.lib;Winix.lib;pystring.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -138,8 +136,7 @@ $(Command)</Command>
       <AdditionalDependencies>CubbyFlow.lib;Winix.lib;pystring.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>echo $(SolutionDir)obj\$(Platform)\$(Configuration)\SphSim.exe %%* &gt; $(SolutionDir)bin\sph_sim.bat
-$(Command)</Command>
+      <Command>echo $(SolutionDir)obj\$(Platform)\$(Configuration)\SPHSim.exe %%* &gt; $(SolutionDir)Bins\SPHSim.bat</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -156,8 +153,7 @@ $(Command)</Command>
       <AdditionalDependencies>CubbyFlow.lib;Winix.lib;pystring.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>echo $(SolutionDir)obj\$(Platform)\$(Configuration)\SphSim.exe %%* &gt; $(SolutionDir)bin\sph_sim.bat
-$(Command)</Command>
+      <Command>echo $(SolutionDir)obj\$(Platform)\$(Configuration)\SPHSim.exe %%* &gt; $(SolutionDir)Bins\SPHSim.bat</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
