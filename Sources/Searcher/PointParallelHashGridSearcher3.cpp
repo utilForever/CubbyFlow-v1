@@ -391,12 +391,12 @@ namespace CubbyFlow
 		auto fbsSearcher = fbs::GetPointParallelHashGridSearcher3(buffer.data());
 
 		// Copy simple data
-		auto res = FlatbuffersToCubbyFlow(*fbsSearcher->Resolution());
+		auto res = FlatbuffersToCubbyFlow(*fbsSearcher->resolution());
 		m_resolution.Set({ res.x, res.y, res.z });
-		m_gridSpacing = fbsSearcher->GridSpacing();
+		m_gridSpacing = fbsSearcher->gridSpacing();
 
 		// Copy points
-		auto fbsPoints = fbsSearcher->Points();
+		auto fbsPoints = fbsSearcher->points();
 		m_points.resize(fbsPoints->size());
 		for (uint32_t i = 0; i < fbsPoints->size(); ++i)
 		{
@@ -404,28 +404,28 @@ namespace CubbyFlow
 		}
 
 		// Copy key/tables
-		auto fbsKeys = fbsSearcher->Keys();
+		auto fbsKeys = fbsSearcher->keys();
 		m_keys.resize(fbsKeys->size());
 		for (uint32_t i = 0; i < fbsKeys->size(); ++i)
 		{
 			m_keys[i] = static_cast<size_t>(fbsKeys->Get(i));
 		}
 
-		auto fbsStartIndexTable = fbsSearcher->StartIndexTable();
+		auto fbsStartIndexTable = fbsSearcher->startIndexTable();
 		m_startIndexTable.resize(fbsStartIndexTable->size());
 		for (uint32_t i = 0; i < fbsStartIndexTable->size(); ++i)
 		{
 			m_startIndexTable[i] = static_cast<size_t>(fbsStartIndexTable->Get(i));
 		}
 
-		auto fbsEndIndexTable = fbsSearcher->EndIndexTable();
+		auto fbsEndIndexTable = fbsSearcher->endIndexTable();
 		m_endIndexTable.resize(fbsEndIndexTable->size());
 		for (uint32_t i = 0; i < fbsEndIndexTable->size(); ++i)
 		{
 			m_endIndexTable[i] = static_cast<size_t>(fbsEndIndexTable->Get(i));
 		}
 
-		auto fbsSortedIndices = fbsSearcher->SortedIndices();
+		auto fbsSortedIndices = fbsSearcher->sortedIndices();
 		m_sortedIndices.resize(fbsSortedIndices->size());
 		for (uint32_t i = 0; i < fbsSortedIndices->size(); ++i)
 		{

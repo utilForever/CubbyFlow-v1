@@ -114,7 +114,7 @@ namespace CubbyFlow
 		auto fbsSearcher = fbs::GetPointSimpleListSearcher3(buffer.data());
 
 		// Copy points
-		auto fbsPoints = fbsSearcher->Points();
+		auto fbsPoints = fbsSearcher->points();
 		m_points.resize(fbsPoints->size());
 		for (uint32_t i = 0; i < fbsPoints->size(); ++i)
 		{

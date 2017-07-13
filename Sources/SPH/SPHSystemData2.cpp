@@ -323,16 +323,16 @@ namespace CubbyFlow
 	{
 		auto fbsSPHSystemData = fbs::GetSPHSystemData2(buffer.data());
 
-		auto base = fbsSPHSystemData->Base();
+		auto base = fbsSPHSystemData->base();
 		DeserializeParticleSystemData(base);
 
 		// SPH specific
-		m_targetDensity = fbsSPHSystemData->TargetDensity();
-		m_targetSpacing = fbsSPHSystemData->TargetSpacing();
-		m_kernelRadiusOverTargetSpacing = fbsSPHSystemData->KernelRadiusOverTargetSpacing();
-		m_kernelRadius = fbsSPHSystemData->KernelRadius();
-		m_pressureIdx = static_cast<size_t>(fbsSPHSystemData->PressureIdx());
-		m_densityIdx = static_cast<size_t>(fbsSPHSystemData->DensityIdx());
+		m_targetDensity = fbsSPHSystemData->targetDensity();
+		m_targetSpacing = fbsSPHSystemData->targetSpacing();
+		m_kernelRadiusOverTargetSpacing = fbsSPHSystemData->kernelRadiusOverTargetSpacing();
+		m_kernelRadius = fbsSPHSystemData->kernelRadius();
+		m_pressureIdx = static_cast<size_t>(fbsSPHSystemData->pressureIdx());
+		m_densityIdx = static_cast<size_t>(fbsSPHSystemData->densityIdx());
 	}
 
 	void SPHSystemData2::Set(const SPHSystemData2& other)

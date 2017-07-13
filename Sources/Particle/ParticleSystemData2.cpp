@@ -395,17 +395,17 @@ namespace CubbyFlow
 		m_vectorDataList.clear();
 
 		// Copy scalars
-		m_radius = fbsParticleSystemData->Radius();
-		m_mass = fbsParticleSystemData->Mass();
-		m_positionIdx = static_cast<size_t>(fbsParticleSystemData->PositionIdx());
-		m_velocityIdx = static_cast<size_t>(fbsParticleSystemData->VelocityIdx());
-		m_forceIdx = static_cast<size_t>(fbsParticleSystemData->ForceIdx());
+		m_radius = fbsParticleSystemData->radius();
+		m_mass = fbsParticleSystemData->mass();
+		m_positionIdx = static_cast<size_t>(fbsParticleSystemData->positionIdx());
+		m_velocityIdx = static_cast<size_t>(fbsParticleSystemData->velocityIdx());
+		m_forceIdx = static_cast<size_t>(fbsParticleSystemData->forceIdx());
 
 		// Copy data
-		auto fbsScalarDataList = fbsParticleSystemData->ScalarDataList();
+		auto fbsScalarDataList = fbsParticleSystemData->scalarDataList();
 		for (const auto& fbsScalarData : (*fbsScalarDataList))
 		{
-			auto data = fbsScalarData->Data();
+			auto data = fbsScalarData->data();
 
 			m_scalarDataList.push_back(ScalarData(data->size()));
 
@@ -417,10 +417,10 @@ namespace CubbyFlow
 			}
 		}
 
-		auto fbsVectorDataList = fbsParticleSystemData->VectorDataList();
+		auto fbsVectorDataList = fbsParticleSystemData->vectorDataList();
 		for (const auto& fbsVectorData : (*fbsVectorDataList))
 		{
-			auto data = fbsVectorData->Data();
+			auto data = fbsVectorData->data();
 
 			m_vectorDataList.push_back(VectorData(data->size()));
 			auto& newData = *(m_vectorDataList.rbegin());
@@ -433,24 +433,24 @@ namespace CubbyFlow
 		m_numberOfParticles = m_vectorDataList[0].Size();
 
 		// Copy neighbor searcher
-		auto fbsNeighborSearcher = fbsParticleSystemData->NeighborSearcher();
-		m_neighborSearcher = Factory::BuildPointNeighborSearcher2(fbsNeighborSearcher->Type()->c_str());
+		auto fbsNeighborSearcher = fbsParticleSystemData->neighborSearcher();
+		m_neighborSearcher = Factory::BuildPointNeighborSearcher2(fbsNeighborSearcher->type()->c_str());
 		std::vector<uint8_t> neighborSearcherSerialized(
-			fbsNeighborSearcher->Data()->begin(),
-			fbsNeighborSearcher->Data()->end());
+			fbsNeighborSearcher->data()->begin(),
+			fbsNeighborSearcher->data()->end());
 		m_neighborSearcher->Deserialize(neighborSearcherSerialized);
 
 		// Copy neighbor list
-		auto fbsNeighborLists = fbsParticleSystemData->NeighborLists();
+		auto fbsNeighborLists = fbsParticleSystemData->neighborLists();
 		m_neighborLists.resize(fbsNeighborLists->size());
 		
 		for (uint32_t i = 0; i < fbsNeighborLists->size(); ++i)
 		{
 			auto fbsNeighborList = fbsNeighborLists->Get(i);
-			m_neighborLists[i].resize(fbsNeighborList->Data()->size());
+			m_neighborLists[i].resize(fbsNeighborList->data()->size());
 			std::transform(
-				fbsNeighborList->Data()->begin(),
-				fbsNeighborList->Data()->end(),
+				fbsNeighborList->data()->begin(),
+				fbsNeighborList->data()->end(),
 				m_neighborLists[i].begin(),
 				[](uint64_t val)
 			{
