@@ -72,6 +72,17 @@ namespace CubbyFlow
 		
 		return 0;
 	}
+
+	template <typename T>
+	T DistanceToZeroLevelSet(T phi0, T phi1)
+	{
+		if (std::fabs(phi0) + std::fabs(phi1) > std::numeric_limits<double>::epsilon())
+		{
+			return std::fabs(phi0) / (std::fabs(phi0) + std::fabs(phi1));
+		}
+		
+		return static_cast<T>(0.5);
+	}
 }
 
 #endif
