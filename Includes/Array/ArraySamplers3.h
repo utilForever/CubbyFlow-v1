@@ -10,6 +10,7 @@
 #define CUBBYFLOW_ARRAY_SAMPLERS3_H
 
 #include <Array/ArrayAccessor3.h>
+#include <Array/ArraySamplers.h>
 #include <Vector/Vector3.h>
 
 #include <functional>
