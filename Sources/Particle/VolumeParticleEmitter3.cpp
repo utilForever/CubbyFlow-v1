@@ -39,7 +39,6 @@ namespace CubbyFlow
 		m_pointsGen = std::make_shared<BccLatticePointGenerator>();
 	}
 
-	// TODO: Change it to [[maybe_unused]] in C++17
 	void VolumeParticleEmitter3::OnUpdate(double currentTimeInSeconds, double timeIntervalInSeconds)
 	{
 		auto particles = Target();

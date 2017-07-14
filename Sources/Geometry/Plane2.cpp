@@ -35,7 +35,7 @@ namespace CubbyFlow
 		return r - normal.Dot(r) * normal + point;
 	}
 
-	Vector2D Plane2::ClosestNormalLocal([[maybe_unused]] const Vector2D& otherPoint) const
+	Vector2D Plane2::ClosestNormalLocal(const Vector2D& otherPoint) const
 	{
 		return normal;
 	}

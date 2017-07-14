@@ -133,7 +133,7 @@ namespace CubbyFlow
 		AccumulatePressureForce(timeStepInSeconds);
 	}
 
-	void SPHSolver3::OnBeginAdvanceTimeStep([[maybe_unused]] double timeStepInSeconds)
+	void SPHSolver3::OnBeginAdvanceTimeStep(double timeStepInSeconds)
 	{
 		auto particles = GetSPHSystemData();
 
@@ -172,7 +172,7 @@ namespace CubbyFlow
 		AccumulateViscosityForce();
 	}
 
-	void SPHSolver3::AccumulatePressureForce([[maybe_unused]] double timeStepInSeconds)
+	void SPHSolver3::AccumulatePressureForce(double timeStepInSeconds)
 	{
 		auto particles = GetSPHSystemData();
 		auto x = particles->GetPositions();

@@ -139,7 +139,7 @@ namespace CubbyFlow
 		EndAdvanceTimeStep(timeStepInSeconds);
 	}
 
-	void ParticleSystemSolver2::AccumulateForces([[maybe_unused]] double timeStepInSeconds)
+	void ParticleSystemSolver2::AccumulateForces(double timeStepInSeconds)
 	{
 		// Add external forces
 		AccumulateExternalForces();
@@ -186,12 +186,12 @@ namespace CubbyFlow
 		OnEndAdvanceTimeStep(timeStepInSeconds);
 	}
 
-	void ParticleSystemSolver2::OnBeginAdvanceTimeStep([[maybe_unused]] double timeStepInSeconds)
+	void ParticleSystemSolver2::OnBeginAdvanceTimeStep(double timeStepInSeconds)
 	{
 		// Do nothing
 	}
 
-	void ParticleSystemSolver2::OnEndAdvanceTimeStep([[maybe_unused]] double timeStepInSeconds)
+	void ParticleSystemSolver2::OnEndAdvanceTimeStep(double timeStepInSeconds)
 	{
 		// Do nothing
 	}
