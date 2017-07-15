@@ -1,6 +1,6 @@
-<img src="https://github.com/utilForever/CubbyFlow/blob/master/Logo.png" align="center" width="631" height="388" />
-
 # CubbyFlow
+
+<img src="https://github.com/utilForever/CubbyFlow/blob/master/Logo.png" align="center" />
 
 CubbyFlow is voxel-based fluid simulation engine for computer games based on [Jet framework](https://github.com/doyubkim/fluid-engine-dev) that was created by [Doyub Kim](https://twitter.com/doyub).
 The code is built on C++17 and can be compiled with commonly available compilers such as VC++. Currently tested platforms are Windows (Visual Studio 2017).
