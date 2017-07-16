@@ -25,6 +25,8 @@
 #include <MarchingCubes/MarchingCubesTable.h>
 #include <MarchingCubes/MarchingSquaresTable.h>
 
+#include <unordered_map>
+
 namespace CubbyFlow
 {
 	using MarchingCubeVertexHashKey = size_t;
