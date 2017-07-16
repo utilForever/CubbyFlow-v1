@@ -26,7 +26,7 @@ The code is built on C++17 and can be compiled with commonly available compilers
     - Grid-based multiphase flow
     - Grid-based bubbly flow
 - Voxel surface reconstruction
-- Compatiable for DirectX, OpenGL, Metal, and Vulkan
+- Compatible for DirectX, OpenGL, Metal, and Vulkan
 - C++, Python, Go, and Rust API
 
 Every simulator has both 2-D and 3-D implementations.
