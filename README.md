@@ -25,6 +25,10 @@ Every simulator has both 2-D and 3-D implementations.
 
 All the documentations for the framework can be found from [the project website](https://utilforever.github.io/CubbyFlow/) incluing the API reference.
 
+## How to Build
+
+To learn how to build, test, and install the SDK, please check out [INSTALL.md](https://github.com/utilForever/CubbyFlow/blob/master/INSTALL.md).
+
 ## How To Contribute
 
 Contributions are always welcome, either reporting issues/bugs or forking the repository and then issuing pull requests when you have completed some additional coding that you feel will be beneficial to the main project. If you are interested in contributing in a more dedicated capacity, then please contact me.
