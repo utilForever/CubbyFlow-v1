@@ -68,6 +68,9 @@
     <ClCompile Include="Transform2Tests.cpp">
       <Filter>Transform</Filter>
     </ClCompile>
+    <ClCompile Include="Transform3Tests.cpp">
+      <Filter>Transform</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
