@@ -22,7 +22,7 @@ namespace CubbyFlow
 		m_sinAngle = std::sin(orientation);
 	}
 
-	const Vector2D& Transform2::Translation() const
+	const Vector2D& Transform2::GetTranslation() const
 	{
 		return m_translation;
 	}
@@ -32,7 +32,7 @@ namespace CubbyFlow
 		m_translation = translation;
 	}
 
-	double Transform2::Orientation() const {
+	double Transform2::GetOrientation() const {
 		return m_orientation;
 	}
 

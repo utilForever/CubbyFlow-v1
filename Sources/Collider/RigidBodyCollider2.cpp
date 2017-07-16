@@ -24,7 +24,7 @@ namespace CubbyFlow
 
 	Vector2D RigidBodyCollider2::VelocityAt(const Vector2D& point) const
 	{
-		Vector2D r = point - Surface()->transform.Translation();
+		Vector2D r = point - Surface()->transform.GetTranslation();
 		return linearVelocity + angularVelocity * Vector2D(-r.y, r.x);
 	}
 

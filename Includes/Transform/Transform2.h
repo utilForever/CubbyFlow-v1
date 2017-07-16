@@ -28,13 +28,13 @@ namespace CubbyFlow
 		Transform2(const Vector2D& translation, double orientation);
 
 		//! Returns the translation.
-		const Vector2D& Translation() const;
+		const Vector2D& GetTranslation() const;
 
 		//! Sets the translation.
 		void SetTranslation(const Vector2D& translation);
 
 		//! Returns the orientation in radians.
-		double Orientation() const;
+		double GetOrientation() const;
 
 		//! Sets the orientation in radians.
 		void SetOrientation(double orientation);
