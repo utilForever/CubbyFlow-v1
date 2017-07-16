@@ -15,7 +15,9 @@ The code is built on C++17 and can be compiled with commonly available compilers
 - PIC, FLIP, and APIC fluid simulators
 - Upwind, ENO and FMM level set solvers
 - Converters between signed distance function and triangular mesh
+- MPS and MPM fluid simulators
 - Voxel surface reconstruction
+- Compatiable for DirectX, OpenGL, Metal, and Vulkan
 
 Every simulator has both 2-D and 3-D implementations.
 
