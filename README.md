@@ -19,9 +19,15 @@ The code is built on C++17 and can be compiled with commonly available compilers
 - Jacobi, Gauss-Seidel, SOR, MG, CG, ICCG, and MGPCG linear system solvers
 - Converters between signed distance function and triangular mesh
 - MPS and MPM fluid simulators
+- IVOCK fluid simulators
+- Multiphase fluid simulators
+    - Particle-based multiphase flow
+    - Grid-based two-phase flow
+    - Grid-based multiphase flow
+    - Grid-based bubbly flow
 - Voxel surface reconstruction
 - Compatiable for DirectX, OpenGL, Metal, and Vulkan
-- C++ and Python API
+- C++, Python, Go, and Rust API
 
 Every simulator has both 2-D and 3-D implementations.
 
@@ -35,7 +41,7 @@ All the documentations for the framework can be found from [the project website]
 
 ## Examples
 
-Here are some of the example simulations generated using CubbyFlow framework. Corresponding example codes can be found under src/examples. All images are rendered using [Mitsuba renderer](https://www.mitsuba-renderer.org/) and the Mitsuba scene files can be found from [the demo repository](https://github.com/utilForever/CubbyFlow-demo/). Find out more demos from [the project website](https://utilforever.github.io/CubbyFlow/examples).
+Here are some of the example simulations generated using CubbyFlow framework. Corresponding example codes can be found under src/examples. All images are rendered using [Mitsuba renderer](https://www.mitsuba-renderer.org/) and the Mitsuba scene files can be found from [the demo folder](https://github.com/utilForever/CubbyFlow/Demos). Find out more demos from [the project website](https://utilforever.github.io/CubbyFlow/examples).
 
 ## How To Contribute
 
