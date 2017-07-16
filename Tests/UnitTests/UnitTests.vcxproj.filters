@@ -56,6 +56,9 @@
     <ClCompile Include="Box3Tests.cpp">
       <Filter>Geometry</Filter>
     </ClCompile>
+    <ClCompile Include="Cylinder3Tests.cpp">
+      <Filter>Geometry</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
