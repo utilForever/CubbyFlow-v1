@@ -80,7 +80,7 @@ namespace CubbyFlow
 		assert(list.size() == 4);
 
 		auto inputElem = list.begin();
-		y = *inputElem;
+		w = *inputElem;
 		x = *(++inputElem);
 		y = *(++inputElem);
 		z = *(++inputElem);
@@ -149,48 +149,48 @@ namespace CubbyFlow
 		matrix3.SetColumn(1, rotationBasis1.Normalized());
 		matrix3.SetColumn(2, rotationBasis2.Normalized());
 
-		set(matrix3);
+		Set(matrix3);
 	}
 
 	template <typename T>
-	void Quaternion<T>::Set(const Matrix3x3<T>& matrix)
+	void Quaternion<T>::Set(const Matrix3x3<T>& m)
 	{
 		static const T eps = std::numeric_limits<T>::epsilon();
-		static const T quater = static_cast<T>(0.25);
+		static const T quarter = static_cast<T>(0.25);
 
-		T onePlusTrace = matrix.trace() + 1;
+		T onePlusTrace = m.Trace() + 1;
 
 		if (onePlusTrace > eps)
 		{
 			T S = std::sqrt(onePlusTrace) * 2;
-			w = quater * S;
-			x = (matrix(2, 1) - matrix(1, 2)) / S;
-			y = (matrix(0, 2) - matrix(2, 0)) / S;
-			z = (matrix(1, 0) - matrix(0, 1)) / S;
+			w = quarter * S;
+			x = (m(2, 1) - m(1, 2)) / S;
+			y = (m(0, 2) - m(2, 0)) / S;
+			z = (m(1, 0) - m(0, 1)) / S;
 		}
-		else if (matrix(0, 0) > matrix(1, 1) && matrix(0, 0) > matrix(2, 2))
+		else if (m(0, 0) > m(1, 1) && m(0, 0) > m(2, 2))
 		{
-			T S = std::sqrt(1.0 + matrix(0, 0) - matrix(1, 1) - matrix(2, 2)) * 2;
-			w = (matrix(2, 1) - matrix(1, 2)) / S;
-			x = quater * S;
-			y = (matrix(0, 1) + matrix(1, 0)) / S;
-			z = (matrix(0, 2) + matrix(2, 0)) / S;
+			T S = std::sqrt(1.0 + m(0, 0) - m(1, 1) - m(2, 2)) * 2;
+			w = (m(2, 1) - m(1, 2)) / S;
+			x = quarter * S;
+			y = (m(0, 1) + m(1, 0)) / S;
+			z = (m(0, 2) + m(2, 0)) / S;
 		}
-		else if (matrix(1, 1) > matrix(2, 2))
+		else if (m(1, 1) > m(2, 2))
 		{
-			T S = std::sqrt(1.0 + matrix(1, 1) - matrix(0, 0) - matrix(2, 2)) * 2;
-			w = (matrix(0, 2) - matrix(2, 0)) / S;
-			x = (matrix(0, 1) + matrix(1, 0)) / S;
-			y = quater * S;
-			z = (matrix(1, 2) + matrix(2, 1)) / S;
+			T S = std::sqrt(1.0 + m(1, 1) - m(0, 0) - m(2, 2)) * 2;
+			w = (m(0, 2) - m(2, 0)) / S;
+			x = (m(0, 1) + m(1, 0)) / S;
+			y = quarter * S;
+			z = (m(1, 2) + m(2, 1)) / S;
 		}
 		else
 		{
-			T S = std::sqrt(1.0 + matrix(2, 2) - matrix(0, 0) - matrix(1, 1)) * 2;
-			w = (matrix(1, 0) - matrix(0, 1)) / S;
-			x = (matrix(0, 2) + matrix(2, 0)) / S;
-			y = (matrix(1, 2) + matrix(2, 1)) / S;
-			z = quater * S;
+			T S = std::sqrt(1.0 + m(2, 2) - m(0, 0) - m(1, 1)) * 2;
+			w = (m(1, 0) - m(0, 1)) / S;
+			x = (m(0, 2) + m(2, 0)) / S;
+			y = (m(1, 2) + m(2, 1)) / S;
+			z = quarter * S;
 		}
 	}
 
@@ -228,7 +228,6 @@ namespace CubbyFlow
 			(_2xz - _2yw) * v.x + (_2yz + _2xw) * v.y + (1 - _2yy - _2xx) * v.z);
 	}
 
-	// TODO: Check the formula!
 	template <typename T>
 	Quaternion<T> Quaternion<T>::Mul(const Quaternion& other) const
 	{
@@ -244,7 +243,6 @@ namespace CubbyFlow
 		return w * other.w + x * other.x + y * other.y + z * other.z;
 	}
 
-	// TODO: Check the formula!
 	template <typename T>
 	Quaternion<T> Quaternion<T>::RMul(const Quaternion& other) const
 	{
@@ -299,7 +297,8 @@ namespace CubbyFlow
 		Vector3<T> result(x, y, z);
 		result.Normalize();
 
-		if (2 * std::acos(w) < PI<T>()) {
+		if (2 * std::acos(w) < PI<T>())
+		{
 			return result;
 		}
 		
@@ -345,20 +344,44 @@ namespace CubbyFlow
 	template <typename T>
 	Matrix3x3<T> Quaternion<T>::Matrix3() const
 	{
-		return Matrix3x3<T>(
-			1 - 2 * y * y - 2 * z * z, 2 * x * y - 2 * z * w, 2 * x * z + 2 * y * w,
-			2 * x * y + 2 * z * w, 1 - 2 * x * x - 2 * z * z, 2 * y * z - 2 * x * w,
-			2 * x * z + 2 * y * w, 2 * y * z + 2 * x * w, 1 - 2 * x * x - 2 * y * y);
+		T _2xx = 2 * x * x;
+		T _2yy = 2 * y * y;
+		T _2zz = 2 * z * z;
+		T _2xy = 2 * x * y;
+		T _2xz = 2 * x * z;
+		T _2xw = 2 * x * w;
+		T _2yz = 2 * y * z;
+		T _2yw = 2 * y * w;
+		T _2zw = 2 * z * w;
+
+		Matrix3x3<T> m(
+			1 - _2yy - _2zz, _2xy - _2zw, _2xz + _2yw,
+			_2xy + _2zw, 1 - _2zz - _2xx, _2yz - _2xw,
+			_2xz - _2yw, _2yz + _2xw, 1 - _2yy - _2xx);
+
+		return m;
 	}
 
 	template <typename T>
 	Matrix4x4<T> Quaternion<T>::Matrix4() const
 	{
-		return Matrix4x4<T>(
-			1 - 2 * y * y - 2 * z * z, 2 * x * y - 2 * z * w, 2 * x * z + 2 * y * w, 0,
-			2 * x * y + 2 * z * w, 1 - 2 * x * x - 2 * z * z, 2 * y * z - 2 * x * w, 0,
-			2 * x * z + 2 * y * w, 2 * y * z + 2 * x * w, 1 - 2 * x * x - 2 * y * y, 0,
+		T _2xx = 2 * x * x;
+		T _2yy = 2 * y * y;
+		T _2zz = 2 * z * z;
+		T _2xy = 2 * x * y;
+		T _2xz = 2 * x * z;
+		T _2xw = 2 * x * w;
+		T _2yz = 2 * y * z;
+		T _2yw = 2 * y * w;
+		T _2zw = 2 * z * w;
+
+		Matrix4x4<T> m(
+			1 - _2yy - _2zz, _2xy - _2zw, _2xz + _2yw, 0,
+			_2xy + _2zw, 1 - _2zz - _2xx, _2yz - _2xw, 0,
+			_2xz - _2yw, _2yz + _2xw, 1 - _2yy - _2xx, 0,
 			0, 0, 0, 1);
+
+		return m;
 	}
 
 	template <typename T>
