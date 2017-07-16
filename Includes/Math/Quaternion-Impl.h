@@ -14,14 +14,13 @@ namespace CubbyFlow
 	template <typename T>
 	Quaternion<T>::Quaternion()
 	{
-		// Do nothing
+		SetIdentity();
 	}
 
 	template <typename T>
 	Quaternion<T>::Quaternion(T newW, T newX, T newY, T newZ) 
-		: w(newW), x(newX), y(newY), z(newZ)
 	{
-		// Do nothing
+		Set(newW, newX, newY, newZ);
 	}
 	
 	template <typename T>
@@ -298,7 +297,7 @@ namespace CubbyFlow
 	Vector3<T> Quaternion<T>::Axis() const
 	{
 		Vector3<T> result(x, y, z);
-		result.normalize();
+		result.Normalize();
 
 		if (2 * std::acos(w) < PI<T>()) {
 			return result;
