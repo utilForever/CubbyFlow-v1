@@ -65,6 +65,9 @@
     <ClCompile Include="Plane3Tests.cpp">
       <Filter>Geometry</Filter>
     </ClCompile>
+    <ClCompile Include="Transform2Tests.cpp">
+      <Filter>Transform</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -84,6 +87,9 @@
     </Filter>
     <Filter Include="Geometry">
       <UniqueIdentifier>{156ba860-bafb-4d13-8f7b-da81b85aa34d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Transform">
+      <UniqueIdentifier>{528999d2-cf8c-4738-b283-1ae7634d8cf3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
