@@ -51,7 +51,10 @@
       <Filter>Vector</Filter>
     </ClCompile>
     <ClCompile Include="Box2Tests.cpp">
-      <Filter>Box</Filter>
+      <Filter>Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="Box3Tests.cpp">
+      <Filter>Geometry</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -70,7 +73,7 @@
     <Filter Include="Vector">
       <UniqueIdentifier>{86f6bb7b-895f-4d87-a2cf-d1def9deb345}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Box">
+    <Filter Include="Geometry">
       <UniqueIdentifier>{156ba860-bafb-4d13-8f7b-da81b85aa34d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
