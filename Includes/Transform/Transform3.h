@@ -29,13 +29,13 @@ namespace CubbyFlow
 		Transform3(const Vector3D& translation, const QuaternionD& orientation);
 
 		//! Returns the translation.
-		const Vector3D& Translation() const;
+		const Vector3D& GetTranslation() const;
 
 		//! Sets the traslation.
 		void SetTranslation(const Vector3D& translation);
 
 		//! Returns the orientation.
-		const QuaternionD& Orientation() const;
+		const QuaternionD& GetOrientation() const;
 
 		//! Sets the orientation.
 		void SetOrientation(const QuaternionD& orientation);

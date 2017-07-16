@@ -22,7 +22,7 @@ namespace CubbyFlow
 		SetOrientation(orientation);
 	}
 
-	const Vector3D& Transform3::Translation() const
+	const Vector3D& Transform3::GetTranslation() const
 	{
 		return m_translation;
 	}
@@ -32,7 +32,7 @@ namespace CubbyFlow
 		m_translation = translation;
 	}
 
-	const QuaternionD& Transform3::Orientation() const
+	const QuaternionD& Transform3::GetOrientation() const
 	{
 		return m_orientation;
 	}

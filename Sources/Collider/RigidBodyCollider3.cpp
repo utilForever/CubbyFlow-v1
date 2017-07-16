@@ -24,7 +24,7 @@ namespace CubbyFlow
 
 	Vector3D RigidBodyCollider3::VelocityAt(const Vector3D& point) const
 	{
-		Vector3D r = point - Surface()->transform.Translation();
+		Vector3D r = point - Surface()->transform.GetTranslation();
 		return linearVelocity + angularVelocity.Cross(r);
 	}
 
