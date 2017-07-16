@@ -50,6 +50,9 @@
     <ClCompile Include="Vector3Tests.cpp">
       <Filter>Vector</Filter>
     </ClCompile>
+    <ClCompile Include="Box2Tests.cpp">
+      <Filter>Box</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -66,6 +69,9 @@
     </Filter>
     <Filter Include="Vector">
       <UniqueIdentifier>{86f6bb7b-895f-4d87-a2cf-d1def9deb345}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Box">
+      <UniqueIdentifier>{156ba860-bafb-4d13-8f7b-da81b85aa34d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
