@@ -7,27 +7,35 @@ The code is built on C++17 and can be compiled with commonly available compilers
 
 [![License](https://img.shields.io/badge/Licence-MIT-blue.svg)](https://github.com/utilForever/CubbyFlow/blob/master/LICENSE)
 
-## Features
+## Key Features
 
+- Basic math and geometry operations and data structures
+- Spatial query accelerators
 - SPH and PCISPH fluid simulators
 - Stable fluids-based smoke simulator
 - Level set-based liquid simulator
 - PIC, FLIP, and APIC fluid simulators
-- Upwind, ENO and FMM level set solvers
+- Upwind, ENO, and FMM level set solvers
+- Jacobi, Gauss-Seidel, SOR, MG, CG, ICCG, and MGPCG linear system solvers
 - Converters between signed distance function and triangular mesh
 - MPS and MPM fluid simulators
 - Voxel surface reconstruction
 - Compatiable for DirectX, OpenGL, Metal, and Vulkan
+- C++ and Python API
 
 Every simulator has both 2-D and 3-D implementations.
+
+## How to Build
+
+To learn how to build, test, and install the SDK, please check out [INSTALL.md](https://github.com/utilForever/CubbyFlow/blob/master/INSTALL.md).
 
 ## Documentation
 
 All the documentations for the framework can be found from [the project website](https://utilforever.github.io/CubbyFlow/) incluing the API reference.
 
-## How to Build
+## Examples
 
-To learn how to build, test, and install the SDK, please check out [INSTALL.md](https://github.com/utilForever/CubbyFlow/blob/master/INSTALL.md).
+Here are some of the example simulations generated using CubbyFlow framework. Corresponding example codes can be found under src/examples. All images are rendered using [Mitsuba renderer](https://www.mitsuba-renderer.org/) and the Mitsuba scene files can be found from [the demo repository](https://github.com/utilForever/CubbyFlow-demo/). Find out more demos from [the project website](https://utilforever.github.io/CubbyFlow/examples).
 
 ## How To Contribute
 
