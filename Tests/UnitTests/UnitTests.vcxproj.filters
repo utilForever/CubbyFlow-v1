@@ -71,6 +71,9 @@
     <ClCompile Include="Transform3Tests.cpp">
       <Filter>Transform</Filter>
     </ClCompile>
+    <ClCompile Include="Sphere2Tests.cpp">
+      <Filter>Geometry</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
