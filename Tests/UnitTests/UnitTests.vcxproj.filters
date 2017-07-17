@@ -77,6 +77,9 @@
     <ClCompile Include="Sphere3Tests.cpp">
       <Filter>Geometry</Filter>
     </ClCompile>
+    <ClCompile Include="QuaternionTests.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -99,6 +102,9 @@
     </Filter>
     <Filter Include="Transform">
       <UniqueIdentifier>{528999d2-cf8c-4738-b283-1ae7634d8cf3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math">
+      <UniqueIdentifier>{28993044-8ff8-4bcb-9ff9-40f770c8a1bb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

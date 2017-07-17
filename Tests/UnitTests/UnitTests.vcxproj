@@ -75,6 +75,7 @@
     <ClCompile Include="MatrixTests.cpp" />
     <ClCompile Include="Plane2Tests.cpp" />
     <ClCompile Include="Plane3Tests.cpp" />
+    <ClCompile Include="QuaternionTests.cpp" />
     <ClCompile Include="Sphere2Tests.cpp" />
     <ClCompile Include="Sphere3Tests.cpp" />
     <ClCompile Include="Transform2Tests.cpp" />
