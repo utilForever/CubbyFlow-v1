@@ -83,6 +83,9 @@
     <ClCompile Include="MathUtilsTests.cpp">
       <Filter>Math</Filter>
     </ClCompile>
+    <ClCompile Include="Triangle3Tests.cpp">
+      <Filter>Geometry</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

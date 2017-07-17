@@ -81,6 +81,7 @@
     <ClCompile Include="Sphere3Tests.cpp" />
     <ClCompile Include="Transform2Tests.cpp" />
     <ClCompile Include="Transform3Tests.cpp" />
+    <ClCompile Include="Triangle3Tests.cpp" />
     <ClCompile Include="UnitTests.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
