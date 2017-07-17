@@ -80,6 +80,9 @@
     <ClCompile Include="QuaternionTests.cpp">
       <Filter>Math</Filter>
     </ClCompile>
+    <ClCompile Include="MathUtilsTests.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
