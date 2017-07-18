@@ -71,6 +71,9 @@
     <ClCompile Include="Transform3Tests.cpp">
       <Filter>Transform</Filter>
     </ClCompile>
+    <ClCompile Include="Vector4Tests.cpp">
+      <Filter>Vector</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
