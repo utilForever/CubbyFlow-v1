@@ -223,7 +223,7 @@ namespace CubbyFlow
 		Builder& WithNormals(const NormalArray& normals);
 
 		//! Returns builder with uvs.
-		Builder& WithUvs(const UVArray& uvs);
+		Builder& WithUVs(const UVArray& uvs);
 
 		//! Returns builder with point indices.
 		Builder& WithPointIndices(const IndexArray& pointIndices);
@@ -232,7 +232,7 @@ namespace CubbyFlow
 		Builder& WithNormalIndices(const IndexArray& normalIndices);
 
 		//! Returns builder with uv indices.
-		Builder& WithUvIndices(const IndexArray& uvIndices);
+		Builder& WithUVIndices(const IndexArray& uvIndices);
 
 		//! Builds TriangleMesh3.
 		TriangleMesh3 Build() const;

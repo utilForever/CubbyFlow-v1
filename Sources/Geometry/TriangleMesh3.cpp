@@ -841,7 +841,7 @@ namespace CubbyFlow
 		return *this;
 	}
 
-	TriangleMesh3::Builder& TriangleMesh3::Builder::WithUvs(const UVArray& uvs)
+	TriangleMesh3::Builder& TriangleMesh3::Builder::WithUVs(const UVArray& uvs)
 	{
 		m_uvs = uvs;
 		return *this;
@@ -859,7 +859,7 @@ namespace CubbyFlow
 		return *this;
 	}
 
-	TriangleMesh3::Builder& TriangleMesh3::Builder::WithUvIndices(const IndexArray& uvIndices)
+	TriangleMesh3::Builder& TriangleMesh3::Builder::WithUVIndices(const IndexArray& uvIndices)
 	{
 		m_uvIndices = uvIndices;
 		return *this;

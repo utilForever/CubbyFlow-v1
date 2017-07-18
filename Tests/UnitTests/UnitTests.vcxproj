@@ -69,14 +69,20 @@
     <ClCompile Include="Box2Tests.cpp" />
     <ClCompile Include="Box3Tests.cpp" />
     <ClCompile Include="Cylinder3Tests.cpp" />
+    <ClCompile Include="MathUtilsTests.cpp" />
     <ClCompile Include="Matrix2x2Tests.cpp" />
     <ClCompile Include="Matrix3x3Tests.cpp" />
     <ClCompile Include="Matrix4x4Tests.cpp" />
     <ClCompile Include="MatrixTests.cpp" />
     <ClCompile Include="Plane2Tests.cpp" />
     <ClCompile Include="Plane3Tests.cpp" />
+    <ClCompile Include="QuaternionTests.cpp" />
+    <ClCompile Include="Sphere2Tests.cpp" />
+    <ClCompile Include="Sphere3Tests.cpp" />
     <ClCompile Include="Transform2Tests.cpp" />
     <ClCompile Include="Transform3Tests.cpp" />
+    <ClCompile Include="Triangle3Tests.cpp" />
+    <ClCompile Include="TriangleMesh3Tests.cpp" />
     <ClCompile Include="UnitTests.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -120,7 +126,7 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>CubbyFlow.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>CubbyFlow.lib;obj.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -141,7 +147,7 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>CubbyFlow.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>CubbyFlow.lib;obj.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -164,7 +170,7 @@
       <SubSystem>Console</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <AdditionalDependencies>CubbyFlow.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>CubbyFlow.lib;obj.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -187,7 +193,7 @@
       <SubSystem>Console</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <AdditionalDependencies>CubbyFlow.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>CubbyFlow.lib;obj.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
