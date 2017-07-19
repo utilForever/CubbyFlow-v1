@@ -552,9 +552,6 @@
     <ClInclude Include="..\Includes\Grid\ScalarGrid3.h">
       <Filter>Grid</Filter>
     </ClInclude>
-    <ClInclude Include="..\Includes\Math\FDMUtils.h">
-      <Filter>Math</Filter>
-    </ClInclude>
     <ClInclude Include="..\Includes\Grid\VertexCenteredScalarGrid2.h">
       <Filter>Grid</Filter>
     </ClInclude>
@@ -576,6 +573,7 @@
     <ClInclude Include="..\Includes\LevelSet\LevelSetUtils-Impl.h">
       <Filter>LevelSet</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Math\FDMUtils.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
@@ -823,9 +821,6 @@
     <ClCompile Include="Grid\Grid3.cpp">
       <Filter>Grid</Filter>
     </ClCompile>
-    <ClCompile Include="Math\FDMUtils.cpp">
-      <Filter>Math</Filter>
-    </ClCompile>
     <ClCompile Include="Grid\ScalarGrid2.cpp">
       <Filter>Grid</Filter>
     </ClCompile>
@@ -841,5 +836,6 @@
     <ClCompile Include="MarchingCubes\MarchingCubes.cpp">
       <Filter>MarchingCubes</Filter>
     </ClCompile>
+    <ClCompile Include="Math\FDMUtils.cpp" />
   </ItemGroup>
 </Project>
