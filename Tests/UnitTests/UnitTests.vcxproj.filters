@@ -98,6 +98,9 @@
     <ClCompile Include="AnimationTests.cpp">
       <Filter>Animation</Filter>
     </ClCompile>
+    <ClCompile Include="ImplicitSurfaceSet2Tests.cpp">
+      <Filter>Surface</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

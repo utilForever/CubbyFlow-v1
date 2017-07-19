@@ -70,6 +70,7 @@
     <ClCompile Include="Box2Tests.cpp" />
     <ClCompile Include="Box3Tests.cpp" />
     <ClCompile Include="Cylinder3Tests.cpp" />
+    <ClCompile Include="ImplicitSurfaceSet2Tests.cpp" />
     <ClCompile Include="MathUtilsTests.cpp" />
     <ClCompile Include="Matrix2x2Tests.cpp" />
     <ClCompile Include="Matrix3x3Tests.cpp" />
