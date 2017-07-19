@@ -92,6 +92,9 @@
     <ClCompile Include="SurfaceToImplicit2Tests.cpp">
       <Filter>Surface</Filter>
     </ClCompile>
+    <ClCompile Include="SurfaceToImplicit3Tests.cpp">
+      <Filter>Surface</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
