@@ -125,6 +125,9 @@
     <ClCompile Include="ColliderSet3Tests.cpp">
       <Filter>Collider</Filter>
     </ClCompile>
+    <ClCompile Include="RigidbodyCollider2Tests.cpp">
+      <Filter>Collider</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
