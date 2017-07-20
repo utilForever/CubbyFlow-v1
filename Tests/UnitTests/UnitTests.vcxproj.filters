@@ -113,6 +113,9 @@
     <ClCompile Include="BoundingBoxTests.cpp">
       <Filter>BoundingBox</Filter>
     </ClCompile>
+    <ClCompile Include="BoundingBox2Tests.cpp">
+      <Filter>BoundingBox</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
