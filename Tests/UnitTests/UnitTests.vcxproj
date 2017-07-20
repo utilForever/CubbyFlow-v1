@@ -88,6 +88,7 @@
     <ClCompile Include="Ray2Tests.cpp" />
     <ClCompile Include="Ray3Tests.cpp" />
     <ClCompile Include="RigidbodyCollider2Tests.cpp" />
+    <ClCompile Include="RigidbodyCollider3Tests.cpp" />
     <ClCompile Include="Sphere2Tests.cpp" />
     <ClCompile Include="Sphere3Tests.cpp" />
     <ClCompile Include="SurfaceToImplicit2Tests.cpp" />
