@@ -119,6 +119,9 @@
     <ClCompile Include="BoundingBox3Tests.cpp">
       <Filter>BoundingBox</Filter>
     </ClCompile>
+    <ClCompile Include="ColliderSet2Tests.cpp">
+      <Filter>Collider</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -156,6 +159,9 @@
     </Filter>
     <Filter Include="BoundingBox">
       <UniqueIdentifier>{dfeb4208-58f1-42ec-8c0b-c7624ecafc91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Collider">
+      <UniqueIdentifier>{cc4b95d0-439e-49d0-ab95-75b3df1acd83}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
