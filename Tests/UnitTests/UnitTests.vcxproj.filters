@@ -104,6 +104,9 @@
     <ClCompile Include="ImplicitSurfaceSet3Tests.cpp">
       <Filter>Surface</Filter>
     </ClCompile>
+    <ClCompile Include="Ray2Tests.cpp">
+      <Filter>Ray</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -135,6 +138,9 @@
     </Filter>
     <Filter Include="Animation">
       <UniqueIdentifier>{950f51c6-0637-4112-8441-1b23a8188bc7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ray">
+      <UniqueIdentifier>{cfe61890-f47c-4fef-b0a3-9632251b9280}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
