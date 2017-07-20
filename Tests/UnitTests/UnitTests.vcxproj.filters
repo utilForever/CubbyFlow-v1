@@ -110,6 +110,9 @@
     <ClCompile Include="Ray3Tests.cpp">
       <Filter>Ray</Filter>
     </ClCompile>
+    <ClCompile Include="BoundingBoxTests.cpp">
+      <Filter>BoundingBox</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -144,6 +147,9 @@
     </Filter>
     <Filter Include="Ray">
       <UniqueIdentifier>{cfe61890-f47c-4fef-b0a3-9632251b9280}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BoundingBox">
+      <UniqueIdentifier>{dfeb4208-58f1-42ec-8c0b-c7624ecafc91}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
