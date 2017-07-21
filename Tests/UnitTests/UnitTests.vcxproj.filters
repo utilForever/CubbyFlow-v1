@@ -131,6 +131,9 @@
     <ClCompile Include="RigidbodyCollider3Tests.cpp">
       <Filter>Collider</Filter>
     </ClCompile>
+    <ClCompile Include="VolumeParticleEmitter2Tests.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -171,6 +174,9 @@
     </Filter>
     <Filter Include="Collider">
       <UniqueIdentifier>{cc4b95d0-439e-49d0-ab95-75b3df1acd83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Particle">
+      <UniqueIdentifier>{e9deb48b-4063-4208-a11c-c4f394548ffe}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

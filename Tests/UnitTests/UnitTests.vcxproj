@@ -107,6 +107,7 @@
     <ClCompile Include="Vector2Tests.cpp" />
     <ClCompile Include="Vector3Tests.cpp" />
     <ClCompile Include="VectorTests.cpp" />
+    <ClCompile Include="VolumeParticleEmitter2Tests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Sources\CubbyFlow.vcxproj">
