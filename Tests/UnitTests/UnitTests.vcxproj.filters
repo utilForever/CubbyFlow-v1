@@ -134,6 +134,9 @@
     <ClCompile Include="VolumeParticleEmitter2Tests.cpp">
       <Filter>Particle</Filter>
     </ClCompile>
+    <ClCompile Include="VolumeParticleEmitter3Tests.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
