@@ -98,8 +98,7 @@ namespace CubbyFlow
 		for (size_t i = 0; i < maxNewNumberOfParticles; ++i)
 		{
 			double newAngleInRadian = (Random() - 0.5) * m_spreadAngleInRadians;
-			Matrix2x2D rotationMatrix =
-				Matrix2x2D::MakeRotationMatrix(newAngleInRadian);
+			Matrix2x2D rotationMatrix = Matrix2x2D::MakeRotationMatrix(newAngleInRadian);
 
 			newPositions->Append(m_origin);
 			newVelocities->Append(m_speed * (rotationMatrix * m_direction));
