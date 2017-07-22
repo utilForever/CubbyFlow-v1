@@ -178,6 +178,18 @@ namespace CubbyFlow
 		return val;
 	}
 
+	template <typename T>
+	inline T DegreesToRadians(T angleInDegrees)
+	{
+		return angleInDegrees * PI<T>() / 180;
+	}
+
+	template <typename T>
+	inline T RadiansToDegrees(T angleInRadians)
+	{
+		return angleInRadians * 180 / PI<T>();
+	}
+
 	template<typename T>
 	inline void GetBarycentric(T x, ssize_t iLow, ssize_t iHigh, ssize_t* i, T* f)
 	{
