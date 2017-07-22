@@ -574,6 +574,9 @@
       <Filter>LevelSet</Filter>
     </ClInclude>
     <ClInclude Include="..\Includes\Math\FDMUtils.h" />
+    <ClInclude Include="..\Includes\Particle\PointParticleEmitter2.h">
+      <Filter>Particle</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
