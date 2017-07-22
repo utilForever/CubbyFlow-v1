@@ -152,6 +152,9 @@
     <ClCompile Include="ParticleSystemData3Tests.cpp">
       <Filter>Particle</Filter>
     </ClCompile>
+    <ClCompile Include="SPHSolver2Tests.cpp">
+      <Filter>SPH</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -195,6 +198,9 @@
     </Filter>
     <Filter Include="Particle">
       <UniqueIdentifier>{e9deb48b-4063-4208-a11c-c4f394548ffe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SPH">
+      <UniqueIdentifier>{79946358-5eb8-447e-bf53-d9b9fa8325f2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
