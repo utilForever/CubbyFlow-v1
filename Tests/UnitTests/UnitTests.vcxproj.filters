@@ -149,6 +149,9 @@
     <ClCompile Include="ParticleSystemData2Tests.cpp">
       <Filter>Particle</Filter>
     </ClCompile>
+    <ClCompile Include="ParticleSystemData3Tests.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
