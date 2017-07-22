@@ -843,5 +843,8 @@
       <Filter>MarchingCubes</Filter>
     </ClCompile>
     <ClCompile Include="Math\FDMUtils.cpp" />
+    <ClCompile Include="Particle\PointParticleEmitter2.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
