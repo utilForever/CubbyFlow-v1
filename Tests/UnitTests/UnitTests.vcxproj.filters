@@ -167,6 +167,9 @@
     <ClCompile Include="SPHSystemData2Tests.cpp">
       <Filter>SPH</Filter>
     </ClCompile>
+    <ClCompile Include="SPHSystemData3Tests.cpp">
+      <Filter>SPH</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
