@@ -99,6 +99,7 @@
     <ClCompile Include="SPHStdKernel2Tests.cpp" />
     <ClCompile Include="SPHSolver2Tests.cpp" />
     <ClCompile Include="SPHSolver3Tests.cpp" />
+    <ClCompile Include="SPHStdKernel3Tests.cpp" />
     <ClCompile Include="SurfaceToImplicit2Tests.cpp" />
     <ClCompile Include="SurfaceToImplicit3Tests.cpp" />
     <ClCompile Include="Transform2Tests.cpp" />
