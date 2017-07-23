@@ -155,6 +155,9 @@
     <ClCompile Include="SPHSolver2Tests.cpp">
       <Filter>SPH</Filter>
     </ClCompile>
+    <ClCompile Include="SPHSolver3Tests.cpp">
+      <Filter>SPH</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
