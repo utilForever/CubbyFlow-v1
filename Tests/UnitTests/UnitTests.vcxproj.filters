@@ -176,6 +176,9 @@
     <ClCompile Include="PCISPHSolver3Tests.cpp">
       <Filter>PCISPH</Filter>
     </ClCompile>
+    <ClCompile Include="PointTests.cpp">
+      <Filter>Point</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -225,6 +228,9 @@
     </Filter>
     <Filter Include="PCISPH">
       <UniqueIdentifier>{3a68eaa7-9c05-4f0c-8483-9425b4ed4bb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Point">
+      <UniqueIdentifier>{e4ea9943-52e0-4e3b-9a0e-a20a431bdbd3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

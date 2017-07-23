@@ -89,6 +89,7 @@
     <ClCompile Include="PCISPHSolver3Tests.cpp" />
     <ClCompile Include="Plane2Tests.cpp" />
     <ClCompile Include="Plane3Tests.cpp" />
+    <ClCompile Include="PointTests.cpp" />
     <ClCompile Include="PointParticleEmitter2Tests.cpp" />
     <ClCompile Include="PointParticleEmitter3Tests.cpp" />
     <ClCompile Include="QuaternionTests.cpp" />
