@@ -170,6 +170,9 @@
     <ClCompile Include="SPHSystemData3Tests.cpp">
       <Filter>SPH</Filter>
     </ClCompile>
+    <ClCompile Include="PCISPHSolver2Tests.cpp">
+      <Filter>PCISPH</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -216,6 +219,9 @@
     </Filter>
     <Filter Include="SPH">
       <UniqueIdentifier>{79946358-5eb8-447e-bf53-d9b9fa8325f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PCISPH">
+      <UniqueIdentifier>{3a68eaa7-9c05-4f0c-8483-9425b4ed4bb8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
