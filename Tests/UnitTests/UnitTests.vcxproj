@@ -96,6 +96,7 @@
     <ClCompile Include="RigidbodyCollider3Tests.cpp" />
     <ClCompile Include="Sphere2Tests.cpp" />
     <ClCompile Include="Sphere3Tests.cpp" />
+    <ClCompile Include="SPHStdKernel2Tests.cpp" />
     <ClCompile Include="SPHSolver2Tests.cpp" />
     <ClCompile Include="SPHSolver3Tests.cpp" />
     <ClCompile Include="SurfaceToImplicit2Tests.cpp" />
