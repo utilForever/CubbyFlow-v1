@@ -9,6 +9,8 @@
 #ifndef CUBBYFLOW_POINT2_IMPL_H
 #define CUBBYFLOW_POINT2_IMPL_H
 
+#include <Math/MathUtils.h>
+
 #include <cassert>
 
 namespace CubbyFlow
@@ -503,7 +505,7 @@ namespace CubbyFlow
 	template <typename T>
 	Point<T, 2> Clamp(const Point<T, 2>& v, const Point<T, 2>& low, const Point<T, 2>& high)
 	{
-		return Point<T, 2>(clamp(v.x, low.x, high.x), clamp(v.y, low.y, high.y));
+		return Point<T, 2>(Clamp(v.x, low.x, high.x), Clamp(v.y, low.y, high.y));
 	}
 
 	template <typename T>
