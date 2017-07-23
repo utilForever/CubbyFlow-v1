@@ -173,6 +173,9 @@
     <ClCompile Include="PCISPHSolver2Tests.cpp">
       <Filter>PCISPH</Filter>
     </ClCompile>
+    <ClCompile Include="PCISPHSolver3Tests.cpp">
+      <Filter>PCISPH</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

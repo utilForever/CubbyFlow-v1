@@ -86,6 +86,7 @@
     <ClCompile Include="ParticleSystemData3Tests.cpp" />
     <ClCompile Include="ParticleSystemSolverTests.cpp" />
     <ClCompile Include="PCISPHSolver2Tests.cpp" />
+    <ClCompile Include="PCISPHSolver3Tests.cpp" />
     <ClCompile Include="Plane2Tests.cpp" />
     <ClCompile Include="Plane3Tests.cpp" />
     <ClCompile Include="PointParticleEmitter2Tests.cpp" />
