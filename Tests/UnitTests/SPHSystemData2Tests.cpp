@@ -55,7 +55,6 @@ TEST(SPHSystemData2, Particles)
 TEST(SPHSystemData2, Serialization)
 {
 	SPHSystemData2 data;
-
 	ParticleSystemData2::VectorData positions =
 	{
 		{ 0.3, 0.5 },
