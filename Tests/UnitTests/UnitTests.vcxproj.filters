@@ -179,6 +179,9 @@
     <ClCompile Include="PointTests.cpp">
       <Filter>Point</Filter>
     </ClCompile>
+    <ClCompile Include="Point2Tests.cpp">
+      <Filter>Point</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
