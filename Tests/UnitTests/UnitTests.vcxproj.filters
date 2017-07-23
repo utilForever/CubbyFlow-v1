@@ -89,6 +89,102 @@
     <ClCompile Include="TriangleMesh3Tests.cpp">
       <Filter>Geometry</Filter>
     </ClCompile>
+    <ClCompile Include="SurfaceToImplicit2Tests.cpp">
+      <Filter>Surface</Filter>
+    </ClCompile>
+    <ClCompile Include="SurfaceToImplicit3Tests.cpp">
+      <Filter>Surface</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationTests.cpp">
+      <Filter>Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="ImplicitSurfaceSet2Tests.cpp">
+      <Filter>Surface</Filter>
+    </ClCompile>
+    <ClCompile Include="ImplicitSurfaceSet3Tests.cpp">
+      <Filter>Surface</Filter>
+    </ClCompile>
+    <ClCompile Include="Ray2Tests.cpp">
+      <Filter>Ray</Filter>
+    </ClCompile>
+    <ClCompile Include="Ray3Tests.cpp">
+      <Filter>Ray</Filter>
+    </ClCompile>
+    <ClCompile Include="BoundingBoxTests.cpp">
+      <Filter>BoundingBox</Filter>
+    </ClCompile>
+    <ClCompile Include="BoundingBox2Tests.cpp">
+      <Filter>BoundingBox</Filter>
+    </ClCompile>
+    <ClCompile Include="BoundingBox3Tests.cpp">
+      <Filter>BoundingBox</Filter>
+    </ClCompile>
+    <ClCompile Include="ColliderSet2Tests.cpp">
+      <Filter>Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="ColliderSet3Tests.cpp">
+      <Filter>Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="RigidbodyCollider2Tests.cpp">
+      <Filter>Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="RigidbodyCollider3Tests.cpp">
+      <Filter>Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="VolumeParticleEmitter2Tests.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="VolumeParticleEmitter3Tests.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="PointParticleEmitter2Tests.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="PointParticleEmitter3Tests.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleSystemSolverTests.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleSystemData2Tests.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleSystemData3Tests.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="SPHSolver2Tests.cpp">
+      <Filter>SPH</Filter>
+    </ClCompile>
+    <ClCompile Include="SPHSolver3Tests.cpp">
+      <Filter>SPH</Filter>
+    </ClCompile>
+    <ClCompile Include="SPHStdKernel2Tests.cpp">
+      <Filter>SPH</Filter>
+    </ClCompile>
+    <ClCompile Include="SPHStdKernel3Tests.cpp">
+      <Filter>SPH</Filter>
+    </ClCompile>
+    <ClCompile Include="SPHSystemData2Tests.cpp">
+      <Filter>SPH</Filter>
+    </ClCompile>
+    <ClCompile Include="SPHSystemData3Tests.cpp">
+      <Filter>SPH</Filter>
+    </ClCompile>
+    <ClCompile Include="PCISPHSolver2Tests.cpp">
+      <Filter>PCISPH</Filter>
+    </ClCompile>
+    <ClCompile Include="PCISPHSolver3Tests.cpp">
+      <Filter>PCISPH</Filter>
+    </ClCompile>
+    <ClCompile Include="PointTests.cpp">
+      <Filter>Point</Filter>
+    </ClCompile>
+    <ClCompile Include="Point2Tests.cpp">
+      <Filter>Point</Filter>
+    </ClCompile>
+    <ClCompile Include="Point3Tests.cpp">
+      <Filter>Point</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -114,6 +210,33 @@
     </Filter>
     <Filter Include="Math">
       <UniqueIdentifier>{28993044-8ff8-4bcb-9ff9-40f770c8a1bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Surface">
+      <UniqueIdentifier>{e0b25a05-d0f9-496f-8ed3-cbaf03957a09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Animation">
+      <UniqueIdentifier>{950f51c6-0637-4112-8441-1b23a8188bc7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ray">
+      <UniqueIdentifier>{cfe61890-f47c-4fef-b0a3-9632251b9280}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BoundingBox">
+      <UniqueIdentifier>{dfeb4208-58f1-42ec-8c0b-c7624ecafc91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Collider">
+      <UniqueIdentifier>{cc4b95d0-439e-49d0-ab95-75b3df1acd83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Particle">
+      <UniqueIdentifier>{e9deb48b-4063-4208-a11c-c4f394548ffe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SPH">
+      <UniqueIdentifier>{79946358-5eb8-447e-bf53-d9b9fa8325f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PCISPH">
+      <UniqueIdentifier>{3a68eaa7-9c05-4f0c-8483-9425b4ed4bb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Point">
+      <UniqueIdentifier>{e4ea9943-52e0-4e3b-9a0e-a20a431bdbd3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

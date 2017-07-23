@@ -273,6 +273,8 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Particle\ParticleSystemData3.h" />
     <ClInclude Include="..\Includes\Particle\ParticleSystemSolver2.h" />
     <ClInclude Include="..\Includes\Particle\ParticleSystemSolver3.h" />
+    <ClInclude Include="..\Includes\Particle\PointParticleEmitter2.h" />
+    <ClInclude Include="..\Includes\Particle\PointParticleEmitter3.h" />
     <ClInclude Include="..\Includes\Particle\VolumeParticleEmitter2.h" />
     <ClInclude Include="..\Includes\Particle\VolumeParticleEmitter3.h" />
     <ClInclude Include="..\Includes\PCISPH\PCISPHSolver2.h" />
@@ -475,6 +477,8 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="Particle\ParticleSystemData3.cpp" />
     <ClCompile Include="Particle\ParticleSystemSolver2.cpp" />
     <ClCompile Include="Particle\ParticleSystemSolver3.cpp" />
+    <ClCompile Include="Particle\PointParticleEmitter2.cpp" />
+    <ClCompile Include="Particle\PointParticleEmitter3.cpp" />
     <ClCompile Include="Particle\VolumeParticleEmitter2.cpp" />
     <ClCompile Include="Particle\VolumeParticleEmitter3.cpp" />
     <ClCompile Include="PCISPH\PCISPHSolver2.cpp" />

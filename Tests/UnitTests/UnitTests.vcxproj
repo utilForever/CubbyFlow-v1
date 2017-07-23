@@ -58,6 +58,7 @@
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AnimationTests.cpp" />
     <ClCompile Include="Array1Tests.cpp" />
     <ClCompile Include="Array2Tests.cpp" />
     <ClCompile Include="Array3Tests.cpp" />
@@ -66,19 +67,48 @@
     <ClCompile Include="ArrayAccessor3Tests.cpp" />
     <ClCompile Include="ArraySamplersTests.cpp" />
     <ClCompile Include="ArrayUtilsTests.cpp" />
+    <ClCompile Include="BoundingBox2Tests.cpp" />
+    <ClCompile Include="BoundingBox3Tests.cpp" />
+    <ClCompile Include="BoundingBoxTests.cpp" />
     <ClCompile Include="Box2Tests.cpp" />
     <ClCompile Include="Box3Tests.cpp" />
+    <ClCompile Include="ColliderSet2Tests.cpp" />
+    <ClCompile Include="ColliderSet3Tests.cpp" />
     <ClCompile Include="Cylinder3Tests.cpp" />
+    <ClCompile Include="ImplicitSurfaceSet2Tests.cpp" />
+    <ClCompile Include="ImplicitSurfaceSet3Tests.cpp" />
     <ClCompile Include="MathUtilsTests.cpp" />
     <ClCompile Include="Matrix2x2Tests.cpp" />
     <ClCompile Include="Matrix3x3Tests.cpp" />
     <ClCompile Include="Matrix4x4Tests.cpp" />
     <ClCompile Include="MatrixTests.cpp" />
+    <ClCompile Include="ParticleSystemData2Tests.cpp" />
+    <ClCompile Include="ParticleSystemData3Tests.cpp" />
+    <ClCompile Include="ParticleSystemSolverTests.cpp" />
+    <ClCompile Include="PCISPHSolver2Tests.cpp" />
+    <ClCompile Include="PCISPHSolver3Tests.cpp" />
     <ClCompile Include="Plane2Tests.cpp" />
     <ClCompile Include="Plane3Tests.cpp" />
+    <ClCompile Include="Point2Tests.cpp" />
+    <ClCompile Include="Point3Tests.cpp" />
+    <ClCompile Include="PointTests.cpp" />
+    <ClCompile Include="PointParticleEmitter2Tests.cpp" />
+    <ClCompile Include="PointParticleEmitter3Tests.cpp" />
     <ClCompile Include="QuaternionTests.cpp" />
+    <ClCompile Include="Ray2Tests.cpp" />
+    <ClCompile Include="Ray3Tests.cpp" />
+    <ClCompile Include="RigidbodyCollider2Tests.cpp" />
+    <ClCompile Include="RigidbodyCollider3Tests.cpp" />
     <ClCompile Include="Sphere2Tests.cpp" />
     <ClCompile Include="Sphere3Tests.cpp" />
+    <ClCompile Include="SPHStdKernel2Tests.cpp" />
+    <ClCompile Include="SPHSolver2Tests.cpp" />
+    <ClCompile Include="SPHSolver3Tests.cpp" />
+    <ClCompile Include="SPHStdKernel3Tests.cpp" />
+    <ClCompile Include="SPHSystemData2Tests.cpp" />
+    <ClCompile Include="SPHSystemData3Tests.cpp" />
+    <ClCompile Include="SurfaceToImplicit2Tests.cpp" />
+    <ClCompile Include="SurfaceToImplicit3Tests.cpp" />
     <ClCompile Include="Transform2Tests.cpp" />
     <ClCompile Include="Transform3Tests.cpp" />
     <ClCompile Include="Triangle3Tests.cpp" />
@@ -94,6 +124,8 @@
     <ClCompile Include="Vector3Tests.cpp" />
     <ClCompile Include="Vector4Tests.cpp" />
     <ClCompile Include="VectorTests.cpp" />
+    <ClCompile Include="VolumeParticleEmitter2Tests.cpp" />
+    <ClCompile Include="VolumeParticleEmitter3Tests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Sources\CubbyFlow.vcxproj">

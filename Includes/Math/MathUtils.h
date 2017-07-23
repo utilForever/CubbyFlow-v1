@@ -186,6 +186,30 @@ namespace CubbyFlow
 	inline T Clamp(T val, T low, T high);
 
 	//!
+	//! \brief      Converts degrees to radians.
+	//!
+	//! \param[in]  angleInDegrees The angle in degrees.
+	//!
+	//! \tparam     T              Value type.
+	//!
+	//! \return     Angle in radians.
+	//!
+	template <typename T>
+	inline T DegreesToRadians(T angleInDegrees);
+
+	//!
+	//! \brief      Converts radians to degrees.
+	//!
+	//! \param[in]  angleInDegrees The angle in radians.
+	//!
+	//! \tparam     T              Value type.
+	//!
+	//! \return     Angle in degrees.
+	//!
+	template <typename T>
+	inline T RadiansToDegrees(T angleInRadians);
+
+	//!
 	//! \brief      Gets the barycentric coordinate.
 	//!
 	//! \param[in]  x     The input value.

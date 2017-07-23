@@ -97,7 +97,7 @@ namespace CubbyFlow
 
 		for (size_t i = 0; i < N; ++i)
 		{
-			result += square(upperCorner[i] - lowerCorner[i]);
+			result += Square(upperCorner[i] - lowerCorner[i]);
 		}
 
 		return result;
