@@ -251,4 +251,6 @@ paket-files/
 .idea/
 *.sln.iml
 
+## For CubbyFlow
 *.npy
+*.bat
