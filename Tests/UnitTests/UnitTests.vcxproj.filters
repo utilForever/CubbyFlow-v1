@@ -185,6 +185,9 @@
     <ClCompile Include="Point3Tests.cpp">
       <Filter>Point</Filter>
     </ClCompile>
+    <ClCompile Include="Vector4Tests.cpp">
+      <Filter>Vector</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
