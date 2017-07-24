@@ -191,6 +191,9 @@
     <ClCompile Include="ParallelTests.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
+    <ClCompile Include="TimerTests.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
