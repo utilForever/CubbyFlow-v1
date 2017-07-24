@@ -197,6 +197,9 @@
     <ClCompile Include="SerialTests.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
+    <ClCompile Include="SamplersTests.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
