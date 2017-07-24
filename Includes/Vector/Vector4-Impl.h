@@ -297,13 +297,13 @@ namespace CubbyFlow
 	template <typename T>
 	T Vector<T, 4>::Min() const
 	{
-		return std::min(x, y, z, w);
+		return std::min({ x, y, z, w });
 	}
 
 	template <typename T>
 	T Vector<T, 4>::Max() const
 	{
-		return std::max(x, y, z, w);
+		return std::max({ x, y, z, w });
 	}
 
 	template <typename T>
@@ -587,7 +587,7 @@ namespace CubbyFlow
 	template <typename T>
 	Vector<T, 4> Clamp(const Vector<T, 4>& v, const Vector<T, 4>& low, const Vector<T, 4>& high)
 	{
-		return Vector<T, 4>(std::clamp(v.x, low.x, high.x), std::clamp(v.y, low.y, high.y), std::clamp(v.z, low.z, high.z), std::clamp(v.w, low.w, high.w));
+		return Vector<T, 4>(Clamp(v.x, low.x, high.x), Clamp(v.y, low.y, high.y), Clamp(v.z, low.z, high.z), Clamp(v.w, low.w, high.w));
 	}
 
 	template <typename T>
