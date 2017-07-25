@@ -245,17 +245,17 @@ TEST(Vector4, BasicGetterMethods)
 	float max = vec.Max();
 	EXPECT_FLOAT_EQ(5.f, max);
 
-	float absmin = vec2.AbsMin();
-	EXPECT_FLOAT_EQ(1.f, absmin);
+	float absMin = vec2.AbsMin();
+	EXPECT_FLOAT_EQ(1.f, absMin);
 
-	float absmax = vec2.AbsMax();
-	EXPECT_FLOAT_EQ(13.f, absmax);
+	float absMax = vec2.AbsMax();
+	EXPECT_FLOAT_EQ(-13.f, absMax);
 
-	size_t daxis = vec.DominantAxis();
-	EXPECT_EQ((size_t)1, daxis);
+	size_t dAxis = vec.DominantAxis();
+	EXPECT_EQ((size_t)3, dAxis);
 
-	size_t saxis = vec.SubdominantAxis();
-	EXPECT_EQ((size_t)2, saxis);
+	size_t sAxis = vec.SubdominantAxis();
+	EXPECT_EQ((size_t)2, sAxis);
 
 	float eps = 1e-6f;
 	vec2 = vec.Normalized();
@@ -315,39 +315,39 @@ TEST(Vector4, AugmentedOperators)
 	EXPECT_FLOAT_EQ(6.f, vec.x);
 	EXPECT_FLOAT_EQ(11.f, vec.y);
 	EXPECT_FLOAT_EQ(5.f, vec.z);
-	EXPECT_FLOAT_EQ(3.f, vec.w);
+	EXPECT_FLOAT_EQ(7.f, vec.w);
 
 	vec -= 4.f;
 	EXPECT_FLOAT_EQ(2.f, vec.x);
 	EXPECT_FLOAT_EQ(7.f, vec.y);
 	EXPECT_FLOAT_EQ(1.f, vec.z);
-	EXPECT_FLOAT_EQ(-1.f, vec.w);
+	EXPECT_FLOAT_EQ(3.f, vec.w);
 
 	vec -= Vector4F(-1.f, -4.f, -3.f, -11.f);
 	EXPECT_FLOAT_EQ(3.f, vec.x);
 	EXPECT_FLOAT_EQ(11.f, vec.y);
 	EXPECT_FLOAT_EQ(4.f, vec.z);
-	EXPECT_FLOAT_EQ(10.f, vec.w);
+	EXPECT_FLOAT_EQ(14.f, vec.w);
 
 	vec *= 2.f;
 	EXPECT_FLOAT_EQ(6.f, vec.x);
 	EXPECT_FLOAT_EQ(22.f, vec.y);
 	EXPECT_FLOAT_EQ(8.f, vec.z);
-	EXPECT_FLOAT_EQ(20.f, vec.w);
+	EXPECT_FLOAT_EQ(28.f, vec.w);
 
 	vec *= Vector4F(4.f, 2.f, 3.f, 1.f);
 	EXPECT_FLOAT_EQ(24.f, vec.x);
 	EXPECT_FLOAT_EQ(44.f, vec.y);
 	EXPECT_FLOAT_EQ(24.f, vec.z);
-	EXPECT_FLOAT_EQ(20.f, vec.w);
+	EXPECT_FLOAT_EQ(28.f, vec.w);
 
 	vec /= 4.f;
 	EXPECT_FLOAT_EQ(6.f, vec.x);
 	EXPECT_FLOAT_EQ(11.f, vec.y);
 	EXPECT_FLOAT_EQ(6.f, vec.z);
-	EXPECT_FLOAT_EQ(5.f, vec.w);
+	EXPECT_FLOAT_EQ(7.f, vec.w);
 
-	vec /= Vector4F(3.f, 1.f, 2.f, 5.f);
+	vec /= Vector4F(3.f, 1.f, 2.f, 7.f);
 	EXPECT_FLOAT_EQ(2.f, vec.x);
 	EXPECT_FLOAT_EQ(11.f, vec.y);
 	EXPECT_FLOAT_EQ(3.f, vec.z);
@@ -379,7 +379,7 @@ TEST(Vector4, ClampFunction)
 {
 	Vector4F vec(2.f, 3.f, 1.f, -1.f), low(3.f, 1.f, 2.f, -3.f), high(3.f, 2.f, 2.f, -1.f);
 	Vector4F clampedVec = Clamp(vec, low, high);
-	EXPECT_TRUE(clampedVec == Vector4F(3.f, 3.f, 2.f, -1.f));
+	EXPECT_TRUE(clampedVec == Vector4F(3.f, 2.f, 2.f, -1.f));
 }
 
 TEST(Vector4, CeilFloorFunctions)
@@ -424,23 +424,23 @@ TEST(Vector4, BinaryOperators)
 	EXPECT_FLOAT_EQ(-12.f, vec.x);
 	EXPECT_FLOAT_EQ(-14.f, vec.y);
 	EXPECT_FLOAT_EQ(-8.f, vec.z);
-	EXPECT_FLOAT_EQ(-18.f, vec.w);
+	EXPECT_FLOAT_EQ(-16.f, vec.w);
 
 	vec = vec * Vector4F(2.f, -1.f, 3.f, 4.f);
 	EXPECT_FLOAT_EQ(-24.f, vec.x);
 	EXPECT_FLOAT_EQ(14.f, vec.y);
-	EXPECT_FLOAT_EQ(24.f, vec.z);
-	EXPECT_FLOAT_EQ(36.f, vec.w);
+	EXPECT_FLOAT_EQ(-24.f, vec.z);
+	EXPECT_FLOAT_EQ(-64.f, vec.w);
 
 	vec = vec / 2.f;
 	EXPECT_FLOAT_EQ(-12.f, vec.x);
 	EXPECT_FLOAT_EQ(7.f, vec.y);
-	EXPECT_FLOAT_EQ(12.f, vec.z);
-	EXPECT_FLOAT_EQ(18.f, vec.w);
+	EXPECT_FLOAT_EQ(-12.f, vec.z);
+	EXPECT_FLOAT_EQ(-32.f, vec.w);
 
-	vec = vec / Vector4F(2.f, 7.f, 5.f, 3.f);
+	vec = vec / Vector4F(2.f, 7.f, 6.f, 4.f);
 	EXPECT_FLOAT_EQ(-6.f, vec.x);
 	EXPECT_FLOAT_EQ(1.f, vec.y);
-	EXPECT_FLOAT_EQ(2.4f, vec.z);
-	EXPECT_FLOAT_EQ(6.f, vec.w);
+	EXPECT_FLOAT_EQ(-2.f, vec.z);
+	EXPECT_FLOAT_EQ(-8.f, vec.w);
 }
