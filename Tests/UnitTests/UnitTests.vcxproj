@@ -103,6 +103,8 @@
     <ClCompile Include="Ray3Tests.cpp" />
     <ClCompile Include="RigidbodyCollider2Tests.cpp" />
     <ClCompile Include="RigidbodyCollider3Tests.cpp" />
+    <ClCompile Include="SamplersTests.cpp" />
+    <ClCompile Include="SerialTests.cpp" />
     <ClCompile Include="Sphere2Tests.cpp" />
     <ClCompile Include="Sphere3Tests.cpp" />
     <ClCompile Include="SPHStdKernel2Tests.cpp" />
@@ -113,6 +115,7 @@
     <ClCompile Include="SPHSystemData3Tests.cpp" />
     <ClCompile Include="SurfaceToImplicit2Tests.cpp" />
     <ClCompile Include="SurfaceToImplicit3Tests.cpp" />
+    <ClCompile Include="TimerTests.cpp" />
     <ClCompile Include="Transform2Tests.cpp" />
     <ClCompile Include="Transform3Tests.cpp" />
     <ClCompile Include="Triangle3Tests.cpp" />
