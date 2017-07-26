@@ -855,5 +855,8 @@
     <ClCompile Include="Particle\PointParticleEmitter3.cpp">
       <Filter>Particle</Filter>
     </ClCompile>
+    <ClCompile Include="Grid\VectorGrid2.cpp">
+      <Filter>Grid</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
