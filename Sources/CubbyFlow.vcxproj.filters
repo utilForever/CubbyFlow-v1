@@ -858,5 +858,8 @@
     <ClCompile Include="Grid\VectorGrid2.cpp">
       <Filter>Grid</Filter>
     </ClCompile>
+    <ClCompile Include="Grid\VectorGrid3.cpp">
+      <Filter>Grid</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
