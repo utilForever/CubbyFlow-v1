@@ -13,7 +13,7 @@ TEST(PointSimpleListSearcher3, ForEachNearByPoint)
 	};
 
 	PointSimpleListSearcher3 searcher;
-	searcher.Build(points.Accessor());
+	searcher.Build(points.ConstAccessor());
 
 	searcher.ForEachNearbyPoint(
 		Vector3D(0, 0, 1),
@@ -57,17 +57,17 @@ TEST(PointSimpleListSearcher3, Serialize)
 		Vector3D(3, 1, 5)
 	};
 
-	std::vector<const Vector3D&> result;
+	std::vector<Vector3D> result;
 
 	PointSimpleListSearcher3 searcher;
 	searcher.Build(points.Accessor());
 
-	std::vector<uint8_t>* buf;
+	std::vector<uint8_t> buf;
 
-	searcher.Serialize(buf);
+	searcher.Serialize(&buf);
 
 	PointSimpleListSearcher3 searcher2;
-	searcher2.Deserialize(*buf);
+	searcher2.Deserialize(buf);
 
 	searcher.ForEachNearbyPoint(
 		Vector3D(),
@@ -86,4 +86,6 @@ TEST(PointSimpleListSearcher3, Serialize)
 		EXPECT_EQ(result[i].y, pt.y);
 		EXPECT_EQ(result[i].z, pt.z);
 	});
+
+	buf.clear();
 }

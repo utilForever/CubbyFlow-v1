@@ -200,6 +200,24 @@
     <ClCompile Include="SamplersTests.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
+    <ClCompile Include="PointParallelHashGridSearcher2Tests.cpp">
+      <Filter>Searcher</Filter>
+    </ClCompile>
+    <ClCompile Include="PointSimpleListSearcher3Tests.cpp">
+      <Filter>Searcher</Filter>
+    </ClCompile>
+    <ClCompile Include="PointSimpleListSeracher2Tests.cpp">
+      <Filter>Searcher</Filter>
+    </ClCompile>
+    <ClCompile Include="PointHashGridSearcher2Tests.cpp">
+      <Filter>Searcher</Filter>
+    </ClCompile>
+    <ClCompile Include="PointHashGridSearcher3Tests.cpp">
+      <Filter>Searcher</Filter>
+    </ClCompile>
+    <ClCompile Include="PointParallelHashGridSearcher3Tests.cpp">
+      <Filter>Searcher</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -255,6 +273,9 @@
     </Filter>
     <Filter Include="Utils">
       <UniqueIdentifier>{4bc46c8a-a91e-40a9-9d68-2d87f8c6aa71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Searcher">
+      <UniqueIdentifier>{2c0970b3-9dab-4e6d-909f-9d9127e67b01}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

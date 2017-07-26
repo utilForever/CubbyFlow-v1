@@ -13,7 +13,7 @@ TEST(PointSimpleListSearcher2, ForEachNearByPoint)
 	};
 
 	PointSimpleListSearcher2 searcher;
-	searcher.Build(points.Accessor());
+	searcher.Build(points.ConstAccessor());
 
 	searcher.ForEachNearbyPoint(
 		Vector2D(0, 0),
@@ -57,21 +57,21 @@ TEST(PointSimpleListSearcher2, Serialize)
 		Vector2D(3, 1)
 	};
 
-	std::vector<const Vector2D&> result;
+	std::vector<Vector2D> result;
 
 	PointSimpleListSearcher2 searcher;
 	searcher.Build(points.Accessor());
 
-	std::vector<uint8_t>* buf;
-
-	searcher.Serialize(buf);
+	std::vector<uint8_t> buf;
+	
+	searcher.Serialize(&buf);
 
 	PointSimpleListSearcher2 searcher2;
-	searcher2.Deserialize(*buf);
+	searcher2.Deserialize(buf);
 
 	searcher.ForEachNearbyPoint(
 		Vector2D(0, 0),
-		std::sqrt(std::numeric_limits<double>::max()),
+		std::numeric_limits<double>::max(),
 		[&](size_t i, const Vector2D& pt)
 	{
 		result.push_back(pt);
@@ -79,10 +79,12 @@ TEST(PointSimpleListSearcher2, Serialize)
 
 	searcher2.ForEachNearbyPoint(
 		Vector2D(0, 0),
-		std::sqrt(std::numeric_limits<double>::max()),
+		std::numeric_limits<double>::max(),
 		[&](size_t i, const Vector2D& pt)
 	{
 		EXPECT_EQ(result[i].x, pt.x);
 		EXPECT_EQ(result[i].y, pt.y);
 	});
+
+	buf.clear();
 }
