@@ -77,7 +77,7 @@ TEST(Vector4, BasicSetterMethods)
 
 	vec.Set(4.f, 2.f, 8.f, 1.f);
 	vec.Normalize();
-	float len = vec.x * vec.x + vec.y * vec.y + vec.z * vec.z + vec.w * vec.w;
+	float len = std::sqrt(vec.x * vec.x + vec.y * vec.y + vec.z * vec.z + vec.w * vec.w);
 	EXPECT_TRUE(fabsf(len - 1.f) < 1e-6);
 }
 

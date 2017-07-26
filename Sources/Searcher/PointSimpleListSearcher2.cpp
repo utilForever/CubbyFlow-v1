@@ -140,4 +140,9 @@ namespace CubbyFlow
 	{
 		return MakeShared();
 	}
+	
+	PointSimpleListSearcher2::Builder PointSimpleListSearcher2::GetBuilder()
+	{
+		return Builder();
+	}
 }

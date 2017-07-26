@@ -92,6 +92,9 @@
     <ClCompile Include="Plane3Tests.cpp" />
     <ClCompile Include="Point2Tests.cpp" />
     <ClCompile Include="Point3Tests.cpp" />
+    <ClCompile Include="PointParallelHashGridSearcher2Tests.cpp" />
+    <ClCompile Include="PointSimpleListSearcher3Tests.cpp" />
+    <ClCompile Include="PointSimpleListSeracher2Tests.cpp" />
     <ClCompile Include="PointTests.cpp" />
     <ClCompile Include="PointParticleEmitter2Tests.cpp" />
     <ClCompile Include="PointParticleEmitter3Tests.cpp" />
