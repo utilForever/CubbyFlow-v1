@@ -245,6 +245,8 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Grid\Grid3.h" />
     <ClInclude Include="..\Includes\Grid\ScalarGrid2.h" />
     <ClInclude Include="..\Includes\Grid\ScalarGrid3.h" />
+    <ClInclude Include="..\Includes\Grid\VectorGrid2.h" />
+    <ClInclude Include="..\Includes\Grid\VectorGrid3.h" />
     <ClInclude Include="..\Includes\Grid\VertexCenteredScalarGrid2.h" />
     <ClInclude Include="..\Includes\Grid\VertexCenteredScalarGrid3.h" />
     <ClInclude Include="..\Includes\LevelSet\LevelSetUtils-Impl.h" />
@@ -465,6 +467,8 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="Grid\Grid3.cpp" />
     <ClCompile Include="Grid\ScalarGrid2.cpp" />
     <ClCompile Include="Grid\ScalarGrid3.cpp" />
+    <ClCompile Include="Grid\VectorGrid2.cpp" />
+    <ClCompile Include="Grid\VectorGrid3.cpp" />
     <ClCompile Include="Grid\VertexCenteredScalarGrid2.cpp" />
     <ClCompile Include="Grid\VertexCenteredScalarGrid3.cpp" />
     <ClCompile Include="MarchingCubes\MarchingCubes.cpp" />

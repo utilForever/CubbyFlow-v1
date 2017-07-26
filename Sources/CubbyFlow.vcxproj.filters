@@ -580,6 +580,12 @@
     <ClInclude Include="..\Includes\Particle\PointParticleEmitter3.h">
       <Filter>Particle</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Grid\VectorGrid2.h">
+      <Filter>Grid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Grid\VectorGrid3.h">
+      <Filter>Grid</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
@@ -848,6 +854,12 @@
     </ClCompile>
     <ClCompile Include="Particle\PointParticleEmitter3.cpp">
       <Filter>Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="Grid\VectorGrid2.cpp">
+      <Filter>Grid</Filter>
+    </ClCompile>
+    <ClCompile Include="Grid\VectorGrid3.cpp">
+      <Filter>Grid</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
