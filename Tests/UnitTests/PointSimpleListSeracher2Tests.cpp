@@ -1,12 +1,13 @@
 #include "pch.h"
 
-#include <Searcher\PointSimpleListSearcher2.h>
+#include <Searcher/PointSimpleListSearcher2.h>
 
 using namespace CubbyFlow;
 
 TEST(PointSimpleListSearcher2, ForEachNearByPoint)
 {
-	Array1<Vector2D> points = {
+	Array1<Vector2D> points =
+	{
 		Vector2D(1, 1),
 		Vector2D(3, 4),
 		Vector2D(-1, 2)
@@ -16,8 +17,7 @@ TEST(PointSimpleListSearcher2, ForEachNearByPoint)
 	searcher.Build(points.ConstAccessor());
 
 	searcher.ForEachNearbyPoint(
-		Vector2D(0, 0),
-		std::sqrt(15.0),
+		Vector2D(0, 0), std::sqrt(15.0),
 		[&](size_t i, const Vector2D& pt)
 	{
 		EXPECT_TRUE(i == 0 || i == 2);
@@ -34,7 +34,8 @@ TEST(PointSimpleListSearcher2, ForEachNearByPoint)
 
 TEST(PointSimpleListSearcher2, HasNearByPoint)
 {
-	Array1<Vector2D> points = {
+	Array1<Vector2D> points =
+	{
 		Vector2D(1, 3),
 		Vector2D(3, 2),
 		Vector2D(-1, 2)
@@ -51,7 +52,8 @@ TEST(PointSimpleListSearcher2, HasNearByPoint)
 
 TEST(PointSimpleListSearcher2, Serialize)
 {
-	Array1<Vector2D> points = {
+	Array1<Vector2D> points =
+	{
 		Vector2D(1, 3),
 		Vector2D(2, 4),
 		Vector2D(3, 1)
@@ -70,16 +72,14 @@ TEST(PointSimpleListSearcher2, Serialize)
 	searcher2.Deserialize(buf);
 
 	searcher.ForEachNearbyPoint(
-		Vector2D(0, 0),
-		std::numeric_limits<double>::max(),
+		Vector2D(0, 0), std::numeric_limits<double>::max(),
 		[&](size_t i, const Vector2D& pt)
 	{
 		result.push_back(pt);
 	});
 
 	searcher2.ForEachNearbyPoint(
-		Vector2D(0, 0),
-		std::numeric_limits<double>::max(),
+		Vector2D(0, 0), std::numeric_limits<double>::max(),
 		[&](size_t i, const Vector2D& pt)
 	{
 		EXPECT_EQ(result[i].x, pt.x);

@@ -1,12 +1,13 @@
 #include "pch.h"
 
-#include <Searcher\PointHashGridSearcher2.h>
+#include <Searcher/PointHashGridSearcher2.h>
 
 using namespace CubbyFlow;
 
 TEST(PointHashGridSearcher2, ForEachNearByPoint)
 {
-	Array1<Vector2D> points = {
+	Array1<Vector2D> points =
+	{
 		Vector2D(1, 1),
 		Vector2D(3, 4),
 		Vector2D(-1, 2)
@@ -16,8 +17,7 @@ TEST(PointHashGridSearcher2, ForEachNearByPoint)
 	searcher.Build(points.Accessor());
 
 	searcher.ForEachNearbyPoint(
-		Vector2D(0, 0),
-		std::sqrt(15.0),
+		Vector2D(0, 0), std::sqrt(15.0),
 		[&points](size_t i, const Vector2D& pt)
 	{
 		EXPECT_TRUE(i == 0 || i == 2);
@@ -34,7 +34,8 @@ TEST(PointHashGridSearcher2, ForEachNearByPoint)
 
 TEST(PointHashGridSearcher2, HasEachNearByPoint)
 {
-	Array1<Vector2D> points = {
+	Array1<Vector2D> points =
+	{
 		Vector2D(1, 1),
 		Vector2D(3, 4),
 		Vector2D(4, 5)
@@ -51,7 +52,8 @@ TEST(PointHashGridSearcher2, HasEachNearByPoint)
 
 TEST(PointHashGridSearcher2, Build)
 {
-	Array1<Vector2D> points = {
+	Array1<Vector2D> points =
+	{
 		Vector2D(3, 4),
 		Vector2D(1, 5),
 		Vector2D(-3, 0)

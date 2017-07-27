@@ -1,12 +1,13 @@
 #include "pch.h"
 
-#include <Searcher\PointParallelHashGridSearcher2.h>
+#include <Searcher/PointParallelHashGridSearcher2.h>
 
 using namespace CubbyFlow;
 
 TEST(PointParallelHashGridSearcher2, ForEachNearByPoint)
 {
-	Array1<Vector2D> points = {
+	Array1<Vector2D> points =
+	{
 		Vector2D(1, 1),
 		Vector2D(3, 4),
 		Vector2D(-1, 2)
@@ -16,8 +17,7 @@ TEST(PointParallelHashGridSearcher2, ForEachNearByPoint)
 	searcher.Build(points.Accessor());
 
 	searcher.ForEachNearbyPoint(
-		Vector2D(0, 0),
-		std::sqrt(15.0),
+		Vector2D(0, 0), std::sqrt(15.0),
 		[&points](size_t i, const Vector2D& pt)
 	{
 		EXPECT_TRUE(i == 0 || i == 2);
@@ -34,7 +34,8 @@ TEST(PointParallelHashGridSearcher2, ForEachNearByPoint)
 
 TEST(PointParallelHashGridSearcher2, HasEachNearByPoint)
 {
-	Array1<Vector2D> points = {
+	Array1<Vector2D> points =
+	{
 		Vector2D(1, 1),
 		Vector2D(3, 4),
 		Vector2D(4, 5)
@@ -51,7 +52,8 @@ TEST(PointParallelHashGridSearcher2, HasEachNearByPoint)
 
 TEST(PointParallelHashGridSearcher2, Build)
 {
-	Array1<Vector2D> points = {
+	Array1<Vector2D> points =
+	{
 		Vector2D(3, 4),
 		Vector2D(1, 5),
 		Vector2D(-3, 0)
@@ -70,7 +72,7 @@ TEST(PointParallelHashGridSearcher2, Build)
 	resultKey.push_back(4);
 	resultKey.push_back(4);
 
-	for (size_t i = 0; i < 3; i++)
+	for (size_t i = 0; i < 3; ++i)
 	{
 		EXPECT_EQ(resultKey[i], searcher.Keys()[i]);
 	}
@@ -84,7 +86,8 @@ TEST(PointParallelHashGridSearcher2, Build)
 
 TEST(PointParallelHashGridSearcher2, Serialization)
 {
-	Array1<Vector2D> points = {
+	Array1<Vector2D> points =
+	{
 		Vector2D(1, 34),
 		Vector2D(13, 12441),
 		Vector2D(132, 141)
@@ -100,12 +103,12 @@ TEST(PointParallelHashGridSearcher2, Serialization)
 
 	searcher2.Deserialize(buf);
 
-	for (size_t i = 0; i < searcher.SortedIndices().size(); i++)
+	for (size_t i = 0; i < searcher.SortedIndices().size(); ++i)
 	{
 		EXPECT_EQ(searcher.SortedIndices()[i], searcher2.SortedIndices()[i]);
 	}
 
-	for (size_t i = 0; i < searcher.StartIndexTable().size(); i++)
+	for (size_t i = 0; i < searcher.StartIndexTable().size(); ++i)
 	{
 		EXPECT_EQ(searcher.EndIndexTable()[i], searcher2.EndIndexTable()[i]);
 		EXPECT_EQ(searcher.StartIndexTable()[i], searcher2.StartIndexTable()[i]);
@@ -115,22 +118,20 @@ TEST(PointParallelHashGridSearcher2, Serialization)
 	std::vector<Vector2D> tmp2;
 
 	searcher.ForEachNearbyPoint(
-		Vector2D(),
-		std::numeric_limits<double>::max(),
+		Vector2D(), std::numeric_limits<double>::max(),
 		[&](size_t i, const Vector2D& pt)
 	{
 		tmp.push_back(pt);
 	});
 
 	searcher2.ForEachNearbyPoint(
-		Vector2D(), 
-		std::numeric_limits<double>::max(),
+		Vector2D(),  std::numeric_limits<double>::max(),
 		[&](size_t i, const Vector2D& pt)
 	{
 		tmp2.push_back(pt);
 	});
 
-	for (size_t i = 0; i < 3; i++)
+	for (size_t i = 0; i < 3; ++i)
 	{
 		EXPECT_EQ(tmp[i], tmp2[i]);
 	}

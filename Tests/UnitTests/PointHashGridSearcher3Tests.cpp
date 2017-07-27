@@ -1,12 +1,13 @@
 #include "pch.h"
 
-#include <Searcher\PointHashGridSearcher3.h>
+#include <Searcher/PointHashGridSearcher3.h>
 
 using namespace CubbyFlow;
 
 TEST(PointHashGridSearcher3, ForEachNearByPoint)
 {
-	Array1<Vector3D> points = {
+	Array1<Vector3D> points =
+	{
 		Vector3D(1, 1, 4),
 		Vector3D(3, 4, 5),
 		Vector3D(-1, 2, 4)
@@ -38,7 +39,8 @@ TEST(PointHashGridSearcher3, ForEachNearByPoint)
 
 TEST(PointHashGridSearcher3, HasEachNearByPoint)
 {
-	Array1<Vector3D> points = {
+	Array1<Vector3D> points =
+	{
 		Vector3D(1, 1, 1),
 		Vector3D(3, 444, 1),
 		Vector3D(4, 15, 111)
@@ -55,7 +57,8 @@ TEST(PointHashGridSearcher3, HasEachNearByPoint)
 
 TEST(PointHashGridSearcher3, Build)
 {
-	Array1<Vector3D> points = {
+	Array1<Vector3D> points =
+	{
 		Vector3D(3, 4, 111),
 		Vector3D(111, 5, 1),
 		Vector3D(-311, 1123, 0)
