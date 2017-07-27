@@ -90,64 +90,40 @@ TEST(PointParallelHashGridSearcher3, Build)
 
 TEST(PointParallelHashGridSearcher3, Serialization)
 {
-	Array1<Vector3D> points = {
-		Vector3D(1, 2, 3),
-		Vector3D(4, 5, 6),
-		Vector3D(7, 8, 9)
+	Array1<Vector3D> points =
+	{
+		Vector3D(0, 1, 3),
+		Vector3D(2, 5, 4),
+		Vector3D(-1, 3, 0)
 	};
 
-	PointParallelHashGridSearcher3 searcher(Size3(4, 4, 4), std::sqrt(9)), searcher2(Size3(1, 1, 1), std::sqrt(1));
-
+	PointParallelHashGridSearcher3 searcher(4, 4, 4, std::sqrt(10));
 	searcher.Build(points.Accessor());
 
-	std::vector<Vector3D> src, dst;
+	std::vector<uint8_t> buffer;
+	searcher.Serialize(&buffer);
 
-	searcher.ForEachNearbyPoint(
-		Vector3D(),
-		std::numeric_limits<double>::max(),
-		[&](size_t i, const Vector3D& pt)
-	{
-		src.push_back(pt);
-	});
+	PointParallelHashGridSearcher3 searcher2(1, 1, 1, 1.0);
+	searcher2.Deserialize(buffer);
 
-	for(size_t i=0;i<3;i++)
-	{
-		EXPECT_EQ(points[i].x, src[i].x);
-		EXPECT_EQ(points[i].y, src[i].y);
-		EXPECT_EQ(points[i].z, src[i].z);
-	}
-
-	std::vector<uint8_t> buf;
-
-	searcher.Serialize(&buf);
-
-	searcher2.Deserialize(buf);
-
-	for (size_t i = 0; i < searcher.SortedIndices().size(); i++)
-	{
-		EXPECT_EQ(searcher.SortedIndices()[i], searcher2.SortedIndices()[i]);
-	}
-
-	for (size_t i = 0; i < searcher.StartIndexTable().size(); i++)
-	{
-		EXPECT_EQ(searcher.EndIndexTable()[i], searcher2.EndIndexTable()[i]);
-		EXPECT_EQ(searcher.StartIndexTable()[i], searcher2.StartIndexTable()[i]);
-	}
-
+	int cnt = 0;
 	searcher2.ForEachNearbyPoint(
-		Vector3D(),
-		std::numeric_limits<double>::max(),
+		Vector3D(0, 0, 0),
+		std::sqrt(10.0),
 		[&](size_t i, const Vector3D& pt)
 	{
-		dst.push_back(pt);
+		EXPECT_TRUE(i == 0 || i == 2);
+
+		if (i == 0)
+		{
+			EXPECT_EQ(points[0], pt);
+		}
+		else if (i == 2)
+		{
+			EXPECT_EQ(points[2], pt);
+		}
+
+		++cnt;
 	});
-
-	for (size_t i = 0; i < 3; i++)
-	{
-		EXPECT_EQ(src[i].x, dst[i].x);
-		EXPECT_EQ(src[i].y, dst[i].y);
-		EXPECT_EQ(src[i].z, dst[i].z);
-	}
-
-	buf.clear();
+	EXPECT_EQ(2, cnt);
 }
