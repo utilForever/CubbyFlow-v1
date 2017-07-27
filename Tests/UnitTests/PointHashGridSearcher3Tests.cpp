@@ -67,11 +67,11 @@ TEST(PointHashGridSearcher3, Build)
 	PointHashGridSearcher3 searcher(Size3(4, 4, 4), std::sqrt(9));
 	searcher.Build(points.Accessor());
 
-	EXPECT_EQ(Point3I(0, 1, 0), searcher.GetBucketIndex(points[0]));
-	EXPECT_EQ(Point3I(0, 2, 0), searcher.GetBucketIndex(points[1]));
-	EXPECT_EQ(Point3I(1, 1, 0), searcher.GetBucketIndex(points[2]));
+	EXPECT_EQ(Point3I(1, 1, 37), searcher.GetBucketIndex(points[0]));
+	EXPECT_EQ(Point3I(37, 1, 0), searcher.GetBucketIndex(points[1]));
+	EXPECT_EQ(Point3I(-104, 374, 0), searcher.GetBucketIndex(points[2]));
 
-	EXPECT_EQ(4, searcher.GetHashKeyFromBucketIndex(Point3I(0, 1, 0)));
-	EXPECT_EQ(8, searcher.GetHashKeyFromBucketIndex(Point3I(0, 2, 0)));
-	EXPECT_EQ(20, searcher.GetHashKeyFromBucketIndex(Point3I(1, 1, 0)));
+	EXPECT_EQ(21, searcher.GetHashKeyFromBucketIndex(Point3I(1, 1, 37)));
+	EXPECT_EQ(5, searcher.GetHashKeyFromBucketIndex(Point3I(37, 1, 0)));
+	EXPECT_EQ(8, searcher.GetHashKeyFromBucketIndex(Point3I(-104, 374, 0)));
 }
