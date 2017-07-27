@@ -65,7 +65,7 @@ namespace CubbyFlow
 			return;
 		}
 
-		size_t nearByKeys[4];
+		size_t nearByKeys[8];
 		GetNearbyKeys(origin, nearByKeys);
 
 		const double queryRadiusSquared = radius * radius;
