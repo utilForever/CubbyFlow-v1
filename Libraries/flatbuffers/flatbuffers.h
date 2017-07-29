@@ -121,7 +121,7 @@ template<typename T, typename IT>
 struct VectorIterator {
   typedef std::random_access_iterator_tag iterator_category;
   typedef IT value_type;
-  typedef uoffset_t difference_type;
+  typedef ptrdiff_t difference_type;
   typedef IT *pointer;
   typedef IT &reference;
 
