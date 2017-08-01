@@ -870,5 +870,8 @@
     <ClCompile Include="Grid\CellCenteredScalarGrid2.cpp">
       <Filter>Grid</Filter>
     </ClCompile>
+    <ClCompile Include="Grid\CellCenteredScalarGrid3.cpp">
+      <Filter>Grid</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
