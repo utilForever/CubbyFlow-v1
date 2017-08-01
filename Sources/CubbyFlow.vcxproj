@@ -246,6 +246,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Geometry\Triangle3.h" />
     <ClInclude Include="..\Includes\Geometry\TriangleMesh3.h" />
     <ClInclude Include="..\Includes\Grid\CellCenteredScalarGrid2.h" />
+    <ClInclude Include="..\Includes\Grid\CellCenteredScalarGrid3.h" />
     <ClInclude Include="..\Includes\Grid\Grid2.h" />
     <ClInclude Include="..\Includes\Grid\Grid3.h" />
     <ClInclude Include="..\Includes\Grid\ScalarGrid2.h" />
