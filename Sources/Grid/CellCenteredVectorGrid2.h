@@ -4,13 +4,12 @@
 > Author: Dongmin Kim
 > Purpose: 2-D Cell-centered vector grid structure.
 > Created Time: 2017/08/02
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2017, Dongmin Kim
 *************************************************************************/
 #ifndef CUBBYFLOW_CELL_CENTERED_VECTOR_GRID2_H
-#define CUBBYFLOW_CELL_CNETERED_VECTOR_GRID2_H
+#define CUBBYFLOW_CELL_CENTERED_VECTOR_GRID2_H
 
-#include <Grid/Grid2.h>
-#include <Grid/VectorGrid2.h>
+#include <Grid/CollocatedVectorGrid2.h>
 
 namespace CubbyFlow
 {
@@ -22,7 +21,7 @@ namespace CubbyFlow
 	//! center of a grid cell. Thus, the dimension of data points are equal to the
 	//! dimension of the cells.
 	//!
-	class CellCenteredVectorGrid2 final : public VectorGrid2
+	class CellCenteredVectorGrid2 final : public CollocatedVectorGrid2
 	{
 	public :
 		CUBBYFLOW_GRID2_TYPE_NAME(CellCenteredVectorGrid2);
@@ -52,18 +51,18 @@ namespace CubbyFlow
 		CellCenteredVectorGrid2(const CellCenteredVectorGrid2& other);
 
 		//! Returns the actual data point size.
-		Size2 GetDataSize() contt override;
+		Size2 GetDataSize() const override;
 
 		//! Returns data position for the grid point at (0, 0).
 		//! Note that this is different from origin() since origin() returns
-		//! the lower corner point of the bouding box.
+		//! the lower corner point of the bounding box.
 		Vector2D GetDataOrigin() const override;
 
 		//!
 		//! \brief Swaps the contents with the given \p other grid.
 		//!
 		//! This function swaps the contents of the grid instance with the given
-		//! grid object \p other only if \p other has the same type with this grid.\
+		//! grid object \p other only if \p other has the same type with this grid.
 		//! 
 		void Swap(Grid2* other) override;
 
@@ -74,11 +73,11 @@ namespace CubbyFlow
 		CellCenteredVectorGrid2& operator=(const CellCenteredVectorGrid2& other);
 		
 		//! Fills the grid with given value.
-		void fill(const Vector2D& value, ExecutionPolicy policy = ExecutionPolicy::kParallel) override;
+		void Fill(const Vector2D& value) override;
 
 		//! Fills the grid with given function.
-		void fill(const std::function < Vector2D(const Vector2D& > )& func,
-			ExecutionPolicy policy = ExecutionPolicy::kParallel) override;
+		void Fill(const std::function<Vector2D(const Vector2D&)>& func) override;
+
 		//! Returns the copy of the grid instance.
 		std::shared_ptr<VectorGrid2> Clone() const override;
 		
@@ -90,7 +89,7 @@ namespace CubbyFlow
 	using CellCenteredVectorGrid2Ptr = std::shared_ptr<CellCenteredVectorGrid2>;
 
 	//!
-	//! \brief Front-end to create CellCenteredVectorGrid2 objects step by step.\
+	//! \brief Front-end to create CellCenteredVectorGrid2 objects step by step.
 	//!
 	class CellCenteredVectorGrid2::Builder final : public VectorGridBuilder2
 	{
@@ -113,10 +112,10 @@ namespace CubbyFlow
 		//! Returns builder with grid origin.
 		Builder& WithOrigin(double gridOriginX, double gridOriginY);
 
-		//! Returns bulider with inital value.
+		//! Returns builder with initial value.
 		Builder& WithInitialValue(const Vector2D& initalVal);
 
-		//! Returns bulider with inital value.
+		//! Returns builder with initial value.
 		Builder& WithInitialValue(double initialValU, double initalValV);
 
 		//! Builds CellCenteredVectorGrid2 instance.
