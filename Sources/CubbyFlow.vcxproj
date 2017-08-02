@@ -222,8 +222,6 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Collider\ColliderSet3.h" />
     <ClInclude Include="..\Includes\Collider\RigidBodyCollider2.h" />
     <ClInclude Include="..\Includes\Collider\RigidBodyCollider3.h" />
-    <ClInclude Include="..\Includes\CollocatedVectorGrid2.h" />
-    <ClInclude Include="..\Includes\CollocatedVectorGrid3.h" />
     <ClInclude Include="..\Includes\Field\ConstantScalarField2.h" />
     <ClInclude Include="..\Includes\Field\ConstantScalarField3.h" />
     <ClInclude Include="..\Includes\Field\ConstantVectorField2.h" />
@@ -249,6 +247,8 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Geometry\TriangleMesh3.h" />
     <ClInclude Include="..\Includes\Grid\CellCenteredScalarGrid2.h" />
     <ClInclude Include="..\Includes\Grid\CellCenteredScalarGrid3.h" />
+    <ClInclude Include="..\Includes\Grid\CollocatedVectorGrid2.h" />
+    <ClInclude Include="..\Includes\Grid\CollocatedVectorGrid3.h" />
     <ClInclude Include="..\Includes\Grid\Grid2.h" />
     <ClInclude Include="..\Includes\Grid\Grid3.h" />
     <ClInclude Include="..\Includes\Grid\ScalarGrid2.h" />
