@@ -392,6 +392,8 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClInclude>
+    <ClInclude Include="Grid\CellCenteredVectorGrid2.h" />
+    <ClInclude Include="Grid\CellCenteredVectorGrid3.h" />
     <ClInclude Include="Utils\PhysicsHelpers.h" />
   </ItemGroup>
   <ItemGroup>
@@ -473,6 +475,8 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="Geometry\Plane3.cpp" />
     <ClCompile Include="Grid\CellCenteredScalarGrid2.cpp" />
     <ClCompile Include="Grid\CellCenteredScalarGrid3.cpp" />
+    <ClCompile Include="Grid\CellCenteredVectorGrid2.cpp" />
+    <ClCompile Include="Grid\CellCentredVectorGrid3.cpp" />
     <ClCompile Include="Grid\CollocatedVectorGrid2.cpp" />
     <ClCompile Include="Grid\CollocatedVectorGrid3.cpp" />
     <ClCompile Include="Grid\Grid2.cpp" />
