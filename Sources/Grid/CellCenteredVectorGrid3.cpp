@@ -2,9 +2,9 @@
 > File Name: CellCenteredVectorGrid3.cpp
 > Project Name: CubbyFlow
 > Author: Dongmin Kim
-> Purpose: 3-D Cell-centered Vector grid structure.
+> Purpose: 3-D Cell-centered vector grid structure.
 > Created Time: 2017/08/02
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2017, Dongmin Kim
 *************************************************************************/
 #include <Grid/CellCenteredVectorGrid3.h>
 
@@ -17,9 +17,9 @@ namespace CubbyFlow
 
 	CellCenteredVectorGrid3::CellCenteredVectorGrid3(
 		size_t resolutionX, size_t resolutionY, size_t resolutionZ,
-		double gridSpacingX, double gridSpacingY,
+		double gridSpacingX, double gridSpacingY, double gridSpacingZ,
 		double originX, double originY, double originZ,
-		double initialValueU, double initalValueV, double initalValZ)
+		double initialValueU, double initalValueV, double initalValueW)
 	{
 		Resize(
 			resolutionX, resolutionY, resolutionZ,
@@ -53,6 +53,55 @@ namespace CubbyFlow
 		return Origin() + 0.5 * GridSpacing();
 	}
 
+	void CellCenteredVectorGrid3::Swap(Grid3* other)
+	{
+		CellCenteredVectorGrid3* sameType = dynamic_cast<CellCenteredVectorGrid3*>(other);
+		if (sameType != nullptr)
+		{
+			SwapCollocatedVectorGrid(sameType);
+		}
+	}
+
+	void CellCenteredVectorGrid3::Set(const CellCenteredVectorGrid3& other)
+	{
+		SetCollocatedVectorGrid(other);
+	}
+
+	CellCenteredVectorGrid3& CellCenteredVectorGrid3::operator=(const CellCenteredVectorGrid3& other)
+	{
+		Set(other);
+		return *this;
+	}
+
+	void CellCenteredVectorGrid3::Fill(const Vector3D& value)
+	{
+		Size3 size = GetDataSize();
+		auto acc = GetDataAccessor();
+		ParallelFor(
+			ZERO_SIZE, size.x,
+			ZERO_SIZE, size.y,
+			ZERO_SIZE, size.z,
+			[this, value, &acc](size_t i, size_t j, size_t k)
+		{
+			acc(i, j, k) = value;
+		});
+	}
+
+	void CellCenteredVectorGrid3::Fill(const std::function<Vector3D(const Vector3D&)>& func)
+	{
+		Size3 size = GetDataSize();
+		auto acc = GetDataAccessor();
+		DataPositionFunc pos = GetDataPosition();
+		ParallelFor(
+			ZERO_SIZE, size.x,
+			ZERO_SIZE, size.y,
+			ZERO_SIZE, size.z,
+			[this, &func, &acc, &pos](size_t i, size_t j, size_t k)
+		{
+			acc(i, j, k) = func(pos(i, j, k));
+		});
+	}
+
 	std::shared_ptr<VectorGrid3> CellCenteredVectorGrid3::Clone() const
 	{
 		return std::shared_ptr<CellCenteredVectorGrid3>(
@@ -60,26 +109,6 @@ namespace CubbyFlow
 		{
 			delete obj;
 		});
-	}
-
-	void CellCenteredVectorGrid3::Swap(Grid3* other)
-	{
-		CellCenteredVectorGrid3* sameType = dynamic_cast<CellCenteredVectorGrid3*>(other);
-		if (sameType != nullptr)
-		{
-			SwapVectorGrid(sameType);
-		}
-	}
-
-	void CellCenteredVectorGrid3::Set(const CellCenteredVectorGrid3& other)
-	{
-		SetVectorGrid(other);
-	}
-
-	CellCenteredVectorGrid3& CellCenteredVectorGrid3::operator=(const CellCenteredVectorGrid3& other)
-	{
-		Set(other);
-		return *this;
 	}
 
 	CellCenteredVectorGrid3::Builder CellCenteredVectorGrid3::GetBuilder()
@@ -93,7 +122,7 @@ namespace CubbyFlow
 		return *this;
 	}
 
-	CellCenteredVectorGrid3::Builder& CellCenteredVectorGrid3::Builder::WithResolution(size_t resolutionX, size_t resolutionY)
+	CellCenteredVectorGrid3::Builder& CellCenteredVectorGrid3::Builder::WithResolution(size_t resolutionX, size_t resolutionY, size_t resolutionZ)
 	{
 		m_resolution.x = resolutionX;
 		m_resolution.y = resolutionY;
@@ -107,7 +136,7 @@ namespace CubbyFlow
 		return *this;
 	}
 
-	CellCenteredVectorGrid3::Builder& CellCenteredVectorGrid3::Builder::WithGridSpacing(double gridSpacingX, double gridSpacingY)
+	CellCenteredVectorGrid3::Builder& CellCenteredVectorGrid3::Builder::WithGridSpacing(double gridSpacingX, double gridSpacingY, double gridSpacingZ)
 	{
 		m_gridSpacing.x = gridSpacingX;
 		m_gridSpacing.y = gridSpacingY;
@@ -121,7 +150,7 @@ namespace CubbyFlow
 		return *this;
 	}
 
-	CellCenteredVectorGrid3::Builder& CellCenteredVectorGrid3::Builder::WithOrigin(double gridOriginX, double gridOriginY)
+	CellCenteredVectorGrid3::Builder& CellCenteredVectorGrid3::Builder::WithOrigin(double gridOriginX, double gridOriginY, double gridOriginZ)
 	{
 		m_gridOrigin.x = gridOriginX;
 		m_gridOrigin.y = gridOriginY;
@@ -129,17 +158,17 @@ namespace CubbyFlow
 		return *this;
 	}
 
-	CellCenteredVectorGrid3::Builder& CellCenteredVectorGrid3::Builder::WithInitialValue(const Vector3D& initalVal)
+	CellCenteredVectorGrid3::Builder& CellCenteredVectorGrid3::Builder::WithInitialValue(const Vector3D& initialVal)
 	{
 		m_initialVal = initialVal;
 		return *this;
 	}
 
-	CellCenteredVectorGrid3::Builder& CellCenteredVectorGrid3::Builder::WithInitialValue(double initalValU, double initalValW)
+	CellCenteredVectorGrid3::Builder& CellCenteredVectorGrid3::Builder::WithInitialValue(double initalValX, double initalValY, double initalValZ)
 	{
-		m_initialVal.x = initalValU;
-		m_initialVal.y = initalValV;
-		m_initialVal.z = initalValW;
+		m_initialVal.x = initalValX;
+		m_initialVal.y = initalValY;
+		m_initialVal.z = initalValZ;
 		return *this;
 	}
 
