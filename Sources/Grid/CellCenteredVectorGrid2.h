@@ -58,6 +58,9 @@ namespace CubbyFlow
 		//! the lower corner point of the bounding box.
 		Vector2D GetDataOrigin() const override;
 
+		//! Returns the copy of the grid instance.
+		std::shared_ptr<VectorGrid2> Clone() const override;
+
 		//!
 		//! \brief Swaps the contents with the given \p other grid.
 		//!
@@ -66,20 +69,17 @@ namespace CubbyFlow
 		//! 
 		void Swap(Grid2* other) override;
 
-		//! Sets the contents with the given \p other grid.
-		void Set(const CellCenteredVectorGrid2& other);
-		
-		//! Sets the contents with the given \p other gird.
-		CellCenteredVectorGrid2& operator=(const CellCenteredVectorGrid2& other);
-		
 		//! Fills the grid with given value.
 		void Fill(const Vector2D& value) override;
 
 		//! Fills the grid with given function.
 		void Fill(const std::function<Vector2D(const Vector2D&)>& func) override;
 
-		//! Returns the copy of the grid instance.
-		std::shared_ptr<VectorGrid2> Clone() const override;
+		//! Sets the contents with the given \p other grid.
+		void Set(const CellCenteredVectorGrid2& other);
+		
+		//! Sets the contents with the given \p other gird.
+		CellCenteredVectorGrid2& operator=(const CellCenteredVectorGrid2& other);
 		
 		//! Returns the builder fox CellCenteredVectorGrid2.
 		static Builder GetBuilder();
@@ -116,7 +116,7 @@ namespace CubbyFlow
 		Builder& WithInitialValue(const Vector2D& initalVal);
 
 		//! Returns builder with initial value.
-		Builder& WithInitialValue(double initialValU, double initalValV);
+		Builder& WithInitialValue(double initialValX, double initialValY);
 
 		//! Builds CellCenteredVectorGrid2 instance.
 		CellCenteredVectorGrid2 Build() const;
@@ -124,6 +124,7 @@ namespace CubbyFlow
 		//! Builds shared pointer of CellCenteredScalarGrid2 instance.
 		CellCenteredVectorGrid2Ptr MakeShared() const;
 
+		//!
 		//! \brief Builds shared pointer of CellCenteredVectorGrid2 instance.
 		//!
 		//! This is an overriding function that implements VectorGridBuilder2.
