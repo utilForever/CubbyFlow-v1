@@ -473,6 +473,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="Geometry\Plane3.cpp" />
     <ClCompile Include="Grid\CellCenteredScalarGrid2.cpp" />
     <ClCompile Include="Grid\CellCenteredScalarGrid3.cpp" />
+    <ClCompile Include="Grid\CollocatedVectorGrid2.cpp" />
     <ClCompile Include="Grid\Grid2.cpp" />
     <ClCompile Include="Grid\Grid3.cpp" />
     <ClCompile Include="Grid\ScalarGrid2.cpp" />
