@@ -4,7 +4,7 @@
 > Author: Dongmin Kim
 > Purpose: 3-D Cell-centered vector grid structure.
 > Created Time: 2017/08/02
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2017, Dongmin Kim
 *************************************************************************/
 #ifndef CUBBYFLOW_CELL_CENTERED_VECTOR_GRID3_H
 #define CUBBYFLOW_CELL_CENTERED_VECTOR_GRID3_H
@@ -139,7 +139,7 @@ namespace CubbyFlow
 		Size3 m_resolution{ 1, 1, 1 };
 		Vector3D m_gridSpacing{ 1, 1, 1 };
 		Vector3D m_gridOrigin{ 0, 0, 0 };
-		Vector3D m_initalVal{ 0, 0, 0 };
+		Vector3D m_initialVal{ 0, 0, 0 };
 	};
 }
 
