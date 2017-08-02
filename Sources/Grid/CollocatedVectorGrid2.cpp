@@ -43,7 +43,9 @@ namespace CubbyFlow
 		double down = m_data(i, (j > 0) ? j - 1 : j).y;
 		double up = m_data(i, (j + 1 < ds.y) ? j + 1 : j).y;
 
-		return 0.5 * (right - left) / gs.x + 0.5 * (up - down) / gs.y;
+		return
+			0.5 * (right - left) / gs.x +
+			0.5 * (up - down) / gs.y;
 	}
 
 	double CollocatedVectorGrid2::CurlAtDataPoint(size_t i, size_t j) const
@@ -64,7 +66,9 @@ namespace CubbyFlow
 		double Fy_xm = left.y;
 		double Fy_xp = right.y;
 
-		return 0.5 * (Fy_xp - Fy_xm) / gs.x - 0.5 * (Fx_yp - Fx_ym) / gs.y;
+		return
+			0.5 * (Fy_xp - Fy_xm) / gs.x -
+			0.5 * (Fx_yp - Fx_ym) / gs.y;
 	}
 
 	Vector2D CollocatedVectorGrid2::Sample(const Vector2D& x) const
