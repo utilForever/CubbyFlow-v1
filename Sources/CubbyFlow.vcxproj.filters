@@ -598,10 +598,10 @@
     <ClInclude Include="..\Includes\Grid\CollocatedVectorGrid3.h">
       <Filter>Grid</Filter>
     </ClInclude>
-    <ClInclude Include="Grid\CellCenteredVectorGrid2.h">
+    <ClInclude Include="..\Includes\Grid\CellCenteredVectorGrid3.h">
       <Filter>Grid</Filter>
     </ClInclude>
-    <ClInclude Include="Grid\CellCenteredVectorGrid3.h">
+    <ClInclude Include="..\Includes\Grid\CellCenteredVectorGrid2.h">
       <Filter>Grid</Filter>
     </ClInclude>
   </ItemGroup>
@@ -894,7 +894,7 @@
     <ClCompile Include="Grid\CellCenteredVectorGrid2.cpp">
       <Filter>Grid</Filter>
     </ClCompile>
-    <ClCompile Include="Grid\CellCentredVectorGrid3.cpp">
+    <ClCompile Include="Grid\CellCenteredVectorGrid3.cpp">
       <Filter>Grid</Filter>
     </ClCompile>
   </ItemGroup>
