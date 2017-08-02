@@ -23,7 +23,7 @@ namespace CubbyFlow
 	//!
 	class CellCenteredVectorGrid2 final : public CollocatedVectorGrid2
 	{
-	public :
+	public:
 		CUBBYFLOW_GRID2_TYPE_NAME(CellCenteredVectorGrid2);
 
 		class Builder;
