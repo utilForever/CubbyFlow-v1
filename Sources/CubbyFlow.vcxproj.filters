@@ -882,5 +882,8 @@
     <ClCompile Include="Grid\CollocatedVectorGrid2.cpp">
       <Filter>Grid</Filter>
     </ClCompile>
+    <ClCompile Include="Grid\CollocatedVectorGrid3.cpp">
+      <Filter>Grid</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
