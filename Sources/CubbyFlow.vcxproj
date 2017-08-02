@@ -222,6 +222,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Collider\ColliderSet3.h" />
     <ClInclude Include="..\Includes\Collider\RigidBodyCollider2.h" />
     <ClInclude Include="..\Includes\Collider\RigidBodyCollider3.h" />
+    <ClInclude Include="..\Includes\CollocatedVectorGrid2.h" />
     <ClInclude Include="..\Includes\Field\ConstantScalarField2.h" />
     <ClInclude Include="..\Includes\Field\ConstantScalarField3.h" />
     <ClInclude Include="..\Includes\Field\ConstantVectorField2.h" />

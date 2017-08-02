@@ -592,6 +592,9 @@
     <ClInclude Include="..\Includes\Grid\CellCenteredScalarGrid3.h">
       <Filter>Grid</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\CollocatedVectorGrid2.h">
+      <Filter>Grid</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
