@@ -6,11 +6,10 @@
 > Created Time: 2017/08/02
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
-#ifndef CUBBYFLOW_CELL_CENTERED_VECTOR_GRID2_H
-#define CUBBYFLOW_CELL_CNETERED_VECTOR_GRID2_H
+#ifndef CUBBYFLOW_CELL_CENTERED_VECTOR_GRID3_H
+#define CUBBYFLOW_CELL_CENTERED_VECTOR_GRID3_H
 
-#include <Grid/Grid3.h>
-#include <Grid/VectorGrid3.h>
+#include <Grid/CollocatedVectorGrid3.h>
 
 namespace CubbyFlow
 {
@@ -22,7 +21,7 @@ namespace CubbyFlow
 	//! center of a grid cell. Thus, the dimension of data points are equal to the
 	//! dimension of the cells.
 	//!
-	class CellCenteredVectorGrid3 final : public VectorGrid3
+	class CellCenteredVectorGrid3 final : public CollocatedVectorGrid3
 	{
 	public:
 		CUBBYFLOW_GRID3_TYPE_NAME(CellCenteredVectorGrid3);
@@ -52,35 +51,35 @@ namespace CubbyFlow
 		CellCenteredVectorGrid3(const CellCenteredVectorGrid3& other);
 
 		//! Returns the actual data point size.
-		Size3 GetDataSize() contt override;
+		Size3 GetDataSize() const override;
 
 		//! Returns data position for the grid point at (0, 0, 0).
 		//! Note that this is different from origin() since origin() returns
-		//! the lower corner point of the bouding box.
+		//! the lower corner point of the bounding box.
 		Vector3D GetDataOrigin() const override;
+
+		//! Returns the copy of the grid instance.
+		std::shared_ptr<VectorGrid3> Clone() const override;
 
 		//!
 		//! \brief Swaps the contents with the given \p other grid.
 		//!
 		//! This function swaps the contents of the grid instance with the given
-		//! grid object \p other only if \p other has the same type with this grid.\
-				//! 
+		//! grid object \p other only if \p other has the same type with this grid.
+		//!
 		void Swap(Grid3* other) override;
+
+		//! Fills the grid with given value.
+		void Fill(const Vector3D& value) override;
+
+		//! Fills the grid with given function.
+		void Fill(const std::function<Vector3D(const Vector3D&)>& func) override;
 
 		//! Sets the contents with the given \p other grid.
 		void Set(const CellCenteredVectorGrid3& other);
 
 		//! Sets the contents with the given \p other gird.
 		CellCenteredVectorGrid3& operator=(const CellCenteredVectorGrid3& other);
-
-		//! Fills the grid with given value.
-		void fill(const Vector3D& value, ExecutionPolicy policy = ExecutionPolicy::kParallel) override;
-
-		//! Fills the grid with given function.
-		void fill(const std::function < Vector3D(const Vector3D& >)& func,
-			ExecutionPolicy policy = ExecutionPolicy::kParallel) override;
-		//! Returns the copy of the grid instance.
-		std::shared_ptr<VectorGrid3> Clone() const override;
 
 		//! Returns the builder fox CellCenteredVectorGrid3.
 		static Builder GetBuilder();
@@ -90,8 +89,8 @@ namespace CubbyFlow
 	using CellCenteredVectorGrid3Ptr = std::shared_ptr<CellCenteredVectorGrid3>;
 
 	//!
-	//! \brief Front-end to create CellCenteredVectorGrid3 objects step by step.\
-		//!
+	//! \brief Front-end to create CellCenteredVectorGrid3 objects step by step.
+	//!
 	class CellCenteredVectorGrid3::Builder final : public VectorGridBuilder3
 	{
 	public:
@@ -113,11 +112,11 @@ namespace CubbyFlow
 		//! Returns builder with grid origin.
 		Builder& WithOrigin(double gridOriginX, double gridOriginY, double gridOriginZ);
 
-		//! Returns bulider with inital value.
+		//! Returns builder with initial value.
 		Builder& WithInitialValue(const Vector3D& initalVal);
 
-		//! Returns bulider with inital value.
-		Builder& WithInitialValue(double initialValU, double initalValV, double initalValW);
+		//! Returns builder with initial value.
+		Builder& WithInitialValue(double initialValX, double initalValY, double initalValZ);
 
 		//! Builds CellCenteredVectorGrid3 instance.
 		CellCenteredVectorGrid3 Build() const;
@@ -125,6 +124,7 @@ namespace CubbyFlow
 		//! Builds shared pointer of CellCenteredScalarGrid3 instance.
 		CellCenteredVectorGrid3Ptr MakeShared() const;
 
+		//!
 		//! \brief Builds shared pointer of CellCenteredVectorGrid3 instance.
 		//!
 		//! This is an overriding function that implements VectorGridBuilder3.
