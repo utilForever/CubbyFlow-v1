@@ -139,7 +139,7 @@ namespace CubbyFlow
 		Size2 m_resolution{ 1, 1 };
 		Vector2D m_gridSpacing{ 1, 1 };
 		Vector2D m_gridOrigin{ 0, 0 };
-		Vector2D m_initalVal{ 0, 0 };
+		Vector2D m_initialVal{ 0, 0 };
 	};
 }
 
