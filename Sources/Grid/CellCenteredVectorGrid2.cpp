@@ -2,9 +2,9 @@
 > File Name: CellCenteredVectorGrid2.cpp
 > Project Name: CubbyFlow
 > Author: Dongmin Kim
-> Purpose: 2-D Cell-centered Vector grid structure.
+> Purpose: 2-D Cell-centered vector grid structure.
 > Created Time: 2017/08/02
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2017, Dongmin Kim
 *************************************************************************/
 #include <Grid/CellCenteredVectorGrid2.h>
 
@@ -53,6 +53,53 @@ namespace CubbyFlow
 		return Origin() + 0.5 * GridSpacing();
 	}
 
+	void CellCenteredVectorGrid2::Swap(Grid2* other)
+	{
+		CellCenteredVectorGrid2* sameType = dynamic_cast<CellCenteredVectorGrid2*>(other);
+		if (sameType != nullptr)
+		{
+			SwapCollocatedVectorGrid(sameType);
+		}
+	}
+
+	void CellCenteredVectorGrid2::Set(const CellCenteredVectorGrid2& other)
+	{
+		SetCollocatedVectorGrid(other);
+	}
+
+	CellCenteredVectorGrid2& CellCenteredVectorGrid2::operator=(const CellCenteredVectorGrid2& other)
+	{
+		Set(other);
+		return *this;
+	}
+
+	void CellCenteredVectorGrid2::Fill(const Vector2D& value)
+	{
+		Size2 size = GetDataSize();
+		auto acc = GetDataAccessor();
+		ParallelFor(
+			ZERO_SIZE, size.x,
+			ZERO_SIZE, size.y,
+			[this, value, &acc](size_t i, size_t j)
+		{
+			acc(i, j) = value;
+		});
+	}
+
+	void CellCenteredVectorGrid2::Fill(const std::function<Vector2D(const Vector2D&)>& func)
+	{
+		Size2 size = GetDataSize();
+		auto acc = GetDataAccessor();
+		DataPositionFunc pos = GetDataPosition();
+		ParallelFor(
+			ZERO_SIZE, size.x,
+			ZERO_SIZE, size.y,
+			[this, &func, &acc, &pos](size_t i, size_t j)
+		{
+			acc(i, j) = func(pos(i, j));
+		});
+	}
+
 	std::shared_ptr<VectorGrid2> CellCenteredVectorGrid2::Clone() const
 	{
 		return std::shared_ptr<CellCenteredVectorGrid2>(
@@ -60,26 +107,6 @@ namespace CubbyFlow
 		{
 			delete obj;
 		});
-	}
-
-	void CellCenteredVectorGrid2::Swap(Grid2* other)
-	{
-		CellCenteredVectorGrid2* sameType = dynamic_cast<CellCenteredVectorGrid2*>(other);
-		if (sameType != nullptr)
-		{
-			SwapVectorGrid(sameType);
-		}
-	}
-
-	void CellCenteredVectorGrid2::Set(const CellCenteredVectorGrid2& other)
-	{
-		SetVectorGrid(other);
-	}
-
-	CellCenteredVectorGrid2& CellCenteredVectorGrid2::operator=(const CellCenteredVectorGrid2& other)
-	{
-		Set(other);
-		return *this;
 	}
 
 	CellCenteredVectorGrid2::Builder CellCenteredVectorGrid2::GetBuilder()
@@ -126,16 +153,16 @@ namespace CubbyFlow
 		return *this;
 	}
 
-	CellCenteredVectorGrid2::Builder& CellCenteredVectorGrid2::Builder::WithInitialValue(const Vector2D& initalVal)
+	CellCenteredVectorGrid2::Builder& CellCenteredVectorGrid2::Builder::WithInitialValue(const Vector2D& initialVal)
 	{
 		m_initialVal = initialVal;
 		return *this;
 	}
 	
-	CellCenteredVectorGrid2::Builder& CellCenteredVectorGrid2::Builder::WithInitialValue(double initalValU, double initalValW)
+	CellCenteredVectorGrid2::Builder& CellCenteredVectorGrid2::Builder::WithInitialValue(double initialValX, double initialValY)
 	{
-		m_initialVal.x = initialValU;
-		m_initialVal.y = initialValV;
+		m_initialVal.x = initialValX;
+		m_initialVal.y = initialValY;
 		return *this;
 	}
 
