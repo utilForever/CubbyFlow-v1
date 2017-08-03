@@ -604,6 +604,9 @@
     <ClInclude Include="..\Includes\Grid\CellCenteredVectorGrid2.h">
       <Filter>Grid</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Grid\FaceCenteredGrid2.h">
+      <Filter>Grid</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
