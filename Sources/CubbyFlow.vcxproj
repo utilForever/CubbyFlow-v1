@@ -252,6 +252,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Grid\CollocatedVectorGrid2.h" />
     <ClInclude Include="..\Includes\Grid\CollocatedVectorGrid3.h" />
     <ClInclude Include="..\Includes\Grid\FaceCenteredGrid2.h" />
+    <ClInclude Include="..\Includes\Grid\FaceCenteredGrid3.h" />
     <ClInclude Include="..\Includes\Grid\Grid2.h" />
     <ClInclude Include="..\Includes\Grid\Grid3.h" />
     <ClInclude Include="..\Includes\Grid\ScalarGrid2.h" />
