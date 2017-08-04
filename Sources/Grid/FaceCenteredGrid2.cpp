@@ -162,9 +162,7 @@ namespace CubbyFlow
 		double Fy_xm = left.y;
 		double Fy_xp = right.y;
 
-		return
-			0.5 * (Fy_xp - Fy_xm) / gs.x -
-			0.5 * (Fx_yp - Fx_ym) / gs.y;
+		return 0.5 * (Fy_xp - Fy_xm) / gs.x - 0.5 * (Fx_yp - Fx_ym) / gs.y;
 	}
 
 	FaceCenteredGrid2::ScalarDataAccessor FaceCenteredGrid2::GetUAccessor()
@@ -418,7 +416,9 @@ namespace CubbyFlow
 
 	void FaceCenteredGrid2::GetData(std::vector<double>* data) const
 	{
-		size_t size = GetUSize().x * GetUSize().y + GetVSize().x * GetVSize().y;
+		size_t size =
+			GetUSize().x * GetUSize().y +
+			GetVSize().x * GetVSize().y;
 		data->resize(size);
 		size_t cnt = 0;
 		
@@ -434,7 +434,9 @@ namespace CubbyFlow
 
 	void FaceCenteredGrid2::SetData(const std::vector<double>& data)
 	{
-		assert(GetUSize().x * GetUSize().y + GetVSize().x * GetVSize().y == data.size());
+		assert(
+			GetUSize().x * GetUSize().y +
+			GetVSize().x * GetVSize().y == data.size());
 
 		size_t cnt = 0;
 
@@ -448,30 +450,29 @@ namespace CubbyFlow
 		});
 	}
 
-
-	FaceCenteredGrid2::Builder& FaceCenteredGrid2::Builder::WithResolution(const Size2& Resolution)
+	FaceCenteredGrid2::Builder& FaceCenteredGrid2::Builder::WithResolution(const Size2& resolution)
 	{
-		m_resolution = Resolution;
+		m_resolution = resolution;
 		return *this;
 	}
 
-	FaceCenteredGrid2::Builder& FaceCenteredGrid2::Builder::WithResolution(size_t ResolutionX, size_t ResolutionY)
+	FaceCenteredGrid2::Builder& FaceCenteredGrid2::Builder::WithResolution(size_t resolutionX, size_t resolutionY)
 	{
-		m_resolution.x = ResolutionX;
-		m_resolution.y = ResolutionY;
+		m_resolution.x = resolutionX;
+		m_resolution.y = resolutionY;
 		return *this;
 	}
 
-	FaceCenteredGrid2::Builder& FaceCenteredGrid2::Builder::WithGridSpacing(const Vector2D& GridSpacing)
+	FaceCenteredGrid2::Builder& FaceCenteredGrid2::Builder::WithGridSpacing(const Vector2D& gridSpacing)
 	{
-		m_gridSpacing = GridSpacing;
+		m_gridSpacing = gridSpacing;
 		return *this;
 	}
 
-	FaceCenteredGrid2::Builder& FaceCenteredGrid2::Builder::WithGridSpacing(double GridSpacingX, double GridSpacingY)
+	FaceCenteredGrid2::Builder& FaceCenteredGrid2::Builder::WithGridSpacing(double gridSpacingX, double gridSpacingY)
 	{
-		m_gridSpacing.x = GridSpacingX;
-		m_gridSpacing.y = GridSpacingY;
+		m_gridSpacing.x = gridSpacingX;
+		m_gridSpacing.y = gridSpacingY;
 		return *this;
 	}
 
