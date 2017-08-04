@@ -4,7 +4,7 @@
 > Author: Dongmin Kim
 > Purpose: 3-D Vertex-centered vector grid structure.
 > Created Time: 2017/08/04
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2017, Dongmin Kim
 *************************************************************************/
 #ifndef CUBBYFLOW_VERTEX_CENTERED_VECTOR_GRID3_H
 #define CUBBYFLOW_VERTEX_CENTERED_VECTOR_GRID3_H
@@ -17,16 +17,16 @@ namespace CubbyFlow
 	//! \brief 3-D Vertex-centered vector grid structure.
 	//!
 	//! This class represents 3-D vertex-centered vector grid which extends
-	//! VectorGrid3. As its name suggests, the class defines the data point at the
-	//! grid vertices (corners). Thus, A x B grid resolution will have (A+1) x (B+1)
-	//! data points.
+	//! CollocatedVectorGrid3. As its name suggests, the class defines the data
+	//! point at the grid vertices (corners). Thus, A x B x C grid resolution will
+	//! have (A+1) x (B+1) x (C+1) data points.
 	//!
 	class VertexCenteredVectorGrid3 final : public CollocatedVectorGrid3
 	{
 	public:
 		CUBBYFLOW_GRID3_TYPE_NAME(VertexCenteredVectorGrid3)
 
-			class Builder;
+		class Builder;
 
 		//! Constructs zero-sized grid.
 		VertexCenteredVectorGrid3();

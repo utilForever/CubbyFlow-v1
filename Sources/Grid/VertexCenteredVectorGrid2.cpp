@@ -4,7 +4,7 @@
 > Author: Dongmin Kim
 > Purpose: 2-D Vertex-centered vector grid structure.
 > Created Time: 2017/08/04
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2017, Dongmin Kim
 *************************************************************************/
 #include <Grid/VertexCenteredVectorGrid2.h>
 
@@ -57,15 +57,6 @@ namespace CubbyFlow
 		return Origin();
 	}
 
-	std::shared_ptr<VectorGrid2> VertexCenteredVectorGrid2::Clone() const
-	{
-		return std::shared_ptr<VertexCenteredVectorGrid2>(
-			new VertexCenteredVectorGrid2(*this), [](VertexCenteredVectorGrid2* obj)
-		{
-			delete obj;
-		});
-	}
-
 	void VertexCenteredVectorGrid2::Swap(Grid2* other)
 	{
 		VertexCenteredVectorGrid2* sameType = dynamic_cast<VertexCenteredVectorGrid2*>(other);
@@ -75,12 +66,51 @@ namespace CubbyFlow
 		}
 	}
 
+	void VertexCenteredVectorGrid2::Fill(const Vector2D& value)
+	{
+		Size2 size = GetDataSize();
+		auto acc = GetDataAccessor();
+
+		ParallelFor(
+			ZERO_SIZE, size.x,
+			ZERO_SIZE, size.y,
+			[this, value, &acc](size_t i, size_t j)
+		{
+			acc(i, j) = value;
+		});
+	}
+
+	void VertexCenteredVectorGrid2::Fill(const std::function<Vector2D(const Vector2D&)>& func)
+	{
+		Size2 size = GetDataSize();
+		auto acc = GetDataAccessor();
+		DataPositionFunc pos = GetDataPosition();
+
+		ParallelFor(
+			ZERO_SIZE, size.x,
+			ZERO_SIZE, size.y,
+			[this, &func, &acc, &pos](size_t i, size_t j)
+		{
+			acc(i, j) = func(pos(i, j));
+		});
+	}
+
+	std::shared_ptr<VectorGrid2> VertexCenteredVectorGrid2::Clone() const
+	{
+		return std::shared_ptr<VertexCenteredVectorGrid2>(
+			new VertexCenteredVectorGrid2(*this), [](VertexCenteredVectorGrid2* obj)
+		{
+			delete obj;
+		});
+	}
+
 	void VertexCenteredVectorGrid2::Set(const VertexCenteredVectorGrid2& other)
 	{
 		SetCollocatedVectorGrid(other);
 	}
 
-	VertexCenteredVectorGrid2& VertexCenteredVectorGrid2::operator=(const VertexCenteredVectorGrid2& other) {
+	VertexCenteredVectorGrid2& VertexCenteredVectorGrid2::operator=(const VertexCenteredVectorGrid2& other)
+	{
 		Set(other);
 		return *this;
 	}
@@ -93,7 +123,6 @@ namespace CubbyFlow
 	VertexCenteredVectorGrid2::Builder& VertexCenteredVectorGrid2::Builder::WithResolution(const Size2& resolution)
 	{
 		m_resolution = resolution;
-
 		return *this;
 	}
 
@@ -101,14 +130,12 @@ namespace CubbyFlow
 	{
 		m_resolution.x = resolutionX;
 		m_resolution.y = resolutionY;
-
 		return *this;
 	}
 
 	VertexCenteredVectorGrid2::Builder& VertexCenteredVectorGrid2::Builder::WithGridSpacing(const Vector2D& gridSpacing)
 	{
 		m_gridSpacing = gridSpacing;
-
 		return *this;
 	}
 
@@ -116,14 +143,12 @@ namespace CubbyFlow
 	{
 		m_gridSpacing.x = gridSpacingX;
 		m_gridSpacing.y = gridSpacingY;
-
 		return *this;
 	}
 
 	VertexCenteredVectorGrid2::Builder& VertexCenteredVectorGrid2::Builder::WithOrigin(const Vector2D& gridOrigin)
 	{
 		m_gridOrigin = gridOrigin;
-
 		return *this;
 	}
 
@@ -131,7 +156,6 @@ namespace CubbyFlow
 	{
 		m_gridOrigin.x = gridOriginX;
 		m_gridOrigin.y = gridOriginY;
-
 		return *this;
 	}
 
@@ -139,27 +163,18 @@ namespace CubbyFlow
 	{
 		m_initialVal.x = initialValU;
 		m_initialVal.y = initialValV;
-
 		return *this;
 	}
 
 	VertexCenteredVectorGrid2 VertexCenteredVectorGrid2::Builder::Build() const
 	{
-		return VertexCenteredVectorGrid2(
-			m_resolution,
-			m_gridSpacing,
-			m_gridOrigin,
-			m_initialVal);
+		return VertexCenteredVectorGrid2(m_resolution, m_gridSpacing, m_gridOrigin, m_initialVal);
 	}
 
 	VertexCenteredVectorGrid2Ptr VertexCenteredVectorGrid2::Builder::MakeShared() const
 	{
 		return std::shared_ptr<VertexCenteredVectorGrid2>(
-			new VertexCenteredVectorGrid2(
-				m_resolution,
-				m_gridSpacing,
-				m_gridOrigin,
-				m_initialVal),
+			new VertexCenteredVectorGrid2(m_resolution, m_gridSpacing, m_gridOrigin, m_initialVal),
 			[](VertexCenteredVectorGrid2* obj)
 		{
 			delete obj;
@@ -173,11 +188,7 @@ namespace CubbyFlow
 		const Vector2D& initialVal) const
 	{
 		return std::shared_ptr<VertexCenteredVectorGrid2>(
-			new VertexCenteredVectorGrid2(
-				resolution,
-				gridSpacing,
-				gridOrigin,
-				initialVal),
+			new VertexCenteredVectorGrid2(resolution, gridSpacing, gridOrigin, initialVal),
 			[](VertexCenteredVectorGrid2* obj)
 		{
 			delete obj;

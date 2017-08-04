@@ -4,7 +4,7 @@
 > Author: Dongmin Kim
 > Purpose: 2-D Vertex-centered vector grid structure.
 > Created Time: 2017/08/04
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2017, Dongmin Kim
 *************************************************************************/
 #ifndef CUBBYFLOW_VERTEX_CENTERED_VECTOR_GRID2_H
 #define CUBBYFLOW_VERTEX_CENTERED_VECTOR_GRID2_H
@@ -17,16 +17,16 @@ namespace CubbyFlow
 	//! \brief 2-D Vertex-centered vector grid structure.
 	//!
 	//! This class represents 2-D vertex-centered vector grid which extends
-	//! VectorGrid2. As its name suggests, the class defines the data point at the
-	//! grid vertices (corners). Thus, A x B grid resolution will have (A+1) x (B+1)
-	//! data points.
+	//! CollocatedVectorGrid2. As its name suggests, the class defines the data
+	//! point at the grid vertices (corners). Thus, A x B grid resolution will have
+	//! (A+1) x (B+1) data points.
 	//!
 	class VertexCenteredVectorGrid2 final : public CollocatedVectorGrid2
 	{
 	public:
 		CUBBYFLOW_GRID2_TYPE_NAME(VertexCenteredVectorGrid2)
 
-			class Builder;
+		class Builder;
 
 		//! Constructs zero-sized grid.
 		VertexCenteredVectorGrid2();
@@ -51,7 +51,7 @@ namespace CubbyFlow
 		VertexCenteredVectorGrid2(const VertexCenteredVectorGrid2& other);
 
 		//! Returns the actual data point size.
-		Size2 GetDataSize() const override	;
+		Size2 GetDataSize() const override;
 
 		//! Returns data position for the grid point at (0, 0).
 		//! Note that this is different from origin() since origin() returns
