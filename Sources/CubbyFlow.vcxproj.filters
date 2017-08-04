@@ -906,5 +906,8 @@
     <ClCompile Include="Grid\FaceCenteredGrid2.cpp">
       <Filter>Grid</Filter>
     </ClCompile>
+    <ClCompile Include="Grid\FaceCenteredGrid3.cpp">
+      <Filter>Grid</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
