@@ -396,6 +396,8 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClInclude>
+    <ClInclude Include="Grid\VertexCenteredVectorGrid2.h" />
+    <ClInclude Include="Grid\VertexCenteredVectorGrid3.h" />
     <ClInclude Include="Utils\PhysicsHelpers.h" />
   </ItemGroup>
   <ItemGroup>
@@ -491,6 +493,8 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="Grid\VectorGrid3.cpp" />
     <ClCompile Include="Grid\VertexCenteredScalarGrid2.cpp" />
     <ClCompile Include="Grid\VertexCenteredScalarGrid3.cpp" />
+    <ClCompile Include="Grid\VertexCenteredVectorGrid2.cpp" />
+    <ClCompile Include="Grid\VertexCenteredVectorGrid3.cpp" />
     <ClCompile Include="MarchingCubes\MarchingCubes.cpp" />
     <ClCompile Include="Math\FDMUtils.cpp" />
     <ClCompile Include="Particle\ParticleEmitter2.cpp" />

@@ -610,6 +610,12 @@
     <ClInclude Include="..\Includes\Grid\FaceCenteredGrid3.h">
       <Filter>Grid</Filter>
     </ClInclude>
+    <ClInclude Include="Grid\VertexCenteredVectorGrid2.h">
+      <Filter>Grid</Filter>
+    </ClInclude>
+    <ClInclude Include="Grid\VertexCenteredVectorGrid3.h">
+      <Filter>Grid</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
@@ -907,6 +913,12 @@
       <Filter>Grid</Filter>
     </ClCompile>
     <ClCompile Include="Grid\FaceCenteredGrid3.cpp">
+      <Filter>Grid</Filter>
+    </ClCompile>
+    <ClCompile Include="Grid\VertexCenteredVectorGrid2.cpp">
+      <Filter>Grid</Filter>
+    </ClCompile>
+    <ClCompile Include="Grid\VertexCenteredVectorGrid3.cpp">
       <Filter>Grid</Filter>
     </ClCompile>
   </ItemGroup>
