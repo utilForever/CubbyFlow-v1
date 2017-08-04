@@ -610,10 +610,10 @@
     <ClInclude Include="..\Includes\Grid\FaceCenteredGrid3.h">
       <Filter>Grid</Filter>
     </ClInclude>
-    <ClInclude Include="Grid\VertexCenteredVectorGrid2.h">
+    <ClInclude Include="..\Includes\Grid\VertexCenteredVectorGrid2.h">
       <Filter>Grid</Filter>
     </ClInclude>
-    <ClInclude Include="Grid\VertexCenteredVectorGrid3.h">
+    <ClInclude Include="..\Includes\Grid\VertexCenteredVectorGrid3.h">
       <Filter>Grid</Filter>
     </ClInclude>
   </ItemGroup>

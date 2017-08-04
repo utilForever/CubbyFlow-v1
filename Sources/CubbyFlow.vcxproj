@@ -261,6 +261,8 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Grid\VectorGrid3.h" />
     <ClInclude Include="..\Includes\Grid\VertexCenteredScalarGrid2.h" />
     <ClInclude Include="..\Includes\Grid\VertexCenteredScalarGrid3.h" />
+    <ClInclude Include="..\Includes\Grid\VertexCenteredVectorGrid2.h" />
+    <ClInclude Include="..\Includes\Grid\VertexCenteredVectorGrid3.h" />
     <ClInclude Include="..\Includes\LevelSet\LevelSetUtils-Impl.h" />
     <ClInclude Include="..\Includes\LevelSet\LevelSetUtils.h" />
     <ClInclude Include="..\Includes\MarchingCubes\MarchingCubes.h" />
@@ -396,8 +398,6 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClInclude>
-    <ClInclude Include="Grid\VertexCenteredVectorGrid2.h" />
-    <ClInclude Include="Grid\VertexCenteredVectorGrid3.h" />
     <ClInclude Include="Utils\PhysicsHelpers.h" />
   </ItemGroup>
   <ItemGroup>
