@@ -17,7 +17,7 @@ namespace CubbyFlow
 	//! \brief 2-D Vertex-centered scalar grid structure.
 	//!
 	//! This class represents 2-D vertex-centered scalar grid which extends
-	//! ScalarGrid3. As its name suggests, the class defines the data point at the
+	//! ScalarGrid2. As its name suggests, the class defines the data point at the
 	//! grid vertices (corners). Thus, A x B grid resolution will have (A+1) x (B+1)
 	//! data points.
 	//!

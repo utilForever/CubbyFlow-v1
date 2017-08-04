@@ -93,7 +93,6 @@ namespace CubbyFlow
 	VertexCenteredScalarGrid2::Builder& VertexCenteredScalarGrid2::Builder::WithResolution(const Size2& resolution)
 	{
 		m_resolution = resolution;
-
 		return *this;
 	}
 
@@ -101,29 +100,25 @@ namespace CubbyFlow
 	{
 		m_resolution.x = resolutionX;
 		m_resolution.y = resolutionY;
-
 		return *this;
 	}
 
 	VertexCenteredScalarGrid2::Builder& VertexCenteredScalarGrid2::Builder::WithGridSpacing(const Vector2D& gridSpacing)
 	{
 		m_gridSpacing = gridSpacing;
-		
 		return *this;
 	}
 
 	VertexCenteredScalarGrid2::Builder& VertexCenteredScalarGrid2::Builder::WithGridSpacing(double gridSpacingX, double gridSpacingY)
 	{
 		m_gridSpacing.x = gridSpacingX;
-		m_gridSpacing.y = gridSpacingY;
-		
+		m_gridSpacing.y = gridSpacingY;		
 		return *this;
 	}
 
 	VertexCenteredScalarGrid2::Builder& VertexCenteredScalarGrid2::Builder::WithOrigin(const Vector2D& gridOrigin)
 	{
-		m_gridOrigin = gridOrigin;
-		
+		m_gridOrigin = gridOrigin;	
 		return *this;
 	}
 
@@ -131,34 +126,24 @@ namespace CubbyFlow
 	{
 		m_gridOrigin.x = gridOriginX;
 		m_gridOrigin.y = gridOriginY;
-		
 		return *this;
 	}
 
 	VertexCenteredScalarGrid2::Builder& VertexCenteredScalarGrid2::Builder::WithInitialValue(double initialVal)
 	{
 		m_initialVal = initialVal;
-		
 		return *this;
 	}
 
 	VertexCenteredScalarGrid2 VertexCenteredScalarGrid2::Builder::Build() const
 	{
-		return VertexCenteredScalarGrid2(
-			m_resolution,
-			m_gridSpacing,
-			m_gridOrigin,
-			m_initialVal);
+		return VertexCenteredScalarGrid2(m_resolution, m_gridSpacing, m_gridOrigin, m_initialVal);
 	}
 
 	VertexCenteredScalarGrid2Ptr VertexCenteredScalarGrid2::Builder::MakeShared() const
 	{
 		return std::shared_ptr<VertexCenteredScalarGrid2>(
-			new VertexCenteredScalarGrid2(
-				m_resolution,
-				m_gridSpacing,
-				m_gridOrigin,
-				m_initialVal),
+			new VertexCenteredScalarGrid2(m_resolution, m_gridSpacing, m_gridOrigin, m_initialVal),
 			[](VertexCenteredScalarGrid2* obj)
 		{
 			delete obj;
@@ -172,11 +157,7 @@ namespace CubbyFlow
 		double initialVal) const
 	{
 		return std::shared_ptr<VertexCenteredScalarGrid2>(
-			new VertexCenteredScalarGrid2(
-				resolution,
-				gridSpacing,
-				gridOrigin,
-				initialVal),
+			new VertexCenteredScalarGrid2(resolution, gridSpacing, gridOrigin, initialVal),
 			[](VertexCenteredScalarGrid2* obj)
 		{
 			delete obj;
