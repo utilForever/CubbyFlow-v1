@@ -361,7 +361,6 @@ namespace CubbyFlow
 		weights[3] = fx * fy;
 
 		double result = 0.0;
-
 		for (int n = 0; n < 4; ++n)
 		{
 			result += weights[n] * CurlAtCellCenter(indices[n].x, indices[n].y);

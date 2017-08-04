@@ -485,7 +485,6 @@ namespace CubbyFlow
 		weights[7] = fx * fy * fz;
 
 		Vector3D result;
-
 		for (int n = 0; n < 8; ++n)
 		{
 			result += weights[n] * CurlAtCellCenter(indices[n].x, indices[n].y, indices[n].z);
