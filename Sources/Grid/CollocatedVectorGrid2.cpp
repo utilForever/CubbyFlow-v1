@@ -83,7 +83,6 @@ namespace CubbyFlow
 		m_linearSampler.GetCoordinatesAndWeights(x, &indices, &weights);
 
 		double result = 0.0;
-
 		for (int i = 0; i < 4; ++i)
 		{
 			result += weights[i] * DivergenceAtDataPoint(indices[i].x, indices[i].y);
@@ -99,7 +98,6 @@ namespace CubbyFlow
 		m_linearSampler.GetCoordinatesAndWeights(x, &indices, &weights);
 
 		double result = 0.0;
-
 		for (int i = 0; i < 4; ++i)
 		{
 			result += weights[i] * CurlAtDataPoint(indices[i].x, indices[i].y);
@@ -180,6 +178,7 @@ namespace CubbyFlow
 		size_t size = 2 * GetDataSize().x * GetDataSize().y;
 		data->resize(size);
 		size_t cnt = 0;
+
 		m_data.ForEach([&](const Vector2D& value)
 		{
 			(*data)[cnt++] = value.x;
@@ -192,6 +191,7 @@ namespace CubbyFlow
 		assert(2 * GetDataSize().x * GetDataSize().y == data.size());
 
 		size_t cnt = 0;
+
 		m_data.ForEachIndex([&](size_t i, size_t j)
 		{
 			m_data(i, j).x = data[cnt++];
