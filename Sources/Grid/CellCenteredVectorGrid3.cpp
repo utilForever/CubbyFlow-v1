@@ -77,6 +77,7 @@ namespace CubbyFlow
 	{
 		Size3 size = GetDataSize();
 		auto acc = GetDataAccessor();
+
 		ParallelFor(
 			ZERO_SIZE, size.x,
 			ZERO_SIZE, size.y,
@@ -92,6 +93,7 @@ namespace CubbyFlow
 		Size3 size = GetDataSize();
 		auto acc = GetDataAccessor();
 		DataPositionFunc pos = GetDataPosition();
+
 		ParallelFor(
 			ZERO_SIZE, size.x,
 			ZERO_SIZE, size.y,
