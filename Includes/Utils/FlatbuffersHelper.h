@@ -78,9 +78,9 @@ namespace CubbyFlow
 	{
 		for (const auto& grid : (*fbsGridList))
 		{
-			auto type = grid->Type()->c_str();
+			auto type = grid->type()->c_str();
 
-			std::vector<uint8_t> gridSerialized(grid->Data()->begin(), grid->Data()->end());
+			std::vector<uint8_t> gridSerialized(grid->data()->begin(), grid->data()->end());
 
 			auto newGrid = factoryFunc(type);
 			newGrid->Deserialize(gridSerialized);
