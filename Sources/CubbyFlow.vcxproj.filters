@@ -927,5 +927,8 @@
     <ClCompile Include="Grid\VertexCenteredVectorGrid3.cpp">
       <Filter>Grid</Filter>
     </ClCompile>
+    <ClCompile Include="Grid\GridSystemData2.cpp">
+      <Filter>Grid</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
