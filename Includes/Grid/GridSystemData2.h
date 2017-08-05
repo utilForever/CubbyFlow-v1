@@ -178,16 +178,16 @@ namespace CubbyFlow
 		size_t GetVelocityIndex() const;
 
 		//! Returns the non-advectable scalar data at given index.
-		const ScalarGrid2Ptr& ScalarDataAt(size_t idx) const;
+		const ScalarGrid2Ptr& GetScalarDataAt(size_t idx) const;
 
 		//! Returns the non-advectable vector data at given index.
-		const VectorGrid2Ptr& VectorDataAt(size_t idx) const;
+		const VectorGrid2Ptr& GetVectorDataAt(size_t idx) const;
 
 		//! Returns the advectable scalar data at given index.
-		const ScalarGrid2Ptr& AdvectableScalarDataAt(size_t idx) const;
+		const ScalarGrid2Ptr& GetAdvectableScalarDataAt(size_t idx) const;
 
 		//! Returns the advectable vector data at given index.
-		const VectorGrid2Ptr& AdvectableVectorDataAt(size_t idx) const;
+		const VectorGrid2Ptr& GetAdvectableVectorDataAt(size_t idx) const;
 
 		//! Returns the number of non-advectable scalar data.
 		size_t GetNumberOfScalarData() const;
