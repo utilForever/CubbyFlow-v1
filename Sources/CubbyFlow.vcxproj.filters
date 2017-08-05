@@ -616,6 +616,9 @@
     <ClInclude Include="..\Includes\Grid\VertexCenteredVectorGrid3.h">
       <Filter>Grid</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Grid\GridSystemData2.h">
+      <Filter>Grid</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
