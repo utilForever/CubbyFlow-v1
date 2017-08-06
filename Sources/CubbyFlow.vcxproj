@@ -472,6 +472,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="Emitter\ParticleEmitterSet3.cpp" />
     <ClCompile Include="Emitter\PointParticleEmitter2.cpp" />
     <ClCompile Include="Emitter\PointParticleEmitter3.cpp" />
+    <ClCompile Include="Emitter\VolumeGridEmitter2.cpp" />
     <ClCompile Include="Emitter\VolumeParticleEmitter2.cpp" />
     <ClCompile Include="Emitter\VolumeParticleEmitter3.cpp" />
     <ClCompile Include="FdmBlas3.cpp">

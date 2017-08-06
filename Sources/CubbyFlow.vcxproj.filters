@@ -966,5 +966,8 @@
     <ClCompile Include="Emitter\GridEmitterSet3.cpp">
       <Filter>Emitter</Filter>
     </ClCompile>
+    <ClCompile Include="Emitter\VolumeGridEmitter2.cpp">
+      <Filter>Emitter</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
