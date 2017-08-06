@@ -6,8 +6,8 @@
 > Created Time: 2017/07/22
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
+#include <Emitter/PointParticleEmitter2.h>
 #include <Matrix/Matrix2x2.h>
-#include <Particle/PointParticleEmitter2.h>
 
 namespace CubbyFlow
 {

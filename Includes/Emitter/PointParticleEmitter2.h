@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_POINT_PARTICLE_EMITTER2_H
 #define CUBBYFLOW_POINT_PARTICLE_EMITTER2_H
 
-#include <Particle/ParticleEmitter2.h>
+#include <Emitter/ParticleEmitter2.h>
 
 #include <random>
 

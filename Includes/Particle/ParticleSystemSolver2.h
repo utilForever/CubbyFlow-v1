@@ -11,8 +11,8 @@
 
 #include <Animation/PhysicsAnimation.h>
 #include <Collider/Collider2.h>
+#include <Emitter/ParticleEmitter2.h>
 #include <Field/VectorField2.h>
-#include <Particle/ParticleEmitter2.h>
 #include <Particle/ParticleSystemData2.h>
 #include <Utils/Constants.h>
 #include <Vector/Vector2.h>

@@ -11,8 +11,8 @@
 
 #include <Animation/PhysicsAnimation.h>
 #include <Collider/Collider3.h>
+#include <Emitter/ParticleEmitter3.h>
 #include <Field/VectorField3.h>
-#include <Particle/ParticleEmitter3.h>
 #include <Particle/ParticleSystemData3.h>
 #include <Utils/Constants.h>
 #include <Vector/Vector3.h>

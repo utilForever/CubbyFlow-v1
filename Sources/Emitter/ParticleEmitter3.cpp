@@ -6,7 +6,7 @@
 > Created Time: 2017/05/20
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Particle/ParticleEmitter3.h>
+#include <Emitter/ParticleEmitter3.h>
 
 namespace CubbyFlow
 {

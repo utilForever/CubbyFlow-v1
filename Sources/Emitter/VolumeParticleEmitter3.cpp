@@ -6,7 +6,7 @@
 > Created Time: 2017/06/21
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Particle/VolumeParticleEmitter3.h>
+#include <Emitter/VolumeParticleEmitter3.h>
 #include <PointGenerator/BccLatticePointGenerator.h>
 #include <Searcher/PointHashGridSearcher3.h>
 #include <Surface/Implicit/SurfaceToImplicit3.h>
