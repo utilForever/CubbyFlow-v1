@@ -225,6 +225,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Emitter\GridEmitter2.h" />
     <ClInclude Include="..\Includes\Emitter\GridEmitter3.h" />
     <ClInclude Include="..\Includes\Emitter\GridEmitterSet2.h" />
+    <ClInclude Include="..\Includes\Emitter\GridEmitterSet3.h" />
     <ClInclude Include="..\Includes\Emitter\ParticleEmitter2.h" />
     <ClInclude Include="..\Includes\Emitter\ParticleEmitter3.h" />
     <ClInclude Include="..\Includes\Emitter\ParticleEmitterSet2.h" />
