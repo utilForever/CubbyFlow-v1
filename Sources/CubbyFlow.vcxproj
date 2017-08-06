@@ -491,6 +491,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="Grid\FaceCenteredGrid3.cpp" />
     <ClCompile Include="Grid\Grid2.cpp" />
     <ClCompile Include="Grid\Grid3.cpp" />
+    <ClCompile Include="Grid\GridEmitter2.cpp" />
     <ClCompile Include="Grid\GridSystemData2.cpp" />
     <ClCompile Include="Grid\GridSystemData3.cpp" />
     <ClCompile Include="Grid\ScalarGrid2.cpp" />
