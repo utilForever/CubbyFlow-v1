@@ -232,6 +232,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Emitter\ParticleEmitterSet3.h" />
     <ClInclude Include="..\Includes\Emitter\PointParticleEmitter2.h" />
     <ClInclude Include="..\Includes\Emitter\PointParticleEmitter3.h" />
+    <ClInclude Include="..\Includes\Emitter\VolumeGridEmitter2.h" />
     <ClInclude Include="..\Includes\Emitter\VolumeParticleEmitter2.h" />
     <ClInclude Include="..\Includes\Emitter\VolumeParticleEmitter3.h" />
     <ClInclude Include="..\Includes\Field\ConstantScalarField2.h" />
