@@ -640,6 +640,9 @@
     <ClInclude Include="..\Includes\Emitter\VolumeGridEmitter2.h">
       <Filter>Emitter</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Emitter\VolumeGridEmitter3.h">
+      <Filter>Emitter</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
