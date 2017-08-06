@@ -73,6 +73,9 @@
     <Filter Include="LevelSet">
       <UniqueIdentifier>{bf156606-74d5-4a60-ab42-e68a30ecaf49}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Emitter">
+      <UniqueIdentifier>{fae84f3f-d522-4671-a9f1-e692179fda84}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Includes\Animation\Animation.h">
@@ -411,18 +414,6 @@
     <ClInclude Include="..\Includes\Collider\ColliderSet3.h">
       <Filter>Collider</Filter>
     </ClInclude>
-    <ClInclude Include="..\Includes\Particle\ParticleEmitter2.h">
-      <Filter>Particle</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Includes\Particle\ParticleEmitter3.h">
-      <Filter>Particle</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Includes\Particle\ParticleEmitterSet2.h">
-      <Filter>Particle</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Includes\Particle\ParticleEmitterSet3.h">
-      <Filter>Particle</Filter>
-    </ClInclude>
     <ClInclude Include="..\Includes\Array\ArraySamplers2-Impl.h">
       <Filter>Array</Filter>
     </ClInclude>
@@ -503,16 +494,10 @@
     </ClInclude>
     <ClInclude Include="Blas.h" />
     <ClInclude Include="cg.h" />
-    <ClInclude Include="..\Includes\Particle\VolumeParticleEmitter2.h">
-      <Filter>Particle</Filter>
-    </ClInclude>
     <ClInclude Include="Fdm.h" />
     <ClInclude Include="FdmBlas3.h" />
     <ClInclude Include="FdmJacobiSolver3.h" />
     <ClInclude Include="FdmLinearSystemSolver3.h" />
-    <ClInclude Include="..\Includes\Particle\VolumeParticleEmitter3.h">
-      <Filter>Particle</Filter>
-    </ClInclude>
     <ClInclude Include="..\Includes\Utils\Samplers.h">
       <Filter>Utils</Filter>
     </ClInclude>
@@ -574,12 +559,6 @@
       <Filter>LevelSet</Filter>
     </ClInclude>
     <ClInclude Include="..\Includes\Math\FDMUtils.h" />
-    <ClInclude Include="..\Includes\Particle\PointParticleEmitter2.h">
-      <Filter>Particle</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Includes\Particle\PointParticleEmitter3.h">
-      <Filter>Particle</Filter>
-    </ClInclude>
     <ClInclude Include="..\Includes\Grid\VectorGrid2.h">
       <Filter>Grid</Filter>
     </ClInclude>
@@ -622,11 +601,35 @@
     <ClInclude Include="..\Includes\Grid\GridSystemData3.h">
       <Filter>Grid</Filter>
     </ClInclude>
-    <ClInclude Include="..\Includes\Grid\GridEmitter2.h">
-      <Filter>Grid</Filter>
+    <ClInclude Include="..\Includes\Emitter\PointParticleEmitter2.h">
+      <Filter>Emitter</Filter>
     </ClInclude>
-    <ClInclude Include="..\Includes\Grid\GridEmitter3.h">
-      <Filter>Grid</Filter>
+    <ClInclude Include="..\Includes\Emitter\PointParticleEmitter3.h">
+      <Filter>Emitter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Emitter\VolumeParticleEmitter2.h">
+      <Filter>Emitter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Emitter\VolumeParticleEmitter3.h">
+      <Filter>Emitter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Emitter\GridEmitter2.h">
+      <Filter>Emitter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Emitter\GridEmitter3.h">
+      <Filter>Emitter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Emitter\ParticleEmitter2.h">
+      <Filter>Emitter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Emitter\ParticleEmitter3.h">
+      <Filter>Emitter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Emitter\ParticleEmitterSet2.h">
+      <Filter>Emitter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Emitter\ParticleEmitterSet3.h">
+      <Filter>Emitter</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -759,23 +762,11 @@
     <ClCompile Include="Collider\ColliderSet2.cpp">
       <Filter>Collider</Filter>
     </ClCompile>
-    <ClCompile Include="Particle\ParticleEmitter2.cpp">
-      <Filter>Particle</Filter>
-    </ClCompile>
-    <ClCompile Include="Particle\ParticleEmitterSet2.cpp">
-      <Filter>Particle</Filter>
-    </ClCompile>
     <ClCompile Include="Collider\Collider3.cpp">
       <Filter>Collider</Filter>
     </ClCompile>
     <ClCompile Include="Collider\ColliderSet3.cpp">
       <Filter>Collider</Filter>
-    </ClCompile>
-    <ClCompile Include="Particle\ParticleEmitter3.cpp">
-      <Filter>Particle</Filter>
-    </ClCompile>
-    <ClCompile Include="Particle\ParticleEmitterSet3.cpp">
-      <Filter>Particle</Filter>
     </ClCompile>
     <ClCompile Include="Particle\ParticleSystemSolver2.cpp">
       <Filter>Particle</Filter>
@@ -848,12 +839,6 @@
     <ClCompile Include="FdmBlas3.cpp" />
     <ClCompile Include="FdmJacobiSolver3.cpp" />
     <ClCompile Include="FdmLinearSystemSolver3.cpp" />
-    <ClCompile Include="Particle\VolumeParticleEmitter2.cpp">
-      <Filter>Particle</Filter>
-    </ClCompile>
-    <ClCompile Include="Particle\VolumeParticleEmitter3.cpp">
-      <Filter>Particle</Filter>
-    </ClCompile>
     <ClCompile Include="Collider\RigidBodyCollider2.cpp">
       <Filter>Collider</Filter>
     </ClCompile>
@@ -891,12 +876,6 @@
       <Filter>MarchingCubes</Filter>
     </ClCompile>
     <ClCompile Include="Math\FDMUtils.cpp" />
-    <ClCompile Include="Particle\PointParticleEmitter2.cpp">
-      <Filter>Particle</Filter>
-    </ClCompile>
-    <ClCompile Include="Particle\PointParticleEmitter3.cpp">
-      <Filter>Particle</Filter>
-    </ClCompile>
     <ClCompile Include="Grid\VectorGrid2.cpp">
       <Filter>Grid</Filter>
     </ClCompile>
@@ -939,11 +918,35 @@
     <ClCompile Include="Grid\GridSystemData3.cpp">
       <Filter>Grid</Filter>
     </ClCompile>
-    <ClCompile Include="Grid\GridEmitter2.cpp">
-      <Filter>Grid</Filter>
+    <ClCompile Include="Emitter\ParticleEmitter3.cpp">
+      <Filter>Emitter</Filter>
     </ClCompile>
-    <ClCompile Include="Grid\GridEmitter3.cpp">
-      <Filter>Grid</Filter>
+    <ClCompile Include="Emitter\ParticleEmitterSet2.cpp">
+      <Filter>Emitter</Filter>
+    </ClCompile>
+    <ClCompile Include="Emitter\ParticleEmitterSet3.cpp">
+      <Filter>Emitter</Filter>
+    </ClCompile>
+    <ClCompile Include="Emitter\PointParticleEmitter2.cpp">
+      <Filter>Emitter</Filter>
+    </ClCompile>
+    <ClCompile Include="Emitter\PointParticleEmitter3.cpp">
+      <Filter>Emitter</Filter>
+    </ClCompile>
+    <ClCompile Include="Emitter\VolumeParticleEmitter2.cpp">
+      <Filter>Emitter</Filter>
+    </ClCompile>
+    <ClCompile Include="Emitter\VolumeParticleEmitter3.cpp">
+      <Filter>Emitter</Filter>
+    </ClCompile>
+    <ClCompile Include="Emitter\GridEmitter2.cpp">
+      <Filter>Emitter</Filter>
+    </ClCompile>
+    <ClCompile Include="Emitter\GridEmitter3.cpp">
+      <Filter>Emitter</Filter>
+    </ClCompile>
+    <ClCompile Include="Emitter\ParticleEmitter2.cpp">
+      <Filter>Emitter</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
