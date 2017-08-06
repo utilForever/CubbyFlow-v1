@@ -631,6 +631,9 @@
     <ClInclude Include="..\Includes\Emitter\ParticleEmitterSet3.h">
       <Filter>Emitter</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Emitter\GridEmitterSet2.h">
+      <Filter>Emitter</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
