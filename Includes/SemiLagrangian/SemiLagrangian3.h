@@ -146,7 +146,7 @@ namespace CubbyFlow
 			double dt,
 			double h,
 			const Vector3D& pt0,
-			const ScalarField3& boundarySDF);
+			const ScalarField3& boundarySDF) const;
 	};
 }
 

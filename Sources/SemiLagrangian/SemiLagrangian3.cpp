@@ -123,7 +123,7 @@ namespace CubbyFlow
 		double dt,
 		double h,
 		const Vector3D& startPt,
-		const ScalarField3& boundarySDF)
+		const ScalarField3& boundarySDF) const
 	{
 		double remainingT = dt;
 		Vector3D pt0 = startPt;
