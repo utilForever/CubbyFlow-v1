@@ -110,7 +110,7 @@ namespace CubbyFlow
 		double dt,
 		double h,
 		const Vector2D& startPt,
-		const ScalarField2& boundarySDF)
+		const ScalarField2& boundarySDF) const
 	{
 		double remainingT = dt;
 		Vector2D pt0 = startPt;
