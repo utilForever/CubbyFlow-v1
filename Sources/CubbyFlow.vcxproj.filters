@@ -79,6 +79,9 @@
     <Filter Include="Advection">
       <UniqueIdentifier>{bc9bc0cf-f777-4ec9-bdff-7c334f034162}</UniqueIdentifier>
     </Filter>
+    <Filter Include="SemiLagrangian">
+      <UniqueIdentifier>{d21e6f5b-1308-4e11-97da-e0b08344ea20}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Includes\Animation\Animation.h">
@@ -657,6 +660,9 @@
     </ClInclude>
     <ClInclude Include="..\Includes\Advection\AdvectionSolver3.h">
       <Filter>Advection</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\SemiLagrangian\SemiLagrangian2.h">
+      <Filter>SemiLagrangian</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
