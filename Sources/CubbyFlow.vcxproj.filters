@@ -655,6 +655,9 @@
     <ClInclude Include="..\Includes\Advection\AdvectionSolver2.h">
       <Filter>Advection</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Advection\AdvectionSolver3.h">
+      <Filter>Advection</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">

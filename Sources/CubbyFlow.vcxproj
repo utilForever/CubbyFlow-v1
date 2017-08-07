@@ -185,6 +185,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\Includes\Advection\AdvectionSolver2.h" />
+    <ClInclude Include="..\Includes\Advection\AdvectionSolver3.h" />
     <ClInclude Include="..\Includes\Animation\Animation.h" />
     <ClInclude Include="..\Includes\Animation\Frame.h" />
     <ClInclude Include="..\Includes\Animation\PhysicsAnimation.h" />
