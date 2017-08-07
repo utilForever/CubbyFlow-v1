@@ -531,6 +531,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="PCISPH\PCISPHSolver3.cpp" />
     <ClCompile Include="PointGenerator\BccLatticePointGenerator.cpp" />
     <ClCompile Include="PointGenerator\GridPointGenerator2.cpp" />
+    <ClCompile Include="PointGenerator\GridPointGenerator3.cpp" />
     <ClCompile Include="PointGenerator\PointGenerator2.cpp" />
     <ClCompile Include="PointGenerator\PointGenerator3.cpp" />
     <ClCompile Include="PointGenerator\TrianglePointGenerator.cpp" />

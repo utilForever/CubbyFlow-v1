@@ -981,5 +981,8 @@
     <ClCompile Include="PointGenerator\GridPointGenerator2.cpp">
       <Filter>PointGenerator</Filter>
     </ClCompile>
+    <ClCompile Include="PointGenerator\GridPointGenerator3.cpp">
+      <Filter>PointGenerator</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
