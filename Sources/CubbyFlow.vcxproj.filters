@@ -993,5 +993,8 @@
     <ClCompile Include="PointGenerator\GridPointGenerator3.cpp">
       <Filter>PointGenerator</Filter>
     </ClCompile>
+    <ClCompile Include="Advection\AdvectionSolver2.cpp">
+      <Filter>Advection</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
