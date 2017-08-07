@@ -550,6 +550,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="Searcher\PointSimpleListSearcher3.cpp" />
     <ClCompile Include="Searcher\PointSimpleListSearcher2.cpp" />
     <ClCompile Include="SemiLagrangian\SemiLagrangian2.cpp" />
+    <ClCompile Include="SemiLagrangian\SemiLagrangian3.cpp" />
     <ClCompile Include="SPH\SPHSolver2.cpp" />
     <ClCompile Include="SPH\SPHSolver3.cpp" />
     <ClCompile Include="SPH\SPHStdKernel2.cpp" />
