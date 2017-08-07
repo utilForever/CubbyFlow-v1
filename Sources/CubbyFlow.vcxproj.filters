@@ -76,6 +76,9 @@
     <Filter Include="Emitter">
       <UniqueIdentifier>{fae84f3f-d522-4671-a9f1-e692179fda84}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Advection">
+      <UniqueIdentifier>{bc9bc0cf-f777-4ec9-bdff-7c334f034162}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Includes\Animation\Animation.h">
@@ -648,6 +651,9 @@
     </ClInclude>
     <ClInclude Include="..\Includes\PointGenerator\GridPointGenerator3.h">
       <Filter>PointGenerator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Advection\AdvectionSolver2.h">
+      <Filter>Advection</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
