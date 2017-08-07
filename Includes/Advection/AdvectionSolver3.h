@@ -39,7 +39,7 @@ namespace CubbyFlow
 		//! equation for given time-step \p dt should be stored in scalar field
 		//! \p output. The boundary interface is given by a signed-distance field.
 		//! The field is negative inside the boundary. By default, a constant field
-		//! with max double value (kMaxD or std::numeric_limists<double>::max())
+		//! with max double value (std::numeric_limists<double>::max())
 		//! is used, meaning no boundary.
 		//!
 		//! \param input Input scalar grid.
@@ -65,7 +65,7 @@ namespace CubbyFlow
 		//! the equation for given time-step \p dt should be stored in vector field
 		//! \p output. The boundary interface is given by a signed-distance field.
 		//! The field is negative inside the boundary. By default, a constant field
-		//! with max double value (kMaxD or std::numeric_limists<double>::max())
+		//! with max double value (std::numeric_limists<double>::max())
 		//! is used, meaning no boundary.
 		//!
 		//! \param input Input vector grid.
@@ -91,8 +91,8 @@ namespace CubbyFlow
 		//! solving the equation for given time-step \p dt should be stored in
 		//! vector field \p output. The boundary interface is given by a
 		//! signed-distance field. The field is negative inside the boundary. By
-		//! default, a constant field with max double value (kMaxD or
-		//! std::numeric_limists<double>::max()) is used, meaning no boundary.
+		//! default, a constant field with max double value (std::numeric_limists<double>::max())
+		//! is used, meaning no boundary.
 		//!
 		//! \param input Input vector grid.
 		//! \param flow Vector field that advects the input field.
