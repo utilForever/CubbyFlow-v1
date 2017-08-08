@@ -1044,5 +1044,8 @@
     <ClCompile Include="Solver\SPH\SPHSolver2.cpp">
       <Filter>Solver\SPH</Filter>
     </ClCompile>
+    <ClCompile Include="Solver\Grid\GridBoundaryConditionSolver2.cpp">
+      <Filter>Solver\Grid</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
