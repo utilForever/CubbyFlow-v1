@@ -670,6 +670,9 @@
     <ClInclude Include="..\Includes\SemiLagrangian\CubicSemiLagrangian2.h">
       <Filter>SemiLagrangian</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\SemiLagrangian\CubicSemiLagrangian3.h">
+      <Filter>SemiLagrangian</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
