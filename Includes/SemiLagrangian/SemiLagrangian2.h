@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_SEMI_LAGRANGIAN2_H
 #define CUBBYFLOW_SEMI_LAGRANGIAN2_H
 
-#include <Advection/AdvectionSolver2.h>
+#include <Solver/Advection/AdvectionSolver2.h>
 
 namespace CubbyFlow
 {

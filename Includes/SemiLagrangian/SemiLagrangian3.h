@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_SEMI_LAGRANGIAN3_H
 #define CUBBYFLOW_SEMI_LAGRANGIAN3_H
 
-#include <Advection/AdvectionSolver3.h>
+#include <Solver/Advection/AdvectionSolver3.h>
 
 namespace CubbyFlow
 {

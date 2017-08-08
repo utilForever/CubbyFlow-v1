@@ -6,7 +6,7 @@
 > Created Time: 2017/06/03
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <SPH/SPHSolver2.h>
+#include <Solver/SPH/SPHSolver2.h>
 #include <SPH/SPHStdKernel2.h>
 #include <Utils/Logger.h>
 #include <Utils/PhysicsHelpers.h>

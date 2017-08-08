@@ -6,8 +6,8 @@
 > Created Time: 2017/06/10
 > Copyright (c) 2017, Dongmin Kim
 *************************************************************************/
-#include <PCISPH/PCISPHSolver3.h>
 #include <PointGenerator/BccLatticePointGenerator.h>
+#include <Solver/PCISPH/PCISPHSolver3.h>
 #include <SPH/SPHStdKernel3.h>
 #include <Utils/Logger.h>
 

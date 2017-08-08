@@ -6,8 +6,8 @@
 > Created Time: 2017/06/10
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <PCISPH/PCISPHSolver2.h>
 #include <PointGenerator/TrianglePointGenerator.h>
+#include <Solver/PCISPH/PCISPHSolver2.h>
 #include <SPH/SPHStdKernel2.h>
 #include <Utils/Logger.h>
 

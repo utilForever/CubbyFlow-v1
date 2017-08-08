@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_SPH_SOLVER3_H
 #define CUBBYFLOW_SPH_SOLVER3_H
 
-#include <Particle/ParticleSystemSolver3.h>
+#include <Solver/Particle/ParticleSystemSolver3.h>
 #include <SPH/SPHSystemData3.h>
 
 namespace CubbyFlow

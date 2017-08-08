@@ -6,7 +6,7 @@
 > Created Time: 2017/08/07
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Advection/AdvectionSolver3.h>
+#include <Solver/Advection/AdvectionSolver3.h>
 
 namespace CubbyFlow
 {

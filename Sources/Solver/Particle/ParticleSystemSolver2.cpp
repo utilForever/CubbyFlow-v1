@@ -8,7 +8,7 @@
 *************************************************************************/
 #include <Array/ArrayUtils.h>
 #include <Field/ConstantVectorField2.h>
-#include <Particle/ParticleSystemSolver2.h>
+#include <Solver/Particle/ParticleSystemSolver2.h>
 #include <Utils/Logger.h>
 #include <Utils/Parallel.h>
 #include <Utils/Timer.h>
