@@ -1023,5 +1023,8 @@
     <ClCompile Include="SemiLagrangian\CubicSemiLagrangian2.cpp">
       <Filter>SemiLagrangian</Filter>
     </ClCompile>
+    <ClCompile Include="SemiLagrangian\CubicSemiLagrangian3.cpp">
+      <Filter>SemiLagrangian</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
