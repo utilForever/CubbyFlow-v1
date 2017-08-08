@@ -57,7 +57,7 @@ namespace CubbyFlow
 			const Vector2D& gridOrigin) override;
 
 	private:
-		CellCenteredScalarGrid2Ptr m_colliderSdf;
+		CellCenteredScalarGrid2Ptr m_colliderSDF;
 		CustomVectorField2Ptr m_colliderVel;
 	};
 
