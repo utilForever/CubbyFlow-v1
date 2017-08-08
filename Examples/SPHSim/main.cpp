@@ -8,13 +8,13 @@
 *************************************************************************/
 #include <Array/ArrayUtils.h>
 #include <Collider/RigidBodyCollider3.h>
-#include <Particle/ParticleSystemData3.h>
-#include <PCISPH/PCISPHSolver3.h>
+#include <Emitter/VolumeParticleEmitter3.h>
 #include <Geometry/Box3.h>
 #include <Geometry/Cylinder3.h>
 #include <Geometry/Plane3.h>
 #include <Geometry/Sphere3.h>
-#include <Particle/VolumeParticleEmitter3.h>
+#include <Particle/ParticleSystemData3.h>
+#include <Solver/PCISPH/PCISPHSolver3.h>
 #include <SPH/SPHSolver3.h>
 #include <Surface/Implicit/ImplicitSurfaceSet3.h>
 #include <Utils/Logger.h>
