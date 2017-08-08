@@ -691,6 +691,9 @@
     <ClInclude Include="..\Includes\Solver\SPH\SPHSolver3.h">
       <Filter>Solver\SPH</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Solver\Grid\GridFractionalBoundaryConditionSolver2.h">
+      <Filter>Solver\Grid</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
