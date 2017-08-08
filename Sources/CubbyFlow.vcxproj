@@ -184,8 +184,6 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\Includes\Advection\AdvectionSolver2.h" />
-    <ClInclude Include="..\Includes\Advection\AdvectionSolver3.h" />
     <ClInclude Include="..\Includes\Animation\Animation.h" />
     <ClInclude Include="..\Includes\Animation\Frame.h" />
     <ClInclude Include="..\Includes\Animation\PhysicsAnimation.h" />
@@ -271,8 +269,6 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Grid\FaceCenteredGrid3.h" />
     <ClInclude Include="..\Includes\Grid\Grid2.h" />
     <ClInclude Include="..\Includes\Grid\Grid3.h" />
-    <ClInclude Include="..\Includes\Grid\GridBoundaryConditionSolver2.h" />
-    <ClInclude Include="..\Includes\Grid\GridBoundaryConditionSolver3.h" />
     <ClInclude Include="..\Includes\Grid\GridSystemData2.h" />
     <ClInclude Include="..\Includes\Grid\GridSystemData3.h" />
     <ClInclude Include="..\Includes\Grid\ScalarGrid2.h" />
@@ -303,10 +299,6 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Matrix\Matrix4x4.h" />
     <ClInclude Include="..\Includes\Particle\ParticleSystemData2.h" />
     <ClInclude Include="..\Includes\Particle\ParticleSystemData3.h" />
-    <ClInclude Include="..\Includes\Particle\ParticleSystemSolver2.h" />
-    <ClInclude Include="..\Includes\Particle\ParticleSystemSolver3.h" />
-    <ClInclude Include="..\Includes\PCISPH\PCISPHSolver2.h" />
-    <ClInclude Include="..\Includes\PCISPH\PCISPHSolver3.h" />
     <ClInclude Include="..\Includes\PointGenerator\BccLatticePointGenerator.h" />
     <ClInclude Include="..\Includes\PointGenerator\GridPointGenerator2.h" />
     <ClInclude Include="..\Includes\PointGenerator\GridPointGenerator3.h" />
@@ -339,8 +331,16 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Size\Size.h" />
     <ClInclude Include="..\Includes\Size\Size2.h" />
     <ClInclude Include="..\Includes\Size\Size3.h" />
-    <ClInclude Include="..\Includes\SPH\SPHSolver2.h" />
-    <ClInclude Include="..\Includes\SPH\SPHSolver3.h" />
+    <ClInclude Include="..\Includes\Solver\Advection\AdvectionSolver2.h" />
+    <ClInclude Include="..\Includes\Solver\Advection\AdvectionSolver3.h" />
+    <ClInclude Include="..\Includes\Solver\Grid\GridBoundaryConditionSolver2.h" />
+    <ClInclude Include="..\Includes\Solver\Grid\GridBoundaryConditionSolver3.h" />
+    <ClInclude Include="..\Includes\Solver\Particle\ParticleSystemSolver2.h" />
+    <ClInclude Include="..\Includes\Solver\Particle\ParticleSystemSolver3.h" />
+    <ClInclude Include="..\Includes\Solver\PCISPH\PCISPHSolver2.h" />
+    <ClInclude Include="..\Includes\Solver\PCISPH\PCISPHSolver3.h" />
+    <ClInclude Include="..\Includes\Solver\SPH\SPHSolver2.h" />
+    <ClInclude Include="..\Includes\Solver\SPH\SPHSolver3.h" />
     <ClInclude Include="..\Includes\SPH\SPHStdKernel2.h" />
     <ClInclude Include="..\Includes\SPH\SPHStdKernel3.h" />
     <ClInclude Include="..\Includes\SPH\SPHSystemData2.h" />
@@ -454,8 +454,6 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="..\Sources\Transform\Transform3.cpp" />
     <ClCompile Include="..\Sources\Utils\Logger.cpp" />
     <ClCompile Include="..\Sources\Utils\Timer.cpp" />
-    <ClCompile Include="Advection\AdvectionSolver2.cpp" />
-    <ClCompile Include="Advection\AdvectionSolver3.cpp" />
     <ClCompile Include="Blas.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
@@ -535,10 +533,6 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="Math\FDMUtils.cpp" />
     <ClCompile Include="Particle\ParticleSystemData2.cpp" />
     <ClCompile Include="Particle\ParticleSystemData3.cpp" />
-    <ClCompile Include="Particle\ParticleSystemSolver2.cpp" />
-    <ClCompile Include="Particle\ParticleSystemSolver3.cpp" />
-    <ClCompile Include="PCISPH\PCISPHSolver2.cpp" />
-    <ClCompile Include="PCISPH\PCISPHSolver3.cpp" />
     <ClCompile Include="PointGenerator\BccLatticePointGenerator.cpp" />
     <ClCompile Include="PointGenerator\GridPointGenerator2.cpp" />
     <ClCompile Include="PointGenerator\GridPointGenerator3.cpp" />
@@ -557,8 +551,14 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="SemiLagrangian\CubicSemiLagrangian3.cpp" />
     <ClCompile Include="SemiLagrangian\SemiLagrangian2.cpp" />
     <ClCompile Include="SemiLagrangian\SemiLagrangian3.cpp" />
-    <ClCompile Include="SPH\SPHSolver2.cpp" />
-    <ClCompile Include="SPH\SPHSolver3.cpp" />
+    <ClCompile Include="Solver\Advection\AdvectionSolver2.cpp" />
+    <ClCompile Include="Solver\Advection\AdvectionSolver3.cpp" />
+    <ClCompile Include="Solver\Particle\ParticleSystemSolver2.cpp" />
+    <ClCompile Include="Solver\Particle\ParticleSystemSolver3.cpp" />
+    <ClCompile Include="Solver\PCISPH\PCISPHSolver2.cpp" />
+    <ClCompile Include="Solver\PCISPH\PCISPHSolver3.cpp" />
+    <ClCompile Include="Solver\SPH\SPHSolver2.cpp" />
+    <ClCompile Include="Solver\SPH\SPHSolver3.cpp" />
     <ClCompile Include="SPH\SPHStdKernel2.cpp" />
     <ClCompile Include="SPH\SPHStdKernel3.cpp" />
     <ClCompile Include="SPH\SPHSystemData2.cpp" />
