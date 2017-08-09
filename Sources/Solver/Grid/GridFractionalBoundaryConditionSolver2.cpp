@@ -1,5 +1,5 @@
 /*************************************************************************
-> File Name: GridFractionalBoundaryConditionSolver2.h
+> File Name: GridFractionalBoundaryConditionSolver2.cpp
 > Project Name: CubbyFlow
 > Author: Chan-Ho Chris Ohk
 > Purpose: Fractional 2-D boundary condition solver for grids.
