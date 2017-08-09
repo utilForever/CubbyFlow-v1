@@ -1059,5 +1059,8 @@
     <ClCompile Include="Solver\Grid\GridFractionalBoundaryConditionSolver2.cpp">
       <Filter>Solver\Grid</Filter>
     </ClCompile>
+    <ClCompile Include="Solver\Grid\GridFractionalBoundaryConditionSolver3.cpp">
+      <Filter>Solver\Grid</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
