@@ -1071,5 +1071,8 @@
     <ClCompile Include="Solver\Grid\GridBlockedBoundaryConditionSolver2.cpp">
       <Filter>Solver\Grid</Filter>
     </ClCompile>
+    <ClCompile Include="Solver\Grid\GridBlockedBoundaryConditionSolver3.cpp">
+      <Filter>Solver\Grid</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
