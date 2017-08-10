@@ -715,9 +715,6 @@
     <ClInclude Include="..\Includes\Solver\Grid\GridPressureSolver3.h">
       <Filter>Solver\Grid</Filter>
     </ClInclude>
-    <ClInclude Include="..\Includes\Solver\Grid\GridFluidSolver2.h">
-      <Filter>Solver\Grid</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
@@ -1095,8 +1092,12 @@
     <ClCompile Include="Solver\Grid\GridDiffusionSolver3.cpp">
       <Filter>Solver\Grid</Filter>
     </ClCompile>
+    <ClCompile Include="Grid\GridFluidSolver2.cpp" />
     <ClCompile Include="Grid\GridSmokeSolver2.cpp" />
-    <ClCompile Include="Solver\Grid\GridFluidSolver2.cpp">
+    <ClCompile Include="Solver\Grid\GridPressureSolver2.cpp">
+      <Filter>Solver\Grid</Filter>
+    </ClCompile>
+    <ClCompile Include="Solver\Grid\GridPressureSolver3.cpp">
       <Filter>Solver\Grid</Filter>
     </ClCompile>
   </ItemGroup>
