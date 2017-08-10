@@ -61,9 +61,6 @@
     <Filter Include="PointGenerator">
       <UniqueIdentifier>{869999c1-7c14-4ba2-9aff-37e1ec1d8b2d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="PCISPH">
-      <UniqueIdentifier>{e0623ba4-97d3-46f5-82bd-2396d4791a3a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Grid">
       <UniqueIdentifier>{e1cdcc58-20e4-4dcc-b323-5abdf33411fa}</UniqueIdentifier>
     </Filter>
@@ -75,6 +72,27 @@
     </Filter>
     <Filter Include="Emitter">
       <UniqueIdentifier>{fae84f3f-d522-4671-a9f1-e692179fda84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SemiLagrangian">
+      <UniqueIdentifier>{d21e6f5b-1308-4e11-97da-e0b08344ea20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Solver">
+      <UniqueIdentifier>{bbced9cc-448d-48a1-a1c2-2960a0d7dd96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Solver\Advection">
+      <UniqueIdentifier>{bc9bc0cf-f777-4ec9-bdff-7c334f034162}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Solver\SPH">
+      <UniqueIdentifier>{e3d09d3c-1adf-4925-a6b8-4e6f0226693f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Solver\Grid">
+      <UniqueIdentifier>{1bc65f52-bfe0-4d99-890b-ca420750fda8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Solver\Particle">
+      <UniqueIdentifier>{c16c9bae-a71a-4c80-910a-7a620deadcc3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Solver\PCISPH">
+      <UniqueIdentifier>{e0623ba4-97d3-46f5-82bd-2396d4791a3a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -426,12 +444,6 @@
     <ClInclude Include="..\Includes\Array\ArraySamplers3-Impl.h">
       <Filter>Array</Filter>
     </ClInclude>
-    <ClInclude Include="..\Includes\Particle\ParticleSystemSolver2.h">
-      <Filter>Particle</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Includes\Particle\ParticleSystemSolver3.h">
-      <Filter>Particle</Filter>
-    </ClInclude>
     <ClInclude Include="..\Includes\Searcher\PointHashGridSearcher2.h">
       <Filter>Searcher</Filter>
     </ClInclude>
@@ -468,23 +480,11 @@
     <ClInclude Include="..\Includes\PointGenerator\TrianglePointGenerator.h">
       <Filter>PointGenerator</Filter>
     </ClInclude>
-    <ClInclude Include="..\Includes\SPH\SPHSolver2.h">
-      <Filter>SPH</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Includes\SPH\SPHSolver3.h">
-      <Filter>SPH</Filter>
-    </ClInclude>
     <ClInclude Include="Utils\PhysicsHelpers.h">
       <Filter>Utils</Filter>
     </ClInclude>
     <ClInclude Include="..\Includes\PointGenerator\BccLatticePointGenerator.h">
       <Filter>PointGenerator</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Includes\PCISPH\PCISPHSolver2.h">
-      <Filter>PCISPH</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Includes\PCISPH\PCISPHSolver3.h">
-      <Filter>PCISPH</Filter>
     </ClInclude>
     <ClInclude Include="..\Includes\Geometry\Plane2.h">
       <Filter>Geometry</Filter>
@@ -643,6 +643,78 @@
     <ClInclude Include="..\Includes\Emitter\VolumeGridEmitter3.h">
       <Filter>Emitter</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\PointGenerator\GridPointGenerator2.h">
+      <Filter>PointGenerator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\PointGenerator\GridPointGenerator3.h">
+      <Filter>PointGenerator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\SemiLagrangian\SemiLagrangian2.h">
+      <Filter>SemiLagrangian</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\SemiLagrangian\SemiLagrangian3.h">
+      <Filter>SemiLagrangian</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\SemiLagrangian\CubicSemiLagrangian2.h">
+      <Filter>SemiLagrangian</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\SemiLagrangian\CubicSemiLagrangian3.h">
+      <Filter>SemiLagrangian</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Solver\Advection\AdvectionSolver3.h">
+      <Filter>Solver\Advection</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Solver\Advection\AdvectionSolver2.h">
+      <Filter>Solver\Advection</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Solver\Grid\GridBoundaryConditionSolver2.h">
+      <Filter>Solver\Grid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Solver\Grid\GridBoundaryConditionSolver3.h">
+      <Filter>Solver\Grid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Solver\Particle\ParticleSystemSolver3.h">
+      <Filter>Solver\Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Solver\Particle\ParticleSystemSolver2.h">
+      <Filter>Solver\Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Solver\PCISPH\PCISPHSolver3.h">
+      <Filter>Solver\PCISPH</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Solver\PCISPH\PCISPHSolver2.h">
+      <Filter>Solver\PCISPH</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Solver\SPH\SPHSolver2.h">
+      <Filter>Solver\SPH</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Solver\SPH\SPHSolver3.h">
+      <Filter>Solver\SPH</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Solver\Grid\GridFractionalBoundaryConditionSolver2.h">
+      <Filter>Solver\Grid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Solver\Grid\GridFractionalBoundaryConditionSolver3.h">
+      <Filter>Solver\Grid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Solver\Grid\GridBlockedBoundaryConditionSolver2.h">
+      <Filter>Solver\Grid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Solver\Grid\GridBlockedBoundaryConditionSolver3.h">
+      <Filter>Solver\Grid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Solver\Grid\GridDiffusionSolver2.h">
+      <Filter>Solver\Grid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Solver\Grid\GridDiffusionSolver3.h">
+      <Filter>Solver\Grid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Solver\Grid\GridPressureSolver2.h">
+      <Filter>Solver\Grid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Solver\Grid\GridPressureSolver3.h">
+      <Filter>Solver\Grid</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
@@ -780,12 +852,6 @@
     <ClCompile Include="Collider\ColliderSet3.cpp">
       <Filter>Collider</Filter>
     </ClCompile>
-    <ClCompile Include="Particle\ParticleSystemSolver2.cpp">
-      <Filter>Particle</Filter>
-    </ClCompile>
-    <ClCompile Include="Particle\ParticleSystemSolver3.cpp">
-      <Filter>Particle</Filter>
-    </ClCompile>
     <ClCompile Include="Searcher\PointHashGridSearcher2.cpp">
       <Filter>Searcher</Filter>
     </ClCompile>
@@ -819,9 +885,6 @@
     <ClCompile Include="PointGenerator\TrianglePointGenerator.cpp">
       <Filter>PointGenerator</Filter>
     </ClCompile>
-    <ClCompile Include="SPH\SPHSolver2.cpp">
-      <Filter>SPH</Filter>
-    </ClCompile>
     <ClCompile Include="SPH\SPHSystemData3.cpp">
       <Filter>SPH</Filter>
     </ClCompile>
@@ -830,15 +893,6 @@
     </ClCompile>
     <ClCompile Include="PointGenerator\BccLatticePointGenerator.cpp">
       <Filter>PointGenerator</Filter>
-    </ClCompile>
-    <ClCompile Include="PCISPH\PCISPHSolver2.cpp">
-      <Filter>PCISPH</Filter>
-    </ClCompile>
-    <ClCompile Include="SPH\SPHSolver3.cpp">
-      <Filter>SPH</Filter>
-    </ClCompile>
-    <ClCompile Include="PCISPH\PCISPHSolver3.cpp">
-      <Filter>PCISPH</Filter>
     </ClCompile>
     <ClCompile Include="Blas.cpp" />
     <ClCompile Include="cg.cpp" />
@@ -972,11 +1026,71 @@
     <ClCompile Include="Emitter\VolumeGridEmitter3.cpp">
       <Filter>Emitter</Filter>
     </ClCompile>
-    <ClCompile Include="Grid\GridSmokeSolver2.cpp">
-      <Filter>Grid</Filter>
+    <ClCompile Include="PointGenerator\GridPointGenerator2.cpp">
+      <Filter>PointGenerator</Filter>
     </ClCompile>
-    <ClCompile Include="Grid\GridFluidSolver2.cpp">
-      <Filter>Grid</Filter>
+    <ClCompile Include="PointGenerator\GridPointGenerator3.cpp">
+      <Filter>PointGenerator</Filter>
+    </ClCompile>
+    <ClCompile Include="SemiLagrangian\SemiLagrangian2.cpp">
+      <Filter>SemiLagrangian</Filter>
+    </ClCompile>
+    <ClCompile Include="SemiLagrangian\SemiLagrangian3.cpp">
+      <Filter>SemiLagrangian</Filter>
+    </ClCompile>
+    <ClCompile Include="SemiLagrangian\CubicSemiLagrangian2.cpp">
+      <Filter>SemiLagrangian</Filter>
+    </ClCompile>
+    <ClCompile Include="SemiLagrangian\CubicSemiLagrangian3.cpp">
+      <Filter>SemiLagrangian</Filter>
+    </ClCompile>
+    <ClCompile Include="Solver\Advection\AdvectionSolver3.cpp">
+      <Filter>Solver\Advection</Filter>
+    </ClCompile>
+    <ClCompile Include="Solver\Advection\AdvectionSolver2.cpp">
+      <Filter>Solver\Advection</Filter>
+    </ClCompile>
+    <ClCompile Include="Solver\Particle\ParticleSystemSolver3.cpp">
+      <Filter>Solver\Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="Solver\Particle\ParticleSystemSolver2.cpp">
+      <Filter>Solver\Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="Solver\PCISPH\PCISPHSolver3.cpp">
+      <Filter>Solver\PCISPH</Filter>
+    </ClCompile>
+    <ClCompile Include="Solver\PCISPH\PCISPHSolver2.cpp">
+      <Filter>Solver\PCISPH</Filter>
+    </ClCompile>
+    <ClCompile Include="Solver\SPH\SPHSolver3.cpp">
+      <Filter>Solver\SPH</Filter>
+    </ClCompile>
+    <ClCompile Include="Solver\SPH\SPHSolver2.cpp">
+      <Filter>Solver\SPH</Filter>
+    </ClCompile>
+    <ClCompile Include="Solver\Grid\GridBoundaryConditionSolver2.cpp">
+      <Filter>Solver\Grid</Filter>
+    </ClCompile>
+    <ClCompile Include="Solver\Grid\GridBoundaryConditionSolver3.cpp">
+      <Filter>Solver\Grid</Filter>
+    </ClCompile>
+    <ClCompile Include="Solver\Grid\GridFractionalBoundaryConditionSolver2.cpp">
+      <Filter>Solver\Grid</Filter>
+    </ClCompile>
+    <ClCompile Include="Solver\Grid\GridFractionalBoundaryConditionSolver3.cpp">
+      <Filter>Solver\Grid</Filter>
+    </ClCompile>
+    <ClCompile Include="Solver\Grid\GridBlockedBoundaryConditionSolver2.cpp">
+      <Filter>Solver\Grid</Filter>
+    </ClCompile>
+    <ClCompile Include="Solver\Grid\GridBlockedBoundaryConditionSolver3.cpp">
+      <Filter>Solver\Grid</Filter>
+    </ClCompile>
+    <ClCompile Include="Solver\Grid\GridDiffusionSolver2.cpp">
+      <Filter>Solver\Grid</Filter>
+    </ClCompile>
+    <ClCompile Include="Solver\Grid\GridDiffusionSolver3.cpp">
+      <Filter>Solver\Grid</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,13 +1,13 @@
 /*************************************************************************
-> File Name: SPHSolver3.cpp
+> File Name: SPHSolver2.cpp
 > Project Name: CubbyFlow
-> Author: Dongmin Kim
-> Purpose: 3-D SPH solver.
-> Created Time: 2017/06/10
-> Copyright (c) 2017, Dongmin Kim
+> Author: Chan-Ho Chris Ohk
+> Purpose: 2-D SPH solver.
+> Created Time: 2017/06/03
+> Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <SPH/SPHSolver3.h>
-#include <SPH/SPHStdKernel3.h>
+#include <Solver/SPH/SPHSolver2.h>
+#include <SPH/SPHStdKernel2.h>
 #include <Utils/Logger.h>
 #include <Utils/PhysicsHelpers.h>
 #include <Utils/Timer.h>
@@ -17,15 +17,15 @@ namespace CubbyFlow
 	static double TIME_STEP_LIMIT_BY_SPEED_FACTOR = 0.4;
 	static double TIME_STEP_LIMIT_BY_FORCE_FACTOR = 0.25;
 
-	SPHSolver3::SPHSolver3()
+	SPHSolver2::SPHSolver2()
 	{
-		SetParticleSystemData(std::make_shared<SPHSystemData3>());
+		SetParticleSystemData(std::make_shared<SPHSystemData2>());
 		SetIsUsingFixedSubTimeSteps(false);
 	}
 
-	SPHSolver3::SPHSolver3(double targetDensity, double targetSpacing, double relativeKernelRadius)
+	SPHSolver2::SPHSolver2(double targetDensity, double targetSpacing, double relativeKernelRadius)
 	{
-		auto sphParticles = std::make_shared<SPHSystemData3>();
+		auto sphParticles = std::make_shared<SPHSystemData2>();
 		SetParticleSystemData(sphParticles);
 		sphParticles->SetTargetDensity(targetDensity);
 		sphParticles->SetTargetSpacing(targetSpacing);
@@ -33,77 +33,77 @@ namespace CubbyFlow
 		SetIsUsingFixedSubTimeSteps(false);
 	}
 
-	SPHSolver3::~SPHSolver3()
+	SPHSolver2::~SPHSolver2()
 	{
 		// Do nothing
 	}
 
-	double SPHSolver3::GetEosExponent() const
+	double SPHSolver2::GetEosExponent() const
 	{
 		return m_eosExponent;
 	}
 
-	void SPHSolver3::SetEosExponent(double newEosExponent)
+	void SPHSolver2::SetEosExponent(double newEosExponent)
 	{
 		m_eosExponent = std::max(newEosExponent, 1.0);
 	}
 
-	double SPHSolver3::GetNegativePressureScale() const
+	double SPHSolver2::GetNegativePressureScale() const
 	{
 		return m_negativePressureScale;
 	}
 
-	void SPHSolver3::SetNegativePressureScale(double newNegativePressureScale)
+	void SPHSolver2::SetNegativePressureScale(double newNegativePressureScale)
 	{
 		m_negativePressureScale = std::clamp(newNegativePressureScale, 0.0, 1.0);
 	}
 
-	double SPHSolver3::GetViscosityCoefficient() const
+	double SPHSolver2::GetViscosityCoefficient() const
 	{
 		return m_viscosityCoefficient;
 	}
 
-	void SPHSolver3::SetViscosityCoefficient(double newViscosityCoefficient)
+	void SPHSolver2::SetViscosityCoefficient(double newViscosityCoefficient)
 	{
 		m_viscosityCoefficient = std::max(newViscosityCoefficient, 0.0);
 	}
 
-	double SPHSolver3::GetPseudoViscosityCoefficient() const
+	double SPHSolver2::GetPseudoViscosityCoefficient() const
 	{
 		return m_pseudoViscosityCoefficient;
 	}
 
-	void SPHSolver3::SetPseudoViscosityCoefficient(double newPseudoViscosityCoefficient)
+	void SPHSolver2::SetPseudoViscosityCoefficient(double newPseudoViscosityCoefficient)
 	{
 		m_pseudoViscosityCoefficient = std::max(newPseudoViscosityCoefficient, 0.0);
 	}
 
-	double SPHSolver3::GetSpeedOfSound() const
+	double SPHSolver2::GetSpeedOfSound() const
 	{
 		return m_speedOfSound;
 	}
 
-	void SPHSolver3::SetSpeedOfSound(double newSpeedOfSound)
+	void SPHSolver2::SetSpeedOfSound(double newSpeedOfSound)
 	{
 		m_speedOfSound = std::max(newSpeedOfSound, std::numeric_limits<double>::epsilon());
 	}
 
-	double SPHSolver3::GetTimeStepLimitScale() const
+	double SPHSolver2::GetTimeStepLimitScale() const
 	{
 		return m_timeStepLimitScale;
 	}
 
-	void SPHSolver3::SetTimeStepLimitScale(double newScale)
+	void SPHSolver2::SetTimeStepLimitScale(double newScale)
 	{
 		m_timeStepLimitScale = std::max(newScale, 0.0);
 	}
 
-	SPHSystemData3Ptr SPHSolver3::GetSPHSystemData() const
+	SPHSystemData2Ptr SPHSolver2::GetSPHSystemData() const
 	{
-		return std::dynamic_pointer_cast<SPHSystemData3>(GetParticleSystemData());
+		return std::dynamic_pointer_cast<SPHSystemData2>(GetParticleSystemData());
 	}
 
-	unsigned int SPHSolver3::NumberOfSubTimeSteps(double timeIntervalInSeconds) const
+	unsigned int SPHSolver2::NumberOfSubTimeSteps(double timeIntervalInSeconds) const
 	{
 		auto particles = GetSPHSystemData();
 		size_t numberOfParticles = particles->NumberOfParticles();
@@ -127,13 +127,13 @@ namespace CubbyFlow
 		return static_cast<unsigned int>(std::ceil(timeIntervalInSeconds / desiredTimeStep));
 	}
 
-	void SPHSolver3::AccumulateForces(double timeStepInSeconds)
+	void SPHSolver2::AccumulateForces(double timeStepInSeconds)
 	{
 		AccumulateNonPressureForces(timeStepInSeconds);
 		AccumulatePressureForce(timeStepInSeconds);
 	}
 
-	void SPHSolver3::OnBeginAdvanceTimeStep(double timeStepInSeconds)
+	void SPHSolver2::OnBeginAdvanceTimeStep(double timeStepInSeconds)
 	{
 		auto particles = GetSPHSystemData();
 
@@ -147,7 +147,7 @@ namespace CubbyFlow
 			<< " seconds";
 	}
 
-	void SPHSolver3::OnEndAdvanceTimeStep(double timeStepInSeconds)
+	void SPHSolver2::OnEndAdvanceTimeStep(double timeStepInSeconds)
 	{
 		ComputePseudoViscosity(timeStepInSeconds);
 
@@ -166,13 +166,13 @@ namespace CubbyFlow
 			<< maxDensity / particles->GetTargetDensity();
 	}
 
-	void SPHSolver3::AccumulateNonPressureForces(double timeStepInSeconds)
+	void SPHSolver2::AccumulateNonPressureForces(double timeStepInSeconds)
 	{
-		ParticleSystemSolver3::AccumulateForces(timeStepInSeconds);
+		ParticleSystemSolver2::AccumulateForces(timeStepInSeconds);
 		AccumulateViscosityForce();
 	}
 
-	void SPHSolver3::AccumulatePressureForce(double timeStepInSeconds)
+	void SPHSolver2::AccumulatePressureForce(double timeStepInSeconds)
 	{
 		auto particles = GetSPHSystemData();
 		auto x = particles->GetPositions();
@@ -184,7 +184,7 @@ namespace CubbyFlow
 		AccumulatePressureForce(x, d, p, f);
 	}
 
-	void SPHSolver3::ComputePressure()
+	void SPHSolver2::ComputePressure()
 	{
 		auto particles = GetSPHSystemData();
 		size_t numberOfParticles = particles->NumberOfParticles();
@@ -202,17 +202,17 @@ namespace CubbyFlow
 		});
 	}
 
-	void SPHSolver3::AccumulatePressureForce(
-		const ConstArrayAccessor1<Vector3D>& positions,
+	void SPHSolver2::AccumulatePressureForce(
+		const ConstArrayAccessor1<Vector2D>& positions,
 		const ConstArrayAccessor1<double>& densities,
 		const ConstArrayAccessor1<double>& pressures,
-		ArrayAccessor1<Vector3D> pressureForces)
+		ArrayAccessor1<Vector2D> pressureForces)
 	{
 		auto particles = GetSPHSystemData();
 		size_t numberOfParticles = particles->NumberOfParticles();
 
 		const double massSquared = Square(particles->GetMass());
-		const SPHSpikyKernel3 kernel(particles->GetKernelRadius());
+		const SPHSpikyKernel2 kernel(particles->GetKernelRadius());
 
 		ParallelFor(ZERO_SIZE, numberOfParticles, [&](size_t i)
 		{
@@ -222,15 +222,15 @@ namespace CubbyFlow
 				double dist = positions[i].DistanceTo(positions[j]);
 				if (dist > 0.0)
 				{
-					Vector3D dir = (positions[j] - positions[i]) / dist;
+					Vector2D dir = (positions[j] - positions[i]) / dist;
 					pressureForces[i] -= massSquared * (pressures[i] / (densities[i] * densities[i])
 						+ pressures[j] / (densities[j] * densities[j])) * kernel.Gradient(dist, dir);
 				}
 			}
 		});
 	}
-
-	void SPHSolver3::AccumulateViscosityForce()
+	
+	void SPHSolver2::AccumulateViscosityForce()
 	{
 		auto particles = GetSPHSystemData();
 		size_t numberOfParticles = particles->NumberOfParticles();
@@ -240,7 +240,7 @@ namespace CubbyFlow
 		auto f = particles->GetForces();
 
 		const double massSquared = Square(particles->GetMass());
-		const SPHSpikyKernel3 kernel(particles->GetKernelRadius());
+		const SPHSpikyKernel2 kernel(particles->GetKernelRadius());
 
 		ParallelFor(ZERO_SIZE, numberOfParticles, [&](size_t i)
 		{
@@ -254,7 +254,7 @@ namespace CubbyFlow
 		});
 	}
 
-	void SPHSolver3::ComputePseudoViscosity(double timeStepInSeconds)
+	void SPHSolver2::ComputePseudoViscosity(double timeStepInSeconds)
 	{
 		auto particles = GetSPHSystemData();
 		size_t numberOfParticles = particles->NumberOfParticles();
@@ -263,14 +263,14 @@ namespace CubbyFlow
 		auto d = particles->GetDensities();
 
 		const double mass = particles->GetMass();
-		const SPHSpikyKernel3 kernel(particles->GetKernelRadius());
+		const SPHSpikyKernel2 kernel(particles->GetKernelRadius());
 
-		Array1<Vector3D> smoothedVelocities(numberOfParticles);
+		Array1<Vector2D> smoothedVelocities(numberOfParticles);
 
 		ParallelFor(ZERO_SIZE, numberOfParticles, [&](size_t i)
 		{
 			double weightSum = 0.0;
-			Vector3D smoothedVelocity;
+			Vector2D smoothedVelocity;
 
 			const auto& neighbors = particles->NeighborLists()[i];
 			for (size_t j : neighbors)
@@ -302,21 +302,21 @@ namespace CubbyFlow
 		});
 	}
 
-	SPHSolver3::Builder SPHSolver3::GetBuilder()
+	SPHSolver2::Builder SPHSolver2::GetBuilder()
 	{
 		return Builder();
 	}
 
-	SPHSolver3 SPHSolver3::Builder::Build() const
+	SPHSolver2 SPHSolver2::Builder::Build() const
 	{
-		return SPHSolver3(m_targetDensity, m_targetSpacing, m_relativeKernelRadius);
+		return SPHSolver2(m_targetDensity, m_targetSpacing, m_relativeKernelRadius);
 	}
 
-	SPHSolver3Ptr SPHSolver3::Builder::MakeShared() const
+	SPHSolver2Ptr SPHSolver2::Builder::MakeShared() const
 	{
-		return std::shared_ptr<SPHSolver3>(
-			new SPHSolver3(m_targetDensity, m_targetSpacing, m_relativeKernelRadius),
-			[](SPHSolver3* obj)
+		return std::shared_ptr<SPHSolver2>(
+			new SPHSolver2(m_targetDensity, m_targetSpacing, m_relativeKernelRadius),
+			[](SPHSolver2* obj)
 		{
 			delete obj;
 		});

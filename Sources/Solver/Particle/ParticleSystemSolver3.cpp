@@ -8,7 +8,7 @@
 *************************************************************************/
 #include <Array/ArrayUtils.h>
 #include <Field/ConstantVectorField3.h>
-#include <Particle/ParticleSystemSolver3.h>
+#include <Solver/Particle/ParticleSystemSolver3.h>
 #include <Utils/Logger.h>
 #include <Utils/Parallel.h>
 #include <Utils/Timer.h>
