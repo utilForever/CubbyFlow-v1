@@ -338,6 +338,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Solver\Grid\GridBoundaryConditionSolver2.h" />
     <ClInclude Include="..\Includes\Solver\Grid\GridBoundaryConditionSolver3.h" />
     <ClInclude Include="..\Includes\Solver\Grid\GridDiffusionSolver2.h" />
+    <ClInclude Include="..\Includes\Solver\Grid\GridDiffusionSolver3.h" />
     <ClInclude Include="..\Includes\Solver\Grid\GridFractionalBoundaryConditionSolver2.h" />
     <ClInclude Include="..\Includes\Solver\Grid\GridFractionalBoundaryConditionSolver3.h" />
     <ClInclude Include="..\Includes\Solver\Particle\ParticleSystemSolver2.h" />
