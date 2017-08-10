@@ -1,5 +1,5 @@
 /*************************************************************************
-> File Name: GridPressureolver2.cpp
+> File Name: GridPressureSolver2.cpp
 > Project Name: CubbyFlow
 > Author: Chan-Ho Chris Ohk
 > Purpose: Abstract base class for 2-D grid-based pressure solver.
