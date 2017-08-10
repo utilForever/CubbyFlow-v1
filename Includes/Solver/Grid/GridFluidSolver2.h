@@ -1,23 +1,24 @@
 /*************************************************************************
-> File Name: LevelSetUtils.h
+> File Name: GridFluidSolver2.h
 > Project Name: CubbyFlow
-> Author: Chan-Ho Chris Ohk
-> Purpose: Level set util functions for CubbyFlow.
-> Created Time: 2017/07/13
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Author: Dongmin Kim
+> Purpose: Abstract base class for grid-based 2-D fluid solver.
+> Created Time: 2017/08/10
+> Copyright (c) 2017, Dongmin Kim
 *************************************************************************/
 
 #ifndef CUBBYFLOW_GRID_FLUID_SOLVER2_H_
 #define CUBBYFLOW_GRID_FLUID_SOLVER2_H_
 
-#include <Animation\PhysicsAnimation.h>
-#include<Grid\GridSystemData2.h>
-#include<Emitter\GridEmitter2.h>
-#include<Collider\Collider2.h>
-
+#include <Animation/PhysicsAnimation.h>
+#include <Grid/GridSystemData2.h>
+#include <Emitter/GridEmitter2.h>
+#include <Collider/Collider2.h>
+#include <Solver/Advection/AdvectionSolver2.h>
+#include <Solver/Grid/GridDiffusionSolver2.h>
+#include <Solver/Grid/GridPressureSolver2.h>
 
 namespace CubbyFlow {
-
 	//!
 	//! \brief Abstract base class for grid-based 2-D fluid solver.
 	//!
@@ -114,7 +115,7 @@ namespace CubbyFlow {
 		const GridSystemData2Ptr& gridSystemData() const;
 
 		//!
-		//! \brief Resizes grid system data.
+		//! \brief	s grid system data.
 		//!
 		//! This function resizes grid system data. You can also resize the grid by
 		//! calling resize function directly from
@@ -182,10 +183,10 @@ namespace CubbyFlow {
 
 	protected:
 		//! Called when it needs to setup initial condition.
-		void onInitialize() override;
+		void OnInitialize() override;
 
 		//! Called when advancing a single time-step.
-		void onAdvanceTimeStep(double timeIntervalInSeconds) override;
+		void OnAdvanceTimeStep(double timeIntervalInSeconds) override;
 
 		//!
 		//! \brief Returns the required sub-time-steps for given time interval.
@@ -197,7 +198,7 @@ namespace CubbyFlow {
 		//!
 		//! \see GridFluidSolver2::maxCfl
 		//!
-		unsigned int numberOfSubTimeSteps(
+		unsigned int NumberOfSubTimeSteps(
 			double timeIntervalInSeconds) const override;
 
 		//! Called at the beginning of a time-step.
@@ -386,7 +387,6 @@ namespace CubbyFlow {
 				_gridOrigin);
 		}
 	};
+}
 
-}  // namespace jet
-
-#endif  // INCLUDE_JET_GRID_FLUID_SOLVER2_H_
+#endif
