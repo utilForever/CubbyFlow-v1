@@ -527,8 +527,18 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="Grid\FaceCenteredGrid3.cpp" />
     <ClCompile Include="Grid\Grid2.cpp" />
     <ClCompile Include="Grid\Grid3.cpp" />
-    <ClCompile Include="Grid\GridFluidSolver2.cpp" />
-    <ClCompile Include="Grid\GridSmokeSolver2.cpp" />
+    <ClCompile Include="Grid\GridFluidSolver2.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Grid\GridSmokeSolver2.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="Grid\GridSystemData2.cpp" />
     <ClCompile Include="Grid\GridSystemData3.cpp" />
     <ClCompile Include="Grid\ScalarGrid2.cpp" />
@@ -572,6 +582,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="Solver\Grid\GridFractionalBoundaryConditionSolver2.cpp" />
     <ClCompile Include="Solver\Grid\GridFractionalBoundaryConditionSolver3.cpp" />
     <ClCompile Include="Solver\Grid\GridPressureSolver2.cpp" />
+    <ClCompile Include="Solver\Grid\GridPressureSolver3.cpp" />
     <ClCompile Include="Solver\Particle\ParticleSystemSolver2.cpp" />
     <ClCompile Include="Solver\Particle\ParticleSystemSolver3.cpp" />
     <ClCompile Include="Solver\PCISPH\PCISPHSolver2.cpp" />

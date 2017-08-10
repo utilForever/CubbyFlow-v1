@@ -1097,5 +1097,8 @@
     <ClCompile Include="Solver\Grid\GridPressureSolver2.cpp">
       <Filter>Solver\Grid</Filter>
     </ClCompile>
+    <ClCompile Include="Solver\Grid\GridPressureSolver3.cpp">
+      <Filter>Solver\Grid</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
