@@ -341,6 +341,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Solver\Grid\GridDiffusionSolver3.h" />
     <ClInclude Include="..\Includes\Solver\Grid\GridFractionalBoundaryConditionSolver2.h" />
     <ClInclude Include="..\Includes\Solver\Grid\GridFractionalBoundaryConditionSolver3.h" />
+    <ClInclude Include="..\Includes\Solver\Grid\GridPressureSolver2.h" />
     <ClInclude Include="..\Includes\Solver\Particle\ParticleSystemSolver2.h" />
     <ClInclude Include="..\Includes\Solver\Particle\ParticleSystemSolver3.h" />
     <ClInclude Include="..\Includes\Solver\PCISPH\PCISPHSolver2.h" />
