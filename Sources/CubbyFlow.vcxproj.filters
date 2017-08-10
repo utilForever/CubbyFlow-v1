@@ -1083,5 +1083,8 @@
     <ClCompile Include="Solver\Grid\GridDiffusionSolver2.cpp">
       <Filter>Solver\Grid</Filter>
     </ClCompile>
+    <ClCompile Include="Solver\Grid\GridDiffusionSolver3.cpp">
+      <Filter>Solver\Grid</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

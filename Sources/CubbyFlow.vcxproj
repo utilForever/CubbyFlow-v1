@@ -564,6 +564,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="Solver\Grid\GridBoundaryConditionSolver2.cpp" />
     <ClCompile Include="Solver\Grid\GridBoundaryConditionSolver3.cpp" />
     <ClCompile Include="Solver\Grid\GridDiffusionSolver2.cpp" />
+    <ClCompile Include="Solver\Grid\GridDiffusionSolver3.cpp" />
     <ClCompile Include="Solver\Grid\GridFractionalBoundaryConditionSolver2.cpp" />
     <ClCompile Include="Solver\Grid\GridFractionalBoundaryConditionSolver3.cpp" />
     <ClCompile Include="Solver\Particle\ParticleSystemSolver2.cpp" />
