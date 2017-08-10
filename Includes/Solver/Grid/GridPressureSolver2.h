@@ -21,7 +21,7 @@ namespace CubbyFlow
 	//!
 	//! This class represents a 2-D grid-based pressure solver interface which can
 	//! be used as a sub-step of GridFluidSolver2. Inheriting classes must implement
-	//! the core GridPressureSolver2::solve function as well as the helper function
+	//! the core GridPressureSolver2::Solve function as well as the helper function
 	//! GridPressureSolver2::SuggestedBoundaryConditionSolver.
 	//!
 	class GridPressureSolver2
