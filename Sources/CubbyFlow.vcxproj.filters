@@ -718,6 +718,9 @@
     <ClInclude Include="..\Includes\Solver\Grid\GridForwardEulerDiffusionSolver2.h">
       <Filter>Solver\Grid</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Solver\Grid\GridForwardEulerDiffusionSolver3.h">
+      <Filter>Solver\Grid</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
