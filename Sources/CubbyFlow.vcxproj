@@ -334,6 +334,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Solver\Advection\AdvectionSolver2.h" />
     <ClInclude Include="..\Includes\Solver\Advection\AdvectionSolver3.h" />
     <ClInclude Include="..\Includes\Solver\Grid\GridBackwardEulerDiffusionSolver2.h" />
+    <ClInclude Include="..\Includes\Solver\Grid\GridBackwardEulerDiffusionSolver3.h" />
     <ClInclude Include="..\Includes\Solver\Grid\GridBlockedBoundaryConditionSolver2.h" />
     <ClInclude Include="..\Includes\Solver\Grid\GridBlockedBoundaryConditionSolver3.h" />
     <ClInclude Include="..\Includes\Solver\Grid\GridBoundaryConditionSolver2.h" />
