@@ -94,6 +94,9 @@
     <Filter Include="Solver\PCISPH">
       <UniqueIdentifier>{e0623ba4-97d3-46f5-82bd-2396d4791a3a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="FDM">
+      <UniqueIdentifier>{94244947-1431-462f-ba65-454033551df6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Includes\Animation\Animation.h">
@@ -558,7 +561,6 @@
     <ClInclude Include="..\Includes\LevelSet\LevelSetUtils-Impl.h">
       <Filter>LevelSet</Filter>
     </ClInclude>
-    <ClInclude Include="..\Includes\Math\FDMUtils.h" />
     <ClInclude Include="..\Includes\Grid\VectorGrid2.h">
       <Filter>Grid</Filter>
     </ClInclude>
@@ -726,6 +728,9 @@
     </ClInclude>
     <ClInclude Include="..\Includes\Solver\Grid\GridBackwardEulerDiffusionSolver3.h">
       <Filter>Solver\Grid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\FDM\FDMUtils.h">
+      <Filter>FDM</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -953,7 +958,6 @@
     <ClCompile Include="MarchingCubes\MarchingCubes.cpp">
       <Filter>MarchingCubes</Filter>
     </ClCompile>
-    <ClCompile Include="Math\FDMUtils.cpp" />
     <ClCompile Include="Grid\VectorGrid2.cpp">
       <Filter>Grid</Filter>
     </ClCompile>
@@ -1111,6 +1115,9 @@
     </ClCompile>
     <ClCompile Include="Solver\Grid\GridPressureSolver3.cpp">
       <Filter>Solver\Grid</Filter>
+    </ClCompile>
+    <ClCompile Include="FDM\FDMUtils.cpp">
+      <Filter>FDM</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

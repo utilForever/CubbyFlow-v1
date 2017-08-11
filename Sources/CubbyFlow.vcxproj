@@ -236,6 +236,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Emitter\VolumeGridEmitter3.h" />
     <ClInclude Include="..\Includes\Emitter\VolumeParticleEmitter2.h" />
     <ClInclude Include="..\Includes\Emitter\VolumeParticleEmitter3.h" />
+    <ClInclude Include="..\Includes\FDM\FDMUtils.h" />
     <ClInclude Include="..\Includes\Field\ConstantScalarField2.h" />
     <ClInclude Include="..\Includes\Field\ConstantScalarField3.h" />
     <ClInclude Include="..\Includes\Field\ConstantVectorField2.h" />
@@ -284,7 +285,6 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\MarchingCubes\MarchingCubes.h" />
     <ClInclude Include="..\Includes\MarchingCubes\MarchingCubesTable.h" />
     <ClInclude Include="..\Includes\MarchingCubes\MarchingSquaresTable.h" />
-    <ClInclude Include="..\Includes\Math\FDMUtils.h" />
     <ClInclude Include="..\Includes\Math\MathUtils-Impl.h" />
     <ClInclude Include="..\Includes\Math\MathUtils.h" />
     <ClInclude Include="..\Includes\Math\Quaternion-Impl.h" />
@@ -516,6 +516,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="FDM\FDMUtils.cpp" />
     <ClCompile Include="Geometry\Box2.cpp" />
     <ClCompile Include="Geometry\Box3.cpp" />
     <ClCompile Include="Geometry\Cylinder3.cpp" />
@@ -554,7 +555,6 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="Grid\VertexCenteredVectorGrid2.cpp" />
     <ClCompile Include="Grid\VertexCenteredVectorGrid3.cpp" />
     <ClCompile Include="MarchingCubes\MarchingCubes.cpp" />
-    <ClCompile Include="Math\FDMUtils.cpp" />
     <ClCompile Include="Particle\ParticleSystemData2.cpp" />
     <ClCompile Include="Particle\ParticleSystemData3.cpp" />
     <ClCompile Include="PointGenerator\BccLatticePointGenerator.cpp" />
