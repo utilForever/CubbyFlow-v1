@@ -1148,5 +1148,8 @@
     <ClCompile Include="Solver\FDM\FDMICCGSolver2.cpp">
       <Filter>Solver\FDM</Filter>
     </ClCompile>
+    <ClCompile Include="Solver\FDM\FDMICCGSolver3.cpp">
+      <Filter>Solver\FDM</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

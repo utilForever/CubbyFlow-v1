@@ -508,6 +508,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="Solver\Advection\AdvectionSolver2.cpp" />
     <ClCompile Include="Solver\Advection\AdvectionSolver3.cpp" />
     <ClCompile Include="Solver\FDM\FDMICCGSolver2.cpp" />
+    <ClCompile Include="Solver\FDM\FDMICCGSolver3.cpp" />
     <ClCompile Include="Solver\Grid\GridBlockedBoundaryConditionSolver2.cpp" />
     <ClCompile Include="Solver\Grid\GridBlockedBoundaryConditionSolver3.cpp" />
     <ClCompile Include="Solver\Grid\GridBoundaryConditionSolver2.cpp" />
