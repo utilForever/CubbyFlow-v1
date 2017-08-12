@@ -25,7 +25,6 @@ namespace CubbyFlow
 
 	//! Shared pointer type for the FDMLinearSystemSolver2.
 	using FDMLinearSystemSolver2Ptr = std::shared_ptr<FDMLinearSystemSolver2>;
-
 }
 
 #endif
