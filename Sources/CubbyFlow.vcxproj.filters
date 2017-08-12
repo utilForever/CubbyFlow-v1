@@ -97,6 +97,9 @@
     <Filter Include="FDM">
       <UniqueIdentifier>{94244947-1431-462f-ba65-454033551df6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Solver\FDM">
+      <UniqueIdentifier>{66ebd415-b968-4e17-95fe-c6c18b5f5927}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Includes\Animation\Animation.h">
@@ -731,6 +734,9 @@
     </ClInclude>
     <ClInclude Include="..\Includes\FDM\FDMLinearSystem3.h">
       <Filter>FDM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Solver\FDM\FDMLinearSystemSolver2.h">
+      <Filter>Solver\FDM</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
