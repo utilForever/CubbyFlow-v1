@@ -1136,5 +1136,8 @@
     <ClCompile Include="Solver\Grid\GridForwardEulerDiffusionSolver2.cpp">
       <Filter>Solver\Grid</Filter>
     </ClCompile>
+    <ClCompile Include="Solver\Grid\GridForwardEulerDiffusionSolver3.cpp">
+      <Filter>Solver\Grid</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
