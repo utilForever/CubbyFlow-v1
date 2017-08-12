@@ -69,11 +69,7 @@ namespace CubbyFlow
 		static void MVM(const FDMMatrix2& m, const FDMVector2& v, FDMVector2* result);
 
 		//! Computes residual vector (b - ax).
-		static void Residual(
-			const FDMMatrix2& a,
-			const FDMVector2& x,
-			const FDMVector2& b,
-			FDMVector2* result);
+		static void Residual(const FDMMatrix2& a, const FDMVector2& x, const FDMVector2& b, FDMVector2* result);
 
 		//! Returns L2-norm of the given vector \p v.
 		static double L2Norm(const FDMVector2& v);
