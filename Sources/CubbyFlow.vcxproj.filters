@@ -1133,5 +1133,8 @@
     <ClCompile Include="FDM\FDMLinearSystem3.cpp">
       <Filter>FDM</Filter>
     </ClCompile>
+    <ClCompile Include="Solver\Grid\GridForwardEulerDiffusionSolver2.cpp">
+      <Filter>Solver\Grid</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
