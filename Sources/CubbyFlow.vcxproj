@@ -335,6 +335,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Size\Size3.h" />
     <ClInclude Include="..\Includes\Solver\Advection\AdvectionSolver2.h" />
     <ClInclude Include="..\Includes\Solver\Advection\AdvectionSolver3.h" />
+    <ClInclude Include="..\Includes\Solver\FDM\FDMICCGSolver2.h" />
     <ClInclude Include="..\Includes\Solver\FDM\FDMLinearSystemSolver2.h" />
     <ClInclude Include="..\Includes\Solver\FDM\FDMLinearSystemSolver3.h" />
     <ClInclude Include="..\Includes\Solver\Grid\GridBackwardEulerDiffusionSolver2.h" />
@@ -511,14 +512,18 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="Solver\Grid\GridBoundaryConditionSolver3.cpp" />
     <ClCompile Include="Solver\Grid\GridDiffusionSolver2.cpp" />
     <ClCompile Include="Solver\Grid\GridDiffusionSolver3.cpp" />
-    <ClCompile Include="Solver\Grid\GridFluidSolver2.cpp" />
+    <ClCompile Include="Solver\Grid\GridFluidSolver2.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="Solver\Grid\GridForwardEulerDiffusionSolver2.cpp" />
     <ClCompile Include="Solver\Grid\GridForwardEulerDiffusionSolver3.cpp" />
     <ClCompile Include="Solver\Grid\GridFractionalBoundaryConditionSolver2.cpp" />
     <ClCompile Include="Solver\Grid\GridFractionalBoundaryConditionSolver3.cpp" />
     <ClCompile Include="Solver\Grid\GridPressureSolver2.cpp" />
     <ClCompile Include="Solver\Grid\GridPressureSolver3.cpp" />
-    <ClCompile Include="Solver\Grid\GridSmokeSolver2.cpp" />
+    <ClCompile Include="Solver\Grid\GridSmokeSolver2.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="Solver\Particle\ParticleSystemSolver2.cpp" />
     <ClCompile Include="Solver\Particle\ParticleSystemSolver3.cpp" />
     <ClCompile Include="Solver\PCISPH\PCISPHSolver2.cpp" />
