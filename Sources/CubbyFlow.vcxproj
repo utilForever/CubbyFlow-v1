@@ -453,6 +453,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="Emitter\VolumeParticleEmitter2.cpp" />
     <ClCompile Include="Emitter\VolumeParticleEmitter3.cpp" />
     <ClCompile Include="FDM\FDMLinearSystem2.cpp" />
+    <ClCompile Include="FDM\FDMLinearSystem3.cpp" />
     <ClCompile Include="FDM\FDMUtils.cpp" />
     <ClCompile Include="Geometry\Box2.cpp" />
     <ClCompile Include="Geometry\Box3.cpp" />

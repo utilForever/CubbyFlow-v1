@@ -1121,5 +1121,8 @@
     <ClCompile Include="FDM\FDMLinearSystem2.cpp">
       <Filter>FDM</Filter>
     </ClCompile>
+    <ClCompile Include="FDM\FDMLinearSystem3.cpp">
+      <Filter>FDM</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
