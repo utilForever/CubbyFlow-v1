@@ -237,6 +237,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Emitter\VolumeParticleEmitter2.h" />
     <ClInclude Include="..\Includes\Emitter\VolumeParticleEmitter3.h" />
     <ClInclude Include="..\Includes\FDM\FDMLinearSystem2.h" />
+    <ClInclude Include="..\Includes\FDM\FDMLinearSystem3.h" />
     <ClInclude Include="..\Includes\FDM\FDMUtils.h" />
     <ClInclude Include="..\Includes\Field\ConstantScalarField2.h" />
     <ClInclude Include="..\Includes\Field\ConstantScalarField3.h" />

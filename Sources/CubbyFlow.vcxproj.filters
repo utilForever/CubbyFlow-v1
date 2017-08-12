@@ -729,6 +729,9 @@
     <ClInclude Include="..\Includes\FDM\FDMLinearSystem2.h">
       <Filter>FDM</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\FDM\FDMLinearSystem3.h">
+      <Filter>FDM</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
