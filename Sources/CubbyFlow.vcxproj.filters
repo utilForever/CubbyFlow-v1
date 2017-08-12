@@ -1118,5 +1118,8 @@
     <ClCompile Include="Solver\Grid\GridSmokeSolver2.cpp">
       <Filter>Solver\Grid</Filter>
     </ClCompile>
+    <ClCompile Include="FDM\FDMLinearSystem2.cpp">
+      <Filter>FDM</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
