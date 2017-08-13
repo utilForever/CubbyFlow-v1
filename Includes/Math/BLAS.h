@@ -23,7 +23,7 @@ namespace CubbyFlow
 	//! custom vector/matrix types.
 	//!
 	template <typename S, typename V, typename M>
-	struct Blas
+	struct BLAS
 	{
 		using ScalarType = S;
 		using VectorType = V;
