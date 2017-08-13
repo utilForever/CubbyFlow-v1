@@ -756,6 +756,9 @@
     <ClInclude Include="..\Includes\Math\CG.h">
       <Filter>Math</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Math\CG-Impl.h">
+      <Filter>Math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
