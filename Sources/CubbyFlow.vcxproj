@@ -287,6 +287,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\MarchingCubes\MarchingCubes.h" />
     <ClInclude Include="..\Includes\MarchingCubes\MarchingCubesTable.h" />
     <ClInclude Include="..\Includes\MarchingCubes\MarchingSquaresTable.h" />
+    <ClInclude Include="..\Includes\Math\BLAS.h" />
     <ClInclude Include="..\Includes\Math\MathUtils-Impl.h" />
     <ClInclude Include="..\Includes\Math\MathUtils.h" />
     <ClInclude Include="..\Includes\Math\Quaternion-Impl.h" />
