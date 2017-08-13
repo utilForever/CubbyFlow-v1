@@ -7,7 +7,7 @@
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <Grid/ScalarGrid3.h>
-#include <Math/FDMUtils.h>
+#include <FDM/FDMUtils.h>
 #include <Utils/FlatbuffersHelper.h>
 
 #include <Flatbuffers/generated/ScalarGrid3_generated.h>
