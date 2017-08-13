@@ -7,6 +7,7 @@
 > Created Time: 2017/08/12
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
+#include <Math/CG.h>
 #include <Solver/FDM/FDMICCGSolver3.h>
 #include <Utils/Logger.h>
 
