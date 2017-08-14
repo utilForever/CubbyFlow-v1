@@ -1187,5 +1187,8 @@
     <ClCompile Include="Solver\Grid\GridSinglePhasePressureSolver3.cpp">
       <Filter>Solver\Grid</Filter>
     </ClCompile>
+    <ClCompile Include="Solver\Grid\GridFractionalSinglePhasePressureSolver2.cpp">
+      <Filter>Solver\Grid</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
