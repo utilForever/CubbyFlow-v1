@@ -355,6 +355,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Solver\Grid\GridForwardEulerDiffusionSolver3.h" />
     <ClInclude Include="..\Includes\Solver\Grid\GridFractionalBoundaryConditionSolver2.h" />
     <ClInclude Include="..\Includes\Solver\Grid\GridFractionalBoundaryConditionSolver3.h" />
+    <ClInclude Include="..\Includes\Solver\Grid\GridFractionalSinglePhasePressureSolver2.h" />
     <ClInclude Include="..\Includes\Solver\Grid\GridPressureSolver2.h" />
     <ClInclude Include="..\Includes\Solver\Grid\GridPressureSolver3.h" />
     <ClInclude Include="..\Includes\Solver\Grid\GridSinglePhasePressureSolver2.h" />
