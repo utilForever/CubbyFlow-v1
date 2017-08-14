@@ -71,7 +71,7 @@ namespace CubbyFlow
 		//! This function returns the best boundary condition solver that works well
 		//! with this pressure solver. Depending on the pressure solver
 		//! implementation, different boundary condition solver might be used. For
-		//! this particular class, an instance of GridBlockedBoundaryConditionSolver2
+		//! this particular class, an instance of GridBlockedBoundaryConditionSolver3
 		//! will be returned since this pressure solver encodes boundaries
 		//! like pixelated Lego blocks.
 		//!
