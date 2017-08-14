@@ -534,6 +534,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="Solver\Grid\GridFractionalBoundaryConditionSolver3.cpp" />
     <ClCompile Include="Solver\Grid\GridPressureSolver2.cpp" />
     <ClCompile Include="Solver\Grid\GridPressureSolver3.cpp" />
+    <ClCompile Include="Solver\Grid\GridSinglePhasePressureSolver2.cpp" />
     <ClCompile Include="Solver\Grid\GridSmokeSolver2.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
