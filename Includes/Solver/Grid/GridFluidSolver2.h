@@ -129,7 +129,7 @@ namespace CubbyFlow
 		void ResizeGrid(
 			const Size2& newSize,
 			const Vector2D& newGridSpacing,
-			const Vector2D& newGridOrigin);
+			const Vector2D& newGridOrigin) const;
 
 		//!
 		//! \brief Returns the resolution of the grid system data.
@@ -245,7 +245,7 @@ namespace CubbyFlow
 		//! This function applies the boundary condition to the velocity field by
 		//! constraining the flow based on the boundary condition solver.
 		//!
-		void ApplyBoundaryCondition();
+		void ApplyBoundaryCondition() const;
 
 		//! Extrapolates given field into the collider-occupied region.
 		void ExtrapolateIntoCollider(ScalarGrid2* grid);
@@ -281,9 +281,9 @@ namespace CubbyFlow
 
 		void EndAdvanceTimeStep(double timeIntervalInSeconds);
 
-		void UpdateCollider(double timeIntervalInSeconds);
+		void UpdateCollider(double timeIntervalInSeconds) const;
 
-		void UpdateEmitter(double timeIntervalInSeconds);
+		void UpdateEmitter(double timeIntervalInSeconds) const;
 	};
 
 	//! Shared pointer type for the GridFluidSolver2.

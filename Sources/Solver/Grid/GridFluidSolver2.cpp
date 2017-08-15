@@ -146,7 +146,7 @@ namespace CubbyFlow
 	void GridFluidSolver2::ResizeGrid(
 		const Size2& newSize,
 		const Vector2D& newGridSpacing,
-		const Vector2D& newGridOrigin)
+		const Vector2D& newGridOrigin) const
 	{
 		m_grids->Resize(newSize, newGridSpacing, newGridOrigin);
 	}
@@ -405,7 +405,7 @@ namespace CubbyFlow
 		}
 	}
 
-	void GridFluidSolver2::ApplyBoundaryCondition()
+	void GridFluidSolver2::ApplyBoundaryCondition() const
 	{
 		auto vel = m_grids->GetVelocity();
 
@@ -542,7 +542,7 @@ namespace CubbyFlow
 		OnEndAdvanceTimeStep(timeIntervalInSeconds);
 	}
 
-	void GridFluidSolver2::UpdateCollider(double timeIntervalInSeconds)
+	void GridFluidSolver2::UpdateCollider(double timeIntervalInSeconds) const
 	{
 		if (m_collider != nullptr)
 		{
@@ -550,7 +550,7 @@ namespace CubbyFlow
 		}
 	}
 
-	void GridFluidSolver2::UpdateEmitter(double timeIntervalInSeconds)
+	void GridFluidSolver2::UpdateEmitter(double timeIntervalInSeconds) const
 	{
 		if (m_emitter != nullptr)
 		{
