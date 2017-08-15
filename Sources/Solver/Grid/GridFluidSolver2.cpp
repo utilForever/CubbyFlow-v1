@@ -8,6 +8,8 @@
 *************************************************************************/
 
 #include <Solver/Grid/GridFluidSolver2.h>
+#include <Utils/Timer.h>
+#include <Utils/Logger.h>
 
 namespace CubbyFlow
 {
@@ -60,7 +62,15 @@ namespace CubbyFlow
 
 	double GridFluidSolver2::cfl(double timeIntervalInSeconds) const
 	{
+		auto u = velocity()->GetUAccessor();
+		Vector2D maxU(std::numeric_limits<double>::min(), std::numeric_limits<double>::min());
 
+		u.ForEach([&](Vector2D vel) {
+			maxU.x = std::max(maxU.x, std::abs(vel.x));
+			maxU.y = std::max(maxU.y, std::abs(vel.y));
+		});
+
+		return std::max(maxU.x * timeIntervalInSeconds / gridSpacing().x, maxU.y * timeIntervalInSeconds / gridSpacing().y);
 	}
 
 	double GridFluidSolver2::maxCfl() const
@@ -171,5 +181,134 @@ namespace CubbyFlow
 		return builder();
 	}
 
+	void GridFluidSolver2::OnInitialize()
+	{
+		Timer timer;
+		updateCollider(0.0);
+		CUBBYFLOW_INFO << "Update collider took "
+			<< timer.DurationInSeconds() << " seconds";
 
+		timer.Reset();
+		updateEmitter(0.0);
+		CUBBYFLOW_INFO << "Update emitter took "
+			<< timer.DurationInSeconds() << " seconds";
+	}
+
+	void GridFluidSolver2::OnAdvanceTimeStep(double timeIntervalInSeconds)
+	{
+		beginAdvanceTimeStep(timeIntervalInSeconds);
+
+		Timer timer;
+		computeExternalForces(timeIntervalInSeconds);
+
+		CUBBYFLOW_INFO << "Compute external forces took "
+			<< timer.DurationInSeconds() << " seconds";
+
+		timer.Reset();
+		computeAdvection(timeIntervalInSeconds);
+		CUBBYFLOW_INFO << "Compute advection took "
+			<< timer.DurationInSeconds() << " seconds";
+		
+		timer.Reset();
+		computePressure(timeIntervalInSeconds);
+		CUBBYFLOW_INFO << "Compute pressure took "
+			<< timer.DurationInSeconds() << " seconds";
+
+		timer.Reset();
+		computeGravity(timeIntervalInSeconds);
+		CUBBYFLOW_INFO << "Compute gravity took "
+			<< timer.DurationInSeconds() << " seconds";
+
+		timer.Reset();
+		computeViscosity(timeIntervalInSeconds);
+		CUBBYFLOW_INFO << "Compute viscosity took "
+			<< timer.DurationInSeconds() << " seconds";
+
+		endAdvanceTimeStep(timeIntervalInSeconds);
+	}
+
+	unsigned int GridFluidSolver2::NumberOfSubTimeSteps(double timeIntervalInSeconds) const
+	{
+		return std::ceil(cfl(timeIntervalInSeconds) / maxCfl());
+	}
+
+	void GridFluidSolver2::onBeginAdvanceTimeStep(double timeIntervalInSeconds)
+	{
+		// Do nothing
+	}
+
+	void GridFluidSolver2::onEndAdvanceTimeStep(double timeIntervalInSeconds)
+	{
+		// Do nothing
+	}
+
+	void GridFluidSolver2::computeExternalForces(double timeIntervalInSeconds)
+	{
+	}
+
+	void GridFluidSolver2::computeGravity(double timeIntervalInSeconds)
+	{
+		if (_gravity.LengthSquared() > 1e-4)
+		{
+			auto vel = velocity();
+			auto u = vel->GetUAccessor();
+			auto v = vel->GetVAccessor();
+			
+			if(std::abs(_gravity.x) > 1e-4)
+			{
+				vel->ForEachUIndex([&](size_t i, size_t j) {
+					u(i, j) += timeIntervalInSeconds * _gravity.x;
+				});
+
+				vel->ForEachVIndex([&](size_t i, size_t j) {
+					v(i, j) += timeIntervalInSeconds * _gravity.y;
+				});
+			}
+
+			applyBoundaryCondition();
+		}
+	}
+
+	void GridFluidSolver2::computeViscosity(double timeIntervalInSeconds)
+	{
+		if (_diffusionSolver != nullptr && _viscosityCoefficient > 1e-4)
+		{
+			auto vel = velocity();
+			auto vel0 = std::dynamic_pointer_cast<FaceCenteredGrid2>(vel->Clone());
+
+			_diffusionSolver->Solve(*vel0,
+				_viscosityCoefficient,
+				timeIntervalInSeconds,
+				vel.get(),
+				colliderSdf(),
+				*fluidSdf());
+			applyBoundaryCondition();
+		}
+	}
+
+	void GridFluidSolver2::computeAdvection(double timeIntervalInSeconds)
+	{
+		auto vel = velocity();
+		if (_advectionSolver != nullptr)
+		{
+			auto vel0 = std::dynamic_pointer_cast<FaceCenteredGrid2>(vel->Clone());
+			_advectionSolver->Advect(
+				*vel0,
+				*vel0,
+				timeIntervalInSeconds,
+				vel.get(),
+				colliderSdf());
+			applyBoundaryCondition();
+		}
+	}
+
+	void GridFluidSolver2::computePressure(double timeIntervalInSeconds)
+	{
+		auto vel = velocity();
+		if (_pressureSolver != nullptr)
+		{
+			auto vel0 = std::dynamic_pointer_cast<FaceCenteredGrid2>(vel->Clone());
+			_pressureSolver->Solve(*vel0, timeIntervalInSeconds, vel.get(),,, *fluidSdf());
+		}
+	}
 }

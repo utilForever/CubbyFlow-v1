@@ -771,6 +771,9 @@
     <ClInclude Include="..\Includes\Solver\Grid\GridFractionalSinglePhasePressureSolver3.h">
       <Filter>Solver\Grid</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Solver\Grid\GridFluidSolver2.h">
+      <Filter>Solver\Grid</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
