@@ -372,7 +372,7 @@ namespace CubbyFlow
 		
 		if (m_useDomainSize)
 		{
-			gridSpacing.set(m_domainSizeX / static_cast<double>(m_resolution.x));
+			gridSpacing.Set(m_domainSizeX / static_cast<double>(m_resolution.x));
 		}
 
 		return gridSpacing;
