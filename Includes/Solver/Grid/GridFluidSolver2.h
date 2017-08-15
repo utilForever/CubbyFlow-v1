@@ -6,19 +6,19 @@
 > Created Time: 2017/08/10
 > Copyright (c) 2017, Dongmin Kim
 *************************************************************************/
-
-#ifndef CUBBYFLOW_GRID_FLUID_SOLVER2_H_
-#define CUBBYFLOW_GRID_FLUID_SOLVER2_H_
+#ifndef CUBBYFLOW_GRID_FLUID_SOLVER2_H
+#define CUBBYFLOW_GRID_FLUID_SOLVER2_H
 
 #include <Animation/PhysicsAnimation.h>
-#include <Grid/GridSystemData2.h>
-#include <Emitter/GridEmitter2.h>
 #include <Collider/Collider2.h>
+#include <Emitter/GridEmitter2.h>
+#include <Grid/GridSystemData2.h>
 #include <Solver/Advection/AdvectionSolver2.h>
 #include <Solver/Grid/GridDiffusionSolver2.h>
 #include <Solver/Grid/GridPressureSolver2.h>
 
-namespace CubbyFlow {
+namespace CubbyFlow
+{
 	//!
 	//! \brief Abstract base class for grid-based 2-D fluid solver.
 	//!
@@ -30,7 +30,8 @@ namespace CubbyFlow {
 	//! user wants to change the advection solver to her/his own implementation,
 	//! simply call GridFluidSolver2::setAdvectionSolver(newSolver).
 	//!
-	class GridFluidSolver2 : public PhysicsAnimation {
+	class GridFluidSolver2 : public PhysicsAnimation
+	{
 	public:
 		class Builder;
 
@@ -194,7 +195,7 @@ namespace CubbyFlow {
 		//! This function returns the required sub-time-steps for given time
 		//! interval based on the max allowed CFL number. If the time interval is
 		//! too large so that it makes the CFL number greater than the max value,
-		//! This function will return a numebr that is greater than 1.
+		//! This function will return a number that is greater than 1.
 		//!
 		//! \see GridFluidSolver2::maxCfl
 		//!
