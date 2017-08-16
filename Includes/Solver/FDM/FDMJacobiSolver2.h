@@ -6,8 +6,8 @@
 > Created Time: 2017/08/17
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
-#ifndef CUBBYFLOW_FDM_CG_SOLVER3_H
-#define CUBBYFLOW_FDM_CG_SOLVER3_H
+#ifndef CUBBYFLOW_FDM_JACOBI_SOLVER2_H
+#define CUBBYFLOW_FDM_JACOBI_SOLVER2_H
 
 #include <Solver/FDM/FDMLinearSystemSolver2.h>
 
