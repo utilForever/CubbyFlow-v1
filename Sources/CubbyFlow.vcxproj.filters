@@ -777,6 +777,9 @@
     <ClInclude Include="..\Includes\Solver\Grid\GridFluidSolver3.h">
       <Filter>Solver\Grid</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Solver\FDM\FDMCGSolver2.h">
+      <Filter>Solver\FDM</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
