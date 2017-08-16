@@ -526,6 +526,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="Solver\FDM\FDMCGSolver2.cpp" />
     <ClCompile Include="Solver\FDM\FDMCGSolver3.cpp" />
     <ClCompile Include="Solver\FDM\FDMGaussSeidelSolver2.cpp" />
+    <ClCompile Include="Solver\FDM\FDMGaussSeidelSolver3.cpp" />
     <ClCompile Include="Solver\FDM\FDMICCGSolver2.cpp" />
     <ClCompile Include="Solver\FDM\FDMICCGSolver3.cpp" />
     <ClCompile Include="Solver\FDM\FDMJacobiSolver2.cpp" />
