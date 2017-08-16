@@ -1208,5 +1208,8 @@
     <ClCompile Include="Solver\Grid\GridFluidSolver3.cpp">
       <Filter>Solver\Grid</Filter>
     </ClCompile>
+    <ClCompile Include="Solver\FDM\FDMCGSolver2.cpp">
+      <Filter>Solver\FDM</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

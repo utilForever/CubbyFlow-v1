@@ -519,6 +519,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="SemiLagrangian\SemiLagrangian3.cpp" />
     <ClCompile Include="Solver\Advection\AdvectionSolver2.cpp" />
     <ClCompile Include="Solver\Advection\AdvectionSolver3.cpp" />
+    <ClCompile Include="Solver\FDM\FDMCGSolver2.cpp" />
     <ClCompile Include="Solver\FDM\FDMICCGSolver2.cpp" />
     <ClCompile Include="Solver\FDM\FDMICCGSolver3.cpp" />
     <ClCompile Include="Solver\Grid\GridBackwardEulerDiffusionSolver2.cpp" />
