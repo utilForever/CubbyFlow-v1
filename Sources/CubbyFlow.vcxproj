@@ -352,6 +352,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Solver\Grid\GridDiffusionSolver2.h" />
     <ClInclude Include="..\Includes\Solver\Grid\GridDiffusionSolver3.h" />
     <ClInclude Include="..\Includes\Solver\Grid\GridFluidSolver2.h" />
+    <ClInclude Include="..\Includes\Solver\Grid\GridFluidSolver3.h" />
     <ClInclude Include="..\Includes\Solver\Grid\GridForwardEulerDiffusionSolver2.h" />
     <ClInclude Include="..\Includes\Solver\Grid\GridForwardEulerDiffusionSolver3.h" />
     <ClInclude Include="..\Includes\Solver\Grid\GridFractionalBoundaryConditionSolver2.h" />
@@ -529,6 +530,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="Solver\Grid\GridFluidSolver2.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="Solver\Grid\GridFluidSolver3.cpp" />
     <ClCompile Include="Solver\Grid\GridForwardEulerDiffusionSolver2.cpp" />
     <ClCompile Include="Solver\Grid\GridForwardEulerDiffusionSolver3.cpp" />
     <ClCompile Include="Solver\Grid\GridFractionalBoundaryConditionSolver2.cpp" />
