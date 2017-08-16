@@ -1232,5 +1232,8 @@
     <ClCompile Include="Solver\FDM\FDMJacobiSolver3.cpp">
       <Filter>Solver\FDM</Filter>
     </ClCompile>
+    <ClCompile Include="Solver\FDM\FDMGaussSeidelSolver2.cpp">
+      <Filter>Solver\FDM</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
