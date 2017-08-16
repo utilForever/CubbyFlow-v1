@@ -439,6 +439,21 @@ namespace CubbyFlow
 		ExtrapolateToRegion(grid->GetConstDataAccessor(), marker, depth, grid->GetDataAccessor());
 	}
 
+	void GridFluidSolver3::ExtrapolateIntoCollider(CollocatedVectorGrid3* grid)
+	{
+		Array3<char> marker(grid->GetDataSize());
+		auto pos = grid->GetDataPosition();
+
+		marker.ParallelForEachIndex([&](size_t i, size_t j, size_t k)
+		{
+			marker(i, j, k) = IsInsideSDF(GetColliderSDF()->Sample(pos(i, j, k)));
+		});
+
+		unsigned int depth = static_cast<unsigned int>(std::ceil(m_maxCFL));
+		ExtrapolateToRegion(grid->GetConstDataAccessor(), marker, depth, grid->GetDataAccessor());
+	}
+
+
 	void GridFluidSolver3::ExtrapolateIntoCollider(FaceCenteredGrid3* grid)
 	{
 		auto u = grid->GetUAccessor();
