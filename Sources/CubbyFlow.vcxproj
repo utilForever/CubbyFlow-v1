@@ -342,6 +342,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Solver\FDM\FDMCGSolver2.h" />
     <ClInclude Include="..\Includes\Solver\FDM\FDMCGSolver3.h" />
     <ClInclude Include="..\Includes\Solver\FDM\FDMGaussSeidelSolver2.h" />
+    <ClInclude Include="..\Includes\Solver\FDM\FDMGaussSeidelSolver3.h" />
     <ClInclude Include="..\Includes\Solver\FDM\FDMICCGSolver2.h" />
     <ClInclude Include="..\Includes\Solver\FDM\FDMICCGSolver3.h" />
     <ClInclude Include="..\Includes\Solver\FDM\FDMJacobiSolver2.h" />
