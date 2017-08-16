@@ -780,6 +780,9 @@
     <ClInclude Include="..\Includes\Solver\FDM\FDMCGSolver2.h">
       <Filter>Solver\FDM</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Solver\FDM\FDMCGSolver3.h">
+      <Filter>Solver\FDM</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
