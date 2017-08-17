@@ -100,6 +100,9 @@
     <Filter Include="Solver\FDM">
       <UniqueIdentifier>{66ebd415-b968-4e17-95fe-c6c18b5f5927}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Solver\Smoke">
+      <UniqueIdentifier>{4a15bdfb-23e4-4287-bd52-b30cf99a1afa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Includes\Animation\Animation.h">
@@ -794,6 +797,9 @@
     </ClInclude>
     <ClInclude Include="..\Includes\Solver\FDM\FDMGaussSeidelSolver3.h">
       <Filter>Solver\FDM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Solver\Smoke\GridSmokeSolver2.h">
+      <Filter>Solver\Smoke</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
