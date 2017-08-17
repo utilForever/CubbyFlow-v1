@@ -1241,5 +1241,8 @@
     <ClCompile Include="Solver\FDM\FDMGaussSeidelSolver3.cpp">
       <Filter>Solver\FDM</Filter>
     </ClCompile>
+    <ClCompile Include="Solver\Smoke\GridSmokeSolver2.cpp">
+      <Filter>Solver\Smoke</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
