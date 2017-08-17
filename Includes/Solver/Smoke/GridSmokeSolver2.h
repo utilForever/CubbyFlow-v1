@@ -168,8 +168,8 @@ namespace CubbyFlow
 		void ComputeExternalForces(double timeIntervalInSeconds) override;
 
 	private:
-		size_t m_smokeDensityDataId;
-		size_t m_temperatureDataId;
+		size_t m_smokeDensityDataID = 0;
+		size_t m_temperatureDataID = 0;
 		double m_smokeDiffusionCoefficient = 0.0;
 		double m_temperatureDiffusionCoefficient = 0.0;
 		double m_buoyancySmokeDensityFactor = -0.000625;
