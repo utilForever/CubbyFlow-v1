@@ -801,7 +801,7 @@
     <ClInclude Include="..\Includes\Solver\Smoke\GridSmokeSolver2.h">
       <Filter>Solver\Smoke</Filter>
     </ClInclude>
-    <ClInclude Include="..\Includes\Solver\Smoke\GridSmokeSolve3.h">
+    <ClInclude Include="..\Includes\Solver\Smoke\GridSmokeSolver3.h">
       <Filter>Solver\Smoke</Filter>
     </ClInclude>
   </ItemGroup>
