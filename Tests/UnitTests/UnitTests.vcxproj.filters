@@ -218,6 +218,9 @@
     <ClCompile Include="PointParallelHashGridSearcher3Tests.cpp">
       <Filter>Searcher</Filter>
     </ClCompile>
+    <ClCompile Include="VertexCenteredScalarGrid2Tests.cpp">
+      <Filter>Grid</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -276,6 +279,9 @@
     </Filter>
     <Filter Include="Searcher">
       <UniqueIdentifier>{2c0970b3-9dab-4e6d-909f-9d9127e67b01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Grid">
+      <UniqueIdentifier>{ae11687a-dbeb-487c-a6a4-5f929600fbd8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
