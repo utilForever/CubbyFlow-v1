@@ -1,7 +1,7 @@
 #include "pch.h"
 
 #include <Animation/Frame.h>
-#include <Particle/PointParticleEmitter2.h>
+#include <Emitter/PointParticleEmitter2.h>
 
 using namespace CubbyFlow;
 

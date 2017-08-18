@@ -1,8 +1,8 @@
 #include "pch.h"
 
 #include <Animation/Frame.h>
+#include <Emitter/VolumeParticleEmitter3.h>
 #include <Geometry/Sphere3.h>
-#include <Particle/VolumeParticleEmitter3.h>
 #include <Surface/Implicit/SurfaceToImplicit3.h>
 
 using namespace CubbyFlow;
