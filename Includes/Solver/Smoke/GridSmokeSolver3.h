@@ -172,7 +172,7 @@ namespace CubbyFlow
 		size_t m_temperatureDataID = 0;
 		double m_smokeDiffusionCoefficient = 0.0;
 		double m_temperatureDiffusionCoefficient = 0.0;
-		double m_buoyancySmokeDensityFactor = -0.000635;
+		double m_buoyancySmokeDensityFactor = -0.000625;
 		double m_buoyancyTemperatureFactor = 5.0;
 		double m_smokeDecayFactor = 0.001;
 		double m_temperatureDecayFactor = 0.001;
