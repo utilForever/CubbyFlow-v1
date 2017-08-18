@@ -227,6 +227,9 @@
     <ClCompile Include="VertexCenteredVectorGrid2Tests.cpp">
       <Filter>Grid</Filter>
     </ClCompile>
+    <ClCompile Include="VertexCenteredVectorGrid3Tests.cpp">
+      <Filter>Grid</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

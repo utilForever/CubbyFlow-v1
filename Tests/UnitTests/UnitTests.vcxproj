@@ -137,6 +137,7 @@
     <ClCompile Include="VertexCenteredScalarGrid2Tests.cpp" />
     <ClCompile Include="VertexCenteredScalarGrid3Tests.cpp" />
     <ClCompile Include="VertexCenteredVectorGrid2Tests.cpp" />
+    <ClCompile Include="VertexCenteredVectorGrid3Tests.cpp" />
     <ClCompile Include="VolumeParticleEmitter2Tests.cpp" />
     <ClCompile Include="VolumeParticleEmitter3Tests.cpp" />
   </ItemGroup>
