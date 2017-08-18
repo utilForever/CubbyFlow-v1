@@ -186,7 +186,6 @@ namespace CubbyFlow
 			auto u = vel->GetUAccessor();
 			auto v = vel->GetVAccessor();
 			auto w = vel->GetWAccessor();
-
 			auto uPos = vel->GetUPosition();
 			auto vPos = vel->GetVPosition();
 			auto wPos = vel->GetWPosition();
@@ -223,7 +222,7 @@ namespace CubbyFlow
 					double fBuoy =
 						m_buoyancySmokeDensityFactor * den->Sample(pt) +
 						m_buoyancyTemperatureFactor * (temp->Sample(pt) - tAmb);
-					v(i, j, k) += timeIntervalInSeconds * fBuoy * up.z;
+					w(i, j, k) += timeIntervalInSeconds * fBuoy * up.z;
 				});
 			}
 
