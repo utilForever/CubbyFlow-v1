@@ -76,6 +76,7 @@
     <ClCompile Include="ColliderSet3Tests.cpp" />
     <ClCompile Include="Cylinder3Tests.cpp" />
     <ClCompile Include="FaceCenteredGrid2Tests.cpp" />
+    <ClCompile Include="FaceCenteredGrid3Tests.cpp" />
     <ClCompile Include="ImplicitSurfaceSet2Tests.cpp" />
     <ClCompile Include="ImplicitSurfaceSet3Tests.cpp" />
     <ClCompile Include="MathUtilsTests.cpp" />
