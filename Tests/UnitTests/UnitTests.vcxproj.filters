@@ -131,32 +131,11 @@
     <ClCompile Include="RigidbodyCollider3Tests.cpp">
       <Filter>Collider</Filter>
     </ClCompile>
-    <ClCompile Include="VolumeParticleEmitter2Tests.cpp">
-      <Filter>Particle</Filter>
-    </ClCompile>
-    <ClCompile Include="VolumeParticleEmitter3Tests.cpp">
-      <Filter>Particle</Filter>
-    </ClCompile>
-    <ClCompile Include="PointParticleEmitter2Tests.cpp">
-      <Filter>Particle</Filter>
-    </ClCompile>
-    <ClCompile Include="PointParticleEmitter3Tests.cpp">
-      <Filter>Particle</Filter>
-    </ClCompile>
-    <ClCompile Include="ParticleSystemSolverTests.cpp">
-      <Filter>Particle</Filter>
-    </ClCompile>
     <ClCompile Include="ParticleSystemData2Tests.cpp">
       <Filter>Particle</Filter>
     </ClCompile>
     <ClCompile Include="ParticleSystemData3Tests.cpp">
       <Filter>Particle</Filter>
-    </ClCompile>
-    <ClCompile Include="SPHSolver2Tests.cpp">
-      <Filter>SPH</Filter>
-    </ClCompile>
-    <ClCompile Include="SPHSolver3Tests.cpp">
-      <Filter>SPH</Filter>
     </ClCompile>
     <ClCompile Include="SPHStdKernel2Tests.cpp">
       <Filter>SPH</Filter>
@@ -171,10 +150,10 @@
       <Filter>SPH</Filter>
     </ClCompile>
     <ClCompile Include="PCISPHSolver2Tests.cpp">
-      <Filter>PCISPH</Filter>
+      <Filter>Solver\PCISPH</Filter>
     </ClCompile>
     <ClCompile Include="PCISPHSolver3Tests.cpp">
-      <Filter>PCISPH</Filter>
+      <Filter>Solver\PCISPH</Filter>
     </ClCompile>
     <ClCompile Include="PointTests.cpp">
       <Filter>Point</Filter>
@@ -254,6 +233,30 @@
     <ClCompile Include="GridSystemData3Tests.cpp">
       <Filter>Grid</Filter>
     </ClCompile>
+    <ClCompile Include="VolumeParticleEmitter3Tests.cpp">
+      <Filter>Emitter</Filter>
+    </ClCompile>
+    <ClCompile Include="PointParticleEmitter2Tests.cpp">
+      <Filter>Emitter</Filter>
+    </ClCompile>
+    <ClCompile Include="PointParticleEmitter3Tests.cpp">
+      <Filter>Emitter</Filter>
+    </ClCompile>
+    <ClCompile Include="VolumeParticleEmitter2Tests.cpp">
+      <Filter>Emitter</Filter>
+    </ClCompile>
+    <ClCompile Include="SPHSolver3Tests.cpp">
+      <Filter>Solver\SPH</Filter>
+    </ClCompile>
+    <ClCompile Include="SPHSolver2Tests.cpp">
+      <Filter>Solver\SPH</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleSystemSolverTests.cpp">
+      <Filter>Solver\Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="GridEmitter2Tests.cpp">
+      <Filter>Emitter</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -301,9 +304,6 @@
     <Filter Include="SPH">
       <UniqueIdentifier>{79946358-5eb8-447e-bf53-d9b9fa8325f2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="PCISPH">
-      <UniqueIdentifier>{3a68eaa7-9c05-4f0c-8483-9425b4ed4bb8}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Point">
       <UniqueIdentifier>{e4ea9943-52e0-4e3b-9a0e-a20a431bdbd3}</UniqueIdentifier>
     </Filter>
@@ -315,6 +315,21 @@
     </Filter>
     <Filter Include="Grid">
       <UniqueIdentifier>{ae11687a-dbeb-487c-a6a4-5f929600fbd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Emitter">
+      <UniqueIdentifier>{8b8c2066-3dfa-4626-8001-3e4d05fdf879}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Solver">
+      <UniqueIdentifier>{6f482968-f7a5-417f-b469-62ecd793ebc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Solver\SPH">
+      <UniqueIdentifier>{c445f326-54d0-462a-a121-9bbfb7e2cda4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Solver\PCISPH">
+      <UniqueIdentifier>{3a68eaa7-9c05-4f0c-8483-9425b4ed4bb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Solver\Particle">
+      <UniqueIdentifier>{fa22e2f5-db23-4770-8ef4-6615c8135459}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
