@@ -257,6 +257,9 @@
     <ClCompile Include="GridEmitter2Tests.cpp">
       <Filter>Emitter</Filter>
     </ClCompile>
+    <ClCompile Include="GridEmitter3Tests.cpp">
+      <Filter>Emitter</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
