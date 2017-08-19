@@ -239,6 +239,9 @@
     <ClCompile Include="CellCenteredScalarGrid2Tests.cpp">
       <Filter>Grid</Filter>
     </ClCompile>
+    <ClCompile Include="CellCenteredScalarGrid3Tests.cpp">
+      <Filter>Grid</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
