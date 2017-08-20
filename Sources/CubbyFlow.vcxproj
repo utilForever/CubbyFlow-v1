@@ -542,7 +542,8 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="Solver\Grid\GridDiffusionSolver2.cpp" />
     <ClCompile Include="Solver\Grid\GridDiffusionSolver3.cpp" />
     <ClCompile Include="Solver\Grid\GridFluidSolver2.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="Solver\Grid\GridFluidSolver3.cpp" />
     <ClCompile Include="Solver\Grid\GridForwardEulerDiffusionSolver2.cpp" />

@@ -774,9 +774,6 @@
     <ClInclude Include="..\Includes\Solver\Grid\GridFractionalSinglePhasePressureSolver3.h">
       <Filter>Solver\Grid</Filter>
     </ClInclude>
-    <ClInclude Include="..\Includes\Solver\Grid\GridFluidSolver2.h">
-      <Filter>Solver\Grid</Filter>
-    </ClInclude>
     <ClInclude Include="..\Includes\Solver\Grid\GridFluidSolver3.h">
       <Filter>Solver\Grid</Filter>
     </ClInclude>
@@ -803,6 +800,9 @@
     </ClInclude>
     <ClInclude Include="..\Includes\Solver\Smoke\GridSmokeSolver3.h">
       <Filter>Solver\Smoke</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Solver\Grid\GridFluidSolver2.h">
+      <Filter>Solver\Grid</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
