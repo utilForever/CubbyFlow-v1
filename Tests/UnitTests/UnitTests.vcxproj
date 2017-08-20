@@ -92,6 +92,8 @@
     <ClCompile Include="FDMJacobiSolver2Tests.cpp" />
     <ClCompile Include="FDMJacobiSolver3Tests.cpp" />
     <ClCompile Include="FDMUtilsTests.cpp" />
+    <ClCompile Include="GridBackwardDiffusionSolver2Tests.cpp" />
+    <ClCompile Include="GridBackwardDiffusionSolver3Tests.cpp" />
     <ClCompile Include="GridEmitter2Tests.cpp" />
     <ClCompile Include="GridEmitter3Tests.cpp" />
     <ClCompile Include="GridSystemData2Tests.cpp" />

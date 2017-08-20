@@ -293,6 +293,12 @@
     <ClCompile Include="FDMUtilsTests.cpp">
       <Filter>FDM</Filter>
     </ClCompile>
+    <ClCompile Include="GridBackwardDiffusionSolver2Tests.cpp">
+      <Filter>Solver\Grid</Filter>
+    </ClCompile>
+    <ClCompile Include="GridBackwardDiffusionSolver3Tests.cpp">
+      <Filter>Solver\Grid</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -372,6 +378,9 @@
     </Filter>
     <Filter Include="FDM">
       <UniqueIdentifier>{6bee7d87-f148-4da5-bc34-90d270e9edf4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Solver\Grid">
+      <UniqueIdentifier>{cd9254c7-c427-486f-b1f7-07bacdc8e032}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
