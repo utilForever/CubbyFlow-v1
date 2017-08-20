@@ -290,6 +290,9 @@
     <ClCompile Include="FDMJacobiSolver3Tests.cpp">
       <Filter>Solver\FDM</Filter>
     </ClCompile>
+    <ClCompile Include="FDMUtilsTests.cpp">
+      <Filter>FDM</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -366,6 +369,9 @@
     </Filter>
     <Filter Include="Solver\FDM">
       <UniqueIdentifier>{dab634a8-bc8e-4e9e-8a0d-176480d76774}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FDM">
+      <UniqueIdentifier>{6bee7d87-f148-4da5-bc34-90d270e9edf4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
