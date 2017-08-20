@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.2</a>
+                    <a class="navbar-brand">CubbyFlow v0.3</a>
                 </div>
             </div>
         </nav>
@@ -90,9 +90,12 @@ Inheritance diagram for CubbyFlow::ScalarField2:</div>
  <div class="center">
   <img src="class_cubby_flow_1_1_scalar_field2.png" usemap="#CubbyFlow::ScalarField2_map" alt=""/>
   <map id="CubbyFlow::ScalarField2_map" name="CubbyFlow::ScalarField2_map">
-<area href="class_cubby_flow_1_1_field2.html" title="Abstract base class for 2-D fields. " alt="CubbyFlow::Field2" shape="rect" coords="106,0,309,24"/>
-<area href="class_cubby_flow_1_1_constant_scalar_field2.html" title="2-D constant scalar field. " alt="CubbyFlow::ConstantScalarField2" shape="rect" coords="0,112,203,136"/>
-<area href="class_cubby_flow_1_1_custom_scalar_field2.html" title="2-D scalar field with custom field function. " alt="CubbyFlow::CustomScalarField2" shape="rect" coords="213,112,416,136"/>
+<area href="class_cubby_flow_1_1_field2.html" title="Abstract base class for 2-D fields. " alt="CubbyFlow::Field2" shape="rect" coords="249,0,488,24"/>
+<area href="class_cubby_flow_1_1_constant_scalar_field2.html" title="2-D constant scalar field. " alt="CubbyFlow::ConstantScalarField2" shape="rect" coords="0,112,239,136"/>
+<area href="class_cubby_flow_1_1_custom_scalar_field2.html" title="2-D scalar field with custom field function. " alt="CubbyFlow::CustomScalarField2" shape="rect" coords="249,112,488,136"/>
+<area href="class_cubby_flow_1_1_scalar_grid2.html" title="Abstract base class for 2-D scalar grid structure. " alt="CubbyFlow::ScalarGrid2" shape="rect" coords="498,112,737,136"/>
+<area href="class_cubby_flow_1_1_cell_centered_scalar_grid2.html" title="2-D Cell-centered scalar grid structure. " alt="CubbyFlow::CellCenteredScalarGrid2" shape="rect" coords="373,168,612,192"/>
+<area href="class_cubby_flow_1_1_vertex_centered_scalar_grid2.html" title="2-D Vertex-centered scalar grid structure. " alt="CubbyFlow::VertexCenteredScalarGrid2" shape="rect" coords="622,168,861,192"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -198,7 +201,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Returns gradient vector at given position <code>x</code>. </p>
 
-<p>Reimplemented in <a class="el" href="class_cubby_flow_1_1_custom_scalar_field2.html#a4dbb2d6204102341531ae0db7e942d6c">CubbyFlow::CustomScalarField2</a>.</p>
+<p>Reimplemented in <a class="el" href="class_cubby_flow_1_1_scalar_grid2.html#a482d9a05a2b11b5196a010ebb82a3488">CubbyFlow::ScalarGrid2</a>, and <a class="el" href="class_cubby_flow_1_1_custom_scalar_field2.html#a4dbb2d6204102341531ae0db7e942d6c">CubbyFlow::CustomScalarField2</a>.</p>
 
 </div>
 </div>
@@ -228,7 +231,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Returns Laplacian at given position <code>x</code>. </p>
 
-<p>Reimplemented in <a class="el" href="class_cubby_flow_1_1_custom_scalar_field2.html#ae6cd03f374d2faf0d4971fea25559b9e">CubbyFlow::CustomScalarField2</a>.</p>
+<p>Reimplemented in <a class="el" href="class_cubby_flow_1_1_scalar_grid2.html#abb012cf5a0f84356937782c95d14b07c">CubbyFlow::ScalarGrid2</a>, and <a class="el" href="class_cubby_flow_1_1_custom_scalar_field2.html#ae6cd03f374d2faf0d4971fea25559b9e">CubbyFlow::CustomScalarField2</a>.</p>
 
 </div>
 </div>
@@ -258,7 +261,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Returns sampled value at given position <code>x</code>. </p>
 
-<p>Implemented in <a class="el" href="class_cubby_flow_1_1_custom_scalar_field2.html#a609e056ce48b112b2b992b35ee270a49">CubbyFlow::CustomScalarField2</a>, and <a class="el" href="class_cubby_flow_1_1_constant_scalar_field2.html#ad288185a7633cf23ecf88d428f4a987c">CubbyFlow::ConstantScalarField2</a>.</p>
+<p>Implemented in <a class="el" href="class_cubby_flow_1_1_scalar_grid2.html#a752b515458f41eafa57624cbcded61fc">CubbyFlow::ScalarGrid2</a>, <a class="el" href="class_cubby_flow_1_1_custom_scalar_field2.html#a609e056ce48b112b2b992b35ee270a49">CubbyFlow::CustomScalarField2</a>, and <a class="el" href="class_cubby_flow_1_1_constant_scalar_field2.html#ad288185a7633cf23ecf88d428f4a987c">CubbyFlow::ConstantScalarField2</a>.</p>
 
 </div>
 </div>
@@ -287,7 +290,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Returns sampler function object. </p>
 
-<p>Reimplemented in <a class="el" href="class_cubby_flow_1_1_custom_scalar_field2.html#a05b2c31a67e654754f472540402df0e0">CubbyFlow::CustomScalarField2</a>, and <a class="el" href="class_cubby_flow_1_1_constant_scalar_field2.html#a38e703896e2ba29bf21b57138ca008df">CubbyFlow::ConstantScalarField2</a>.</p>
+<p>Reimplemented in <a class="el" href="class_cubby_flow_1_1_scalar_grid2.html#a92da18f0178e9ccd8a43990c0d8a1105">CubbyFlow::ScalarGrid2</a>, <a class="el" href="class_cubby_flow_1_1_custom_scalar_field2.html#a05b2c31a67e654754f472540402df0e0">CubbyFlow::CustomScalarField2</a>, and <a class="el" href="class_cubby_flow_1_1_constant_scalar_field2.html#a38e703896e2ba29bf21b57138ca008df">CubbyFlow::ConstantScalarField2</a>.</p>
 
 </div>
 </div>
@@ -303,7 +306,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 24 2017 23:10:31 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Aug 20 2017 21:55:12 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

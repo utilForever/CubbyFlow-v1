@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.2</a>
+                    <a class="navbar-brand">CubbyFlow v0.3</a>
                 </div>
             </div>
         </nav>
@@ -86,6 +86,8 @@ $(function() {
 : <a class="el" href="class_cubby_flow_1_1_bounding_box.html#a8dacf75c99d73b232be1f95ec5e03d42">CubbyFlow::BoundingBox&lt; T, N &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_bounding_box_3_01_t_00_012_01_4.html#a9cc31dc24eef2f3feef1dfcd2543e315">CubbyFlow::BoundingBox&lt; T, 2 &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_bounding_box_3_01_t_00_013_01_4.html#acd61cc406ce7e22f24c1e7eda99d2ad9">CubbyFlow::BoundingBox&lt; T, 3 &gt;</a>
+, <a class="el" href="class_cubby_flow_1_1_grid2.html#a55d6ec269b24450790c3e154e1de3162">CubbyFlow::Grid2</a>
+, <a class="el" href="class_cubby_flow_1_1_grid3.html#a09e2fb331c753c28e883e73c0e0a3900">CubbyFlow::Grid3</a>
 , <a class="el" href="class_cubby_flow_1_1_surface2.html#a0d5357e2c1e40bcdcc34aa6d106c90db">CubbyFlow::Surface2</a>
 , <a class="el" href="class_cubby_flow_1_1_surface3.html#abfe32b74e5e8f675d300ed0170957343">CubbyFlow::Surface3</a>
 </li>
@@ -110,6 +112,10 @@ $(function() {
 <li>Build()
 : <a class="el" href="class_cubby_flow_1_1_box2_1_1_builder.html#a7aea3a07d6eac378873763ae176b0c47">CubbyFlow::Box2::Builder</a>
 , <a class="el" href="class_cubby_flow_1_1_box3_1_1_builder.html#a6659301935ede26aef7c6b33ecb4edf7">CubbyFlow::Box3::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_cell_centered_scalar_grid2_1_1_builder.html#a369e46efb912d34d06345b89089bc0bd">CubbyFlow::CellCenteredScalarGrid2::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_cell_centered_scalar_grid3_1_1_builder.html#a5ebd5c02d46b5ec2239d9f38d67b6d3d">CubbyFlow::CellCenteredScalarGrid3::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_cell_centered_vector_grid2_1_1_builder.html#ad13aa19a856a83ab2c047346056176cc">CubbyFlow::CellCenteredVectorGrid2::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_cell_centered_vector_grid3_1_1_builder.html#ad7265fe009045057fe0d6a144b905a42">CubbyFlow::CellCenteredVectorGrid3::Builder</a>
 , <a class="el" href="class_cubby_flow_1_1_collider_set2_1_1_builder.html#a4afdefb95e2c90a2638c05c8f39ece3f">CubbyFlow::ColliderSet2::Builder</a>
 , <a class="el" href="class_cubby_flow_1_1_collider_set3_1_1_builder.html#a6b6dd1c69dc486181bfff30a332d14d8">CubbyFlow::ColliderSet3::Builder</a>
 , <a class="el" href="class_cubby_flow_1_1_constant_scalar_field2_1_1_builder.html#a2745861ea79c8ebe0f33dd4fa4717ec1">CubbyFlow::ConstantScalarField2::Builder</a>
@@ -121,8 +127,17 @@ $(function() {
 , <a class="el" href="class_cubby_flow_1_1_custom_vector_field2_1_1_builder.html#a9a3ae5350db2641e895c6639da3cb76c">CubbyFlow::CustomVectorField2::Builder</a>
 , <a class="el" href="class_cubby_flow_1_1_custom_vector_field3_1_1_builder.html#a88631eb5e26958cd4196abbb8f92815d">CubbyFlow::CustomVectorField3::Builder</a>
 , <a class="el" href="class_cubby_flow_1_1_cylinder3_1_1_builder.html#a5fc399cd9e9d61b575b2eac1e2d20db9">CubbyFlow::Cylinder3::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_face_centered_grid2_1_1_builder.html#a55957513538572c445eb6c4a0ffd3e3f">CubbyFlow::FaceCenteredGrid2::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_face_centered_grid3_1_1_builder.html#a8d392f0e92789f0c738bdcab0a2b1872">CubbyFlow::FaceCenteredGrid3::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_grid_emitter_set2_1_1_builder.html#a11a5bd5d212e0f84ad2956a395721763">CubbyFlow::GridEmitterSet2::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_grid_emitter_set3_1_1_builder.html#abc8e050256251d815706a0127ad45e7c">CubbyFlow::GridEmitterSet3::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_grid_fluid_solver2_1_1_builder.html#acb9d4dd68a9af76bb55cb1e1e92505f2">CubbyFlow::GridFluidSolver2::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_grid_fluid_solver3_1_1_builder.html#a44fde2cd4dfd8e93dae59754af0cf8cb">CubbyFlow::GridFluidSolver3::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_grid_smoke_solver2_1_1_builder.html#a1c33535d6e5c16c0cca9987357b787fb">CubbyFlow::GridSmokeSolver2::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_grid_smoke_solver3_1_1_builder.html#a9f3aa6e7972e496ccb814d24320dc634">CubbyFlow::GridSmokeSolver3::Builder</a>
 , <a class="el" href="class_cubby_flow_1_1_implicit_surface_set2_1_1_builder.html#a4166e5a282f75bddc79aee6344333fd9">CubbyFlow::ImplicitSurfaceSet2::Builder</a>
 , <a class="el" href="class_cubby_flow_1_1_implicit_surface_set3_1_1_builder.html#a4344942adb9cad3ff1793a980a54084e">CubbyFlow::ImplicitSurfaceSet3::Builder</a>
+, <a class="el" href="struct_cubby_flow_1_1_null_c_g_preconditioner.html#ab538858c7953760281d47bf3f8134798">CubbyFlow::NullCGPreconditioner&lt; BLASType &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_particle_emitter_set2_1_1_builder.html#abeacee87d095dac07ea3193103fdce42">CubbyFlow::ParticleEmitterSet2::Builder</a>
 , <a class="el" href="class_cubby_flow_1_1_particle_emitter_set3_1_1_builder.html#abb5e47bb7ab56e94d28b0851918c0454">CubbyFlow::ParticleEmitterSet3::Builder</a>
 , <a class="el" href="class_cubby_flow_1_1_particle_system_solver2_1_1_builder.html#a7f7c02e497bffdacb46123de4a5bac30">CubbyFlow::ParticleSystemSolver2::Builder</a>
@@ -141,12 +156,16 @@ $(function() {
 , <a class="el" href="class_cubby_flow_1_1_point_parallel_hash_grid_searcher2_1_1_builder.html#afbafa733d0e2ebd96bbeb264735e46e5">CubbyFlow::PointParallelHashGridSearcher2::Builder</a>
 , <a class="el" href="class_cubby_flow_1_1_point_parallel_hash_grid_searcher3.html#aeecc448316d1db52a0d7af3b7c44a821">CubbyFlow::PointParallelHashGridSearcher3</a>
 , <a class="el" href="class_cubby_flow_1_1_point_parallel_hash_grid_searcher3_1_1_builder.html#a54a8ede7cf849560cbe4b4c9747b58ac">CubbyFlow::PointParallelHashGridSearcher3::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_point_particle_emitter2_1_1_builder.html#af90d20dec0817496927665c8a0a55daa">CubbyFlow::PointParticleEmitter2::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_point_particle_emitter3_1_1_builder.html#ab99d123db6d9d504a27ff019656fe5bd">CubbyFlow::PointParticleEmitter3::Builder</a>
 , <a class="el" href="class_cubby_flow_1_1_point_simple_list_searcher2.html#aa6234e59e58474be0e8d368f9bcf7885">CubbyFlow::PointSimpleListSearcher2</a>
 , <a class="el" href="class_cubby_flow_1_1_point_simple_list_searcher2_1_1_builder.html#a200c755925286ff916568802ab249865">CubbyFlow::PointSimpleListSearcher2::Builder</a>
 , <a class="el" href="class_cubby_flow_1_1_point_simple_list_searcher3.html#a8b088f499242f9c827754e58ef69bb5e">CubbyFlow::PointSimpleListSearcher3</a>
 , <a class="el" href="class_cubby_flow_1_1_point_simple_list_searcher3_1_1_builder.html#abce2a287b60125cada9390786ac5fa3b">CubbyFlow::PointSimpleListSearcher3::Builder</a>
 , <a class="el" href="class_cubby_flow_1_1_rigid_body_collider2_1_1_builder.html#a12e4e0bf600a06ad8f957f5859f8d5cd">CubbyFlow::RigidBodyCollider2::Builder</a>
 , <a class="el" href="class_cubby_flow_1_1_rigid_body_collider3_1_1_builder.html#a5d0d08d4a930e2814ec91ac8549f82c2">CubbyFlow::RigidBodyCollider3::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_scalar_grid_builder2.html#ac2b847587494a5be16945c4be458eae6">CubbyFlow::ScalarGridBuilder2</a>
+, <a class="el" href="class_cubby_flow_1_1_scalar_grid_builder3.html#a7402f3c432e249717cfd9b74c5bf918f">CubbyFlow::ScalarGridBuilder3</a>
 , <a class="el" href="class_cubby_flow_1_1_sphere2_1_1_builder.html#aa54d04b619379fcb242688e4cef03ee6">CubbyFlow::Sphere2::Builder</a>
 , <a class="el" href="class_cubby_flow_1_1_sphere3_1_1_builder.html#aca197477a9533b4a4d0bb6b37ae8024c">CubbyFlow::Sphere3::Builder</a>
 , <a class="el" href="class_cubby_flow_1_1_s_p_h_solver2_1_1_builder.html#af38120a7cfa5cc2ec28fc56c461e2731">CubbyFlow::SPHSolver2::Builder</a>
@@ -157,6 +176,14 @@ $(function() {
 , <a class="el" href="class_cubby_flow_1_1_surface_to_implicit3_1_1_builder.html#a86b703ecc72fcb948994a1d8a172a25f">CubbyFlow::SurfaceToImplicit3::Builder</a>
 , <a class="el" href="class_cubby_flow_1_1_triangle3_1_1_builder.html#a7007e9f80ea90201b88bb961f8102695">CubbyFlow::Triangle3::Builder</a>
 , <a class="el" href="class_cubby_flow_1_1_triangle_mesh3_1_1_builder.html#a77eb3b2e396da97c80251f1254eb50b1">CubbyFlow::TriangleMesh3::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_vector_grid_builder2.html#a00d173f1b6b7d956ecc21dd3c90bebc9">CubbyFlow::VectorGridBuilder2</a>
+, <a class="el" href="class_cubby_flow_1_1_vector_grid_builder3.html#aad998a01b80da5de4fc7aaa9d4694093">CubbyFlow::VectorGridBuilder3</a>
+, <a class="el" href="class_cubby_flow_1_1_vertex_centered_scalar_grid2_1_1_builder.html#ab4ac3cf43ce0feb99aca51a5e0e9ba25">CubbyFlow::VertexCenteredScalarGrid2::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_vertex_centered_scalar_grid3_1_1_builder.html#afc2a5b41ec7a076e20354946a1aa8390">CubbyFlow::VertexCenteredScalarGrid3::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_vertex_centered_vector_grid2_1_1_builder.html#a8f711196be7a505d51ef394a16c41ef0">CubbyFlow::VertexCenteredVectorGrid2::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_vertex_centered_vector_grid3_1_1_builder.html#a41e26e707618b34947d103ac612dd9c1">CubbyFlow::VertexCenteredVectorGrid3::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_volume_grid_emitter2_1_1_builder.html#aa33c01bec78e8ab476aeb8535483d0b5">CubbyFlow::VolumeGridEmitter2::Builder</a>
+, <a class="el" href="class_cubby_flow_1_1_volume_grid_emitter3_1_1_builder.html#ac2a1dce8cc29ab20958dea39aa56ead0">CubbyFlow::VolumeGridEmitter3::Builder</a>
 , <a class="el" href="class_cubby_flow_1_1_volume_particle_emitter2_1_1_builder.html#ade241186f27ad872a694ba0a8378c605">CubbyFlow::VolumeParticleEmitter2::Builder</a>
 , <a class="el" href="class_cubby_flow_1_1_volume_particle_emitter3_1_1_builder.html#a2fe816fb0d0e826a7e31b8d916052942">CubbyFlow::VolumeParticleEmitter3::Builder</a>
 </li>
@@ -188,6 +215,18 @@ $(function() {
 <li>BuildPointNeighborSearcher3()
 : <a class="el" href="class_cubby_flow_1_1_factory.html#a9dc16889e49fd00143448b46a4dcf242">CubbyFlow::Factory</a>
 </li>
+<li>BuildScalarGrid2()
+: <a class="el" href="class_cubby_flow_1_1_factory.html#a4ee0786a88afe283e1672198e4e4167f">CubbyFlow::Factory</a>
+</li>
+<li>BuildScalarGrid3()
+: <a class="el" href="class_cubby_flow_1_1_factory.html#a738180257600ab739335103949630e00">CubbyFlow::Factory</a>
+</li>
+<li>BuildVectorGrid2()
+: <a class="el" href="class_cubby_flow_1_1_factory.html#a3a4d5f9bc20a6df596cc21b5dd1617ac">CubbyFlow::Factory</a>
+</li>
+<li>BuildVectorGrid3()
+: <a class="el" href="class_cubby_flow_1_1_factory.html#a4b32f64fec65544e657dfc7d9c207382">CubbyFlow::Factory</a>
+</li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.8-->
@@ -198,7 +237,7 @@ $(function() {
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 24 2017 23:10:35 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Aug 20 2017 21:55:18 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

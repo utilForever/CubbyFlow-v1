@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.2</a>
+                    <a class="navbar-brand">CubbyFlow v0.3</a>
                 </div>
             </div>
         </nav>
@@ -86,7 +86,7 @@ $(function() {
 <p>2-D SPH solver.  
  <a href="class_cubby_flow_1_1_s_p_h_solver2.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_s_p_h_solver2_8h_source.html">SPH/SPHSolver2.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="_solver_2_s_p_h_2_s_p_h_solver2_8h_source.html">Solver/SPH/SPHSolver2.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for CubbyFlow::SPHSolver2:</div>
 <div class="dyncontent">
@@ -94,9 +94,12 @@ Inheritance diagram for CubbyFlow::SPHSolver2:</div>
   <img src="class_cubby_flow_1_1_s_p_h_solver2.png" usemap="#CubbyFlow::SPHSolver2_map" alt=""/>
   <map id="CubbyFlow::SPHSolver2_map" name="CubbyFlow::SPHSolver2_map">
 <area href="class_cubby_flow_1_1_particle_system_solver2.html" title="Basic 2-D particle system solver. " alt="CubbyFlow::ParticleSystemSolver2" shape="rect" coords="0,112,209,136"/>
+<area href="class_cubby_flow_1_1_particle_system_solver2.html" title="Basic 2-D particle system solver. " alt="CubbyFlow::ParticleSystemSolver2" shape="rect" coords="219,112,428,136"/>
 <area href="class_cubby_flow_1_1_physics_animation.html" title="Abstract base class for physics-based animation. " alt="CubbyFlow::PhysicsAnimation" shape="rect" coords="0,56,209,80"/>
+<area href="class_cubby_flow_1_1_physics_animation.html" title="Abstract base class for physics-based animation. " alt="CubbyFlow::PhysicsAnimation" shape="rect" coords="219,56,428,80"/>
 <area href="class_cubby_flow_1_1_animation.html" title="Abstract base class for animation-related class. " alt="CubbyFlow::Animation" shape="rect" coords="0,0,209,24"/>
-<area href="class_cubby_flow_1_1_p_c_i_s_p_h_solver2.html" title="2-D PCISPH solver. " alt="CubbyFlow::PCISPHSolver2" shape="rect" coords="0,224,209,248"/>
+<area href="class_cubby_flow_1_1_animation.html" title="Abstract base class for animation-related class. " alt="CubbyFlow::Animation" shape="rect" coords="219,0,428,24"/>
+<area href="class_cubby_flow_1_1_p_c_i_s_p_h_solver2.html" title="2-D PCISPH solver. " alt="CubbyFlow::PCISPHSolver2" shape="rect" coords="109,224,318,248"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -108,6 +111,52 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a7a63913ec0dd70bd19b0e5e9f73f9e76"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_s_p_h_solver2.html#a7a63913ec0dd70bd19b0e5e9f73f9e76">SPHSolver2</a> ()</td></tr>
+<tr class="memdesc:a7a63913ec0dd70bd19b0e5e9f73f9e76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a solver with empty particle set.  <a href="#a7a63913ec0dd70bd19b0e5e9f73f9e76">More...</a><br /></td></tr>
+<tr class="separator:a7a63913ec0dd70bd19b0e5e9f73f9e76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a704102b20f872c13dbeb2f7ae4635bfe"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_s_p_h_solver2.html#a704102b20f872c13dbeb2f7ae4635bfe">~SPHSolver2</a> ()</td></tr>
+<tr class="separator:a704102b20f872c13dbeb2f7ae4635bfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50ccb4514cb2fd966bcaa32b860312a1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_s_p_h_solver2.html#a50ccb4514cb2fd966bcaa32b860312a1">SPHSolver2</a> (double targetDensity, double targetSpacing, double relativeKernelRadius)</td></tr>
+<tr class="separator:a50ccb4514cb2fd966bcaa32b860312a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e7bbbdc6287c0b5acf9da0904a36062"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_s_p_h_solver2.html#a3e7bbbdc6287c0b5acf9da0904a36062">GetEosExponent</a> () const</td></tr>
+<tr class="memdesc:a3e7bbbdc6287c0b5acf9da0904a36062"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the exponent part of the equation-of-state.  <a href="#a3e7bbbdc6287c0b5acf9da0904a36062">More...</a><br /></td></tr>
+<tr class="separator:a3e7bbbdc6287c0b5acf9da0904a36062"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a740d3d5320808c2f36cdb83646ec6330"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_s_p_h_solver2.html#a740d3d5320808c2f36cdb83646ec6330">SetEosExponent</a> (double newEosExponent)</td></tr>
+<tr class="memdesc:a740d3d5320808c2f36cdb83646ec6330"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the exponent part of the equation-of-state.  <a href="#a740d3d5320808c2f36cdb83646ec6330">More...</a><br /></td></tr>
+<tr class="separator:a740d3d5320808c2f36cdb83646ec6330"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af80ddc62544c852828517c3b7037e95f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_s_p_h_solver2.html#af80ddc62544c852828517c3b7037e95f">GetNegativePressureScale</a> () const</td></tr>
+<tr class="memdesc:af80ddc62544c852828517c3b7037e95f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the negative pressure scale.  <a href="#af80ddc62544c852828517c3b7037e95f">More...</a><br /></td></tr>
+<tr class="separator:af80ddc62544c852828517c3b7037e95f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a676e566aed6771158f05a91aac7e08ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_s_p_h_solver2.html#a676e566aed6771158f05a91aac7e08ef">SetNegativePressureScale</a> (double newNegativePressureScale)</td></tr>
+<tr class="memdesc:a676e566aed6771158f05a91aac7e08ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the negative pressure scale.  <a href="#a676e566aed6771158f05a91aac7e08ef">More...</a><br /></td></tr>
+<tr class="separator:a676e566aed6771158f05a91aac7e08ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12d1e983d0e618e2ba9eadce6b010d49"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_s_p_h_solver2.html#a12d1e983d0e618e2ba9eadce6b010d49">GetViscosityCoefficient</a> () const</td></tr>
+<tr class="memdesc:a12d1e983d0e618e2ba9eadce6b010d49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the viscosity coefficient.  <a href="#a12d1e983d0e618e2ba9eadce6b010d49">More...</a><br /></td></tr>
+<tr class="separator:a12d1e983d0e618e2ba9eadce6b010d49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08da0fae27b1f376aa1430afd1db3243"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_s_p_h_solver2.html#a08da0fae27b1f376aa1430afd1db3243">SetViscosityCoefficient</a> (double newViscosityCoefficient)</td></tr>
+<tr class="memdesc:a08da0fae27b1f376aa1430afd1db3243"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the viscosity coefficient.  <a href="#a08da0fae27b1f376aa1430afd1db3243">More...</a><br /></td></tr>
+<tr class="separator:a08da0fae27b1f376aa1430afd1db3243"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d25a3f375a41d16bd551b67f8981fb9"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_s_p_h_solver2.html#a4d25a3f375a41d16bd551b67f8981fb9">GetPseudoViscosityCoefficient</a> () const</td></tr>
+<tr class="memdesc:a4d25a3f375a41d16bd551b67f8981fb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the pseudo viscosity coefficient.  <a href="#a4d25a3f375a41d16bd551b67f8981fb9">More...</a><br /></td></tr>
+<tr class="separator:a4d25a3f375a41d16bd551b67f8981fb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62058b78646129606a9c3c5f2b322427"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_s_p_h_solver2.html#a62058b78646129606a9c3c5f2b322427">SetPseudoViscosityCoefficient</a> (double newPseudoViscosityCoefficient)</td></tr>
+<tr class="memdesc:a62058b78646129606a9c3c5f2b322427"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the pseudo viscosity coefficient.  <a href="#a62058b78646129606a9c3c5f2b322427">More...</a><br /></td></tr>
+<tr class="separator:a62058b78646129606a9c3c5f2b322427"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc2a45b12dfd1431632b69a54a576510"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_s_p_h_solver2.html#afc2a45b12dfd1431632b69a54a576510">GetSpeedOfSound</a> () const</td></tr>
+<tr class="memdesc:afc2a45b12dfd1431632b69a54a576510"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the speed of sound.  <a href="#afc2a45b12dfd1431632b69a54a576510">More...</a><br /></td></tr>
+<tr class="separator:afc2a45b12dfd1431632b69a54a576510"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32371b751a8ef381cb59b136ac36b007"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_s_p_h_solver2.html#a32371b751a8ef381cb59b136ac36b007">SetSpeedOfSound</a> (double newSpeedOfSound)</td></tr>
+<tr class="memdesc:a32371b751a8ef381cb59b136ac36b007"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the speed of sound.  <a href="#a32371b751a8ef381cb59b136ac36b007">More...</a><br /></td></tr>
+<tr class="separator:a32371b751a8ef381cb59b136ac36b007"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a0eb6d10586f5c3553148e8cebc24a2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_s_p_h_solver2.html#a7a0eb6d10586f5c3553148e8cebc24a2">GetTimeStepLimitScale</a> () const</td></tr>
+<tr class="memdesc:a7a0eb6d10586f5c3553148e8cebc24a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplier that scales the max allowed time-step.  <a href="#a7a0eb6d10586f5c3553148e8cebc24a2">More...</a><br /></td></tr>
+<tr class="separator:a7a0eb6d10586f5c3553148e8cebc24a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adae7ba5734bb2d8c97c40baf081642b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_s_p_h_solver2.html#adae7ba5734bb2d8c97c40baf081642b1">SetTimeStepLimitScale</a> (double newScale)</td></tr>
+<tr class="memdesc:adae7ba5734bb2d8c97c40baf081642b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the multiplier that scales the max allowed time-step.  <a href="#adae7ba5734bb2d8c97c40baf081642b1">More...</a><br /></td></tr>
+<tr class="separator:adae7ba5734bb2d8c97c40baf081642b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f126f90ca170e8dbbe1281aafbe87c2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_cubby_flow.html#a6b4a055b393903de55e72a1a425f75c4">SPHSystemData2Ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_s_p_h_solver2.html#a9f126f90ca170e8dbbe1281aafbe87c2">GetSPHSystemData</a> () const</td></tr>
+<tr class="memdesc:a9f126f90ca170e8dbbe1281aafbe87c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the SPH system data.  <a href="#a9f126f90ca170e8dbbe1281aafbe87c2">More...</a><br /></td></tr>
+<tr class="separator:a9f126f90ca170e8dbbe1281aafbe87c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a63913ec0dd70bd19b0e5e9f73f9e76"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_s_p_h_solver2.html#a7a63913ec0dd70bd19b0e5e9f73f9e76">SPHSolver2</a> ()</td></tr>
 <tr class="memdesc:a7a63913ec0dd70bd19b0e5e9f73f9e76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a solver with empty particle set.  <a href="#a7a63913ec0dd70bd19b0e5e9f73f9e76">More...</a><br /></td></tr>
 <tr class="separator:a7a63913ec0dd70bd19b0e5e9f73f9e76"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -248,6 +297,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a88f2b4a6d4a5b0e2a2874a66a0e0fca4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_cubby_flow_1_1_s_p_h_solver2_1_1_builder.html">Builder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_s_p_h_solver2.html#a88f2b4a6d4a5b0e2a2874a66a0e0fca4">GetBuilder</a> ()</td></tr>
 <tr class="memdesc:a88f2b4a6d4a5b0e2a2874a66a0e0fca4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns builder fox <a class="el" href="class_cubby_flow_1_1_s_p_h_solver2.html" title="2-D SPH solver. ">SPHSolver2</a>.  <a href="#a88f2b4a6d4a5b0e2a2874a66a0e0fca4">More...</a><br /></td></tr>
 <tr class="separator:a88f2b4a6d4a5b0e2a2874a66a0e0fca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88f2b4a6d4a5b0e2a2874a66a0e0fca4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_cubby_flow_1_1_s_p_h_solver2_1_1_builder.html">Builder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_s_p_h_solver2.html#a88f2b4a6d4a5b0e2a2874a66a0e0fca4">GetBuilder</a> ()</td></tr>
+<tr class="memdesc:a88f2b4a6d4a5b0e2a2874a66a0e0fca4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns builder fox <a class="el" href="class_cubby_flow_1_1_s_p_h_solver2.html" title="2-D SPH solver. ">SPHSolver2</a>.  <a href="#a88f2b4a6d4a5b0e2a2874a66a0e0fca4">More...</a><br /></td></tr>
+<tr class="separator:a88f2b4a6d4a5b0e2a2874a66a0e0fca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_methods_class_cubby_flow_1_1_particle_system_solver2"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_class_cubby_flow_1_1_particle_system_solver2')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="class_cubby_flow_1_1_particle_system_solver2.html">CubbyFlow::ParticleSystemSolver2</a></td></tr>
 <tr class="memitem:a02987b1af89f40d90237998245f2e7a5 inherit pub_static_methods_class_cubby_flow_1_1_particle_system_solver2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_cubby_flow_1_1_particle_system_solver2_1_1_builder.html">Builder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_particle_system_solver2.html#a02987b1af89f40d90237998245f2e7a5">GetBuilder</a> ()</td></tr>
 <tr class="memdesc:a02987b1af89f40d90237998245f2e7a5 inherit pub_static_methods_class_cubby_flow_1_1_particle_system_solver2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns builder fox <a class="el" href="class_cubby_flow_1_1_particle_system_solver2.html" title="Basic 2-D particle system solver. ">ParticleSystemSolver2</a>.  <a href="class_cubby_flow_1_1_particle_system_solver2.html#a02987b1af89f40d90237998245f2e7a5">More...</a><br /></td></tr>
@@ -255,6 +307,33 @@ Static Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
+<tr class="memitem:a76a5ec3c46bd41c0cfe932cdf39bfd3b"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_s_p_h_solver2.html#a76a5ec3c46bd41c0cfe932cdf39bfd3b">NumberOfSubTimeSteps</a> (double timeIntervalInSeconds) const override</td></tr>
+<tr class="memdesc:a76a5ec3c46bd41c0cfe932cdf39bfd3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of sub-time-steps.  <a href="#a76a5ec3c46bd41c0cfe932cdf39bfd3b">More...</a><br /></td></tr>
+<tr class="separator:a76a5ec3c46bd41c0cfe932cdf39bfd3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d59ab84ef826630691d4b17ce2b5925"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_s_p_h_solver2.html#a6d59ab84ef826630691d4b17ce2b5925">AccumulateForces</a> (double timeStepInSeconds) override</td></tr>
+<tr class="memdesc:a6d59ab84ef826630691d4b17ce2b5925"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accumulates the force to the forces array in the particle system.  <a href="#a6d59ab84ef826630691d4b17ce2b5925">More...</a><br /></td></tr>
+<tr class="separator:a6d59ab84ef826630691d4b17ce2b5925"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96918778001f82079be1f8533aa92c85"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_s_p_h_solver2.html#a96918778001f82079be1f8533aa92c85">OnBeginAdvanceTimeStep</a> (double timeStepInSeconds) override</td></tr>
+<tr class="memdesc:a96918778001f82079be1f8533aa92c85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs pre-processing step before the simulation.  <a href="#a96918778001f82079be1f8533aa92c85">More...</a><br /></td></tr>
+<tr class="separator:a96918778001f82079be1f8533aa92c85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a295f1cc49abb5190cf788d4770f2e499"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_s_p_h_solver2.html#a295f1cc49abb5190cf788d4770f2e499">OnEndAdvanceTimeStep</a> (double timeStepInSeconds) override</td></tr>
+<tr class="memdesc:a295f1cc49abb5190cf788d4770f2e499"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs post-processing step before the simulation.  <a href="#a295f1cc49abb5190cf788d4770f2e499">More...</a><br /></td></tr>
+<tr class="separator:a295f1cc49abb5190cf788d4770f2e499"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9c9a4aa256f6bdec5f56e1b3225c3b9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_s_p_h_solver2.html#ae9c9a4aa256f6bdec5f56e1b3225c3b9">AccumulateNonPressureForces</a> (double timeStepInSeconds)</td></tr>
+<tr class="separator:ae9c9a4aa256f6bdec5f56e1b3225c3b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5db8118ed5248c0c098b004d81371df"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_s_p_h_solver2.html#aa5db8118ed5248c0c098b004d81371df">AccumulatePressureForce</a> (double timeStepInSeconds)</td></tr>
+<tr class="separator:aa5db8118ed5248c0c098b004d81371df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a404ed2e51d266915b2298a3afd520502"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_s_p_h_solver2.html#a404ed2e51d266915b2298a3afd520502">ComputePressure</a> ()</td></tr>
+<tr class="memdesc:a404ed2e51d266915b2298a3afd520502"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the pressure.  <a href="#a404ed2e51d266915b2298a3afd520502">More...</a><br /></td></tr>
+<tr class="separator:a404ed2e51d266915b2298a3afd520502"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f4bfb524c014968f4037c7ee69b2cd4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_s_p_h_solver2.html#a2f4bfb524c014968f4037c7ee69b2cd4">AccumulatePressureForce</a> (const <a class="el" href="namespace_cubby_flow.html#a54017cf5da78c67bd485460e49536fee">ConstArrayAccessor1</a>&lt; <a class="el" href="namespace_cubby_flow.html#a4db57ff3bc35d170bda4f85afce858cc">Vector2D</a> &gt; &amp;positions, const <a class="el" href="namespace_cubby_flow.html#a54017cf5da78c67bd485460e49536fee">ConstArrayAccessor1</a>&lt; double &gt; &amp;densities, const <a class="el" href="namespace_cubby_flow.html#a54017cf5da78c67bd485460e49536fee">ConstArrayAccessor1</a>&lt; double &gt; &amp;pressures, <a class="el" href="namespace_cubby_flow.html#a054a2be00c5985d24e47a27620141ae9">ArrayAccessor1</a>&lt; <a class="el" href="namespace_cubby_flow.html#a4db57ff3bc35d170bda4f85afce858cc">Vector2D</a> &gt; pressureForces)</td></tr>
+<tr class="memdesc:a2f4bfb524c014968f4037c7ee69b2cd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accumulates the pressure force to the given <code>pressureForces</code> array.  <a href="#a2f4bfb524c014968f4037c7ee69b2cd4">More...</a><br /></td></tr>
+<tr class="separator:a2f4bfb524c014968f4037c7ee69b2cd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaed359f17b5e34e4002382eb10cc9a3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_s_p_h_solver2.html#aaed359f17b5e34e4002382eb10cc9a3b">AccumulateViscosityForce</a> ()</td></tr>
+<tr class="separator:aaed359f17b5e34e4002382eb10cc9a3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ebc9568761113341e9d7a7e70dce252"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_s_p_h_solver2.html#a2ebc9568761113341e9d7a7e70dce252">ComputePseudoViscosity</a> (double timeStepInSeconds)</td></tr>
+<tr class="memdesc:a2ebc9568761113341e9d7a7e70dce252"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes pseudo viscosity.  <a href="#a2ebc9568761113341e9d7a7e70dce252">More...</a><br /></td></tr>
+<tr class="separator:a2ebc9568761113341e9d7a7e70dce252"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76a5ec3c46bd41c0cfe932cdf39bfd3b"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_s_p_h_solver2.html#a76a5ec3c46bd41c0cfe932cdf39bfd3b">NumberOfSubTimeSteps</a> (double timeIntervalInSeconds) const override</td></tr>
 <tr class="memdesc:a76a5ec3c46bd41c0cfe932cdf39bfd3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of sub-time-steps.  <a href="#a76a5ec3c46bd41c0cfe932cdf39bfd3b">More...</a><br /></td></tr>
 <tr class="separator:a76a5ec3c46bd41c0cfe932cdf39bfd3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -308,7 +387,7 @@ M. Becker and M. Teschner, Weakly compressible SPH for free surface flows, SCA 2
 Adams and Wicke, Meshless approximation methods and applications in physics based modeling and animation, Eurographics tutorials 2009. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7a63913ec0dd70bd19b0e5e9f73f9e76"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7a63913ec0dd70bd19b0e5e9f73f9e76">&#9670;&nbsp;</a></span>SPHSolver2() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a63913ec0dd70bd19b0e5e9f73f9e76">&#9670;&nbsp;</a></span>SPHSolver2() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -327,7 +406,7 @@ Adams and Wicke, Meshless approximation methods and applications in physics base
 </div>
 </div>
 <a id="a704102b20f872c13dbeb2f7ae4635bfe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a704102b20f872c13dbeb2f7ae4635bfe">&#9670;&nbsp;</a></span>~SPHSolver2()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a704102b20f872c13dbeb2f7ae4635bfe">&#9670;&nbsp;</a></span>~SPHSolver2() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -352,7 +431,86 @@ Adams and Wicke, Meshless approximation methods and applications in physics base
 </div>
 </div>
 <a id="a50ccb4514cb2fd966bcaa32b860312a1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a50ccb4514cb2fd966bcaa32b860312a1">&#9670;&nbsp;</a></span>SPHSolver2() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a50ccb4514cb2fd966bcaa32b860312a1">&#9670;&nbsp;</a></span>SPHSolver2() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CubbyFlow::SPHSolver2::SPHSolver2 </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>targetDensity</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>targetSpacing</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>relativeKernelRadius</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Constructs a solver with target density, spacing, and relative kernel radius. </p>
+
+</div>
+</div>
+<a id="a7a63913ec0dd70bd19b0e5e9f73f9e76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a63913ec0dd70bd19b0e5e9f73f9e76">&#9670;&nbsp;</a></span>SPHSolver2() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CubbyFlow::SPHSolver2::SPHSolver2 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a solver with empty particle set. </p>
+
+</div>
+</div>
+<a id="a704102b20f872c13dbeb2f7ae4635bfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a704102b20f872c13dbeb2f7ae4635bfe">&#9670;&nbsp;</a></span>~SPHSolver2() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual CubbyFlow::SPHSolver2::~SPHSolver2 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a50ccb4514cb2fd966bcaa32b860312a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50ccb4514cb2fd966bcaa32b860312a1">&#9670;&nbsp;</a></span>SPHSolver2() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -388,7 +546,37 @@ Adams and Wicke, Meshless approximation methods and applications in physics base
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a6d59ab84ef826630691d4b17ce2b5925"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6d59ab84ef826630691d4b17ce2b5925">&#9670;&nbsp;</a></span>AccumulateForces()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d59ab84ef826630691d4b17ce2b5925">&#9670;&nbsp;</a></span>AccumulateForces() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CubbyFlow::SPHSolver2::AccumulateForces </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>timeStepInSeconds</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Accumulates the force to the forces array in the particle system. </p>
+
+<p>Reimplemented from <a class="el" href="class_cubby_flow_1_1_particle_system_solver2.html#a1d30e285783f5c7b1f467fe0a866a8db">CubbyFlow::ParticleSystemSolver2</a>.</p>
+
+</div>
+</div>
+<a id="a6d59ab84ef826630691d4b17ce2b5925"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d59ab84ef826630691d4b17ce2b5925">&#9670;&nbsp;</a></span>AccumulateForces() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -418,7 +606,34 @@ Adams and Wicke, Meshless approximation methods and applications in physics base
 </div>
 </div>
 <a id="ae9c9a4aa256f6bdec5f56e1b3225c3b9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae9c9a4aa256f6bdec5f56e1b3225c3b9">&#9670;&nbsp;</a></span>AccumulateNonPressureForces()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9c9a4aa256f6bdec5f56e1b3225c3b9">&#9670;&nbsp;</a></span>AccumulateNonPressureForces() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void CubbyFlow::SPHSolver2::AccumulateNonPressureForces </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>timeStepInSeconds</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Accumulates the non-pressure forces to the forces array in the particle system. </p>
+
+</div>
+</div>
+<a id="ae9c9a4aa256f6bdec5f56e1b3225c3b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9c9a4aa256f6bdec5f56e1b3225c3b9">&#9670;&nbsp;</a></span>AccumulateNonPressureForces() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -445,7 +660,36 @@ Adams and Wicke, Meshless approximation methods and applications in physics base
 </div>
 </div>
 <a id="aa5db8118ed5248c0c098b004d81371df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa5db8118ed5248c0c098b004d81371df">&#9670;&nbsp;</a></span>AccumulatePressureForce() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5db8118ed5248c0c098b004d81371df">&#9670;&nbsp;</a></span>AccumulatePressureForce() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void CubbyFlow::SPHSolver2::AccumulatePressureForce </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>timeStepInSeconds</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Accumulates the pressure force to the forces array in the particle system. </p>
+
+<p>Reimplemented in <a class="el" href="class_cubby_flow_1_1_p_c_i_s_p_h_solver2.html#ac2f4472500d27637b5843b230885c5dc">CubbyFlow::PCISPHSolver2</a>.</p>
+
+</div>
+</div>
+<a id="aa5db8118ed5248c0c098b004d81371df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5db8118ed5248c0c098b004d81371df">&#9670;&nbsp;</a></span>AccumulatePressureForce() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -474,7 +718,57 @@ Adams and Wicke, Meshless approximation methods and applications in physics base
 </div>
 </div>
 <a id="a2f4bfb524c014968f4037c7ee69b2cd4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f4bfb524c014968f4037c7ee69b2cd4">&#9670;&nbsp;</a></span>AccumulatePressureForce() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f4bfb524c014968f4037c7ee69b2cd4">&#9670;&nbsp;</a></span>AccumulatePressureForce() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CubbyFlow::SPHSolver2::AccumulatePressureForce </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespace_cubby_flow.html#a54017cf5da78c67bd485460e49536fee">ConstArrayAccessor1</a>&lt; <a class="el" href="namespace_cubby_flow.html#a4db57ff3bc35d170bda4f85afce858cc">Vector2D</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>positions</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespace_cubby_flow.html#a54017cf5da78c67bd485460e49536fee">ConstArrayAccessor1</a>&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>densities</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespace_cubby_flow.html#a54017cf5da78c67bd485460e49536fee">ConstArrayAccessor1</a>&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>pressures</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_cubby_flow.html#a054a2be00c5985d24e47a27620141ae9">ArrayAccessor1</a>&lt; <a class="el" href="namespace_cubby_flow.html#a4db57ff3bc35d170bda4f85afce858cc">Vector2D</a> &gt;&#160;</td>
+          <td class="paramname"><em>pressureForces</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Accumulates the pressure force to the given <code>pressureForces</code> array. </p>
+
+</div>
+</div>
+<a id="a2f4bfb524c014968f4037c7ee69b2cd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f4bfb524c014968f4037c7ee69b2cd4">&#9670;&nbsp;</a></span>AccumulatePressureForce() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -524,7 +818,33 @@ Adams and Wicke, Meshless approximation methods and applications in physics base
 </div>
 </div>
 <a id="aaed359f17b5e34e4002382eb10cc9a3b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaed359f17b5e34e4002382eb10cc9a3b">&#9670;&nbsp;</a></span>AccumulateViscosityForce()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aaed359f17b5e34e4002382eb10cc9a3b">&#9670;&nbsp;</a></span>AccumulateViscosityForce() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CubbyFlow::SPHSolver2::AccumulateViscosityForce </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Accumulates the viscosity force to the forces array in the particle system. </p>
+
+</div>
+</div>
+<a id="aaed359f17b5e34e4002382eb10cc9a3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaed359f17b5e34e4002382eb10cc9a3b">&#9670;&nbsp;</a></span>AccumulateViscosityForce() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -550,7 +870,34 @@ Adams and Wicke, Meshless approximation methods and applications in physics base
 </div>
 </div>
 <a id="a404ed2e51d266915b2298a3afd520502"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a404ed2e51d266915b2298a3afd520502">&#9670;&nbsp;</a></span>ComputePressure()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a404ed2e51d266915b2298a3afd520502">&#9670;&nbsp;</a></span>ComputePressure() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CubbyFlow::SPHSolver2::ComputePressure </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Computes the pressure. </p>
+
+</div>
+</div>
+<a id="a404ed2e51d266915b2298a3afd520502"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a404ed2e51d266915b2298a3afd520502">&#9670;&nbsp;</a></span>ComputePressure() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -577,7 +924,35 @@ Adams and Wicke, Meshless approximation methods and applications in physics base
 </div>
 </div>
 <a id="a2ebc9568761113341e9d7a7e70dce252"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2ebc9568761113341e9d7a7e70dce252">&#9670;&nbsp;</a></span>ComputePseudoViscosity()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ebc9568761113341e9d7a7e70dce252">&#9670;&nbsp;</a></span>ComputePseudoViscosity() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CubbyFlow::SPHSolver2::ComputePseudoViscosity </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>timeStepInSeconds</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Computes pseudo viscosity. </p>
+
+</div>
+</div>
+<a id="a2ebc9568761113341e9d7a7e70dce252"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ebc9568761113341e9d7a7e70dce252">&#9670;&nbsp;</a></span>ComputePseudoViscosity() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -605,7 +980,34 @@ Adams and Wicke, Meshless approximation methods and applications in physics base
 </div>
 </div>
 <a id="a88f2b4a6d4a5b0e2a2874a66a0e0fca4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a88f2b4a6d4a5b0e2a2874a66a0e0fca4">&#9670;&nbsp;</a></span>GetBuilder()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a88f2b4a6d4a5b0e2a2874a66a0e0fca4">&#9670;&nbsp;</a></span>GetBuilder() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_cubby_flow_1_1_s_p_h_solver2_1_1_builder.html">Builder</a> CubbyFlow::SPHSolver2::GetBuilder </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns builder fox <a class="el" href="class_cubby_flow_1_1_s_p_h_solver2.html" title="2-D SPH solver. ">SPHSolver2</a>. </p>
+
+</div>
+</div>
+<a id="a88f2b4a6d4a5b0e2a2874a66a0e0fca4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88f2b4a6d4a5b0e2a2874a66a0e0fca4">&#9670;&nbsp;</a></span>GetBuilder() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -632,7 +1034,26 @@ Adams and Wicke, Meshless approximation methods and applications in physics base
 </div>
 </div>
 <a id="a3e7bbbdc6287c0b5acf9da0904a36062"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e7bbbdc6287c0b5acf9da0904a36062">&#9670;&nbsp;</a></span>GetEosExponent()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e7bbbdc6287c0b5acf9da0904a36062">&#9670;&nbsp;</a></span>GetEosExponent() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double CubbyFlow::SPHSolver2::GetEosExponent </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the exponent part of the equation-of-state. </p>
+
+</div>
+</div>
+<a id="a3e7bbbdc6287c0b5acf9da0904a36062"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e7bbbdc6287c0b5acf9da0904a36062">&#9670;&nbsp;</a></span>GetEosExponent() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -651,7 +1072,26 @@ Adams and Wicke, Meshless approximation methods and applications in physics base
 </div>
 </div>
 <a id="af80ddc62544c852828517c3b7037e95f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af80ddc62544c852828517c3b7037e95f">&#9670;&nbsp;</a></span>GetNegativePressureScale()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af80ddc62544c852828517c3b7037e95f">&#9670;&nbsp;</a></span>GetNegativePressureScale() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double CubbyFlow::SPHSolver2::GetNegativePressureScale </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the negative pressure scale. </p>
+
+</div>
+</div>
+<a id="af80ddc62544c852828517c3b7037e95f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af80ddc62544c852828517c3b7037e95f">&#9670;&nbsp;</a></span>GetNegativePressureScale() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -670,7 +1110,26 @@ Adams and Wicke, Meshless approximation methods and applications in physics base
 </div>
 </div>
 <a id="a4d25a3f375a41d16bd551b67f8981fb9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d25a3f375a41d16bd551b67f8981fb9">&#9670;&nbsp;</a></span>GetPseudoViscosityCoefficient()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d25a3f375a41d16bd551b67f8981fb9">&#9670;&nbsp;</a></span>GetPseudoViscosityCoefficient() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double CubbyFlow::SPHSolver2::GetPseudoViscosityCoefficient </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the pseudo viscosity coefficient. </p>
+
+</div>
+</div>
+<a id="a4d25a3f375a41d16bd551b67f8981fb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d25a3f375a41d16bd551b67f8981fb9">&#9670;&nbsp;</a></span>GetPseudoViscosityCoefficient() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -689,7 +1148,26 @@ Adams and Wicke, Meshless approximation methods and applications in physics base
 </div>
 </div>
 <a id="afc2a45b12dfd1431632b69a54a576510"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afc2a45b12dfd1431632b69a54a576510">&#9670;&nbsp;</a></span>GetSpeedOfSound()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#afc2a45b12dfd1431632b69a54a576510">&#9670;&nbsp;</a></span>GetSpeedOfSound() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double CubbyFlow::SPHSolver2::GetSpeedOfSound </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the speed of sound. </p>
+
+</div>
+</div>
+<a id="afc2a45b12dfd1431632b69a54a576510"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc2a45b12dfd1431632b69a54a576510">&#9670;&nbsp;</a></span>GetSpeedOfSound() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -708,7 +1186,26 @@ Adams and Wicke, Meshless approximation methods and applications in physics base
 </div>
 </div>
 <a id="a9f126f90ca170e8dbbe1281aafbe87c2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f126f90ca170e8dbbe1281aafbe87c2">&#9670;&nbsp;</a></span>GetSPHSystemData()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f126f90ca170e8dbbe1281aafbe87c2">&#9670;&nbsp;</a></span>GetSPHSystemData() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_cubby_flow.html#a6b4a055b393903de55e72a1a425f75c4">SPHSystemData2Ptr</a> CubbyFlow::SPHSolver2::GetSPHSystemData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the SPH system data. </p>
+
+</div>
+</div>
+<a id="a9f126f90ca170e8dbbe1281aafbe87c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f126f90ca170e8dbbe1281aafbe87c2">&#9670;&nbsp;</a></span>GetSPHSystemData() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -727,7 +1224,27 @@ Adams and Wicke, Meshless approximation methods and applications in physics base
 </div>
 </div>
 <a id="a7a0eb6d10586f5c3553148e8cebc24a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7a0eb6d10586f5c3553148e8cebc24a2">&#9670;&nbsp;</a></span>GetTimeStepLimitScale()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a0eb6d10586f5c3553148e8cebc24a2">&#9670;&nbsp;</a></span>GetTimeStepLimitScale() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double CubbyFlow::SPHSolver2::GetTimeStepLimitScale </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Multiplier that scales the max allowed time-step. </p>
+<p>This function returns the multiplier that scales the max allowed time-step. When the scale is 1.0, the time-step is bounded by the speed of sound and max acceleration. </p>
+
+</div>
+</div>
+<a id="a7a0eb6d10586f5c3553148e8cebc24a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a0eb6d10586f5c3553148e8cebc24a2">&#9670;&nbsp;</a></span>GetTimeStepLimitScale() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -747,7 +1264,26 @@ Adams and Wicke, Meshless approximation methods and applications in physics base
 </div>
 </div>
 <a id="a12d1e983d0e618e2ba9eadce6b010d49"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a12d1e983d0e618e2ba9eadce6b010d49">&#9670;&nbsp;</a></span>GetViscosityCoefficient()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a12d1e983d0e618e2ba9eadce6b010d49">&#9670;&nbsp;</a></span>GetViscosityCoefficient() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double CubbyFlow::SPHSolver2::GetViscosityCoefficient </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the viscosity coefficient. </p>
+
+</div>
+</div>
+<a id="a12d1e983d0e618e2ba9eadce6b010d49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12d1e983d0e618e2ba9eadce6b010d49">&#9670;&nbsp;</a></span>GetViscosityCoefficient() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -766,7 +1302,37 @@ Adams and Wicke, Meshless approximation methods and applications in physics base
 </div>
 </div>
 <a id="a76a5ec3c46bd41c0cfe932cdf39bfd3b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a76a5ec3c46bd41c0cfe932cdf39bfd3b">&#9670;&nbsp;</a></span>NumberOfSubTimeSteps()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a76a5ec3c46bd41c0cfe932cdf39bfd3b">&#9670;&nbsp;</a></span>NumberOfSubTimeSteps() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int CubbyFlow::SPHSolver2::NumberOfSubTimeSteps </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>timeIntervalInSeconds</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the number of sub-time-steps. </p>
+
+<p>Reimplemented from <a class="el" href="class_cubby_flow_1_1_physics_animation.html#ae60fa0dbaf68c3cde4a7dbf23571491e">CubbyFlow::PhysicsAnimation</a>.</p>
+
+</div>
+</div>
+<a id="a76a5ec3c46bd41c0cfe932cdf39bfd3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76a5ec3c46bd41c0cfe932cdf39bfd3b">&#9670;&nbsp;</a></span>NumberOfSubTimeSteps() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -796,7 +1362,37 @@ Adams and Wicke, Meshless approximation methods and applications in physics base
 </div>
 </div>
 <a id="a96918778001f82079be1f8533aa92c85"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a96918778001f82079be1f8533aa92c85">&#9670;&nbsp;</a></span>OnBeginAdvanceTimeStep()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a96918778001f82079be1f8533aa92c85">&#9670;&nbsp;</a></span>OnBeginAdvanceTimeStep() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CubbyFlow::SPHSolver2::OnBeginAdvanceTimeStep </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>timeStepInSeconds</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Performs pre-processing step before the simulation. </p>
+
+<p>Reimplemented from <a class="el" href="class_cubby_flow_1_1_particle_system_solver2.html#a7d3900bb993b95a159bdfd02e5f089ea">CubbyFlow::ParticleSystemSolver2</a>.</p>
+
+</div>
+</div>
+<a id="a96918778001f82079be1f8533aa92c85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96918778001f82079be1f8533aa92c85">&#9670;&nbsp;</a></span>OnBeginAdvanceTimeStep() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -826,7 +1422,37 @@ Adams and Wicke, Meshless approximation methods and applications in physics base
 </div>
 </div>
 <a id="a295f1cc49abb5190cf788d4770f2e499"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a295f1cc49abb5190cf788d4770f2e499">&#9670;&nbsp;</a></span>OnEndAdvanceTimeStep()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a295f1cc49abb5190cf788d4770f2e499">&#9670;&nbsp;</a></span>OnEndAdvanceTimeStep() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CubbyFlow::SPHSolver2::OnEndAdvanceTimeStep </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>timeStepInSeconds</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Performs post-processing step before the simulation. </p>
+
+<p>Reimplemented from <a class="el" href="class_cubby_flow_1_1_particle_system_solver2.html#a98b7e204e3440ce3c75e9618a328b412">CubbyFlow::ParticleSystemSolver2</a>.</p>
+
+</div>
+</div>
+<a id="a295f1cc49abb5190cf788d4770f2e499"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a295f1cc49abb5190cf788d4770f2e499">&#9670;&nbsp;</a></span>OnEndAdvanceTimeStep() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -856,7 +1482,28 @@ Adams and Wicke, Meshless approximation methods and applications in physics base
 </div>
 </div>
 <a id="a740d3d5320808c2f36cdb83646ec6330"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a740d3d5320808c2f36cdb83646ec6330">&#9670;&nbsp;</a></span>SetEosExponent()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a740d3d5320808c2f36cdb83646ec6330">&#9670;&nbsp;</a></span>SetEosExponent() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CubbyFlow::SPHSolver2::SetEosExponent </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>newEosExponent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the exponent part of the equation-of-state. </p>
+<p>This function sets the exponent part of the equation-of-state. The value must be greater than 1.0, and smaller inputs will be clamped. Default is 7. </p>
+
+</div>
+</div>
+<a id="a740d3d5320808c2f36cdb83646ec6330"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a740d3d5320808c2f36cdb83646ec6330">&#9670;&nbsp;</a></span>SetEosExponent() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -877,7 +1524,28 @@ Adams and Wicke, Meshless approximation methods and applications in physics base
 </div>
 </div>
 <a id="a676e566aed6771158f05a91aac7e08ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a676e566aed6771158f05a91aac7e08ef">&#9670;&nbsp;</a></span>SetNegativePressureScale()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a676e566aed6771158f05a91aac7e08ef">&#9670;&nbsp;</a></span>SetNegativePressureScale() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CubbyFlow::SPHSolver2::SetNegativePressureScale </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>newNegativePressureScale</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the negative pressure scale. </p>
+<p>This function sets the negative pressure scale. By setting the number between 0 and 1, the solver will scale the effect of negative pressure which can prevent the clumping of the particles near the surface. Input value outside 0 and 1 will be clamped within the range. Default is 0. </p>
+
+</div>
+</div>
+<a id="a676e566aed6771158f05a91aac7e08ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a676e566aed6771158f05a91aac7e08ef">&#9670;&nbsp;</a></span>SetNegativePressureScale() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -898,7 +1566,28 @@ Adams and Wicke, Meshless approximation methods and applications in physics base
 </div>
 </div>
 <a id="a62058b78646129606a9c3c5f2b322427"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a62058b78646129606a9c3c5f2b322427">&#9670;&nbsp;</a></span>SetPseudoViscosityCoefficient()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a62058b78646129606a9c3c5f2b322427">&#9670;&nbsp;</a></span>SetPseudoViscosityCoefficient() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CubbyFlow::SPHSolver2::SetPseudoViscosityCoefficient </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>newPseudoViscosityCoefficient</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the pseudo viscosity coefficient. </p>
+<p>This function sets the pseudo viscosity coefficient which applies additional pseudo-physical damping to the system. Default is 10. </p>
+
+</div>
+</div>
+<a id="a62058b78646129606a9c3c5f2b322427"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62058b78646129606a9c3c5f2b322427">&#9670;&nbsp;</a></span>SetPseudoViscosityCoefficient() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -919,7 +1608,28 @@ Adams and Wicke, Meshless approximation methods and applications in physics base
 </div>
 </div>
 <a id="a32371b751a8ef381cb59b136ac36b007"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a32371b751a8ef381cb59b136ac36b007">&#9670;&nbsp;</a></span>SetSpeedOfSound()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a32371b751a8ef381cb59b136ac36b007">&#9670;&nbsp;</a></span>SetSpeedOfSound() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CubbyFlow::SPHSolver2::SetSpeedOfSound </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>newSpeedOfSound</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the speed of sound. </p>
+<p>This function sets the speed of sound which affects the stiffness of the EOS and the time-step size. Higher value will make EOS stiffer and the time-step smaller. The input value must be higher than 0.0. </p>
+
+</div>
+</div>
+<a id="a32371b751a8ef381cb59b136ac36b007"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32371b751a8ef381cb59b136ac36b007">&#9670;&nbsp;</a></span>SetSpeedOfSound() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -940,7 +1650,28 @@ Adams and Wicke, Meshless approximation methods and applications in physics base
 </div>
 </div>
 <a id="adae7ba5734bb2d8c97c40baf081642b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adae7ba5734bb2d8c97c40baf081642b1">&#9670;&nbsp;</a></span>SetTimeStepLimitScale()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#adae7ba5734bb2d8c97c40baf081642b1">&#9670;&nbsp;</a></span>SetTimeStepLimitScale() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CubbyFlow::SPHSolver2::SetTimeStepLimitScale </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>newScale</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the multiplier that scales the max allowed time-step. </p>
+<p>This function sets the multiplier that scales the max allowed time-step. When the scale is 1.0, the time-step is bounded by the speed of sound and max acceleration. </p>
+
+</div>
+</div>
+<a id="adae7ba5734bb2d8c97c40baf081642b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adae7ba5734bb2d8c97c40baf081642b1">&#9670;&nbsp;</a></span>SetTimeStepLimitScale() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -961,7 +1692,27 @@ Adams and Wicke, Meshless approximation methods and applications in physics base
 </div>
 </div>
 <a id="a08da0fae27b1f376aa1430afd1db3243"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08da0fae27b1f376aa1430afd1db3243">&#9670;&nbsp;</a></span>SetViscosityCoefficient()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a08da0fae27b1f376aa1430afd1db3243">&#9670;&nbsp;</a></span>SetViscosityCoefficient() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CubbyFlow::SPHSolver2::SetViscosityCoefficient </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>newViscosityCoefficient</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the viscosity coefficient. </p>
+
+</div>
+</div>
+<a id="a08da0fae27b1f376aa1430afd1db3243"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08da0fae27b1f376aa1430afd1db3243">&#9670;&nbsp;</a></span>SetViscosityCoefficient() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -981,7 +1732,7 @@ Adams and Wicke, Meshless approximation methods and applications in physics base
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>SPH/<a class="el" href="_s_p_h_solver2_8h_source.html">SPHSolver2.h</a></li>
+<li>Solver/SPH/<a class="el" href="_solver_2_s_p_h_2_s_p_h_solver2_8h_source.html">SPHSolver2.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.8-->
@@ -992,7 +1743,7 @@ Adams and Wicke, Meshless approximation methods and applications in physics base
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 24 2017 23:10:32 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Aug 20 2017 21:55:13 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

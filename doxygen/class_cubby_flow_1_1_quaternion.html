@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.2</a>
+                    <a class="navbar-brand">CubbyFlow v0.3</a>
                 </div>
             </div>
         </nav>
@@ -131,9 +131,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa5f3ebe2b3f17de7a7020e8e937574ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_quaternion.html#aa5f3ebe2b3f17de7a7020e8e937574ff">Set</a> (const <a class="el" href="namespace_cubby_flow.html#ae792a8b1d5171792a83751e35c226581">Vector3</a>&lt; T &gt; &amp;rotationBasis0, const <a class="el" href="namespace_cubby_flow.html#ae792a8b1d5171792a83751e35c226581">Vector3</a>&lt; T &gt; &amp;rotationBasis1, const <a class="el" href="namespace_cubby_flow.html#ae792a8b1d5171792a83751e35c226581">Vector3</a>&lt; T &gt; &amp;rotationBasis2)</td></tr>
 <tr class="memdesc:aa5f3ebe2b3f17de7a7020e8e937574ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets quaternion with three basis vectors.  <a href="#aa5f3ebe2b3f17de7a7020e8e937574ff">More...</a><br /></td></tr>
 <tr class="separator:aa5f3ebe2b3f17de7a7020e8e937574ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad518a0cbd5059febfc73a24c23cf6039"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_quaternion.html#ad518a0cbd5059febfc73a24c23cf6039">Set</a> (const <a class="el" href="namespace_cubby_flow.html#a34c14fcdafa55a5a075905cc50238353">Matrix3x3</a>&lt; T &gt; &amp;matrix)</td></tr>
-<tr class="memdesc:ad518a0cbd5059febfc73a24c23cf6039"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the quaternion with 3x3 rotational matrix.  <a href="#ad518a0cbd5059febfc73a24c23cf6039">More...</a><br /></td></tr>
-<tr class="separator:ad518a0cbd5059febfc73a24c23cf6039"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8096d5834501c3c03874c076cec729e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_quaternion.html#a8096d5834501c3c03874c076cec729e1">Set</a> (const <a class="el" href="namespace_cubby_flow.html#a34c14fcdafa55a5a075905cc50238353">Matrix3x3</a>&lt; T &gt; &amp;m)</td></tr>
+<tr class="memdesc:a8096d5834501c3c03874c076cec729e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the quaternion with 3x3 rotational matrix.  <a href="#a8096d5834501c3c03874c076cec729e1">More...</a><br /></td></tr>
+<tr class="separator:a8096d5834501c3c03874c076cec729e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d3af5816ebcd725cf249dc32724785c"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
 <tr class="memitem:a8d3af5816ebcd725cf249dc32724785c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_cubby_flow_1_1_quaternion.html">Quaternion</a>&lt; U &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_quaternion.html#a8d3af5816ebcd725cf249dc32724785c">CastTo</a> () const</td></tr>
 <tr class="memdesc:a8d3af5816ebcd725cf249dc32724785c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns quaternion with other base type.  <a href="#a8d3af5816ebcd725cf249dc32724785c">More...</a><br /></td></tr>
@@ -1179,8 +1179,8 @@ template&lt;typename T&gt; </div>
 
 </div>
 </div>
-<a id="ad518a0cbd5059febfc73a24c23cf6039"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad518a0cbd5059febfc73a24c23cf6039">&#9670;&nbsp;</a></span>Set() <span class="overload">[7/7]</span></h2>
+<a id="a8096d5834501c3c03874c076cec729e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8096d5834501c3c03874c076cec729e1">&#9670;&nbsp;</a></span>Set() <span class="overload">[7/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1191,7 +1191,7 @@ template&lt;typename T&gt; </div>
           <td class="memname">void <a class="el" href="class_cubby_flow_1_1_quaternion.html">CubbyFlow::Quaternion</a>&lt; T &gt;::Set </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="namespace_cubby_flow.html#a34c14fcdafa55a5a075905cc50238353">Matrix3x3</a>&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>matrix</em></td><td>)</td>
+          <td class="paramname"><em>m</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1307,7 +1307,7 @@ template&lt;typename T&gt; </div>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 24 2017 23:10:31 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Aug 20 2017 21:55:12 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.2</a>
+                    <a class="navbar-brand">CubbyFlow v0.3</a>
                 </div>
             </div>
         </nav>
@@ -90,9 +90,14 @@ Inheritance diagram for CubbyFlow::VectorField3:</div>
  <div class="center">
   <img src="class_cubby_flow_1_1_vector_field3.png" usemap="#CubbyFlow::VectorField3_map" alt=""/>
   <map id="CubbyFlow::VectorField3_map" name="CubbyFlow::VectorField3_map">
-<area href="class_cubby_flow_1_1_field3.html" title="Abstract base class for 3-D fields. " alt="CubbyFlow::Field3" shape="rect" coords="107,0,311,24"/>
-<area href="class_cubby_flow_1_1_constant_vector_field3.html" title="3-D constant vector field. " alt="CubbyFlow::ConstantVectorField3" shape="rect" coords="0,112,204,136"/>
-<area href="class_cubby_flow_1_1_custom_vector_field3.html" title="3-D vector field with custom field function. " alt="CubbyFlow::CustomVectorField3" shape="rect" coords="214,112,418,136"/>
+<area href="class_cubby_flow_1_1_field3.html" title="Abstract base class for 3-D fields. " alt="CubbyFlow::Field3" shape="rect" coords="250,0,490,24"/>
+<area href="class_cubby_flow_1_1_constant_vector_field3.html" title="3-D constant vector field. " alt="CubbyFlow::ConstantVectorField3" shape="rect" coords="0,112,240,136"/>
+<area href="class_cubby_flow_1_1_custom_vector_field3.html" title="3-D vector field with custom field function. " alt="CubbyFlow::CustomVectorField3" shape="rect" coords="250,112,490,136"/>
+<area href="class_cubby_flow_1_1_vector_grid3.html" title="Abstract base class for 3-D vector grid structure. " alt="CubbyFlow::VectorGrid3" shape="rect" coords="500,112,740,136"/>
+<area href="class_cubby_flow_1_1_collocated_vector_grid3.html" title="Abstract base class for 3-D collocated vector grid structure. " alt="CubbyFlow::CollocatedVectorGrid3" shape="rect" coords="375,168,615,192"/>
+<area href="class_cubby_flow_1_1_face_centered_grid3.html" title="3-D face-centered (a.k.a MAC or staggered) grid. " alt="CubbyFlow::FaceCenteredGrid3" shape="rect" coords="625,168,865,192"/>
+<area href="class_cubby_flow_1_1_cell_centered_vector_grid3.html" title="3-D Cell-centered vector grid structure. " alt="CubbyFlow::CellCenteredVectorGrid3" shape="rect" coords="250,224,490,248"/>
+<area href="class_cubby_flow_1_1_vertex_centered_vector_grid3.html" title="3-D Vertex-centered vector grid structure. " alt="CubbyFlow::VertexCenteredVectorGrid3" shape="rect" coords="500,224,740,248"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -198,7 +203,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Returns curl at given position <code>x</code>. </p>
 
-<p>Reimplemented in <a class="el" href="class_cubby_flow_1_1_custom_vector_field3.html#a34e8fa891903d78c12808404a4559191">CubbyFlow::CustomVectorField3</a>.</p>
+<p>Reimplemented in <a class="el" href="class_cubby_flow_1_1_face_centered_grid3.html#ad2cde9630921f345b386443a23b88490">CubbyFlow::FaceCenteredGrid3</a>, <a class="el" href="class_cubby_flow_1_1_collocated_vector_grid3.html#a7533401b1f6f2dae10919ec2a2417efa">CubbyFlow::CollocatedVectorGrid3</a>, and <a class="el" href="class_cubby_flow_1_1_custom_vector_field3.html#a34e8fa891903d78c12808404a4559191">CubbyFlow::CustomVectorField3</a>.</p>
 
 </div>
 </div>
@@ -228,7 +233,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Returns divergence at given position <code>x</code>. </p>
 
-<p>Reimplemented in <a class="el" href="class_cubby_flow_1_1_custom_vector_field3.html#a8edb40237867d3b3882657d2364bbd8b">CubbyFlow::CustomVectorField3</a>.</p>
+<p>Reimplemented in <a class="el" href="class_cubby_flow_1_1_face_centered_grid3.html#a1159f30693abd14c580dcb3bfd1850c6">CubbyFlow::FaceCenteredGrid3</a>, <a class="el" href="class_cubby_flow_1_1_collocated_vector_grid3.html#af2c13e9b230e1a6f8255811d9936a8c0">CubbyFlow::CollocatedVectorGrid3</a>, and <a class="el" href="class_cubby_flow_1_1_custom_vector_field3.html#a8edb40237867d3b3882657d2364bbd8b">CubbyFlow::CustomVectorField3</a>.</p>
 
 </div>
 </div>
@@ -258,7 +263,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Returns sampled value at given position <code>x</code>. </p>
 
-<p>Implemented in <a class="el" href="class_cubby_flow_1_1_custom_vector_field3.html#aadbdfd8b077a3f3d97932820977c851f">CubbyFlow::CustomVectorField3</a>, and <a class="el" href="class_cubby_flow_1_1_constant_vector_field3.html#a6da2b461eb15a6a1e0a026546ecfe792">CubbyFlow::ConstantVectorField3</a>.</p>
+<p>Implemented in <a class="el" href="class_cubby_flow_1_1_face_centered_grid3.html#a93904220698563a35d4cd7ad054294f7">CubbyFlow::FaceCenteredGrid3</a>, <a class="el" href="class_cubby_flow_1_1_collocated_vector_grid3.html#af01893b403cd5379f61abb3c9b2dd148">CubbyFlow::CollocatedVectorGrid3</a>, <a class="el" href="class_cubby_flow_1_1_custom_vector_field3.html#aadbdfd8b077a3f3d97932820977c851f">CubbyFlow::CustomVectorField3</a>, and <a class="el" href="class_cubby_flow_1_1_constant_vector_field3.html#a6da2b461eb15a6a1e0a026546ecfe792">CubbyFlow::ConstantVectorField3</a>.</p>
 
 </div>
 </div>
@@ -287,7 +292,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Returns sampler function object. </p>
 
-<p>Reimplemented in <a class="el" href="class_cubby_flow_1_1_custom_vector_field3.html#acbb1879aab176fae201d1b1c0d3d689d">CubbyFlow::CustomVectorField3</a>, and <a class="el" href="class_cubby_flow_1_1_constant_vector_field3.html#a51478dd9058d5414819cd0a0b96799fd">CubbyFlow::ConstantVectorField3</a>.</p>
+<p>Reimplemented in <a class="el" href="class_cubby_flow_1_1_face_centered_grid3.html#aa04b05c969b3af39739102b997334793">CubbyFlow::FaceCenteredGrid3</a>, <a class="el" href="class_cubby_flow_1_1_collocated_vector_grid3.html#a17cb69fb05ff4b7135ab483bb98efdcb">CubbyFlow::CollocatedVectorGrid3</a>, <a class="el" href="class_cubby_flow_1_1_custom_vector_field3.html#acbb1879aab176fae201d1b1c0d3d689d">CubbyFlow::CustomVectorField3</a>, and <a class="el" href="class_cubby_flow_1_1_constant_vector_field3.html#a51478dd9058d5414819cd0a0b96799fd">CubbyFlow::ConstantVectorField3</a>.</p>
 
 </div>
 </div>
@@ -303,7 +308,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 24 2017 23:10:33 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Aug 20 2017 21:55:15 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

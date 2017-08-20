@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['speed_5fof_5fsound_5fin_5fwater',['SPEED_OF_SOUND_IN_WATER',['../namespace_cubby_flow.html#adb3e9389435cf64f1304e29c1a0bdb64',1,'CubbyFlow']]]
+  ['radius',['radius',['../class_cubby_flow_1_1_cylinder3.html#a44f7ab856aba7a7f22662ef22a4b498a',1,'CubbyFlow::Cylinder3::radius()'],['../class_cubby_flow_1_1_sphere2.html#a881bd9a5216b1c15c71d46d78ac45c87',1,'CubbyFlow::Sphere2::radius()'],['../class_cubby_flow_1_1_sphere3.html#a1be2dd091cfd7c801b457c4d8e759d10',1,'CubbyFlow::Sphere3::radius()']]],
+  ['right',['right',['../struct_cubby_flow_1_1_f_d_m_matrix_row2.html#a3672a1de1e1e93632c89c723c935611d',1,'CubbyFlow::FDMMatrixRow2::right()'],['../struct_cubby_flow_1_1_f_d_m_matrix_row3.html#a7551532e74251184200b90fb9636c565',1,'CubbyFlow::FDMMatrixRow3::right()']]]
 ];

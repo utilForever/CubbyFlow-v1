@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.2</a>
+                    <a class="navbar-brand">CubbyFlow v0.3</a>
                 </div>
             </div>
         </nav>
@@ -72,17 +72,26 @@ $(function() {
 
 <h3><a id="index_l"></a>- l -</h3><ul>
 <li>L2Norm()
-: <a class="el" href="class_cubby_flow_1_1_quaternion.html#a7e1e667d929061bb548e473b365c5704">CubbyFlow::Quaternion&lt; T &gt;</a>
+: <a class="el" href="struct_cubby_flow_1_1_b_l_a_s.html#a023787f330722c863673c4282c5423db">CubbyFlow::BLAS&lt; S, V, M &gt;</a>
+, <a class="el" href="struct_cubby_flow_1_1_f_d_m_blas2.html#a966128d4d484ef4d9f76cf98930aba42">CubbyFlow::FDMBlas2</a>
+, <a class="el" href="struct_cubby_flow_1_1_f_d_m_blas3.html#a0c713090005ea64497bde9314037340b">CubbyFlow::FDMBlas3</a>
+, <a class="el" href="class_cubby_flow_1_1_quaternion.html#a7e1e667d929061bb548e473b365c5704">CubbyFlow::Quaternion&lt; T &gt;</a>
 </li>
 <li>Laplacian()
 : <a class="el" href="class_cubby_flow_1_1_custom_scalar_field2.html#ae6cd03f374d2faf0d4971fea25559b9e">CubbyFlow::CustomScalarField2</a>
 , <a class="el" href="class_cubby_flow_1_1_custom_scalar_field3.html#a62ca49f79b973fef35c79c6ab835ad5e">CubbyFlow::CustomScalarField3</a>
 , <a class="el" href="class_cubby_flow_1_1_scalar_field2.html#aa51b9da6792a357db9cc0f7cb4579f9d">CubbyFlow::ScalarField2</a>
 , <a class="el" href="class_cubby_flow_1_1_scalar_field3.html#aa8226f47b24a5117026ee973db58f1fa">CubbyFlow::ScalarField3</a>
+, <a class="el" href="class_cubby_flow_1_1_scalar_grid2.html#abb012cf5a0f84356937782c95d14b07c">CubbyFlow::ScalarGrid2</a>
+, <a class="el" href="class_cubby_flow_1_1_scalar_grid3.html#af956133aef6160d6c919b790dfe26cea">CubbyFlow::ScalarGrid3</a>
 </li>
 <li>LaplacianAt()
 : <a class="el" href="class_cubby_flow_1_1_s_p_h_system_data2.html#a5fbf985efaca25694b3f608cdc6acc15">CubbyFlow::SPHSystemData2</a>
 , <a class="el" href="class_cubby_flow_1_1_s_p_h_system_data3.html#a62cb5f992ea051686dac42251f5af298">CubbyFlow::SPHSystemData3</a>
+</li>
+<li>LaplacianAtDataPoint()
+: <a class="el" href="class_cubby_flow_1_1_scalar_grid2.html#a213cd377085d3c0450c944b89b917b18">CubbyFlow::ScalarGrid2</a>
+, <a class="el" href="class_cubby_flow_1_1_scalar_grid3.html#aaaa96208e49e6c6832fbb27d53481f22">CubbyFlow::ScalarGrid3</a>
 </li>
 <li>Length()
 : <a class="el" href="class_cubby_flow_1_1_bounding_box_3_01_t_00_012_01_4.html#ad8db7ee8e2668a8a150c285e89368c34">CubbyFlow::BoundingBox&lt; T, 2 &gt;</a>
@@ -99,7 +108,12 @@ $(function() {
 <li>LinearArraySampler()
 : <a class="el" href="class_cubby_flow_1_1_linear_array_sampler_3_01_t_00_01_r_00_011_01_4.html#a665e0397c7547b340ff55aa79a01a05f">CubbyFlow::LinearArraySampler&lt; T, R, 1 &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_linear_array_sampler_3_01_t_00_01_r_00_012_01_4.html#a02c7a5b6b9191b036d615b8095098752">CubbyFlow::LinearArraySampler&lt; T, R, 2 &gt;</a>
-, <a class="el" href="class_cubby_flow_1_1_linear_array_sampler_3_01_t_00_01_r_00_013_01_4.html#a0a1aeaa852a9500e97d684c9399f8fdb">CubbyFlow::LinearArraySampler&lt; T, R, 3 &gt;</a>
+, <a class="el" href="class_cubby_flow_1_1_linear_array_sampler_3_01_t_00_01_r_00_013_01_4.html#af769d255f449510b6df58aba47ff97af">CubbyFlow::LinearArraySampler&lt; T, R, 3 &gt;</a>
+</li>
+<li>LInfNorm()
+: <a class="el" href="struct_cubby_flow_1_1_b_l_a_s.html#a9e5f77f9e2167a3701bba7276ca6270c">CubbyFlow::BLAS&lt; S, V, M &gt;</a>
+, <a class="el" href="struct_cubby_flow_1_1_f_d_m_blas2.html#af3edc70ccfc0d7420c8f61be5c60fd2e">CubbyFlow::FDMBlas2</a>
+, <a class="el" href="struct_cubby_flow_1_1_f_d_m_blas3.html#abb16b7991fb8be56edafe40041cf9270">CubbyFlow::FDMBlas3</a>
 </li>
 <li>Logger()
 : <a class="el" href="class_cubby_flow_1_1_logger.html#ab1a6471d7577c7ef1f5320a6eace9788">CubbyFlow::Logger</a>
@@ -119,7 +133,7 @@ $(function() {
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 24 2017 23:10:35 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Aug 20 2017 21:55:18 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

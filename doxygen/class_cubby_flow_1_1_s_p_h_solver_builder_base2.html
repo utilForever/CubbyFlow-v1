@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.2</a>
+                    <a class="navbar-brand">CubbyFlow v0.3</a>
                 </div>
             </div>
         </nav>
@@ -84,7 +84,7 @@ $(function() {
 <p>Base class for SPH-based fluid solver builder.  
  <a href="class_cubby_flow_1_1_s_p_h_solver_builder_base2.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_s_p_h_solver2_8h_source.html">SPH/SPHSolver2.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="_solver_2_s_p_h_2_s_p_h_solver2_8h_source.html">Solver/SPH/SPHSolver2.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -97,6 +97,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5c6a1793bae4b974db253f82f3d4b0ff"><td class="memItemLeft" align="right" valign="top">DerivedBuilder &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_s_p_h_solver_builder_base2.html#a5c6a1793bae4b974db253f82f3d4b0ff">WithRelativeKernelRadius</a> (double relativeKernelRadius)</td></tr>
 <tr class="memdesc:a5c6a1793bae4b974db253f82f3d4b0ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns builder with relative kernel radius.  <a href="#a5c6a1793bae4b974db253f82f3d4b0ff">More...</a><br /></td></tr>
 <tr class="separator:a5c6a1793bae4b974db253f82f3d4b0ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3447398efdd8218f208c9359b35a2aff"><td class="memItemLeft" align="right" valign="top">DerivedBuilder &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_s_p_h_solver_builder_base2.html#a3447398efdd8218f208c9359b35a2aff">WithTargetDensity</a> (double targetDensity)</td></tr>
+<tr class="memdesc:a3447398efdd8218f208c9359b35a2aff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns builder with target density.  <a href="#a3447398efdd8218f208c9359b35a2aff">More...</a><br /></td></tr>
+<tr class="separator:a3447398efdd8218f208c9359b35a2aff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc9e382b4e8f65adea1d15e789f08a01"><td class="memItemLeft" align="right" valign="top">DerivedBuilder &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_s_p_h_solver_builder_base2.html#acc9e382b4e8f65adea1d15e789f08a01">WithTargetSpacing</a> (double targetSpacing)</td></tr>
+<tr class="memdesc:acc9e382b4e8f65adea1d15e789f08a01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns builder with target spacing.  <a href="#acc9e382b4e8f65adea1d15e789f08a01">More...</a><br /></td></tr>
+<tr class="separator:acc9e382b4e8f65adea1d15e789f08a01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0461fd72bfb2bc5be2726fc773a80cae"><td class="memItemLeft" align="right" valign="top">DerivedBuilder &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_s_p_h_solver_builder_base2.html#a0461fd72bfb2bc5be2726fc773a80cae">WithRelativeKernelRadius</a> (double relativeKernelRadius)</td></tr>
+<tr class="memdesc:a0461fd72bfb2bc5be2726fc773a80cae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns builder with relative kernel radius.  <a href="#a0461fd72bfb2bc5be2726fc773a80cae">More...</a><br /></td></tr>
+<tr class="separator:a0461fd72bfb2bc5be2726fc773a80cae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -114,7 +123,7 @@ class CubbyFlow::SPHSolverBuilderBase2&lt; DerivedBuilder &gt;</h3>
 <p>Base class for SPH-based fluid solver builder. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a5c6a1793bae4b974db253f82f3d4b0ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c6a1793bae4b974db253f82f3d4b0ff">&#9670;&nbsp;</a></span>WithRelativeKernelRadius()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c6a1793bae4b974db253f82f3d4b0ff">&#9670;&nbsp;</a></span>WithRelativeKernelRadius() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -135,8 +144,52 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="a0461fd72bfb2bc5be2726fc773a80cae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0461fd72bfb2bc5be2726fc773a80cae">&#9670;&nbsp;</a></span>WithRelativeKernelRadius() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DerivedBuilder&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">DerivedBuilder&amp; <a class="el" href="class_cubby_flow_1_1_s_p_h_solver_builder_base2.html">CubbyFlow::SPHSolverBuilderBase2</a>&lt; DerivedBuilder &gt;::WithRelativeKernelRadius </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>relativeKernelRadius</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns builder with relative kernel radius. </p>
+
+</div>
+</div>
+<a id="a3447398efdd8218f208c9359b35a2aff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3447398efdd8218f208c9359b35a2aff">&#9670;&nbsp;</a></span>WithTargetDensity() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DerivedBuilder&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">DerivedBuilder&amp; <a class="el" href="class_cubby_flow_1_1_s_p_h_solver_builder_base2.html">CubbyFlow::SPHSolverBuilderBase2</a>&lt; DerivedBuilder &gt;::WithTargetDensity </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>targetDensity</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns builder with target density. </p>
+
+</div>
+</div>
 <a id="a205d17f65ebad0c78172e54cb8c0d436"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a205d17f65ebad0c78172e54cb8c0d436">&#9670;&nbsp;</a></span>WithTargetDensity()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a205d17f65ebad0c78172e54cb8c0d436">&#9670;&nbsp;</a></span>WithTargetDensity() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -158,7 +211,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a400982e80cea21e99b2d09c0a9a6ce2d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a400982e80cea21e99b2d09c0a9a6ce2d">&#9670;&nbsp;</a></span>WithTargetSpacing()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a400982e80cea21e99b2d09c0a9a6ce2d">&#9670;&nbsp;</a></span>WithTargetSpacing() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -167,6 +220,28 @@ template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">T &amp; <a class="el" href="class_cubby_flow_1_1_s_p_h_solver_builder_base2.html">CubbyFlow::SPHSolverBuilderBase2</a>&lt; T &gt;::WithTargetSpacing </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>targetSpacing</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns builder with target spacing. </p>
+
+</div>
+</div>
+<a id="acc9e382b4e8f65adea1d15e789f08a01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc9e382b4e8f65adea1d15e789f08a01">&#9670;&nbsp;</a></span>WithTargetSpacing() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DerivedBuilder&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">DerivedBuilder&amp; <a class="el" href="class_cubby_flow_1_1_s_p_h_solver_builder_base2.html">CubbyFlow::SPHSolverBuilderBase2</a>&lt; DerivedBuilder &gt;::WithTargetSpacing </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>targetSpacing</em></td><td>)</td>
@@ -253,7 +328,7 @@ template&lt;typename DerivedBuilder&gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>SPH/<a class="el" href="_s_p_h_solver2_8h_source.html">SPHSolver2.h</a></li>
+<li>Solver/SPH/<a class="el" href="_solver_2_s_p_h_2_s_p_h_solver2_8h_source.html">SPHSolver2.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.8-->
@@ -264,7 +339,7 @@ template&lt;typename DerivedBuilder&gt; </div>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 24 2017 23:10:32 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Aug 20 2017 21:55:13 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>
