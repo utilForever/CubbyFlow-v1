@@ -263,6 +263,9 @@
     <ClCompile Include="BLASTests.cpp">
       <Filter>Math</Filter>
     </ClCompile>
+    <ClCompile Include="CGTests.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

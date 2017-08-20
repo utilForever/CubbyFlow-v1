@@ -77,6 +77,7 @@
     <ClCompile Include="CellCenteredScalarGrid3Tests.cpp" />
     <ClCompile Include="CellCenteredVectorGrid2Tests.cpp" />
     <ClCompile Include="CellCenteredVectorGrid3Tests.cpp" />
+    <ClCompile Include="CGTests.cpp" />
     <ClCompile Include="ColliderSet2Tests.cpp" />
     <ClCompile Include="ColliderSet3Tests.cpp" />
     <ClCompile Include="Cylinder3Tests.cpp" />
