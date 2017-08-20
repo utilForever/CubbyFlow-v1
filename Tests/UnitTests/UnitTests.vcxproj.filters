@@ -266,6 +266,9 @@
     <ClCompile Include="CGTests.cpp">
       <Filter>Math</Filter>
     </ClCompile>
+    <ClCompile Include="FDMCGSolver2Tests.cpp">
+      <Filter>Solver\FDM</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -339,6 +342,9 @@
     </Filter>
     <Filter Include="Solver\Particle">
       <UniqueIdentifier>{fa22e2f5-db23-4770-8ef4-6615c8135459}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Solver\FDM">
+      <UniqueIdentifier>{dab634a8-bc8e-4e9e-8a0d-176480d76774}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
