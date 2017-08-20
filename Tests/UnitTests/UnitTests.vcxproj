@@ -106,6 +106,8 @@
     <ClCompile Include="GridFractionalBoundaryConditionSolver3Tests.cpp" />
     <ClCompile Include="GridFractionalSinglePhasePressureSolver2Tests.cpp" />
     <ClCompile Include="GridFractionalSinglePhasePressureSolver3Tests.cpp" />
+    <ClCompile Include="GridSinglePhasePressureSolver2Tests.cpp" />
+    <ClCompile Include="GridSinglePhasePressureSolver3Tests.cpp" />
     <ClCompile Include="GridSystemData2Tests.cpp" />
     <ClCompile Include="GridSystemData3Tests.cpp" />
     <ClCompile Include="ImplicitSurfaceSet2Tests.cpp" />

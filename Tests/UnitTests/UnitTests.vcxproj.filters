@@ -329,6 +329,12 @@
     <ClCompile Include="GridFractionalSinglePhasePressureSolver3Tests.cpp">
       <Filter>Solver\Grid</Filter>
     </ClCompile>
+    <ClCompile Include="GridSinglePhasePressureSolver2Tests.cpp">
+      <Filter>Solver\Grid</Filter>
+    </ClCompile>
+    <ClCompile Include="GridSinglePhasePressureSolver3Tests.cpp">
+      <Filter>Solver\Grid</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
