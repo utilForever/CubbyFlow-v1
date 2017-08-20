@@ -67,6 +67,7 @@
     <ClCompile Include="ArrayAccessor3Tests.cpp" />
     <ClCompile Include="ArraySamplersTests.cpp" />
     <ClCompile Include="ArrayUtilsTests.cpp" />
+    <ClCompile Include="BLASTests.cpp" />
     <ClCompile Include="BoundingBox2Tests.cpp" />
     <ClCompile Include="BoundingBox3Tests.cpp" />
     <ClCompile Include="BoundingBoxTests.cpp" />
