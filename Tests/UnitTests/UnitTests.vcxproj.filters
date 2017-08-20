@@ -278,6 +278,9 @@
     <ClCompile Include="FDMGaussSeidelSolver3Tests.cpp">
       <Filter>Solver\FDM</Filter>
     </ClCompile>
+    <ClCompile Include="FDMICCGSolver2Tests.cpp">
+      <Filter>Solver\FDM</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
