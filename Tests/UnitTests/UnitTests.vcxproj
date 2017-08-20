@@ -84,6 +84,7 @@
     <ClCompile Include="FaceCenteredGrid2Tests.cpp" />
     <ClCompile Include="FaceCenteredGrid3Tests.cpp" />
     <ClCompile Include="FDMCGSolver2Tests.cpp" />
+    <ClCompile Include="FDMCGSolver3Tests.cpp" />
     <ClCompile Include="GridEmitter2Tests.cpp" />
     <ClCompile Include="GridEmitter3Tests.cpp" />
     <ClCompile Include="GridSystemData2Tests.cpp" />
