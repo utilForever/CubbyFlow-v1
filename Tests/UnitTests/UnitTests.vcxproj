@@ -89,6 +89,7 @@
     <ClCompile Include="FDMGaussSeidelSolver3Tests.cpp" />
     <ClCompile Include="FDMICCGSolver2Tests.cpp" />
     <ClCompile Include="FDMICCGSolver3Tests.cpp" />
+    <ClCompile Include="FDMJacobiSolver2Tests.cpp" />
     <ClCompile Include="GridEmitter2Tests.cpp" />
     <ClCompile Include="GridEmitter3Tests.cpp" />
     <ClCompile Include="GridSystemData2Tests.cpp" />
