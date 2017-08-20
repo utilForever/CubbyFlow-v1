@@ -311,6 +311,12 @@
     <ClCompile Include="GridFluidSolver3Tests.cpp">
       <Filter>Solver\Grid</Filter>
     </ClCompile>
+    <ClCompile Include="GridForwardDiffusionSolver2Tests.cpp">
+      <Filter>Solver\Grid</Filter>
+    </ClCompile>
+    <ClCompile Include="GridForwardDiffusionSolver3Tests.cpp">
+      <Filter>Solver\Grid</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
