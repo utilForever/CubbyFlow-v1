@@ -94,6 +94,8 @@
     <ClCompile Include="FDMUtilsTests.cpp" />
     <ClCompile Include="GridBackwardDiffusionSolver2Tests.cpp" />
     <ClCompile Include="GridBackwardDiffusionSolver3Tests.cpp" />
+    <ClCompile Include="GridBlockedBoundaryConditionSolver2Tests.cpp" />
+    <ClCompile Include="GridBlockedBoundaryConditionSolver3Tests.cpp" />
     <ClCompile Include="GridEmitter2Tests.cpp" />
     <ClCompile Include="GridEmitter3Tests.cpp" />
     <ClCompile Include="GridSystemData2Tests.cpp" />
