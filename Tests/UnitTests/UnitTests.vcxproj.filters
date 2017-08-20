@@ -305,6 +305,12 @@
     <ClCompile Include="GridBlockedBoundaryConditionSolver3Tests.cpp">
       <Filter>Solver\Grid</Filter>
     </ClCompile>
+    <ClCompile Include="GridFluidSolver2Tests.cpp">
+      <Filter>Solver\Grid</Filter>
+    </ClCompile>
+    <ClCompile Include="GridFluidSolver3Tests.cpp">
+      <Filter>Solver\Grid</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

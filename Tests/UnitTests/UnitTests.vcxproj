@@ -98,6 +98,8 @@
     <ClCompile Include="GridBlockedBoundaryConditionSolver3Tests.cpp" />
     <ClCompile Include="GridEmitter2Tests.cpp" />
     <ClCompile Include="GridEmitter3Tests.cpp" />
+    <ClCompile Include="GridFluidSolver2Tests.cpp" />
+    <ClCompile Include="GridFluidSolver3Tests.cpp" />
     <ClCompile Include="GridSystemData2Tests.cpp" />
     <ClCompile Include="GridSystemData3Tests.cpp" />
     <ClCompile Include="ImplicitSurfaceSet2Tests.cpp" />
