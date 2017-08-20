@@ -281,6 +281,9 @@
     <ClCompile Include="FDMICCGSolver2Tests.cpp">
       <Filter>Solver\FDM</Filter>
     </ClCompile>
+    <ClCompile Include="FDMICCGSolver3Tests.cpp">
+      <Filter>Solver\FDM</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
