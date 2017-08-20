@@ -102,6 +102,8 @@
     <ClCompile Include="GridFluidSolver3Tests.cpp" />
     <ClCompile Include="GridForwardDiffusionSolver2Tests.cpp" />
     <ClCompile Include="GridForwardDiffusionSolver3Tests.cpp" />
+    <ClCompile Include="GridFractionalBoundaryConditionSolver2Tests.cpp" />
+    <ClCompile Include="GridFractionalBoundaryConditionSolver3Tests.cpp" />
     <ClCompile Include="GridSystemData2Tests.cpp" />
     <ClCompile Include="GridSystemData3Tests.cpp" />
     <ClCompile Include="ImplicitSurfaceSet2Tests.cpp" />

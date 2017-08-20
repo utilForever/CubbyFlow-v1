@@ -317,6 +317,12 @@
     <ClCompile Include="GridForwardDiffusionSolver3Tests.cpp">
       <Filter>Solver\Grid</Filter>
     </ClCompile>
+    <ClCompile Include="GridFractionalBoundaryConditionSolver2Tests.cpp">
+      <Filter>Solver\Grid</Filter>
+    </ClCompile>
+    <ClCompile Include="GridFractionalBoundaryConditionSolver3Tests.cpp">
+      <Filter>Solver\Grid</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
