@@ -19,9 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="animation_tests.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="physics_animation_tests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="manual_tests.h" />
