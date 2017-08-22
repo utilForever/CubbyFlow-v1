@@ -9,17 +9,14 @@
 #include <Geometry/TriangleMesh3.h>
 #include <Utils/Macros.h>
 
-#include <cnpy/cnpy/cnpy.h>
+#include <cnpy/cnpy.h>
 #include <gtest/gtest.h>
-#include <pystring/pystring/pystring.h>
+#include <pystring/pystring.h>
 
 #include <fstream>
 #include <string>
 #include <vector>
 
-#if LAGACY_CODE == 0
-#include <experimental/filesystem>
-#endif
 #ifdef CUBBYFLOW_WINDOWS
 #include <direct.h>
 #else
@@ -34,7 +31,6 @@ inline void CreateDirectory(const std::string& dirName)
 	pystring::split(dirName, tokens, "/");
 	std::string partialDir;
 
-#if (LAGACY_CODE == 1)
 	for (const auto& token : tokens)
 	{
 		partialDir = pystring::os::path::join(partialDir, token);
@@ -44,12 +40,6 @@ inline void CreateDirectory(const std::string& dirName)
 		mkdir(partialDir.c_str(), S_IRWXU | S_IRWXG | S_IRWXO);
 #endif
 	}
-#else //LAGACY_CODE == 1
-    for (const auto& token : tokens)
-    {
-        std::experimental::filesystem::create_directory(token);
-    }
-#endif // LAGACY_CODE != 1
 }
 
 #define CUBBYFLOW_TESTS(TestSetName) \
