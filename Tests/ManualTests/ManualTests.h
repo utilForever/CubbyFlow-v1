@@ -10,7 +10,6 @@
 #include <Utils/Macros.h>
 
 #include <cnpy/cnpy.h>
-#include <gtest/gtest.h>
 #include <pystring/pystring.h>
 
 #include <fstream>
