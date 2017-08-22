@@ -136,14 +136,14 @@
     <Import Project="..\..\packages\Microsoft.googletest.v140.windesktop.msvcstl.dyn.rt-dyn.1.8.0\build\native\Microsoft.googletest.v140.windesktop.msvcstl.dyn.rt-dyn.targets" Condition="Exists('..\..\packages\Microsoft.googletest.v140.windesktop.msvcstl.dyn.rt-dyn.1.8.0\build\native\Microsoft.googletest.v140.windesktop.msvcstl.dyn.rt-dyn.targets')" />
   </ImportGroup>
   <ImportGroup Label="ExtensionTargets">
-    <Import Project="..\..\packages\zlib.v140.windesktop.msvcstl.dyn.rt-dyn.1.2.8.8\build\native\zlib.v140.windesktop.msvcstl.dyn.rt-dyn.targets" Condition="Exists&#xD;&#xA;    ('..\..\packages\zlib.v140.windesktop.msvcstl.dyn.rt-dyn.1.2.8.8\build\native\zlib.v140.windesktop.msvcstl.dyn.rt-dyn.targets')" />
+    <Import Project="..\..\packages\zlib.greedy.1.2.8.8\build\native\zlib.greedy.targets" Condition="Exists('..\..\packages\zlib.greedy.1.2.8.8\build\native\zlib.greedy.targets')" />
   </ImportGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)include;..\..\Libraries\cnpy;..\..\Libraries\pystring;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\Libraries\cnpy;..\..\Libraries\pystring;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4018;4819</DisableSpecificWarnings>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_USE_MATH_DEFINES;_DEBUG;_LIB;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -164,7 +164,7 @@ $(Command)</Command>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)include;..\..\Libraries\cnpy;..\..\Libraries\pystring;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\Libraries\cnpy;..\..\Libraries\pystring;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4018;4819</DisableSpecificWarnings>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_USE_MATH_DEFINES;_DEBUG;_LIB;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -187,7 +187,7 @@ $(Command)</Command>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)include;..\..\Libraries\cnpy;..\..\Libraries\pystring;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\Libraries\cnpy;..\..\Libraries\pystring;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4018;4819</DisableSpecificWarnings>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_USE_MATH_DEFINES;NDEBUG;_LIB;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeader>Use</PrecompiledHeader>
@@ -211,7 +211,7 @@ $(Command)</Command>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)include;..\..\Libraries\cnpy;..\..\Libraries\pystring;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\Libraries\cnpy;..\..\Libraries\pystring;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4018;4819</DisableSpecificWarnings>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_USE_MATH_DEFINES;NDEBUG;_LIB;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeader>Use</PrecompiledHeader>
@@ -233,11 +233,6 @@ $(Command)</Command>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\..\packages\Microsoft.googletest.v140.windesktop.msvcstl.dyn.rt-dyn.1.8.0\build\native\Microsoft.googletest.v140.windesktop.msvcstl.dyn.rt-dyn.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.googletest.v140.windesktop.msvcstl.dyn.rt-dyn.1.8.0\build\native\Microsoft.googletest.v140.windesktop.msvcstl.dyn.rt-dyn.targets'))" />
-  </Target>
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\..\packages\zlib.v140.windesktop.msvcstl.dyn.rt-dyn.1.2.8.8\build\native\zlib.v140.windesktop.msvcstl.dyn.rt-dyn.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\zlib.v140.windesktop.msvcstl.dyn.rt-dyn.1.2.8.8\build\native\zlib.v140.windesktop.msvcstl.dyn.rt-dyn.targets'))" />
+    <Error Condition="!Exists('..\..\packages\zlib.greedy.1.2.8.8\build\native\zlib.greedy.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\zlib.greedy.1.2.8.8\build\native\zlib.greedy.targets'))" />
   </Target>
 </Project>
