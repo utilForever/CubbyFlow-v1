@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="pch.cpp">
+      <Filter>Precompiled Header</Filter>
+    </ClCompile>
+    <ClCompile Include="ManualTests.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Precompiled Header">
+      <UniqueIdentifier>{9cb65ab0-0182-4b87-af3d-a8fb998ab9d8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h">
+      <Filter>Precompiled Header</Filter>
+    </ClInclude>
+    <ClInclude Include="ManualTests.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="Resources\bunny.obj" />
+    <Object Include="Resources\cube.obj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>
