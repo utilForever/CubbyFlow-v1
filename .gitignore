@@ -254,3 +254,6 @@ paket-files/
 ## For CubbyFlow
 *.npy
 *.bat
+
+## except resource files
+!**/Resources/
