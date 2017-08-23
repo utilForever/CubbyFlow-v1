@@ -5,6 +5,7 @@
       <Filter>Precompiled Header</Filter>
     </ClCompile>
     <ClCompile Include="ManualTests.cpp" />
+    <ClCompile Include="AnimationTests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Precompiled Header">
