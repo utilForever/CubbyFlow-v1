@@ -8,6 +8,7 @@
     <ClCompile Include="AnimationTests.cpp" />
     <ClCompile Include="PhysicsAnimationTests.cpp" />
     <ClCompile Include="ParticleSystemSolver2Tests.cpp" />
+    <ClCompile Include="ParticleSystemSolver3Tests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Precompiled Header">
