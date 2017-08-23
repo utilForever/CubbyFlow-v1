@@ -1,8 +1,6 @@
 #ifndef CUBBYFLOW_MANUAL_TEST_H
 #define CUBBYFLOW_MANUAL_TEST_H
 
-#define LAGACY_CODE 0
-
 #include <Array/ArrayAccessor1.h>
 #include <Array/ArrayAccessor2.h>
 #include <Array/ArrayAccessor3.h>
@@ -90,8 +88,8 @@ inline void CreateDirectory(const std::string& dirName)
 		{ \
             std::string fileName = GetFullFilePath(name); \
             unsigned int dim[2] = { \
-                static_cast<unsigned int>(data.height()), \
-                static_cast<unsigned int>(data.width()) \
+                static_cast<unsigned int>(data.Height()), \
+                static_cast<unsigned int>(data.Width()) \
             }; \
             cnpy::npy_save(fileName, data.Data(), dim, 2, "w"); \
         } \
