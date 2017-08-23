@@ -104,6 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AnimationTests.cpp" />
+    <ClCompile Include="ArrayUtilsTests.cpp" />
     <ClCompile Include="ManualTests.cpp" />
     <ClCompile Include="ParticleSystemSolver2Tests.cpp" />
     <ClCompile Include="ParticleSystemSolver3Tests.cpp" />
