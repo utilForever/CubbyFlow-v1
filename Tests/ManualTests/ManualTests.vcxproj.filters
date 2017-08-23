@@ -6,6 +6,7 @@
     </ClCompile>
     <ClCompile Include="ManualTests.cpp" />
     <ClCompile Include="AnimationTests.cpp" />
+    <ClCompile Include="PhysicsAnimationTests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Precompiled Header">
