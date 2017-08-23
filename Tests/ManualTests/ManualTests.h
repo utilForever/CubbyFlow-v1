@@ -130,7 +130,7 @@ inline void CreateDirectory(const std::string& dirName)
             size_t n = particles->NumberOfParticles(); \
             Array1<double> x(n); \
             Array1<double> y(n); \
-            auto positions = particles->Positions(); \
+            auto positions = particles->GetPositions(); \
 			\
             for (size_t i = 0; i < n; ++i) \
 			{ \
