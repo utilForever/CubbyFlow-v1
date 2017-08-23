@@ -10,6 +10,9 @@
     <Filter Include="Precompiled Header">
       <UniqueIdentifier>{9cb65ab0-0182-4b87-af3d-a8fb998ab9d8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{01e3b9d2-96d8-48c9-9cb1-a61b3c8cadd5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -18,10 +21,14 @@
     <ClInclude Include="ManualTests.h" />
   </ItemGroup>
   <ItemGroup>
-    <Object Include="Resources\bunny.obj" />
-    <Object Include="Resources\cube.obj" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <Object Include="..\..\Resources\bunny.obj">
+      <Filter>Resources</Filter>
+    </Object>
+    <Object Include="..\..\Resources\cube.obj">
+      <Filter>Resources</Filter>
+    </Object>
   </ItemGroup>
 </Project>
