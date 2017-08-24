@@ -13,6 +13,7 @@
     <ClCompile Include="FieldTests.cpp" />
     <ClCompile Include="HelloFluidSimTests.cpp" />
     <ClCompile Include="MarchingCubesTests.cpp" />
+    <ClCompile Include="TriangleMeshToSDFTests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Precompiled Header">
