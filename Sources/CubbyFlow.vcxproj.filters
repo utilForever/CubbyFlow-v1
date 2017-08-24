@@ -1253,5 +1253,8 @@
     <ClCompile Include="Solver\Smoke\GridSmokeSolver3.cpp">
       <Filter>Solver\Smoke</Filter>
     </ClCompile>
+    <ClCompile Include="Geometry\TriangleMeshToSDF.cpp">
+      <Filter>Geometry</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
