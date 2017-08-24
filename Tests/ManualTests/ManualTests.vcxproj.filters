@@ -11,6 +11,7 @@
     <ClCompile Include="ParticleSystemSolver3Tests.cpp" />
     <ClCompile Include="ArrayUtilsTests.cpp" />
     <ClCompile Include="FieldTests.cpp" />
+    <ClCompile Include="HelloFluidSimTests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Precompiled Header">
