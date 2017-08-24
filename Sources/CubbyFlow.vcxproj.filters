@@ -804,6 +804,9 @@
     <ClInclude Include="..\Includes\Solver\Grid\GridFluidSolver2.h">
       <Filter>Solver\Grid</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Geometry\TriangleMeshToSDF.h">
+      <Filter>Geometry</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
