@@ -108,6 +108,7 @@
     <ClCompile Include="FieldTests.cpp" />
     <ClCompile Include="HelloFluidSimTests.cpp" />
     <ClCompile Include="ManualTests.cpp" />
+    <ClCompile Include="MarchingCubesTests.cpp" />
     <ClCompile Include="ParticleSystemSolver2Tests.cpp" />
     <ClCompile Include="ParticleSystemSolver3Tests.cpp" />
     <ClCompile Include="pch.cpp">
