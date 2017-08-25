@@ -118,6 +118,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="PCISPHSolver2Tests.cpp" />
+    <ClCompile Include="PCISPHSolver3Tests.cpp" />
     <ClCompile Include="PhysicsAnimationTests.cpp" />
     <ClCompile Include="TriangleMesh3Tests.cpp" />
     <ClCompile Include="TriangleMeshToSDFTests.cpp" />
