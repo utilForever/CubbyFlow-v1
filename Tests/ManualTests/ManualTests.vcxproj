@@ -121,6 +121,7 @@
     <ClCompile Include="PCISPHSolver3Tests.cpp" />
     <ClCompile Include="PhysicsAnimationTests.cpp" />
     <ClCompile Include="SPHKernelTests.cpp" />
+    <ClCompile Include="SPHSolver2Tests.cpp" />
     <ClCompile Include="TriangleMesh3Tests.cpp" />
     <ClCompile Include="TriangleMeshToSDFTests.cpp" />
   </ItemGroup>
