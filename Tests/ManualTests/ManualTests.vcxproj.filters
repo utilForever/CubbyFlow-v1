@@ -20,6 +20,7 @@
     <ClCompile Include="SPHKernelTests.cpp" />
     <ClCompile Include="SPHSolver2Tests.cpp" />
     <ClCompile Include="SPHSolver3Tests.cpp" />
+    <ClCompile Include="SPHSystemDataTests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Precompiled Header">
