@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.3</a>
+                    <a class="navbar-brand">CubbyFlow v0.31</a>
                 </div>
             </div>
         </nav>
@@ -1478,6 +1478,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ae922b29e28e8d046e7f63f9af3d2a258"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_cubby_flow.html#a7a0f165a2c76a196c9e23978ff7f2dcb">Vector3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_cubby_flow.html#ae922b29e28e8d046e7f63f9af3d2a258">Laplacian3</a> (const <a class="el" href="namespace_cubby_flow.html#a80ff593135fe97d5b6731eb10f6aeabc">ConstArrayAccessor3</a>&lt; <a class="el" href="namespace_cubby_flow.html#a7a0f165a2c76a196c9e23978ff7f2dcb">Vector3D</a> &gt; &amp;data, const <a class="el" href="namespace_cubby_flow.html#a7a0f165a2c76a196c9e23978ff7f2dcb">Vector3D</a> &amp;gridSpacing, size_t i, size_t j, size_t k)</td></tr>
 <tr class="memdesc:ae922b29e28e8d046e7f63f9af3d2a258"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns 3-D Laplacian vectors from given 3-D vector grid-like array <code>data</code>, <code>gridSpacing</code>, and array index (<code>i</code>, <code>j</code>, <code>k</code>).  <a href="#ae922b29e28e8d046e7f63f9af3d2a258">More...</a><br /></td></tr>
 <tr class="separator:ae922b29e28e8d046e7f63f9af3d2a258"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1711faa29ed32ed5ace6fb413f7ae6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_cubby_flow.html#ad1711faa29ed32ed5ace6fb413f7ae6c">TriangleMeshToSDF</a> (const <a class="el" href="class_cubby_flow_1_1_triangle_mesh3.html">TriangleMesh3</a> &amp;mesh, <a class="el" href="class_cubby_flow_1_1_scalar_grid3.html">ScalarGrid3</a> *sdf, const unsigned int exactBand=1)</td></tr>
+<tr class="memdesc:ad1711faa29ed32ed5ace6fb413f7ae6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates signed-distance field out of given triangle mesh.  <a href="#ad1711faa29ed32ed5ace6fb413f7ae6c">More...</a><br /></td></tr>
+<tr class="separator:ad1711faa29ed32ed5ace6fb413f7ae6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a235156b29031549ba1a14fcf6a31f520"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a235156b29031549ba1a14fcf6a31f520"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_cubby_flow.html#a235156b29031549ba1a14fcf6a31f520">IsInsideSDF</a> (T phi)</td></tr>
 <tr class="memdesc:a235156b29031549ba1a14fcf6a31f520"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if <code>phi</code> is inside the implicit surface (&lt; 0).  <a href="#a235156b29031549ba1a14fcf6a31f520">More...</a><br /></td></tr>
@@ -11232,8 +11235,30 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="a754a38cc9248d31d4888009e75a401a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a754a38cc9248d31d4888009e75a401a3">&#9670;&nbsp;</a></span>operator-() <span class="overload">[3/32]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_cubby_flow_1_1_point.html">Point</a>&lt; T, 3 &gt; CubbyFlow::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_cubby_flow_1_1_point.html">Point</a>&lt; T, 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Negative sign operator. </p>
+
+</div>
+</div>
 <a id="a14c9f49bb64bf3a9d13301c02348e2bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a14c9f49bb64bf3a9d13301c02348e2bf">&#9670;&nbsp;</a></span>operator-() <span class="overload">[3/32]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a14c9f49bb64bf3a9d13301c02348e2bf">&#9670;&nbsp;</a></span>operator-() <span class="overload">[4/32]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -11261,28 +11286,6 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 
 <p>Computes (a, a) - (b.x, b.y). </p>
-
-</div>
-</div>
-<a id="a754a38cc9248d31d4888009e75a401a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a754a38cc9248d31d4888009e75a401a3">&#9670;&nbsp;</a></span>operator-() <span class="overload">[4/32]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_cubby_flow_1_1_point.html">Point</a>&lt; T, 3 &gt; CubbyFlow::operator- </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_cubby_flow_1_1_point.html">Point</a>&lt; T, 3 &gt; &amp;&#160;</td>
-          <td class="paramname"><em>a</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Negative sign operator. </p>
 
 </div>
 </div>
@@ -11350,8 +11353,30 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="a780cccc51535b063904b539fec19523a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a780cccc51535b063904b539fec19523a">&#9670;&nbsp;</a></span>operator-() <span class="overload">[7/32]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_cubby_flow_1_1_vector.html">Vector</a>&lt; T, 2 &gt; CubbyFlow::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_cubby_flow_1_1_vector.html">Vector</a>&lt; T, 2 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Negative sign operator. </p>
+
+</div>
+</div>
 <a id="a7afef68bfb86465747df743a3ae5d0da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7afef68bfb86465747df743a3ae5d0da">&#9670;&nbsp;</a></span>operator-() <span class="overload">[7/32]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7afef68bfb86465747df743a3ae5d0da">&#9670;&nbsp;</a></span>operator-() <span class="overload">[8/32]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -11379,28 +11404,6 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 
 <p>Computes (a, a, a) - (b.x, b.y, b.z). </p>
-
-</div>
-</div>
-<a id="a780cccc51535b063904b539fec19523a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a780cccc51535b063904b539fec19523a">&#9670;&nbsp;</a></span>operator-() <span class="overload">[8/32]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_cubby_flow_1_1_vector.html">Vector</a>&lt; T, 2 &gt; CubbyFlow::operator- </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_cubby_flow_1_1_vector.html">Vector</a>&lt; T, 2 &gt; &amp;&#160;</td>
-          <td class="paramname"><em>a</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Negative sign operator. </p>
 
 </div>
 </div>
@@ -14326,6 +14329,53 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="ad1711faa29ed32ed5ace6fb413f7ae6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1711faa29ed32ed5ace6fb413f7ae6c">&#9670;&nbsp;</a></span>TriangleMeshToSDF()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CubbyFlow::TriangleMeshToSDF </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_cubby_flow_1_1_triangle_mesh3.html">TriangleMesh3</a> &amp;&#160;</td>
+          <td class="paramname"><em>mesh</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_cubby_flow_1_1_scalar_grid3.html">ScalarGrid3</a> *&#160;</td>
+          <td class="paramname"><em>sdf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>exactBand</em> = <code>1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Generates signed-distance field out of given triangle mesh. </p>
+<p>This function generates signed-distance field from a triangle mesh. The mesh should be water-tight, meaning there should be no gap. A gap can make the evaluation of the signs impossible. The output signed-distance field will be assigned to the scalar field, <code>sdf</code>, which can be any type of scalar field (vertex-centered vs. cell-centered). To accelerate the calculation, this function also takes extra parameter, <code>exactBand</code>, which defines the bandwidth around the mesh in a number of grid points. This bandwidth is the region where the exact distance to the mesh will be computed. Distance values of the areas that are farther from the mesh surface will be approximated using fast sweeping method. The sign of the signed-distance field is determined by assuming the bounding box of the output scalar grid is the exterior of the mesh.</p>
+<p>This function is a port of Christopher Batty's SDFGen software.</p>
+<dl class="section see"><dt>See also</dt><dd><a href="https://github.com/christopherbatty/SDFGen">https://github.com/christopherbatty/SDFGen</a></dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mesh</td><td>The mesh. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">sdf</td><td>The output signed-distance field. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">exactBand</td><td>The bandwidth for exact distance computation. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a279fefdf1260db13129b2ad555849873"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a279fefdf1260db13129b2ad555849873">&#9670;&nbsp;</a></span>TriLerp()</h2>
 
@@ -15340,7 +15390,7 @@ template&lt;&gt; </div>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 20 2017 21:55:03 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 28 2017 23:10:22 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>
