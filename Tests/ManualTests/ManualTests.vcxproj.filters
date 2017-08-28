@@ -21,6 +21,7 @@
     <ClCompile Include="SPHSolver2Tests.cpp" />
     <ClCompile Include="SPHSolver3Tests.cpp" />
     <ClCompile Include="SPHSystemDataTests.cpp" />
+    <ClCompile Include="VolumeParticleEmitterTests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Precompiled Header">
