@@ -103,6 +103,7 @@
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AdvectionSolverTests.cpp" />
     <ClCompile Include="AnimationTests.cpp" />
     <ClCompile Include="ArrayUtilsTests.cpp" />
     <ClCompile Include="FieldTests.cpp" />
