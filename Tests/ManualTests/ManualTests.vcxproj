@@ -107,6 +107,7 @@
     <ClCompile Include="AnimationTests.cpp" />
     <ClCompile Include="ArrayUtilsTests.cpp" />
     <ClCompile Include="FieldTests.cpp" />
+    <ClCompile Include="GridBoundaryConditionSolverTests.cpp" />
     <ClCompile Include="HelloFluidSimTests.cpp" />
     <ClCompile Include="ManualTests.cpp" />
     <ClCompile Include="MarchingCubesTests.cpp" />
