@@ -26,6 +26,7 @@
     <ClCompile Include="GridBoundaryConditionSolverTests.cpp" />
     <ClCompile Include="GridDiffusionSolverTests.cpp" />
     <ClCompile Include="GridFluidSolverTests.cpp" />
+    <ClCompile Include="PointHashGridSearcherTests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Precompiled Header">
