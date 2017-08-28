@@ -24,6 +24,7 @@
     <ClCompile Include="VolumeParticleEmitterTests.cpp" />
     <ClCompile Include="AdvectionSolverTests.cpp" />
     <ClCompile Include="GridBoundaryConditionSolverTests.cpp" />
+    <ClCompile Include="GridDiffusionSolverTests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Precompiled Header">
