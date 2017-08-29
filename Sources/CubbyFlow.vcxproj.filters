@@ -103,6 +103,9 @@
     <Filter Include="Solver\Smoke">
       <UniqueIdentifier>{4a15bdfb-23e4-4287-bd52-b30cf99a1afa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Solver\LevelSet">
+      <UniqueIdentifier>{9549e12d-95ba-4544-bc1a-78dd21095ccf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Includes\Animation\Animation.h">
@@ -806,6 +809,9 @@
     </ClInclude>
     <ClInclude Include="..\Includes\Geometry\TriangleMeshToSDF.h">
       <Filter>Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Solver\LevelSet\LevelSetSolver2.h">
+      <Filter>Solver\LevelSet</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
