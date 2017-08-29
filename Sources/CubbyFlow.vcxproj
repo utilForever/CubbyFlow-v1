@@ -561,6 +561,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="Solver\Grid\GridSinglePhasePressureSolver2.cpp" />
     <ClCompile Include="Solver\Grid\GridSinglePhasePressureSolver3.cpp" />
     <ClCompile Include="Solver\LevelSet\LevelSetSolver2.cpp" />
+    <ClCompile Include="Solver\LevelSet\LevelSetSolver3.cpp" />
     <ClCompile Include="Solver\Particle\ParticleSystemSolver2.cpp" />
     <ClCompile Include="Solver\Particle\ParticleSystemSolver3.cpp" />
     <ClCompile Include="Solver\PCISPH\PCISPHSolver2.cpp" />
