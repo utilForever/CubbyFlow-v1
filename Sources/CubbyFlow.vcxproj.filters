@@ -813,6 +813,9 @@
     <ClInclude Include="..\Includes\Solver\LevelSet\LevelSetSolver2.h">
       <Filter>Solver\LevelSet</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Solver\LevelSet\LevelSetSolver3.h">
+      <Filter>Solver\LevelSet</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
