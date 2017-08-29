@@ -1262,5 +1262,8 @@
     <ClCompile Include="Geometry\TriangleMeshToSDF.cpp">
       <Filter>Geometry</Filter>
     </ClCompile>
+    <ClCompile Include="Solver\LevelSet\LevelSetSolver2.cpp">
+      <Filter>Solver\LevelSet</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
