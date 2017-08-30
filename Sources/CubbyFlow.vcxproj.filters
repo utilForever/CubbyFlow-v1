@@ -1283,5 +1283,8 @@
     <ClCompile Include="Solver\LevelSet\LevelSetLiquidSolver2.cpp">
       <Filter>Solver\LevelSet</Filter>
     </ClCompile>
+    <ClCompile Include="Solver\LevelSet\IterativeLevelSetSolver2.cpp">
+      <Filter>Solver\LevelSet</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
