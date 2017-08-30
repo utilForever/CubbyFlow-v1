@@ -370,6 +370,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Solver\Grid\GridPressureSolver3.h" />
     <ClInclude Include="..\Includes\Solver\Grid\GridSinglePhasePressureSolver2.h" />
     <ClInclude Include="..\Includes\Solver\Grid\GridSinglePhasePressureSolver3.h" />
+    <ClInclude Include="..\Includes\Solver\LevelSet\IterativeLevelSetSolver2.h" />
     <ClInclude Include="..\Includes\Solver\LevelSet\LevelSetLiquidSolver2.h" />
     <ClInclude Include="..\Includes\Solver\LevelSet\LevelSetSolver2.h" />
     <ClInclude Include="..\Includes\Solver\LevelSet\LevelSetSolver3.h" />
