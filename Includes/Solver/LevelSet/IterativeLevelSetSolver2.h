@@ -127,7 +127,7 @@ namespace CubbyFlow
 
 		double PseudoTimeStep(
 			ConstArrayAccessor2<double> sdf,
-			const Vector2D& gridSpacing);
+			const Vector2D& gridSpacing) const;
 	};
 }
 
