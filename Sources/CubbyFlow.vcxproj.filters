@@ -831,6 +831,9 @@
     <ClInclude Include="..\Includes\Solver\LevelSet\ENOLevelSetSolver3.h">
       <Filter>Solver\LevelSet</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Math\PDE.h">
+      <Filter>Math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
