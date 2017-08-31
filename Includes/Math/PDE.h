@@ -15,76 +15,76 @@ namespace CubbyFlow
 {
 	//!
 	//! \brief 1st order upwind differencing.
-	//! D0[1] is the origin.
+	//! d0[1] is the origin.
 	//!
 	//! \code
 	//!   |------|------|
-	//! D0[0]  D0[1]  D0[2]
+	//! d0[0]  d0[1]  d0[2]
 	//! \endcode
 	//!
 	//! Returns two solutions for each side.
 	//!
 	template <typename T>
-	std::array<T, 2> Upwind1(T* D0, T dx);
+	std::array<T, 2> Upwind1(T* d0, T dx);
 
 	//!
 	//! \brief 1st order upwind differencing.
-	//! D0[1] is the origin.
+	//! d0[1] is the origin.
 	//!
 	//! \code
 	//!   |------|------|
-	//! D0[0]  D0[1]  D0[2]
+	//! d0[0]  d0[1]  d0[2]
 	//! \endcode
 	//!
 	template <typename T>
-	T Upwind1(T* D0, T dx, bool isDirectionPositive);
+	T Upwind1(T* d0, T dx, bool isDirectionPositive);
 
 	//!
 	//! \brief 2nd order central differencing.
-	//! D0[1] is the origin.
+	//! d0[1] is the origin.
 	//!
 	//! \code
 	//!   |------|------|
-	//! D0[0]  D0[1]  D0[2]
+	//! d0[0]  d0[1]  d0[2]
 	//! \endcode
 	//!
 	template <typename T>
-	T CD2(T* D0, T dx);
+	T CD2(T* d0, T dx);
 
 	//!
 	//! \brief 3rd order ENO.
-	//! D0[3] is the origin.
+	//! d0[3] is the origin.
 	//!
 	//! \code
 	//!   |------|------|------|------|------|------|
-	//! D0[0]  D0[1]  D0[2]  D0[3]  D0[4]  D0[5]  D0[6]
+	//! d0[0]  d0[1]  d0[2]  d0[3]  d0[4]  d0[5]  d0[6]
 	//! \endcode
 	//!
 	//! Returns two solutions for each side.
 	//!
 	template <typename T>
-	std::array<T, 2> ENO3(T* D0, T dx);
+	std::array<T, 2> ENO3(T* d0, T dx);
 
 	//!
 	//! \brief 3rd order ENO.
-	//! D0[3] is the origin.
+	//! d0[3] is the origin.
 	//!
 	//! \code
 	//!   |------|------|------|------|------|------|
-	//! D0[0]  D0[1]  D0[2]  D0[3]  D0[4]  D0[5]  D0[6]
+	//! d0[0]  d0[1]  d0[2]  d0[3]  d0[4]  d0[5]  d0[6]
 	//! \endcode
 	//!
 	//!
 	template <typename T>
-	T ENO3(T* D0, T dx, bool isDirectionPositive);
+	T ENO3(T* d0, T dx, bool isDirectionPositive);
 
 	//!
 	//! \brief 5th order WENO.
-	//! D0[3] is the origin.
+	//! d0[3] is the origin.
 	//!
 	//! \code
 	//!   |------|------|------|------|------|------|
-	//! D0[0]  D0[1]  D0[2]  D0[3]  D0[4]  D0[5]  D0[6]
+	//! d0[0]  d0[1]  d0[2]  d0[3]  d0[4]  d0[5]  d0[6]
 	//! \endcode
 	//!
 	//! Returns two solutions for each side.
@@ -95,11 +95,11 @@ namespace CubbyFlow
 
 	//!
 	//! \brief 5th order WENO.
-	//! D0[3] is the origin.
+	//! d0[3] is the origin.
 	//!
 	//! \code
 	//!   |------|------|------|------|------|------|
-	//! D0[0]  D0[1]  D0[2]  D0[3]  D0[4]  D0[5]  D0[6]
+	//! d0[0]  d0[1]  d0[2]  d0[3]  d0[4]  d0[5]  d0[6]
 	//! \endcode
 	//!
 	template <typename T>
