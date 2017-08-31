@@ -201,7 +201,8 @@ namespace CubbyFlow
 
 		for (unsigned int n = 0; n < numberOfIterations; ++n)
 		{
-			ParallelFor(ZERO_SIZE, size.x, ZERO_SIZE, size.y, [&](size_t i, size_t j)
+			ParallelFor(ZERO_SIZE, size.x, ZERO_SIZE, size.y,
+				[&](size_t i, size_t j)
 			{
 				if (sdf(i, j) >= 0)
 				{
