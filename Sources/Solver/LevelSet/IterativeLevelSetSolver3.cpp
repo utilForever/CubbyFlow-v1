@@ -279,7 +279,7 @@ namespace CubbyFlow
 
 	double IterativeLevelSetSolver3::PseudoTimeStep(
 		ConstArrayAccessor3<double> sdf,
-		const Vector3D& gridSpacing)
+		const Vector3D& gridSpacing) const
 	{
 		const Size3 size = sdf.Size();
 
