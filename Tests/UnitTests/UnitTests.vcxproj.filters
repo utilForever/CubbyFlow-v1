@@ -335,6 +335,9 @@
     <ClCompile Include="GridSinglePhasePressureSolver3Tests.cpp">
       <Filter>Solver\Grid</Filter>
     </ClCompile>
+    <ClCompile Include="PDETests.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
