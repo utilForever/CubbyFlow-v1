@@ -837,6 +837,9 @@
     <ClInclude Include="..\Includes\Math\PDE-Impl.h">
       <Filter>Math</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Solver\LevelSet\FMMLevelSetSolver2.h">
+      <Filter>Solver\LevelSet</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
