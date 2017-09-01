@@ -3,7 +3,7 @@
 > Project Name: CubbyFlow
 > Author: Chan-Ho Chris Ohk
 > Purpose: Two-dimensional fast marching method (FMM) implementation.
-> Created Time: 2017/08/31
+> Created Time: 2017/09/01
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_FMM_LEVEL_SET_SOLVER2_H
