@@ -1313,5 +1313,8 @@
     <ClCompile Include="Solver\LevelSet\ENOLevelSetSolver3.cpp">
       <Filter>Solver\LevelSet</Filter>
     </ClCompile>
+    <ClCompile Include="Solver\LevelSet\FMMLevelSetSolver2.cpp">
+      <Filter>Solver\LevelSet</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
