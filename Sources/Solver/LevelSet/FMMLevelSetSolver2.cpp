@@ -412,6 +412,7 @@ namespace CubbyFlow
 		{
 			throw std::invalid_argument("inputSDF and outputSDF have not same shape.");
 		}
+
 		const Vector2D gridSpacing = input.GridSpacing();
 
 		auto u = input.GetUConstAccessor();
