@@ -379,6 +379,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Solver\LevelSet\IterativeLevelSetSolver2.h" />
     <ClInclude Include="..\Includes\Solver\LevelSet\IterativeLevelSetSolver3.h" />
     <ClInclude Include="..\Includes\Solver\LevelSet\LevelSetLiquidSolver2.h" />
+    <ClInclude Include="..\Includes\Solver\LevelSet\LevelSetLiquidSolver3.h" />
     <ClInclude Include="..\Includes\Solver\LevelSet\LevelSetSolver2.h" />
     <ClInclude Include="..\Includes\Solver\LevelSet\LevelSetSolver3.h" />
     <ClInclude Include="..\Includes\Solver\LevelSet\UpwindLevelSetSolver2.h" />
@@ -578,6 +579,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="Solver\LevelSet\IterativeLevelSetSolver2.cpp" />
     <ClCompile Include="Solver\LevelSet\IterativeLevelSetSolver3.cpp" />
     <ClCompile Include="Solver\LevelSet\LevelSetLiquidSolver2.cpp" />
+    <ClCompile Include="Solver\LevelSet\LevelSetLiquidSolver3.cpp" />
     <ClCompile Include="Solver\LevelSet\LevelSetSolver2.cpp" />
     <ClCompile Include="Solver\LevelSet\LevelSetSolver3.cpp" />
     <ClCompile Include="Solver\LevelSet\UpwindLevelSetSolver2.cpp" />

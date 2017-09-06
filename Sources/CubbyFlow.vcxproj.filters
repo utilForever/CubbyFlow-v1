@@ -849,6 +849,9 @@
     <ClInclude Include="..\Includes\Solver\LevelSet\UpwindLevelSetSolver3.h">
       <Filter>Solver\LevelSet</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Solver\LevelSet\LevelSetLiquidSolver3.h">
+      <Filter>Solver\LevelSet</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
@@ -1329,6 +1332,9 @@
       <Filter>Solver\LevelSet</Filter>
     </ClCompile>
     <ClCompile Include="Solver\LevelSet\UpwindLevelSetSolver3.cpp">
+      <Filter>Solver\LevelSet</Filter>
+    </ClCompile>
+    <ClCompile Include="Solver\LevelSet\LevelSetLiquidSolver3.cpp">
       <Filter>Solver\LevelSet</Filter>
     </ClCompile>
   </ItemGroup>
