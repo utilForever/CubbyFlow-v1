@@ -852,6 +852,9 @@
     <ClInclude Include="..\Includes\Solver\LevelSet\LevelSetLiquidSolver3.h">
       <Filter>Solver\LevelSet</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Surface\Implicit\CustomImplicitSurface2.h">
+      <Filter>Surface\Implicit</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
