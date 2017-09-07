@@ -56,6 +56,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ManualTests", "Tests\Manual
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SmokeSim", "Examples\SmokeSim\SmokeSim.vcxproj", "{18209D74-BE00-4881-ACFC-37935316B8D7}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LevelSetLiquidSim", "Examples\LevelSetLiquidSim\LevelSetLiquidSim.vcxproj", "{D058FEBA-1848-45C5-867C-7E8E5C1F9988}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -168,6 +170,14 @@ Global
 		{18209D74-BE00-4881-ACFC-37935316B8D7}.Release|x64.Build.0 = Release|x64
 		{18209D74-BE00-4881-ACFC-37935316B8D7}.Release|x86.ActiveCfg = Release|Win32
 		{18209D74-BE00-4881-ACFC-37935316B8D7}.Release|x86.Build.0 = Release|Win32
+		{D058FEBA-1848-45C5-867C-7E8E5C1F9988}.Debug|x64.ActiveCfg = Debug|x64
+		{D058FEBA-1848-45C5-867C-7E8E5C1F9988}.Debug|x64.Build.0 = Debug|x64
+		{D058FEBA-1848-45C5-867C-7E8E5C1F9988}.Debug|x86.ActiveCfg = Debug|Win32
+		{D058FEBA-1848-45C5-867C-7E8E5C1F9988}.Debug|x86.Build.0 = Debug|Win32
+		{D058FEBA-1848-45C5-867C-7E8E5C1F9988}.Release|x64.ActiveCfg = Release|x64
+		{D058FEBA-1848-45C5-867C-7E8E5C1F9988}.Release|x64.Build.0 = Release|x64
+		{D058FEBA-1848-45C5-867C-7E8E5C1F9988}.Release|x86.ActiveCfg = Release|Win32
+		{D058FEBA-1848-45C5-867C-7E8E5C1F9988}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -185,6 +195,7 @@ Global
 		{0A3D8C7F-5999-47B2-A696-D0D422AB92B9} = {79C970BF-72C5-403D-AC4D-854913DF4AF5}
 		{3215E509-376C-48DF-B86F-835B97C07AE2} = {925BDD03-F851-4B18-A797-D9DF6FFE6610}
 		{18209D74-BE00-4881-ACFC-37935316B8D7} = {79C970BF-72C5-403D-AC4D-854913DF4AF5}
+		{D058FEBA-1848-45C5-867C-7E8E5C1F9988} = {79C970BF-72C5-403D-AC4D-854913DF4AF5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B696133D-1844-4A0D-8759-0C1E21ED1325}
