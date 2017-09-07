@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.8
+VisualStudioVersion = 15.0.26730.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{79C970BF-72C5-403D-AC4D-854913DF4AF5}"
 EndProject
@@ -53,6 +53,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ManualTests", "Tests\Manual
 		{2DB3FEE3-C5A0-4AEC-ACDF-A8EA0D27E6B8} = {2DB3FEE3-C5A0-4AEC-ACDF-A8EA0D27E6B8}
 		{2FB522FB-8504-4522-89CB-8D7F8969E4F4} = {2FB522FB-8504-4522-89CB-8D7F8969E4F4}
 	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SmokeSim", "Examples\SmokeSim\SmokeSim.vcxproj", "{18209D74-BE00-4881-ACFC-37935316B8D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -158,6 +160,14 @@ Global
 		{3215E509-376C-48DF-B86F-835B97C07AE2}.Release|x64.Build.0 = Release|x64
 		{3215E509-376C-48DF-B86F-835B97C07AE2}.Release|x86.ActiveCfg = Release|Win32
 		{3215E509-376C-48DF-B86F-835B97C07AE2}.Release|x86.Build.0 = Release|Win32
+		{18209D74-BE00-4881-ACFC-37935316B8D7}.Debug|x64.ActiveCfg = Debug|x64
+		{18209D74-BE00-4881-ACFC-37935316B8D7}.Debug|x64.Build.0 = Debug|x64
+		{18209D74-BE00-4881-ACFC-37935316B8D7}.Debug|x86.ActiveCfg = Debug|Win32
+		{18209D74-BE00-4881-ACFC-37935316B8D7}.Debug|x86.Build.0 = Debug|Win32
+		{18209D74-BE00-4881-ACFC-37935316B8D7}.Release|x64.ActiveCfg = Release|x64
+		{18209D74-BE00-4881-ACFC-37935316B8D7}.Release|x64.Build.0 = Release|x64
+		{18209D74-BE00-4881-ACFC-37935316B8D7}.Release|x86.ActiveCfg = Release|Win32
+		{18209D74-BE00-4881-ACFC-37935316B8D7}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -174,6 +184,7 @@ Global
 		{72DA0BC1-81A5-4313-842A-4CB91B8FB3F7} = {79C970BF-72C5-403D-AC4D-854913DF4AF5}
 		{0A3D8C7F-5999-47B2-A696-D0D422AB92B9} = {79C970BF-72C5-403D-AC4D-854913DF4AF5}
 		{3215E509-376C-48DF-B86F-835B97C07AE2} = {925BDD03-F851-4B18-A797-D9DF6FFE6610}
+		{18209D74-BE00-4881-ACFC-37935316B8D7} = {79C970BF-72C5-403D-AC4D-854913DF4AF5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B696133D-1844-4A0D-8759-0C1E21ED1325}
