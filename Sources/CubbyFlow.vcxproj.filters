@@ -1343,5 +1343,8 @@
     <ClCompile Include="Solver\LevelSet\LevelSetLiquidSolver3.cpp">
       <Filter>Solver\LevelSet</Filter>
     </ClCompile>
+    <ClCompile Include="Surface\Implicit\CustomImplicitSurface2.cpp">
+      <Filter>Surface\Implicit</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
