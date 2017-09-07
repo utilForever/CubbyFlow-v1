@@ -855,6 +855,9 @@
     <ClInclude Include="..\Includes\Surface\Implicit\CustomImplicitSurface2.h">
       <Filter>Surface\Implicit</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Surface\Implicit\CustomImplicitSurface3.h">
+      <Filter>Surface\Implicit</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
