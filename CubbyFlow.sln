@@ -77,6 +77,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Obj2Sdf", "Examples\Obj2Sdf
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Particles2Xml", "Examples\Particles2Xml\Particles2Xml.vcxproj", "{A1EEC3E8-7CB7-4A40-A057-0C285C0152CC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A581EA54-58DB-4AF7-972A-202927F26BD0} = {A581EA54-58DB-4AF7-972A-202927F26BD0}
+		{67F165E0-323E-4FB0-BA14-285063218ED8} = {67F165E0-323E-4FB0-BA14-285063218ED8}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
