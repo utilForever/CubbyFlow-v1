@@ -36,9 +36,9 @@ namespace CubbyFlow
 		static Builder GetBuilder();
 
 	private:
-		std::function<double(const Vector3D&)> _func;
-		BoundingBox3D _domain;
-		double _resolution = 1e-3;
+		std::function<double(const Vector3D&)> m_func;
+		BoundingBox3D m_domain;
+		double m_resolution = 1e-3;
 
 		Vector3D ClosestPointLocal(const Vector3D& otherPoint) const override;
 
