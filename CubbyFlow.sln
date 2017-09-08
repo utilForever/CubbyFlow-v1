@@ -70,6 +70,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LevelSetLiquidSim", "Exampl
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Obj2Sdf", "Examples\Obj2Sdf\Obj2Sdf.vcxproj", "{2A3CD68E-BAD9-4B67-B138-C9FB4B5D1935}"
+	ProjectSection(ProjectDependencies) = postProject
+		{18ECE3D3-8250-4073-9F0B-2CAA62F80E2A} = {18ECE3D3-8250-4073-9F0B-2CAA62F80E2A}
+		{67F165E0-323E-4FB0-BA14-285063218ED8} = {67F165E0-323E-4FB0-BA14-285063218ED8}
+		{2DB3FEE3-C5A0-4AEC-ACDF-A8EA0D27E6B8} = {2DB3FEE3-C5A0-4AEC-ACDF-A8EA0D27E6B8}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
