@@ -240,7 +240,7 @@ namespace CubbyFlow
 
 			sdf->ParallelForEachDataPointIndex([&](size_t i, size_t j, size_t k)
 			{
-				(*sdf)(i, j, k) += dist;
+				(*sdf)(i, j, k) += dist; 
 			});
 		}
 	}
