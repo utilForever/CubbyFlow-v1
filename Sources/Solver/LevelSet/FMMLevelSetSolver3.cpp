@@ -515,7 +515,7 @@ namespace CubbyFlow
 		auto u = input.GetUConstAccessor();
 		auto uPos = input.GetUPosition();
 		Array3<double> sdfAtU(u.Size());
-		input.ParallelForEachWIndex([&](size_t i, size_t j, size_t k)
+		input.ParallelForEachUIndex([&](size_t i, size_t j, size_t k)
 		{
 			sdfAtU(i, j, k) = sdf.Sample(uPos(i, j, k));
 		});
@@ -525,12 +525,12 @@ namespace CubbyFlow
 		auto v = input.GetVConstAccessor();
 		auto vPos = input.GetVPosition();
 		Array3<double> sdfAtV(v.Size());
-		input.ParallelForEachWIndex([&](size_t i, size_t j, size_t k)
+		input.ParallelForEachVIndex([&](size_t i, size_t j, size_t k)
 		{
 			sdfAtV(i, j, k) = sdf.Sample(vPos(i, j, k));
 		});
 
-		Extrapolate(v, sdfAtV, gridSpacing, maxDistance, output->GetUAccessor());
+		Extrapolate(v, sdfAtV, gridSpacing, maxDistance, output->GetVAccessor());
 
 		auto w = input.GetWConstAccessor();
 		auto wPos = input.GetWPosition();
@@ -540,7 +540,7 @@ namespace CubbyFlow
 			sdfAtW(i, j, k) = sdf.Sample(wPos(i, j, k));
 		});
 
-		Extrapolate(v, sdfAtW, gridSpacing, maxDistance, output->GetWAccessor());
+		Extrapolate(w, sdfAtW, gridSpacing, maxDistance, output->GetWAccessor());
 	}
 
 	void FMMLevelSetSolver3::Extrapolate(
