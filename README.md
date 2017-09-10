@@ -45,7 +45,12 @@ Here are some of the example simulations generated using CubbyFlow framework. Co
 
 #### PCISPH Simulation Example
 
-![PCISPH Example](https://github.com/utilForever/CubbyFlow/blob/master/Medias/PCISPH_dam_breaking.png "PCISPH Example")
+![PCISPH_dam_breaking](https://github.com/utilForever/CubbyFlow/blob/master/Medias/PCISPH_dam_breaking.png "PCISPH Example")
+
+#### Smoke Simulation with Different Advection Methods (Linear / Cubic-Spline)
+
+![rising_smoke_linear](https://github.com/utilForever/CubbyFlow/blob/master/Medias/rising_smoke_linear.png "Rising Smoke - Linear")
+![rising_smoke_cubic](https://github.com/utilForever/CubbyFlow/blob/master/Medias/rising_smoke_cubic.png "Rising Smoke - Cubic")
 
 ## How To Contribute
 
