@@ -46,7 +46,7 @@
     </bsdf>
 
     <shape type="obj" id="water">
-        <string name="filename" value="Datas/PCISPH - dam_breaking/frame_000040.obj"/>
+        <string name="filename" value="Datas/PCISPH_dam_breaking/frame_000040.obj"/>
         <integer name="shapeIndex" value="2"/>
         <bsdf type="dielectric">
             <float name="intIOR" value="1.2"/>
