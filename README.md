@@ -41,7 +41,7 @@ All the documentations for the framework can be found from [the project website]
 
 ## Examples
 
-Here are some of the example simulations generated using CubbyFlow framework. Corresponding example codes can be found under src/examples. All images are rendered using [Mitsuba renderer](https://www.mitsuba-renderer.org/) and the Mitsuba scene files can be found from [the demo directory](https://github.com/utilForever/CubbyFlow/tree/master/Demos). Find out more demos from [the project website](https://utilforever.github.io/CubbyFlow/examples).
+Here are some of the example simulations generated using CubbyFlow framework. Corresponding example codes can be found under [Examples](https://github.com/utilForever/CubbyFlow/tree/master/Examples). All images are rendered using [Mitsuba renderer](https://www.mitsuba-renderer.org/) and the Mitsuba scene files can be found from [the demo directory](https://github.com/utilForever/CubbyFlow/tree/master/Demos). Find out more demos from [the project website](https://utilforever.github.io/CubbyFlow/examples).
 
 #### PCISPH Simulation Example
 
