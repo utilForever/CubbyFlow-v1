@@ -2,34 +2,30 @@
 > File Name: main.cpp
 > Project Name: CubbyFlow
 > Author: Dongmin Kim
-> Purpose: Level Set Liquid Simulator
+> Purpose: Level-set Liquid Simulator
 > Created Time: 2017/09/09
 > Copyright (c) 2017, Dongmin Kim
 *************************************************************************/
-
 #include <Array/Array2.h>
 #include <Collider/RigidBodyCollider3.h>
 #include <Emitter/VolumeGridEmitter3.h>
 #include <Geometry/Box3.h>
-#include <Geometry/Sphere3.h>
-#include <Grid/ScalarGrid3.h>
-#include <Surface/Implicit\ImplicitSurfaceSet3.h>
+#include <Geometry/Cylinder3.h>
 #include <Geometry/Plane3.h>
+#include <Geometry/Sphere3.h>
 #include <Geometry/TriangleMesh3.h>
+#include <Grid/ScalarGrid3.h>
 #include <Grid/VertexCenteredScalarGrid3.h>
 #include <Math/MathUtils.h>
-#include <SemiLagrangian/CubicSemiLagrangian3.h>
-#include <SemiLagrangian/SemiLagrangian3.h>
+#include <MarchingCubes/MarchingCubes.h>
 #include <Solver/LevelSet/LevelSetLiquidSolver3.h>
-#include <MarchingCubes\MarchingCubes.h>
-#include <../Includes/Solver/LevelSet/LevelSetLiquidSolver3.h>
-#include <../Includes/Geometry/Cylinder3.h>
+#include <Surface/Implicit/ImplicitSurfaceSet3.h>
 #include <Surface/Implicit/CustomImplicitSurface3.h>
 #include <Utils/Logger.h>
 
-#include <pystring\pystring.h>
+#include <pystring/pystring.h>
 
-#ifdef  CUBBYFLOW_WINDOWS
+#ifdef CUBBYFLOW_WINDOWS
 #include <direct.h>
 #else
 #include <sys/stat.h>
@@ -41,23 +37,9 @@
 #include <string>
 #include <vector>
 
-#define APP_NAME "LevelSetLiquidSijm"
-#define RESOURCE_DIR "¤©"
+#define APP_NAME "LevelSetLiquidSim"
 
 using namespace CubbyFlow;
-
-const size_t EDGE_BLUR = 3;
-const float EDGE_BLUR_F = 3.f;
-const double TGA_SCALE = 10.0;
-
-void RunSimulation(
-	const std::string& rootDir,
-	const LevelSetLiquidSolver3Ptr& solver,
-	size_t numberOfFrames,
-	const std::string& format,
-	double fps)
-{
-}
 
 void SaveTriangleMesh(
 	const TriangleMesh3& mesh,
@@ -65,14 +47,12 @@ void SaveTriangleMesh(
 	unsigned int frameCnt)
 {
 	char baseName[256];
-	snprintf(baseName, sizeof(baseName), "frame_%6d.obj", frameCnt);
+	snprintf(baseName, sizeof(baseName), "frame_%06d.obj", frameCnt);
 	std::string fileName = pystring::os::path::join(rootDir, baseName);
-	std::ofstream file(fileName.c_str(), std::ofstream::binary);
-
+	std::ofstream file(fileName.c_str());
 	if (file)
 	{
 		printf("Writing %s...\n", fileName.c_str());
-
 		mesh.WriteObj(&file);
 		file.close();
 	}
@@ -81,7 +61,7 @@ void SaveTriangleMesh(
 void TriangulateAndSave(
 	const ScalarGrid3Ptr& sdf,
 	const std::string& rootDir,
-	int frameCnt)
+	unsigned int frameCnt)
 {
 	TriangleMesh3 mesh;
 	int flag = DIRECTION_ALL & ~DIRECTION_DOWN;
@@ -90,218 +70,24 @@ void TriangulateAndSave(
 		sdf->GridSpacing(),
 		sdf->GetDataOrigin(),
 		&mesh,
-		0.f,
-		flag
-	);
+		0.0,
+		flag);
 	SaveTriangleMesh(mesh, rootDir, frameCnt);
 }
 
-void RunExample1(
-	const std::string& rootDir,
-	size_t resolutionX,
-	unsigned int numberOfFrames,
-	double fps) 
+void printUsage()
 {
-	auto solver = LevelSetLiquidSolver3::Builder()
-		.WithResolution({ resolutionX, 2 * resolutionX, resolutionX })
-		.WithDomainSizeX(1.0)
-		.MakeShared();
-
-	solver->SetAdvectionSolver(std::make_shared<CubicSemiLagrangian3>());
-
-	auto grids = solver->GetGridSystemData();
-	BoundingBox3D domain = grids->GetBoundingBox();
-
-	// Build emitter
-	auto plane = Plane3::Builder()
-		.WithNormal({ 0,1,0 })
-		.WithPoint({ 0,0.25 * domain.Height(), 0 })
-		.MakeShared();
-
-	auto sphere = Sphere3::Builder()
-		.WithCenter(domain.MidPoint())
-		.WithRadius(0.04 * domain.Width())
-		.MakeShared();
-
-	auto surfaceSet = ImplicitSurfaceSet3::Builder()
-		.WithExplicitSurfaces({ plane, sphere })
-		.MakeShared();
-
-	auto emitter = VolumeGridEmitter3::Builder()
-		.WithSourceRegion(surfaceSet)
-		.WithIsOneShot(false)
-		.MakeShared();
-
-	solver->SetEmitter(emitter);
-	emitter->AddSignedDistanceTarget(solver->GetSignedDistanceField());
-
-	// Print simulation info
-	printf("Running example 1 (water-drop)\n");
-	PrintInfo(solver);
-
-	RunSimulation(rootDir, solver, numberOfFrames, fps);
-}
-
-void RunExample2(
-	const std::string& rootDir,
-	size_t resolutionX,
-	unsigned int numberOfFrames,
-	double fps)
-{
-	auto solver = LevelSetLiquidSolver3::Builder()
-		.WithResolution({ 3 * resolutionX, 2 * resolutionX,  3 * resolutionX / 2 })
-		.WithDomainSizeX(3.0)
-		.MakeShared();
-
-	solver->SetAdvectionSolver(std::make_shared<CubicSemiLagrangian3>());
-
-	auto grids = solver->GetGridSystemData();
-	BoundingBox3D domain = grids->GetBoundingBox();
-	auto lz = domain.Depth();
-
-	// Build emitter
-	auto box1 = Box3::Builder()
-		.WithLowerCorner({ -0.5, -0.5, -0.5 * lz })
-		.WithUpperCorner({ 0.5, 0.5, 0.75 * lz })
-		.MakeShared();
-
-	auto box2 = Box3::Builder()
-		.WithLowerCorner({ 2.5, -0.5, 0.25 * lz })
-		.WithUpperCorner({ 3.5, 0.75, 1.5 * lz })
-		.MakeShared();
-
-	auto boxSet = ImplicitSurfaceSet3::Builder()
-		.WithExplicitSurfaces({ box1, box2 })
-		.MakeShared();
-	
-	auto emitter = VolumeGridEmitter3::Builder()
-		.WithSourceRegion(boxSet)
-		.WithIsOneShot(false)
-		.MakeShared();
-
-	solver->SetEmitter(emitter);
-	emitter->AddSignedDistanceTarget(solver->GetSignedDistanceField());
-
-	// Build collider
-	auto clyinder1 = Cylinder3::Builder()
-		.WithCenter({ 1, 0.375, 0.375 })
-		.WithRadius(0.1)
-		.WithHeight(0.75)
-		.MakeShared();
-
-	auto clyinder2 = Cylinder3::Builder()
-		.WithCenter({ 1.5 , 0.375, 0.375 })
-		.WithRadius(0.1)
-		.WithHeight(0.75)
-		.MakeShared();
-
-	auto clyinder3 = Cylinder3::Builder()
-		.WithCenter({ 2, 0.375, 1.125 })
-		.WithRadius(0.1)
-		.WithHeight(0.75)
-		.MakeShared();
-
-	auto cylinderSet = ImplicitSurfaceSet3::Builder()
-		.WithExplicitSurfaces({ clyinder1, clyinder2, clyinder3 })
-		.MakeShared();
-
-	auto collider = RigidBodyCollider3::Builder()
-		.WithSurface(cylinderSet)
-		.MakeShared();
-
-	solver->SetCollider(collider);
-
-	// Print simulation info
-	printf("Running example 2 (dam - breaking)\n");
-	PrintInfo(solver);
-
-	RunSimulation(rootDir, solver, numberOfFrames, fps);
-}
-
-void RunExample3(
-	const std::string& rootDir,
-	size_t resolutionX,
-	unsigned int numberOfFrames,
-	double fps)
-{
-	auto solver = LevelSetLiquidSolver3::Builder()
-		.WithResolution({ resolutionX, resolutionX, resolutionX })
-		.WithDomainSizeX(1.0)
-		.MakeShared();
-
-	solver->SetViscosityCoefficient(1.0);
-	solver->SetIsGlobalCompensationEnabled(true);
-
-	auto grids = solver->GetGridSystemData();
-
-	// Build emitter
-	auto bunnyMesh = TriangleMesh3::Builder().MakeShared();
-	std::ifstream objFile(RESOURCE_DIR "bunny.obj");
-
-	if (objFile)
-	{
-		bunnyMesh->ReadObj(&objFile);
-	}
-	else
-	{
-		fprintf(stderr, "Cannot open resources/bunny.obj\n");
-		exit(EXIT_FAILURE);
-	}
-
-	auto emitter = VolumeGridEmitter3::Builder()
-		.WithSourceRegion(bunnyMesh)
-		.MakeShared();
-
-	emitter->AddSignedDistanceTarget(solver->GetSignedDistanceField());
-
-	// Print simulation info
-	printf("Running example 3 (high - viscosity)\n");
-	PrintInfo(solver);
-
-	RunSimulation(rootDir, solver, numberOfFrames, fps);
-}
-
-void RunExample4(
-	const std::string& rootDir,
-	size_t resolutionX,
-	unsigned int numberOfFrames,
-	double fps)
-{
-	auto solver = LevelSetLiquidSolver3::Builder()
-		.WithResolution({ resolutionX, resolutionX, resolutionX })
-		.WithDomainSizeX(1.0)
-		.MakeShared();
-
-	solver->SetViscosityCoefficient(0.0);
-	solver->SetIsGlobalCompensationEnabled(true);
-
-	auto grids = solver->GetGridSystemData();
-
-	// Build emitter
-	auto bunnyMesh = TriangleMesh3::Builder().MakeShared();
-	std::ifstream objFile(RESOURCE_DIR "bunny.obj");
-
-	if (objFile)
-	{
-		bunnyMesh->ReadObj(&objFile);
-	}
-	else
-	{
-		fprintf(stderr, "Cannot open resources/bunny.obj\n");
-		exit(EXIT_FAILURE);
-	}
-
-	auto emitter = VolumeGridEmitter3::Builder()
-		.WithSourceRegion(bunnyMesh)
-		.MakeShared();
-
-	emitter->AddSignedDistanceTarget(solver->GetSignedDistanceField());
-
-	// Print simulation info
-	printf("Running example 4 (low - viscosity)\n");
-	PrintInfo(solver);
-
-	RunSimulation(rootDir, solver, numberOfFrames, fps);
+	printf(
+		"Usage: " APP_NAME " "
+		"-r resolution -l length -f frames -e example_num\n"
+		"   -r, --resx: grid resolution in x-axis (default is 50)\n"
+		"   -f, --frames: total number of frames (default is 100)\n"
+		"   -p, --fps: frames per second (default is 60.0)\n"
+		"   -l, --log: log filename (default is " APP_NAME ".log)\n"
+		"   -o, --output: output directory name "
+		"(default is " APP_NAME "_output)\n"
+		"   -e, --example: example number (between 1 and 4, default is 1)\n"
+		"   -h, --help: print this message\n");
 }
 
 void PrintInfo(const LevelSetLiquidSolver3Ptr& solver)
@@ -312,9 +98,8 @@ void PrintInfo(const LevelSetLiquidSolver3Ptr& solver)
 	Vector3D gridSpacing = grids->GetGridSpacing();
 
 	printf(
-		"Resolution : %zu x %zu x %zu\n",
-		resolution.x, resolution.y, resolution.z
-	);
+		"Resolution: %zu x %zu x %zu\n",
+		resolution.x, resolution.y, resolution.z);
 	printf(
 		"Domain: [%f, %f, %f] x [%f, %f, %f]\n",
 		domain.lowerCorner.x, domain.lowerCorner.y, domain.lowerCorner.z,
@@ -331,32 +116,258 @@ void RunSimulation(
 	double fps)
 {
 	auto sdf = solver->GetSignedDistanceField();
+
 	for (Frame frame(0, 1.0 / fps); frame.index < numberOfFrames; ++frame)
 	{
 		solver->Update(frame);
-		
+
 		TriangulateAndSave(sdf, rootDir, frame.index);
 	}
 }
 
-void PrintUsage()
+// Water-drop example
+void RunExample1(
+	const std::string& rootDir,
+	size_t resX,
+	unsigned int numberOfFrames,
+	double fps)
 {
-	printf(
-		"Usage: " APP_NAME " "
-		"-r resolution -l length -f frames -e example_num\n"
-		"   -r, --resx: grid resolution in x-axis (default is 50)\n"
-		"   -f, --frames: total number of frames (default is 100)\n"
-		"   -p, --fps: frames per second (default is 60.0)\n"
-		"   -l, --log: log filename (default is " APP_NAME ".log)\n"
-		"   -o, --output: output directory name "
-		"(default is " APP_NAME "_output)\n"
-		"   -e, --example: example number (between 1 and 4, default is 1)\n"
-		"   -h, --help: print this message\n");
+	// Build solver
+	auto solver = LevelSetLiquidSolver3::Builder()
+		.WithResolution({ resX, 2 * resX, resX })
+		.WithDomainSizeX(1.0)
+		.MakeShared();
+
+	auto grids = solver->GetGridSystemData();
+	BoundingBox3D domain = grids->GetBoundingBox();
+
+	// Build emitter
+	auto plane = Plane3::Builder()
+		.WithNormal({ 0, 1, 0 })
+		.WithPoint({ 0, 0.25 * domain.Height(), 0 })
+		.MakeShared();
+
+	auto sphere = Sphere3::Builder()
+		.WithCenter(domain.MidPoint())
+		.WithRadius(0.15 * domain.Width())
+		.MakeShared();
+
+	auto surfaceSet = ImplicitSurfaceSet3::Builder()
+		.WithExplicitSurfaces({ plane, sphere })
+		.MakeShared();
+
+	auto emitter = VolumeGridEmitter3::Builder()
+		.WithSourceRegion(surfaceSet)
+		.MakeShared();
+
+	solver->SetEmitter(emitter);
+	emitter->AddSignedDistanceTarget(solver->GetSignedDistanceField());
+
+	// Print simulation info
+	printf("Running example 1 (water-drop)\n");
+	PrintInfo(solver);
+
+	// Run simulation
+	RunSimulation(rootDir, solver, numberOfFrames, fps);
+}
+
+// Dam-breaking example
+void RunExample2(
+	const std::string& rootDir,
+	size_t resX,
+	unsigned int numberOfFrames,
+	double fps)
+{
+	// Build solver
+	auto solver = LevelSetLiquidSolver3::Builder()
+		.WithResolution({ 3 * resX, 2 * resX, (3 * resX) / 2 })
+		.WithDomainSizeX(3.0)
+		.MakeShared();
+
+	auto grids = solver->GetGridSystemData();
+	BoundingBox3D domain = grids->GetBoundingBox();
+	double lz = domain.Depth();
+
+	// Build emitter
+	auto box1 = Box3::Builder()
+		.WithLowerCorner({ -0.5, -0.5, -0.5 * lz })
+		.WithUpperCorner({ 0.5, 0.75, 0.75 * lz })
+		.MakeShared();
+
+	auto box2 = Box3::Builder()
+		.WithLowerCorner({ 2.5, -0.5, 0.25 * lz })
+		.WithUpperCorner({ 3.5, 0.75, 1.5 * lz })
+		.MakeShared();
+
+	auto boxSet = ImplicitSurfaceSet3::Builder()
+		.WithExplicitSurfaces({ box1, box2 })
+		.MakeShared();
+
+	auto emitter = VolumeGridEmitter3::Builder()
+		.WithSourceRegion(boxSet)
+		.MakeShared();
+
+	solver->SetEmitter(emitter);
+	emitter->AddSignedDistanceTarget(solver->GetSignedDistanceField());
+
+	// Build collider
+	auto cyl1 = Cylinder3::Builder()
+		.WithCenter({ 1, 0.375, 0.375 })
+		.WithRadius(0.1)
+		.WithHeight(0.75)
+		.MakeShared();
+
+	auto cyl2 = Cylinder3::Builder()
+		.WithCenter({ 1.5, 0.375, 0.75 })
+		.WithRadius(0.1)
+		.WithHeight(0.75)
+		.MakeShared();
+
+	auto cyl3 = Cylinder3::Builder()
+		.WithCenter({ 2, 0.375, 1.125 })
+		.WithRadius(0.1)
+		.WithHeight(0.75)
+		.MakeShared();
+
+	auto cylSet = ImplicitSurfaceSet3::Builder()
+		.WithExplicitSurfaces({ cyl1, cyl2, cyl3 })
+		.MakeShared();
+
+	auto collider = RigidBodyCollider3::Builder()
+		.WithSurface(cylSet)
+		.MakeShared();
+
+	solver->SetCollider(collider);
+
+	// Print simulation info
+	printf("Running example 2 (dam-breaking)\n");
+	PrintInfo(solver);
+
+	// Run simulation
+	RunSimulation(rootDir, solver, numberOfFrames, fps);
+}
+
+// High-viscosity example (bunny-drop)
+void RunExample3(
+	const std::string& rootDir,
+	size_t resX,
+	unsigned int numberOfFrames,
+	double fps)
+{
+	// Build solver
+	auto solver = LevelSetLiquidSolver3::Builder()
+		.WithResolution({ resX, resX, resX })
+		.WithDomainSizeX(1.0)
+		.MakeShared();
+
+	solver->SetViscosityCoefficient(1.0);
+	solver->SetIsGlobalCompensationEnabled(true);
+
+	auto grids = solver->GetGridSystemData();
+
+	// Build emitters
+	VertexCenteredScalarGrid3 bunnySdf;
+	std::ifstream sdfFile("bunny.sdf", std::ifstream::binary);
+	if (sdfFile)
+	{
+		std::vector<uint8_t> buffer(
+			(std::istreambuf_iterator<char>(sdfFile)),
+			(std::istreambuf_iterator<char>()));
+		bunnySdf.Deserialize(buffer);
+		sdfFile.close();
+	}
+	else
+	{
+		fprintf(stderr, "Cannot open bunny.sdf\n");
+		fprintf(
+			stderr,
+			"Run\nObj2Sdf -i Resources/bunny.obj"
+			" -o bunny.sdf\nto generate the sdf file.\n");
+		exit(EXIT_FAILURE);
+	}
+
+	auto bunny = CustomImplicitSurface3::Builder()
+		.WithSignedDistanceFunction(bunnySdf.Sampler())
+		.WithResolution(grids->GetGridSpacing().x)
+		.MakeShared();
+
+	auto emitter = VolumeGridEmitter3::Builder()
+		.WithSourceRegion(bunny)
+		.MakeShared();
+
+	solver->SetEmitter(emitter);
+	emitter->AddSignedDistanceTarget(solver->GetSignedDistanceField());
+
+	// Print simulation info
+	printf("Running example 3 (high-viscosity)\n");
+	PrintInfo(solver);
+
+	// Run simulation
+	RunSimulation(rootDir, solver, numberOfFrames, fps);
+}
+
+// Low-viscosity example (bunny-drop)
+void RunExample4(
+	const std::string& rootDir,
+	size_t resX,
+	unsigned int numberOfFrames,
+	double fps)
+{
+	// Build solver
+	auto solver = LevelSetLiquidSolver3::Builder()
+		.WithResolution({ resX, resX, resX })
+		.WithDomainSizeX(1.0)
+		.MakeShared();
+
+	solver->SetViscosityCoefficient(0.0);
+	solver->SetIsGlobalCompensationEnabled(true);
+
+	auto grids = solver->GetGridSystemData();
+
+	// Build emitters
+	VertexCenteredScalarGrid3 bunnySdf;
+	std::ifstream sdfFile("bunny.sdf", std::ifstream::binary);
+	if (sdfFile)
+	{
+		std::vector<uint8_t> buffer(
+			(std::istreambuf_iterator<char>(sdfFile)),
+			(std::istreambuf_iterator<char>()));
+		bunnySdf.Deserialize(buffer);
+		sdfFile.close();
+	}
+	else
+	{
+		fprintf(stderr, "Cannot open bunny.sdf\n");
+		fprintf(
+			stderr,
+			"Run\nObj2Sdf -i Resources/bunny.obj"
+			" -o bunny.sdf\nto generate the sdf file.\n");
+		exit(EXIT_FAILURE);
+	}
+
+	auto bunny = CustomImplicitSurface3::Builder()
+		.WithSignedDistanceFunction(bunnySdf.Sampler())
+		.WithResolution(grids->GetGridSpacing().x)
+		.MakeShared();
+
+	auto emitter = VolumeGridEmitter3::Builder()
+		.WithSourceRegion(bunny)
+		.MakeShared();
+
+	solver->SetEmitter(emitter);
+	emitter->AddSignedDistanceTarget(solver->GetSignedDistanceField());
+
+	// Print simulation info
+	printf("Running example 4 (low-viscosity)\n");
+	PrintInfo(solver);
+
+	// Run simulation
+	RunSimulation(rootDir, solver, numberOfFrames, fps);
 }
 
 int main(int argc, char* argv[])
 {
-	size_t resolutionX = 50;
+	size_t resX = 50;
 	unsigned int numberOfFrames = 100;
 	double fps = 60.0;
 	int exampleNum = 1;
@@ -378,12 +389,12 @@ int main(int argc, char* argv[])
 
 	int opt;
 	int long_index = 0;
-	while ((opt = getopt_long(argc, argv, "r:f:p:e:l:o:m:h", longOptions, &long_index)) != -1)
+	while ((opt = getopt_long(argc, argv, "r:f:p:e:l:o:h", longOptions, &long_index)) != -1)
 	{
 		switch (opt)
 		{
 		case 'r':
-			resolutionX = static_cast<size_t>(atoi(optarg));
+			resX = static_cast<size_t>(atoi(optarg));
 			break;
 		case 'f':
 			numberOfFrames = static_cast<size_t>(atoi(optarg));
@@ -401,10 +412,10 @@ int main(int argc, char* argv[])
 			outputDir = optarg;
 			break;
 		case 'h':
-			PrintUsage();
+			printUsage();
 			exit(EXIT_SUCCESS);
 		default:
-			PrintUsage();
+			printUsage();
 			exit(EXIT_FAILURE);
 		}
 	}
@@ -424,19 +435,19 @@ int main(int argc, char* argv[])
 	switch (exampleNum)
 	{
 	case 1:
-		RunExample1(outputDir, resolutionX, numberOfFrames, fps);
+		RunExample1(outputDir, resX, numberOfFrames, fps);
 		break;
 	case 2:
-		RunExample2(outputDir, resolutionX, numberOfFrames, fps);
+		RunExample2(outputDir, resX, numberOfFrames, fps);
 		break;
 	case 3:
-		RunExample3(outputDir, resolutionX, numberOfFrames, fps);
+		RunExample3(outputDir, resX, numberOfFrames, fps);
 		break;
 	case 4:
-		RunExample4(outputDir, resolutionX, numberOfFrames, fps);
+		RunExample4(outputDir, resX, numberOfFrames, fps);
 		break;
 	default:
-		PrintUsage();
+		printUsage();
 		exit(EXIT_FAILURE);
 	}
 
