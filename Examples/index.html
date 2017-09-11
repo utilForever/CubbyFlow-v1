@@ -83,9 +83,42 @@
 
 <h3 id="dam-breaking-simulation-with-pcisph-solver">Dam-breaking simulation with PCISPH solver</h3>
 
-<p><img src="/CubbyFlow/Assets/Images/Examples/PCISPH_dam_breaking.png" alt="PCISPH Dam-breaking" title="PCISPH Dam-breaking" /></p>
+<p><img src="/CubbyFlow/Assets/Images/Examples/PCISPH_dam_breaking.png" alt="PCISPH dam-breaking" title="PCISPH dam-breaking" /></p>
 
 <p>Two columns of water splashing into each other, interacting with colliders. Background grid with 300 x 150 x 200 resolution and 1,652,224 particles are used.</p>
+
+<hr />
+
+<h3 id="dam-breaking-simulation-with-level-set-solver">Dam-breaking simulation with Level Set solver</h3>
+
+<p><img src="/CubbyFlow/Assets/Images/Examples/LevelSet_dam_breaking.png" alt="Level Set dam-breaking" title="Level Set dam-breaking" /></p>
+
+<p>Using the same simulation configuration from the rising smoke example above, but with the level set solver. The generated fluid motion is less viscous.</p>
+
+<hr />
+
+<h3 id="bunny-drop-simulation-with-level-set-solver-high-low-viscosity">High and low viscosity simulations with level set solver</h3>
+
+<p><img src="/CubbyFlow/Assets/Images/Examples/level_set_bunny_drop_high_viscosity.png" alt="Level Set bunny drop with high viscosity" title="Level Set bunny drop with high viscosity" /></p>
+<p><img src="/CubbyFlow/Assets/Images/Examples/level_set_bunny_drop_low_viscosity.png" alt="Level Set bunny drop with low viscosity" title="Level Set bunny drop with low viscosity" /></p>
+
+<p>Two starnford bunnies are dropped with different viscosity. The top row is simulated with higher viscosity, whereas the bottom row is simulated with zero viscosity. Grid with 200<sup>3</sup> resolution is used. Cubic spline semi-Lagrangian method is applied for the advection and ENO method is used for level set reinitialization.</p>
+
+<hr />
+
+<h3 id="smoke-simulation-using-monotonic-linear-semi-lagrangian">Smoke simulation using monotonic linear semi-Lagrangian</h3>
+
+<p><img src="/CubbyFlow/Assets/Images/Examples/rising_smoke_linear.png" alt="Smoke simulation using monotonic linear semi-Lagrangian" title="Smoke simulation using monotonic linear semi-Lagrangian" /></p>
+
+<p>Hot rising smoke is simulated using stable fluids framework. The buoyancy force and monotonic linear semi-Lagrangian advection creates interesting swirls. Grid with 200 x 240 x 100 resolution is used.</p>
+
+<hr />
+
+<h3 id="smoke-simulation-using-monotonic-cubic-semi-lagrangian">Smoke simulation using monotonic cubic semi-Lagrangian</h3>
+
+<p><img src="/CubbyFlow/Assets/Images/Examples/rising_smoke_cubic.png" alt="Smoke simulation using monotonic cubic semi-Lagrangian" title="Smoke simulation using monotonic cubic semi-Lagrangian" /></p>
+
+<p>Using the same simulation configuration from the rising smoke example above, but with the cubic semi-Lagrangian advection solver. More swirls are observed.</p>
 
 <hr />
 
