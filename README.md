@@ -47,9 +47,14 @@ Here are some of the example simulations generated using CubbyFlow framework. Co
 
 ![PCISPH_dam_breaking](https://github.com/utilForever/CubbyFlow/blob/master/Medias/PCISPH_dam_breaking.png "PCISPH Example")
 
-#### Level-set Simulation Example
+#### Level Set Simulation Example
 
-![Level-set_dam_breaking](https://github.com/utilForever/CubbyFlow/blob/master/Medias/LevelSet_dam_breaking.png "Level-set Example")
+![Level-set_dam_breaking](https://github.com/utilForever/CubbyFlow/blob/master/Medias/LevelSet_dam_breaking.png "Level Set Example")
+
+#### Level Set Example with Different Viscosity (high / low)
+
+![level_set_bunny_drop_high_viscosity](https://github.com/utilForever/CubbyFlow/blob/master/Medias/level_set_bunny_drop_high_viscosity.png "Level Set Bunny Drop - High Viscosity")
+![level_set_bunny_drop_low_viscosity](https://github.com/utilForever/CubbyFlow/blob/master/Medias/level_set_bunny_drop_low_viscosity.png "Level Set Bunny Drop - Low Viscosity")
 
 #### Smoke Simulation with Different Advection Methods (Linear / Cubic-Spline)
 
