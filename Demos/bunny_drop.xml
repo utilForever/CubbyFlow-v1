@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<scene version="0.5.0">
+	<integrator type="adaptive">
+		<integrator type="volpath_simple">
+			<integer name="maxDepth" value="10"/>
+		</integrator>
+	</integrator>
+
+	<sensor type="perspective">
+		<float name="focusDistance" value="10000"/>
+		<float name="fov" value="29"/>
+		<string name="fovAxis" value="x"/>
+		<transform name="toWorld">
+			<scale x="-1"/>
+
+			<lookat target="1.83946, 0.923114, 1.83946" origin="2.5, 1.28, 2.5" up="-0.252357, 0.934148, -0.252357"/>
+		</transform>
+
+		<sampler type="independent">
+			<integer name="sampleCount" value="16"/>
+		</sampler>
+
+		<film type="ldrfilm">
+			<boolean name="banner" value="false"/>
+			<float name="exposure" value="0"/>
+			<float name="gamma" value="-1"/>
+			<integer name="height" value="1024"/>
+			<string name="pixelFormat" value="rgb"/>
+			<string name="toneMappingMethod" value="gamma"/>
+			<string name="tonemapMethod" value="gamma"/>
+			<integer name="width" value="1024"/>
+
+			<rfilter type="catmullrom"/>
+		</film>
+	</sensor>
+
+	<emitter type="envmap" id="envmapLight">
+		<string name="filename" value="textures/envmap.exr"/>
+		<transform name="toWorld">
+			<rotate y="1" angle="75"/>
+		</transform>
+		<float name="scale" value="2.75"/>
+	</emitter>
+
+	<bsdf type="diffuse" id="diffmat">
+		<rgb name="reflectance" value="0.4 0.4 0.4"/>
+	</bsdf>
+
+	<shape type="obj" id="water">
+		<string name="filename" value="data/level_set_liquid_sim_demo4/frame_000050.obj"/>
+		<integer name="shapeIndex" value="2"/>
+		<transform name="toWorld"/>
+
+		<bsdf type="dielectric">
+			<string name="intIOR" value="water"/>
+			<string name="extIOR" value="air"/>
+		</bsdf>
+
+		<medium name="interior" type="homogeneous">
+			<rgb name="sigmaS" value="0, 0, 0"/>
+			<rgb name="sigmaA" value="12, 5.1, 4.5"/>
+		</medium>
+	</shape>
+
+	<shape type="serialized" id="floor">
+		<string name="filename" value="objects/floor.serialized"/>
+		<integer name="shapeIndex" value="0"/>
+		<transform name="toWorld">
+			<rotate x="1" angle="90"/>
+			<rotate z="1" angle="180"/>
+			<translate x="0.5" y="0.004" z="0.5"/>
+			<scale x="30" y="1" z="30"/>
+		</transform>
+
+		<ref name="bsdf" id="diffmat"/>
+	</shape>
+</scene>
