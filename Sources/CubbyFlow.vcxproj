@@ -389,6 +389,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Solver\PCISPH\PCISPHSolver2.h" />
     <ClInclude Include="..\Includes\Solver\PCISPH\PCISPHSolver3.h" />
     <ClInclude Include="..\Includes\Solver\PIC\PICSolver2.h" />
+    <ClInclude Include="..\Includes\Solver\PIC\PICSolver3.h" />
     <ClInclude Include="..\Includes\Solver\Smoke\GridSmokeSolver3.h" />
     <ClInclude Include="..\Includes\Solver\Smoke\GridSmokeSolver2.h" />
     <ClInclude Include="..\Includes\Solver\SPH\SPHSolver2.h" />
