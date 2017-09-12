@@ -106,6 +106,9 @@
     <Filter Include="Solver\LevelSet">
       <UniqueIdentifier>{9549e12d-95ba-4544-bc1a-78dd21095ccf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Solver\PIC">
+      <UniqueIdentifier>{fc42f5e6-48aa-40a0-b46c-15fcca792eab}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Includes\Animation\Animation.h">
@@ -857,6 +860,9 @@
     </ClInclude>
     <ClInclude Include="..\Includes\Surface\Implicit\CustomImplicitSurface3.h">
       <Filter>Surface\Implicit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Solver\PIC\PICSolver2.h">
+      <Filter>Solver\PIC</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
