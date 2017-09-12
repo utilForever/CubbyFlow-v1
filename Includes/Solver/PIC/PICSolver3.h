@@ -88,11 +88,11 @@ namespace CubbyFlow
 		Array3<char> m_vMarkers;
 		Array3<char> m_wMarkers;
 
-		void ExtrapolateVelocityToAir();
+		void ExtrapolateVelocityToAir() const;
 
 		void BuildSignedDistanceField();
 
-		void UpdateParticleEmitter(double timeIntervalInSeconds);
+		void UpdateParticleEmitter(double timeIntervalInSeconds) const;
 	};
 
 	//! Shared pointer type for the PICSolver3.

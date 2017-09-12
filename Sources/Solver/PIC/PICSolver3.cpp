@@ -299,7 +299,7 @@ namespace CubbyFlow
 		}
 	}
 
-	void PICSolver3::ExtrapolateVelocityToAir()
+	void PICSolver3::ExtrapolateVelocityToAir() const
 	{
 		auto vel = GetGridSystemData()->GetVelocity();
 		auto u = vel->GetUAccessor();
@@ -337,7 +337,7 @@ namespace CubbyFlow
 		ExtrapolateIntoCollider(sdf.get());
 	}
 
-	void PICSolver3::UpdateParticleEmitter(double timeIntervalInSeconds)
+	void PICSolver3::UpdateParticleEmitter(double timeIntervalInSeconds) const
 	{
 		if (m_particleEmitter != nullptr)
 		{
