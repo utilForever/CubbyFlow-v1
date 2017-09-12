@@ -1358,5 +1358,8 @@
     <ClCompile Include="Surface\Implicit\CustomImplicitSurface3.cpp">
       <Filter>Surface\Implicit</Filter>
     </ClCompile>
+    <ClCompile Include="Solver\PIC\PICSolver2.cpp">
+      <Filter>Solver\PIC</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
