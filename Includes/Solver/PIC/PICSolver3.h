@@ -80,7 +80,7 @@ namespace CubbyFlow
 		virtual void MoveParticles(double timeIntervalInSeconds);
 
 	private:
-		size_t m_signedDistanceFieldId;
+		size_t m_signedDistanceFieldID;
 		ParticleSystemData3Ptr m_particles;
 		ParticleEmitter3Ptr m_particleEmitter;
 
