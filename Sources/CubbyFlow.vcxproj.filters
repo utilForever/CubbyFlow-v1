@@ -109,6 +109,9 @@
     <Filter Include="Solver\PIC">
       <UniqueIdentifier>{fc42f5e6-48aa-40a0-b46c-15fcca792eab}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Solver\FLIP">
+      <UniqueIdentifier>{7917d6d6-8b41-4094-b23b-94c01d88b46b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Includes\Animation\Animation.h">
@@ -866,6 +869,9 @@
     </ClInclude>
     <ClInclude Include="..\Includes\Solver\PIC\PICSolver3.h">
       <Filter>Solver\PIC</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Solver\FLIP\FLIPSolver2.h">
+      <Filter>Solver\FLIP</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
