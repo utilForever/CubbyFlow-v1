@@ -75,7 +75,7 @@ void TriangulateAndSave(
 	SaveTriangleMesh(mesh, rootDir, frameCnt);
 }
 
-void printUsage()
+void PrintUsage()
 {
 	printf(
 		"Usage: " APP_NAME " "
@@ -412,10 +412,10 @@ int main(int argc, char* argv[])
 			outputDir = optarg;
 			break;
 		case 'h':
-			printUsage();
+			PrintUsage();
 			exit(EXIT_SUCCESS);
 		default:
-			printUsage();
+			PrintUsage();
 			exit(EXIT_FAILURE);
 		}
 	}
@@ -447,7 +447,7 @@ int main(int argc, char* argv[])
 		RunExample4(outputDir, resX, numberOfFrames, fps);
 		break;
 	default:
-		printUsage();
+		PrintUsage();
 		exit(EXIT_FAILURE);
 	}
 
