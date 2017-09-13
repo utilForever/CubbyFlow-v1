@@ -1373,5 +1373,8 @@
     <ClCompile Include="Solver\PIC\PICSolver3.cpp">
       <Filter>Solver\PIC</Filter>
     </ClCompile>
+    <ClCompile Include="Solver\FLIP\FLIPSolver2.cpp">
+      <Filter>Solver\FLIP</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
