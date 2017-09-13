@@ -353,6 +353,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Solver\FDM\FDMLinearSystemSolver2.h" />
     <ClInclude Include="..\Includes\Solver\FDM\FDMLinearSystemSolver3.h" />
     <ClInclude Include="..\Includes\Solver\FLIP\FLIPSolver2.h" />
+    <ClInclude Include="..\Includes\Solver\FLIP\FLIPSolver3.h" />
     <ClInclude Include="..\Includes\Solver\Grid\GridBackwardEulerDiffusionSolver2.h" />
     <ClInclude Include="..\Includes\Solver\Grid\GridBackwardEulerDiffusionSolver3.h" />
     <ClInclude Include="..\Includes\Solver\Grid\GridBlockedBoundaryConditionSolver2.h" />

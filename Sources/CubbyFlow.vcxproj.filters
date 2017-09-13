@@ -873,6 +873,9 @@
     <ClInclude Include="..\Includes\Solver\FLIP\FLIPSolver2.h">
       <Filter>Solver\FLIP</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Solver\FLIP\FLIPSolver3.h">
+      <Filter>Solver\FLIP</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
