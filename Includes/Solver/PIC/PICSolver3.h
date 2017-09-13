@@ -80,7 +80,7 @@ namespace CubbyFlow
 		virtual void MoveParticles(double timeIntervalInSeconds);
 
 	private:
-		size_t m_signedDistanceFieldId;
+		size_t m_signedDistanceFieldID;
 		ParticleSystemData3Ptr m_particles;
 		ParticleEmitter3Ptr m_particleEmitter;
 
@@ -88,11 +88,11 @@ namespace CubbyFlow
 		Array3<char> m_vMarkers;
 		Array3<char> m_wMarkers;
 
-		void ExtrapolateVelocityToAir();
+		void ExtrapolateVelocityToAir() const;
 
 		void BuildSignedDistanceField();
 
-		void UpdateParticleEmitter(double timeIntervalInSeconds);
+		void UpdateParticleEmitter(double timeIntervalInSeconds) const;
 	};
 
 	//! Shared pointer type for the PICSolver3.
