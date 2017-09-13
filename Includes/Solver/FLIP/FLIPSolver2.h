@@ -17,7 +17,7 @@ namespace CubbyFlow
 	//! \brief 2-D Fluid-Implicit Particle (FLIP) implementation.
 	//!
 	//! This class implements 2-D Fluid-Implicit Particle (FLIP) solver from the
-	//! SIGGRAPH paper, Zhu and Bridson 2005. By transfering delta-velocity field
+	//! SIGGRAPH paper, Zhu and Bridson 2005. By transferring delta-velocity field
 	//! from grid to particles, the FLIP solver achieves less viscous fluid flow
 	//! compared to the original PIC method.
 	//!
