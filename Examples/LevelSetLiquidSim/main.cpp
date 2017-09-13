@@ -24,7 +24,6 @@
 #include <Utils/Logger.h>
 
 #include <pystring/pystring.h>
-#include <../Examples/DirectX12/NormalMapApp.h>
 
 #ifdef CUBBYFLOW_WINDOWS
 #include <direct.h>
@@ -123,7 +122,6 @@ void RunSimulation(
 		solver->Update(frame);
 
 		TriangulateAndSave(sdf, rootDir, frame.index);
-
 	}
 }
 

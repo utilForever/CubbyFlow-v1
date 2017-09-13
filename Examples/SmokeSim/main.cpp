@@ -228,7 +228,7 @@ void RunSimulation(
 	double fps)
 {
 	auto density = solver->GetSmokeDensity();
-	  
+
 	for (Frame frame(0, 1.0 / fps); frame.index < numberOfFrames; ++frame)
 	{
 		solver->Update(frame);
