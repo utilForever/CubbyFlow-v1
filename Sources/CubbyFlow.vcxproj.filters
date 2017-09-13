@@ -1376,5 +1376,8 @@
     <ClCompile Include="Solver\FLIP\FLIPSolver2.cpp">
       <Filter>Solver\FLIP</Filter>
     </ClCompile>
+    <ClCompile Include="Solver\FLIP\FLIPSolver3.cpp">
+      <Filter>Solver\FLIP</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

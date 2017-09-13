@@ -556,6 +556,7 @@ xcopy /s /y $(SolutionDir)Includes $(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="Solver\FDM\FDMJacobiSolver2.cpp" />
     <ClCompile Include="Solver\FDM\FDMJacobiSolver3.cpp" />
     <ClCompile Include="Solver\FLIP\FLIPSolver2.cpp" />
+    <ClCompile Include="Solver\FLIP\FLIPSolver3.cpp" />
     <ClCompile Include="Solver\Grid\GridBackwardEulerDiffusionSolver2.cpp" />
     <ClCompile Include="Solver\Grid\GridBackwardEulerDiffusionSolver3.cpp" />
     <ClCompile Include="Solver\Grid\GridBlockedBoundaryConditionSolver2.cpp" />
