@@ -276,7 +276,7 @@ void RunExample3(
 {
 	// Build solver
 	Size3 resolution{ 3 * resolutionX, 2 * resolutionX, (3 * resolutionX) / 2 };
-	auto solver = PICSolver3::Builder()
+	auto solver = FLIPSolver3::Builder()
 		.WithResolution(resolution)
 		.WithDomainSizeX(3.0)
 		.MakeShared();
