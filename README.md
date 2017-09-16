@@ -51,6 +51,14 @@ Here are some of the example simulations generated using CubbyFlow framework. Co
 
 ![Level-set_dam_breaking](https://github.com/utilForever/CubbyFlow/blob/master/Medias/LevelSet_dam_breaking.png "Level Set Example")
 
+#### FLIP Simulation Example
+
+![FLIP_dam_breaking](https://github.com/utilForever/CubbyFlow/blob/master/Medias/FLIP_dam_breaking.png "FLIP Example")
+
+#### PIC Simulation Example
+
+![PIC_dam_breaking](https://github.com/utilForever/CubbyFlow/blob/master/Medias/PIC_dam_breaking.png "PIC Example")
+
 #### Level Set Example with Different Viscosity (high / low)
 
 ![level_set_bunny_drop_high_viscosity](https://github.com/utilForever/CubbyFlow/blob/master/Medias/level_set_bunny_drop_high_viscosity.png "Level Set Bunny Drop - High Viscosity")
