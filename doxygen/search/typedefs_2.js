@@ -23,6 +23,8 @@ var searchData=
   ['cubicarraysampler1',['CubicArraySampler1',['../namespace_cubby_flow.html#a75f11c686bf5c719af327fc9816b7354',1,'CubbyFlow']]],
   ['cubicarraysampler2',['CubicArraySampler2',['../namespace_cubby_flow.html#ac86c2d0d7f3cea7b103cb3875d5005b3',1,'CubbyFlow']]],
   ['cubicarraysampler3',['CubicArraySampler3',['../namespace_cubby_flow.html#a2e528047a2784f091f6c62f5e4ede43e',1,'CubbyFlow']]],
+  ['customimplicitsurface2ptr',['CustomImplicitSurface2Ptr',['../namespace_cubby_flow.html#a23fb7178d10421451551f8ad2d2be96b',1,'CubbyFlow']]],
+  ['customimplicitsurface3ptr',['CustomImplicitSurface3Ptr',['../namespace_cubby_flow.html#ad7d4c794f1930ccb5b128692a4d0276b',1,'CubbyFlow']]],
   ['customscalarfield2ptr',['CustomScalarField2Ptr',['../namespace_cubby_flow.html#a4ed2b53f749ea1b5b1e32fcaf683ec08',1,'CubbyFlow']]],
   ['customscalarfield3ptr',['CustomScalarField3Ptr',['../namespace_cubby_flow.html#a1b8a4e3e05694deeb7f6ab5aa277c4a5',1,'CubbyFlow']]],
   ['customvectorfield2ptr',['CustomVectorField2Ptr',['../namespace_cubby_flow.html#ad5230e47fa3d906770fd8d2bf067f465',1,'CubbyFlow']]],

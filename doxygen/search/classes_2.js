@@ -25,6 +25,8 @@ var searchData=
   ['cubicarraysampler_3c_20t_2c_20r_2c_203_20_3e',['CubicArraySampler&lt; T, R, 3 &gt;',['../class_cubby_flow_1_1_cubic_array_sampler_3_01_t_00_01_r_00_013_01_4.html',1,'CubbyFlow']]],
   ['cubicsemilagrangian2',['CubicSemiLagrangian2',['../class_cubby_flow_1_1_cubic_semi_lagrangian2.html',1,'CubbyFlow']]],
   ['cubicsemilagrangian3',['CubicSemiLagrangian3',['../class_cubby_flow_1_1_cubic_semi_lagrangian3.html',1,'CubbyFlow']]],
+  ['customimplicitsurface2',['CustomImplicitSurface2',['../class_cubby_flow_1_1_custom_implicit_surface2.html',1,'CubbyFlow']]],
+  ['customimplicitsurface3',['CustomImplicitSurface3',['../class_cubby_flow_1_1_custom_implicit_surface3.html',1,'CubbyFlow']]],
   ['customscalarfield2',['CustomScalarField2',['../class_cubby_flow_1_1_custom_scalar_field2.html',1,'CubbyFlow']]],
   ['customscalarfield3',['CustomScalarField3',['../class_cubby_flow_1_1_custom_scalar_field3.html',1,'CubbyFlow']]],
   ['customvectorfield2',['CustomVectorField2',['../class_cubby_flow_1_1_custom_vector_field2.html',1,'CubbyFlow']]],

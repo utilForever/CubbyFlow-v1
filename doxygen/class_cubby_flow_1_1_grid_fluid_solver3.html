@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.31</a>
+                    <a class="navbar-brand">CubbyFlow v0.5</a>
                 </div>
             </div>
         </nav>
@@ -93,9 +93,12 @@ Inheritance diagram for CubbyFlow::GridFluidSolver3:</div>
  <div class="center">
   <img src="class_cubby_flow_1_1_grid_fluid_solver3.png" usemap="#CubbyFlow::GridFluidSolver3_map" alt=""/>
   <map id="CubbyFlow::GridFluidSolver3_map" name="CubbyFlow::GridFluidSolver3_map">
-<area href="class_cubby_flow_1_1_physics_animation.html" title="Abstract base class for physics-based animation. " alt="CubbyFlow::PhysicsAnimation" shape="rect" coords="0,56,187,80"/>
-<area href="class_cubby_flow_1_1_animation.html" title="Abstract base class for animation-related class. " alt="CubbyFlow::Animation" shape="rect" coords="0,0,187,24"/>
-<area href="class_cubby_flow_1_1_grid_smoke_solver3.html" title="3-D grid-based smoke solver. " alt="CubbyFlow::GridSmokeSolver3" shape="rect" coords="0,168,187,192"/>
+<area href="class_cubby_flow_1_1_physics_animation.html" title="Abstract base class for physics-based animation. " alt="CubbyFlow::PhysicsAnimation" shape="rect" coords="218,56,426,80"/>
+<area href="class_cubby_flow_1_1_animation.html" title="Abstract base class for animation-related class. " alt="CubbyFlow::Animation" shape="rect" coords="218,0,426,24"/>
+<area href="class_cubby_flow_1_1_grid_smoke_solver3.html" title="3-D grid-based smoke solver. " alt="CubbyFlow::GridSmokeSolver3" shape="rect" coords="0,168,208,192"/>
+<area href="class_cubby_flow_1_1_level_set_liquid_solver3.html" title="Level set based 3-D liquid solver. " alt="CubbyFlow::LevelSetLiquidSolver3" shape="rect" coords="218,168,426,192"/>
+<area href="class_cubby_flow_1_1_p_i_c_solver3.html" title="3-D Particle-in-Cell (PIC) implementation. " alt="CubbyFlow::PICSolver3" shape="rect" coords="436,168,644,192"/>
+<area href="class_cubby_flow_1_1_f_l_i_p_solver3.html" title="3-D Fluid-Implicit Particle (FLIP) implementation. " alt="CubbyFlow::FLIPSolver3" shape="rect" coords="436,224,644,248"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -431,6 +434,8 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Computes the advection term using the advection solver. </p>
+
+<p>Reimplemented in <a class="el" href="class_cubby_flow_1_1_level_set_liquid_solver3.html#a0ad3b8c537c93129f6977c619286a621">CubbyFlow::LevelSetLiquidSolver3</a>, and <a class="el" href="class_cubby_flow_1_1_p_i_c_solver3.html#ad27f47cca4a7d88bf801b7934e8486e3">CubbyFlow::PICSolver3</a>.</p>
 
 </div>
 </div>
@@ -862,6 +867,8 @@ Protected Member Functions</h2></td></tr>
 <p>Returns the signed-distance representation of the fluid. </p>
 <p>This function returns the signed-distance representation of the fluid. Positive sign area is considered to be atmosphere and won't be included for computing the dynamics. By default, this will return constant scalar field of -std::numeric_limits&lt;double&gt;::max(), meaning that the entire volume is occupied with fluid. </p>
 
+<p>Reimplemented in <a class="el" href="class_cubby_flow_1_1_level_set_liquid_solver3.html#a4e430939f2c3f159fd3511b3efba8941">CubbyFlow::LevelSetLiquidSolver3</a>, and <a class="el" href="class_cubby_flow_1_1_p_i_c_solver3.html#aff23cf90d1549d6953bf85a75544eb0f">CubbyFlow::PICSolver3</a>.</p>
+
 </div>
 </div>
 <a id="adc389c4be9dc7f5364d648e623c71edc"></a>
@@ -1129,6 +1136,8 @@ Protected Member Functions</h2></td></tr>
 
 <p>Called at the beginning of a time-step. </p>
 
+<p>Reimplemented in <a class="el" href="class_cubby_flow_1_1_level_set_liquid_solver3.html#a82fdb425796caf494097d4bf465f2791">CubbyFlow::LevelSetLiquidSolver3</a>, and <a class="el" href="class_cubby_flow_1_1_p_i_c_solver3.html#a1362769fbcceef3b2e6cf4827eaccc20">CubbyFlow::PICSolver3</a>.</p>
+
 </div>
 </div>
 <a id="a9e609fb785ef584d8b97049407d9ef0b"></a>
@@ -1157,7 +1166,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Called at the end of a time-step. </p>
 
-<p>Reimplemented in <a class="el" href="class_cubby_flow_1_1_grid_smoke_solver3.html#a769c9fa7fdcbd5ea9e3c14037b6b788f">CubbyFlow::GridSmokeSolver3</a>.</p>
+<p>Reimplemented in <a class="el" href="class_cubby_flow_1_1_grid_smoke_solver3.html#a769c9fa7fdcbd5ea9e3c14037b6b788f">CubbyFlow::GridSmokeSolver3</a>, and <a class="el" href="class_cubby_flow_1_1_level_set_liquid_solver3.html#a6bd37078982501000f6def76f9302004">CubbyFlow::LevelSetLiquidSolver3</a>.</p>
 
 </div>
 </div>
@@ -1187,6 +1196,8 @@ Protected Member Functions</h2></td></tr>
 <p>Called when it needs to setup initial condition. </p>
 
 <p>Reimplemented from <a class="el" href="class_cubby_flow_1_1_physics_animation.html#a3e393f2ee087974334e09237ffb2ebb9">CubbyFlow::PhysicsAnimation</a>.</p>
+
+<p>Reimplemented in <a class="el" href="class_cubby_flow_1_1_p_i_c_solver3.html#a434d4738b7fea7e89fd88d0bfecaf57f">CubbyFlow::PICSolver3</a>.</p>
 
 </div>
 </div>
@@ -1434,7 +1445,7 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 28 2017 23:10:26 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Sep 18 2017 12:56:11 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

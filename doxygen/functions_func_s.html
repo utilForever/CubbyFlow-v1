@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.31</a>
+                    <a class="navbar-brand">CubbyFlow v0.5</a>
                 </div>
             </div>
         </nav>
@@ -327,6 +327,10 @@ $(function() {
 : <a class="el" href="class_cubby_flow_1_1_volume_particle_emitter2.html#a7d35e649c55284e165b0ca73592a8be4">CubbyFlow::VolumeParticleEmitter2</a>
 , <a class="el" href="class_cubby_flow_1_1_volume_particle_emitter3.html#aa8d971e715bac9aaceb5fa39de87985e">CubbyFlow::VolumeParticleEmitter3</a>
 </li>
+<li>SetIsGlobalCompensationEnabled()
+: <a class="el" href="class_cubby_flow_1_1_level_set_liquid_solver2.html#ad607b55cc7ff58d2714d41305eecb52c">CubbyFlow::LevelSetLiquidSolver2</a>
+, <a class="el" href="class_cubby_flow_1_1_level_set_liquid_solver3.html#abd081a3d0c213decb022ead2435f2c63">CubbyFlow::LevelSetLiquidSolver3</a>
+</li>
 <li>SetIsOneShot()
 : <a class="el" href="class_cubby_flow_1_1_volume_particle_emitter2.html#a31ccf2a39773bd9c12c54acf1d7d0e2a">CubbyFlow::VolumeParticleEmitter2</a>
 , <a class="el" href="class_cubby_flow_1_1_volume_particle_emitter3.html#a9ecf74c4a9750ddeab678b56c7207822">CubbyFlow::VolumeParticleEmitter3</a>
@@ -337,6 +341,10 @@ $(function() {
 <li>SetJitter()
 : <a class="el" href="class_cubby_flow_1_1_volume_particle_emitter2.html#a4a178144e07f347be505e05b7bc23433">CubbyFlow::VolumeParticleEmitter2</a>
 , <a class="el" href="class_cubby_flow_1_1_volume_particle_emitter3.html#afeb8188f8f41054d675c5c81453a2d2f">CubbyFlow::VolumeParticleEmitter3</a>
+</li>
+<li>SetLevelSetSolver()
+: <a class="el" href="class_cubby_flow_1_1_level_set_liquid_solver2.html#a128e8dbc4a928fbf0d794702209ea4ef">CubbyFlow::LevelSetLiquidSolver2</a>
+, <a class="el" href="class_cubby_flow_1_1_level_set_liquid_solver3.html#ad12cf9b20bd24ee254b243c0cb68c0d4">CubbyFlow::LevelSetLiquidSolver3</a>
 </li>
 <li>SetLinearSystemSolver()
 : <a class="el" href="class_cubby_flow_1_1_grid_backward_euler_diffusion_solver2.html#ab3a7d44b152f8f0b93f1f14fe76fe77f">CubbyFlow::GridBackwardEulerDiffusionSolver2</a>
@@ -355,6 +363,8 @@ $(function() {
 <li>SetMaxCFL()
 : <a class="el" href="class_cubby_flow_1_1_grid_fluid_solver2.html#ab180072a4b43f3154b54789fd6f65024">CubbyFlow::GridFluidSolver2</a>
 , <a class="el" href="class_cubby_flow_1_1_grid_fluid_solver3.html#ae757930b2d0ba8c33e1bb2ab08eada8e">CubbyFlow::GridFluidSolver3</a>
+, <a class="el" href="class_cubby_flow_1_1_iterative_level_set_solver2.html#a8f077eeaafa352510f43b473191a3651">CubbyFlow::IterativeLevelSetSolver2</a>
+, <a class="el" href="class_cubby_flow_1_1_iterative_level_set_solver3.html#ab3b1b2b5eb77f47680286aa704c05818">CubbyFlow::IterativeLevelSetSolver3</a>
 </li>
 <li>SetMaxDensityErrorRatio()
 : <a class="el" href="class_cubby_flow_1_1_p_c_i_s_p_h_solver2.html#a64071e3709ae92ae72398cb812797720">CubbyFlow::PCISPHSolver2</a>
@@ -373,6 +383,10 @@ $(function() {
 , <a class="el" href="class_cubby_flow_1_1_point_particle_emitter3.html#afff81df9bbdfec32f73925751ba50b8f">CubbyFlow::PointParticleEmitter3</a>
 , <a class="el" href="class_cubby_flow_1_1_volume_particle_emitter2.html#ad4f41e5da77da1d6d673b31b6f873c9d">CubbyFlow::VolumeParticleEmitter2</a>
 , <a class="el" href="class_cubby_flow_1_1_volume_particle_emitter3.html#a8d90569e6dc6f7920e27a6682f529805">CubbyFlow::VolumeParticleEmitter3</a>
+</li>
+<li>SetMinReinitializeDistance()
+: <a class="el" href="class_cubby_flow_1_1_level_set_liquid_solver2.html#a3610b844a135e6e1281bf48f50a66e97">CubbyFlow::LevelSetLiquidSolver2</a>
+, <a class="el" href="class_cubby_flow_1_1_level_set_liquid_solver3.html#a22134b8df7ca7fcadd7fa94f9ba21775">CubbyFlow::LevelSetLiquidSolver3</a>
 </li>
 <li>SetNegativePressureScale()
 : <a class="el" href="class_cubby_flow_1_1_s_p_h_solver2.html#a676e566aed6771158f05a91aac7e08ef">CubbyFlow::SPHSolver2</a>
@@ -404,6 +418,10 @@ $(function() {
 <li>SetOrientation()
 : <a class="el" href="class_cubby_flow_1_1_transform2.html#a8bf91b7f60d5709503aab6f1e572c1ab">CubbyFlow::Transform2</a>
 , <a class="el" href="class_cubby_flow_1_1_transform3.html#a066779f73ea9caa49a749a0018e3db0e">CubbyFlow::Transform3</a>
+</li>
+<li>SetParticleEmitter()
+: <a class="el" href="class_cubby_flow_1_1_p_i_c_solver2.html#ab87b2b1d0b97aaa0e4e63d9255c33742">CubbyFlow::PICSolver2</a>
+, <a class="el" href="class_cubby_flow_1_1_p_i_c_solver3.html#aa2344a6073edb0a3616b1cbcdbd43ae6">CubbyFlow::PICSolver3</a>
 </li>
 <li>SetParticleSystemData()
 : <a class="el" href="class_cubby_flow_1_1_particle_system_solver2.html#a37eddce5c888e70c1d23164b057dd082">CubbyFlow::ParticleSystemSolver2</a>
@@ -548,11 +566,11 @@ $(function() {
 , <a class="el" href="class_cubby_flow_1_1_f_d_m_jacobi_solver3.html#a2b9071a821701ad111ab2115496c7f5e">CubbyFlow::FDMJacobiSolver3</a>
 , <a class="el" href="class_cubby_flow_1_1_f_d_m_linear_system_solver2.html#a8e22dffd2753541d30781092a912080a">CubbyFlow::FDMLinearSystemSolver2</a>
 , <a class="el" href="class_cubby_flow_1_1_f_d_m_linear_system_solver3.html#a37e07e78eee3c8fc3bdac7cbe601ffc9">CubbyFlow::FDMLinearSystemSolver3</a>
-, <a class="el" href="class_cubby_flow_1_1_grid_backward_euler_diffusion_solver2.html#a7c223519ba46965e6e78126c76aa567b">CubbyFlow::GridBackwardEulerDiffusionSolver2</a>
-, <a class="el" href="class_cubby_flow_1_1_grid_backward_euler_diffusion_solver3.html#a0479ad790775d5368269cb0a0c64c0b7">CubbyFlow::GridBackwardEulerDiffusionSolver3</a>
+, <a class="el" href="class_cubby_flow_1_1_grid_backward_euler_diffusion_solver2.html#af1d8517def3ca7976b2f39ccf4d45270">CubbyFlow::GridBackwardEulerDiffusionSolver2</a>
+, <a class="el" href="class_cubby_flow_1_1_grid_backward_euler_diffusion_solver3.html#a7790809665faec10b7188def15ecb34b">CubbyFlow::GridBackwardEulerDiffusionSolver3</a>
 , <a class="el" href="class_cubby_flow_1_1_grid_diffusion_solver2.html#a62623ebf020c8a341c2524f9bf9d3455">CubbyFlow::GridDiffusionSolver2</a>
 , <a class="el" href="class_cubby_flow_1_1_grid_diffusion_solver3.html#a1f7ca070c5e60454d6f444d4f7e16f16">CubbyFlow::GridDiffusionSolver3</a>
-, <a class="el" href="class_cubby_flow_1_1_grid_forward_euler_diffusion_solver2.html#a2842163e23bcedd4350183d80d7f170e">CubbyFlow::GridForwardEulerDiffusionSolver2</a>
+, <a class="el" href="class_cubby_flow_1_1_grid_forward_euler_diffusion_solver2.html#afe234b14b0519952f2c8e8f992fd5beb">CubbyFlow::GridForwardEulerDiffusionSolver2</a>
 , <a class="el" href="class_cubby_flow_1_1_grid_forward_euler_diffusion_solver3.html#a00723d526912dd6883a275ed59284f5b">CubbyFlow::GridForwardEulerDiffusionSolver3</a>
 , <a class="el" href="class_cubby_flow_1_1_grid_fractional_single_phase_pressure_solver2.html#ad502c499c017e669f8f301c41b967179">CubbyFlow::GridFractionalSinglePhasePressureSolver2</a>
 , <a class="el" href="class_cubby_flow_1_1_grid_fractional_single_phase_pressure_solver3.html#a154fe08a3efed56ab14d7be713d604b5">CubbyFlow::GridFractionalSinglePhasePressureSolver3</a>
@@ -573,7 +591,7 @@ $(function() {
 : <a class="el" href="class_cubby_flow_1_1_sphere3.html#a89a698f58cad2ea98043e54da459018c">CubbyFlow::Sphere3</a>
 </li>
 <li>SPHSolver2()
-: <a class="el" href="class_cubby_flow_1_1_s_p_h_solver2.html#a7a63913ec0dd70bd19b0e5e9f73f9e76">CubbyFlow::SPHSolver2</a>
+: <a class="el" href="class_cubby_flow_1_1_s_p_h_solver2.html#a50ccb4514cb2fd966bcaa32b860312a1">CubbyFlow::SPHSolver2</a>
 </li>
 <li>SPHSolver3()
 : <a class="el" href="class_cubby_flow_1_1_s_p_h_solver3.html#a12fbef1fe202bb73ba33fad5eeda37de">CubbyFlow::SPHSolver3</a>
@@ -591,10 +609,10 @@ $(function() {
 : <a class="el" href="struct_cubby_flow_1_1_s_p_h_std_kernel3.html#af4e77fdcff353a22c847a07a61eaf5f6">CubbyFlow::SPHStdKernel3</a>
 </li>
 <li>SPHSystemData2()
-: <a class="el" href="class_cubby_flow_1_1_s_p_h_system_data2.html#a8d7dc578da4962a35515f855923468f3">CubbyFlow::SPHSystemData2</a>
+: <a class="el" href="class_cubby_flow_1_1_s_p_h_system_data2.html#a35fdea0c7e1ff5eb94f032e854acd2f1">CubbyFlow::SPHSystemData2</a>
 </li>
 <li>SPHSystemData3()
-: <a class="el" href="class_cubby_flow_1_1_s_p_h_system_data3.html#a8819dcfef7c2a73573d87d68cec43dd8">CubbyFlow::SPHSystemData3</a>
+: <a class="el" href="class_cubby_flow_1_1_s_p_h_system_data3.html#adc9c77ec1abd17f71aea5d9dcabdecfe">CubbyFlow::SPHSystemData3</a>
 </li>
 <li>StartIndexTable()
 : <a class="el" href="class_cubby_flow_1_1_point_parallel_hash_grid_searcher2.html#a3fe631765ab6bb3c01e2fc3d6d90d1fe">CubbyFlow::PointParallelHashGridSearcher2</a>
@@ -612,13 +630,13 @@ $(function() {
 </li>
 <li>Sub()
 : <a class="el" href="class_cubby_flow_1_1_matrix_3_01_t_00_012_00_012_01_4.html#a6996322012a9ddf84c890ff2de9b19b3">CubbyFlow::Matrix&lt; T, 2, 2 &gt;</a>
-, <a class="el" href="class_cubby_flow_1_1_matrix_3_01_t_00_013_00_013_01_4.html#ac6afa21f44a7ff02f8f0d1c09b7022fe">CubbyFlow::Matrix&lt; T, 3, 3 &gt;</a>
+, <a class="el" href="class_cubby_flow_1_1_matrix_3_01_t_00_013_00_013_01_4.html#a52737eeb257cc1415ea784c0e9e93e65">CubbyFlow::Matrix&lt; T, 3, 3 &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_matrix_3_01_t_00_014_00_014_01_4.html#a19e24713ca762098c155297086fee0c0">CubbyFlow::Matrix&lt; T, 4, 4 &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_point_3_01_t_00_012_01_4.html#a5d091b9c2f6104329131ff7df13a3931">CubbyFlow::Point&lt; T, 2 &gt;</a>
-, <a class="el" href="class_cubby_flow_1_1_point_3_01_t_00_013_01_4.html#a00b7d3d7e6d8f12e8bf199d4209e93de">CubbyFlow::Point&lt; T, 3 &gt;</a>
-, <a class="el" href="class_cubby_flow_1_1_vector_3_01_t_00_012_01_4.html#aebf39d8b1e7a3a44eb786ce84b307250">CubbyFlow::Vector&lt; T, 2 &gt;</a>
+, <a class="el" href="class_cubby_flow_1_1_point_3_01_t_00_013_01_4.html#a243700dfb8951913860bb0223c81b18d">CubbyFlow::Point&lt; T, 3 &gt;</a>
+, <a class="el" href="class_cubby_flow_1_1_vector_3_01_t_00_012_01_4.html#a60916dd767cd2a0e1ebd85ffdf59d10d">CubbyFlow::Vector&lt; T, 2 &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_vector_3_01_t_00_013_01_4.html#aa6060f59aae33a6e4bd06b2adf6ea601">CubbyFlow::Vector&lt; T, 3 &gt;</a>
-, <a class="el" href="class_cubby_flow_1_1_vector_3_01_t_00_014_01_4.html#aefdd8d6b6359d7285be1f0dfbff40606">CubbyFlow::Vector&lt; T, 4 &gt;</a>
+, <a class="el" href="class_cubby_flow_1_1_vector_3_01_t_00_014_01_4.html#ac3673af346e67cb102e8bfa752e4554a">CubbyFlow::Vector&lt; T, 4 &gt;</a>
 </li>
 <li>SubdominantAxis()
 : <a class="el" href="class_cubby_flow_1_1_point_3_01_t_00_012_01_4.html#a656459d70895c7d534e8257ad6e6e40d">CubbyFlow::Point&lt; T, 2 &gt;</a>
@@ -666,13 +684,13 @@ $(function() {
 , <a class="el" href="class_cubby_flow_1_1_surface_set3.html#aa8ebb4ebcf4187d06871e98da993f9c7">CubbyFlow::SurfaceSet3</a>
 </li>
 <li>SurfaceSet2()
-: <a class="el" href="class_cubby_flow_1_1_surface_set2.html#ad33a9cf7bf027d29531b6f2cb299a1cd">CubbyFlow::SurfaceSet2</a>
+: <a class="el" href="class_cubby_flow_1_1_surface_set2.html#ac51657052b72b44a69e1fd24c8fa8b87">CubbyFlow::SurfaceSet2</a>
 </li>
 <li>SurfaceSet3()
 : <a class="el" href="class_cubby_flow_1_1_surface_set3.html#a621c07dda2b858e218af1fe9746fd2fa">CubbyFlow::SurfaceSet3</a>
 </li>
 <li>SurfaceToImplicit2()
-: <a class="el" href="class_cubby_flow_1_1_surface_to_implicit2.html#aec496d60814d87f12c678da2b25ac196">CubbyFlow::SurfaceToImplicit2</a>
+: <a class="el" href="class_cubby_flow_1_1_surface_to_implicit2.html#ab50164bf6ed98c5ae967b68b984de1bf">CubbyFlow::SurfaceToImplicit2</a>
 </li>
 <li>SurfaceToImplicit3()
 : <a class="el" href="class_cubby_flow_1_1_surface_to_implicit3.html#a84d2d12b7396342a7f74d5e446d4a6bc">CubbyFlow::SurfaceToImplicit3</a>
@@ -720,7 +738,7 @@ $(function() {
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 28 2017 23:10:35 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Sep 18 2017 12:56:26 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>
