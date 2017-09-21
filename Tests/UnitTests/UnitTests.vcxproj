@@ -90,6 +90,7 @@
     <ClCompile Include="ColliderSet2Tests.cpp" />
     <ClCompile Include="ColliderSet3Tests.cpp" />
     <ClCompile Include="CustomImplicitSurface2Tests.cpp" />
+    <ClCompile Include="CustomImplicitSurface3Tests.cpp" />
     <ClCompile Include="Cylinder3Tests.cpp" />
     <ClCompile Include="FaceCenteredGrid2Tests.cpp" />
     <ClCompile Include="FaceCenteredGrid3Tests.cpp" />

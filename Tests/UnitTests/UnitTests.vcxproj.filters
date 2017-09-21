@@ -341,6 +341,9 @@
     <ClCompile Include="CustomImplicitSurface2Tests.cpp">
       <Filter>Surface</Filter>
     </ClCompile>
+    <ClCompile Include="CustomImplicitSurface3Tests.cpp">
+      <Filter>Surface</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
