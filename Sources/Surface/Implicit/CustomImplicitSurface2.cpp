@@ -11,16 +11,15 @@
 
 namespace CubbyFlow
 {
-	const double DISTANCE_THRESHOLD = 1e-3;
-	const double GRADIENT_THRESHOLD = 1e-3;
-
 	CustomImplicitSurface2::CustomImplicitSurface2(
 		const std::function<double(const Vector2D&)>& func,
 		const BoundingBox2D& domain,
 		double resolution,
+		unsigned int maxNumberOfIterations,
 		const Transform2& transform,
 		bool isNormalFlipped) :
-		ImplicitSurface2(transform, isNormalFlipped), m_func(func), m_domain(domain), m_resolution(resolution)
+		ImplicitSurface2(transform, isNormalFlipped),
+		m_func(func), m_domain(domain), m_resolution(resolution), m_maxNumberOfIterations(maxNumberOfIterations)
 	{
 		// Do nothing
 	}
@@ -34,16 +33,17 @@ namespace CubbyFlow
 	{
 		Vector2D pt = otherPoint;
 		
-		while (std::fabs(m_func(pt)) < DISTANCE_THRESHOLD)
+		for (unsigned int iter = 0; iter < m_maxNumberOfIterations; ++iter)
 		{
-			Vector2D g = GradientLocal(pt);
+			double sdf = SignedDistanceLocal(pt);
 
-			if (g.Length() < GRADIENT_THRESHOLD)
+			if (std::fabs(sdf) < std::numeric_limits<double>::epsilon())
 			{
 				break;
 			}
 
-			pt += g;
+			Vector2D g = GradientLocal(pt);
+			pt = pt - sdf * g;
 		}
 
 		return pt;
@@ -105,24 +105,12 @@ namespace CubbyFlow
 
 	Vector2D CustomImplicitSurface2::ClosestNormalLocal(const Vector2D& otherPoint) const
 	{
-		Vector2D pt = otherPoint;
-		Vector2D g;
+		Vector2D pt = ClosestPointLocal(otherPoint);
+		Vector2D g = GradientLocal(pt);
 
-		while (std::fabs(m_func(pt)) < DISTANCE_THRESHOLD)
+		if (g.LengthSquared() > 0.0)
 		{
-			g = GradientLocal(pt);
-
-			if (g.Length() < GRADIENT_THRESHOLD)
-			{
-				break;
-			}
-
-			pt += g;
-		}
-
-		if (g.Length() > 0.0)
-		{
-			g.Normalize();
+			return g.Normalized();
 		}
 
 		return g;
@@ -216,15 +204,21 @@ namespace CubbyFlow
 		return *this;
 	}
 
+	CustomImplicitSurface2::Builder& CustomImplicitSurface2::Builder::WithMaxNumberOfIterations(unsigned int numIter)
+	{
+		m_maxNumberOfIterations = numIter;
+		return *this;
+	}
+
 	CustomImplicitSurface2 CustomImplicitSurface2::Builder::Build() const
 	{
-		return CustomImplicitSurface2(m_func, m_domain, m_resolution, m_transform, m_isNormalFlipped);
+		return CustomImplicitSurface2(m_func, m_domain, m_resolution, m_maxNumberOfIterations, m_transform, m_isNormalFlipped);
 	}
 
 	CustomImplicitSurface2Ptr CustomImplicitSurface2::Builder::MakeShared() const
 	{
 		return std::shared_ptr<CustomImplicitSurface2>(
-			new CustomImplicitSurface2(m_func, m_domain, m_resolution, m_transform, m_isNormalFlipped),
+			new CustomImplicitSurface2(m_func, m_domain, m_resolution, m_maxNumberOfIterations, m_transform, m_isNormalFlipped),
 			[](CustomImplicitSurface2* obj)
 		{
 			delete obj;
