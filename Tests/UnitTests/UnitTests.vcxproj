@@ -64,6 +64,7 @@
   </PropertyGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
+    <ClInclude Include="UnitTestsUtils.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AnimationTests.cpp" />

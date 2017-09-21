@@ -426,5 +426,6 @@
     <ClInclude Include="pch.h">
       <Filter>Precompiled Header</Filter>
     </ClInclude>
+    <ClInclude Include="UnitTestsUtils.h" />
   </ItemGroup>
 </Project>
