@@ -11,16 +11,15 @@
 
 namespace CubbyFlow
 {
-	const double DISTANCE_THRESHOLD = 1e-3;
-	const double GRADIENT_THRESHOLD = 1e-3;
-
 	CustomImplicitSurface3::CustomImplicitSurface3(
 		const std::function<double(const Vector3D&)>& func,
 		const BoundingBox3D& domain,
 		double resolution,
+		unsigned int maxNumberOfIterations,
 		const Transform3& transform,
 		bool isNormalFlipped) :
-		ImplicitSurface3(transform, isNormalFlipped), m_func(func), m_domain(domain), m_resolution(resolution)
+		ImplicitSurface3(transform, isNormalFlipped),
+		m_func(func), m_domain(domain), m_resolution(resolution), m_maxNumberOfIterations(maxNumberOfIterations)
 	{
 		// Do nothing
 	}
@@ -34,16 +33,17 @@ namespace CubbyFlow
 	{
 		Vector3D pt = otherPoint;
 
-		while (std::fabs(m_func(pt)) < DISTANCE_THRESHOLD)
+		for (unsigned int iter = 0; iter < m_maxNumberOfIterations; ++iter)
 		{
-			Vector3D g = GradientLocal(pt);
+			double sdf = SignedDistanceLocal(pt);
 
-			if (g.Length() < GRADIENT_THRESHOLD)
+			if (std::fabs(sdf) < std::numeric_limits<double>::epsilon())
 			{
 				break;
 			}
 
-			pt += g;
+			Vector3D g = GradientLocal(pt);
+			pt = pt - sdf * g;
 		}
 
 		return pt;
@@ -105,24 +105,12 @@ namespace CubbyFlow
 
 	Vector3D CustomImplicitSurface3::ClosestNormalLocal(const Vector3D& otherPoint) const
 	{
-		Vector3D pt = otherPoint;
-		Vector3D g;
+		Vector3D pt = ClosestPointLocal(otherPoint);
+		Vector3D g = GradientLocal(pt);
 
-		while (std::fabs(m_func(pt)) < DISTANCE_THRESHOLD)
+		if (g.LengthSquared() > 0.0)
 		{
-			g = GradientLocal(pt);
-
-			if (g.Length() < GRADIENT_THRESHOLD)
-			{
-				break;
-			}
-
-			pt += g;
-		}
-
-		if (g.Length() > 0.0)
-		{
-			g.Normalize();
+			return g.Normalized();
 		}
 
 		return g;
@@ -219,15 +207,21 @@ namespace CubbyFlow
 		return *this;
 	}
 
+	CustomImplicitSurface3::Builder& CustomImplicitSurface3::Builder::WithMaxNumberOfIterations(unsigned int numIter)
+	{
+		m_maxNumberOfIterations = numIter;
+		return *this;
+	}
+
 	CustomImplicitSurface3 CustomImplicitSurface3::Builder::Build() const
 	{
-		return CustomImplicitSurface3(m_func, m_domain, m_resolution, m_transform, m_isNormalFlipped);
+		return CustomImplicitSurface3(m_func, m_domain, m_resolution, m_maxNumberOfIterations, m_transform, m_isNormalFlipped);
 	}
 
 	CustomImplicitSurface3Ptr CustomImplicitSurface3::Builder::MakeShared() const
 	{
 		return std::shared_ptr<CustomImplicitSurface3>(
-			new CustomImplicitSurface3(m_func, m_domain, m_resolution, m_transform, m_isNormalFlipped),
+			new CustomImplicitSurface3(m_func, m_domain, m_resolution, m_maxNumberOfIterations, m_transform, m_isNormalFlipped),
 			[](CustomImplicitSurface3* obj)
 		{
 			delete obj;

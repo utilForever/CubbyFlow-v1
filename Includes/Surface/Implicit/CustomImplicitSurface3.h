@@ -26,6 +26,7 @@ namespace CubbyFlow
 			const std::function<double(const Vector3D&)>& func,
 			const BoundingBox3D& domain = BoundingBox3D(),
 			double resolution = 1e-3,
+			unsigned int maxNumberOfIterations = 5,
 			const Transform3& transform = Transform3(),
 			bool isNormalFlipped = false);
 
@@ -39,6 +40,7 @@ namespace CubbyFlow
 		std::function<double(const Vector3D&)> m_func;
 		BoundingBox3D m_domain;
 		double m_resolution = 1e-3;
+		unsigned int m_maxNumberOfIterations = 5;
 
 		Vector3D ClosestPointLocal(const Vector3D& otherPoint) const override;
 
@@ -73,6 +75,9 @@ namespace CubbyFlow
 		//! Returns builder with resolution.
 		Builder& WithResolution(double resolution);
 
+		//! Returns builder with number of iterations.
+		Builder& WithMaxNumberOfIterations(unsigned int numIter);
+
 		//! Builds CustomImplicitSurface3.
 		CustomImplicitSurface3 Build() const;
 
@@ -83,6 +88,7 @@ namespace CubbyFlow
 		std::function<double(const Vector3D&)> m_func;
 		BoundingBox3D m_domain;
 		double m_resolution = 1e-3;
+		unsigned int m_maxNumberOfIterations = 5;
 	};
 }
 
