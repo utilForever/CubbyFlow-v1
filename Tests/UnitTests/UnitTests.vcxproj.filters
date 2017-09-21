@@ -338,6 +338,9 @@
     <ClCompile Include="PDETests.cpp">
       <Filter>Math</Filter>
     </ClCompile>
+    <ClCompile Include="CustomImplicitSurface2Tests.cpp">
+      <Filter>Surface</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
