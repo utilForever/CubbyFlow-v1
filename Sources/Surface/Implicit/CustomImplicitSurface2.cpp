@@ -31,7 +31,7 @@ namespace CubbyFlow
 
 	Vector2D CustomImplicitSurface2::ClosestPointLocal(const Vector2D& otherPoint) const
 	{
-		Vector2D pt = otherPoint;
+		Vector2D pt = Clamp(otherPoint, m_domain.lowerCorner, m_domain.upperCorner);
 		
 		for (unsigned int iter = 0; iter < m_maxNumberOfIterations; ++iter)
 		{

@@ -31,7 +31,7 @@ namespace CubbyFlow
 
 	Vector3D CustomImplicitSurface3::ClosestPointLocal(const Vector3D& otherPoint) const
 	{
-		Vector3D pt = otherPoint;
+		Vector3D pt = Clamp(otherPoint, m_domain.lowerCorner, m_domain.upperCorner);
 
 		for (unsigned int iter = 0; iter < m_maxNumberOfIterations; ++iter)
 		{
