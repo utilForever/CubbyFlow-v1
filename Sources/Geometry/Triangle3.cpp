@@ -10,10 +10,7 @@
 
 namespace CubbyFlow
 {
-	inline Vector3D ClosestPointOnLine(
-		const Vector3D& v0,
-		const Vector3D& v1,
-		const Vector3D& pt)
+	inline Vector3D ClosestPointOnLine(const Vector3D& v0, const Vector3D& v1, const Vector3D& pt)
 	{
 		const double lenSquared = (v1 - v0).LengthSquared();
 		if (lenSquared < std::numeric_limits<double>::epsilon())
@@ -34,12 +31,7 @@ namespace CubbyFlow
 		return v0 + t * (v1 - v0);
 	}
 
-	inline Vector3D ClosestNormalOnLine(
-		const Vector3D& v0,
-		const Vector3D& v1,
-		const Vector3D& n0,
-		const Vector3D& n1,
-		const Vector3D& pt)
+	inline Vector3D ClosestNormalOnLine(const Vector3D& v0, const Vector3D& v1, const Vector3D& n0, const Vector3D& n1, const Vector3D& pt)
 	{
 		const double lenSquared = (v1 - v0).LengthSquared();
 		if (lenSquared < std::numeric_limits<double>::epsilon())
@@ -175,19 +167,19 @@ namespace CubbyFlow
 		Vector3D q = ray.PointAt(t);
 
 		Vector3D q01 = (points[1] - points[0]).Cross(q - points[0]);
-		if (n.Dot(q01))
+		if (n.Dot(q01) <= 0.0)
 		{
 			return false;
 		}
 
 		Vector3D q12 = (points[2] - points[1]).Cross(q - points[1]);
-		if (n.Dot(q12))
+		if (n.Dot(q12) <= 0.0)
 		{
 			return false;
 		}
 
 		Vector3D q02 = (points[0] - points[2]).Cross(q - points[2]);
-		if (n.Dot(q02))
+		if (n.Dot(q02) <= 0.0)
 		{
 			return false;
 		}
@@ -219,21 +211,21 @@ namespace CubbyFlow
 		Vector3D q = ray.PointAt(t);
 
 		Vector3D q01 = (points[1] - points[0]).Cross(q - points[0]);
-		if (n.Dot(q01))
+		if (n.Dot(q01) <= 0.0)
 		{
 			intersection.isIntersecting = false;
 			return intersection;
 		}
 
 		Vector3D q12 = (points[2] - points[1]).Cross(q - points[1]);
-		if (n.Dot(q12))
+		if (n.Dot(q12) <= 0.0)
 		{
 			intersection.isIntersecting = false;
 			return intersection;
 		}
 
 		Vector3D q02 = (points[0] - points[2]).Cross(q - points[2]);
-		if (n.Dot(q02))
+		if (n.Dot(q02) <= 0.0)
 		{
 			intersection.isIntersecting = false;
 			return intersection;
