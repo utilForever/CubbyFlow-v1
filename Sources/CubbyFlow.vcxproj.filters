@@ -1382,5 +1382,8 @@
     <ClCompile Include="Solver\FLIP\FLIPSolver3.cpp">
       <Filter>Solver\FLIP</Filter>
     </ClCompile>
+    <ClCompile Include="Geometry\ImplicitTriangleMesh3.cpp">
+      <Filter>Geometry</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

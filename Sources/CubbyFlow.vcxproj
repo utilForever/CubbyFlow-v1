@@ -502,6 +502,7 @@ xcopy /y "$(SolutionDir)Includes" "$(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="Geometry\Box2.cpp" />
     <ClCompile Include="Geometry\Box3.cpp" />
     <ClCompile Include="Geometry\Cylinder3.cpp" />
+    <ClCompile Include="Geometry\ImplicitTriangleMesh3.cpp" />
     <ClCompile Include="Geometry\Plane2.cpp" />
     <ClCompile Include="Geometry\Plane3.cpp" />
     <ClCompile Include="Geometry\TriangleMeshToSDF.cpp" />
