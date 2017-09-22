@@ -67,7 +67,7 @@ namespace CubbyFlow
 
 	BoundingBox2D Transform2::ToLocal(const BoundingBox2D& bboxInWorld) const
 	{
-		BoundingBox2D bboxInLocal = bboxInWorld;
+		BoundingBox2D bboxInLocal;
 
 		for (size_t i = 0; i < 4; ++i)
 		{
@@ -105,7 +105,7 @@ namespace CubbyFlow
 
 	BoundingBox2D Transform2::ToWorld(const BoundingBox2D& bboxInLocal) const
 	{
-		BoundingBox2D bboxInWorld = bboxInLocal;
+		BoundingBox2D bboxInWorld;
 
 		for (size_t i = 0; i < 4; ++i)
 		{
