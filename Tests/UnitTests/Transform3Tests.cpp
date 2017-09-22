@@ -1,4 +1,5 @@
 #include "pch.h"
+#include "UnitTestsUtils.h"
 
 #include <Transform/Transform3.h>
 #include <Utils/Constants.h>
@@ -42,4 +43,11 @@ TEST(Transform3, Transform)
 	EXPECT_NEAR(4.0, r4.x, 1e-9);
 	EXPECT_NEAR(1.0, r4.y, 1e-9);
 	EXPECT_NEAR(-3.0, r4.z, 1e-9);
+
+	BoundingBox3D bbox({ -2, -1, -3 }, { 2, 1, 3 });
+	auto r5 = t.ToWorld(bbox);
+	EXPECT_BOUNDING_BOX3_NEAR(BoundingBox3D({ -1, -6, -1 }, { 5, -4, 3 }), r5, 1e-9);
+	
+	auto r6 = t.ToLocal(r5);
+	EXPECT_BOUNDING_BOX3_EQ(bbox, r6);
 }
