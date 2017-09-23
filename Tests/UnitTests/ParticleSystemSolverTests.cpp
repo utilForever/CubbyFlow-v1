@@ -51,7 +51,7 @@ TEST(ParticleSystemSolver2, Update)
 	ParticleSystemData2::VectorData positions(10);
 	data->AddParticles(positions.Accessor());
 
-	Frame frame(1, 1.0 / 60.0);
+	Frame frame(0, 1.0 / 60.0);
 	solver.Update(frame);
 
 	for (size_t i = 0; i < data->NumberOfParticles(); ++i)
@@ -110,7 +110,7 @@ TEST(ParticleSystemSolver3, Update)
 	ParticleSystemData3::VectorData positions(10);
 	data->AddParticles(positions.Accessor());
 
-	Frame frame(1, 1.0 / 60.0);
+	Frame frame(0, 1.0 / 60.0);
 	solver.Update(frame);
 
 	for (size_t i = 0; i < data->NumberOfParticles(); ++i)

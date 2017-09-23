@@ -8,8 +8,8 @@ TEST(SPHSolver3, UpdateEmpty)
 {
 	// Empty solver test
 	SPHSolver3 solver;
-	Frame frame(1, 0.01);
-	solver.Update(frame);
+	Frame frame(0, 0.01);
+	solver.Update(frame++);
 	solver.Update(frame);
 }
 

@@ -51,7 +51,7 @@ TEST(VolumeParticleEmitter2, Emit)
 	auto particles = std::make_shared<ParticleSystemData2>();
 	emitter.SetTarget(particles);
 
-	Frame frame(1, 1.0);
+	Frame frame(0, 1.0);
 	emitter.Update(frame.TimeInSeconds(), frame.timeIntervalInSeconds);
 
 	auto pos = particles->GetPositions();

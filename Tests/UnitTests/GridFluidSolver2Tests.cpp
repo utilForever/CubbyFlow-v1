@@ -49,7 +49,7 @@ TEST(GridFluidSolver2, MinimumResolution)
 	solver.ResizeGrid(Size2(1, 1), Vector2D(1.0, 1.0), Vector2D());
 	solver.GetVelocity()->Fill(Vector2D());
 
-	Frame frame(1, 1.0 / 60.0);
+	Frame frame(0, 1.0 / 60.0);
 	frame.timeIntervalInSeconds = 0.01;
 	solver.Update(frame);
 }
@@ -65,7 +65,7 @@ TEST(GridFluidSolver2, GravityOnly)
 	solver.ResizeGrid(Size2(3, 3), Vector2D(1.0 / 3.0, 1.0 / 3.0), Vector2D());
 	solver.GetVelocity()->Fill(Vector2D());
 
-	Frame frame(1, 1.0 / 60.0);
+	Frame frame(0, 1.0 / 60.0);
 	frame.timeIntervalInSeconds = 0.01;
 	solver.Update(frame);
 
