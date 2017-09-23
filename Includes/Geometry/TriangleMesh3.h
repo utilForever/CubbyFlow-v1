@@ -145,10 +145,10 @@ namespace CubbyFlow
 			const Point3UI& newNormalIndices);
 
 		//! Adds a triangle with point, normal, and UV.
-		void AddPointNormalUVTriangle(
+		void AddPointUVNormalTriangle(
 			const Point3UI& newPointIndices,
-			const Point3UI& newNormalIndices,
-			const Point3UI& newUVIndices);
+			const Point3UI& newUVIndices,
+			const Point3UI& newNormalIndices);
 
 		//! Adds a triangle with point and UV.
 		void AddPointUVTriangle(

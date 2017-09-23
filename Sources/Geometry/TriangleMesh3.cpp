@@ -371,10 +371,10 @@ namespace CubbyFlow
 		m_normalIndices.Append(newNormalIndices);
 	}
 
-	void TriangleMesh3::AddPointNormalUVTriangle(
+	void TriangleMesh3::AddPointUVNormalTriangle(
 		const Point3UI& newPointIndices,
-		const Point3UI& newNormalIndices,
-		const Point3UI& newUVIndices)
+		const Point3UI& newUVIndices,
+		const Point3UI& newNormalIndices)
 	{
 		// Number of normal indices must match with number of point indices once
 		// you decided to add normal indices. Same for the uvs as well.
@@ -677,7 +677,7 @@ namespace CubbyFlow
 				const obj::index_3_tuple_type& v1_vt1_vn1,
 				const obj::index_3_tuple_type& v2_vt2_vn2)
 		{
-			AddPointNormalUVTriangle(
+			AddPointUVNormalTriangle(
 			{
 				std::get<0>(v0_vt0_vn0) - 1,
 				std::get<0>(v1_vt1_vn1) - 1,
