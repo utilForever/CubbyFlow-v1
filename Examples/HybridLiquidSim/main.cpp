@@ -32,7 +32,6 @@
 
 #include <getopt.h>
 
-#include <algorithm>
 #include <fstream>
 #include <string>
 #include <vector>
@@ -44,7 +43,7 @@ using namespace CubbyFlow;
 void SaveParticleAsPos(
 	const ParticleSystemData3Ptr& particles,
 	const std::string& rootDir,
-	unsigned int frameCnt)
+	int frameCnt)
 {
 	Array1<Vector3D> positions(particles->NumberOfParticles());
 	CopyRange1(particles->GetPositions(), particles->NumberOfParticles(), &positions);
@@ -65,7 +64,7 @@ void SaveParticleAsPos(
 void SaveParticleAsXYZ(
 	const ParticleSystemData3Ptr& particles,
 	const std::string& rootDir,
-	unsigned int frameCnt)
+	int frameCnt)
 {
 	Array1<Vector3D> positions(particles->NumberOfParticles());
 	CopyRange1(particles->GetPositions(), particles->NumberOfParticles(), &positions);
@@ -122,7 +121,7 @@ void PrintInfo(const PICSolver3Ptr& solver)
 void RunSimulation(
 	const std::string& rootDir,
 	const PICSolver3Ptr& solver,
-	size_t numberOfFrames,
+	int numberOfFrames,
 	const std::string& format,
 	double fps)
 {
@@ -146,7 +145,7 @@ void RunSimulation(
 void RunExample1(
 	const std::string& rootDir,
 	size_t resolutionX,
-	unsigned int numberOfFrames,
+	int numberOfFrames,
 	const std::string& format,
 	double fps)
 {
@@ -208,7 +207,7 @@ void RunExample1(
 void RunExample2(
 	const std::string& rootDir,
 	size_t resolutionX,
-	unsigned int numberOfFrames,
+	int numberOfFrames,
 	const std::string& format,
 	double fps)
 {
@@ -270,7 +269,7 @@ void RunExample2(
 void RunExample3(
 	const std::string& rootDir,
 	size_t resolutionX,
-	unsigned int numberOfFrames,
+	int numberOfFrames,
 	const std::string& format,
 	double fps)
 {
@@ -351,7 +350,7 @@ void RunExample3(
 void RunExample4(
 	const std::string& rootDir,
 	size_t resolutionX,
-	unsigned int numberOfFrames,
+	int numberOfFrames,
 	const std::string& format,
 	double fps)
 {
@@ -431,7 +430,7 @@ void RunExample4(
 int main(int argc, char* argv[])
 {
 	size_t resolutionX = 50;
-	unsigned int numberOfFrames = 100;
+	int numberOfFrames = 100;
 	double fps = 60.0;
 	int exampleNum = 1;
 	std::string logFileName = APP_NAME ".log";
@@ -462,7 +461,7 @@ int main(int argc, char* argv[])
 			resolutionX = static_cast<size_t>(atoi(optarg));
 			break;
 		case 'f':
-			numberOfFrames = static_cast<size_t>(atoi(optarg));
+			numberOfFrames = atoi(optarg);
 			break;
 		case 'p':
 			fps = atof(optarg);

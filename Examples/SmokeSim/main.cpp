@@ -12,7 +12,6 @@
 #include <Geometry/Box3.h>
 #include <Geometry/Sphere3.h>
 #include <Grid/ScalarGrid3.h>
-#include <Grid/VertexCenteredScalarGrid3.h>
 #include <Math/MathUtils.h>
 #include <SemiLagrangian/CubicSemiLagrangian3.h>
 #include <SemiLagrangian/SemiLagrangian3.h>
@@ -54,7 +53,7 @@ inline float SmoothStep(float edge0, float edge1, float x)
 void SaveVolumeAsVol(
 	const ScalarGrid3Ptr& density,
 	const std::string& rootDir,
-	unsigned int frameCnt)
+	int frameCnt)
 {
 	char baseName[256];
 	snprintf(baseName, sizeof(baseName), "frame_%06d.vol", frameCnt);
@@ -134,7 +133,7 @@ void SaveVolumeAsVol(
 void SaveVolumeAsTga(
 	const ScalarGrid3Ptr& density,
 	const std::string& rootDir,
-	unsigned int frameCnt)
+	int frameCnt)
 {
 	char baseName[256];
 	snprintf(baseName, sizeof(baseName), "frame_%06d.tga", frameCnt);
@@ -153,10 +152,10 @@ void SaveVolumeAsTga(
 		int imgHeight = static_cast<int>(dataSize.y);
 
 		header[2] = 2;
-		header[12] = imgWidth & 0xff;
-		header[13] = (imgWidth & 0xff00) >> 8;
-		header[14] = imgHeight & 0xff;
-		header[15] = (imgHeight & 0xff00) >> 8;
+		header[12] = static_cast<char>(imgWidth & 0xff);
+		header[13] = static_cast<char>((imgWidth & 0xff00) >> 8);
+		header[14] = static_cast<char>(imgHeight & 0xff);
+		header[15] = static_cast<char>((imgHeight & 0xff00) >> 8);
 		header[16] = 24;
 
 		file.write(header.data(), header.size());
@@ -175,7 +174,7 @@ void SaveVolumeAsTga(
 		std::vector<char> img(3 * dataSize.x * dataSize.y);
 		for (size_t i = 0; i < dataSize.x * dataSize.y; ++i)
 		{
-			uint8_t val = static_cast<char>(Clamp(hdrImg[i], 0.0, 1.0) * 255.0);
+			char val = static_cast<char>(Clamp(hdrImg[i], 0.0, 1.0) * 255.0);
 			img[3 * i + 0] = val;
 			img[3 * i + 1] = val;
 			img[3 * i + 2] = val;
@@ -225,7 +224,7 @@ void PrintInfo(const GridSmokeSolver3Ptr& solver)
 void RunSimulation(
 	const std::string& rootDir,
 	const GridSmokeSolver3Ptr& solver,
-	size_t numberOfFrames,
+	int numberOfFrames,
 	const std::string& format,
 	double fps)
 {
@@ -249,7 +248,7 @@ void RunSimulation(
 void RunExample1(
 	const std::string& rootDir,
 	size_t resolutionX,
-	unsigned int numberOfFrames,
+	int numberOfFrames,
 	const std::string& format,
 	double fps)
 {
@@ -302,7 +301,7 @@ void RunExample1(
 void RunExample2(
 	const std::string& rootDir,
 	size_t resolutionX,
-	unsigned int numberOfFrames,
+	int numberOfFrames,
 	const std::string& format,
 	double fps)
 {
@@ -355,7 +354,7 @@ void RunExample2(
 void RunExample3(
 	const std::string& rootDir,
 	size_t resolutionX,
-	unsigned int numberOfFrames,
+	int numberOfFrames,
 	const std::string& format,
 	double fps)
 {
@@ -404,7 +403,7 @@ void RunExample3(
 void RunExample4(
 	const std::string& rootDir,
 	size_t resolutionX,
-	unsigned int numberOfFrames,
+	int numberOfFrames,
 	const std::string& format,
 	double fps)
 {
@@ -454,7 +453,7 @@ void RunExample4(
 void RunExample5(
 	const std::string& rootDir,
 	size_t resolutionX,
-	unsigned int numberOfFrames,
+	int numberOfFrames,
 	const std::string& format,
 	double fps)
 {
@@ -505,7 +504,7 @@ void RunExample5(
 int main(int argc, char* argv[])
 {
 	size_t resolutionX = 50;
-	unsigned int numberOfFrames = 100;
+	int numberOfFrames = 100;
 	double fps = 60.0;
 	int exampleNum = 1;
 	std::string logFileName = APP_NAME ".log";
@@ -536,7 +535,7 @@ int main(int argc, char* argv[])
 			resolutionX = static_cast<size_t>(atoi(optarg));
 			break;
 		case 'f':
-			numberOfFrames = static_cast<size_t>(atoi(optarg));
+			numberOfFrames = atoi(optarg);
 			break;
 		case 'p':
 			fps = atof(optarg);

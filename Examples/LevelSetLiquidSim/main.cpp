@@ -16,12 +16,10 @@
 #include <Geometry/Sphere3.h>
 #include <Geometry/TriangleMesh3.h>
 #include <Grid/ScalarGrid3.h>
-#include <Grid/VertexCenteredScalarGrid3.h>
 #include <Math/MathUtils.h>
 #include <MarchingCubes/MarchingCubes.h>
 #include <Solver/LevelSet/LevelSetLiquidSolver3.h>
 #include <Surface/Implicit/ImplicitSurfaceSet3.h>
-#include <Surface/Implicit/CustomImplicitSurface3.h>
 #include <Utils/Logger.h>
 
 #include <pystring/pystring.h>
@@ -45,7 +43,7 @@ using namespace CubbyFlow;
 void SaveTriangleMesh(
 	const TriangleMesh3& mesh,
 	const std::string& rootDir,
-	unsigned int frameCnt)
+	int frameCnt)
 {
 	char baseName[256];
 	snprintf(baseName, sizeof(baseName), "frame_%06d.obj", frameCnt);
@@ -62,7 +60,7 @@ void SaveTriangleMesh(
 void TriangulateAndSave(
 	const ScalarGrid3Ptr& sdf,
 	const std::string& rootDir,
-	unsigned int frameCnt)
+	int frameCnt)
 {
 	TriangleMesh3 mesh;
 	int flag = DIRECTION_ALL & ~DIRECTION_DOWN;
@@ -113,7 +111,7 @@ void PrintInfo(const LevelSetLiquidSolver3Ptr& solver)
 void RunSimulation(
 	const std::string& rootDir,
 	const LevelSetLiquidSolver3Ptr& solver,
-	size_t numberOfFrames,
+	int numberOfFrames,
 	double fps)
 {
 	auto sdf = solver->GetSignedDistanceField();
@@ -130,7 +128,7 @@ void RunSimulation(
 void RunExample1(
 	const std::string& rootDir,
 	size_t resX,
-	unsigned int numberOfFrames,
+	int numberOfFrames,
 	double fps)
 {
 	// Build solver
@@ -176,7 +174,7 @@ void RunExample1(
 void RunExample2(
 	const std::string& rootDir,
 	size_t resX,
-	unsigned int numberOfFrames,
+	int numberOfFrames,
 	double fps)
 {
 	// Build solver
@@ -252,7 +250,7 @@ void RunExample2(
 void RunExample3(
 	const std::string& rootDir,
 	size_t resX,
-	unsigned int numberOfFrames,
+	int numberOfFrames,
 	double fps)
 {
 	// Build solver
@@ -303,7 +301,7 @@ void RunExample3(
 void RunExample4(
 	const std::string& rootDir,
 	size_t resX,
-	unsigned int numberOfFrames,
+	int numberOfFrames,
 	double fps)
 {
 	// Build solver
@@ -353,7 +351,7 @@ void RunExample4(
 int main(int argc, char* argv[])
 {
 	size_t resX = 50;
-	unsigned int numberOfFrames = 100;
+	int numberOfFrames = 100;
 	double fps = 60.0;
 	int exampleNum = 1;
 	std::string logFileName = APP_NAME ".log";
@@ -382,7 +380,7 @@ int main(int argc, char* argv[])
 			resX = static_cast<size_t>(atoi(optarg));
 			break;
 		case 'f':
-			numberOfFrames = static_cast<size_t>(atoi(optarg));
+			numberOfFrames = atoi(optarg);
 			break;
 		case 'p':
 			fps = atof(optarg);

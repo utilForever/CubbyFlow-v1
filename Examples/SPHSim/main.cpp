@@ -29,7 +29,6 @@
 
 #include <getopt.h>
 
-#include <algorithm>
 #include <fstream>
 #include <string>
 #include <vector>
@@ -38,7 +37,7 @@
 
 using namespace CubbyFlow;
 
-void SaveParticleAsPos(const ParticleSystemData3Ptr& particles, const std::string& rootDir, unsigned int frameCnt)
+void SaveParticleAsPos(const ParticleSystemData3Ptr& particles, const std::string& rootDir, int frameCnt)
 {
     Array1<Vector3D> positions(particles->NumberOfParticles());
     CopyRange1(particles->GetPositions(), particles->NumberOfParticles(), &positions);
@@ -56,7 +55,7 @@ void SaveParticleAsPos(const ParticleSystemData3Ptr& particles, const std::strin
     }
 }
 
-void SaveParticleAsXYZ(const ParticleSystemData3Ptr& particles, const std::string& rootDir, unsigned int frameCnt)
+void SaveParticleAsXYZ(const ParticleSystemData3Ptr& particles, const std::string& rootDir, int frameCnt)
 {
     Array1<Vector3D> positions(particles->NumberOfParticles());
     CopyRange1(particles->GetPositions(), particles->NumberOfParticles(), &positions);
@@ -97,7 +96,7 @@ void PrintInfo(const SPHSolver3Ptr& solver)
     printf("Number of particles: %zu\n", particles->NumberOfParticles());
 }
 
-void RunSimulation(const std::string& rootDir, const SPHSolver3Ptr& solver, size_t numberOfFrames, const std::string& format, double fps)
+void RunSimulation(const std::string& rootDir, const SPHSolver3Ptr& solver, int numberOfFrames, const std::string& format, double fps)
 {
     auto particles = solver->GetSPHSystemData();
 
@@ -117,7 +116,7 @@ void RunSimulation(const std::string& rootDir, const SPHSolver3Ptr& solver, size
 }
 
 // Water-drop example (PCISPH)
-void RunExample1(const std::string& rootDir, double targetSpacing, unsigned int numberOfFrames, const std::string& format, double fps)
+void RunExample1(const std::string& rootDir, double targetSpacing, int numberOfFrames, const std::string& format, double fps)
 {
     BoundingBox3D domain(Vector3D(), Vector3D(1, 2, 1));
 
@@ -177,7 +176,7 @@ void RunExample1(const std::string& rootDir, double targetSpacing, unsigned int 
 }
 
 // Water-drop example (SPH)
-void RunExample2(const std::string& rootDir, double targetSpacing, unsigned int numberOfFrames, const std::string& format, double fps)
+void RunExample2(const std::string& rootDir, double targetSpacing, int numberOfFrames, const std::string& format, double fps)
 {
     BoundingBox3D domain(Vector3D(), Vector3D(1, 2, 1));
 
@@ -236,7 +235,7 @@ void RunExample2(const std::string& rootDir, double targetSpacing, unsigned int 
 }
 
 // Dam-breaking example
-void RunExample3(const std::string& rootDir, double targetSpacing, unsigned int numberOfFrames, const std::string& format, double fps)
+void RunExample3(const std::string& rootDir, double targetSpacing, int numberOfFrames, const std::string& format, double fps)
 {
     BoundingBox3D domain(Vector3D(), Vector3D(3, 2, 1.5));
     double lz = domain.Depth();
@@ -321,7 +320,7 @@ void RunExample3(const std::string& rootDir, double targetSpacing, unsigned int 
 int main(int argc, char* argv[])
 {
     double targetSpacing = 0.02;
-    unsigned int numberOfFrames = 100;
+    int numberOfFrames = 100;
     double fps = 60.0;
     int exampleNum = 1;
     std::string logFileName = APP_NAME ".log";
@@ -352,7 +351,7 @@ int main(int argc, char* argv[])
                 targetSpacing = atof(optarg);
                 break;
             case 'f':
-                numberOfFrames = static_cast<size_t>(atoi(optarg));
+                numberOfFrames = atoi(optarg);
                 break;
             case 'p':
                 fps = atof(optarg);
