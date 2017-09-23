@@ -100,7 +100,7 @@ namespace CubbyFlow
 		//! Merges this and other point.
 		void Merge(const Vector2<T>& point);
 
-		//! Merges this and other boxes.
+		//! Merges this and other box.
 		void Merge(const BoundingBox& other);
 
 		//! Expands this box by given delta to all direction.

@@ -46,7 +46,7 @@ namespace CubbyFlow
 	class BoundingBox<T, 3>
 	{
 	public:
-		//! Upper corner of the bounding box.
+		//! Lower corner of the bounding box.
 		Vector3<T> lowerCorner;
 
 		//! Upper corner of the bounding box.
@@ -103,7 +103,7 @@ namespace CubbyFlow
 		//! Merges this and other point.
 		void Merge(const Vector3<T>& point);
 
-		//! Merges this and other boxes.
+		//! Merges this and other box.
 		void Merge(const BoundingBox& other);
 
 		//! Expands this box by given delta to all direction.
