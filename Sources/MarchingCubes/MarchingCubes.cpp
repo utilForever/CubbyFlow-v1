@@ -276,7 +276,7 @@ namespace CubbyFlow
 				}
 			}
 
-			mesh->AddPointNormalUVTriangle(face, face, face);
+			mesh->AddPointUVNormalTriangle(face, face, face);
 		}
 	}
 
@@ -389,7 +389,7 @@ namespace CubbyFlow
 				}
 			}
 
-			mesh->AddPointNormalUVTriangle(face, face, face);
+			mesh->AddPointUVNormalTriangle(face, face, face);
 		}
 	}
 
