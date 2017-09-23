@@ -29,8 +29,7 @@ CUBBYFLOW_BEGIN_TEST_F(ParticleSystemSolver2, Update)
 
 	SaveParticleDataXY(particles, 0);
 
-	Frame frame(1, 1.0 / 60.0);
-	for (; frame.index < 360; frame.Advance())
+	for (Frame frame(0, 1.0 / 60.0); frame.index < 360; frame.Advance())
 	{
 		solver.Update(frame);
 

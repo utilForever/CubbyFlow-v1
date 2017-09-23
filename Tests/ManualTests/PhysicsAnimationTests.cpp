@@ -185,8 +185,7 @@ CUBBYFLOW_BEGIN_TEST_F(PhysicsAnimation, SimpleMassSpringAnimation)
 	snprintf(fileName, sizeof(fileName), "data.#line2,0000,y.npy");
 	SaveData(y.ConstAccessor(), fileName);
 
-	Frame frame(1, 1.0 / 60.0);
-	for (; frame.index < 360; frame.Advance())
+	for (Frame frame(0, 1.0 / 60.0); frame.index < 360; frame.Advance())
 	{
 		anim.Update(frame);
 		anim.ExportStates(x, y);

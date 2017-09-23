@@ -35,7 +35,7 @@ CUBBYFLOW_BEGIN_TEST_F(GridFluidSolver2, ApplyBoundaryConditionWithPressure)
 	RigidBodyCollider2Ptr collider = std::make_shared<RigidBodyCollider2>(sphere);
 	solver.SetCollider(collider);
 
-	Frame frame(1, 1.0 / 60.0);
+	Frame frame(0, 1.0 / 60.0);
 	solver.Update(frame);
 
 	Array2<double> dataU(64, 32);
@@ -80,7 +80,7 @@ CUBBYFLOW_BEGIN_TEST_F(GridFluidSolver2, ApplyBoundaryConditionWithVariationalPr
 	RigidBodyCollider2Ptr collider = std::make_shared<RigidBodyCollider2>(sphere);
 	solver.SetCollider(collider);
 
-	Frame frame(1, 1.0 / 60.0);
+	Frame frame(0, 1.0 / 60.0);
 	solver.Update(frame);
 
 	Array2<double> dataU(64, 32);
@@ -128,7 +128,7 @@ CUBBYFLOW_BEGIN_TEST_F(GridFluidSolver2, ApplyBoundaryConditionWithPressureOpen)
 	RigidBodyCollider2Ptr collider = std::make_shared<RigidBodyCollider2>(sphere);
 	solver.SetCollider(collider);
 
-	Frame frame(1, 1.0 / 60.0);
+	Frame frame(0, 1.0 / 60.0);
 	solver.Update(frame);
 
 	Array2<double> dataU(64, 32);
