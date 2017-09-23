@@ -11,6 +11,7 @@
 #include <Emitter/VolumeGridEmitter3.h>
 #include <Geometry/Box3.h>
 #include <Geometry/Cylinder3.h>
+#include <Geometry/ImplicitTriangleMesh3.h>
 #include <Geometry/Plane3.h>
 #include <Geometry/Sphere3.h>
 #include <Geometry/TriangleMesh3.h>
@@ -266,29 +267,21 @@ void RunExample3(
 	auto grids = solver->GetGridSystemData();
 
 	// Build emitters
-	VertexCenteredScalarGrid3 bunnySdf;
-	std::ifstream sdfFile("bunny.sdf", std::ifstream::binary);
-	if (sdfFile)
+	auto bunnyMesh = TriangleMesh3::Builder().MakeShared();
+	std::ifstream objFile("Resources/bunny.obj");
+	if (objFile)
 	{
-		std::vector<uint8_t> buffer(
-			(std::istreambuf_iterator<char>(sdfFile)),
-			(std::istreambuf_iterator<char>()));
-		bunnySdf.Deserialize(buffer);
-		sdfFile.close();
+		bunnyMesh->ReadObj(&objFile);
 	}
 	else
 	{
-		fprintf(stderr, "Cannot open bunny.sdf\n");
-		fprintf(
-			stderr,
-			"Run\nObj2Sdf -i Resources/bunny.obj"
-			" -o bunny.sdf\nto generate the sdf file.\n");
+		fprintf(stderr, "Cannot open Resources/bunny.obj\n");
 		exit(EXIT_FAILURE);
 	}
 
-	auto bunny = CustomImplicitSurface3::Builder()
-		.WithSignedDistanceFunction(bunnySdf.Sampler())
-		.WithResolution(grids->GetGridSpacing().x)
+	auto bunny = ImplicitTriangleMesh3::Builder()
+		.WithTriangleMesh(bunnyMesh)
+		.WithResolutionX(resX)
 		.MakeShared();
 
 	auto emitter = VolumeGridEmitter3::Builder()
@@ -325,29 +318,21 @@ void RunExample4(
 	auto grids = solver->GetGridSystemData();
 
 	// Build emitters
-	VertexCenteredScalarGrid3 bunnySdf;
-	std::ifstream sdfFile("bunny.sdf", std::ifstream::binary);
-	if (sdfFile)
+	auto bunnyMesh = TriangleMesh3::Builder().MakeShared();
+	std::ifstream objFile("Resources/bunny.obj");
+	if (objFile)
 	{
-		std::vector<uint8_t> buffer(
-			(std::istreambuf_iterator<char>(sdfFile)),
-			(std::istreambuf_iterator<char>()));
-		bunnySdf.Deserialize(buffer);
-		sdfFile.close();
+		bunnyMesh->ReadObj(&objFile);
 	}
 	else
 	{
-		fprintf(stderr, "Cannot open bunny.sdf\n");
-		fprintf(
-			stderr,
-			"Run\nObj2Sdf -i Resources/bunny.obj"
-			" -o bunny.sdf\nto generate the sdf file.\n");
+		fprintf(stderr, "Cannot open Resources/bunny.obj\n");
 		exit(EXIT_FAILURE);
 	}
 
-	auto bunny = CustomImplicitSurface3::Builder()
-		.WithSignedDistanceFunction(bunnySdf.Sampler())
-		.WithResolution(grids->GetGridSpacing().x)
+	auto bunny = ImplicitTriangleMesh3::Builder()
+		.WithTriangleMesh(bunnyMesh)
+		.WithResolutionX(resX)
 		.MakeShared();
 
 	auto emitter = VolumeGridEmitter3::Builder()
