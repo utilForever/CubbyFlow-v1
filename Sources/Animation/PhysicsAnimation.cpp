@@ -14,7 +14,7 @@ namespace CubbyFlow
 {
 	PhysicsAnimation::PhysicsAnimation()
 	{
-		// Do nothing
+		m_currentFrame.index = -1;
 	}
 
 	PhysicsAnimation::~PhysicsAnimation()
@@ -44,8 +44,9 @@ namespace CubbyFlow
 
 	void PhysicsAnimation::AdvanceSingleFrame()
 	{
-		++m_currentFrame;
 		Update(m_currentFrame);
+		Frame f = m_currentFrame;
+		Update(++f);
 	}
 
 	Frame PhysicsAnimation::CurrentFrame() const
@@ -73,18 +74,19 @@ namespace CubbyFlow
 	{
 		if (frame.index > m_currentFrame.index)
 		{
-			unsigned int numberOfFrames = frame.index - m_currentFrame.index;
+			if (m_currentFrame.index < 0)
+			{
+				Initialize();
+			}
 
-			for (unsigned int i = 0; i < numberOfFrames; ++i)
+			int32_t numberOfFrames = frame.index - m_currentFrame.index;
+
+			for (int32_t i = 0; i < numberOfFrames; ++i)
 			{
 				AdvanceTimeStep(frame.timeIntervalInSeconds);
 			}
 
 			m_currentFrame = frame;
-		}
-		else if (frame.index == 0 && !m_hasInitialized)
-		{
-			Initialize();
 		}
 	}
 
@@ -102,15 +104,13 @@ namespace CubbyFlow
 			for (unsigned int i = 0; i < m_numberOfFixedSubTimeSteps; ++i)
 			{
 				CUBBYFLOW_INFO << "Begin onAdvanceTimeStep: " << actualTimeInterval
-					<< " (1/" << 1.0 / actualTimeInterval
-					<< ") seconds";
+					<< " (1/" << 1.0 / actualTimeInterval << ") seconds";
 
 				Timer timer;
 				OnAdvanceTimeStep(actualTimeInterval);
 
 				CUBBYFLOW_INFO << "End onAdvanceTimeStep (took "
-					<< timer.DurationInSeconds()
-					<< " seconds)";
+					<< timer.DurationInSeconds() << " seconds)";
 
 				m_currentTime += actualTimeInterval;
 			}
@@ -129,15 +129,13 @@ namespace CubbyFlow
 				CUBBYFLOW_INFO << "Number of remaining sub-timesteps: " << numSteps;
 
 				CUBBYFLOW_INFO << "Begin onAdvanceTimeStep: " << actualTimeInterval
-					<< " (1/" << 1.0 / actualTimeInterval
-					<< ") seconds";
+					<< " (1/" << 1.0 / actualTimeInterval << ") seconds";
 
 				Timer timer;
 				OnAdvanceTimeStep(actualTimeInterval);
 
 				CUBBYFLOW_INFO << "End onAdvanceTimeStep (took "
-					<< timer.DurationInSeconds()
-					<< " seconds)";
+					<< timer.DurationInSeconds() << " seconds)";
 
 				remainingTime -= actualTimeInterval;
 				m_currentTime += actualTimeInterval;
@@ -148,7 +146,6 @@ namespace CubbyFlow
 	void PhysicsAnimation::Initialize()
 	{
 		OnInitialize();
-		m_hasInitialized = true;
 	}
 
 	void PhysicsAnimation::OnInitialize()
