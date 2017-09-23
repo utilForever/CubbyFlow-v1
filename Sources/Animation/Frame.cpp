@@ -15,7 +15,7 @@ namespace CubbyFlow
 		// Do nothing
 	}
 
-	Frame::Frame(unsigned int newIndex, double newTimeIntervalInSeconds) :
+	Frame::Frame(int newIndex, double newTimeIntervalInSeconds) :
 		index(newIndex), timeIntervalInSeconds(newTimeIntervalInSeconds)
 	{
 		// Do nothing
@@ -31,7 +31,7 @@ namespace CubbyFlow
 		++index;
 	}
 
-	void Frame::Advance(unsigned int delta)
+	void Frame::Advance(int delta)
 	{
 		index += delta;
 	}
