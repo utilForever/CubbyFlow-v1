@@ -129,7 +129,7 @@ namespace CubbyFlow
 		Vector2D m_initialVel;
 		PointGenerator2Ptr m_pointsGen;
 
-		size_t m_maxNumberOfParticles;
+		size_t m_maxNumberOfParticles = std::numeric_limits<size_t>::max();
 		size_t m_numberOfEmittedParticles = 0;
 
 		double m_jitter = 0.0;
