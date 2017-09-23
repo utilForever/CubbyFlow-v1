@@ -83,6 +83,12 @@ TEST(Triangle3, SurfaceGetters)
 	Vector3D cp2 = tri.ClosestPoint({ -3.0, -3.0, 0.0 });
 	EXPECT_VECTOR3_EQ(Vector3D(0, 0, -1), cp2);
 
+	Vector3D cn1 = tri.ClosestNormal({ 0.4, 0.4, 3.0 });
+	EXPECT_VECTOR3_EQ(Vector3D(1, 2, 2).Normalized(), cn1);
+	
+	Vector3D cn2 = tri.ClosestNormal({ -3.0, -3.0, 0.0 });
+	EXPECT_VECTOR3_EQ(Vector3D(1, 0, 0), cn2);
+
 	bool ints1 = tri.Intersects(Ray3D({ 0.4, 0.4, -5.0 }, { 0, 0, 1 }));
 	EXPECT_TRUE(ints1);
 
