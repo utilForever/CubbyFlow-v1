@@ -6,7 +6,9 @@
 > Created Time: 2017/04/18
 > Copyright (c) 2017, Dongmin Kim
 *************************************************************************/
+#include <Geometry/TriangleMesh3.h>
 #include <Surface/Implicit/SurfaceToImplicit3.h>
+#include <Utils/Logger.h>
 
 namespace CubbyFlow
 {
@@ -16,7 +18,11 @@ namespace CubbyFlow
 		bool isNormalFlipped) :
 		ImplicitSurface3(transform, isNormalFlipped), m_surface(surface)
 	{
-		// Do nothing
+		if (std::dynamic_pointer_cast<TriangleMesh3>(surface) != nullptr)
+		{
+			CUBBYFLOW_WARN << "Using TriangleMesh3 with SurfaceToImplicit3 can cause "
+				<< "undefined behavior. Use ImplicitTriangleMesh3 instead.";
+		}
 	}
 
 	SurfaceToImplicit3::SurfaceToImplicit3(const SurfaceToImplicit3& other) :
