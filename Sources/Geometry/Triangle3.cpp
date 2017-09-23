@@ -121,19 +121,19 @@ namespace CubbyFlow
 		Vector3D q = t * n + otherPoint;
 
 		Vector3D q01 = (points[1] - points[0]).Cross(q - points[0]);
-		if (n.Dot(q01))
+		if (n.Dot(q01) < 0)
 		{
 			return ClosestNormalOnLine(points[0], points[1], normals[0], normals[1], q);
 		}
 
 		Vector3D q12 = (points[2] - points[1]).Cross(q - points[1]);
-		if (n.Dot(q12))
+		if (n.Dot(q12) < 0)
 		{
 			return ClosestNormalOnLine(points[1], points[2], normals[1], normals[2], q);
 		}
 
 		Vector3D q02 = (points[0] - points[2]).Cross(q - points[2]);
-		if (n.Dot(q02))
+		if (n.Dot(q02) < 0)
 		{
 			return ClosestNormalOnLine(points[0], points[2], normals[0], normals[2], q);
 		}
