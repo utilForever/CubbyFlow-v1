@@ -17,7 +17,12 @@ namespace CubbyFlow
 	//! \brief 3-D implicit surface wrapper for generic Surface3 instance.
 	//! 
 	//! This class represents 3-D implicit surface that converts Surface3 instance.
-	//! to an ImplicitSurface3 object
+	//! to an ImplicitSurface3 object. The conversion is made by evaluating closest
+	//! point and normal from a given point for the given (explicit) surface. Thus,
+	//! this conversion won't work for every single surfaces, especially
+	//! TriangleMesh3. To use TriangleMesh3 as an ImplicitSurface3 instance,
+	//! please take a look at ImplicitTriangleMesh3. Use this class only
+	//! for the basic primitives such as Sphere3 or Box3.
 	//!
 	class SurfaceToImplicit3 final : public ImplicitSurface3
 	{
