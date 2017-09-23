@@ -33,6 +33,8 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include "Geometry/TriangleMesh3.h"
+#include "Geometry/ImplicitTriangleMesh3.h"
 
 #define APP_NAME "SmokeSim"
 
@@ -365,29 +367,21 @@ void RunExample3(
 		.MakeShared();
 
 	// Build emitter
-	VertexCenteredScalarGrid3 dragonSdf;
-	std::ifstream sdfFile("dragon.sdf", std::ifstream::binary);
-	if (sdfFile)
+	auto dragonMesh = TriangleMesh3::Builder().MakeShared();
+	std::ifstream objFile("Resources/dragon.obj");
+	if (objFile)
 	{
-		std::vector<uint8_t> buffer(
-			(std::istreambuf_iterator<char>(sdfFile)),
-			(std::istreambuf_iterator<char>()));
-		dragonSdf.Deserialize(buffer);
-		sdfFile.close();
+		dragonMesh->ReadObj(&objFile);
 	}
 	else
 	{
-		fprintf(stderr, "Cannot open dragon.sdf\n");
-		fprintf(
-			stderr,
-			"Run\nbin/obj2sdf -i resources/dragon.obj"
-			" -o dragon.sdf\nto generate the sdf file.\n");
+		fprintf(stderr, "Cannot open Resources/dragon.obj\n");
 		exit(EXIT_FAILURE);
 	}
 
-	auto dragon = CustomImplicitSurface3::Builder()
-		.WithSignedDistanceFunction(dragonSdf.Sampler())
-		.WithResolution(solver->GetGridSystemData()->GetGridSpacing().x)
+	auto dragon = ImplicitTriangleMesh3::Builder()
+		.WithTriangleMesh(dragonMesh)
+		.WithResolutionX(resolutionX)
 		.MakeShared();
 
 	auto emitter = VolumeGridEmitter3::Builder()
