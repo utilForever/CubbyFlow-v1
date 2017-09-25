@@ -98,7 +98,7 @@ TEST(CustomImplicitSurface2, ClosestIntersection)
 	CustomImplicitSurface2 cis1([&](const Vector2D& pt)
 	{
 		return refSurf.SignedDistance(pt);
-	}, BoundingBox2D({ 0, 0 }, { 1, 1 }), 1e-3);
+	}, BoundingBox2D({ 0, 0 }, { 1, 1 }), 1e-3, 1e-6);
 	
 	size_t n = sizeof(SAMPLE_POINTS2) / sizeof(SAMPLE_POINTS2[0]);
 	for (size_t i = 0; i < n; ++i)
@@ -109,8 +109,8 @@ TEST(CustomImplicitSurface2, ClosestIntersection)
 		auto actAns = cis1.ClosestIntersection(Ray2D(x, d));
 
 		EXPECT_EQ(refAns.isIntersecting, actAns.isIntersecting);
-		EXPECT_NEAR(refAns.t, actAns.t, 1e-2);
-		EXPECT_VECTOR2_NEAR(refAns.point, actAns.point, 1e-2);
-		EXPECT_VECTOR2_NEAR(refAns.normal, actAns.normal, 1e-2);	
+		EXPECT_NEAR(refAns.t, actAns.t, 1e-5);
+		EXPECT_VECTOR2_NEAR(refAns.point, actAns.point, 1e-5);
+		EXPECT_VECTOR2_NEAR(refAns.normal, actAns.normal, 1e-5);	
 	}
 }

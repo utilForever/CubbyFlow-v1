@@ -98,7 +98,7 @@ TEST(CustomImplicitSurface3, ClosestIntersection)
 	CustomImplicitSurface3 cis1([&](const Vector3D& pt)
 	{
 		return refSurf.SignedDistance(pt);
-	}, BoundingBox3D({ 0, 0, 0 }, { 1, 1, 1 }), 1e-3);
+	}, BoundingBox3D({ 0, 0, 0 }, { 1, 1, 1 }), 1e-3, 1e-6);
 	
 	size_t n = sizeof(SAMPLE_POINTS3) / sizeof(SAMPLE_POINTS3[0]);
 	for (size_t i = 0; i < n; ++i)
@@ -109,8 +109,8 @@ TEST(CustomImplicitSurface3, ClosestIntersection)
 		auto actAns = cis1.ClosestIntersection(Ray3D(x, d));
 
 		EXPECT_EQ(refAns.isIntersecting, actAns.isIntersecting);
-		EXPECT_NEAR(refAns.t, actAns.t, 1e-2);
-		EXPECT_VECTOR3_NEAR(refAns.point, actAns.point, 1e-2);
-		EXPECT_VECTOR3_NEAR(refAns.normal, actAns.normal, 1e-2);	
+		EXPECT_NEAR(refAns.t, actAns.t, 1e-5);
+		EXPECT_VECTOR3_NEAR(refAns.point, actAns.point, 1e-5);
+		EXPECT_VECTOR3_NEAR(refAns.normal, actAns.normal, 1e-5);	
 	}
 }
