@@ -239,7 +239,7 @@ namespace CubbyFlow
 		Vector3D normal = b0 * normals[0] + b1 * normals[1] + b2 * normals[2];
 
 		intersection.isIntersecting = true;
-		intersection.t = t;
+		intersection.distance = t;
 		intersection.point = q;
 		intersection.normal = normal.Normalized();
 

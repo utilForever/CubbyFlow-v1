@@ -138,10 +138,10 @@ namespace CubbyFlow
 		{
 			SurfaceRayIntersection2 localResult = surface->ClosestIntersection(ray);
 
-			if (localResult.isIntersecting && localResult.t < min)
+			if (localResult.isIntersecting && localResult.distance < min)
 			{
 				intersection = localResult;
-				min = localResult.t;
+				min = localResult.distance;
 			}
 		}
 

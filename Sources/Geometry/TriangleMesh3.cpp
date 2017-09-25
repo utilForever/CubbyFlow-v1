@@ -110,9 +110,9 @@ namespace CubbyFlow
 			Triangle3 tri = Triangle(i);
 			SurfaceRayIntersection3 tmpIntersection	= tri.ClosestIntersection(ray);
 
-			if (tmpIntersection.t < t)
+			if (tmpIntersection.distance < t)
 			{
-				t = tmpIntersection.t;
+				t = tmpIntersection.distance;
 				intersection = tmpIntersection;
 			}
 		}

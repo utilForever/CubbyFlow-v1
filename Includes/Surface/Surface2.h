@@ -23,7 +23,7 @@ namespace CubbyFlow
 	struct SurfaceRayIntersection2
 	{
 		bool isIntersecting = false;
-		double t = std::numeric_limits<double>::max();
+		double distance = std::numeric_limits<double>::max();
 		Vector2D point;
 		Vector2D normal;
 	};

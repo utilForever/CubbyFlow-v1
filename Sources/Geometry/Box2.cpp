@@ -132,7 +132,7 @@ namespace CubbyFlow
 
 		if (intersection.isIntersecting)
 		{
-			intersection.t = bbRayIntersection.near;
+			intersection.distance = bbRayIntersection.near;
 			intersection.point = ray.PointAt(bbRayIntersection.near);
 			intersection.normal = Box2::ClosestNormal(intersection.point);
 		}

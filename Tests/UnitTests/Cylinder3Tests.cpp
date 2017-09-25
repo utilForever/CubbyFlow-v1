@@ -103,15 +103,15 @@ TEST(Cylinder3, ClosestIntersection)
 
 	auto result1 = cyl.ClosestIntersection(Ray3D({ 7, 2, 3 }, { -1, 0, 0 }));
 	EXPECT_TRUE(result1.isIntersecting);
-	EXPECT_DOUBLE_EQ(2.0, result1.t);
+	EXPECT_DOUBLE_EQ(2.0, result1.distance);
 
 	auto result2 = cyl.ClosestIntersection(Ray3D({ 1, 6, 2 }, { 0, -1, 0 }));
 	EXPECT_TRUE(result2.isIntersecting);
-	EXPECT_DOUBLE_EQ(1.0, result2.t);
+	EXPECT_DOUBLE_EQ(1.0, result2.distance);
 
 	auto result3 = cyl.ClosestIntersection(Ray3D({ 1, 2, 3 }, { 0, 1, 0 }));
 	EXPECT_TRUE(result3.isIntersecting);
-	EXPECT_DOUBLE_EQ(3.0, result3.t);
+	EXPECT_DOUBLE_EQ(3.0, result3.distance);
 
 	auto result4 = cyl.ClosestIntersection(Ray3D({ 6, -5, 3 }, { 0, 0, 1 }));
 	EXPECT_FALSE(result4.isIntersecting);

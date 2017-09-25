@@ -57,7 +57,7 @@ namespace CubbyFlow
 			if (t >= 0.0)
 			{
 				intersection.isIntersecting = true;
-				intersection.t = t;
+				intersection.distance = t;
 				intersection.point = ray.PointAt(t);
 				intersection.normal = normal;
 			}

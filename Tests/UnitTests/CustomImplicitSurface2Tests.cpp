@@ -109,7 +109,7 @@ TEST(CustomImplicitSurface2, ClosestIntersection)
 		auto actAns = cis1.ClosestIntersection(Ray2D(x, d));
 
 		EXPECT_EQ(refAns.isIntersecting, actAns.isIntersecting);
-		EXPECT_NEAR(refAns.t, actAns.t, 1e-5);
+		EXPECT_NEAR(refAns.distance, actAns.distance, 1e-5);
 		EXPECT_VECTOR2_NEAR(refAns.point, actAns.point, 1e-5);
 		EXPECT_VECTOR2_NEAR(refAns.normal, actAns.normal, 1e-5);	
 	}

@@ -84,7 +84,7 @@ TEST(Sphere3, ClosestIntersection)
 
 	auto result1 = sph.ClosestIntersection(Ray3D({ 10.0, -1.0, 2.0 }, { -1.0, 0.0, 0.0 }));
 	EXPECT_TRUE(result1.isIntersecting);
-	EXPECT_DOUBLE_EQ(2.0, result1.t);
+	EXPECT_DOUBLE_EQ(2.0, result1.distance);
 	EXPECT_DOUBLE_EQ(8.0, result1.point.x);
 	EXPECT_DOUBLE_EQ(-1.0, result1.point.y);
 	EXPECT_DOUBLE_EQ(2.0, result1.point.z);
@@ -97,7 +97,7 @@ TEST(Sphere3, ClosestIntersection)
 
 	auto result3 = sph.ClosestIntersection(Ray3D({ 3.0, 3.0, 2.0 }, { 0.0, 1.0, 0.0 }));
 	EXPECT_TRUE(result3.isIntersecting);
-	EXPECT_DOUBLE_EQ(1.0, result3.t);
+	EXPECT_DOUBLE_EQ(1.0, result3.distance);
 	EXPECT_DOUBLE_EQ(3.0, result3.point.x);
 	EXPECT_DOUBLE_EQ(4.0, result3.point.y);
 	EXPECT_DOUBLE_EQ(2.0, result3.point.z);

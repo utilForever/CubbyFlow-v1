@@ -114,12 +114,12 @@ TEST(Box2, ClosestIntersection)
 
 	SurfaceRayIntersection2 result0 = box.ClosestIntersection(Ray2D(Vector2D(1, 4), Vector2D(-1, -1).Normalized()));
 	EXPECT_TRUE(result0.isIntersecting);
-	EXPECT_DOUBLE_EQ(std::sqrt(2), result0.t);
+	EXPECT_DOUBLE_EQ(std::sqrt(2), result0.distance);
 	EXPECT_EQ(Vector2D(0, 3), result0.point);
 
 	SurfaceRayIntersection2 result1 = box.ClosestIntersection(Ray2D(Vector2D(1, 2.5), Vector2D(-1, -1).Normalized()));
 	EXPECT_TRUE(result1.isIntersecting);
-	EXPECT_DOUBLE_EQ(std::sqrt(0.5), result1.t);
+	EXPECT_DOUBLE_EQ(std::sqrt(0.5), result1.distance);
 	EXPECT_EQ(Vector2D(0.5, 2), result1.point);
 
 	SurfaceRayIntersection2 result2 = box.ClosestIntersection(Ray2D(Vector2D(1, 1), Vector2D(-1, -1).Normalized()));

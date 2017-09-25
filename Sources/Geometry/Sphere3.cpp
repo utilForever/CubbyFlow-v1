@@ -102,7 +102,7 @@ namespace CubbyFlow
 			else
 			{
 				intersection.isIntersecting = true;
-				intersection.t = min;
+				intersection.distance = min;
 				intersection.point = ray.origin + min * ray.direction;
 				intersection.normal = (intersection.point - center).Normalized();
 			}

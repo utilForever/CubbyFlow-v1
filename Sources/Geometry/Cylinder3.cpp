@@ -170,7 +170,7 @@ namespace CubbyFlow
 		SurfaceRayIntersection3 upperIntersection = upperPlane.ClosestIntersection(ray);
 		SurfaceRayIntersection3 lowerIntersection =	lowerPlane.ClosestIntersection(ray);
 
-		intersection.t = std::numeric_limits<double>::max();
+		intersection.distance = std::numeric_limits<double>::max();
 		intersection.isIntersecting = false;
 
 		// In case the ray does not intersect with infinite cylinder
@@ -186,7 +186,7 @@ namespace CubbyFlow
 				{
 					intersection = upperIntersection;
 				}
-				if (lowerIntersection.isIntersecting && lowerIntersection.t < intersection.t)
+				if (lowerIntersection.isIntersecting && lowerIntersection.distance < intersection.distance)
 				{
 					intersection = lowerIntersection;
 				}
@@ -210,7 +210,7 @@ namespace CubbyFlow
 			pointOnCylinder.y <= center.y + 0.5 * height)
 		{
 			intersection.isIntersecting = true;
-			intersection.t = tCylinder;
+			intersection.distance = tCylinder;
 			intersection.point = pointOnCylinder;
 			intersection.normal = pointOnCylinder - center;
 			intersection.normal.y = 0.0;
@@ -226,7 +226,7 @@ namespace CubbyFlow
 			{
 				// Do nothing
 			}
-			else if (upperIntersection.t < intersection.t)
+			else if (upperIntersection.distance < intersection.distance)
 			{
 				intersection = upperIntersection;
 			}
@@ -241,7 +241,7 @@ namespace CubbyFlow
 			{
 				// Do nothing
 			}
-			else if (lowerIntersection.t < intersection.t)
+			else if (lowerIntersection.distance < intersection.distance)
 			{
 				intersection = lowerIntersection;
 			}

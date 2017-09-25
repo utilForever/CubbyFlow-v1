@@ -151,7 +151,7 @@ namespace CubbyFlow
 					const double tSub = t + m_rayMarchingResolution * frac;
 
 					result.isIntersecting = true;
-					result.t = tSub;
+					result.distance = tSub;
 					result.point = ray.PointAt(tSub);
 					result.normal = GradientLocal(result.point);
 
