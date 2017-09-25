@@ -70,8 +70,8 @@ namespace CubbyFlow
 		//! This function will resize internal containers to store newly given
 		//! number of particles including custom data layers. However, this will
 		//! invalidate neighbor searcher and neighbor lists. It is users
-		//! responsibility to call ParticleSystemData3::buildNeighborSearcher and
-		//! ParticleSystemData3::buildNeighborLists to refresh those data.
+		//! responsibility to call ParticleSystemData3::BuildNeighborSearcher and
+		//! ParticleSystemData3::BuildNeighborLists to refresh those data.
 		//!
 		//! \param[in]  newNumberOfParticles    New number of particles.
 		//!
@@ -149,8 +149,8 @@ namespace CubbyFlow
 		//! custom data layers, zeros will be assigned for new particles.
 		//! However, this will invalidate neighbor searcher and neighbor lists. It
 		//! is users responsibility to call
-		//! ParticleSystemData3::buildNeighborSearcher and
-		//! ParticleSystemData3::buildNeighborLists to refresh those data.
+		//! ParticleSystemData3::BuildNeighborSearcher and
+		//! ParticleSystemData3::BuildNeighborLists to refresh those data.
 		//!
 		//! \param[in]  newPosition The new position.
 		//! \param[in]  newVelocity The new velocity.
@@ -167,12 +167,12 @@ namespace CubbyFlow
 		//! This function will add particles to the data structure. For custom data
 		//! layers, zeros will be assigned for new particles. However, this will
 		//! invalidate neighbor searcher and neighbor lists. It is users
-		//! responsibility to call ParticleSystemData3::buildNeighborSearcher and
-		//! ParticleSystemData3::buildNeighborLists to refresh those data.
+		//! responsibility to call ParticleSystemData3::BuildNeighborSearcher and
+		//! ParticleSystemData3::BuildNeighborLists to refresh those data.
 		//!
-		//! \param[in]  newPosition The new position.
-		//! \param[in]  newVelocity The new velocity.
-		//! \param[in]  newForce    The new force.
+		//! \param[in]  newPositions  The new positions.
+		//! \param[in]  newVelocities The new velocities.
+		//! \param[in]  newForces     The new forces.
 		//!
 		void AddParticles(
 			const ConstArrayAccessor1<Vector3D>& newPositions,
@@ -196,7 +196,7 @@ namespace CubbyFlow
 		//! \brief      Returns neighbor lists.
 		//!
 		//! This function returns neighbor lists which is available after calling
-		//! PointParallelHashGridSearcher3::buildNeighborLists. Each list stores
+		//! PointParallelHashGridSearcher3::BuildNeighborLists. Each list stores
 		//! indices of the neighbors.
 		//!
 		//! \return     Neighbor lists.
