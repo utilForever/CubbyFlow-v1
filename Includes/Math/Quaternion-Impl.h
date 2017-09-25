@@ -170,7 +170,7 @@ namespace CubbyFlow
 		}
 		else if (m(0, 0) > m(1, 1) && m(0, 0) > m(2, 2))
 		{
-			T S = std::sqrt(1.0 + m(0, 0) - m(1, 1) - m(2, 2)) * 2;
+			T S = std::sqrt(1 + m(0, 0) - m(1, 1) - m(2, 2)) * 2;
 			w = (m(2, 1) - m(1, 2)) / S;
 			x = quarter * S;
 			y = (m(0, 1) + m(1, 0)) / S;
@@ -178,7 +178,7 @@ namespace CubbyFlow
 		}
 		else if (m(1, 1) > m(2, 2))
 		{
-			T S = std::sqrt(1.0 + m(1, 1) - m(0, 0) - m(2, 2)) * 2;
+			T S = std::sqrt(1 + m(1, 1) - m(0, 0) - m(2, 2)) * 2;
 			w = (m(0, 2) - m(2, 0)) / S;
 			x = (m(0, 1) + m(1, 0)) / S;
 			y = quarter * S;
@@ -186,7 +186,7 @@ namespace CubbyFlow
 		}
 		else
 		{
-			T S = std::sqrt(1.0 + m(2, 2) - m(0, 0) - m(1, 1)) * 2;
+			T S = std::sqrt(1 + m(2, 2) - m(0, 0) - m(1, 1)) * 2;
 			w = (m(1, 0) - m(0, 1)) / S;
 			x = (m(0, 2) + m(2, 0)) / S;
 			y = (m(1, 2) + m(2, 1)) / S;
