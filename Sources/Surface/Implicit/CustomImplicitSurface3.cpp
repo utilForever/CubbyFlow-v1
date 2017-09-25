@@ -12,14 +12,12 @@
 namespace CubbyFlow
 {
 	CustomImplicitSurface3::CustomImplicitSurface3(
-		const std::function<double(const Vector3D&)>& func,
-		const BoundingBox3D& domain,
-		double resolution,
-		unsigned int maxNumberOfIterations,
-		const Transform3& transform,
-		bool isNormalFlipped) :
+		const std::function<double(const Vector3D&)>& func, const BoundingBox3D& domain, double resolution,
+		double rayMarchingResolution, unsigned int maxNumberOfIterations,
+		const Transform3& transform, bool isNormalFlipped) :
 		ImplicitSurface3(transform, isNormalFlipped),
-		m_func(func), m_domain(domain), m_resolution(resolution), m_maxNumberOfIterations(maxNumberOfIterations)
+		m_func(func), m_domain(domain), m_resolution(resolution),
+		m_rayMarchingResolution(rayMarchingResolution), m_maxNumberOfIterations(maxNumberOfIterations)
 	{
 		// Do nothing
 	}
@@ -69,19 +67,21 @@ namespace CubbyFlow
 
 			double t = start;
 			Vector3D pt = ray.PointAt(t);
-			double prevSign = Sign(m_func(pt));
+			double prevPhi = m_func(pt);
 
 			while (t <= end)
 			{
 				pt = ray.PointAt(t);
-				double newSign = Sign(m_func(pt));
+				const double newPhi = m_func(pt);
+				const double newPhiAbs = std::fabs(newPhi);
 
-				if (newSign * prevSign < 0.0)
+				if (newPhi * prevPhi < 0.0)
 				{
 					return true;
 				}
 
-				t += m_resolution;
+				t += std::max(newPhiAbs, m_rayMarchingResolution);
+				prevPhi = newPhi;
 			}
 		}
 
@@ -142,12 +142,13 @@ namespace CubbyFlow
 			while (t <= end)
 			{
 				pt = ray.PointAt(t);
-				double newPhi = m_func(pt);
+				const double newPhi = m_func(pt);
+				const double newPhiAbs = std::fabs(newPhi);
 
 				if (newPhi * prevPhi < 0.0)
 				{
-					double frac = FractionInsideSDF(prevPhi, newPhi);
-					double tSub = t + m_resolution * frac;
+					const double frac = prevPhi / (prevPhi - newPhi);
+					const double tSub = t + m_rayMarchingResolution * frac;
 
 					result.isIntersecting = true;
 					result.t = tSub;
@@ -162,7 +163,8 @@ namespace CubbyFlow
 					return result;
 				}
 
-				t += m_resolution;
+				t += std::max(newPhiAbs, m_rayMarchingResolution);
+				prevPhi = newPhi;
 			}
 		}
 
@@ -207,6 +209,12 @@ namespace CubbyFlow
 		return *this;
 	}
 
+	CustomImplicitSurface3::Builder& CustomImplicitSurface3::Builder::WithRayMarchingResolution(double resolution)
+	{
+		m_rayMarchingResolution = resolution;
+		return *this;
+	}
+
 	CustomImplicitSurface3::Builder& CustomImplicitSurface3::Builder::WithMaxNumberOfIterations(unsigned int numIter)
 	{
 		m_maxNumberOfIterations = numIter;
@@ -215,13 +223,13 @@ namespace CubbyFlow
 
 	CustomImplicitSurface3 CustomImplicitSurface3::Builder::Build() const
 	{
-		return CustomImplicitSurface3(m_func, m_domain, m_resolution, m_maxNumberOfIterations, m_transform, m_isNormalFlipped);
+		return CustomImplicitSurface3(m_func, m_domain, m_resolution, m_rayMarchingResolution, m_maxNumberOfIterations, m_transform, m_isNormalFlipped);
 	}
 
 	CustomImplicitSurface3Ptr CustomImplicitSurface3::Builder::MakeShared() const
 	{
 		return std::shared_ptr<CustomImplicitSurface3>(
-			new CustomImplicitSurface3(m_func, m_domain, m_resolution, m_maxNumberOfIterations, m_transform, m_isNormalFlipped),
+			new CustomImplicitSurface3(m_func, m_domain, m_resolution, m_rayMarchingResolution, m_maxNumberOfIterations, m_transform, m_isNormalFlipped),
 			[](CustomImplicitSurface3* obj)
 		{
 			delete obj;

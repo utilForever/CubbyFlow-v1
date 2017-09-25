@@ -21,11 +21,22 @@ namespace CubbyFlow
 	public:
 		class Builder;
 
+		//!
 		//! Constructs an implicit surface using the given signed-distance function.
+		//!
+		//! \param func Custom SDF function object.
+		//! \param domain Bounding box of the SDF if exists.
+		//! \param resolution Finite differencing resolution for derivatives.
+		//! \param rayMarchingResolution Ray marching resolution for ray tests.
+		//! \param maxNumberOfIterations Number of iterations for closest point search.
+		//! \param transform Local-to-world transform.
+		//! \param isNormalFlipped True if normal is flipped.
+		//!
 		CustomImplicitSurface2(
 			const std::function<double(const Vector2D&)>& func,
 			const BoundingBox2D& domain = BoundingBox2D(),
 			double resolution = 1e-3,
+			double rayMarchingResolution = 1e-6,
 			unsigned int maxNumberOfIterations = 5,
 			const Transform2& transform = Transform2(),
 			bool isNormalFlipped = false);
@@ -40,6 +51,7 @@ namespace CubbyFlow
 		std::function<double(const Vector2D&)> m_func;
 		BoundingBox2D m_domain;
 		double m_resolution = 1e-3;
+		double m_rayMarchingResolution = 1e-6;
 		unsigned int m_maxNumberOfIterations = 5;
 
 		Vector2D ClosestPointLocal(const Vector2D& otherPoint) const override;
@@ -72,10 +84,14 @@ namespace CubbyFlow
 		//! Returns builder with domain.
 		Builder& WithDomain(const BoundingBox2D& domain);
 
-		//! Returns builder with resolution.
+		//! Returns builder with finite differencing resolution.
 		Builder& WithResolution(double resolution);
 
-		//!Returns builder with number of iterations.
+		//! Returns builder with ray marching resolution which determines the ray
+		//! intersection quality.
+		Builder& WithRayMarchingResolution(double rayMarchingResolution);
+
+		//! Returns builder with number of iterations for closest point/normal searches.
 		Builder& WithMaxNumberOfIterations(unsigned int numIter);
 
 		//! Builds CustomImplicitSurface2.
@@ -88,6 +104,7 @@ namespace CubbyFlow
 		std::function<double(const Vector2D&)> m_func;
 		BoundingBox2D m_domain;
 		double m_resolution = 1e-3;
+		double m_rayMarchingResolution = 1e-6;
 		unsigned int m_maxNumberOfIterations = 5;
 	};
 }
