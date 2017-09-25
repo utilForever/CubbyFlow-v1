@@ -126,6 +126,14 @@ namespace CubbyFlow
 		return m_kernelRadiusOverTargetSpacing;
 	}
 
+	void SPHSystemData2::SetKernelRadius(double kernelRadius)
+	{
+		m_kernelRadius = kernelRadius;
+		m_targetSpacing = kernelRadius / m_kernelRadiusOverTargetSpacing;
+
+		ComputeMass();
+	}
+
 	double SPHSystemData2::GetKernelRadius() const
 	{
 		return m_kernelRadius;

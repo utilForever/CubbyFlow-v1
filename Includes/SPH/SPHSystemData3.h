@@ -77,7 +77,7 @@ namespace CubbyFlow
 		//! \brief Sets the target particle spacing in meters.
 		//!
 		//! Once this function is called, hash grid and density should be
-		//! updated using updateHashGrid() and updateDensities).
+		//! updated using UpdateHashGrid() and UpdateDensities).
 		//!
 		void SetTargetSpacing(double spacing);
 
@@ -90,7 +90,7 @@ namespace CubbyFlow
 		//! Sets the relative kernel radius compared to the target particle
 		//! spacing (i.e. kernel radius / target spacing).
 		//! Once this function is called, hash grid and density should
-		//! be updated using updateHashGrid() and updateDensities).
+		//! be updated using UpdateHashGrid() and UpdateDensities).
 		//!
 		void SetRelativeKernelRadius(double relativeRadius);
 
@@ -101,6 +101,16 @@ namespace CubbyFlow
 		//! spacing (i.e. kernel radius / target spacing).
 		//!
 		double GetRelativeKernelRadius() const;
+
+		//!
+		//! \brief Sets the absolute kernel radius.
+		//!
+		//! Sets the absolute kernel radius compared to the target particle
+		//! spacing (i.e. relative kernel radius * target spacing).
+		//! Once this function is called, hash grid and density should
+		//! be updated using UpdateHashGrid() and UpdateDensities).
+		//!
+		void SetKernelRadius(double kernelRadius);
 
 		//! Returns the kernel radius in meters unit.
 		double GetKernelRadius() const;

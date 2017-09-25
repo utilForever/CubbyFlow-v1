@@ -71,7 +71,7 @@ namespace CubbyFlow
 		//! latest nearby particles' position.
 		//!
 		//! \warning You must update the neighbor searcher
-		//! (SPHSystemData2::buildNeighborSearcher) before calling this function.
+		//! (SPHSystemData2::BuildNeighborSearcher) before calling this function.
 		//!
 		void UpdateDensities();
 
@@ -85,7 +85,7 @@ namespace CubbyFlow
 		//! \brief Sets the target particle spacing in meters.
 		//!
 		//! Once this function is called, hash grid and density should be
-		//! updated using updateHashGrid() and updateDensities).
+		//! updated using UpdateHashGrid() and UpdateDensities).
 		//!
 		void SetTargetSpacing(double spacing);
 
@@ -98,7 +98,7 @@ namespace CubbyFlow
 		//! Sets the relative kernel radius compared to the target particle
 		//! spacing (i.e. kernel radius / target spacing).
 		//! Once this function is called, hash grid and density should
-		//! be updated using updateHashGrid() and updateDensities).
+		//! be updated using UpdateHashGrid() and UpdateDensities).
 		//!
 		void SetRelativeKernelRadius(double relativeRadius);
 
@@ -109,6 +109,16 @@ namespace CubbyFlow
 		//! spacing (i.e. kernel radius / target spacing).
 		//!
 		double GetRelativeKernelRadius() const;
+
+		//!
+		//! \brief Sets the absolute kernel radius.
+		//!
+		//! Sets the absolute kernel radius compared to the target particle
+		//! spacing (i.e. relative kernel radius * target spacing).
+		//! Once this function is called, hash grid and density should
+		//! be updated using UpdateHashGrid() and UpdateDensities).
+		//!
+		void SetKernelRadius(double kernelRadius);
 
 		//! Returns the kernel radius in meters unit.
 		double GetKernelRadius() const;
@@ -125,7 +135,7 @@ namespace CubbyFlow
 		//! used.
 		//!
 		//! \warning You must update the neighbor searcher
-		//! (SPHSystemData2::buildNeighborSearcher) before calling this function.
+		//! (SPHSystemData2::BuildNeighborSearcher) before calling this function.
 		//!
 		double Interpolate(const Vector2D& origin, const ConstArrayAccessor1<double>& values) const;
 
@@ -138,7 +148,7 @@ namespace CubbyFlow
 		//! used.
 		//!
 		//! \warning You must update the neighbor searcher
-		//! (SPHSystemData2::buildNeighborSearcher) before calling this function.
+		//! (SPHSystemData2::BuildNeighborSearcher) before calling this function.
 		//!
 		Vector2D Interpolate(const Vector2D& origin, const ConstArrayAccessor1<Vector2D>& values) const;
 
@@ -146,7 +156,7 @@ namespace CubbyFlow
 		//! Returns the gradient of the given values at i-th particle.
 		//!
 		//! \warning You must update the neighbor lists
-		//! (SPHSystemData2::buildNeighborLists) before calling this function.
+		//! (SPHSystemData2::BuildNeighborLists) before calling this function.
 		//!
 		Vector2D GradientAt(size_t i, const ConstArrayAccessor1<double>& values) const;
 
@@ -154,7 +164,7 @@ namespace CubbyFlow
 		//! Returns the Laplacian of the given values at i-th particle.
 		//!
 		//! \warning You must update the neighbor lists
-		//! (SPHSystemData2::buildNeighborLists) before calling this function.
+		//! (SPHSystemData2::BuildNeighborLists) before calling this function.
 		//!
 		double LaplacianAt(size_t i, const ConstArrayAccessor1<double>& values) const;
 
@@ -162,7 +172,7 @@ namespace CubbyFlow
 		//! Returns the Laplacian of the given values at i-th particle.
 		//!
 		//! \warning You must update the neighbor lists
-		//! (SPHSystemData2::buildNeighborLists) before calling this function.
+		//! (SPHSystemData2::BuildNeighborLists) before calling this function.
 		//!
 		Vector2D LaplacianAt(size_t i, const ConstArrayAccessor1<Vector2D>& values) const;
 
