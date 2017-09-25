@@ -18,6 +18,10 @@ TEST(SPHSystemData3, Parameters)
 	EXPECT_EQ(2.5, data.GetRelativeKernelRadius());
 	EXPECT_DOUBLE_EQ(2.5 * 0.549, data.GetKernelRadius());
 
+	data.SetKernelRadius(1.9);
+	EXPECT_DOUBLE_EQ(1.9, data.GetKernelRadius());
+	EXPECT_DOUBLE_EQ(1.9 / 2.5, data.GetTargetSpacing());
+
 	data.SetRadius(0.413);
 	EXPECT_EQ(0.413, data.GetTargetSpacing());
 	EXPECT_EQ(0.413, data.GetRadius());
