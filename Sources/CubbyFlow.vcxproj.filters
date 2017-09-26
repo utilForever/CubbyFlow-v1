@@ -897,6 +897,12 @@
     <ClInclude Include="..\Includes\Utils\MultiGrid-Impl.h">
       <Filter>Utils</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Vector\VectorExpression.h">
+      <Filter>Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vector\VectorExpression-Impl.h">
+      <Filter>Vector</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
