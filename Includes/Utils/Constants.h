@@ -21,21 +21,21 @@ namespace CubbyFlow
 
 	//! Zero for type T.
 	template <typename T>
-	inline T Zero()
+	constexpr T Zero()
 	{
 		return 0;
 	}
 
 	//! Zero for float.
 	template <>
-	inline float Zero<float>()
+	constexpr float Zero<float>()
 	{
 		return 0.f;
 	}
 
 	//! Zero for double.
 	template <>
-	inline double Zero<double>()
+	constexpr double Zero<double>()
 	{
 		return 0.0;
 	}
