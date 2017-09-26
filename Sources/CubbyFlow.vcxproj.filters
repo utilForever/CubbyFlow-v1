@@ -903,6 +903,12 @@
     <ClInclude Include="..\Includes\Vector\VectorExpression-Impl.h">
       <Filter>Vector</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Matrix\MatrixExpression.h">
+      <Filter>Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Matrix\MatrixExpression-Impl.h">
+      <Filter>Matrix</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
