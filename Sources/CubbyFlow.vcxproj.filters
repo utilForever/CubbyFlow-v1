@@ -879,6 +879,12 @@
     <ClInclude Include="..\Includes\Geometry\ImplicitTriangleMesh3.h">
       <Filter>Geometry</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Utils\CppUtils.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Utils\CppUtils-Impl.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">

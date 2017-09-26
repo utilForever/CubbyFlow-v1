@@ -416,6 +416,8 @@ xcopy /y "$(SolutionDir)Includes" "$(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Transform\Transform2.h" />
     <ClInclude Include="..\Includes\Transform\Transform3.h" />
     <ClInclude Include="..\Includes\Utils\Constants.h" />
+    <ClInclude Include="..\Includes\Utils\CppUtils-Impl.h" />
+    <ClInclude Include="..\Includes\Utils\CppUtils.h" />
     <ClInclude Include="..\Includes\Utils\Factory.h" />
     <ClInclude Include="..\Includes\Utils\FlatbuffersHelper.h" />
     <ClInclude Include="..\Includes\Utils\Logger.h" />
