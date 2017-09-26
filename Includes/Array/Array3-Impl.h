@@ -341,6 +341,8 @@ namespace CubbyFlow
 	Array<T, 3>& Array<T, 3>::operator=(Array&& other)
 	{
 		m_data = std::move(other.m_data);
+		m_size = other.m_size;
+		other.m_size = Size3();
 		return *this;
 	}
 
