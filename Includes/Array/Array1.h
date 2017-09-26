@@ -30,6 +30,8 @@ namespace CubbyFlow
 	{
 	public:
 		using ContainerType = std::vector<T>;
+		using Iterator = typename ContainerType::iterator;
+		using ConstIterator = typename ContainerType::const_iterator;
 
 		//! Constructs zero-sized 1-D array.
 		Array();
@@ -46,7 +48,7 @@ namespace CubbyFlow
 		//! such as
 		//!
 		//! \code{.cpp}
-		//! Array<int, 1> arr = {1, 2, 4, 9, 3};
+		//! Array<int, 1> arr = { 1, 2, 4, 9, 3 };
 		//! \endcode
 		//!
 		//! \param list Initializer list that should be copy to the new array.
@@ -55,6 +57,9 @@ namespace CubbyFlow
 
 		//! Copy constructor.
 		Array(const Array& other);
+		
+		//! Move constructor.
+		Array(Array&& other);
 
 		//! Sets entire array with given \p value.
 		void Set(const T& value);
@@ -87,16 +92,16 @@ namespace CubbyFlow
 		const T* Data() const;
 
 		//! Returns the begin iterator of the array.
-		typename ContainerType::iterator begin();
+		Iterator begin();
 
 		//! Returns the begin const iterator of the array.
-		typename ContainerType::const_iterator begin() const;
+		ConstIterator begin() const;
 
 		//! Returns the end iterator of the array.
-		typename ContainerType::iterator end();
+		Iterator end();
 
 		//! Returns the end const iterator of the array.
-		typename ContainerType::const_iterator end() const;
+		ConstIterator end() const;
 
 		//! Returns the array accessor.
 		ArrayAccessor1<T> Accessor();
@@ -123,7 +128,8 @@ namespace CubbyFlow
 		//!
 		//! \code{.cpp}
 		//! Array<int, 1> array(10, 4);
-		//! array.ForEach([](int elem) {
+		//! array.ForEach([](int elem)
+		//! {
 		//!     printf("%d\n", elem);
 		//! });
 		//! \endcode
@@ -141,7 +147,8 @@ namespace CubbyFlow
 		//!
 		//! \code{.cpp}
 		//! Array<int, 1> array(10, 4);
-		//! array.ForEachIndex([&](size_t i) {
+		//! array.ForEachIndex([&](size_t i)
+		//! {
 		//!     array[i] = 4.f * i + 1.5f;
 		//! });
 		//! \endcode
@@ -161,7 +168,8 @@ namespace CubbyFlow
 		//!
 		//! \code{.cpp}
 		//! Array<int, 1> array(1000, 4);
-		//! array.ParallelForEach([](int& elem) {
+		//! array.ParallelForEach([](int& elem)
+		//! {
 		//!     elem *= 2;
 		//! });
 		//! \endcode
@@ -184,7 +192,8 @@ namespace CubbyFlow
 		//!
 		//! \code{.cpp}
 		//! Array<int, 1> array(1000, 4);
-		//! array.ParallelForEachIndex([](size_t i) {
+		//! array.ParallelForEachIndex([](size_t i)
+		//! {
 		//!     array[i] *= 2;
 		//! });
 		//! \endcode
@@ -204,6 +213,9 @@ namespace CubbyFlow
 		//! Copies given array \p other to this array.
 		Array& operator=(const Array& other);
 
+		//! Moves given array \p other to this array.
+		Array& operator=(Array&& other);
+
 		//! Copies given initializer list \p list to this array.
 		Array& operator=(const std::initializer_list<T>& list);
 
@@ -218,7 +230,8 @@ namespace CubbyFlow
 	};
 
 	//! Type alias for 1-D array.
-	template <typename T> using Array1 = Array<T, 1>;
+	template <typename T>
+	using Array1 = Array<T, 1>;
 }
 
 #include <Array/Array1-Impl.h>

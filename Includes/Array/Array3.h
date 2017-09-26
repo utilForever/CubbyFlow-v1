@@ -28,9 +28,12 @@ namespace CubbyFlow
 	//!
 	//! \code{.cpp}
 	//! Array<int, 3> array;
-	//! for (size_t k = 0; k < array.depth(); ++k) {
-	//!     for (size_t j = 0; j < array.height(); ++j) {
-	//!         for (size_t i = 0; i < array.width(); ++i) {
+	//! for (size_t k = 0; k < array.depth(); ++k)
+	//! {
+	//!     for (size_t j = 0; j < array.height(); ++j)
+	//!     {
+	//!         for (size_t i = 0; i < array.width(); ++i)
+	//!         {
 	//!             // Read or write array(i, j, k)
 	//!         }
 	//!     }
@@ -44,6 +47,8 @@ namespace CubbyFlow
 	{
 	public:
 		using ContainerType = std::vector<T>;
+		using Iterator = typename ContainerType::iterator;
+		using ConstIterator = typename ContainerType::const_iterator;
 
 		//! Constructs zero-sized 3-D array.
 		Array();
@@ -68,13 +73,19 @@ namespace CubbyFlow
 		//! such as
 		//!
 		//! \code{.cpp}
-		//! Array<int, 3> arr = {
-		//!     {{ 1.f,  2.f,  3.f,  4.f},
-		//!      { 5.f,  6.f,  7.f,  8.f},
-		//!      { 9.f, 10.f, 11.f, 12.f}},
-		//!     {{13.f, 14.f, 15.f, 16.f},
-		//!      {17.f, 18.f, 19.f, 20.f},
-		//!      {21.f, 22.f, 23.f, 24.f}}};
+		//! Array<int, 3> arr =
+		//! {
+		//!     {
+		//!         { 1.f,  2.f,  3.f,  4.f },
+		//!         { 5.f,  6.f,  7.f,  8.f },
+		//!         { 9.f, 10.f, 11.f, 12.f }
+		//!     },
+		//!     {
+		//!         { 13.f, 14.f, 15.f, 16.f },
+		//!         { 17.f, 18.f, 19.f, 20.f },
+		//!         { 21.f, 22.f, 23.f, 24.f }
+		//!     }
+		//! };
 		//! \endcode
 		//!
 		//! Note the initializer also has 3-D structure. The code above will
@@ -86,6 +97,9 @@ namespace CubbyFlow
 
 		//! Copy constructor.
 		Array(const Array& other);
+
+		//! Move constructor.
+		Array(Array&& other);
 
 		//! Sets entire array with given \p value.
 		void Set(const T& value);
@@ -100,13 +114,19 @@ namespace CubbyFlow
 		//!
 		//! \code{.cpp}
 		//! Array<int, 3> arr;
-		//! arr = {
-		//!     {{ 1.f,  2.f,  3.f,  4.f},
-		//!      { 5.f,  6.f,  7.f,  8.f},
-		//!      { 9.f, 10.f, 11.f, 12.f}},
-		//!     {{13.f, 14.f, 15.f, 16.f},
-		//!      {17.f, 18.f, 19.f, 20.f},
-		//!      {21.f, 22.f, 23.f, 24.f}}};
+		//! arr =
+		//! {
+		//!     {
+		//!         { 1.f,  2.f,  3.f,  4.f },
+		//!         { 5.f,  6.f,  7.f,  8.f },
+		//!         { 9.f, 10.f, 11.f, 12.f }
+		//!     },
+		//!     {
+		//!         { 13.f, 14.f, 15.f, 16.f },
+		//!         { 17.f, 18.f, 19.f, 20.f },
+		//!         { 21.f, 22.f, 23.f, 24.f }
+		//!     }
+		//! };
 		//! \endcode
 		//!
 		//! Note the initializer also has 3-D structure. The code above will
@@ -174,16 +194,16 @@ namespace CubbyFlow
 		T* Data();
 
 		//! Returns the begin iterator of the array.
-		typename ContainerType::iterator begin();
+		Iterator begin();
 
 		//! Returns the begin const iterator of the array.
-		typename ContainerType::const_iterator begin() const;
+		ConstIterator begin() const;
 
 		//! Returns the end iterator of the array.
-		typename ContainerType::iterator end();
+		Iterator end();
 
 		//! Returns the end const iterator of the array.
-		typename ContainerType::const_iterator end() const;
+		ConstIterator end() const;
 
 		//! Returns the const raw pointer to the array data.
 		const T* const Data() const;
@@ -207,9 +227,12 @@ namespace CubbyFlow
 		//!
 		//! \code{.cpp}
 		//! Array<int, 3> array;
-		//! for (size_t k = 0; k < array.depth(); ++k) {
-		//!     for (size_t j = 0; j < array.height(); ++j) {
-		//!         for (size_t i = 0; i < array.width(); ++i) {
+		//! for (size_t k = 0; k < array.depth(); ++k)
+		//! {
+		//!     for (size_t j = 0; j < array.height(); ++j)
+		//!     {
+		//!         for (size_t i = 0; i < array.width(); ++i)
+		//!         {
 		//!             func(i, j, k);
 		//!         }
 		//!     }
@@ -220,7 +243,8 @@ namespace CubbyFlow
 		//!
 		//! \code{.cpp}
 		//! Array<int, 3> array(100, 200, 150, 4);
-		//! array.ForEach([](int elem) {
+		//! array.ForEach([](int elem)
+		//! {
 		//!     printf("%d\n", elem);
 		//! });
 		//! \endcode
@@ -238,9 +262,12 @@ namespace CubbyFlow
 		//!
 		//! \code{.cpp}
 		//! Array<int, 3> array;
-		//! for (size_t k = 0; k < array.depth(); ++k) {
-		//!     for (size_t j = 0; j < array.height(); ++j) {
-		//!         for (size_t i = 0; i < array.width(); ++i) {
+		//! for (size_t k = 0; k < array.depth(); ++k)
+		//! {
+		//!     for (size_t j = 0; j < array.height(); ++j)
+		//!     {
+		//!         for (size_t i = 0; i < array.width(); ++i)
+		//!         {
 		//!             func(i, j, k);
 		//!         }
 		//!     }
@@ -251,7 +278,8 @@ namespace CubbyFlow
 		//!
 		//! \code{.cpp}
 		//! Array<int, 3> array(10, 4);
-		//! array.ForEachIndex([&](size_t i, size_t j, size_t k) {
+		//! array.ForEachIndex([&](size_t i, size_t j, size_t k)
+		//! {
 		//!     array(i, j, k) = 4.f * i + 7.f * j + 3.f * k + 1.5f;
 		//! });
 		//! \endcode
@@ -270,7 +298,8 @@ namespace CubbyFlow
 		//!
 		//! \code{.cpp}
 		//! Array<int, 3> array(100, 200, 150, 4);
-		//! array.ParallelForEach([](int& elem) {
+		//! array.ParallelForEach([](int& elem)
+		//! {
 		//!     elem *= 2;
 		//! });
 		//! \endcode
@@ -293,7 +322,8 @@ namespace CubbyFlow
 		//!
 		//! \code{.cpp}
 		//! Array<int, 3> array(100, 200, 150, 4);
-		//! array.ParallelForEachIndex([&](size_t i, size_t j, size_t k) {
+		//! array.ParallelForEachIndex([&](size_t i, size_t j, size_t k)
+		//! {
 		//!     array(i, j, k) *= 2;
 		//! });
 		//! \endcode
@@ -343,6 +373,9 @@ namespace CubbyFlow
 		//! Copies given array \p other to this array.
 		Array& operator=(const Array& other);
 
+		//! Moves given array \p other to this array.
+		Array& operator=(Array&& other);
+
 		//!
 		//! Copies given initializer list \p list to this array.
 		//!
@@ -350,13 +383,19 @@ namespace CubbyFlow
 		//!
 		//! \code{.cpp}
 		//! Array<int, 3> arr;
-		//! arr = {
-		//!     {{ 1.f,  2.f,  3.f,  4.f},
-		//!      { 5.f,  6.f,  7.f,  8.f},
-		//!      { 9.f, 10.f, 11.f, 12.f}},
-		//!     {{13.f, 14.f, 15.f, 16.f},
-		//!      {17.f, 18.f, 19.f, 20.f},
-		//!      {21.f, 22.f, 23.f, 24.f}}};
+		//! arr =
+		//! {
+		//!     {
+		//!         { 1.f,  2.f,  3.f,  4.f },
+		//!         { 5.f,  6.f,  7.f,  8.f },
+		//!         { 9.f, 10.f, 11.f, 12.f }
+		//!     },
+		//!     {
+		//!         { 13.f, 14.f, 15.f, 16.f },
+		//!         { 17.f, 18.f, 19.f, 20.f },
+		//!         { 21.f, 22.f, 23.f, 24.f }
+		//!     }
+		//! };
 		//! \endcode
 		//!
 		//! Note the initializer also has 3-D structure. The code above will
@@ -378,7 +417,8 @@ namespace CubbyFlow
 	};
 
 	//! Type alias for 3-D array.
-	template <typename T> using Array3 = Array<T, 3>;
+	template <typename T>
+	using Array3 = Array<T, 3>;
 }
 
 #include <Array/Array3-Impl.h>

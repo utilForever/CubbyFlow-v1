@@ -28,8 +28,10 @@ namespace CubbyFlow
 	//!
 	//! \code{.cpp}
 	//! Array<int, 2> array;
-	//! for (size_t j = 0; j < array.height(); ++j) {
-	//!     for (size_t i = 0; i < array.width(); ++i) {
+	//! for (size_t j = 0; j < array.height(); ++j) 
+	//! {
+	//!     for (size_t i = 0; i < array.width(); ++i)
+	//!     {
 	//!         // Read or write array(i, j)
 	//!     }
 	//! }
@@ -42,6 +44,8 @@ namespace CubbyFlow
 	{
 	public:
 		using ContainerType = std::vector<T>;
+		using Iterator = typename ContainerType::iterator;
+		using ConstIterator = typename ContainerType::const_iterator;
 
 		//! Constructs zero-sized 2-D array.
 		Array();
@@ -65,7 +69,8 @@ namespace CubbyFlow
 		//! such as
 		//!
 		//! \code{.cpp}
-		//! Array<int, 2> arr = {
+		//! Array<int, 2> arr =
+		//! {
 		//!     {1, 2, 4},
 		//!     {9, 3, 5}
 		//! };
@@ -81,6 +86,9 @@ namespace CubbyFlow
 		//! Copy constructor.
 		Array(const Array& other);
 
+		//! Move constructor.
+		Array(Array&& other);
+
 		//! Sets entire array with given \p value.
 		void Set(const T& value);
 
@@ -94,7 +102,8 @@ namespace CubbyFlow
 		//!
 		//! \code{.cpp}
 		//! Array<int, 2> arr;
-		//! arr = {
+		//! arr =
+		//! {
 		//!     {1, 2, 4},
 		//!     {9, 3, 5}
 		//! };
@@ -163,16 +172,16 @@ namespace CubbyFlow
 		const T* Data() const;
 
 		//! Returns the begin iterator of the array.
-		typename ContainerType::iterator begin();
+		Iterator begin();
 
 		//! Returns the begin const iterator of the array.
-		typename ContainerType::const_iterator begin() const;
+		ConstIterator begin() const;
 
 		//! Returns the end iterator of the array.
-		typename ContainerType::iterator end();
+		Iterator end();
 
 		//! Returns the end const iterator of the array.
-		typename ContainerType::const_iterator end() const;
+		ConstIterator end() const;
 
 		//! Returns the array accessor.
 		ArrayAccessor2<T> Accessor();
@@ -193,8 +202,10 @@ namespace CubbyFlow
 		//!
 		//! \code{.cpp}
 		//! Array<int, 2> array;
-		//! for (size_t j = 0; j < array.height(); ++j) {
-		//!     for (size_t i = 0; i < array.width(); ++i) {
+		//! for (size_t j = 0; j < array.height(); ++j)
+		//! {
+		//!     for (size_t i = 0; i < array.width(); ++i)
+		//!     {
 		//!         func(array(i, j));
 		//!     }
 		//! }
@@ -204,7 +215,8 @@ namespace CubbyFlow
 		//!
 		//! \code{.cpp}
 		//! Array<int, 2> array(100, 200, 4);
-		//! array.ForEach([](int elem) {
+		//! array.ForEach([](int elem)
+		//! {
 		//!     printf("%d\n", elem);
 		//! });
 		//! \endcode
@@ -222,8 +234,10 @@ namespace CubbyFlow
 		//!
 		//! \code{.cpp}
 		//! Array<int, 2> array;
-		//! for (size_t j = 0; j < array.height(); ++j) {
-		//!     for (size_t i = 0; i < array.width(); ++i) {
+		//! for (size_t j = 0; j < array.height(); ++j)
+		//! {
+		//!     for (size_t i = 0; i < array.width(); ++i)
+		//!     {
 		//!         func(i, j);
 		//!     }
 		//! }
@@ -233,7 +247,8 @@ namespace CubbyFlow
 		//!
 		//! \code{.cpp}
 		//! Array<int, 2> array(10, 20, 4);
-		//! array.ForEachIndex([&](size_t i, size_t j) {
+		//! array.ForEachIndex([&](size_t i, size_t j)
+		//! {
 		//!     array(i, j) = 4.f * i + 7.f * j + 1.5f;
 		//! });
 		//! \endcode
@@ -252,7 +267,8 @@ namespace CubbyFlow
 		//!
 		//! \code{.cpp}
 		//! Array<int, 2> array(100, 200, 4);
-		//! array.ParallelForEach([](int& elem) {
+		//! array.ParallelForEach([](int& elem)
+		//! {
 		//!     elem *= 2;
 		//! });
 		//! \endcode
@@ -275,7 +291,8 @@ namespace CubbyFlow
 		//!
 		//! \code{.cpp}
 		//! Array<int, 2> array(100, 200, 4);
-		//! array.ParallelForEachIndex([&](size_t i, size_t j) {
+		//! array.ParallelForEachIndex([&](size_t i, size_t j)
+		//! {
 		//!     array(i, j) *= 2;
 		//! });
 		//! \endcode
@@ -323,6 +340,9 @@ namespace CubbyFlow
 		//! Copies given array \p other to this array.
 		Array& operator=(const Array& other);
 
+		//! Moves given array \p other to this array.
+		Array& operator=(Array&& other);
+
 		//!
 		//! Copies given initializer list \p list to this array.
 		//!
@@ -330,7 +350,8 @@ namespace CubbyFlow
 		//!
 		//! \code{.cpp}
 		//! Array<int, 2> arr;
-		//! arr = {
+		//! arr =
+		//! {
 		//!     {1, 2, 4},
 		//!     {9, 3, 5}
 		//! };
@@ -355,7 +376,8 @@ namespace CubbyFlow
 	};
 
 	//! Type alias for 2-D array.
-	template <typename T> using Array2 = Array<T, 2>;
+	template <typename T>
+	using Array2 = Array<T, 2>;
 }
 
 #include <Array/Array2-Impl.h>

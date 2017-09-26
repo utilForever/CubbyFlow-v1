@@ -45,6 +45,12 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
+	Array<T, 2>::Array(Array&& other)
+	{
+		*this = std::move(other);
+	}
+
+	template <typename T>
 	void Array<T, 2>::Set(const T& value)
 	{
 		for (auto& v : m_data)
@@ -310,6 +316,13 @@ namespace CubbyFlow
 	Array<T, 2>& Array<T, 2>::operator=(const Array& other)
 	{
 		Set(other);
+		return *this;
+	}
+
+	template <typename T>
+	Array<T, 2>& Array<T, 2>::operator=(Array&& other)
+	{
+		m_data = std::move(other.m_data);
 		return *this;
 	}
 
