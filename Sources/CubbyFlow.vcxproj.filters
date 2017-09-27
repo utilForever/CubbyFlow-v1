@@ -915,6 +915,12 @@
     <ClInclude Include="..\Includes\Matrix\MatrixCSR-Impl.h">
       <Filter>Matrix</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Matrix\MatrixMxN.h">
+      <Filter>Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Matrix\MatrixMxN-Impl.h">
+      <Filter>Matrix</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
