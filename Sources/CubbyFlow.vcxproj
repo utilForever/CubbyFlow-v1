@@ -307,6 +307,8 @@ xcopy /y "$(SolutionDir)Includes" "$(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Matrix\Matrix3x3.h" />
     <ClInclude Include="..\Includes\Matrix\Matrix4x4-Impl.h" />
     <ClInclude Include="..\Includes\Matrix\Matrix4x4.h" />
+    <ClInclude Include="..\Includes\Matrix\MatrixCSR-Impl.h" />
+    <ClInclude Include="..\Includes\Matrix\MatrixCSR.h" />
     <ClInclude Include="..\Includes\Matrix\MatrixExpression-Impl.h" />
     <ClInclude Include="..\Includes\Matrix\MatrixExpression.h" />
     <ClInclude Include="..\Includes\Particle\ParticleSystemData2.h" />
