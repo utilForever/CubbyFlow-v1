@@ -98,33 +98,33 @@ void SaveVolumeAsVol(
 			{
 				d *= SmoothStep(0.f, EDGE_BLUR_F, static_cast<float>(i));
 			}
-			if (i > data.Size().x - 1 - EDGE_BLUR)
+			if (i > data.size().x - 1 - EDGE_BLUR)
 			{
-				d *= SmoothStep(0.f, EDGE_BLUR_F, static_cast<float>((data.Size().x - 1) - i));
+				d *= SmoothStep(0.f, EDGE_BLUR_F, static_cast<float>((data.size().x - 1) - i));
 			}
 			if (j < EDGE_BLUR)
 			{
 				d *= SmoothStep(0.f, EDGE_BLUR_F, static_cast<float>(j));
 			}
-			if (j > data.Size().y - 1 - EDGE_BLUR)
+			if (j > data.size().y - 1 - EDGE_BLUR)
 			{
-				d *= SmoothStep(0.f, EDGE_BLUR_F, static_cast<float>((data.Size().y - 1) - j));
+				d *= SmoothStep(0.f, EDGE_BLUR_F, static_cast<float>((data.size().y - 1) - j));
 			}
 			if (k < EDGE_BLUR)
 			{
 				d *= SmoothStep(0.f, EDGE_BLUR_F, static_cast<float>(k));
 			}
-			if (k > data.Size().z - 1 - EDGE_BLUR)
+			if (k > data.size().z - 1 - EDGE_BLUR)
 			{
-				d *= SmoothStep(0.f, EDGE_BLUR_F, static_cast<float>((data.Size().z - 1) - k));
+				d *= SmoothStep(0.f, EDGE_BLUR_F, static_cast<float>((data.size().z - 1) - k));
 			}
 
 			data(i, j, k) = d;
 		});
 
 		file.write(
-			reinterpret_cast<const char*>(data.Data()),
-			sizeof(float) * data.Size().x * data.Size().y * data.Size().z);
+			reinterpret_cast<const char*>(data.data()),
+			sizeof(float) * data.size().x * data.size().y * data.size().z);
 
 		file.close();
 	}

@@ -37,7 +37,7 @@ void ParticlesToXML(
 	const Array1<Vector3D>& positions,
 	const std::string& xmlFileName)
 {
-	PrintInfo(positions.Size());
+	PrintInfo(positions.size());
 
 	std::ofstream file(xmlFileName.c_str());
 	if (file)
