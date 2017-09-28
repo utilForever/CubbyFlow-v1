@@ -15,10 +15,10 @@ TEST(ArrayAccessor3, Constructors)
 
 	ArrayAccessor3<double> acc(Size3(5, 4, 3), data);
 
-	EXPECT_EQ(5u, acc.Size().x);
-	EXPECT_EQ(4u, acc.Size().y);
-	EXPECT_EQ(3u, acc.Size().z);
-	EXPECT_EQ(data, acc.Data());
+	EXPECT_EQ(5u, acc.size().x);
+	EXPECT_EQ(4u, acc.size().y);
+	EXPECT_EQ(3u, acc.size().z);
+	EXPECT_EQ(data, acc.data());
 }
 
 TEST(ArrayAccessor3, Iterators)
@@ -169,10 +169,10 @@ TEST(ConstArrayAccessor3, Constructors)
 	ArrayAccessor3<double> acc(Size3(5, 4, 3), data);
 	ConstArrayAccessor3<double> cacc(acc);
 
-	EXPECT_EQ(5u, cacc.Size().x);
-	EXPECT_EQ(4u, cacc.Size().y);
-	EXPECT_EQ(3u, cacc.Size().z);
-	EXPECT_EQ(data, cacc.Data());
+	EXPECT_EQ(5u, cacc.size().x);
+	EXPECT_EQ(4u, cacc.size().y);
+	EXPECT_EQ(3u, cacc.size().z);
+	EXPECT_EQ(data, cacc.data());
 }
 
 TEST(ConstArrayAccessor3, Iterators)

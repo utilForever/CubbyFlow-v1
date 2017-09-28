@@ -198,7 +198,7 @@ TEST(ParticleSystemData3, BuildNeighborSearcher)
 		found.push_back(i);
 	});
 
-	for (size_t ii = 0; ii < positions.Size(); ++ii)
+	for (size_t ii = 0; ii < positions.size(); ++ii)
 	{
 		if (searchOrigin.DistanceTo(positions[ii]) <= radius)
 		{
@@ -240,13 +240,13 @@ TEST(ParticleSystemData3, BuildNeighborLists)
 	particleSystem.BuildNeighborLists(radius);
 
 	const auto& neighborLists = particleSystem.NeighborLists();
-	EXPECT_EQ(positions.Size(), neighborLists.size());
+	EXPECT_EQ(positions.size(), neighborLists.size());
 
 	for (size_t i = 0; i < neighborLists.size(); ++i)
 	{
 		const auto& neighbors = neighborLists[i];
 
-		for (size_t ii = 0; ii < positions.Size(); ++ii)
+		for (size_t ii = 0; ii < positions.size(); ++ii)
 		{
 			if (ii != i && positions[ii].DistanceTo(positions[i]) <= radius)
 			{
@@ -298,21 +298,21 @@ TEST(ParticleSystemData3, Serialization)
 	ParticleSystemData3 particleSystem2;
 	particleSystem2.Deserialize(buffer);
 
-	EXPECT_EQ(positions.Size(), particleSystem2.NumberOfParticles());
+	EXPECT_EQ(positions.size(), particleSystem2.NumberOfParticles());
 	auto as0 = particleSystem2.ScalarDataAt(a0);
-	for (size_t i = 0; i < positions.Size(); ++i)
+	for (size_t i = 0; i < positions.size(); ++i)
 	{
 		EXPECT_DOUBLE_EQ(2.0, as0[i]);
 	}
 
 	auto as1 = particleSystem2.ScalarDataAt(a1);
-	for (size_t i = 0; i < positions.Size(); ++i)
+	for (size_t i = 0; i < positions.size(); ++i)
 	{
 		EXPECT_DOUBLE_EQ(9.0, as1[i]);
 	}
 
 	auto as2 = particleSystem2.VectorDataAt(a2);
-	for (size_t i = 0; i < positions.Size(); ++i)
+	for (size_t i = 0; i < positions.size(); ++i)
 	{
 		EXPECT_DOUBLE_EQ(1.0, as2[i].x);
 		EXPECT_DOUBLE_EQ(-3.0, as2[i].y);

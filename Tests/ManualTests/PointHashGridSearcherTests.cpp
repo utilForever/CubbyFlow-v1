@@ -26,13 +26,13 @@ CUBBYFLOW_BEGIN_TEST_F(PointHashGridSearcher2, Build)
 	pointsGenerator.Generate(bbox, spacing, &points);
 
 	PointHashGridSearcher2 pointSearcher(4, 4, 0.18);
-	pointSearcher.Build(ArrayAccessor1<Vector2D>(points.Size(), points.Data()));
+	pointSearcher.Build(ArrayAccessor1<Vector2D>(points.size(), points.data()));
 
 	Array2<double> grid(4, 4, 0.0);
 
-	for (size_t j = 0; j < grid.Size().y; ++j)
+	for (size_t j = 0; j < grid.size().y; ++j)
 	{
-		for (size_t i = 0; i < grid.Size().x; ++i)
+		for (size_t i = 0; i < grid.size().x; ++i)
 		{
 			size_t key = pointSearcher.GetHashKeyFromBucketIndex(Point2I(static_cast<ssize_t>(i), static_cast<ssize_t>(j)));
 			size_t value = pointSearcher.GetBuckets()[key].size();
@@ -56,13 +56,13 @@ CUBBYFLOW_BEGIN_TEST_F(PointHashGridSearcher3, Build)
 	pointsGenerator.Generate(bbox, spacing, &points);
 
 	PointHashGridSearcher3 pointSearcher(4, 4, 4, 0.18);
-	pointSearcher.Build(ArrayAccessor1<Vector3D>(points.Size(), points.Data()));
+	pointSearcher.Build(ArrayAccessor1<Vector3D>(points.size(), points.data()));
 
 	Array2<double> grid(4, 4, 0.0);
 
-	for (size_t j = 0; j < grid.Size().y; ++j)
+	for (size_t j = 0; j < grid.size().y; ++j)
 	{
-		for (size_t i = 0; i < grid.Size().x; ++i)
+		for (size_t i = 0; i < grid.size().x; ++i)
 		{
 			size_t key = pointSearcher.GetHashKeyFromBucketIndex(Point3I(static_cast<ssize_t>(i), static_cast<ssize_t>(j), 0));
 			size_t value = pointSearcher.GetBuckets()[key].size();
@@ -88,13 +88,13 @@ CUBBYFLOW_BEGIN_TEST_F(PointParallelHashGridSearcher2, Build)
 	pointsGenerator.Generate(bbox, spacing, &points);
 
 	PointParallelHashGridSearcher2 pointSearcher(4, 4, 0.18);
-	pointSearcher.Build(ArrayAccessor1<Vector2D>(points.Size(), points.Data()));
+	pointSearcher.Build(ArrayAccessor1<Vector2D>(points.size(), points.data()));
 
 	Array2<double> grid(4, 4, 0.0);
 
-	for (size_t j = 0; j < grid.Size().y; ++j)
+	for (size_t j = 0; j < grid.size().y; ++j)
 	{
-		for (size_t i = 0; i < grid.Size().x; ++i)
+		for (size_t i = 0; i < grid.size().x; ++i)
 		{
 			size_t key = pointSearcher.GetHashKeyFromBucketIndex(Point2I(static_cast<ssize_t>(i), static_cast<ssize_t>(j)));
 			size_t start = pointSearcher.StartIndexTable()[key];
@@ -120,13 +120,13 @@ CUBBYFLOW_BEGIN_TEST_F(PointParallelHashGridSearcher3, Build)
 	pointsGenerator.Generate(bbox, spacing, &points);
 
 	PointParallelHashGridSearcher3 pointSearcher(4, 4, 4, 0.18);
-	pointSearcher.Build(ArrayAccessor1<Vector3D>(points.Size(), points.Data()));
+	pointSearcher.Build(ArrayAccessor1<Vector3D>(points.size(), points.data()));
 
 	Array2<double> grid(4, 4, 0.0);
 
-	for (size_t j = 0; j < grid.Size().y; ++j)
+	for (size_t j = 0; j < grid.size().y; ++j)
 	{
-		for (size_t i = 0; i < grid.Size().x; ++i)
+		for (size_t i = 0; i < grid.size().x; ++i)
 		{
 			size_t key = pointSearcher.GetHashKeyFromBucketIndex(Point3I(static_cast<ssize_t>(i), static_cast<ssize_t>(j), 0));
 			size_t start = pointSearcher.StartIndexTable()[key];

@@ -15,8 +15,8 @@ TEST(ArrayAccessor1, Constructors)
 
 	ArrayAccessor1<double> acc(5, data);
 
-	EXPECT_EQ(5u, acc.Size());
-	EXPECT_EQ(data, acc.Data());
+	EXPECT_EQ(5u, acc.size());
+	EXPECT_EQ(data, acc.data());
 }
 
 TEST(ArrayAccessor1, Iterators)
@@ -117,8 +117,8 @@ TEST(ConstArrayAccessor1, Constructors)
 	ArrayAccessor1<double> acc(5, data);
 	ConstArrayAccessor1<double> cacc(acc);
 
-	EXPECT_EQ(5u, cacc.Size());
-	EXPECT_EQ(data, cacc.Data());
+	EXPECT_EQ(5u, cacc.size());
+	EXPECT_EQ(data, cacc.data());
 }
 
 TEST(ConstArrayAccessor1, Iterators)

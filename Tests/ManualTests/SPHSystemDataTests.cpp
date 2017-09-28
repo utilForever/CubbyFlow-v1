@@ -26,13 +26,13 @@ CUBBYFLOW_BEGIN_TEST_F(SPHSystemData2, Interpolate)
 	pointsGenerator.Generate(bbox, spacing, &points);
 
 	SPHSystemData2 sphSystem;
-	sphSystem.AddParticles(ConstArrayAccessor1<Vector2D>(points.Size(), points.Data()));
+	sphSystem.AddParticles(ConstArrayAccessor1<Vector2D>(points.size(), points.data()));
 	sphSystem.SetTargetSpacing(spacing);
 	sphSystem.BuildNeighborSearcher();
 	sphSystem.BuildNeighborLists();
 	sphSystem.UpdateDensities();
 
-	Array1<double> data(points.Size(), 1.0);
+	Array1<double> data(points.size(), 1.0);
 
 	CellCenteredScalarGrid2 grid(512, 512, 1.0 / 512, 1.0 / 512);
 
@@ -59,22 +59,22 @@ CUBBYFLOW_BEGIN_TEST_F(SPHSystemData2, Gradient)
 	pointsGenerator.Generate(bbox, spacing, &points);
 
 	SPHSystemData2 sphSystem;
-	sphSystem.AddParticles(ConstArrayAccessor1<Vector2D>(points.Size(), points.Data()));
+	sphSystem.AddParticles(ConstArrayAccessor1<Vector2D>(points.size(), points.data()));
 	sphSystem.SetTargetSpacing(spacing);
 	sphSystem.BuildNeighborSearcher();
 	sphSystem.BuildNeighborLists();
 	sphSystem.UpdateDensities();
 
-	Array1<double> data(points.Size()), gradX(points.Size()), gradY(points.Size());
+	Array1<double> data(points.size()), gradX(points.size()), gradY(points.size());
 	std::mt19937 rng(0);
 	std::uniform_real_distribution<> d(0.0, 1.0);
 
-	for (size_t i = 0; i < data.Size(); ++i)
+	for (size_t i = 0; i < data.size(); ++i)
 	{
 		data[i] = d(rng);
 	}
 
-	for (size_t i = 0; i < data.Size(); ++i)
+	for (size_t i = 0; i < data.size(); ++i)
 	{
 		Vector2D g = sphSystem.GradientAt(i, data);
 		gradX[i] = g.x;
@@ -119,22 +119,22 @@ CUBBYFLOW_BEGIN_TEST_F(SPHSystemData2, Laplacian)
 	pointsGenerator.Generate(bbox, spacing, &points);
 
 	SPHSystemData2 sphSystem;
-	sphSystem.AddParticles(ConstArrayAccessor1<Vector2D>(points.Size(), points.Data()));
+	sphSystem.AddParticles(ConstArrayAccessor1<Vector2D>(points.size(), points.data()));
 	sphSystem.SetTargetSpacing(spacing);
 	sphSystem.BuildNeighborSearcher();
 	sphSystem.BuildNeighborLists();
 	sphSystem.UpdateDensities();
 
-	Array1<double> data(points.Size()), laplacian(points.Size());
+	Array1<double> data(points.size()), laplacian(points.size());
 	std::mt19937 rng(0);
 	std::uniform_real_distribution<> d(0.0, 1.0);
 
-	for (size_t i = 0; i < data.Size(); ++i)
+	for (size_t i = 0; i < data.size(); ++i)
 	{
 		data[i] = d(rng);
 	}
 
-	for (size_t i = 0; i < data.Size(); ++i)
+	for (size_t i = 0; i < data.size(); ++i)
 	{
 		laplacian[i] = sphSystem.LaplacianAt(i, data);
 	}
@@ -176,13 +176,13 @@ CUBBYFLOW_BEGIN_TEST_F(SPHSystemData3, Interpolate)
 	pointsGenerator.Generate(bbox, spacing, &points);
 
 	SPHSystemData3 sphSystem;
-	sphSystem.AddParticles(ConstArrayAccessor1<Vector3D>(points.Size(), points.Data()));
+	sphSystem.AddParticles(ConstArrayAccessor1<Vector3D>(points.size(), points.data()));
 	sphSystem.SetTargetSpacing(spacing);
 	sphSystem.BuildNeighborSearcher();
 	sphSystem.BuildNeighborLists();
 	sphSystem.UpdateDensities();
 
-	Array1<double> data(points.Size(), 1.0);
+	Array1<double> data(points.size(), 1.0);
 
 	CellCenteredScalarGrid2 grid(512, 512, 1.0 / 512, 1.0 / 512);
 
@@ -209,23 +209,23 @@ CUBBYFLOW_BEGIN_TEST_F(SPHSystemData3, Gradient)
 	pointsGenerator.Generate(bbox, spacing, &points);
 
 	SPHSystemData3 sphSystem;
-	sphSystem.AddParticles(ConstArrayAccessor1<Vector3D>(points.Size(), points.Data()));
+	sphSystem.AddParticles(ConstArrayAccessor1<Vector3D>(points.size(), points.data()));
 	sphSystem.SetTargetSpacing(spacing);
 	sphSystem.BuildNeighborSearcher();
 	sphSystem.BuildNeighborLists();
 	sphSystem.UpdateDensities();
 
-	Array1<double> data(points.Size());
-	Array1<double> gradX(points.Size()), gradY(points.Size());
+	Array1<double> data(points.size());
+	Array1<double> gradX(points.size()), gradY(points.size());
 	std::mt19937 rng(0);
 	std::uniform_real_distribution<> d(0.0, 1.0);
 
-	for (size_t i = 0; i < data.Size(); ++i)
+	for (size_t i = 0; i < data.size(); ++i)
 	{
 		data[i] = d(rng);
 	}
 
-	for (size_t i = 0; i < data.Size(); ++i)
+	for (size_t i = 0; i < data.size(); ++i)
 	{
 		Vector3D g = sphSystem.GradientAt(i, data);
 		gradX[i] = g.x;
@@ -270,22 +270,22 @@ CUBBYFLOW_BEGIN_TEST_F(SPHSystemData3, Laplacian)
 	pointsGenerator.Generate(bbox, spacing, &points);
 
 	SPHSystemData3 sphSystem;
-	sphSystem.AddParticles(ConstArrayAccessor1<Vector3D>(points.Size(), points.Data()));
+	sphSystem.AddParticles(ConstArrayAccessor1<Vector3D>(points.size(), points.data()));
 	sphSystem.SetTargetSpacing(spacing);
 	sphSystem.BuildNeighborSearcher();
 	sphSystem.BuildNeighborLists();
 	sphSystem.UpdateDensities();
 
-	Array1<double> data(points.Size()), laplacian(points.Size());
+	Array1<double> data(points.size()), laplacian(points.size());
 	std::mt19937 rng(0);
 	std::uniform_real_distribution<> d(0.0, 1.0);
 
-	for (size_t i = 0; i < data.Size(); ++i)
+	for (size_t i = 0; i < data.size(); ++i)
 	{
 		data[i] = d(rng);
 	}
 
-	for (size_t i = 0; i < data.Size(); ++i)
+	for (size_t i = 0; i < data.size(); ++i)
 	{
 		laplacian[i] = sphSystem.LaplacianAt(i, data);
 	}

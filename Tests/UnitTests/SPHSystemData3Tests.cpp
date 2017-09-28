@@ -104,21 +104,21 @@ TEST(SPHSystemData3, Serialization)
 	EXPECT_EQ(2.5, data2.GetRelativeKernelRadius());
 	EXPECT_DOUBLE_EQ(2.5 * 0.549, data2.GetKernelRadius());
 
-	EXPECT_EQ(positions.Size(), data2.NumberOfParticles());
+	EXPECT_EQ(positions.size(), data2.NumberOfParticles());
 	auto as0 = data2.ScalarDataAt(a0);
-	for (size_t i = 0; i < positions.Size(); ++i)
+	for (size_t i = 0; i < positions.size(); ++i)
 	{
 		EXPECT_DOUBLE_EQ(2.0, as0[i]);
 	}
 
 	auto as1 = data2.ScalarDataAt(a1);
-	for (size_t i = 0; i < positions.Size(); ++i) 
+	for (size_t i = 0; i < positions.size(); ++i) 
 	{
 		EXPECT_DOUBLE_EQ(9.0, as1[i]);
 	}
 
 	auto as2 = data2.VectorDataAt(a2);
-	for (size_t i = 0; i < positions.Size(); ++i)
+	for (size_t i = 0; i < positions.size(); ++i)
 	{
 		EXPECT_DOUBLE_EQ(1.0, as2[i].x);
 		EXPECT_DOUBLE_EQ(-3.0, as2[i].y);

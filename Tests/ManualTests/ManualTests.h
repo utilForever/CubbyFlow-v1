@@ -71,8 +71,8 @@ inline void CreateDirectory(const std::string& dirName)
         void SaveData(const ConstArrayAccessor1<T>& data, const std::string& name) \
 		{ \
             std::string fileName = GetFullFilePath(name); \
-            unsigned int dim[1] = { static_cast<unsigned int>(data.Size()) }; \
-            cnpy::npy_save(fileName, data.Data(), dim, 1, "w"); \
+            unsigned int dim[1] = { static_cast<unsigned int>(data.size()) }; \
+            cnpy::npy_save(fileName, data.data(), dim, 1, "w"); \
         } \
 		\
         template <typename T> \
@@ -80,7 +80,7 @@ inline void CreateDirectory(const std::string& dirName)
 		{ \
             std::string fileName = GetFullFilePath(name); \
             unsigned int dim[1] = { static_cast<unsigned int>(size) }; \
-            cnpy::npy_save(fileName, data.Data(), dim, 1, "w"); \
+            cnpy::npy_save(fileName, data.data(), dim, 1, "w"); \
         } \
 		\
         template <typename T> \
@@ -91,7 +91,7 @@ inline void CreateDirectory(const std::string& dirName)
                 static_cast<unsigned int>(data.Height()), \
                 static_cast<unsigned int>(data.Width()) \
             }; \
-            cnpy::npy_save(fileName, data.Data(), dim, 2, "w"); \
+            cnpy::npy_save(fileName, data.data(), dim, 2, "w"); \
         } \
 		\
         template <typename T> \
@@ -111,7 +111,7 @@ inline void CreateDirectory(const std::string& dirName)
                 static_cast<unsigned int>(data.Height()), \
                 static_cast<unsigned int>(data.Width()) \
             }; \
-            cnpy::npy_save(fileName, data.Data(), dim, 3, "w"); \
+            cnpy::npy_save(fileName, data.data(), dim, 3, "w"); \
         } \
 		\
         template <typename T> \
