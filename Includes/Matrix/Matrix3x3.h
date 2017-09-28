@@ -54,10 +54,11 @@ namespace CubbyFlow
 		//! such as
 		//!
 		//! \code{.cpp}
-		//! Matrix<int, 3, 3> arr = {
-		//!     {1, 2, 4},
-		//!     {9, 3, 5},
-		//!     {4, 8, 1}
+		//! Matrix<float, 3, 3> arr =
+		//! {
+		//!     {1.f, 2.f, 4.f},
+		//!     {9.f, 3.f, 5.f},
+		//!     {4.f, 8.f, 1.f}
 		//! };
 		//! \endcode
 		//!
@@ -93,11 +94,13 @@ namespace CubbyFlow
 		//! such as
 		//!
 		//! \code{.cpp}
-		//! Matrix<int, 3, 3> arr = {
-		//!     {1, 2, 4},
-		//!     {9, 3, 5},
-		//!     {4, 8, 1}
-		//! };
+		//! Matrix<float, 3, 3> arr;
+		//! arr.Set(
+		//! {
+		//!     {1.f, 2.f, 4.f},
+		//!     {9.f, 3.f, 5.f},
+		//!     {4.f, 8.f, 1.f}
+		//! });
 		//! \endcode
 		//!
 		//! Note the initializer also has 3x3 structure.
@@ -387,19 +390,11 @@ namespace CubbyFlow
 	template <typename T>
 	Matrix<T, 3, 3> operator*(const Matrix<T, 3, 3>& a, const Matrix<T, 3, 3>& b);
 
-	//! Returns a * b.
-	template <typename T>
-	Matrix<T, 3, 3> operator*(const Matrix<T, 3, 3>& a, const Matrix<T, 3, 3>& b);
-
-	//! Returns a * b.
-	template <typename T>
-	Matrix<T, 3, 3> operator*(const Matrix<T, 3, 3>& a, const Matrix<T, 3, 3>& b);
-
-	//! Returns a / b', where every element of matrix b' is b.
+	//! Returns a' / b, where every element of matrix a' is a.
 	template <typename T>
 	Matrix<T, 3, 3> operator/(const Matrix<T, 3, 3>& a, T b);
 
-	//! Returns a' / b, where every element of matrix a' is a.
+	//! Returns a / b', where every element of matrix b' is b.
 	template <typename T>
 	Matrix<T, 3, 3> operator/(T a, const Matrix<T, 3, 3>& b);
 

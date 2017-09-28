@@ -51,9 +51,10 @@ namespace CubbyFlow
 		//! such as
 		//!
 		//! \code{.cpp}
-		//! Matrix<int, 2, 2> arr = {
-		//!     {1, 2},
-		//!     {9, 3}
+		//! Matrix<float, 2, 2> arr =
+		//! {
+		//!     {1.f, 2.f},
+		//!     {9.f, 3.f}
 		//! };
 		//! \endcode
 		//!
@@ -88,10 +89,12 @@ namespace CubbyFlow
 		//! such as
 		//!
 		//! \code{.cpp}
-		//! Matrix<int, 2, 2> arr = {
-		//!     {1, 2},
-		//!     {9, 3}
-		//! };
+		//! Matrix<float, 2, 2> arr;
+		//! arr.Set(
+		//! {
+		//!     {1.f, 2.f},
+		//!     {9.f, 3.f}
+		//! });
 		//! \endcode
 		//!
 		//! Note the initializer also has 2x2 structure.
@@ -380,11 +383,11 @@ namespace CubbyFlow
 	template <typename T>
 	Matrix<T, 2, 2> operator*(const Matrix<T, 2, 2>& a, const Matrix<T, 2, 2>& b);
 
-	//! Returns a / b', where every element of matrix b' is b.
+	//! Returns a' / b, where every element of matrix a' is a.
 	template <typename T>
 	Matrix2x2<T> operator/(const Matrix2x2<T>& a, T b);
 
-	//! Returns a' / b, where every element of matrix a' is a.
+	//! Returns a / b', where every element of matrix b' is b.
 	template <typename T>
 	Matrix2x2<T> operator/(const T& a, const Matrix2x2<T>& b);
 
