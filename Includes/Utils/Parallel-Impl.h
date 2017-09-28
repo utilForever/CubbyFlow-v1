@@ -90,7 +90,7 @@ namespace CubbyFlow
 				pool.emplace_back(launchRange, a + size / 2, size - size / 2, temp + size / 2, numThreads - numThreads / 2);
 
 				// Wait for jobs to finish
-				for (std::thread &t : pool)
+				for (std::thread& t : pool)
 				{
 					if (t.joinable())
 					{
@@ -165,7 +165,7 @@ namespace CubbyFlow
 		}
 
 		// Wait for jobs to finish
-		for (std::thread &t : pool)
+		for (std::thread& t : pool)
 		{
 			if (t.joinable())
 			{
@@ -206,6 +206,71 @@ namespace CubbyFlow
 				}
 			}
 		});
+	}
+
+	template <typename IndexType, typename Value, typename Function, typename Reduce>
+	Value ParallelReduce(IndexType start, IndexType end, const Value& identity, const Function& func, const Reduce& reduce)
+	{
+		if (start > end)
+		{
+			return identity;	
+		}
+		
+		// Estimate number of threads in the pool
+		static const unsigned int numThreadsHint = std::thread::hardware_concurrency();
+		static const unsigned int numThreads = (numThreadsHint == 0u ? 8u : numThreadsHint);
+		
+		// Size of a slice for the range functions
+		IndexType n = end - start + 1;
+		IndexType slice = static_cast<IndexType>(std::round(n / static_cast<double>(numThreads)));
+		slice = std::max(slice, IndexType(1));
+		
+		// Results
+		std::vector<Value> results(numThreads, identity);
+		
+		// [Helper] Inner loop
+		auto launchRange = [&](IndexType k1, IndexType k2, unsigned int tid)
+		{
+			results[tid] = func(k1, k2, identity);
+		};
+		
+		// Create pool and launch jobs
+		std::vector<std::thread> pool;
+		pool.reserve(numThreads);
+
+		IndexType i1 = start;
+		IndexType i2 = std::min(start + slice, end);
+		unsigned int threadID = 0;
+		
+		for (; threadID + 1 < numThreads && i1 < end; ++threadID)
+		{
+			pool.emplace_back(launchRange, i1, i2, threadID);
+			i1 = i2;
+			i2 = std::min(i2 + slice, end);
+		}
+		
+		if (i1 < end)
+		{
+			pool.emplace_back(launchRange, i1, end, threadID);	
+		}
+		
+		// Wait for jobs to finish
+		for (std::thread& t : pool)
+		{
+			if (t.joinable())
+			{
+				t.join();	
+			}
+		}
+		
+		// Gather
+		Value finalResult = identity;
+		for (const Value& val : results)
+		{
+			finalResult = reduce(val, finalResult);	
+		}
+		
+		return finalResult;
 	}
 
 	template<typename RandomIterator>

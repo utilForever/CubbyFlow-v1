@@ -95,6 +95,25 @@ namespace CubbyFlow
 		const Function& function);
 
 	//!
+	//! \brief      Performs reduce operation in parallel.
+	//!
+	//! This function reduces the series of values into a single value using the
+	//! provided reduce function.
+	//!
+	//! \param[in]  beginIndex The begin index.
+	//! \param[in]  endIndex   The end index.
+	//! \param[in]  identity   Identity value for the reduce operation.
+	//! \param[in]  func       The function for reducing subrange.
+	//! \param[in]  reduce     The reduce operator.
+	//!
+	//! \tparam     IndexType  Index type.
+	//! \tparam     Value      Value type.
+	//! \tparam     Function   Reduce function type.
+	//!
+	template <typename IndexType, typename Value, typename Function, typename Reduce>
+	Value ParallelReduce(IndexType beginIndex, IndexType endIndex, const Value& identity, const Function& func, const Reduce& reduce);
+
+	//!
 	//! \brief      Sorts a container in parallel.
 	//!
 	//! This function sorts a container specified by begin and end iterators.
