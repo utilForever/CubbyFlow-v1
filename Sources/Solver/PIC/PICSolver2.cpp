@@ -133,10 +133,10 @@ namespace CubbyFlow
 		// Weighted-average velocity
 		auto u = flow->GetUAccessor();
 		auto v = flow->GetVAccessor();
-		Array2<double> uWeight(u.Size());
-		Array2<double> vWeight(v.Size());
-		m_uMarkers.Resize(u.Size());
-		m_vMarkers.Resize(v.Size());
+		Array2<double> uWeight(u.size());
+		Array2<double> vWeight(v.size());
+		m_uMarkers.Resize(u.size());
+		m_vMarkers.Resize(v.size());
 		m_uMarkers.Set(0);
 		m_vMarkers.Set(0);
 		LinearArraySampler2<double, double> uSampler(

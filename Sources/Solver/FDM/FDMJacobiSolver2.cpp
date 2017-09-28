@@ -25,8 +25,8 @@ namespace CubbyFlow
 
 	bool FDMJacobiSolver2::Solve(FDMLinearSystem2* system)
 	{
-		m_xTemp.Resize(system->x.Size());
-		m_residual.Resize(system->x.Size());
+		m_xTemp.Resize(system->x.size());
+		m_residual.Resize(system->x.size());
 
 		m_lastNumberOfIterations = m_maxNumberOfIterations;
 
@@ -75,7 +75,7 @@ namespace CubbyFlow
 
 	void FDMJacobiSolver2::Relax(FDMLinearSystem2* system, FDMVector2* xTemp)
 	{
-		Size2 size = system->x.Size();
+		Size2 size = system->x.size();
 		FDMMatrix2& A = system->A;
 		FDMVector2& x = system->x;
 		FDMVector2& b = system->b;

@@ -25,7 +25,7 @@ namespace CubbyFlow
 				&((*x)[currentLevel]), &((*buffer)[currentLevel]));
 
 			// 2) if currentLevel is the coarsest grid, goto 5)
-			if (currentLevel < A.levels.Size() - 1)
+			if (currentLevel < A.levels.size() - 1)
 			{
 				auto r = buffer;
 				BlasType::Residual(A[currentLevel], (*x)[currentLevel], (*b)[currentLevel], &(*r)[currentLevel]);

@@ -25,8 +25,8 @@ namespace CubbyFlow
 
 	void PointSimpleListSearcher3::Build(const ConstArrayAccessor1<Vector3D>& points)
 	{
-		m_points.resize(points.Size());
-		std::copy(points.Data(), points.Data() + points.Size(), m_points.begin());
+		m_points.resize(points.size());
+		std::copy(points.data(), points.data() + points.size(), m_points.begin());
 	}
 
 	void PointSimpleListSearcher3::ForEachNearbyPoint(

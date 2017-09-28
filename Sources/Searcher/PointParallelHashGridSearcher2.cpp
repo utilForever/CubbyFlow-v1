@@ -47,7 +47,7 @@ namespace CubbyFlow
 		m_sortedIndices.clear();
 
 		// Allocate memory chunks
-		size_t numberOfPoints = points.Size();
+		size_t numberOfPoints = points.size();
 		std::vector<size_t> tempKeys(numberOfPoints);
 		m_startIndexTable.resize(m_resolution.x * m_resolution.y);
 		m_endIndexTable.resize(m_resolution.x * m_resolution.y);

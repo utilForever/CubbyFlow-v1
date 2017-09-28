@@ -15,9 +15,9 @@ namespace CubbyFlow
 {
 	// MARK: VectorExpression
 	template <typename T, typename E>
-	size_t VectorExpression<T, E>::Size() const
+	size_t VectorExpression<T, E>::size() const
 	{
-		return static_cast<const E&>(*this).Size();
+		return static_cast<const E&>(*this).size();
 	}
 
 	template <typename T, typename E>
@@ -34,7 +34,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T, typename E, typename Op>
-	size_t VectorUnaryOp<T, E, Op>::Size() const
+	size_t VectorUnaryOp<T, E, Op>::size() const
 	{
 		return m_u.size();
 	}
@@ -49,13 +49,13 @@ namespace CubbyFlow
 	template <typename T, typename E1, typename E2, typename Op>
 	VectorBinaryOp<T, E1, E2, Op>::VectorBinaryOp(const E1& u, const E2& v)	: m_u(u), m_v(v)
 	{
-		assert(u.Size() == v.Size());
+		assert(u.size() == v.size());
 	}
 
 	template <typename T, typename E1, typename E2, typename Op>
-	size_t VectorBinaryOp<T, E1, E2, Op>::Size() const
+	size_t VectorBinaryOp<T, E1, E2, Op>::size() const
 	{
-		return m_v.Size();
+		return m_v.size();
 	}
 
 	template <typename T, typename E1, typename E2, typename Op>
@@ -71,9 +71,9 @@ namespace CubbyFlow
 	}
 
 	template <typename T, typename E, typename Op>
-	size_t VectorScalarBinaryOp<T, E, Op>::Size() const
+	size_t VectorScalarBinaryOp<T, E, Op>::size() const
 	{
-		return m_u.Size();
+		return m_u.size();
 	}
 
 	template <typename T, typename E, typename Op>

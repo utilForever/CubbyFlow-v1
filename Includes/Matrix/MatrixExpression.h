@@ -28,7 +28,7 @@ namespace CubbyFlow
 	{
 	public:
 		//! Size of the matrix.
-		Size2 Size() const;
+		Size2 size() const;
 
 		//! Number of rows.
 		size_t Rows() const;
@@ -55,7 +55,7 @@ namespace CubbyFlow
 		MatrixConstant(size_t m, size_t n, const T& c);
 
 		//! Size of the matrix.
-		Size2 Size() const;
+		Size2 size() const;
 
 		//! Number of rows.
 		size_t Rows() const;
@@ -87,7 +87,7 @@ namespace CubbyFlow
 		MatrixIdentity(size_t m);
 
 		//! Size of the matrix.
-		Size2 Size() const;
+		Size2 size() const;
 
 		//! Number of rows.
 		size_t Rows() const;
@@ -121,7 +121,7 @@ namespace CubbyFlow
 		MatrixUnaryOp(const E& u);
 
 		//! Size of the matrix.
-		Size2 Size() const;
+		Size2 size() const;
 
 		//! Number of rows.
 		size_t Rows() const;
@@ -154,7 +154,7 @@ namespace CubbyFlow
 		MatrixDiagonal(const E& u, bool isDiag);
 
 		//! Size of the matrix.
-		Size2 Size() const;
+		Size2 size() const;
 
 		//! Number of rows.
 		size_t Rows() const;
@@ -188,7 +188,7 @@ namespace CubbyFlow
 		MatrixTriangular(const E& u, bool isUpper, bool isStrict);
 
 		//! Size of the matrix.
-		Size2 Size() const;
+		Size2 size() const;
 
 		//! Number of rows.
 		size_t Rows() const;
@@ -230,7 +230,7 @@ namespace CubbyFlow
 		MatrixBinaryOp(const E1& u, const E2& v);
 
 		//! Size of the matrix.
-		Size2 Size() const;
+		Size2 size() const;
 
 		//! Number of rows.
 		size_t Rows() const;
@@ -265,7 +265,7 @@ namespace CubbyFlow
 		MatrixScalarBinaryOp(const E& u, const T& v);
 
 		//! Size of the matrix.
-		Size2 Size() const;
+		Size2 size() const;
 
 		//! Number of rows.
 		size_t Rows() const;
@@ -299,7 +299,7 @@ namespace CubbyFlow
 		MatrixVectorMul(const ME& m, const VE& v);
 
 		//! Size of the vector.
-		size_t Size() const;
+		size_t size() const;
 
 		//! Returns vector element at i.
 		T operator[](size_t i) const;
@@ -327,7 +327,7 @@ namespace CubbyFlow
 		MatrixMul(const E1& u, const E2& v);
 
 		//! Size of the matrix.
-		Size2 Size() const;
+		Size2 size() const;
 
 		//! Number of rows.
 		size_t Rows() const;

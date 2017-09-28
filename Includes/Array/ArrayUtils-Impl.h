@@ -79,10 +79,10 @@ namespace CubbyFlow
 	template <typename T>
 	void ExtrapolateToRegion(const ConstArrayAccessor2<T>& input, const ConstArrayAccessor2<char>& valid, unsigned int numberOfIterations, ArrayAccessor2<T> output)
 	{
-		const Size2 size = input.Size();
+		const Size2 size = input.size();
 
-		assert(size == valid.Size());
-		assert(size == output.Size());
+		assert(size == valid.size());
+		assert(size == output.size());
 
 		Array2<char> valid0(size);
 		Array2<char> valid1(size);
@@ -145,10 +145,10 @@ namespace CubbyFlow
 	template <typename T>
 	void ExtrapolateToRegion(const ConstArrayAccessor3<T>& input, const ConstArrayAccessor3<char>& valid, unsigned int numberOfIterations, ArrayAccessor3<T> output)
 	{
-		const Size3 size = input.Size();
+		const Size3 size = input.size();
 
-		assert(size == valid.Size());
-		assert(size == output.Size());
+		assert(size == valid.size());
+		assert(size == output.size());
 
 		Array3<char> valid0(size);
 		Array3<char> valid1(size);
@@ -222,7 +222,7 @@ namespace CubbyFlow
 	template <typename ArrayType>
 	void ConvertToCSV(const ArrayType& data, std::ostream* stream)
 	{
-		Size2 size = data.Size();
+		Size2 size = data.size();
 
 		for (size_t j = 0; j < size.y; ++j)
 		{

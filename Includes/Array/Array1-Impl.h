@@ -88,31 +88,31 @@ namespace CubbyFlow
 	template <typename T>
 	T& Array<T, 1>::At(size_t i)
 	{
-		assert(i < Size());
+		assert(i < size());
 		return m_data[i];
 	}
 
 	template <typename T>
 	const T& Array<T, 1>::At(size_t i) const
 	{
-		assert(i < Size());
+		assert(i < size());
 		return m_data[i];
 	}
 
 	template <typename T>
-	size_t Array<T, 1>::Size() const
+	size_t Array<T, 1>::size() const
 	{
 		return m_data.size();
 	}
 
 	template <typename T>
-	T* Array<T, 1>::Data()
+	T* Array<T, 1>::data()
 	{
 		return m_data.data();
 	}
 
 	template <typename T>
-	const T* Array<T, 1>::Data() const
+	const T* Array<T, 1>::data() const
 	{
 		return m_data.data();
 	}
@@ -144,13 +144,13 @@ namespace CubbyFlow
 	template <typename T>
 	ArrayAccessor1<T> Array<T, 1>::Accessor()
 	{
-		return ArrayAccessor1<T>(Size(), Data());
+		return ArrayAccessor1<T>(size(), data());
 	}
 
 	template <typename T>
 	ConstArrayAccessor1<T> Array<T, 1>::ConstAccessor() const
 	{
-		return ConstArrayAccessor1<T>(Size(), Data());
+		return ConstArrayAccessor1<T>(size(), data());
 	}
 
 	template <typename T>

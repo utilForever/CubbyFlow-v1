@@ -133,7 +133,7 @@ namespace CubbyFlow
 			});
 		}
 
-		newVelocities->Resize(newPositions->Size());
+		newVelocities->Resize(newPositions->size());
 		newVelocities->Set(m_initialVel);
 	}
 

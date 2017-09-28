@@ -23,7 +23,7 @@ namespace CubbyFlow
 		size_t i, size_t j)
 	{
 		const T center = data(i, j);
-		const Size2 ds = data.Size();
+		const Size2 ds = data.size();
 
 		assert(i < ds.x && j < ds.y);
 

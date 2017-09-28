@@ -38,8 +38,8 @@ namespace CubbyFlow
 		auto vel = GetGridSystemData()->GetVelocity();
 		auto u = GetGridSystemData()->GetVelocity()->GetUConstAccessor();
 		auto v = GetGridSystemData()->GetVelocity()->GetVConstAccessor();
-		m_uDelta.Resize(u.Size());
-		m_vDelta.Resize(v.Size());
+		m_uDelta.Resize(u.size());
+		m_vDelta.Resize(v.size());
 
 		vel->ParallelForEachUIndex([&](size_t i, size_t j)
 		{

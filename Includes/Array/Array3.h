@@ -179,7 +179,7 @@ namespace CubbyFlow
 		const T& At(size_t i, size_t j, size_t k) const;
 
 		//! Returns the size of the array.
-		Size3 Size() const;
+		Size3 size() const;
 
 		//! Returns the width of the array.
 		size_t Width() const;
@@ -191,7 +191,7 @@ namespace CubbyFlow
 		size_t Depth() const;
 
 		//! Returns the raw pointer to the array data.
-		T* Data();
+		T* data();
 
 		//! Returns the begin iterator of the array.
 		Iterator begin();
@@ -206,7 +206,7 @@ namespace CubbyFlow
 		ConstIterator end() const;
 
 		//! Returns the const raw pointer to the array data.
-		const T* const Data() const;
+		const T* const data() const;
 
 		//! Returns the array accessor.
 		ArrayAccessor3<T> Accessor();

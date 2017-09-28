@@ -175,18 +175,18 @@ namespace CubbyFlow
 		const ConstArrayAccessor1<Vector3D>& newVelocities,
 		const ConstArrayAccessor1<Vector3D>& newForces)
 	{
-		if (newVelocities.Size() > 0 && newVelocities.Size() != newPositions.Size())
+		if (newVelocities.size() > 0 && newVelocities.size() != newPositions.size())
 		{
-			throw std::invalid_argument("newVelocities.Size() > 0 && newVelocities.Size() != newPositions.Size()");
+			throw std::invalid_argument("newVelocities.size() > 0 && newVelocities.size() != newPositions.size()");
 		}
 
-		if (newForces.Size() > 0 && newForces.Size() != newPositions.Size())
+		if (newForces.size() > 0 && newForces.size() != newPositions.size())
 		{
-			throw std::invalid_argument("newForces.Size() > 0 && newForces.Size() != newPositions.Size()");
+			throw std::invalid_argument("newForces.size() > 0 && newForces.size() != newPositions.size()");
 		}
 
 		size_t oldNumberOfParticles = NumberOfParticles();
-		size_t newNumberOfParticles = oldNumberOfParticles + newPositions.Size();
+		size_t newNumberOfParticles = oldNumberOfParticles + newPositions.size();
 
 		Resize(newNumberOfParticles);
 
@@ -194,22 +194,22 @@ namespace CubbyFlow
 		auto vel = GetVelocities();
 		auto frc = GetForces();
 
-		ParallelFor(ZERO_SIZE, newPositions.Size(),	[&](size_t i)
+		ParallelFor(ZERO_SIZE, newPositions.size(),	[&](size_t i)
 		{
 			pos[i + oldNumberOfParticles] = newPositions[i];
 		});
 
-		if (newVelocities.Size() > 0)
+		if (newVelocities.size() > 0)
 		{
-			ParallelFor(ZERO_SIZE, newPositions.Size(), [&](size_t i)
+			ParallelFor(ZERO_SIZE, newPositions.size(), [&](size_t i)
 			{
 				vel[i + oldNumberOfParticles] = newVelocities[i];
 			});
 		}
 
-		if (newForces.Size() > 0)
+		if (newForces.size() > 0)
 		{
-			ParallelFor(ZERO_SIZE, newPositions.Size(), [&](size_t i)
+			ParallelFor(ZERO_SIZE, newPositions.size(), [&](size_t i)
 			{
 				frc[i + oldNumberOfParticles] = newForces[i];
 			});
@@ -337,7 +337,7 @@ namespace CubbyFlow
 		for (const auto& scalarData : m_scalarDataList)
 		{
 			auto fbsScalarData = fbs::CreateScalarParticleData3(*builder,
-				builder->CreateVector(scalarData.Data(), scalarData.Size()));
+				builder->CreateVector(scalarData.data(), scalarData.size()));
 			scalarDataList.push_back(fbsScalarData);
 		}
 		auto fbsScalarDataList = builder->CreateVector(scalarDataList);
@@ -435,7 +435,7 @@ namespace CubbyFlow
 			}
 		}
 
-		m_numberOfParticles = m_vectorDataList[0].Size();
+		m_numberOfParticles = m_vectorDataList[0].size();
 
 		// Copy neighbor searcher
 		auto fbsNeighborSearcher = fbsParticleSystemData->neighborSearcher();

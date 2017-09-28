@@ -25,7 +25,7 @@ namespace CubbyFlow
 
 	bool FDMGaussSeidelSolver2::Solve(FDMLinearSystem2* system)
 	{
-		m_residual.Resize(system->x.Size());
+		m_residual.Resize(system->x.size());
 
 		m_lastNumberOfIterations = m_maxNumberOfIterations;
 
@@ -73,7 +73,7 @@ namespace CubbyFlow
 
 	void FDMGaussSeidelSolver2::Relax(FDMLinearSystem2* system)
 	{
-		Size2 size = system->x.Size();
+		Size2 size = system->x.size();
 		FDMMatrix2& A = system->A;
 		FDMVector2& x = system->x;
 		FDMVector2& b = system->b;

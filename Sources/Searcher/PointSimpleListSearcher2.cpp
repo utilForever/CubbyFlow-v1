@@ -25,8 +25,8 @@ namespace CubbyFlow
 
 	void PointSimpleListSearcher2::Build(const ConstArrayAccessor1<Vector2D>& points)
 	{
-		m_points.resize(points.Size());
-		std::copy(points.Data(), points.Data() + points.Size(), m_points.begin());
+		m_points.resize(points.size());
+		std::copy(points.data(), points.data() + points.size(), m_points.begin());
 	}
 
 	void PointSimpleListSearcher2::ForEachNearbyPoint(

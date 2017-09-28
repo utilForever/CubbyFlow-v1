@@ -15,7 +15,7 @@ namespace CubbyFlow
 {
 	void FDMICCGSolver3::Preconditioner::Build(const FDMMatrix3& matrix)
 	{
-		Size3 size = matrix.Size();
+		Size3 size = matrix.size();
 		A = matrix.ConstAccessor();
 
 		d.Resize(size, 0.0);
@@ -42,7 +42,7 @@ namespace CubbyFlow
 
 	void FDMICCGSolver3::Preconditioner::Solve(const FDMVector3& b, FDMVector3* x)
 	{
-		Size3 size = b.Size();
+		Size3 size = b.size();
 		ssize_t sx = static_cast<ssize_t>(size.x);
 		ssize_t sy = static_cast<ssize_t>(size.y);
 		ssize_t sz = static_cast<ssize_t>(size.z);
@@ -89,10 +89,10 @@ namespace CubbyFlow
 		FDMVector3& solution = system->x;
 		FDMVector3& rhs = system->b;
 
-		assert(matrix.Size() == rhs.Size());
-		assert(matrix.Size() == solution.Size());
+		assert(matrix.size() == rhs.size());
+		assert(matrix.size() == solution.size());
 
-		Size3 size = matrix.Size();
+		Size3 size = matrix.size();
 		m_r.Resize(size);
 		m_d.Resize(size);
 		m_q.Resize(size);

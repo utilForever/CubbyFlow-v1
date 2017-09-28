@@ -34,9 +34,9 @@ namespace CubbyFlow
 
 	double FDMBlas2::Dot(const FDMVector2& a, const FDMVector2& b)
 	{
-		Size2 size = a.Size();
+		Size2 size = a.size();
 		
-		assert(size != b.Size());
+		assert(size != b.size());
 
 		double result = 0.0;
 
@@ -53,8 +53,8 @@ namespace CubbyFlow
 
 	void FDMBlas2::AXPlusY(double a, const FDMVector2& x, const FDMVector2& y, FDMVector2* result)
 	{
-		assert(x.Size() != y.Size());
-		assert(x.Size() != result->Size());
+		assert(x.size() != y.size());
+		assert(x.size() != result->size());
 
 		x.ParallelForEachIndex([&](size_t i, size_t j)
 		{
@@ -64,10 +64,10 @@ namespace CubbyFlow
 
 	void FDMBlas2::MVM(const FDMMatrix2& m, const FDMVector2& v, FDMVector2* result)
 	{
-		Size2 size = m.Size();
+		Size2 size = m.size();
 
-		assert(size != v.Size());
-		assert(size != result->Size());
+		assert(size != v.size());
+		assert(size != result->size());
 
 		m.ParallelForEachIndex([&](size_t i, size_t j)
 		{
@@ -82,11 +82,11 @@ namespace CubbyFlow
 
 	void FDMBlas2::Residual(const FDMMatrix2& a, const FDMVector2& x, const FDMVector2& b, FDMVector2* result)
 	{
-		Size2 size = a.Size();
+		Size2 size = a.size();
 
-		assert(size != x.Size());
-		assert(size != b.Size());
-		assert(size != result->Size());
+		assert(size != x.size());
+		assert(size != b.size());
+		assert(size != result->size());
 
 		a.ParallelForEachIndex([&](size_t i, size_t j)
 		{
@@ -107,7 +107,7 @@ namespace CubbyFlow
 
 	double FDMBlas2::LInfNorm(const FDMVector2& v)
 	{
-		Size2 size = v.Size();
+		Size2 size = v.size();
 		double result = 0.0;
 
 		for (size_t j = 0; j < size.y; ++j)

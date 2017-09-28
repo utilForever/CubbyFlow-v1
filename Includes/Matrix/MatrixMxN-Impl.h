@@ -123,7 +123,7 @@ namespace CubbyFlow
 	template <typename E>
 	void MatrixMxN<T>::SetRow(size_t i, const VectorExpression<T, E>& row)
 	{
-		assert(Cols() == row.Size());
+		assert(Cols() == row.size());
 
 		const E& e = row();
 		ParallelFor(ZERO_SIZE, Cols(), [&](size_t j) { (*this)(i, j) = e[j]; });
@@ -133,7 +133,7 @@ namespace CubbyFlow
 	template <typename E>
 	void MatrixMxN<T>::SetColumn(size_t j, const VectorExpression<T, E>& col)
 	{
-		assert(Rows() == col.Size());
+		assert(Rows() == col.size());
 
 		const E& e = col();
 		ParallelFor(ZERO_SIZE, Rows(), [&](size_t i) { (*this)(i, j) = e[i]; });
@@ -143,7 +143,7 @@ namespace CubbyFlow
 	template <typename E>
 	bool MatrixMxN<T>::IsEqual(const MatrixExpression<T, E>& other) const
 	{
-		if (Size() != other.Size())
+		if (size() != other.size())
 		{
 			return false;
 		}
@@ -167,7 +167,7 @@ namespace CubbyFlow
 	template <typename E>
 	bool MatrixMxN<T>::IsSimilar(const MatrixExpression<T, E>& other, double tol) const
 	{
-		if (Size() != other.Size())
+		if (size() != other.size())
 		{
 			return false;
 		}
@@ -194,7 +194,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	Size2 MatrixMxN<T>::Size() const
+	Size2 MatrixMxN<T>::size() const
 	{
 		return Size2(Rows(), Cols());
 	}
@@ -212,15 +212,15 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	T* MatrixMxN<T>::Data()
+	T* MatrixMxN<T>::data()
 	{
-		return m_elements.Data();
+		return m_elements.data();
 	}
 
 	template <typename T>
-	const T* MatrixMxN<T>::Data() const
+	const T* MatrixMxN<T>::data() const
 	{
-		return m_elements.Data();
+		return m_elements.data();
 	}
 
 	template <typename T>

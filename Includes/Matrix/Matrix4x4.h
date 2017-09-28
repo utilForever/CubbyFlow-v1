@@ -171,10 +171,10 @@ namespace CubbyFlow
 		size_t Cols() const;
 
 		//! Returns data pointer of this matrix.
-		T* Data();
+		T* data();
 
 		//! Returns constant pointer of this matrix.
-		const T* Data() const;
+		const T* data() const;
 
 		//! Returns 3x3 part of this matrix.
 		Matrix<T, 3, 3> Matrix3() const;

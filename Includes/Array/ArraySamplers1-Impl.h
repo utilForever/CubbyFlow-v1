@@ -42,7 +42,7 @@ namespace CubbyFlow
 
 		R normalizedX = (pt - m_origin) / m_gridSpacing;
 
-		ssize_t iSize = static_cast<ssize_t>(m_accessor.Size());
+		ssize_t iSize = static_cast<ssize_t>(m_accessor.size());
 
 		GetBarycentric(normalizedX, 0, iSize, &i, &fx);
 
@@ -61,7 +61,7 @@ namespace CubbyFlow
 		
 		R normalizedX = (pt - m_origin) / m_gridSpacing;
 
-		ssize_t iSize = static_cast<ssize_t>(m_accessor.Size());
+		ssize_t iSize = static_cast<ssize_t>(m_accessor.size());
 
 		GetBarycentric(normalizedX, 0, iSize, &i, &fx);
 
@@ -104,7 +104,7 @@ namespace CubbyFlow
 
 		R normalizedX = (pt - m_origin) / m_gridSpacing;
 
-		ssize_t iSize = static_cast<ssize_t>(m_accessor.Size());
+		ssize_t iSize = static_cast<ssize_t>(m_accessor.size());
 
 		GetBarycentric(normalizedX, 0, iSize, &i, &fx);
 
@@ -123,7 +123,7 @@ namespace CubbyFlow
 
 		R normalizedX = (pt - m_origin) / m_gridSpacing;
 
-		ssize_t iSize = static_cast<ssize_t>(m_accessor.Size());
+		ssize_t iSize = static_cast<ssize_t>(m_accessor.size());
 
 		GetBarycentric(normalizedX, 0, iSize, &i, &fx);
 
@@ -171,7 +171,7 @@ namespace CubbyFlow
 
 		R normalizedX = (x - m_origin) / m_gridSpacing;
 
-		ssize_t iSize = static_cast<ssize_t>(m_accessor.Size());
+		ssize_t iSize = static_cast<ssize_t>(m_accessor.size());
 
 		GetBarycentric(normalizedX, 0, iSize, &i, &fx);
 

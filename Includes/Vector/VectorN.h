@@ -78,13 +78,13 @@ namespace CubbyFlow
 
 		// MARK: Basic getters
 		//! Returns the size of the vector.
-		size_t Size() const;
+		size_t size() const;
 
 		//! Returns the raw pointer to the vector data.
-		T* Data();
+		T* data();
 
 		//! Returns the const raw pointer to the vector data.
-		const T* Data() const;
+		const T* data() const;
 
 		//! Returns the begin iterator of the vector.
 		typename ContainerType::iterator begin();

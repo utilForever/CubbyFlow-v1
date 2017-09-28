@@ -280,12 +280,12 @@ namespace CubbyFlow
 		double maxNumberDensity = 0.0;
 		SPHStdKernel2 kernel(m_kernelRadius);
 
-		for (size_t i = 0; i < points.Size(); ++i)
+		for (size_t i = 0; i < points.size(); ++i)
 		{
 			const Vector2D& point = points[i];
 			double sum = 0.0;
 
-			for (size_t j = 0; j < points.Size(); ++j)
+			for (size_t j = 0; j < points.size(); ++j)
 			{
 				const Vector2D& neighborPoint = points[j];
 				sum += kernel(neighborPoint.DistanceTo(point));

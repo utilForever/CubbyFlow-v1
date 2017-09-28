@@ -161,7 +161,7 @@ namespace CubbyFlow
 
 		auto u = input.GetUConstAccessor();
 		auto uPos = input.GetUPosition();
-		Array2<double> sdfAtU(u.Size());
+		Array2<double> sdfAtU(u.size());
 		input.ParallelForEachUIndex([&](size_t i, size_t j)
 		{
 			sdfAtU(i, j) = sdf.Sample(uPos(i, j));
@@ -171,7 +171,7 @@ namespace CubbyFlow
 
 		auto v = input.GetVConstAccessor();
 		auto vPos = input.GetVPosition();
-		Array2<double> sdfAtV(v.Size());
+		Array2<double> sdfAtV(v.size());
 		input.ParallelForEachVIndex([&](size_t i, size_t j)
 		{
 			sdfAtV(i, j) = sdf.Sample(vPos(i, j));
@@ -187,7 +187,7 @@ namespace CubbyFlow
 		double maxDistance,
 		ArrayAccessor2<double> output)
 	{
-		const Size2 size = input.Size();
+		const Size2 size = input.size();
 
 		ArrayAccessor2<double> outputAcc = output;
 
@@ -258,7 +258,7 @@ namespace CubbyFlow
 		ConstArrayAccessor2<double> sdf,
 		const Vector2D& gridSpacing) const
 	{
-		const Size2 size = sdf.Size();
+		const Size2 size = sdf.size();
 
 		const double h = std::max(gridSpacing.x, gridSpacing.y);
 

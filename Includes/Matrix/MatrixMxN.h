@@ -136,7 +136,7 @@ namespace CubbyFlow
 		bool IsSquare() const;
 
 		//! Returns the size of this matrix.
-		Size2 Size() const;
+		Size2 size() const;
 
 		//! Returns number of rows of this matrix.
 		size_t Rows() const;
@@ -145,10 +145,10 @@ namespace CubbyFlow
 		size_t Cols() const;
 
 		//! Returns data pointer of this matrix.
-		T* Data();
+		T* data();
 
 		//! Returns constant pointer of this matrix.
-		const T* Data() const;
+		const T* data() const;
 
 		//! Returns the begin iterator of the matrix.
 		Iterator begin();

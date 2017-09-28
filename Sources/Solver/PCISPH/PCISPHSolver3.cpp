@@ -192,7 +192,7 @@ namespace CubbyFlow
 		Vector3D denom1;
 		double denom2 = 0;
 
-		for (size_t i = 0; i < points.Size(); ++i)
+		for (size_t i = 0; i < points.size(); ++i)
 		{
 			const Vector3D& point = points[i];
 			double distanceSquared = point.LengthSquared();

@@ -137,12 +137,12 @@ namespace CubbyFlow
 		auto u = flow->GetUAccessor();
 		auto v = flow->GetVAccessor();
 		auto w = flow->GetWAccessor();
-		Array3<double> uWeight(u.Size());
-		Array3<double> vWeight(v.Size());
-		Array3<double> wWeight(w.Size());
-		m_uMarkers.Resize(u.Size());
-		m_vMarkers.Resize(v.Size());
-		m_wMarkers.Resize(w.Size());
+		Array3<double> uWeight(u.size());
+		Array3<double> vWeight(v.size());
+		Array3<double> wWeight(w.size());
+		m_uMarkers.Resize(u.size());
+		m_vMarkers.Resize(v.size());
+		m_wMarkers.Resize(w.size());
 		m_uMarkers.Set(0);
 		m_vMarkers.Set(0);
 		m_wMarkers.Set(0);

@@ -83,13 +83,13 @@ namespace CubbyFlow
 		const T& At(size_t i) const;
 
 		//! Returns size of the array.
-		size_t Size() const;
+		size_t size() const;
 
 		//! Returns the raw pointer to the array data.
-		T* Data();
+		T* data();
 
 		//! Returns the const raw pointer to the array data.
-		const T* Data() const;
+		const T* data() const;
 
 		//! Returns the begin iterator of the array.
 		Iterator begin();

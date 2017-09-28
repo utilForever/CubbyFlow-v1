@@ -149,7 +149,7 @@ namespace CubbyFlow
 	{
 		// Clear forces
 		auto forces = m_particleSystemData->GetForces();
-		SetRange1(forces.Size(), Vector3D(), &forces);
+		SetRange1(forces.size(), Vector3D(), &forces);
 
 		// Update collider and emitter
 		Timer timer;

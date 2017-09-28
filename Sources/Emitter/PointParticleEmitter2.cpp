@@ -86,7 +86,7 @@ namespace CubbyFlow
 
 			particles->AddParticles(newPositions, newVelocities);
 
-			m_numberOfEmittedParticles += newPositions.Size();
+			m_numberOfEmittedParticles += newPositions.size();
 		}
 	}
 

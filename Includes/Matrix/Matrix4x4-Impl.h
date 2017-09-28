@@ -264,13 +264,13 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	T* Matrix<T, 4, 4>::Data()
+	T* Matrix<T, 4, 4>::data()
 	{
 		return m_elements.data();
 	}
 
 	template <typename T>
-	const T* Matrix<T, 4, 4>::Data() const
+	const T* Matrix<T, 4, 4>::data() const
 	{
 		return m_elements.data();
 	}

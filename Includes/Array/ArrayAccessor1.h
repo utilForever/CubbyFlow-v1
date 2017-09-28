@@ -62,10 +62,10 @@ namespace CubbyFlow
 		T* end();
 
 		//! Returns size of the array.
-		size_t Size() const;
+		size_t size() const;
 
 		//! Returns the raw pointer to the array data.
-		T* const Data() const;
+		T* const data() const;
 
 		//! Swaps the content of with \p other array accessor.
 		void Swap(ArrayAccessor& other);
@@ -207,10 +207,10 @@ namespace CubbyFlow
 		const T* const end() const;
 
 		//! Returns size of the array.
-		size_t Size() const;
+		size_t size() const;
 
 		//! Returns the raw pointer to the array data.
-		const T* const Data() const;
+		const T* const data() const;
 
 		//!
 		//! \brief Iterates the array and invoke given \p func for each element.

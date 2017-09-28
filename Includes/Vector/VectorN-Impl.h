@@ -75,7 +75,7 @@ namespace CubbyFlow
 	template <typename E>
 	void VectorN<T>::Set(const VectorExpression<T, E>& other)
 	{
-		Resize(other.Size());
+		Resize(other.size());
 
 		// Parallel evaluation of the expression
 		const E& expression = other();
@@ -101,19 +101,19 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	size_t VectorN<T>::Size() const
+	size_t VectorN<T>::size() const
 	{
 		return m_elements.size();
 	}
 
 	template <typename T>
-	T* VectorN<T>::Data()
+	T* VectorN<T>::data()
 	{
 		return m_elements.data();
 	}
 
 	template <typename T>
-	const T* VectorN<T>::Data() const
+	const T* VectorN<T>::data() const
 	{
 		return m_elements.data();
 	}
@@ -145,13 +145,13 @@ namespace CubbyFlow
 	template <typename T>
 	ArrayAccessor1<T> VectorN<T>::Accessor()
 	{
-		return ArrayAccessor1<T>(Size(), Data());
+		return ArrayAccessor1<T>(size(), data());
 	}
 
 	template <typename T>
 	ConstArrayAccessor1<T> VectorN<T>::ConstAccessor() const
 	{
-		return ConstArrayAccessor1<T>(Size(), Data());
+		return ConstArrayAccessor1<T>(size(), data());
 	}
 
 	template <typename T>
@@ -169,7 +169,7 @@ namespace CubbyFlow
 	template <typename T>
 	T VectorN<T>::Sum() const
 	{
-		return ParallelReduce(ZERO_SIZE, Size(), T(0),
+		return ParallelReduce(ZERO_SIZE, size(), T(0),
 			[&](size_t start, size_t end, T init)
 		{
 			T result = init;
@@ -186,7 +186,7 @@ namespace CubbyFlow
 	template <typename T>
 	T VectorN<T>::Avg() const
 	{
-		return Sum() / static_cast<T>(Size());
+		return Sum() / static_cast<T>(size());
 	}
 
 	template <typename T>
@@ -194,7 +194,7 @@ namespace CubbyFlow
 	{
 		const T& (*_min)(const T&, const T&) = std::min<T>;
 
-		return ParallelReduce(ZERO_SIZE, Size(), std::numeric_limits<T>::max(),
+		return ParallelReduce(ZERO_SIZE, size(), std::numeric_limits<T>::max(),
 			[&](size_t start, size_t end, T init)
 		{
 			T result = init;
@@ -213,7 +213,7 @@ namespace CubbyFlow
 	{
 		const T& (*_max)(const T&, const T&) = std::max<T>;
 
-		return ParallelReduce(ZERO_SIZE, Size(), std::numeric_limits<T>::min(),
+		return ParallelReduce(ZERO_SIZE, size(), std::numeric_limits<T>::min(),
 			[&](size_t start, size_t end, T init)
 		{
 			T result = init;
@@ -230,7 +230,7 @@ namespace CubbyFlow
 	template <typename T>
 	T VectorN<T>::AbsMin() const
 	{
-		return ParallelReduce(ZERO_SIZE, Size(), std::numeric_limits<T>::max(),
+		return ParallelReduce(ZERO_SIZE, size(), std::numeric_limits<T>::max(),
 			[&](size_t start, size_t end, T init)
 		{
 			T result = init;
@@ -247,7 +247,7 @@ namespace CubbyFlow
 	template <typename T>
 	T VectorN<T>::AbsMax() const
 	{
-		return ParallelReduce(ZERO_SIZE, Size(), T(0),
+		return ParallelReduce(ZERO_SIZE, size(), T(0),
 			[&](size_t start, size_t end, T init)
 		{
 			T result = init;
@@ -313,9 +313,9 @@ namespace CubbyFlow
 	template <typename E>
 	T VectorN<T>::DistanceSquaredTo(const E& other) const
 	{
-		assert(Size() == other.Size());
+		assert(size() == other.size());
 
-		return ParallelReduce(ZERO_SIZE, Size(), T(0),
+		return ParallelReduce(ZERO_SIZE, size(), T(0),
 			[&](size_t start, size_t end, T init)
 		{
 			T result = init;
@@ -341,12 +341,12 @@ namespace CubbyFlow
 	template <typename E>
 	bool VectorN<T>::IsEqual(const E& other) const
 	{
-		if (Size() != other.Size())
+		if (size() != other.size())
 		{
 			return false;
 		}
 
-		for (size_t i = 0; i < Size(); ++i)
+		for (size_t i = 0; i < size(); ++i)
 		{
 			if (At(i) != other[i])
 			{
@@ -361,12 +361,12 @@ namespace CubbyFlow
 	template <typename E>
 	bool VectorN<T>::IsSimilar(const E& other, T epsilon) const
 	{
-		if (Size() != other.Size())
+		if (size() != other.size())
 		{
 			return false;
 		}
 
-		for (size_t i = 0; i < Size(); ++i)
+		for (size_t i = 0; i < size(); ++i)
 		{
 			if (std::fabs(At(i) - other[i]) > epsilon)
 			{
@@ -433,9 +433,9 @@ namespace CubbyFlow
 	template <typename E>
 	T VectorN<T>::Dot(const E& v) const
 	{
-		assert(Size() == v.Size());
+		assert(size() == v.size());
 
-		return ParallelReduce(ZERO_SIZE, Size(), T(0),
+		return ParallelReduce(ZERO_SIZE, size(), T(0),
 			[&](size_t start, size_t end, T init)
 		{
 			T result = init;

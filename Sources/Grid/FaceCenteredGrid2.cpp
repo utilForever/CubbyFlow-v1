@@ -207,12 +207,12 @@ namespace CubbyFlow
 
 	Size2 FaceCenteredGrid2::GetUSize() const
 	{
-		return m_dataU.Size();
+		return m_dataU.size();
 	}
 
 	Size2 FaceCenteredGrid2::GetVSize() const
 	{
-		return m_dataV.Size();
+		return m_dataV.size();
 	}
 
 	Vector2D FaceCenteredGrid2::GetUOrigin() const

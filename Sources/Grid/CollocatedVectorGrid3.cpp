@@ -33,7 +33,7 @@ namespace CubbyFlow
 
 	double CollocatedVectorGrid3::DivergenceAtDataPoint(size_t i, size_t j, size_t k) const
 	{
-		const Size3 ds = m_data.Size();
+		const Size3 ds = m_data.size();
 		const Vector3D& gs = GridSpacing();
 
 		assert(i < ds.x && j < ds.y && k < ds.z);
@@ -53,7 +53,7 @@ namespace CubbyFlow
 
 	Vector3D CollocatedVectorGrid3::CurlAtDataPoint(size_t i, size_t j, size_t k) const
 	{
-		const Size3 ds = m_data.Size();
+		const Size3 ds = m_data.size();
 		const Vector3D& gs = GridSpacing();
 
 		assert(i < ds.x && j < ds.y && k < ds.z);

@@ -35,7 +35,7 @@ namespace CubbyFlow
 		MatrixCSRVectorMul(const MatrixCSRVectorMul&);
 
 		//! Size of the vector.
-		size_t Size() const;
+		size_t size() const;
 
 		//! Returns vector element at i.
 		T operator[](size_t i) const;
@@ -63,7 +63,7 @@ namespace CubbyFlow
 		MatrixCSRMatrixMul(const MatrixCSR<T>& m1, const ME& m2);
 
 		//! Size of the matrix.
-		Size2 Size() const;
+		Size2 size() const;
 
 		//! Number of rows.
 		size_t Rows() const;
@@ -234,7 +234,7 @@ namespace CubbyFlow
 		bool IsSquare() const;
 
 		//! Returns the size of this matrix.
-		Size2 Size() const;
+		Size2 size() const;
 
 		//! Returns number of rows of this matrix.
 		size_t Rows() const;

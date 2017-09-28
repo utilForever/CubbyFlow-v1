@@ -29,7 +29,7 @@ namespace CubbyFlow
 	{
 	public:
 		//! Size of the vector.
-		size_t Size() const;
+		size_t size() const;
 
 		//! Returns actual implementation (the subclass).
 		const E& operator()() const;
@@ -54,7 +54,7 @@ namespace CubbyFlow
 		VectorUnaryOp(const E& u);
 
 		//! Size of the matrix.
-		size_t Size() const;
+		size_t size() const;
 
 		//! Returns vector element at i.
 		T operator[](size_t i) const;
@@ -89,7 +89,7 @@ namespace CubbyFlow
 		VectorBinaryOp(const E1& u, const E2& v);
 
 		//! Size of the matrix.
-		size_t Size() const;
+		size_t size() const;
 
 		//! Returns vector element at i.
 		T operator[](size_t i) const;
@@ -118,7 +118,7 @@ namespace CubbyFlow
 		VectorScalarBinaryOp(const E& u, const T& v);
 
 		//! Size of the matrix.
-		size_t Size() const;
+		size_t size() const;
 
 		//! Returns vector element at i.
 		T operator[](size_t i) const;

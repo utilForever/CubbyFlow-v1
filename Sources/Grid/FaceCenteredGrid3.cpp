@@ -269,17 +269,17 @@ namespace CubbyFlow
 
 	Size3 FaceCenteredGrid3::GetUSize() const
 	{
-		return m_dataU.Size();
+		return m_dataU.size();
 	}
 
 	Size3 FaceCenteredGrid3::GetVSize() const
 	{
-		return m_dataV.Size();
+		return m_dataV.size();
 	}
 
 	Size3 FaceCenteredGrid3::GetWSize() const
 	{
-		return m_dataW.Size();
+		return m_dataW.size();
 	}
 
 	Vector3D FaceCenteredGrid3::GetUOrigin() const

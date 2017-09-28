@@ -23,7 +23,7 @@ namespace CubbyFlow
 		std::array<double, 2>* dx, std::array<double, 2>* dy, std::array<double, 2>* dz) const
 	{
 		double d0[3];
-		Size3 size = grid.Size();
+		Size3 size = grid.size();
 
 		const size_t im1 = (i < 1) ? 0 : i - 1;
 		const size_t ip1 = std::min(i + 1, size.x - 1);

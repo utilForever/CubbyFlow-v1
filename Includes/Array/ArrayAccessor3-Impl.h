@@ -126,7 +126,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	Size3 ArrayAccessor<T, 3>::Size() const
+	Size3 ArrayAccessor<T, 3>::size() const
 	{
 		return m_size;
 	}
@@ -150,7 +150,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	T* const ArrayAccessor<T, 3>::Data() const
+	T* const ArrayAccessor<T, 3>::data() const
 	{
 		return m_data;
 	}
@@ -298,8 +298,8 @@ namespace CubbyFlow
 	template <typename T>
 	ConstArrayAccessor<T, 3>::ConstArrayAccessor(const ArrayAccessor<T, 3>& other)
 	{
-		m_size = other.Size();
-		m_data = other.Data();
+		m_size = other.size();
+		m_data = other.data();
 	}
 
 	template <typename T>
@@ -344,7 +344,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	Size3 ConstArrayAccessor<T, 3>::Size() const
+	Size3 ConstArrayAccessor<T, 3>::size() const
 	{
 		return m_size;
 	}
@@ -368,7 +368,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	const T* const ConstArrayAccessor<T, 3>::Data() const
+	const T* const ConstArrayAccessor<T, 3>::data() const
 	{
 		return m_data;
 	}

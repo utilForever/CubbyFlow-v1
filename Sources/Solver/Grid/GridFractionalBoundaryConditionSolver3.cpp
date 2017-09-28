@@ -41,12 +41,12 @@ namespace CubbyFlow
 		auto vPos = velocity->GetVPosition();
 		auto wPos = velocity->GetWPosition();
 
-		Array3<double> uTemp(u.Size());
-		Array3<double> vTemp(v.Size());
-		Array3<double> wTemp(w.Size());
-		Array3<char> uMarker(u.Size(), 1);
-		Array3<char> vMarker(v.Size(), 1);
-		Array3<char> wMarker(w.Size(), 1);
+		Array3<double> uTemp(u.size());
+		Array3<double> vTemp(v.size());
+		Array3<double> wTemp(w.size());
+		Array3<char> uMarker(u.size(), 1);
+		Array3<char> vMarker(v.size(), 1);
+		Array3<char> wMarker(w.size(), 1);
 
 		Vector3D h = velocity->GridSpacing();
 
@@ -224,9 +224,9 @@ namespace CubbyFlow
 		// No-flux: Project velocity on the domain boundary if closed
 		if (GetClosedDomainBoundaryFlag() & DIRECTION_LEFT)
 		{
-			for (size_t k = 0; k < u.Size().z; ++k)
+			for (size_t k = 0; k < u.size().z; ++k)
 			{
-				for (size_t j = 0; j < u.Size().y; ++j)
+				for (size_t j = 0; j < u.size().y; ++j)
 				{
 					u(0, j, k) = 0;
 				}
@@ -234,19 +234,19 @@ namespace CubbyFlow
 		}
 		if (GetClosedDomainBoundaryFlag() & DIRECTION_RIGHT)
 		{
-			for (size_t k = 0; k < u.Size().z; ++k)
+			for (size_t k = 0; k < u.size().z; ++k)
 			{
-				for (size_t j = 0; j < u.Size().y; ++j)
+				for (size_t j = 0; j < u.size().y; ++j)
 				{
-					u(u.Size().x - 1, j, k) = 0;
+					u(u.size().x - 1, j, k) = 0;
 				}
 			}
 		}
 		if (GetClosedDomainBoundaryFlag() & DIRECTION_DOWN)
 		{
-			for (size_t k = 0; k < v.Size().z; ++k)
+			for (size_t k = 0; k < v.size().z; ++k)
 			{
-				for (size_t i = 0; i < v.Size().x; ++i)
+				for (size_t i = 0; i < v.size().x; ++i)
 				{
 					v(i, 0, k) = 0;
 				}
@@ -254,19 +254,19 @@ namespace CubbyFlow
 		}
 		if (GetClosedDomainBoundaryFlag() & DIRECTION_UP)
 		{
-			for (size_t k = 0; k < v.Size().z; ++k)
+			for (size_t k = 0; k < v.size().z; ++k)
 			{
-				for (size_t i = 0; i < v.Size().x; ++i)
+				for (size_t i = 0; i < v.size().x; ++i)
 				{
-					v(i, v.Size().y - 1, k) = 0;
+					v(i, v.size().y - 1, k) = 0;
 				}
 			}
 		}
 		if (GetClosedDomainBoundaryFlag() & DIRECTION_BACK)
 		{
-			for (size_t j = 0; j < w.Size().y; ++j)
+			for (size_t j = 0; j < w.size().y; ++j)
 			{
-				for (size_t i = 0; i < w.Size().x; ++i)
+				for (size_t i = 0; i < w.size().x; ++i)
 				{
 					w(i, j, 0) = 0;
 				}
@@ -274,11 +274,11 @@ namespace CubbyFlow
 		}
 		if (GetClosedDomainBoundaryFlag() & DIRECTION_FRONT)
 		{
-			for (size_t j = 0; j < w.Size().y; ++j)
+			for (size_t j = 0; j < w.size().y; ++j)
 			{
-				for (size_t i = 0; i < w.Size().x; ++i)
+				for (size_t i = 0; i < w.size().x; ++i)
 				{
-					w(i, j, w.Size().z - 1) = 0;
+					w(i, j, w.size().z - 1) = 0;
 				}
 			}
 		}

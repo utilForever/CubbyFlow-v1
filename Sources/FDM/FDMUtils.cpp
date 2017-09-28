@@ -13,7 +13,7 @@ namespace CubbyFlow
 	Vector2D Gradient2(const ConstArrayAccessor2<double>& data,
 		const Vector2D& gridSpacing, size_t i, size_t j)
 	{
-		const Size2 ds = data.Size();
+		const Size2 ds = data.size();
 
 		assert(i < ds.x && j < ds.y);
 
@@ -28,7 +28,7 @@ namespace CubbyFlow
 	std::array<Vector2D, 2> Gradient2(const ConstArrayAccessor2<Vector2D>& data,
 		const Vector2D& gridSpacing, size_t i, size_t j)
 	{
-		const Size2 ds = data.Size();
+		const Size2 ds = data.size();
 
 		assert(i < ds.x && j < ds.y);
 
@@ -47,7 +47,7 @@ namespace CubbyFlow
 	Vector3D Gradient3(const ConstArrayAccessor3<double>& data,
 		const Vector3D& gridSpacing, size_t i, size_t j, size_t k)
 	{
-		const Size3 ds = data.Size();
+		const Size3 ds = data.size();
 
 		assert(i < ds.x && j < ds.y && k < ds.z);
 
@@ -64,7 +64,7 @@ namespace CubbyFlow
 	std::array<Vector3D, 3> Gradient3(const ConstArrayAccessor3<Vector3D>& data,
 		const Vector3D& gridSpacing, size_t i, size_t j, size_t k)
 	{
-		const Size3 ds = data.Size();
+		const Size3 ds = data.size();
 
 		assert(i < ds.x && j < ds.y && k < ds.z);
 
@@ -87,7 +87,7 @@ namespace CubbyFlow
 		const Vector2D& gridSpacing, size_t i, size_t j)
 	{
 		const double center = data(i, j);
-		const Size2 ds = data.Size();
+		const Size2 ds = data.size();
 
 		assert(i < ds.x && j < ds.y);
 
@@ -119,7 +119,7 @@ namespace CubbyFlow
 		const Vector2D& gridSpacing, size_t i, size_t j)
 	{
 		const Vector2D center = data(i, j);
-		const Size2 ds = data.Size();
+		const Size2 ds = data.size();
 
 		assert(i < ds.x && j < ds.y);
 
@@ -151,7 +151,7 @@ namespace CubbyFlow
 		const Vector3D& gridSpacing, size_t i, size_t j, size_t k)
 	{
 		const double center = data(i, j, k);
-		const Size3 ds = data.Size();
+		const Size3 ds = data.size();
 
 		assert(i < ds.x && j < ds.y && k < ds.z);
 
@@ -193,7 +193,7 @@ namespace CubbyFlow
 		const Vector3D& gridSpacing, size_t i, size_t j, size_t k)
 	{
 		const Vector3D center = data(i, j, k);
-		const Size3 ds = data.Size();
+		const Size3 ds = data.size();
 
 		assert(i < ds.x && j < ds.y && k < ds.z);
 

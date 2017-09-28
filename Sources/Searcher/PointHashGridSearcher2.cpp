@@ -38,7 +38,7 @@ namespace CubbyFlow
 
 		// Allocate memory chunks
 		m_buckets.resize(m_resolution.x * m_resolution.y);
-		m_points.resize(points.Size());
+		m_points.resize(points.size());
 
 		if (m_points.size() == 0)
 		{
@@ -46,7 +46,7 @@ namespace CubbyFlow
 		}
 
 		// Put points into buckets
-		for (size_t i = 0; i < points.Size(); ++i)
+		for (size_t i = 0; i < points.size(); ++i)
 		{
 			m_points[i] = points[i];
 			size_t key = GetHashKeyFromPosition(points[i]);

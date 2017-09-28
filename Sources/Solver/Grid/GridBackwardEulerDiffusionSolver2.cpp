@@ -232,7 +232,7 @@ namespace CubbyFlow
 
 	void GridBackwardEulerDiffusionSolver2::BuildVectors(const ConstArrayAccessor2<double>& f, const Vector2D& c)
 	{
-		Size2 size = f.Size();
+		Size2 size = f.size();
 
 		m_system.x.Resize(size, 0.0);
 		m_system.b.Resize(size, 0.0);
@@ -269,7 +269,7 @@ namespace CubbyFlow
 
 	void GridBackwardEulerDiffusionSolver2::BuildVectors(const ConstArrayAccessor2<Vector2D>& f, const Vector2D& c, size_t component)
 	{
-		Size2 size = f.Size();
+		Size2 size = f.size();
 
 		m_system.x.Resize(size, 0.0);
 		m_system.b.Resize(size, 0.0);

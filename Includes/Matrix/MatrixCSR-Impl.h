@@ -19,7 +19,7 @@ namespace CubbyFlow
 	template <typename T, typename VE>
 	MatrixCSRVectorMul<T, VE>::MatrixCSRVectorMul(const MatrixCSR<T>& m, const VE& v) : m_m(m), m_v(v)
 	{
-		assert(m_m.Cols() == m_v.Size());
+		assert(m_m.Cols() == m_v.size());
 	}
 
 	template <typename T, typename VE>
@@ -29,7 +29,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T, typename VE>
-	size_t MatrixCSRVectorMul<T, VE>::Size() const
+	size_t MatrixCSRVectorMul<T, VE>::size() const
 	{
 		return m_m.Rows();
 	}
@@ -62,7 +62,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T, typename ME>
-	Size2 MatrixCSRMatrixMul<T, ME>::Size() const
+	Size2 MatrixCSRMatrixMul<T, ME>::size() const
 	{
 		return { Rows(), Cols() };
 	}
@@ -165,8 +165,8 @@ namespace CubbyFlow
 	template <typename T>
 	void MatrixCSR<T>::Compress(const std::initializer_list<std::initializer_list<T>>& list, T epsilon)
 	{
-		size_t numRows = list.Size();
-		size_t numCols = (numRows > 0) ? list.begin()->Size() : 0;
+		size_t numRows = list.size();
+		size_t numCols = (numRows > 0) ? list.begin()->size() : 0;
 
 		m_size = { numRows, numCols };
 		m_nonZeros.clear();
@@ -176,7 +176,7 @@ namespace CubbyFlow
 		auto rowIter = list.begin();
 		for (size_t i = 0; i < numRows; ++i)
 		{
-			assert(numCols == rowIter->Size());
+			assert(numCols == rowIter->size());
 			m_rowPointers.push_back(m_nonZeros.size());
 
 			auto colIter = rowIter->begin();
@@ -395,7 +395,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	Size2 MatrixCSR<T>::Size() const
+	Size2 MatrixCSR<T>::size() const
 	{
 		return m_size;
 	}
@@ -804,7 +804,7 @@ namespace CubbyFlow
 		auto ci = ret.ColumnIndicesBegin();
 		auto rp = ret.RowPointersBegin();
 
-		ParallelFor(ZERO_SIZE, m_nonZeros.Size(), [&](size_t i)
+		ParallelFor(ZERO_SIZE, m_nonZeros.size(), [&](size_t i)
 		{
 			nnz[i] = static_cast<U>(m_nonZeros[i]);
 			ci[i] = m_columnIndices[i];

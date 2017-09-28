@@ -465,8 +465,8 @@ namespace CubbyFlow
 		auto uPos = grid->GetUPosition();
 		auto vPos = grid->GetVPosition();
 
-		Array2<char> uMarker(u.Size());
-		Array2<char> vMarker(v.Size());
+		Array2<char> uMarker(u.size());
+		Array2<char> vMarker(v.size());
 
 		uMarker.ParallelForEachIndex([&](size_t i, size_t j)
 		{

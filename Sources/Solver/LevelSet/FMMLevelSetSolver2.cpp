@@ -27,7 +27,7 @@ namespace CubbyFlow
 		double sign,
 		size_t i, size_t j)
 	{
-		Size2 size = output.Size();
+		Size2 size = output.size();
 
 		bool hasX = false;
 		double phiX = std::numeric_limits<double>::max();
@@ -99,7 +99,7 @@ namespace CubbyFlow
 		const Vector2D& invGridSpacingSqr,
 		size_t i, size_t j)
 	{
-		Size2 size = output.Size();
+		Size2 size = output.size();
 
 		bool hasX = false;
 		double phiX = std::numeric_limits<double>::max();
@@ -417,7 +417,7 @@ namespace CubbyFlow
 
 		auto u = input.GetUConstAccessor();
 		auto uPos = input.GetUPosition();
-		Array2<double> sdfAtU(u.Size());
+		Array2<double> sdfAtU(u.size());
 		input.ParallelForEachUIndex([&](size_t i, size_t j)
 		{
 			sdfAtU(i, j) = sdf.Sample(uPos(i, j));
@@ -427,7 +427,7 @@ namespace CubbyFlow
 
 		auto v = input.GetVConstAccessor();
 		auto vPos = input.GetVPosition();
-		Array2<double> sdfAtV(v.Size());
+		Array2<double> sdfAtV(v.size());
 		input.ParallelForEachVIndex([&](size_t i, size_t j)
 		{
 			sdfAtV(i, j) = sdf.Sample(vPos(i, j));
@@ -443,7 +443,7 @@ namespace CubbyFlow
 		double maxDistance,
 		ArrayAccessor2<double> output)
 	{
-		Size2 size = input.Size();
+		Size2 size = input.size();
 		Vector2D invGridSpacing = 1.0 / gridSpacing;
 
 		// Build markers

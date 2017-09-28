@@ -26,10 +26,10 @@ namespace CubbyFlow
 		FDMVector2& solution = system->x;
 		FDMVector2& rhs = system->b;
 
-		assert(matrix.Size() == rhs.Size());
-		assert(matrix.Size() == solution.Size());
+		assert(matrix.size() == rhs.size());
+		assert(matrix.size() == solution.size());
 
-		Size2 size = matrix.Size();
+		Size2 size = matrix.size();
 		m_r.Resize(size);
 		m_d.Resize(size);
 		m_q.Resize(size);

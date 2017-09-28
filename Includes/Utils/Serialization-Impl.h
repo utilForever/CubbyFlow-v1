@@ -14,8 +14,8 @@ namespace CubbyFlow
 	template <typename T>
 	void Serialize(const Array1<T>& array, std::vector<uint8_t>* buffer)
 	{
-		size_t size = sizeof(T) * array.Size();
-		Serialize(reinterpret_cast<const uint8_t*>(array.Data()), size, buffer);
+		size_t size = sizeof(T) * array.size();
+		Serialize(reinterpret_cast<const uint8_t*>(array.data()), size, buffer);
 	}
 
 	template <typename T>
@@ -24,7 +24,7 @@ namespace CubbyFlow
 		std::vector<uint8_t> data;
 		Deserialize(buffer, &data);
 		array->Resize(data.size() / sizeof(T));
-		memcpy(array->Data(), data.data(), data.size());
+		memcpy(array->data(), data.data(), data.size());
 	}
 }
 

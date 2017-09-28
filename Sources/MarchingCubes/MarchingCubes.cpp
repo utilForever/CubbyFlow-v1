@@ -60,7 +60,7 @@ namespace CubbyFlow
 		ssize_t jm = j - 1;
 		ssize_t kp = k + 1;
 		ssize_t km = k - 1;
-		Size3 dim = grid.Size();
+		Size3 dim = grid.size();
 		ssize_t dimx = static_cast<ssize_t>(dim.x);
 		ssize_t dimy = static_cast<ssize_t>(dim.y);
 		ssize_t dimz = static_cast<ssize_t>(dim.z);
@@ -403,7 +403,7 @@ namespace CubbyFlow
 	{
 		MarchingCubeVertexMap vertexMap;
 
-		const Size3 dim = grid.Size();
+		const Size3 dim = grid.size();
 		const Vector3D invGridSize = 1.0 / gridSize;
 
 		auto pos = [origin, gridSize](ssize_t i, ssize_t j, ssize_t k)

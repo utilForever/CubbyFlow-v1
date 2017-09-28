@@ -52,14 +52,14 @@ namespace CubbyFlow
 	template <typename T>
 	T& ArrayAccessor<T, 1>::At(size_t i)
 	{
-		assert(i < Size());
+		assert(i < size());
 		return m_data[i];
 	}
 
 	template <typename T>
 	const T& ArrayAccessor<T, 1>::At(size_t i) const
 	{
-		assert(i < Size());
+		assert(i < size());
 		return m_data[i];
 	}
 
@@ -88,13 +88,13 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	size_t ArrayAccessor<T, 1>::Size() const
+	size_t ArrayAccessor<T, 1>::size() const
 	{
 		return m_size;
 	}
 
 	template <typename T>
-	T* const ArrayAccessor<T, 1>::Data() const
+	T* const ArrayAccessor<T, 1>::data() const
 	{
 		return m_data;
 	}
@@ -110,7 +110,7 @@ namespace CubbyFlow
 	template <typename Callback>
 	void ArrayAccessor<T, 1>::ForEach(Callback func) const
 	{
-		for (size_t i = 0; i < Size(); ++i)
+		for (size_t i = 0; i < size(); ++i)
 		{
 			func(At(i));
 		}
@@ -120,7 +120,7 @@ namespace CubbyFlow
 	template <typename Callback>
 	void ArrayAccessor<T, 1>::ForEachIndex(Callback func) const
 	{
-		for (size_t i = 0; i < Size(); ++i)
+		for (size_t i = 0; i < size(); ++i)
 		{
 			func(i);
 		}
@@ -130,7 +130,7 @@ namespace CubbyFlow
 	template <typename Callback>
 	void ArrayAccessor<T, 1>::ParallelForEach(Callback func)
 	{
-		ParallelFor(ZERO_SIZE, Size(), [&](size_t i)
+		ParallelFor(ZERO_SIZE, size(), [&](size_t i)
 		{
 			func(At(i));
 		});
@@ -140,7 +140,7 @@ namespace CubbyFlow
 	template <typename Callback>
 	void ArrayAccessor<T, 1>::ParallelForEachIndex(Callback func) const
 	{
-		ParallelFor(ZERO_SIZE, Size(), func);
+		ParallelFor(ZERO_SIZE, size(), func);
 	}
 
 	template <typename T>
@@ -185,8 +185,8 @@ namespace CubbyFlow
 	template <typename T>
 	ConstArrayAccessor<T, 1>::ConstArrayAccessor(const ArrayAccessor<T, 1>& other)
 	{
-		m_size = other.Size();
-		m_data = other.Data();
+		m_size = other.size();
+		m_data = other.data();
 	}
 
 	template <typename T>
@@ -199,7 +199,7 @@ namespace CubbyFlow
 	template <typename T>
 	const T& ConstArrayAccessor<T, 1>::At(size_t i) const
 	{
-		assert(i < Size());
+		assert(i < size());
 		return m_data[i];
 	}
 
@@ -216,13 +216,13 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	size_t ConstArrayAccessor<T, 1>::Size() const
+	size_t ConstArrayAccessor<T, 1>::size() const
 	{
 		return m_size;
 	}
 
 	template <typename T>
-	const T* const ConstArrayAccessor<T, 1>::Data() const
+	const T* const ConstArrayAccessor<T, 1>::data() const
 	{
 		return m_data;
 	}
@@ -231,7 +231,7 @@ namespace CubbyFlow
 	template <typename Callback>
 	void ConstArrayAccessor<T, 1>::ForEach(Callback func) const
 	{
-		for (size_t i = 0; i < Size(); ++i)
+		for (size_t i = 0; i < size(); ++i)
 		{
 			func(At(i));
 		}
@@ -241,7 +241,7 @@ namespace CubbyFlow
 	template <typename Callback>
 	void ConstArrayAccessor<T, 1>::ForEachIndex(Callback func) const
 	{
-		for (size_t i = 0; i < Size(); ++i)
+		for (size_t i = 0; i < size(); ++i)
 		{
 			func(i);
 		}
@@ -251,7 +251,7 @@ namespace CubbyFlow
 	template <typename Callback>
 	void ConstArrayAccessor<T, 1>::ParallelForEachIndex(Callback func) const
 	{
-		ParallelFor(ZERO_SIZE, Size(), func);
+		ParallelFor(ZERO_SIZE, size(), func);
 	}
 
 	template <typename T>

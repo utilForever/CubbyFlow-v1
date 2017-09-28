@@ -27,7 +27,7 @@ namespace CubbyFlow
 		double sign,
 		size_t i, size_t j, size_t k)
 	{
-		Size3 size = output.Size();
+		Size3 size = output.size();
 
 		bool hasX = false;
 		double phiX = std::numeric_limits<double>::max();
@@ -133,7 +133,7 @@ namespace CubbyFlow
 		const Vector3D& invGridSpacingSqr,
 		size_t i, size_t j, size_t k)
 	{
-		Size3 size = output.Size();
+		Size3 size = output.size();
 
 		bool hasX = false;
 		double phiX = std::numeric_limits<double>::max();
@@ -514,7 +514,7 @@ namespace CubbyFlow
 
 		auto u = input.GetUConstAccessor();
 		auto uPos = input.GetUPosition();
-		Array3<double> sdfAtU(u.Size());
+		Array3<double> sdfAtU(u.size());
 		input.ParallelForEachUIndex([&](size_t i, size_t j, size_t k)
 		{
 			sdfAtU(i, j, k) = sdf.Sample(uPos(i, j, k));
@@ -524,7 +524,7 @@ namespace CubbyFlow
 
 		auto v = input.GetVConstAccessor();
 		auto vPos = input.GetVPosition();
-		Array3<double> sdfAtV(v.Size());
+		Array3<double> sdfAtV(v.size());
 		input.ParallelForEachVIndex([&](size_t i, size_t j, size_t k)
 		{
 			sdfAtV(i, j, k) = sdf.Sample(vPos(i, j, k));
@@ -534,7 +534,7 @@ namespace CubbyFlow
 
 		auto w = input.GetWConstAccessor();
 		auto wPos = input.GetWPosition();
-		Array3<double> sdfAtW(w.Size());
+		Array3<double> sdfAtW(w.size());
 		input.ParallelForEachWIndex([&](size_t i, size_t j, size_t k)
 		{
 			sdfAtW(i, j, k) = sdf.Sample(wPos(i, j, k));
@@ -550,7 +550,7 @@ namespace CubbyFlow
 		double maxDistance,
 		ArrayAccessor3<double> output)
 	{
-		Size3 size = input.Size();
+		Size3 size = input.size();
 		Vector3D invGridSpacing = 1.0 / gridSpacing;
 
 		// Build markers

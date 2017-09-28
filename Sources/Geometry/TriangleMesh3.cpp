@@ -124,7 +124,7 @@ namespace CubbyFlow
 	{
 		BoundingBox3D box;
 
-		for (size_t i = 0; i < m_pointIndices.Size(); ++i)
+		for (size_t i = 0; i < m_pointIndices.size(); ++i)
 		{
 			const Point3UI& face = m_pointIndices[i];
 			box.Merge(m_points[face[0]]);
@@ -311,32 +311,32 @@ namespace CubbyFlow
 
 	size_t TriangleMesh3::NumberOfPoints() const
 	{
-		return m_points.Size();
+		return m_points.size();
 	}
 
 	size_t TriangleMesh3::NumberOfNormals() const
 	{
-		return m_normals.Size();
+		return m_normals.size();
 	}
 
 	size_t TriangleMesh3::NumberOfUVs() const
 	{
-		return m_uvs.Size();
+		return m_uvs.size();
 	}
 
 	size_t TriangleMesh3::NumberOfTriangles() const
 	{
-		return m_pointIndices.Size();
+		return m_pointIndices.size();
 	}
 
 	bool TriangleMesh3::HasNormals() const
 	{
-		return m_normals.Size() > 0;
+		return m_normals.size() > 0;
 	}
 
 	bool TriangleMesh3::HasUVs() const
 	{
-		return m_uvs.Size() > 0;
+		return m_uvs.size() > 0;
 	}
 
 	void TriangleMesh3::AddPoint(const Vector3D& pt)
@@ -365,7 +365,7 @@ namespace CubbyFlow
 	{
 		// Number of normal indices must match with number of point indices once
 		// you decided to add normal indices. Same for the uvs as well.
-		assert(m_pointIndices.Size() == m_normalIndices.Size());
+		assert(m_pointIndices.size() == m_normalIndices.size());
 
 		m_pointIndices.Append(newPointIndices);
 		m_normalIndices.Append(newNormalIndices);
@@ -378,8 +378,8 @@ namespace CubbyFlow
 	{
 		// Number of normal indices must match with number of point indices once
 		// you decided to add normal indices. Same for the uvs as well.
-		assert(m_pointIndices.Size() == m_normalIndices.Size());
-		assert(m_pointIndices.Size() == m_uvs.Size());
+		assert(m_pointIndices.size() == m_normalIndices.size());
+		assert(m_pointIndices.size() == m_uvs.size());
 		m_pointIndices.Append(newPointIndices);
 		m_normalIndices.Append(newNormalIndices);
 		m_uvIndices.Append(newUVIndices);
@@ -391,16 +391,16 @@ namespace CubbyFlow
 	{
 		// Number of normal indices must match with number of point indices once
 		// you decided to add normal indices. Same for the uvs as well.
-		assert(m_pointIndices.Size() == m_uvs.Size());
+		assert(m_pointIndices.size() == m_uvs.size());
 		m_pointIndices.Append(newPointIndices);
 		m_uvIndices.Append(newUvIndices);
 	}
 
 	void TriangleMesh3::AddTriangle(const Triangle3& tri)
 	{
-		size_t vStart = m_points.Size();
-		size_t nStart = m_normals.Size();
-		size_t tStart = m_uvs.Size();
+		size_t vStart = m_points.size();
+		size_t nStart = m_normals.size();
+		size_t tStart = m_uvs.size();
 		Point3UI newPointIndices;
 		Point3UI newNormalIndices;
 		Point3UI newUvIndices;
@@ -423,7 +423,7 @@ namespace CubbyFlow
 
 	void TriangleMesh3::SetFaceNormal()
 	{
-		m_normals.Resize(m_points.Size());
+		m_normals.Resize(m_points.size());
 		m_normalIndices.Set(m_pointIndices);
 
 		for (size_t i = 0; i < NumberOfTriangles(); ++i)
@@ -443,10 +443,10 @@ namespace CubbyFlow
 		m_normals.Clear();
 		m_normalIndices.Clear();
 
-		Array1<double> angleWeights(m_points.Size());
-		Vector3DArray pseudoNormals(m_points.Size());
+		Array1<double> angleWeights(m_points.size());
+		Vector3DArray pseudoNormals(m_points.size());
 
-		for (size_t i = 0; i < m_points.Size(); ++i)
+		for (size_t i = 0; i < m_points.size(); ++i)
 		{
 			angleWeights[i] = 0;
 			pseudoNormals[i] = Vector3D();
@@ -501,7 +501,7 @@ namespace CubbyFlow
 			pseudoNormals[idx[2]] += angle*normal;
 		}
 
-		for (size_t i = 0; i < m_points.Size(); ++i)
+		for (size_t i = 0; i < m_points.size(); ++i)
 		{
 			if (angleWeights[i] > 0)
 			{

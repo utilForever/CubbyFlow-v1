@@ -13,9 +13,9 @@ namespace CubbyFlow
 {
 	// MARK: MatrixExpression
 	template <typename T, typename E>
-	Size2 MatrixExpression<T, E>::Size() const
+	Size2 MatrixExpression<T, E>::size() const
 	{
-		return static_cast<const E&>(*this).Size();
+		return static_cast<const E&>(*this).size();
 	}
 
 	template <typename T, typename E>
@@ -43,7 +43,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	Size2 MatrixConstant<T>::Size() const 
+	Size2 MatrixConstant<T>::size() const 
 	{
 		return Size2(Rows(), Cols());
 	}
@@ -73,7 +73,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	Size2 MatrixIdentity<T>::Size() const
+	Size2 MatrixIdentity<T>::size() const
 	{
 		return Size2(m_m, m_m);
 	}
@@ -104,9 +104,9 @@ namespace CubbyFlow
 	}
 
 	template <typename T, typename E, typename Op>
-	Size2 MatrixUnaryOp<T, E, Op>::Size() const
+	Size2 MatrixUnaryOp<T, E, Op>::size() const
 	{
-		return m_u.Size();
+		return m_u.size();
 	}
 
 	template <typename T, typename E, typename Op>
@@ -134,9 +134,9 @@ namespace CubbyFlow
 	}
 
 	template <typename T, typename E>
-	Size2 MatrixDiagonal<T, E>::Size() const
+	Size2 MatrixDiagonal<T, E>::size() const
 	{
-		return m_u.Size();
+		return m_u.size();
 	}
 
 	template <typename T, typename E>
@@ -170,9 +170,9 @@ namespace CubbyFlow
 	}
 
 	template <typename T, typename E>
-	Size2 MatrixTriangular<T, E>::Size() const
+	Size2 MatrixTriangular<T, E>::size() const
 	{
-		return m_u.Size();
+		return m_u.size();
 	}
 
 	template <typename T, typename E>
@@ -207,13 +207,13 @@ namespace CubbyFlow
 	template <typename T, typename E1, typename E2, typename Op>
 	MatrixBinaryOp<T, E1, E2, Op>::MatrixBinaryOp(const E1& u, const E2& v) : m_u(u), m_v(v)
 	{
-		assert(u.Size() == v.Size());
+		assert(u.size() == v.size());
 	}
 
 	template <typename T, typename E1, typename E2, typename Op>
-	Size2 MatrixBinaryOp<T, E1, E2, Op>::Size() const
+	Size2 MatrixBinaryOp<T, E1, E2, Op>::size() const
 	{
-		return m_v.Size();
+		return m_v.size();
 	}
 
 	template <typename T, typename E1, typename E2, typename Op>
@@ -242,9 +242,9 @@ namespace CubbyFlow
 	}
 
 	template <typename T, typename E, typename Op>
-	Size2 MatrixScalarBinaryOp<T, E, Op>::Size() const
+	Size2 MatrixScalarBinaryOp<T, E, Op>::size() const
 	{
-		return m_u.Size();
+		return m_u.size();
 	}
 
 	template <typename T, typename E, typename Op>
@@ -268,13 +268,13 @@ namespace CubbyFlow
 	template <typename T, typename ME, typename VE>
 	MatrixVectorMul<T, ME, VE>::MatrixVectorMul(const ME& m, const VE& v) : m_m(m), m_v(v)
 	{
-		assert(m_m.Cols() == m_v.Size());
+		assert(m_m.Cols() == m_v.size());
 	}
 
 	template <typename T, typename ME, typename VE>
-	size_t MatrixVectorMul<T, ME, VE>::Size() const
+	size_t MatrixVectorMul<T, ME, VE>::size() const
 	{
-		return m_v.Size();
+		return m_v.size();
 	}
 
 	template <typename T, typename ME, typename VE>
@@ -299,7 +299,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T, typename E1, typename E2>
-	Size2 MatrixMul<T, E1, E2>::Size() const
+	Size2 MatrixMul<T, E1, E2>::size() const
 	{
 		return Size2(m_u.Rows(), m_v.Cols());
 	}
