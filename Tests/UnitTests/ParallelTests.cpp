@@ -4,6 +4,7 @@
 #include <Array/Array3.h>
 #include <Utils/Parallel.h>
 
+#include <numeric>
 #include <random>
 
 using namespace CubbyFlow;
@@ -134,12 +135,43 @@ TEST(Parallel, Sort)
 		idx[i] = i;
 	}
 
-	ParallelSort(idx.begin(), idx.end(), [&](size_t x, size_t y)
+	ParallelSort(idx.begin(), idx.end(), [&](size_t i1, size_t i2)
 	{
-		return c[x] < c[y];
+		return c[i1] < c[i2];
 	});
 
-	for (size_t i = 0; i + 1 < a.size(); ++i) {
+	for (size_t i = 0; i + 1 < a.size(); ++i)
+	{
 		EXPECT_LE(c[idx[i]], c[idx[i + 1]]);
 	}
+}
+
+TEST(Parallel, Reduce)
+{
+	size_t N = std::max(20u, (3 * NUM_CORES) / 2);
+	std::vector<int> a(N);
+
+	std::mt19937 rng;
+	std::uniform_int_distribution<> d(0, 10000);
+
+	for (size_t i = 0; i < N; ++i)
+	{
+		a[i] = d(rng);
+	}
+
+	int sum = ParallelReduce(ZERO_SIZE, a.size(), 0,
+		[&](size_t start, size_t end, int init)
+	{
+		int result = init;
+		
+		for (size_t i = start; i < end; ++i)
+		{
+			result += a[i];
+		}
+		
+		return result;
+	}, std::plus<int>());
+
+	int expected = std::accumulate(a.begin(), a.end(), 0);
+	EXPECT_EQ(expected, sum);
 }
