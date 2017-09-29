@@ -9,6 +9,8 @@
 #ifndef CUBBYFLOW_VECTOR_IMPL_H
 #define CUBBYFLOW_VECTOR_IMPL_H
 
+#include <Math/MathUtils.h>
+
 namespace CubbyFlow
 {
 	template <typename T, size_t N>
@@ -67,6 +69,17 @@ namespace CubbyFlow
 			m_elements[i] = static_cast<T>(inputElem);
 			++i;
 		}
+	}
+
+	template <typename T, size_t N>
+	template <typename E>
+	void Vector<T, N>::Set(const VectorExpression<T, E>& other)
+	{
+		assert(size() == other.size());
+
+		// Parallel evaluation of the expression
+		const E& expression = other();
+		ForEachIndex([&](size_t i) { m_elements[i] = expression[i]; });
 	}
 
 	template <typename T, size_t N>

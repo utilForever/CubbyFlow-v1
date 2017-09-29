@@ -64,6 +64,10 @@ namespace CubbyFlow
 		template <typename U>
 		void Set(const std::initializer_list<U>& list);
 
+		//! Sets vector with expression template.
+		template <typename E>
+		void Set(const VectorExpression<T, E>& other);
+
 		//! Set vector instance with other vector.
 		void Set(const Vector& other);
 
