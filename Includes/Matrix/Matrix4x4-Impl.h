@@ -570,13 +570,13 @@ namespace CubbyFlow
 	template <typename T>
 	T Matrix<T, 4, 4>::AbsMin() const
 	{
-		return CubbyFlow::AbsMin(m_elements);
+		return CubbyFlow::AbsMinN(data(), 16);
 	}
 
 	template <typename T>
 	T Matrix<T, 4, 4>::AbsMax() const
 	{
-		return CubbyFlow::AbsMax(m_elements);
+		return CubbyFlow::AbsMaxN(data(), 16);
 	}
 
 	template <typename T>
