@@ -17,7 +17,7 @@ TEST(ImplicitTriangleMesh3, SignedDistance)
 		.MakeShared();
 	SurfaceToImplicit3 refSurf(box);
 
-	std::ifstream objFile("Resources/cube.obj");
+	std::ifstream objFile("../../../Resources/cube.obj");
 	auto mesh = TriangleMesh3::Builder().MakeShared();
 	mesh->ReadObj(&objFile);
 
