@@ -15,6 +15,7 @@
 
 namespace CubbyFlow
 {
+	// Constructors
 	template <typename T>
 	template <typename U>
 	Vector<T, 3>::Vector(const std::initializer_list<U>& list)
