@@ -181,6 +181,7 @@
     <ClCompile Include="Vector2Tests.cpp" />
     <ClCompile Include="Vector3Tests.cpp" />
     <ClCompile Include="Vector4Tests.cpp" />
+    <ClCompile Include="VectorNTests.cpp" />
     <ClCompile Include="VectorTests.cpp" />
     <ClCompile Include="VertexCenteredScalarGrid2Tests.cpp" />
     <ClCompile Include="VertexCenteredScalarGrid3Tests.cpp" />
