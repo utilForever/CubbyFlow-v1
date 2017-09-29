@@ -279,13 +279,13 @@ namespace CubbyFlow
 	template <typename T>
 	T Vector<T, 3>::AbsMin() const
 	{
-		return CubbyFlow::AbsMin(x, y, z);
+		return CubbyFlow::AbsMin(CubbyFlow::AbsMin(x, y), z);
 	}
 
 	template <typename T>
 	T Vector<T, 3>::AbsMax() const
 	{
-		return CubbyFlow::AbsMax(x, y, z);
+		return CubbyFlow::AbsMax(CubbyFlow::AbsMax(x, y), z);
 	}
 
 	template <typename T>

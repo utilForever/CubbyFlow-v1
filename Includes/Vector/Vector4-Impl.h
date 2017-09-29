@@ -283,37 +283,37 @@ namespace CubbyFlow
 	template <typename T>
 	T Vector<T, 4>::AbsMin() const
 	{
-		return CubbyFlow::AbsMin(x, y, z, w);
+		return CubbyFlow::AbsMin(CubbyFlow::AbsMin(x, y), CubbyFlow::AbsMin(z, w));
 	}
 
 	template <typename T>
 	T Vector<T, 4>::AbsMax() const
 	{
-		return CubbyFlow::AbsMax(x, y, z, w);
+		return CubbyFlow::AbsMax(CubbyFlow::AbsMax(x, y), CubbyFlow::AbsMax(z, w));
 	}
 
 	template <typename T>
 	size_t Vector<T, 4>::DominantAxis() const
 	{
-		for (size_t i = 0; i < 4; ++i)
-		{
-			if (AbsMax() == (&x)[i])
-			{
-				return i;
-			}
-		}
+		return (std::fabs(x) > std::fabs(y))
+			? ((std::fabs(x) > std::fabs(z))
+				? ((std::fabs(x) > std::fabs(w)) ? 0 : 3)
+				: ((std::fabs(x) > std::fabs(w)) ? 2 : 3))
+			: ((std::fabs(y) > std::fabs(z))
+				? ((std::fabs(y) > std::fabs(w)) ? 1 : 3)
+				: ((std::fabs(z) > std::fabs(w)) ? 2 : 3));
 	}
 
 	template <typename T>
 	size_t Vector<T, 4>::SubdominantAxis() const
 	{
-		for (size_t i = 0; i < 4; ++i)
-		{
-			if (AbsMin() == (&x)[i])
-			{
-				return i;
-			}
-		}
+		return (std::fabs(x) < std::fabs(y))
+			? ((std::fabs(x) < std::fabs(z))
+				? ((std::fabs(x) < std::fabs(w)) ? 0 : 3)
+				: ((std::fabs(x) < std::fabs(w)) ? 2 : 3))
+			: ((std::fabs(y) < std::fabs(z))
+				? ((std::fabs(y) < std::fabs(w)) ? 1 : 3)
+				: ((std::fabs(z) < std::fabs(w)) ? 2 : 3));
 	}
 
 	template <typename T>
