@@ -39,117 +39,37 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	inline T AbsMin(T x, T y, T z)
-	{
-		if (AbsMin(x, y) == x)
-		{
-			if (AbsMin(x, z) == x)
-			{
-				return x;
-			}
-			else
-			{
-				return z;
-			}
-		}
-		else
-		{
-			if (AbsMin(y, z) == y)
-			{
-				return y;
-			}
-			else
-			{
-				return z;
-			}
-		}
-	}
-
-	template <typename T>
-	inline T AbsMin(T x, T y, T z, T w)
-	{
-		return AbsMin(AbsMin(x, y), AbsMin(z, w));
-	}
-
-	template <typename T, int N>
-	inline T AbsMin(std::array<T, N> arr)
-	{
-		T min = std::numeric_limits<T>::max();
-		T absMin = std::numeric_limits<T>::max();
-
-		for (T value : arr)
-		{
-			T absValue = (T{} < value) ? value : -value;
-
-			if (absMin > absValue)
-			{
-				min = value;
-				absMin = absValue;
-			}
-		}
-
-		return min;
-	}
-
-	template <typename T>
 	inline T AbsMax(T x, T y)
 	{
 		return (x * x > y * y) ? x : y;
 	}
 
 	template <typename T>
-	inline T AbsMax(T x, T y, T z)
+	inline T AbsMinN(const T* x, size_t n)
 	{
-		if (AbsMax(x, y) == x)
+		T m = x[0];
+
+		for (size_t i = 1; i < n; i++)
 		{
-			if (AbsMax(x, z) == x)
-			{
-				return x;
-			}
-			else
-			{
-				return z;
-			}
+			m = AbsMin(m, x[i]);
 		}
-		else
-		{
-			if (AbsMax(y, z) == y)
-			{
-				return y;
-			}
-			else
-			{
-				return z;
-			}
-		}
+
+		return m;
 	}
 
 	template <typename T>
-	inline T AbsMax(T x, T y, T z, T w)
+	inline T AbsMaxN(const T* x, size_t n)
 	{
-		return AbsMax(AbsMax(x, y), AbsMax(z, w));
-	}
+		T m = x[0];
 
-	template <typename T, int N>
-	inline T AbsMax(std::array<T, N> arr)
-	{
-		T max = std::numeric_limits<T>::min();
-		T absMax = std::numeric_limits<T>::min();
-
-		for (T value : arr)
+		for (size_t i = 1; i < n; i++)
 		{
-			T absValue = (T{} < value) ? value : -value;
-
-			if (absMax < absValue)
-			{
-				max = value;
-				absMax = absValue;
-			}
+			m = AbsMax(m, x[i]);
 		}
 
-		return max;
+		return m;
 	}
-
+	
 	template <typename T>
 	inline T Square(T x)
 	{
