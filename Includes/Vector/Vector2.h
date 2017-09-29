@@ -37,17 +37,26 @@ namespace CubbyFlow
 
 		// MARK: Constructors
 		//! Constructs default vector (0, 0).
-		Vector();
+		constexpr Vector() : x(0), y(0)
+		{
+			// Do nothing
+		}
 
-		//! Constructs vector with given parameters \p x and \p y.
-		Vector(T x, T y);
+		//! Constructs vector with given parameters \p _x and \p _y.
+		constexpr Vector(T _x, T _y) : x(_x), y(_y)
+		{
+			// Do nothing
+		}
 
 		//! Constructs vector with initializer list.
 		template <typename U>
 		Vector(const std::initializer_list<U>& list);
 
 		//! Copy constructor.
-		Vector(const Vector& v);
+		constexpr Vector(const Vector& v) : x(v.x), y(v.y)
+		{
+			// Do nothing	
+		}
 
 		// MARK: Basic setters
 		//! Set both x and y components to \p s.
@@ -335,14 +344,14 @@ namespace CubbyFlow
 	// MARK: Extensions
 	//! Returns float-type zero vector.
 	template <>
-	inline Vector<float, 2> Zero<Vector<float, 2>>()
+	constexpr Vector<float, 2> Zero<Vector<float, 2>>()
 	{
 		return Vector<float, 2>(0.f, 0.f);
 	}
 
 	//! Returns double-type zero vector.
 	template <>
-	inline Vector<double, 2> Zero<Vector<double, 2>>()
+	constexpr Vector<double, 2> Zero<Vector<double, 2>>()
 	{
 		return Vector<double, 2>(0.0, 0.0);
 	}

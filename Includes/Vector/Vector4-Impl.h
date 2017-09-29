@@ -16,34 +16,6 @@
 namespace CubbyFlow
 {
 	template <typename T>
-	Vector<T, 4>::Vector() :
-		x(0), y(0), z(0), w(0)
-	{
-		// Do nothing
-	}
-
-	template <typename T>
-	Vector<T, 4>::Vector(T newX, T newY, T newZ, T newW) :
-		x(newX), y(newY), z(newZ), w(newW)
-	{
-		// Do nothing
-	}
-
-	template <typename T>
-	Vector<T, 4>::Vector(const Vector& v) :
-		x(v.x), y(v.y), z(v.z), w(v.w)
-	{
-		// Do nothing
-	}
-
-	template <typename T>
-	Vector<T, 4>::Vector(const Vector<T, 3>& pt, T newW) :
-		x(pt.x), y(pt.y), z(pt.z), w(newW)
-	{
-		// Do nothing
-	}
-
-	template <typename T>
 	template <typename U>
 	Vector<T, 4>::Vector(const std::initializer_list<U>& list)
 	{

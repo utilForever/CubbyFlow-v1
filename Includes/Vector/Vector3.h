@@ -39,20 +39,32 @@ namespace CubbyFlow
 
 		// MARK: Constructors
 		//! Constructs default vector (0, 0, 0).
-		Vector();
+		constexpr Vector() : x(0), y(0), z(0)
+		{
+			// Do nothing	
+		}
 
-		//! Constructs vector with given parameters \p x, \p y, and \p z.
-		Vector(T x, T y, T z);
+		//! Constructs vector with given parameters \p _x, \p _y, and \p _z.
+		constexpr Vector(T _x, T _y, T _z) : x(_x), y(_y), z(_z)
+		{
+			// Do nothing
+		}
 
 		//! Constructs vector with a 2-D vector and a scalar.
-		Vector(const Vector2<T>& pt, T z);
+		constexpr Vector(const Vector2<T>& v, T _z) : x(v.x), y(v.y), z(_z)
+		{
+			// Do nothing
+		}
 
 		//! Constructs vector with initializer list.
 		template <typename U>
 		Vector(const std::initializer_list<U>& list);
 
 		//! Copy constructor.
-		Vector(const Vector& v);
+		constexpr Vector(const Vector& v) : x(v.x), y(v.y), z(v.z)
+		{
+			// Do nothing
+		}
 
 		// MARK: Basic setters
 		//! Set all x, y, and z components to \p s.
@@ -343,14 +355,14 @@ namespace CubbyFlow
 	// MARK: Extensions
 	//! Returns float-type zero vector.
 	template <>
-	inline Vector3F Zero<Vector3F>()
+	constexpr Vector3F Zero<Vector3F>()
 	{
 		return Vector3F(0.f, 0.f, 0.f);
 	}
 
 	//! Returns double-type zero vector.
 	template <>
-	inline Vector3D Zero<Vector3D>()
+	constexpr Vector3D Zero<Vector3D>()
 	{
 		return Vector3D(0.0, 0.0, 0.0);
 	}
