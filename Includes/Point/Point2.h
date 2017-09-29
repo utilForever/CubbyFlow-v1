@@ -36,17 +36,26 @@ namespace CubbyFlow
 
 		// MARK: Constructors
 		//! Constructs default point (0, 0).
-		Point();
+		constexpr Point() : x(0), y(0)
+		{
+			// Do nothing
+		}
 
-		//! Constructs point with given parameters \p x and \p y.
-		Point(T x, T y);
+		//! Constructs point with given parameters \p _x and \p _y.
+		constexpr Point(T _x, T _y) : x(_x), y(_y)
+		{
+			// Do nothing
+		}
 
 		//! Constructs point with initializer list.
 		template <typename U>
 		Point(const std::initializer_list<U>& list);
 
 		//! Copy constructor.
-		Point(const Point& v);
+		constexpr Point(const Point& pt) : x(pt.x), y(pt.y)
+		{
+			// Do nothing
+		}
 
 		// MARK: Basic setters
 		//! Set both x and y components to \p s.
@@ -271,23 +280,23 @@ namespace CubbyFlow
 	template <typename T>
 	Point<T, 2> operator/(const Point<T, 2>& a, const Point<T, 2>& b);
 
-	//! Returns element-wise min vector: (min(a.x, b.x), min(a.y, b.y)).
+	//! Returns element-wise min point: (min(a.x, b.x), min(a.y, b.y)).
 	template <typename T>
 	Point<T, 2> Min(const Point<T, 2>& a, const Point<T, 2>& b);
 
-	//! Returns element-wise max vector: (max(a.x, b.x), max(a.y, b.y)).
+	//! Returns element-wise max point: (max(a.x, b.x), max(a.y, b.y)).
 	template <typename T>
 	Point<T, 2> Max(const Point<T, 2>& a, const Point<T, 2>& b);
 
-	//! Returns element-wise clamped vector.
+	//! Returns element-wise clamped point.
 	template <typename T>
 	Point<T, 2> Clamp(const Point<T, 2>& v, const Point<T, 2>& low, const Point<T, 2>& high);
 
-	//! Returns element-wise ceiled vector.
+	//! Returns element-wise ceiled point.
 	template <typename T>
 	Point<T, 2> Ceil(const Point<T, 2>& a);
 
-	//! Returns element-wise floored vector.
+	//! Returns element-wise floored point.
 	template <typename T>
 	Point<T, 2> Floor(const Point<T, 2>& a);
 

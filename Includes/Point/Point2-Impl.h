@@ -17,31 +17,10 @@ namespace CubbyFlow
 {
 	// Constructors
 	template <typename T>
-	Point<T, 2>::Point() :
-		x(0), y(0)
-	{
-		// Do nothing
-	}
-
-	template <typename T>
-	Point<T, 2>::Point(T newX, T newY) :
-		x(newX), y(newY)
-	{
-		// Do nothing
-	}
-
-	template <typename T>
 	template <typename U>
 	Point<T, 2>::Point(const std::initializer_list<U>& list)
 	{
 		Set(list);
-	}
-
-	template <typename T>
-	Point<T, 2>::Point(const Point& v) :
-		x(v.x), y(v.y)
-	{
-		// Do nothing
 	}
 
 	// Basic setters
