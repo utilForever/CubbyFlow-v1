@@ -798,7 +798,7 @@ namespace CubbyFlow
 	MatrixCSR<U> MatrixCSR<T>::CastTo() const
 	{
 		MatrixCSR<U> ret;
-		ret.reserve(Rows(), Cols(), NumberOfNonZeros());
+		ret.Reserve(Rows(), Cols(), NumberOfNonZeros());
 
 		auto nnz = ret.NonZeroBegin();
 		auto ci = ret.ColumnIndicesBegin();
