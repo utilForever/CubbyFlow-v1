@@ -350,6 +350,9 @@
     <ClCompile Include="VectorNTests.cpp">
       <Filter>Vector</Filter>
     </ClCompile>
+    <ClCompile Include="MatrixCSRTests.cpp">
+      <Filter>Matrix</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
