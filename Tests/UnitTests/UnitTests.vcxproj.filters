@@ -356,6 +356,9 @@
     <ClCompile Include="MatrixMxNTests.cpp">
       <Filter>Matrix</Filter>
     </ClCompile>
+    <ClCompile Include="MultiGridTests.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
