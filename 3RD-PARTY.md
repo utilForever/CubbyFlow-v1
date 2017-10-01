@@ -483,3 +483,8 @@ hereby grant the following license: a non-exclusive, royalty-free perpetual
 license to install, use, modify, prepare derivative works, incorporate into
 other computer software, distribute, and sublicense such enhancements or
 derivative works thereof, in binary and source code form.
+
+---
+
+CubbyFlow uses portion of Fluid3D by Christopher Batty.
+Original code from: https://github.com/christopherbatty/Fluid3D
