@@ -16,7 +16,6 @@
 
 #include <LevelSet/LevelSetUtils.h>
 #include <Solver/FDM/FDMICCGSolver3.h>
-#include <Solver/Grid/GridBlockedBoundaryConditionSolver3.h>
 #include <Solver/Grid/GridFractionalBoundaryConditionSolver3.h>
 #include <Solver/Grid/GridFractionalSinglePhasePressureSolver3.h>
 
@@ -58,7 +57,7 @@ namespace CubbyFlow
 
 	GridBoundaryConditionSolver3Ptr GridFractionalSinglePhasePressureSolver3::SuggestedBoundaryConditionSolver() const
 	{
-		return std::make_shared<GridBlockedBoundaryConditionSolver3>();
+		return std::make_shared<GridFractionalBoundaryConditionSolver3>();
 	}
 
 	void GridFractionalSinglePhasePressureSolver3::SetLinearSystemSolver(const FDMLinearSystemSolver3Ptr& solver)
@@ -102,9 +101,11 @@ namespace CubbyFlow
 		m_uWeights.ParallelForEachIndex([&](size_t i, size_t j, size_t k)
 		{
 			Vector3D pt = uPos(i, j, k);
-			double phi0 = boundarySDF.Sample(pt - Vector3D(0.5 * h.x, 0.0, 0.0));
-			double phi1 = boundarySDF.Sample(pt + Vector3D(0.5 * h.x, 0.0, 0.0));
-			double frac = FractionInsideSDF(phi0, phi1);
+			double phi0 = boundarySDF.Sample(pt + Vector3D(0.0, -0.5 * h.y, -0.5 * h.z));
+			double phi1 = boundarySDF.Sample(pt + Vector3D(0.0, 0.5 * h.y, -0.5 * h.z));
+			double phi2 = boundarySDF.Sample(pt + Vector3D(0.0, -0.5 * h.y, 0.5 * h.z));
+			double phi3 = boundarySDF.Sample(pt + Vector3D(0.0, 0.5 * h.y, 0.5 * h.z));
+			double frac = FractionInside(phi0, phi1, phi2, phi3);
 			double weight = std::clamp(1.0 - frac, 0.0, 1.0);
 
 			// Clamp non-zero weight to MIN_WEIGHT. Having nearly-zero element
@@ -120,9 +121,11 @@ namespace CubbyFlow
 		m_vWeights.ParallelForEachIndex([&](size_t i, size_t j, size_t k)
 		{
 			Vector3D pt = vPos(i, j, k);
-			double phi0 = boundarySDF.Sample(pt - Vector3D(0.0, 0.5 * h.y, 0.0));
-			double phi1 = boundarySDF.Sample(pt + Vector3D(0.0, 0.5 * h.y, 0.0));
-			double frac = FractionInsideSDF(phi0, phi1);
+			double phi0 = boundarySDF.Sample(pt + Vector3D(-0.5 * h.x, 0.0, -0.5 * h.z));
+			double phi1 = boundarySDF.Sample(pt + Vector3D(-0.5 * h.x, 0.0, 0.5 * h.z));
+			double phi2 = boundarySDF.Sample(pt + Vector3D(0.5 * h.x, 0.0, -0.5 * h.z));
+			double phi3 = boundarySDF.Sample(pt + Vector3D(0.5 * h.x, 0.0, 0.5 * h.z));
+			double frac = FractionInside(phi0, phi1, phi2, phi3);
 			double weight = std::clamp(1.0 - frac, 0.0, 1.0);
 
 			// Clamp non-zero weight to MIN_WEIGHT. Having nearly-zero element
@@ -138,9 +141,11 @@ namespace CubbyFlow
 		m_wWeights.ParallelForEachIndex([&](size_t i, size_t j, size_t k)
 		{
 			Vector3D pt = wPos(i, j, k);
-			double phi0 = boundarySDF.Sample(pt - Vector3D(0.0, 0.0, 0.5 * h.z));
-			double phi1 = boundarySDF.Sample(pt + Vector3D(0.0, 0.0, 0.5 * h.z));
-			double frac = FractionInsideSDF(phi0, phi1);
+			double phi0 = boundarySDF.Sample(pt + Vector3D(-0.5 * h.x, -0.5 * h.y, 0.0));
+			double phi1 = boundarySDF.Sample(pt + Vector3D(-0.5 * h.x, 0.5 * h.y, 0.0));
+			double phi2 = boundarySDF.Sample(pt + Vector3D(0.5 * h.x, -0.5 * h.y, 0.0));
+			double phi3 = boundarySDF.Sample(pt + Vector3D(0.5 * h.x, 0.5 * h.y, 0.0));
+			double frac = FractionInside(phi0, phi1, phi2, phi3);
 			double weight = std::clamp(1.0 - frac, 0.0, 1.0);
 
 			// Clamp non-zero weight to MIN_WEIGHT. Having nearly-zero element
