@@ -111,6 +111,7 @@
     <ClCompile Include="GridBoundaryConditionSolverTests.cpp" />
     <ClCompile Include="GridDiffusionSolverTests.cpp" />
     <ClCompile Include="GridFluidSolverTests.cpp" />
+    <ClCompile Include="GridSmokeSolverTests.cpp" />
     <ClCompile Include="HelloFluidSimTests.cpp" />
     <ClCompile Include="ManualTests.cpp" />
     <ClCompile Include="MarchingCubesTests.cpp" />

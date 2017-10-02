@@ -28,6 +28,7 @@
     <ClCompile Include="GridFluidSolverTests.cpp" />
     <ClCompile Include="PointHashGridSearcherTests.cpp" />
     <ClCompile Include="FMMLevelSetSolverTests.cpp" />
+    <ClCompile Include="GridSmokeSolverTests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Precompiled Header">
