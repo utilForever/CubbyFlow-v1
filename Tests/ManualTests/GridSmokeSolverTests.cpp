@@ -235,7 +235,6 @@ CUBBYFLOW_BEGIN_TEST_F(GridSmokeSolver2, RisingWithColliderAndDiffusion)
 }
 CUBBYFLOW_END_TEST_F
 
-
 CUBBYFLOW_TESTS(GridSmokeSolver3);
 
 CUBBYFLOW_BEGIN_TEST_F(GridSmokeSolver3, Rising)
