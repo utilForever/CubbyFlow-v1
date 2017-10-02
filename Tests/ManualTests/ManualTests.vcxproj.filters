@@ -34,6 +34,7 @@
     <ClCompile Include="LevelSetLiquidSolver3Tests.cpp" />
     <ClCompile Include="PICSolver2Tests.cpp" />
     <ClCompile Include="PICSolver3Tests.cpp" />
+    <ClCompile Include="FLIPSolver2Tests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Precompiled Header">
