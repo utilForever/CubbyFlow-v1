@@ -129,6 +129,7 @@
     <ClCompile Include="PCISPHSolver2Tests.cpp" />
     <ClCompile Include="PCISPHSolver3Tests.cpp" />
     <ClCompile Include="PhysicsAnimationTests.cpp" />
+    <ClCompile Include="PICSolver2Tests.cpp" />
     <ClCompile Include="PointHashGridSearcherTests.cpp" />
     <ClCompile Include="SPHKernelTests.cpp" />
     <ClCompile Include="SPHSolver2Tests.cpp" />
