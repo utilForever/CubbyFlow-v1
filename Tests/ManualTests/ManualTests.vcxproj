@@ -108,6 +108,7 @@
     <ClCompile Include="ArrayUtilsTests.cpp" />
     <ClCompile Include="FieldTests.cpp" />
     <ClCompile Include="FLIPSolver2Tests.cpp" />
+    <ClCompile Include="FLIPSolver3Tests.cpp" />
     <ClCompile Include="FMMLevelSetSolverTests.cpp" />
     <ClCompile Include="GridBoundaryConditionSolverTests.cpp" />
     <ClCompile Include="GridDiffusionSolverTests.cpp" />
