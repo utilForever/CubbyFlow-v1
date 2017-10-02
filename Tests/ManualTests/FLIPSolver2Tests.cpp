@@ -1,11 +1,12 @@
 #include "pch.h"
 
 #include <ManualTests.h>
-#include "Solver/FLIP/FLIPSolver2.h"
-#include "Geometry/Box2.h"
-#include "Emitter/VolumeParticleEmitter2.h"
-#include "Geometry/Sphere2.h"
-#include "Collider/RigidBodyCollider2.h"
+
+#include <Collider/RigidBodyCollider2.h>
+#include <Emitter/VolumeParticleEmitter2.h>
+#include <Geometry/Box2.h>
+#include <Geometry/Sphere2.h>
+#include <Solver/FLIP/FLIPSolver2.h>
 
 using namespace CubbyFlow;
 
