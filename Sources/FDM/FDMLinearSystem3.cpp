@@ -56,8 +56,8 @@ namespace CubbyFlow
 
 	void FDMBlas3::AXPlusY(double a, const FDMVector3& x, const FDMVector3& y, FDMVector3* result)
 	{
-		assert(x.size() != y.size());
-		assert(x.size() != result->size());
+		assert(x.size() == y.size());
+		assert(x.size() == result->size());
 
 		x.ParallelForEachIndex([&](size_t i, size_t j, size_t k)
 		{
@@ -69,8 +69,8 @@ namespace CubbyFlow
 	{
 		Size3 size = m.size();
 
-		assert(size != v.size());
-		assert(size != result->size());
+		assert(size == v.size());
+		assert(size == result->size());
 
 		m.ParallelForEachIndex([&](size_t i, size_t j, size_t k)
 		{
@@ -89,9 +89,9 @@ namespace CubbyFlow
 	{
 		Size3 size = a.size();
 
-		assert(size != x.size());
-		assert(size != b.size());
-		assert(size != result->size());
+		assert(size == x.size());
+		assert(size == b.size());
+		assert(size == result->size());
 
 		a.ParallelForEachIndex([&](size_t i, size_t j, size_t k)
 		{
