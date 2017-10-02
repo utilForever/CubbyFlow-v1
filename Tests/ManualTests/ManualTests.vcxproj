@@ -114,6 +114,7 @@
     <ClCompile Include="GridSmokeSolverTests.cpp" />
     <ClCompile Include="HelloFluidSimTests.cpp" />
     <ClCompile Include="IterativeLevelSetSolversTests.cpp" />
+    <ClCompile Include="LevelSetLiquidSolver2Tests.cpp" />
     <ClCompile Include="ManualTests.cpp" />
     <ClCompile Include="MarchingCubesTests.cpp" />
     <ClCompile Include="ParticleSystemSolver2Tests.cpp" />
