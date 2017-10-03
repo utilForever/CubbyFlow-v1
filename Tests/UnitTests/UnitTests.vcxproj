@@ -141,6 +141,8 @@
     <ClCompile Include="PCISPHSolver2Tests.cpp" />
     <ClCompile Include="PCISPHSolver3Tests.cpp" />
     <ClCompile Include="PDETests.cpp" />
+    <ClCompile Include="PICSolver2Tests.cpp" />
+    <ClCompile Include="PICSolver3Tests.cpp" />
     <ClCompile Include="Plane2Tests.cpp" />
     <ClCompile Include="Plane3Tests.cpp" />
     <ClCompile Include="Point2Tests.cpp" />

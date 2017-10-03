@@ -365,6 +365,12 @@
     <ClCompile Include="LevelSetLiquidSolversTests.cpp">
       <Filter>Solver\LevelSet</Filter>
     </ClCompile>
+    <ClCompile Include="PICSolver2Tests.cpp">
+      <Filter>Solver\PIC</Filter>
+    </ClCompile>
+    <ClCompile Include="PICSolver3Tests.cpp">
+      <Filter>Solver\PIC</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -450,6 +456,9 @@
     </Filter>
     <Filter Include="Solver\LevelSet">
       <UniqueIdentifier>{bfd5a184-4794-487f-986f-a352ced3a3fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Solver\PIC">
+      <UniqueIdentifier>{750119f3-90e6-42f3-815b-cf3de0635603}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
