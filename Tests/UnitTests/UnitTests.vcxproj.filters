@@ -362,6 +362,9 @@
     <ClCompile Include="ParticleSystemSolversTests.cpp">
       <Filter>Solver\Particle</Filter>
     </ClCompile>
+    <ClCompile Include="LevelSetLiquidSolversTests.cpp">
+      <Filter>Solver\LevelSet</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

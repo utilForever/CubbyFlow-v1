@@ -124,6 +124,7 @@
     <ClCompile Include="ImplicitSurfaceSet2Tests.cpp" />
     <ClCompile Include="ImplicitSurfaceSet3Tests.cpp" />
     <ClCompile Include="ImplicitTriangleMesh3Tests.cpp" />
+    <ClCompile Include="LevelSetLiquidSolversTests.cpp" />
     <ClCompile Include="LevelSetSolversTests.cpp" />
     <ClCompile Include="MathUtilsTests.cpp" />
     <ClCompile Include="Matrix2x2Tests.cpp" />
