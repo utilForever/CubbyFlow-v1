@@ -371,6 +371,12 @@
     <ClCompile Include="PICSolver3Tests.cpp">
       <Filter>Solver\PIC</Filter>
     </ClCompile>
+    <ClCompile Include="FLIPSolver2Tests.cpp">
+      <Filter>Solver\FLIP</Filter>
+    </ClCompile>
+    <ClCompile Include="FLIPSolver3Tests.cpp">
+      <Filter>Solver\FLIP</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -459,6 +465,9 @@
     </Filter>
     <Filter Include="Solver\PIC">
       <UniqueIdentifier>{750119f3-90e6-42f3-815b-cf3de0635603}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Solver\FLIP">
+      <UniqueIdentifier>{c3f90257-85a9-4725-b346-68e585403eca}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

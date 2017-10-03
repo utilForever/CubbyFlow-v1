@@ -103,6 +103,8 @@
     <ClCompile Include="FDMJacobiSolver2Tests.cpp" />
     <ClCompile Include="FDMJacobiSolver3Tests.cpp" />
     <ClCompile Include="FDMUtilsTests.cpp" />
+    <ClCompile Include="FLIPSolver2Tests.cpp" />
+    <ClCompile Include="FLIPSolver3Tests.cpp" />
     <ClCompile Include="GridBackwardDiffusionSolver2Tests.cpp" />
     <ClCompile Include="GridBackwardDiffusionSolver3Tests.cpp" />
     <ClCompile Include="GridBlockedBoundaryConditionSolver2Tests.cpp" />
