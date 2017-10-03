@@ -251,9 +251,6 @@
     <ClCompile Include="SPHSolver2Tests.cpp">
       <Filter>Solver\SPH</Filter>
     </ClCompile>
-    <ClCompile Include="ParticleSystemSolverTests.cpp">
-      <Filter>Solver\Particle</Filter>
-    </ClCompile>
     <ClCompile Include="GridEmitter2Tests.cpp">
       <Filter>Emitter</Filter>
     </ClCompile>
@@ -359,6 +356,12 @@
     <ClCompile Include="MultiGridTests.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
+    <ClCompile Include="LevelSetSolversTests.cpp">
+      <Filter>Solver\LevelSet</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleSystemSolversTests.cpp">
+      <Filter>Solver\Particle</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -441,6 +444,9 @@
     </Filter>
     <Filter Include="Solver\Grid">
       <UniqueIdentifier>{cd9254c7-c427-486f-b1f7-07bacdc8e032}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Solver\LevelSet">
+      <UniqueIdentifier>{bfd5a184-4794-487f-986f-a352ced3a3fc}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

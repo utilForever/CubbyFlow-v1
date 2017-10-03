@@ -124,6 +124,7 @@
     <ClCompile Include="ImplicitSurfaceSet2Tests.cpp" />
     <ClCompile Include="ImplicitSurfaceSet3Tests.cpp" />
     <ClCompile Include="ImplicitTriangleMesh3Tests.cpp" />
+    <ClCompile Include="LevelSetSolversTests.cpp" />
     <ClCompile Include="MathUtilsTests.cpp" />
     <ClCompile Include="Matrix2x2Tests.cpp" />
     <ClCompile Include="Matrix3x3Tests.cpp" />
@@ -135,7 +136,7 @@
     <ClCompile Include="ParallelTests.cpp" />
     <ClCompile Include="ParticleSystemData2Tests.cpp" />
     <ClCompile Include="ParticleSystemData3Tests.cpp" />
-    <ClCompile Include="ParticleSystemSolverTests.cpp" />
+    <ClCompile Include="ParticleSystemSolversTests.cpp" />
     <ClCompile Include="PCISPHSolver2Tests.cpp" />
     <ClCompile Include="PCISPHSolver3Tests.cpp" />
     <ClCompile Include="PDETests.cpp" />
