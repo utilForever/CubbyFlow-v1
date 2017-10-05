@@ -58,6 +58,10 @@ namespace CubbyFlow
 		static Builder GetBuilder();
 
 	protected:
+		Array3<char> m_uMarkers;
+		Array3<char> m_vMarkers;
+		Array3<char> m_wMarkers;
+
 		//! Initializes the simulator.
 		void OnInitialize() override;
 
@@ -83,10 +87,6 @@ namespace CubbyFlow
 		size_t m_signedDistanceFieldID;
 		ParticleSystemData3Ptr m_particles;
 		ParticleEmitter3Ptr m_particleEmitter;
-
-		Array3<char> m_uMarkers;
-		Array3<char> m_vMarkers;
-		Array3<char> m_wMarkers;
 
 		void ExtrapolateVelocityToAir() const;
 

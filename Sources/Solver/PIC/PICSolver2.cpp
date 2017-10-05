@@ -169,14 +169,14 @@ namespace CubbyFlow
 			}
 		}
 
-		uWeight.ForEachIndex([&](size_t i, size_t j)
+		uWeight.ParallelForEachIndex([&](size_t i, size_t j)
 		{
 			if (uWeight(i, j) > 0.0)
 			{
 				u(i, j) /= uWeight(i, j);
 			}
 		});
-		vWeight.ForEachIndex([&](size_t i, size_t j)
+		vWeight.ParallelForEachIndex([&](size_t i, size_t j)
 		{
 			if (vWeight(i, j) > 0.0)
 			{
