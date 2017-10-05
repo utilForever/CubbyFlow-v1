@@ -188,6 +188,51 @@ CUBBYFLOW_BEGIN_TEST_F(FLIPSolver2, DamBreakingWithCollider)
 }
 CUBBYFLOW_END_TEST_F
 
+CUBBYFLOW_BEGIN_TEST_F(FLIPSolver2, DamBreakingWithColliderWithBlending)
+{
+	// Build solver
+	auto solver = FLIPSolver2::Builder()
+		.WithResolution({ 100, 100 })
+		.WithDomainSizeX(1.0)
+		.MakeShared();
+
+	solver->SetPICBlendingFactor(0.05);
+
+	// Build emitter
+	auto box = Box2::Builder()
+		.WithLowerCorner({ 0.0, 0.0 })
+		.WithUpperCorner({ 0.2, 0.8 })
+		.MakeShared();
+
+	auto emitter = VolumeParticleEmitter2::Builder()
+		.WithSurface(box)
+		.WithSpacing(0.005)
+		.WithIsOneShot(true)
+		.MakeShared();
+
+	solver->SetParticleEmitter(emitter);
+
+	// Build collider
+	auto sphere = Sphere2::Builder()
+		.WithCenter({ 0.5, 0.0 })
+		.WithRadius(0.15)
+		.MakeShared();
+
+	auto collider = RigidBodyCollider2::Builder()
+		.WithSurface(sphere)
+		.MakeShared();
+
+	solver->SetCollider(collider);
+
+	for (Frame frame; frame.index < 120; ++frame)
+	{
+		solver->Update(frame);
+
+		SaveParticleDataXY(solver->GetParticleSystemData(), frame.index);
+	}
+}
+CUBBYFLOW_END_TEST_F
+
 CUBBYFLOW_BEGIN_TEST_F(FLIPSolver2, RotatingTank)
 {
 	// Build solver

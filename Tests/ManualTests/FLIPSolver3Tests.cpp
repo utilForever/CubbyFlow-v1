@@ -155,6 +155,67 @@ CUBBYFLOW_BEGIN_TEST_F(FLIPSolver3, DamBreakingWithCollider)
 }
 CUBBYFLOW_END_TEST_F
 
+CUBBYFLOW_BEGIN_TEST_F(FLIPSolver3, WaterDropWithBlending)
+{
+	size_t resolutionX = 32;
+
+	// Build solver
+	auto solver = FLIPSolver3::Builder()
+		.WithResolution({ resolutionX, 2 * resolutionX, resolutionX })
+		.WithDomainSizeX(1.0)
+		.MakeShared();
+
+	solver->SetPICBlendingFactor(0.05);
+
+	auto grids = solver->GetGridSystemData();
+	auto particles = solver->GetParticleSystemData();
+
+	Vector3D gridSpacing = grids->GetGridSpacing();
+	double dx = gridSpacing.x;
+	BoundingBox3D domain = grids->GetBoundingBox();
+
+	// Build emitter
+	auto plane = Plane3::Builder()
+		.WithNormal({ 0, 1, 0 })
+		.WithPoint({ 0, 0.25 * domain.Height(), 0 })
+		.MakeShared();
+
+	auto sphere = Sphere3::Builder()
+		.WithCenter(domain.MidPoint())
+		.WithRadius(0.15 * domain.Width())
+		.MakeShared();
+
+	auto emitter1 = VolumeParticleEmitter3::Builder()
+		.WithSurface(plane)
+		.WithSpacing(0.5 * dx)
+		.WithMaxRegion(domain)
+		.WithIsOneShot(true)
+		.MakeShared();
+	emitter1->SetPointGenerator(std::make_shared<GridPointGenerator3>());
+
+	auto emitter2 = VolumeParticleEmitter3::Builder()
+		.WithSurface(sphere)
+		.WithSpacing(0.5 * dx)
+		.WithMaxRegion(domain)
+		.WithIsOneShot(true)
+		.MakeShared();
+	emitter2->SetPointGenerator(std::make_shared<GridPointGenerator3>());
+
+	auto emitterSet = ParticleEmitterSet3::Builder()
+		.WithEmitters({ emitter1, emitter2 })
+		.MakeShared();
+
+	solver->SetParticleEmitter(emitterSet);
+
+	for (Frame frame; frame.index < 120; ++frame)
+	{
+		solver->Update(frame);
+
+		SaveParticleDataXY(solver->GetParticleSystemData(), frame.index);
+	}
+}
+CUBBYFLOW_END_TEST_F
+
 CUBBYFLOW_BEGIN_TEST_F(FLIPSolver3, RotatingTank)
 {
 	// Build solver
