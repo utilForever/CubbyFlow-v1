@@ -40,11 +40,11 @@ namespace CubbyFlow
 
 		assert(m_gridSpacing > std::numeric_limits<R>::epsilon());
 
-		R normalizedX = (pt - m_origin) / m_gridSpacing;
+		const R normalizedX = (pt - m_origin) / m_gridSpacing;
 
-		ssize_t iSize = static_cast<ssize_t>(m_accessor.size());
+		const ssize_t iSize = static_cast<ssize_t>(m_accessor.size());
 
-		GetBarycentric(normalizedX, 0, iSize, &i, &fx);
+		GetBarycentric(normalizedX, 0, iSize - 1, &i, &fx);
 
 		i = std::min(static_cast<ssize_t>(i + fx + 0.5), iSize - 1);
 
@@ -59,11 +59,11 @@ namespace CubbyFlow
 
 		assert(m_gridSpacing > std::numeric_limits<R>::epsilon());
 		
-		R normalizedX = (pt - m_origin) / m_gridSpacing;
+		const R normalizedX = (pt - m_origin) / m_gridSpacing;
 
-		ssize_t iSize = static_cast<ssize_t>(m_accessor.size());
+		const ssize_t iSize = static_cast<ssize_t>(m_accessor.size());
 
-		GetBarycentric(normalizedX, 0, iSize, &i, &fx);
+		GetBarycentric(normalizedX, 0, iSize - 1, &i, &fx);
 
 		*index = std::min(static_cast<ssize_t>(i + fx + 0.5), iSize - 1);
 	}
@@ -102,13 +102,13 @@ namespace CubbyFlow
 
 		assert(m_gridSpacing > std::numeric_limits<R>::epsilon());
 
-		R normalizedX = (pt - m_origin) / m_gridSpacing;
+		const R normalizedX = (pt - m_origin) / m_gridSpacing;
 
-		ssize_t iSize = static_cast<ssize_t>(m_accessor.size());
+		const ssize_t iSize = static_cast<ssize_t>(m_accessor.size());
 
-		GetBarycentric(normalizedX, 0, iSize, &i, &fx);
+		GetBarycentric(normalizedX, 0, iSize - 1, &i, &fx);
 
-		ssize_t ip1 = std::min(i + 1, iSize - 1);
+		const ssize_t ip1 = std::min(i + 1, iSize - 1);
 
 		return Lerp(m_accessor[i], m_accessor[ip1], fx);
 	}
@@ -121,13 +121,13 @@ namespace CubbyFlow
 
 		assert(m_gridSpacing > std::numeric_limits<R>::epsilon());
 
-		R normalizedX = (pt - m_origin) / m_gridSpacing;
+		const R normalizedX = (pt - m_origin) / m_gridSpacing;
 
-		ssize_t iSize = static_cast<ssize_t>(m_accessor.size());
+		const ssize_t iSize = static_cast<ssize_t>(m_accessor.size());
 
-		GetBarycentric(normalizedX, 0, iSize, &i, &fx);
+		GetBarycentric(normalizedX, 0, iSize - 1, &i, &fx);
 
-		ssize_t ip1 = std::min(i + 1, iSize - 1);
+		const ssize_t ip1 = std::min(i + 1, iSize - 1);
 
 		*i0 = i;
 		*i1 = ip1;
@@ -169,15 +169,15 @@ namespace CubbyFlow
 
 		assert(m_gridSpacing > std::numeric_limits<R>::epsilon());
 
-		R normalizedX = (x - m_origin) / m_gridSpacing;
+		const R normalizedX = (x - m_origin) / m_gridSpacing;
 
-		ssize_t iSize = static_cast<ssize_t>(m_accessor.size());
+		const ssize_t iSize = static_cast<ssize_t>(m_accessor.size());
 
-		GetBarycentric(normalizedX, 0, iSize, &i, &fx);
+		GetBarycentric(normalizedX, 0, iSize - 1, &i, &fx);
 
-		ssize_t im1 = std::max(i - 1, ZERO_SSIZE);
-		ssize_t ip1 = std::min(i + 1, iSize - 1);
-		ssize_t ip2 = std::min(i + 2, iSize - 1);
+		const ssize_t im1 = std::max(i - 1, ZERO_SSIZE);
+		const ssize_t ip1 = std::min(i + 1, iSize - 1);
+		const ssize_t ip2 = std::min(i + 2, iSize - 1);
 
 		return MonotonicCatmullRom(
 			m_accessor[im1],

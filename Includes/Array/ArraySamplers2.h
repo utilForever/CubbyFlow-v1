@@ -105,11 +105,19 @@ namespace CubbyFlow
 			std::array<Point2UI, 4>* indices,
 			std::array<R, 4>* weights) const;
 
+		//! Returns the indices of points and their gradient of sampling weight for
+		//! given point.
+		void GetCoordinatesAndGradientWeights(
+			const Vector2<R>& pt,
+			std::array<Point2UI, 4>* indices,
+			std::array<Vector2<R>, 4>* weights) const;
+
 		//! Returns a function object that wraps this instance.
 		std::function<T(const Vector2<R>&)> Functor() const;
 
 	private:
 		Vector2<R> m_gridSpacing;
+		Vector2<R> m_invGridSpacing;
 		Vector2<R> m_origin;
 		ConstArrayAccessor2<T> m_accessor;
 	};
