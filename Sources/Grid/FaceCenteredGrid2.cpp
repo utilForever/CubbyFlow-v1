@@ -311,8 +311,8 @@ namespace CubbyFlow
 		Vector2D cellCenterOrigin = Origin() + 0.5 * GridSpacing();
 		Vector2D normalizedX = (x - cellCenterOrigin) / GridSpacing();
 
-		GetBarycentric(normalizedX.x, 0, static_cast<ssize_t>(Resolution().x), &i, &fx);
-		GetBarycentric(normalizedX.y, 0, static_cast<ssize_t>(Resolution().y), &j, &fy);
+		GetBarycentric(normalizedX.x, 0, static_cast<ssize_t>(Resolution().x) - 1, &i, &fx);
+		GetBarycentric(normalizedX.y, 0, static_cast<ssize_t>(Resolution().y) - 1, &j, &fy);
 
 		std::array<Point2UI, 4> indices;
 		std::array<double, 4> weights;
@@ -344,8 +344,8 @@ namespace CubbyFlow
 		Vector2D cellCenterOrigin = Origin() + 0.5 * GridSpacing();
 		Vector2D normalizedX = (x - cellCenterOrigin) / GridSpacing();
 
-		GetBarycentric(normalizedX.x, 0, static_cast<ssize_t>(Resolution().x), &i, &fx);
-		GetBarycentric(normalizedX.y, 0, static_cast<ssize_t>(Resolution().y), &j, &fy);
+		GetBarycentric(normalizedX.x, 0, static_cast<ssize_t>(Resolution().x) - 1, &i, &fx);
+		GetBarycentric(normalizedX.y, 0, static_cast<ssize_t>(Resolution().y) - 1, &j, &fy);
 
 		std::array<Point2UI, 4> indices;
 		std::array<double, 4> weights;

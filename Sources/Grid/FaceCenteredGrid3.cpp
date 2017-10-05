@@ -416,9 +416,9 @@ namespace CubbyFlow
 		Vector3D cellCenterOrigin = Origin() + 0.5 * GridSpacing();
 		Vector3D normalizedX = (x - cellCenterOrigin) / GridSpacing();
 
-		GetBarycentric(normalizedX.x, 0, static_cast<ssize_t>(res.x), &i, &fx);
-		GetBarycentric(normalizedX.y, 0, static_cast<ssize_t>(res.y), &j, &fy);
-		GetBarycentric(normalizedX.z, 0, static_cast<ssize_t>(res.z), &k, &fz);
+		GetBarycentric(normalizedX.x, 0, static_cast<ssize_t>(res.x) - 1, &i, &fx);
+		GetBarycentric(normalizedX.y, 0, static_cast<ssize_t>(res.y) - 1, &j, &fy);
+		GetBarycentric(normalizedX.z, 0, static_cast<ssize_t>(res.z) - 1, &k, &fz);
 
 		std::array<Point3UI, 8> indices;
 		std::array<double, 8> weights;
@@ -459,9 +459,9 @@ namespace CubbyFlow
 		Vector3D cellCenterOrigin = Origin() + 0.5 * GridSpacing();
 		Vector3D normalizedX = (x - cellCenterOrigin) / GridSpacing();
 
-		GetBarycentric(normalizedX.x, 0, static_cast<ssize_t>(res.x), &i, &fx);
-		GetBarycentric(normalizedX.y, 0, static_cast<ssize_t>(res.y), &j, &fy);
-		GetBarycentric(normalizedX.z, 0, static_cast<ssize_t>(res.z), &k, &fz);
+		GetBarycentric(normalizedX.x, 0, static_cast<ssize_t>(res.x) - 1, &i, &fx);
+		GetBarycentric(normalizedX.y, 0, static_cast<ssize_t>(res.y) - 1, &j, &fy);
+		GetBarycentric(normalizedX.z, 0, static_cast<ssize_t>(res.z) - 1, &k, &fz);
 
 		std::array<Point3UI, 8> indices;
 		std::array<double, 8> weights;
