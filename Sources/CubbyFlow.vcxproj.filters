@@ -933,6 +933,9 @@
     <ClInclude Include="..\Includes\Solver\APIC\APICSolver2.h">
       <Filter>Solver\APIC</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Solver\APIC\APICSolver3.h">
+      <Filter>Solver\APIC</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
