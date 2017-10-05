@@ -349,6 +349,7 @@ xcopy /y "$(SolutionDir)Includes" "$(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Size\Size3.h" />
     <ClInclude Include="..\Includes\Solver\Advection\AdvectionSolver2.h" />
     <ClInclude Include="..\Includes\Solver\Advection\AdvectionSolver3.h" />
+    <ClInclude Include="..\Includes\Solver\APIC\APICSolver2.h" />
     <ClInclude Include="..\Includes\Solver\FDM\FDMCGSolver2.h" />
     <ClInclude Include="..\Includes\Solver\FDM\FDMCGSolver3.h" />
     <ClInclude Include="..\Includes\Solver\FDM\FDMGaussSeidelSolver2.h" />

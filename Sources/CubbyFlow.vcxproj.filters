@@ -112,6 +112,9 @@
     <Filter Include="Solver\FLIP">
       <UniqueIdentifier>{7917d6d6-8b41-4094-b23b-94c01d88b46b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Solver\APIC">
+      <UniqueIdentifier>{78c9573b-abd3-413a-9dff-3d655cb5ed52}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Includes\Animation\Animation.h">
@@ -926,6 +929,9 @@
     </ClInclude>
     <ClInclude Include="..\Includes\Vector\VectorN-Impl.h">
       <Filter>Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Solver\APIC\APICSolver2.h">
+      <Filter>Solver\APIC</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
