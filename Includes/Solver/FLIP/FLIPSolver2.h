@@ -41,6 +41,21 @@ namespace CubbyFlow
 		//! Default destructor.
 		virtual ~FLIPSolver2();
 
+		//! Returns the PIC blending factor.
+		double GetPICBlendingFactor() const;
+
+		//!
+		//! \brief  Sets the PIC blending factor.
+		//!
+		//! This function sets the PIC blending factor which mixes FLIP and PIC
+		//! results when transferring velocity from grids to particles in order to
+		//! reduce the noise. The factor can be a value between 0 and 1, where 0
+		//! means no blending and 1 means full PIC. Default is 0.
+		//!
+		//! \param[in]  factor The blending factor.
+		//!
+		void SetPICBlendingFactor(double factor);
+
 		//! Returns builder fox FLIPSolver2.
 		static Builder GetBuilder();
 
@@ -52,6 +67,7 @@ namespace CubbyFlow
 		void TransferFromGridsToParticles() override;
 
 	private:
+		double m_picBlendingFactor = 0.0;
 		Array2<float> m_uDelta;
 		Array2<float> m_vDelta;
 	};

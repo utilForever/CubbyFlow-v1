@@ -30,6 +30,16 @@ namespace CubbyFlow
 		// Do nothing
 	}
 
+	double FLIPSolver3::GetPICBlendingFactor() const
+	{
+		return m_picBlendingFactor;
+	}
+
+	void FLIPSolver3::SetPICBlendingFactor(double factor)
+	{
+		m_picBlendingFactor = std::clamp(factor, 0.0, 1.0);
+	}
+
 	void FLIPSolver3::TransferFromParticlesToGrids()
 	{
 		PICSolver3::TransferFromParticlesToGrids();
@@ -105,7 +115,15 @@ namespace CubbyFlow
 		// Transfer delta to the particles
 		ParallelFor(ZERO_SIZE, numberOfParticles, [&](size_t i)
 		{
-			velocities[i] += sampler(positions[i]);
+			Vector3D flipVel = velocities[i] + sampler(positions[i]);
+
+			if (m_picBlendingFactor > 0.0) 
+			{
+				Vector3D picVel = flow->Sample(positions[i]);
+				flipVel = Lerp(flipVel, picVel, m_picBlendingFactor);
+			}
+
+			velocities[i] = flipVel;
 		});
 	}
 
