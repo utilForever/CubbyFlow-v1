@@ -1442,5 +1442,8 @@
     <ClCompile Include="Geometry\ImplicitTriangleMesh3.cpp">
       <Filter>Geometry</Filter>
     </ClCompile>
+    <ClCompile Include="Solver\APIC\APICSolver2.cpp">
+      <Filter>Solver\APIC</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
