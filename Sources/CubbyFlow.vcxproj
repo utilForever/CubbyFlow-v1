@@ -568,6 +568,7 @@ xcopy /y "$(SolutionDir)Includes" "$(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="Solver\Advection\AdvectionSolver2.cpp" />
     <ClCompile Include="Solver\Advection\AdvectionSolver3.cpp" />
     <ClCompile Include="Solver\APIC\APICSolver2.cpp" />
+    <ClCompile Include="Solver\APIC\APICSolver3.cpp" />
     <ClCompile Include="Solver\FDM\FDMCGSolver2.cpp" />
     <ClCompile Include="Solver\FDM\FDMCGSolver3.cpp" />
     <ClCompile Include="Solver\FDM\FDMGaussSeidelSolver2.cpp" />
