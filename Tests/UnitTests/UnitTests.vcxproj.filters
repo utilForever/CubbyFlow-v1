@@ -377,6 +377,9 @@
     <ClCompile Include="FLIPSolver3Tests.cpp">
       <Filter>Solver\FLIP</Filter>
     </ClCompile>
+    <ClCompile Include="APICSolver2Tests.cpp">
+      <Filter>Solver\APIC</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -468,6 +471,9 @@
     </Filter>
     <Filter Include="Solver\FLIP">
       <UniqueIdentifier>{c3f90257-85a9-4725-b346-68e585403eca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Solver\APIC">
+      <UniqueIdentifier>{9bf11397-4b67-4189-b986-af5a714d4de4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
