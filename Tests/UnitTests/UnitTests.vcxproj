@@ -69,6 +69,7 @@
   <ItemGroup>
     <ClCompile Include="AnimationTests.cpp" />
     <ClCompile Include="APICSolver2Tests.cpp" />
+    <ClCompile Include="APICSolver3Tests.cpp" />
     <ClCompile Include="Array1Tests.cpp" />
     <ClCompile Include="Array2Tests.cpp" />
     <ClCompile Include="Array3Tests.cpp" />

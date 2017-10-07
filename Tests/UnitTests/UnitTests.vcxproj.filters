@@ -380,6 +380,9 @@
     <ClCompile Include="APICSolver2Tests.cpp">
       <Filter>Solver\APIC</Filter>
     </ClCompile>
+    <ClCompile Include="APICSolver3Tests.cpp">
+      <Filter>Solver\APIC</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
