@@ -106,6 +106,7 @@
     <ClCompile Include="AdvectionSolverTests.cpp" />
     <ClCompile Include="AnimationTests.cpp" />
     <ClCompile Include="APICSolver2Tests.cpp" />
+    <ClCompile Include="APICSolver3Tests.cpp" />
     <ClCompile Include="ArrayUtilsTests.cpp" />
     <ClCompile Include="FieldTests.cpp" />
     <ClCompile Include="FLIPSolver2Tests.cpp" />
