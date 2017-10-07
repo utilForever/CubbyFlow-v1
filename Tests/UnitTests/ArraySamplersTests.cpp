@@ -54,6 +54,9 @@ TEST(LinearArraySampler1, Sample)
 
 		double s1 = sampler(1.8);
 		EXPECT_LT(std::fabs(s1 - 2.8), 1e-9);
+
+        double s2 = sampler(3.5);
+        EXPECT_NEAR(4.0, s2, 1e-9);
 	}
 
 	{
