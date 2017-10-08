@@ -17,6 +17,7 @@
 #include <Geometry/Sphere3.h>
 #include <Particle/ParticleSystemData3.h>
 #include <PointGenerator/GridPointGenerator3.h>
+#include <Solver/APIC/APICSolver3.h>
 #include <Solver/FLIP/FLIPSolver3.h>
 #include <Solver/PIC/PICSolver3.h>
 #include <Surface/Implicit/ImplicitSurfaceSet3.h>
@@ -94,7 +95,7 @@ void PrintUsage()
 		"   -l, --log: log file name (default is " APP_NAME ".log)\n"
 		"   -o, --output: output directory name "
 		"(default is " APP_NAME "_output)\n"
-		"   -e, --example: example number (between 1 and 4, default is 1)\n"
+		"   -e, --example: example number (between 1 and 5, default is 1)\n"
 		"   -m, --format: particle output format (xyz or pos. default is xyz)\n"
 		"   -h, --help: print this message\n");
 }
@@ -427,6 +428,87 @@ void RunExample4(
 	RunSimulation(rootDir, solver, numberOfFrames, format, fps);
 }
 
+// Dam-breaking example (APIC)
+void RunExample5(
+    const std::string& rootDir,
+    size_t resolutionX,
+    unsigned int numberOfFrames,
+    const std::string& format,
+    double fps)
+{
+    // Build solver
+    Size3 resolution{ 3 * resolutionX, 2 * resolutionX, (3 * resolutionX) / 2 };
+    auto solver = APICSolver3::Builder()
+        .WithResolution(resolution)
+        .WithDomainSizeX(3.0)
+        .MakeShared();
+
+    auto grids = solver->GetGridSystemData();
+    double dx = grids->GetGridSpacing().x;
+    BoundingBox3D domain = grids->GetBoundingBox();
+    double lz = domain.Depth();
+
+    // Build emitter
+    auto box1 = Box3::Builder()
+        .WithLowerCorner({ 0, 0, 0 })
+        .WithUpperCorner({ 0.5 + 0.001, 0.75 + 0.001, 0.75 * lz + 0.001 })
+        .MakeShared();
+
+    auto box2 = Box3::Builder()
+        .WithLowerCorner({ 2.5 - 0.001, 0, 0.25 * lz - 0.001 })
+        .WithUpperCorner({ 3.5 + 0.001, 0.75 + 0.001, 1.5 * lz + 0.001 })
+        .MakeShared();
+
+    auto boxSet = ImplicitSurfaceSet3::Builder()
+        .WithExplicitSurfaces({ box1, box2 })
+        .MakeShared();
+
+    auto emitter = VolumeParticleEmitter3::Builder()
+        .WithSurface(boxSet)
+        .WithMaxRegion(domain)
+        .WithSpacing(0.5 * dx)
+        .MakeShared();
+
+    emitter->SetPointGenerator(std::make_shared<GridPointGenerator3>());
+    solver->SetParticleEmitter(emitter);
+
+    // Build collider
+    auto cyl1 = Cylinder3::Builder()
+        .WithCenter({ 1, 0.375, 0.375 })
+        .WithRadius(0.1)
+        .WithHeight(0.75)
+        .MakeShared();
+
+    auto cyl2 = Cylinder3::Builder()
+        .WithCenter({ 1.5, 0.375, 0.75 })
+        .WithRadius(0.1)
+        .WithHeight(0.75)
+        .MakeShared();
+
+    auto cyl3 = Cylinder3::Builder()
+        .WithCenter({ 2, 0.375, 1.125 })
+        .WithRadius(0.1)
+        .WithHeight(0.75)
+        .MakeShared();
+
+    auto cylSet = ImplicitSurfaceSet3::Builder()
+        .WithExplicitSurfaces({ cyl1, cyl2, cyl3 })
+        .MakeShared();
+
+    auto collider = RigidBodyCollider3::Builder()
+        .WithSurface(cylSet)
+        .MakeShared();
+
+    solver->SetCollider(collider);
+
+    // Print simulation info
+    printf("Running example 5 (dam-breaking with APIC)\n");
+    PrintInfo(solver);
+
+    // Run simulation
+    RunSimulation(rootDir, solver, numberOfFrames, format, fps);
+}
+
 int main(int argc, char* argv[])
 {
 	size_t resolutionX = 50;
@@ -518,6 +600,9 @@ int main(int argc, char* argv[])
 	case 4:
 		RunExample4(outputDir, resolutionX, numberOfFrames, format, fps);
 		break;
+    case 5:
+        RunExample5(outputDir, resolutionX, numberOfFrames, format, fps);
+        break;
 	default:
 		PrintUsage();
 		exit(EXIT_FAILURE);
