@@ -11,6 +11,7 @@
 #include <Geometry/Sphere3.h>
 #include <PointGenerator/GridPointGenerator3.h>
 #include <Solver/APIC/APICSolver3.h>
+#include <Solver/Grid/GridSinglePhasePressureSolver3.h>
 #include <Solver/PIC/PICSolver3.h>
 #include <Surface/Implicit/ImplicitSurfaceSet3.h>
 
@@ -148,6 +149,98 @@ CUBBYFLOW_BEGIN_TEST_F(APICSolver3, DamBreakingWithCollider)
 
     // Run simulation
     for (Frame frame; frame.index < 200; ++frame)
+    {
+        solver->Update(frame);
+
+        SaveParticleDataXY(solver->GetParticleSystemData(), frame.index);
+    }
+}
+CUBBYFLOW_END_TEST_F
+
+CUBBYFLOW_BEGIN_TEST_F(APICSolver3, Spherical)
+{
+    // Build solver
+    auto solver = APICSolver3::Builder()
+        .WithResolution({ 30, 30, 30 })
+        .WithDomainSizeX(1.0)
+        .MakeShared();
+
+    // Build collider
+    auto sphere = Sphere3::Builder()
+        .WithCenter({ 0.5, 0.5, 0.5 })
+        .WithRadius(0.4)
+        .WithIsNormalFlipped(true)
+        .MakeShared();
+
+    auto collider = RigidBodyCollider3::Builder()
+        .WithSurface(sphere)
+        .MakeShared();
+
+    solver->SetCollider(collider);
+
+    // Manually emit particles
+    size_t resX = solver->GetGridResolution().x;
+    std::mt19937 rng;
+    std::uniform_real_distribution<> dist(0, 1);
+
+    for (int i = 0; i < 8 * resX * resX * resX; ++i)
+    {
+        Vector3D pt{ dist(rng), dist(rng), dist(rng) };
+
+        if ((pt - sphere->center).Length() < sphere->radius && pt.x > 0.5)
+        {
+            solver->GetParticleSystemData()->AddParticle(pt);
+        }
+    }
+
+    for (Frame frame(0, 0.01); frame.index < 240; ++frame)
+    {
+        solver->Update(frame);
+
+        SaveParticleDataXY(solver->GetParticleSystemData(), frame.index);
+    }
+}
+CUBBYFLOW_END_TEST_F
+
+CUBBYFLOW_BEGIN_TEST_F(APICSolver3, SphericalNonVariational)
+{
+    // Build solver
+    auto solver = APICSolver3::Builder()
+        .WithResolution({ 30, 30, 30 })
+        .WithDomainSizeX(1.0)
+        .MakeShared();
+
+    solver->SetPressureSolver(std::make_shared<GridSinglePhasePressureSolver3>());
+
+    // Build collider
+    auto sphere = Sphere3::Builder()
+        .WithCenter({ 0.5, 0.5, 0.5 })
+        .WithRadius(0.4)
+        .WithIsNormalFlipped(true)
+        .MakeShared();
+
+    auto collider = RigidBodyCollider3::Builder()
+        .WithSurface(sphere)
+        .MakeShared();
+
+    solver->SetCollider(collider);
+
+    // Manually emit particles
+    size_t resX = solver->GetGridResolution().x;
+    std::mt19937 rng;
+    std::uniform_real_distribution<> dist(0, 1);
+
+    for (int i = 0; i < 8 * resX * resX * resX; ++i)
+    {
+        Vector3D pt{ dist(rng), dist(rng), dist(rng) };
+
+        if ((pt - sphere->center).Length() < sphere->radius && pt.x > 0.5)
+        {
+            solver->GetParticleSystemData()->AddParticle(pt);
+        }
+    }
+
+    for (Frame frame(0, 0.01); frame.index < 240; ++frame)
     {
         solver->Update(frame);
 

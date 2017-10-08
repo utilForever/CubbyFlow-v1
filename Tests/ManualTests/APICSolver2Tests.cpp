@@ -272,3 +272,96 @@ CUBBYFLOW_BEGIN_TEST_F(APICSolver2, DamBreakingWithCollider)
     }
 }
 CUBBYFLOW_END_TEST_F
+
+CUBBYFLOW_BEGIN_TEST_F(APICSolver2, Circular)
+{
+    // Build solver
+    auto solver = APICSolver2::Builder()
+        .WithResolution({ 40, 40 })
+        .WithDomainSizeX(1.0)
+        .MakeShared();
+
+    // Build collider
+    auto sphere = Sphere2::Builder()
+        .WithCenter({ 0.5, 0.5 })
+        .WithRadius(0.4)
+        .WithIsNormalFlipped(true)
+        .MakeShared();
+
+    auto collider = RigidBodyCollider2::Builder()
+        .WithSurface(sphere)
+        .MakeShared();
+
+    solver->SetCollider(collider);
+
+    // Manually emit particles
+    size_t resX = solver->GetGridResolution().x;
+    std::mt19937 rng;
+    std::uniform_real_distribution<> dist(0, 1);
+    
+    for (int i = 0; i < 4 * resX * resX; ++i)
+    {
+        Vector2D pt{ dist(rng), dist(rng) };
+
+        if ((pt - sphere->center).Length() < sphere->radius && pt.x > 0.5)
+        {
+            solver->GetParticleSystemData()->AddParticle(pt);
+        }
+    }
+
+    for (Frame frame(0, 0.01); frame.index < 240; ++frame)
+    {
+        solver->Update(frame);
+
+        SaveParticleDataXY(solver->GetParticleSystemData(), frame.index);
+    }
+}
+CUBBYFLOW_END_TEST_F
+
+CUBBYFLOW_BEGIN_TEST_F(APICSolver2, CircularWithFriction)
+{
+    // Build solver
+    auto solver = APICSolver2::Builder()
+        .WithResolution({ 40, 40 })
+        .WithDomainSizeX(1.0)
+        .MakeShared();
+
+    // Build collider
+    auto sphere = Sphere2::Builder()
+        .WithCenter({ 0.5, 0.5 })
+        .WithRadius(0.4)
+        .WithIsNormalFlipped(true)
+        .MakeShared();
+
+    auto collider = RigidBodyCollider2::Builder()
+        .WithSurface(sphere)
+        .MakeShared();
+    
+    // Sticky boundary
+    collider->SetFrictionCoefficient(100.0);
+
+    solver->SetCollider(collider);
+
+    // Manually emit particles
+    size_t resX = solver->GetGridResolution().x;
+    std::mt19937 rng;
+    std::uniform_real_distribution<> dist(0, 1);
+
+    for (int i = 0; i < 4 * resX * resX; ++i)
+    {
+        Vector2D pt{ dist(rng), dist(rng) };
+
+        if ((pt - sphere->center).Length() < sphere->radius && pt.x > 0.5)
+        {
+            solver->GetParticleSystemData()->AddParticle(pt);
+        }
+    }
+
+    for (Frame frame(0, 0.01); frame.index < 240; ++frame)
+    {
+        solver->Update(frame);
+
+        SaveParticleDataXY(solver->GetParticleSystemData(), frame.index);
+    }
+}
+CUBBYFLOW_END_TEST_F
