@@ -16,6 +16,7 @@
 #include <Geometry/Plane3.h>
 #include <Geometry/Sphere3.h>
 #include <Particle/ParticleSystemData3.h>
+#include <PointGenerator/BccLatticePointGenerator.h>
 #include <PointGenerator/GridPointGenerator3.h>
 #include <Solver/APIC/APICSolver3.h>
 #include <Solver/FLIP/FLIPSolver3.h>
@@ -95,7 +96,7 @@ void PrintUsage()
 		"   -l, --log: log file name (default is " APP_NAME ".log)\n"
 		"   -o, --output: output directory name "
 		"(default is " APP_NAME "_output)\n"
-		"   -e, --example: example number (between 1 and 5, default is 1)\n"
+		"   -e, --example: example number (between 1 and 6, default is 1)\n"
 		"   -m, --format: particle output format (xyz or pos. default is xyz)\n"
 		"   -h, --help: print this message\n");
 }
@@ -509,6 +510,63 @@ void RunExample5(
     RunSimulation(rootDir, solver, numberOfFrames, format, fps);
 }
 
+// Sphere boundary with APIC
+void RunExample6(
+    const std::string& rootDir,
+    size_t resolutionX,
+    unsigned int numberOfFrames,
+    const std::string& format,
+    double fps)
+{
+    // Build solver
+    auto solver = APICSolver3::Builder()
+        .WithResolution({ resolutionX, resolutionX, resolutionX })
+        .WithDomainSizeX(1.0)
+        .MakeShared();
+
+    // Build collider
+    auto sphere = Sphere3::Builder()
+        .WithCenter({ 0.5, 0.5, 0.5 })
+        .WithRadius(0.4)
+        .WithIsNormalFlipped(true)
+        .MakeShared();
+
+    auto collider = RigidBodyCollider3::Builder()
+        .WithSurface(sphere)
+        .MakeShared();
+
+    solver->SetCollider(collider);
+
+    // Manually emit particles
+    std::mt19937 rng;
+    std::uniform_real_distribution<> dist(-0.1 * solver->GetGridSpacing().x, 0.1 * solver->GetGridSpacing().x);
+    BccLatticePointGenerator pointGenerator;
+    
+    pointGenerator.ForEachPoint(
+        BoundingBox3D({ 0.75, 0, 0 }, { 1, 1, 1 }), 0.5 * solver->GetGridSpacing().x,
+        [&](const Vector3D& pt) -> bool
+    {
+        Vector3D newPos = pt + Vector3D{ dist(rng), dist(rng), dist(rng) };
+
+        if ((pt - Vector3D{ 0.5, 0.5, 0.5 }).Length() < 0.4)
+        {
+            solver->GetParticleSystemData()->AddParticle(newPos);
+        }
+
+        return true;
+    });
+
+    printf("Number of particles: %zu\n",
+        solver->GetParticleSystemData()->NumberOfParticles());
+
+    // Print simulation info
+    printf("Running example 6 (sphere boundary with APIC)\n");
+    PrintInfo(solver);
+
+    // Run simulation
+    RunSimulation(rootDir, solver, numberOfFrames, format, fps);
+}
+
 int main(int argc, char* argv[])
 {
 	size_t resolutionX = 50;
@@ -602,6 +660,9 @@ int main(int argc, char* argv[])
 		break;
     case 5:
         RunExample5(outputDir, resolutionX, numberOfFrames, format, fps);
+        break;
+    case 6:
+        RunExample6(outputDir, resolutionX, numberOfFrames, format, fps);
         break;
 	default:
 		PrintUsage();
