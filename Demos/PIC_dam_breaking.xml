@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<scene version="0.5.0">
+    <integrator type="volpath_simple">
+        <integer name="maxDepth" value="20"/>
+    </integrator>
+
+    <sensor type="perspective">
+        <float name="focusDistance" value="10000"/>
+        <float name="fov" value="50"/>
+        <string name="fovAxis" value="x"/>
+        <transform name="toWorld">
+            <scale x="-1"/>
+            <lookat target="1.45 0.4 0.75" origin="2.25 3.0 3.5" up="0 1 0"/>
+        </transform>
+
+        <sampler type="stratified">
+            <integer name="dimension" value="6"/>
+            <integer name="sampleCount" value="1024"/>
+        </sampler>
+
+        <film type="ldrfilm">
+            <boolean name="banner" value="false"/>
+            <float name="exposure" value="0"/>
+            <float name="gamma" value="-1"/>
+            <integer name="height" value="800"/>
+            <string name="pixelFormat" value="rgb"/>
+            <string name="toneMappingMethod" value="gamma"/>
+            <string name="tonemapMethod" value="gamma"/>
+            <integer name="width" value="1024"/>
+
+            <rfilter type="catmullrom"/>
+        </film>
+    </sensor>
+
+    <emitter type="envmap" id="envmapLight">
+        <string name="filename" value="Textures/envmap.exr"/>
+        <transform name="toWorld">
+            <rotate y="1" angle="75"/>
+        </transform>
+        <float name="scale" value="2.75"/>
+    </emitter>
+
+    <bsdf type="diffuse" id="diffmat">
+        <rgb name="reflectance" value="0.4 0.4 0.4"/>
+    </bsdf>
+
+    <shape type="obj" id="water">
+        <string name="filename" value="Datas/PIC_dam_breaking/frame_000040.obj"/>
+        <integer name="shapeIndex" value="2"/>
+        <bsdf type="dielectric">
+            <float name="intIOR" value="1.2"/>
+            <float name="extIOR" value="1.0"/>
+        </bsdf>
+
+        <medium name="interior" type="homogeneous">
+            <rgb name="sigmaS" value="0, 0, 0"/>
+            <rgb name="sigmaA" value="4, 1.7, 1.5"/>
+        </medium>
+    </shape>
+
+    <shape type="obj" id="column1">
+        <string name="filename" value="Objects/cylinder.obj"/>
+        <transform name="toWorld">
+            <rotate x="1" angle="90"/>
+            <translate x="100" y="10" z="37.5"/>
+            <scale x="0.01" y="0.075" z="0.01"/>
+        </transform>
+        <bsdf type="diffuse">
+            <rgb name="reflectance" value="0.35 0.0 0.0"/>
+        </bsdf>
+    </shape>
+
+    <shape type="obj" id="column2">
+        <string name="filename" value="Objects/cylinder.obj"/>
+        <transform name="toWorld">
+            <rotate x="1" angle="90"/>
+            <translate x="150" y="10" z="75"/>
+            <scale x="0.01" y="0.075" z="0.01"/>
+        </transform>
+        <bsdf type="diffuse">
+            <rgb name="reflectance" value="0.35 0.0 0.0"/>
+        </bsdf>
+    </shape>
+
+    <shape type="obj" id="column3">
+        <string name="filename" value="Objects/cylinder.obj"/>
+        <transform name="toWorld">
+            <rotate x="1" angle="90"/>
+            <translate x="200" y="10" z="112.5"/>
+            <scale x="0.01" y="0.075" z="0.01"/>
+        </transform>
+        <bsdf type="diffuse">
+            <rgb name="reflectance" value="0.35 0.0 0.0"/>
+        </bsdf>
+    </shape>
+
+    <shape type="serialized" id="floor">
+        <string name="filename" value="Objects/floor.serialized"/>
+        <integer name="shapeIndex" value="0"/>
+        <transform name="toWorld">
+            <rotate x="1" angle="90"/>
+            <rotate z="1" angle="180"/>
+            <translate x="0.5" y="0.01" z="0.5"/>
+            <scale x="30" y="1" z="30"/>
+        </transform>
+
+        <ref name="bsdf" id="diffmat"/>
+    </shape>
+</scene>
