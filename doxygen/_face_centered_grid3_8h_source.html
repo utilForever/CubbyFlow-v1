@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.5</a>
+                    <a class="navbar-brand">CubbyFlow v0.6</a>
                 </div>
             </div>
         </nav>
@@ -123,7 +123,7 @@ $(function() {
 <div class="ttc" id="class_cubby_flow_1_1_face_centered_grid3_html_a483f812838449b410cb7e79a8b861688"><div class="ttname"><a href="class_cubby_flow_1_1_face_centered_grid3.html#a483f812838449b410cb7e79a8b861688">CubbyFlow::FaceCenteredGrid3::GetUPosition</a></div><div class="ttdeci">DataPositionFunc GetUPosition() const</div><div class="ttdoc">Returns function object that maps u data point to its actual position. </div></div>
 <div class="ttc" id="class_cubby_flow_1_1_face_centered_grid3_html_ae8c6c59823d3161ba4b21ad8739a8394"><div class="ttname"><a href="class_cubby_flow_1_1_face_centered_grid3.html#ae8c6c59823d3161ba4b21ad8739a8394">CubbyFlow::FaceCenteredGrid3::GetVPosition</a></div><div class="ttdeci">DataPositionFunc GetVPosition() const</div><div class="ttdoc">Returns function object that maps v data point to its actual position. </div></div>
 <div class="ttc" id="class_cubby_flow_1_1_face_centered_grid3_html_abf561b8a79fb3df363921f2d94797cdd"><div class="ttname"><a href="class_cubby_flow_1_1_face_centered_grid3.html#abf561b8a79fb3df363921f2d94797cdd">CubbyFlow::FaceCenteredGrid3::ForEachWIndex</a></div><div class="ttdeci">void ForEachWIndex(const std::function&lt; void(size_t, size_t, size_t)&gt; &amp;func) const</div><div class="ttdoc">Invokes the given function func for each w-data point. </div></div>
-<div class="ttc" id="class_cubby_flow_1_1_array_3_01_t_00_013_01_4_html"><div class="ttname"><a href="class_cubby_flow_1_1_array_3_01_t_00_013_01_4.html">CubbyFlow::Array&lt; T, 3 &gt;</a></div><div class="ttdoc">3-D array class. </div><div class="ttdef"><b>Definition:</b> Array3.h:43</div></div>
+<div class="ttc" id="class_cubby_flow_1_1_array_3_01_t_00_013_01_4_html"><div class="ttname"><a href="class_cubby_flow_1_1_array_3_01_t_00_013_01_4.html">CubbyFlow::Array&lt; T, 3 &gt;</a></div><div class="ttdoc">3-D array class. </div><div class="ttdef"><b>Definition:</b> Array3.h:46</div></div>
 <div class="ttc" id="class_cubby_flow_1_1_face_centered_grid3_html_aa04b05c969b3af39739102b997334793"><div class="ttname"><a href="class_cubby_flow_1_1_face_centered_grid3.html#aa04b05c969b3af39739102b997334793">CubbyFlow::FaceCenteredGrid3::Sampler</a></div><div class="ttdeci">std::function&lt; Vector3D(const Vector3D &amp;)&gt; Sampler() const override</div><div class="ttdoc">Returns the sampler function. </div></div>
 <div class="ttc" id="class_cubby_flow_1_1_face_centered_grid3_html_af33ce2581bbf3e89987620e3fc05c18f"><div class="ttname"><a href="class_cubby_flow_1_1_face_centered_grid3.html#af33ce2581bbf3e89987620e3fc05c18f">CubbyFlow::FaceCenteredGrid3::GetUOrigin</a></div><div class="ttdeci">Vector3D GetUOrigin() const</div><div class="ttdoc">Returns u-data position for the grid point at (0, 0, 0). </div></div>
 <div class="ttc" id="class_cubby_flow_1_1_face_centered_grid3_html_abc22c9869ff1824597773a30a4f15096"><div class="ttname"><a href="class_cubby_flow_1_1_face_centered_grid3.html#abc22c9869ff1824597773a30a4f15096">CubbyFlow::FaceCenteredGrid3::GetVSize</a></div><div class="ttdeci">Size3 GetVSize() const</div><div class="ttdoc">Returns data size of the v component. </div></div>
@@ -134,7 +134,7 @@ $(function() {
 <div class="ttc" id="class_cubby_flow_1_1_vector_grid3_html"><div class="ttname"><a href="class_cubby_flow_1_1_vector_grid3.html">CubbyFlow::VectorGrid3</a></div><div class="ttdoc">Abstract base class for 3-D vector grid structure. </div><div class="ttdef"><b>Definition:</b> VectorGrid3.h:19</div></div>
 <div class="ttc" id="class_cubby_flow_1_1_face_centered_grid3_html_aee88d50856e9119737a5df9efb2a1226"><div class="ttname"><a href="class_cubby_flow_1_1_face_centered_grid3.html#aee88d50856e9119737a5df9efb2a1226">CubbyFlow::FaceCenteredGrid3::GetBuilder</a></div><div class="ttdeci">static Builder GetBuilder()</div><div class="ttdoc">Returns builder fox FaceCenteredGrid3. </div></div>
 <div class="ttc" id="class_cubby_flow_1_1_face_centered_grid3_html_ac33593e29c8819bee2e54482eb7d1e9d"><div class="ttname"><a href="class_cubby_flow_1_1_face_centered_grid3.html#ac33593e29c8819bee2e54482eb7d1e9d">CubbyFlow::FaceCenteredGrid3::Clone</a></div><div class="ttdeci">std::shared_ptr&lt; VectorGrid3 &gt; Clone() const override</div><div class="ttdoc">Returns the copy of the grid instance. </div></div>
-<div class="ttc" id="namespace_cubby_flow_html_a7a0f165a2c76a196c9e23978ff7f2dcb"><div class="ttname"><a href="namespace_cubby_flow.html#a7a0f165a2c76a196c9e23978ff7f2dcb">CubbyFlow::Vector3D</a></div><div class="ttdeci">Vector3&lt; double &gt; Vector3D</div><div class="ttdoc">Double-type 3D vector. </div><div class="ttdef"><b>Definition:</b> Vector3.h:341</div></div>
+<div class="ttc" id="namespace_cubby_flow_html_a7a0f165a2c76a196c9e23978ff7f2dcb"><div class="ttname"><a href="namespace_cubby_flow.html#a7a0f165a2c76a196c9e23978ff7f2dcb">CubbyFlow::Vector3D</a></div><div class="ttdeci">Vector3&lt; double &gt; Vector3D</div><div class="ttdoc">Double-type 3D vector. </div><div class="ttdef"><b>Definition:</b> Vector3.h:353</div></div>
 <div class="ttc" id="class_cubby_flow_1_1_linear_array_sampler_3_01_t_00_01_r_00_013_01_4_html"><div class="ttname"><a href="class_cubby_flow_1_1_linear_array_sampler_3_01_t_00_01_r_00_013_01_4.html">CubbyFlow::LinearArraySampler&lt; T, R, 3 &gt;</a></div><div class="ttdoc">3-D linear array sampler class. </div><div class="ttdef"><b>Definition:</b> ArraySamplers3.h:78</div></div>
 <div class="ttc" id="class_cubby_flow_1_1_face_centered_grid3_html_ab74a30f70ae911e34669517d8bbde335"><div class="ttname"><a href="class_cubby_flow_1_1_face_centered_grid3.html#ab74a30f70ae911e34669517d8bbde335">CubbyFlow::FaceCenteredGrid3::DivergenceAtCellCenter</a></div><div class="ttdeci">double DivergenceAtCellCenter(size_t i, size_t j, size_t k) const</div><div class="ttdoc">Returns divergence at cell-center location. </div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -146,7 +146,7 @@ $(function() {
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 18 2017 12:55:56 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Oct 8 2017 12:20:55 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

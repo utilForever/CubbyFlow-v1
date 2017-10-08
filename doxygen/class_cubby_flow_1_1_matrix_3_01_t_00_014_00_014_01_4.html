@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.5</a>
+                    <a class="navbar-brand">CubbyFlow v0.6</a>
                 </div>
             </div>
         </nav>
@@ -150,12 +150,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a736eb3407fbd5ac081ba23a127b5dabf"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_matrix_3_01_t_00_014_00_014_01_4.html#a736eb3407fbd5ac081ba23a127b5dabf">Cols</a> () const</td></tr>
 <tr class="memdesc:a736eb3407fbd5ac081ba23a127b5dabf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns number of columns of this matrix.  <a href="#a736eb3407fbd5ac081ba23a127b5dabf">More...</a><br /></td></tr>
 <tr class="separator:a736eb3407fbd5ac081ba23a127b5dabf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3dd4d50c81b6bad998614718027101d2"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_matrix_3_01_t_00_014_00_014_01_4.html#a3dd4d50c81b6bad998614718027101d2">Data</a> ()</td></tr>
-<tr class="memdesc:a3dd4d50c81b6bad998614718027101d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns data pointer of this matrix.  <a href="#a3dd4d50c81b6bad998614718027101d2">More...</a><br /></td></tr>
-<tr class="separator:a3dd4d50c81b6bad998614718027101d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0687d66458eb7b7c1aff45c6b6515970"><td class="memItemLeft" align="right" valign="top">const T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_matrix_3_01_t_00_014_00_014_01_4.html#a0687d66458eb7b7c1aff45c6b6515970">Data</a> () const</td></tr>
-<tr class="memdesc:a0687d66458eb7b7c1aff45c6b6515970"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns constant pointer of this matrix.  <a href="#a0687d66458eb7b7c1aff45c6b6515970">More...</a><br /></td></tr>
-<tr class="separator:a0687d66458eb7b7c1aff45c6b6515970"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa93f8b970e84730daf3619b48b8e751f"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_matrix_3_01_t_00_014_00_014_01_4.html#aa93f8b970e84730daf3619b48b8e751f">data</a> ()</td></tr>
+<tr class="memdesc:aa93f8b970e84730daf3619b48b8e751f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns data pointer of this matrix.  <a href="#aa93f8b970e84730daf3619b48b8e751f">More...</a><br /></td></tr>
+<tr class="separator:aa93f8b970e84730daf3619b48b8e751f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a628cc24bfed5bf1b51b49b6a785d4796"><td class="memItemLeft" align="right" valign="top">const T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_matrix_3_01_t_00_014_00_014_01_4.html#a628cc24bfed5bf1b51b49b6a785d4796">data</a> () const</td></tr>
+<tr class="memdesc:a628cc24bfed5bf1b51b49b6a785d4796"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns constant pointer of this matrix.  <a href="#a628cc24bfed5bf1b51b49b6a785d4796">More...</a><br /></td></tr>
+<tr class="separator:a628cc24bfed5bf1b51b49b6a785d4796"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d0fd8052a1e479b2a2c42b743789f7c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_cubby_flow_1_1_matrix.html">Matrix</a>&lt; T, 3, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_matrix_3_01_t_00_014_00_014_01_4.html#a8d0fd8052a1e479b2a2c42b743789f7c">Matrix3</a> () const</td></tr>
 <tr class="memdesc:a8d0fd8052a1e479b2a2c42b743789f7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns 3x3 part of this matrix.  <a href="#a8d0fd8052a1e479b2a2c42b743789f7c">More...</a><br /></td></tr>
 <tr class="separator:a8d0fd8052a1e479b2a2c42b743789f7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -618,7 +618,7 @@ template&lt;typename U &gt; </div>
 
 <p>Constructs a matrix with given initializer list <code>list</code>. </p>
 <p>This constructor will build a matrix with given initializer list <code>list</code> such as</p>
-<div class="fragment"><div class="line">Matrix&lt;int, 4, 4&gt; arr = {</div><div class="line">    {1, 2, 4, 3},</div><div class="line">    {9, 3, 5, 1},</div><div class="line">    {4, 8, 1, 5},</div><div class="line">    {3, 7, 2, 6}</div><div class="line">};</div></div><!-- fragment --><p>Note the initializer also has 4x4 structure.</p>
+<div class="fragment"><div class="line">Matrix&lt;float, 4, 4&gt; arr =</div><div class="line">{</div><div class="line">    {1.f, 2.f, 4.f, 3.f},</div><div class="line">    {9.f, 3.f, 5.f, 1.f},</div><div class="line">    {4.f, 8.f, 1.f, 5.f},</div><div class="line">    {3.f, 7.f, 2.f, 6.f}</div><div class="line">};</div></div><!-- fragment --><p>Note the initializer also has 4x4 structure.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">list</td><td>Initializer list that should be copy to the new matrix. </td></tr>
@@ -858,8 +858,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a3dd4d50c81b6bad998614718027101d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3dd4d50c81b6bad998614718027101d2">&#9670;&nbsp;</a></span>Data() <span class="overload">[1/2]</span></h2>
+<a id="aa93f8b970e84730daf3619b48b8e751f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa93f8b970e84730daf3619b48b8e751f">&#9670;&nbsp;</a></span>data() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -867,7 +867,7 @@ template&lt;typename T &gt; </div>
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">T * <a class="el" href="class_cubby_flow_1_1_matrix.html">CubbyFlow::Matrix</a>&lt; T, 4, 4 &gt;::Data </td>
+          <td class="memname">T * <a class="el" href="class_cubby_flow_1_1_matrix.html">CubbyFlow::Matrix</a>&lt; T, 4, 4 &gt;::data </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -879,8 +879,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a0687d66458eb7b7c1aff45c6b6515970"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0687d66458eb7b7c1aff45c6b6515970">&#9670;&nbsp;</a></span>Data() <span class="overload">[2/2]</span></h2>
+<a id="a628cc24bfed5bf1b51b49b6a785d4796"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a628cc24bfed5bf1b51b49b6a785d4796">&#9670;&nbsp;</a></span>data() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -888,7 +888,7 @@ template&lt;typename T &gt; </div>
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">const T * <a class="el" href="class_cubby_flow_1_1_matrix.html">CubbyFlow::Matrix</a>&lt; T, 4, 4 &gt;::Data </td>
+          <td class="memname">const T * <a class="el" href="class_cubby_flow_1_1_matrix.html">CubbyFlow::Matrix</a>&lt; T, 4, 4 &gt;::data </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -2321,7 +2321,7 @@ template&lt;typename U &gt; </div>
 
 <p>Sets a matrix with given initializer list <code>list</code>. </p>
 <p>This function will fill the matrix with given initializer list <code>list</code> such as</p>
-<div class="fragment"><div class="line">Matrix&lt;int, 3, 3&gt; arr = {</div><div class="line">    {1, 2, 4},</div><div class="line">    {9, 3, 5},</div><div class="line">    {4, 8, 1}</div><div class="line">};</div></div><!-- fragment --><p>Note the initializer also has 3x3 structure.</p>
+<div class="fragment"><div class="line">Matrix&lt;float, 4, 4&gt; arr;</div><div class="line">arr.Set(</div><div class="line">{</div><div class="line">    {1.f, 2.f, 4.f, 3.f},</div><div class="line">    {9.f, 3.f, 5.f, 1.f},</div><div class="line">    {4.f, 8.f, 1.f, 5.f},</div><div class="line">    {3.f, 7.f, 2.f, 6.f}</div><div class="line">});</div></div><!-- fragment --><p>Note the initializer also has 3x3 structure.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">list</td><td>Initializer list that should be copy to the new matrix. </td></tr>
@@ -2707,7 +2707,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 18 2017 12:56:14 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Oct 8 2017 12:21:12 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

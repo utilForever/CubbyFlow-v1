@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.5</a>
+                    <a class="navbar-brand">CubbyFlow v0.6</a>
                 </div>
             </div>
         </nav>
@@ -193,7 +193,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>3-D implicit surface wrapper for generic <a class="el" href="class_cubby_flow_1_1_surface3.html" title="Abstract base class for 3-D surface. ">Surface3</a> instance. </p>
-<p>This class represents 3-D implicit surface that converts <a class="el" href="class_cubby_flow_1_1_surface3.html" title="Abstract base class for 3-D surface. ">Surface3</a> instance. to an <a class="el" href="class_cubby_flow_1_1_implicit_surface3.html" title="Abstract base class for 3-d implicit surface. ">ImplicitSurface3</a> object </p>
+<p>This class represents 3-D implicit surface that converts <a class="el" href="class_cubby_flow_1_1_surface3.html" title="Abstract base class for 3-D surface. ">Surface3</a> instance. to an <a class="el" href="class_cubby_flow_1_1_implicit_surface3.html" title="Abstract base class for 3-d implicit surface. ">ImplicitSurface3</a> object. The conversion is made by evaluating closest point and normal from a given point for the given (explicit) surface. Thus, this conversion won't work for every single surfaces, especially <a class="el" href="class_cubby_flow_1_1_triangle_mesh3.html" title="3-D triangle mesh geometry. ">TriangleMesh3</a>. To use <a class="el" href="class_cubby_flow_1_1_triangle_mesh3.html" title="3-D triangle mesh geometry. ">TriangleMesh3</a> as an <a class="el" href="class_cubby_flow_1_1_implicit_surface3.html" title="Abstract base class for 3-d implicit surface. ">ImplicitSurface3</a> instance, please take a look at <a class="el" href="class_cubby_flow_1_1_implicit_triangle_mesh3.html" title="TriangleMesh3 to ImplicitSurface3 converter. ">ImplicitTriangleMesh3</a>. Use this class only for the basic primitives such as <a class="el" href="class_cubby_flow_1_1_sphere3.html" title="3-D sphere geometry. ">Sphere3</a> or <a class="el" href="class_cubby_flow_1_1_box3.html" title="3-D box geometry. ">Box3</a>. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7413ac122168cf5fbc4a4711c0467075"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7413ac122168cf5fbc4a4711c0467075">&#9670;&nbsp;</a></span>SurfaceToImplicit3() <span class="overload">[1/2]</span></h2>
@@ -515,7 +515,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 18 2017 12:56:20 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Oct 8 2017 12:21:18 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

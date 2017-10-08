@@ -1,6 +1,10 @@
 var searchData=
 [
-  ['one_5fsize',['ONE_SIZE',['../namespace_cubby_flow.html#a1b2aad180552ac112ce4c05aa22d30ad',1,'CubbyFlow']]],
-  ['one_5fssize',['ONE_SSIZE',['../namespace_cubby_flow.html#ac5ad6888b963846156b683fc99f92211',1,'CubbyFlow']]],
-  ['origin',['origin',['../class_cubby_flow_1_1_ray_3_01_t_00_012_01_4.html#aa0156640f486f7bf770aa543b9590453',1,'CubbyFlow::Ray&lt; T, 2 &gt;::origin()'],['../class_cubby_flow_1_1_ray_3_01_t_00_013_01_4.html#ab6b2e99bc5c53f9422c9117101f5783d',1,'CubbyFlow::Ray&lt; T, 3 &gt;::origin()']]]
+  ['near',['near',['../struct_cubby_flow_1_1_bounding_box_ray_intersection2.html#a6f3aa8342f0563c63e8a0c192657ecf4',1,'CubbyFlow::BoundingBoxRayIntersection2::near()'],['../struct_cubby_flow_1_1_bounding_box_ray_intersection3.html#a5bbd46ee177fe24dfa901bbcc2d829b3',1,'CubbyFlow::BoundingBoxRayIntersection3::near()']]],
+  ['normal',['normal',['../struct_cubby_flow_1_1_collider2_1_1_collider_query_result.html#a3157dda9561f0d727aa0dee068ff95c4',1,'CubbyFlow::Collider2::ColliderQueryResult::normal()'],['../struct_cubby_flow_1_1_collider3_1_1_collider_query_result.html#a8ab70fd3dc3a1e73d9e58c28e28d0f49',1,'CubbyFlow::Collider3::ColliderQueryResult::normal()'],['../class_cubby_flow_1_1_plane2.html#a3d7677afa3966df7a4c74c0d22f2506f',1,'CubbyFlow::Plane2::normal()'],['../class_cubby_flow_1_1_plane3.html#a304147b59e08285af7bd165784ec79c8',1,'CubbyFlow::Plane3::normal()'],['../struct_cubby_flow_1_1_surface_ray_intersection2.html#a57c7fee5f88fbf440e96c80aeebbd794',1,'CubbyFlow::SurfaceRayIntersection2::normal()'],['../struct_cubby_flow_1_1_surface_ray_intersection3.html#a28c621be75d3b43b7b96d298ee2a36c5',1,'CubbyFlow::SurfaceRayIntersection3::normal()']]],
+  ['normals',['normals',['../class_cubby_flow_1_1_triangle3.html#a59efa166c1baed374af1eca693763f79',1,'CubbyFlow::Triangle3']]],
+  ['numberofcoarsestiter',['numberOfCoarsestIter',['../struct_cubby_flow_1_1_multi_grid_parameters.html#aab36550b32bead3712ec9f534f9e49d2',1,'CubbyFlow::MultiGridParameters']]],
+  ['numberofcorrectioniter',['numberOfCorrectionIter',['../struct_cubby_flow_1_1_multi_grid_parameters.html#a29276a5b348ed15b60ffc71ddd708f6e',1,'CubbyFlow::MultiGridParameters']]],
+  ['numberoffinaliter',['numberOfFinalIter',['../struct_cubby_flow_1_1_multi_grid_parameters.html#ac9e233e3e6731f08ab6701be8279e556',1,'CubbyFlow::MultiGridParameters']]],
+  ['numberofrestrictioniter',['numberOfRestrictionIter',['../struct_cubby_flow_1_1_multi_grid_parameters.html#a88d6012d610edd383bfbcae178df997f',1,'CubbyFlow::MultiGridParameters']]]
 ];

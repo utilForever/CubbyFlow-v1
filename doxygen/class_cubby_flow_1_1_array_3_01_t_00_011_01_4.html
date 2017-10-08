@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.5</a>
+                    <a class="navbar-brand">CubbyFlow v0.6</a>
                 </div>
             </div>
         </nav>
@@ -90,13 +90,17 @@ $(function() {
 Public Types</h2></td></tr>
 <tr class="memitem:a24886a0489d3497ccd921cedfeaded3a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#a24886a0489d3497ccd921cedfeaded3a">ContainerType</a> = std::vector&lt; T &gt;</td></tr>
 <tr class="separator:a24886a0489d3497ccd921cedfeaded3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0572655ec57912a26372ee193a6f34b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#ac0572655ec57912a26372ee193a6f34b">Iterator</a> = typename ContainerType::iterator</td></tr>
+<tr class="separator:ac0572655ec57912a26372ee193a6f34b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70f651fd4782f8a8729f2f0718154af8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#a70f651fd4782f8a8729f2f0718154af8">ConstIterator</a> = typename ContainerType::const_iterator</td></tr>
+<tr class="separator:a70f651fd4782f8a8729f2f0718154af8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a18863a05c813d572788ae4ae8e2be4eb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#a18863a05c813d572788ae4ae8e2be4eb">Array</a> ()</td></tr>
 <tr class="memdesc:a18863a05c813d572788ae4ae8e2be4eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs zero-sized 1-D array.  <a href="#a18863a05c813d572788ae4ae8e2be4eb">More...</a><br /></td></tr>
 <tr class="separator:a18863a05c813d572788ae4ae8e2be4eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8543b0f8e7740091ac3eb7cd94f6b632"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#a8543b0f8e7740091ac3eb7cd94f6b632">Array</a> (size_t size, const T &amp;initVal=T())</td></tr>
+<tr class="memitem:a8543b0f8e7740091ac3eb7cd94f6b632"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#a8543b0f8e7740091ac3eb7cd94f6b632">Array</a> (size_t <a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#a6998dfe7c9027ce1b2861659f2e2588e">size</a>, const T &amp;initVal=T())</td></tr>
 <tr class="separator:a8543b0f8e7740091ac3eb7cd94f6b632"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9683c01d6bf80972fadc517612e26514"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#a9683c01d6bf80972fadc517612e26514">Array</a> (const std::initializer_list&lt; T &gt; &amp;list)</td></tr>
 <tr class="memdesc:a9683c01d6bf80972fadc517612e26514"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs 1-D array with given initializer list <code>list</code>.  <a href="#a9683c01d6bf80972fadc517612e26514">More...</a><br /></td></tr>
@@ -104,6 +108,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa863f886cabf4f89af8cd5be236d18c9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#aa863f886cabf4f89af8cd5be236d18c9">Array</a> (const <a class="el" href="class_cubby_flow_1_1_array.html">Array</a> &amp;other)</td></tr>
 <tr class="memdesc:aa863f886cabf4f89af8cd5be236d18c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor.  <a href="#aa863f886cabf4f89af8cd5be236d18c9">More...</a><br /></td></tr>
 <tr class="separator:aa863f886cabf4f89af8cd5be236d18c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f029756ab771d5a3dd433ecb2308782"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#a5f029756ab771d5a3dd433ecb2308782">Array</a> (<a class="el" href="class_cubby_flow_1_1_array.html">Array</a> &amp;&amp;other)</td></tr>
+<tr class="memdesc:a5f029756ab771d5a3dd433ecb2308782"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move constructor.  <a href="#a5f029756ab771d5a3dd433ecb2308782">More...</a><br /></td></tr>
+<tr class="separator:a5f029756ab771d5a3dd433ecb2308782"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a694ce0ec0759bcdda26a1e9d77dd7899"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#a694ce0ec0759bcdda26a1e9d77dd7899">Set</a> (const T &amp;value)</td></tr>
 <tr class="memdesc:a694ce0ec0759bcdda26a1e9d77dd7899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets entire array with given <code>value</code>.  <a href="#a694ce0ec0759bcdda26a1e9d77dd7899">More...</a><br /></td></tr>
 <tr class="separator:a694ce0ec0759bcdda26a1e9d77dd7899"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -116,7 +123,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2dd53f7a069388a8b97f3258a183eb3e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#a2dd53f7a069388a8b97f3258a183eb3e">Clear</a> ()</td></tr>
 <tr class="memdesc:a2dd53f7a069388a8b97f3258a183eb3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the array and resizes to zero.  <a href="#a2dd53f7a069388a8b97f3258a183eb3e">More...</a><br /></td></tr>
 <tr class="separator:a2dd53f7a069388a8b97f3258a183eb3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2999b45505b690769a1b0bc24a1788ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#a2999b45505b690769a1b0bc24a1788ba">Resize</a> (size_t size, const T &amp;initVal=T())</td></tr>
+<tr class="memitem:a2999b45505b690769a1b0bc24a1788ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#a2999b45505b690769a1b0bc24a1788ba">Resize</a> (size_t <a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#a6998dfe7c9027ce1b2861659f2e2588e">size</a>, const T &amp;initVal=T())</td></tr>
 <tr class="memdesc:a2999b45505b690769a1b0bc24a1788ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resizes the array with <code>size</code> and fill the new element with <code>initVal</code>.  <a href="#a2999b45505b690769a1b0bc24a1788ba">More...</a><br /></td></tr>
 <tr class="separator:a2999b45505b690769a1b0bc24a1788ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e4b76da230d40ab49e1842da73a5962"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#a8e4b76da230d40ab49e1842da73a5962">At</a> (size_t i)</td></tr>
@@ -125,25 +132,25 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afc687f181ca77549d0af3d39e83a597e"><td class="memItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#afc687f181ca77549d0af3d39e83a597e">At</a> (size_t i) const</td></tr>
 <tr class="memdesc:afc687f181ca77549d0af3d39e83a597e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the const reference to the i-th element.  <a href="#afc687f181ca77549d0af3d39e83a597e">More...</a><br /></td></tr>
 <tr class="separator:afc687f181ca77549d0af3d39e83a597e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07759915e2b5530bac4f2af6f0dd3089"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#a07759915e2b5530bac4f2af6f0dd3089">Size</a> () const</td></tr>
-<tr class="memdesc:a07759915e2b5530bac4f2af6f0dd3089"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns size of the array.  <a href="#a07759915e2b5530bac4f2af6f0dd3089">More...</a><br /></td></tr>
-<tr class="separator:a07759915e2b5530bac4f2af6f0dd3089"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac360255199a1a28acaa80b8a98deb26d"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#ac360255199a1a28acaa80b8a98deb26d">Data</a> ()</td></tr>
-<tr class="memdesc:ac360255199a1a28acaa80b8a98deb26d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the raw pointer to the array data.  <a href="#ac360255199a1a28acaa80b8a98deb26d">More...</a><br /></td></tr>
-<tr class="separator:ac360255199a1a28acaa80b8a98deb26d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adfa69badd43626a60751a5124fc61bcc"><td class="memItemLeft" align="right" valign="top">const T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#adfa69badd43626a60751a5124fc61bcc">Data</a> () const</td></tr>
-<tr class="memdesc:adfa69badd43626a60751a5124fc61bcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the const raw pointer to the array data.  <a href="#adfa69badd43626a60751a5124fc61bcc">More...</a><br /></td></tr>
-<tr class="separator:adfa69badd43626a60751a5124fc61bcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae26b4cfb52f86d7c93de6e048f2daff6"><td class="memItemLeft" align="right" valign="top">ContainerType::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#ae26b4cfb52f86d7c93de6e048f2daff6">begin</a> ()</td></tr>
+<tr class="memitem:a6998dfe7c9027ce1b2861659f2e2588e"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#a6998dfe7c9027ce1b2861659f2e2588e">size</a> () const</td></tr>
+<tr class="memdesc:a6998dfe7c9027ce1b2861659f2e2588e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns size of the array.  <a href="#a6998dfe7c9027ce1b2861659f2e2588e">More...</a><br /></td></tr>
+<tr class="separator:a6998dfe7c9027ce1b2861659f2e2588e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af112f48e4763badf0b071d7c9de714ec"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#af112f48e4763badf0b071d7c9de714ec">data</a> ()</td></tr>
+<tr class="memdesc:af112f48e4763badf0b071d7c9de714ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the raw pointer to the array data.  <a href="#af112f48e4763badf0b071d7c9de714ec">More...</a><br /></td></tr>
+<tr class="separator:af112f48e4763badf0b071d7c9de714ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a021b67bde12e51230565e476c4dc0274"><td class="memItemLeft" align="right" valign="top">const T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#a021b67bde12e51230565e476c4dc0274">data</a> () const</td></tr>
+<tr class="memdesc:a021b67bde12e51230565e476c4dc0274"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the const raw pointer to the array data.  <a href="#a021b67bde12e51230565e476c4dc0274">More...</a><br /></td></tr>
+<tr class="separator:a021b67bde12e51230565e476c4dc0274"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae26b4cfb52f86d7c93de6e048f2daff6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#ac0572655ec57912a26372ee193a6f34b">Iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#ae26b4cfb52f86d7c93de6e048f2daff6">begin</a> ()</td></tr>
 <tr class="memdesc:ae26b4cfb52f86d7c93de6e048f2daff6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the begin iterator of the array.  <a href="#ae26b4cfb52f86d7c93de6e048f2daff6">More...</a><br /></td></tr>
 <tr class="separator:ae26b4cfb52f86d7c93de6e048f2daff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51a3f2986ef5ae66a2d6778f99dc7556"><td class="memItemLeft" align="right" valign="top">ContainerType::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#a51a3f2986ef5ae66a2d6778f99dc7556">begin</a> () const</td></tr>
+<tr class="memitem:a51a3f2986ef5ae66a2d6778f99dc7556"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#a70f651fd4782f8a8729f2f0718154af8">ConstIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#a51a3f2986ef5ae66a2d6778f99dc7556">begin</a> () const</td></tr>
 <tr class="memdesc:a51a3f2986ef5ae66a2d6778f99dc7556"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the begin const iterator of the array.  <a href="#a51a3f2986ef5ae66a2d6778f99dc7556">More...</a><br /></td></tr>
 <tr class="separator:a51a3f2986ef5ae66a2d6778f99dc7556"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10507e83c5e7fa2a0eca884684fa1289"><td class="memItemLeft" align="right" valign="top">ContainerType::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#a10507e83c5e7fa2a0eca884684fa1289">end</a> ()</td></tr>
+<tr class="memitem:a10507e83c5e7fa2a0eca884684fa1289"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#ac0572655ec57912a26372ee193a6f34b">Iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#a10507e83c5e7fa2a0eca884684fa1289">end</a> ()</td></tr>
 <tr class="memdesc:a10507e83c5e7fa2a0eca884684fa1289"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the end iterator of the array.  <a href="#a10507e83c5e7fa2a0eca884684fa1289">More...</a><br /></td></tr>
 <tr class="separator:a10507e83c5e7fa2a0eca884684fa1289"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b7ceee143be9d5fa03f4ce768b43ff4"><td class="memItemLeft" align="right" valign="top">ContainerType::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#a0b7ceee143be9d5fa03f4ce768b43ff4">end</a> () const</td></tr>
+<tr class="memitem:a0b7ceee143be9d5fa03f4ce768b43ff4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#a70f651fd4782f8a8729f2f0718154af8">ConstIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#a0b7ceee143be9d5fa03f4ce768b43ff4">end</a> () const</td></tr>
 <tr class="memdesc:a0b7ceee143be9d5fa03f4ce768b43ff4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the end const iterator of the array.  <a href="#a0b7ceee143be9d5fa03f4ce768b43ff4">More...</a><br /></td></tr>
 <tr class="separator:a0b7ceee143be9d5fa03f4ce768b43ff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83339c6d81676c6c9473a708fdcc069a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_cubby_flow.html#a054a2be00c5985d24e47a27620141ae9">ArrayAccessor1</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#a83339c6d81676c6c9473a708fdcc069a">Accessor</a> ()</td></tr>
@@ -189,6 +196,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4920121b869f5e8dbf73c90d9cf5db08"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_cubby_flow_1_1_array.html">Array</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#a4920121b869f5e8dbf73c90d9cf5db08">operator=</a> (const <a class="el" href="class_cubby_flow_1_1_array.html">Array</a> &amp;other)</td></tr>
 <tr class="memdesc:a4920121b869f5e8dbf73c90d9cf5db08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies given array <code>other</code> to this array.  <a href="#a4920121b869f5e8dbf73c90d9cf5db08">More...</a><br /></td></tr>
 <tr class="separator:a4920121b869f5e8dbf73c90d9cf5db08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc21c627948a784597fc673fad5033c6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_cubby_flow_1_1_array.html">Array</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#afc21c627948a784597fc673fad5033c6">operator=</a> (<a class="el" href="class_cubby_flow_1_1_array.html">Array</a> &amp;&amp;other)</td></tr>
+<tr class="memdesc:afc21c627948a784597fc673fad5033c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves given array <code>other</code> to this array.  <a href="#afc21c627948a784597fc673fad5033c6">More...</a><br /></td></tr>
+<tr class="separator:afc21c627948a784597fc673fad5033c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b763dd608a5a0f3719bc9231d094760"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_cubby_flow_1_1_array.html">Array</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#a3b763dd608a5a0f3719bc9231d094760">operator=</a> (const std::initializer_list&lt; T &gt; &amp;list)</td></tr>
 <tr class="memdesc:a3b763dd608a5a0f3719bc9231d094760"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies given initializer list <code>list</code> to this array.  <a href="#a3b763dd608a5a0f3719bc9231d094760">More...</a><br /></td></tr>
 <tr class="separator:a3b763dd608a5a0f3719bc9231d094760"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -212,6 +222,22 @@ class CubbyFlow::Array&lt; T, 1 &gt;</h3>
   </dd>
 </dl>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a70f651fd4782f8a8729f2f0718154af8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70f651fd4782f8a8729f2f0718154af8">&#9670;&nbsp;</a></span>ConstIterator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="class_cubby_flow_1_1_array.html">CubbyFlow::Array</a>&lt; T, 1 &gt;::<a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#a70f651fd4782f8a8729f2f0718154af8">ConstIterator</a> =  typename ContainerType::const_iterator</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a24886a0489d3497ccd921cedfeaded3a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a24886a0489d3497ccd921cedfeaded3a">&#9670;&nbsp;</a></span>ContainerType</h2>
 
@@ -228,9 +254,25 @@ template&lt;typename T&gt; </div>
 
 </div>
 </div>
+<a id="ac0572655ec57912a26372ee193a6f34b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0572655ec57912a26372ee193a6f34b">&#9670;&nbsp;</a></span>Iterator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="class_cubby_flow_1_1_array.html">CubbyFlow::Array</a>&lt; T, 1 &gt;::<a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_011_01_4.html#ac0572655ec57912a26372ee193a6f34b">Iterator</a> =  typename ContainerType::iterator</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a18863a05c813d572788ae4ae8e2be4eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18863a05c813d572788ae4ae8e2be4eb">&#9670;&nbsp;</a></span>Array() <span class="overload">[1/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a18863a05c813d572788ae4ae8e2be4eb">&#9670;&nbsp;</a></span>Array() <span class="overload">[1/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -251,7 +293,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a8543b0f8e7740091ac3eb7cd94f6b632"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8543b0f8e7740091ac3eb7cd94f6b632">&#9670;&nbsp;</a></span>Array() <span class="overload">[2/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8543b0f8e7740091ac3eb7cd94f6b632">&#9670;&nbsp;</a></span>Array() <span class="overload">[2/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -296,7 +338,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a9683c01d6bf80972fadc517612e26514"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9683c01d6bf80972fadc517612e26514">&#9670;&nbsp;</a></span>Array() <span class="overload">[3/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9683c01d6bf80972fadc517612e26514">&#9670;&nbsp;</a></span>Array() <span class="overload">[3/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -315,7 +357,7 @@ template&lt;typename T &gt; </div>
 
 <p>Constructs 1-D array with given initializer list <code>list</code>. </p>
 <p>This constructor will build 1-D array with given initializer list <code>list</code> such as</p>
-<div class="fragment"><div class="line">Array&lt;int, 1&gt; arr = {1, 2, 4, 9, 3};</div></div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">Array&lt;int, 1&gt; arr = { 1, 2, 4, 9, 3 };</div></div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">list</td><td>Initializer list that should be copy to the new array. </td></tr>
   </table>
@@ -325,7 +367,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="aa863f886cabf4f89af8cd5be236d18c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa863f886cabf4f89af8cd5be236d18c9">&#9670;&nbsp;</a></span>Array() <span class="overload">[4/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa863f886cabf4f89af8cd5be236d18c9">&#9670;&nbsp;</a></span>Array() <span class="overload">[4/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -343,6 +385,28 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 
 <p>Copy constructor. </p>
+
+</div>
+</div>
+<a id="a5f029756ab771d5a3dd433ecb2308782"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f029756ab771d5a3dd433ecb2308782">&#9670;&nbsp;</a></span>Array() <span class="overload">[5/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_cubby_flow_1_1_array.html">CubbyFlow::Array</a>&lt; T, 1 &gt;::<a class="el" href="class_cubby_flow_1_1_array.html">Array</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_cubby_flow_1_1_array.html">Array</a>&lt; T, 1 &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Move constructor. </p>
 
 </div>
 </div>
@@ -540,8 +604,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="ac360255199a1a28acaa80b8a98deb26d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac360255199a1a28acaa80b8a98deb26d">&#9670;&nbsp;</a></span>Data() <span class="overload">[1/2]</span></h2>
+<a id="af112f48e4763badf0b071d7c9de714ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af112f48e4763badf0b071d7c9de714ec">&#9670;&nbsp;</a></span>data() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -549,7 +613,7 @@ template&lt;typename T &gt; </div>
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">T * <a class="el" href="class_cubby_flow_1_1_array.html">CubbyFlow::Array</a>&lt; T, 1 &gt;::Data </td>
+          <td class="memname">T * <a class="el" href="class_cubby_flow_1_1_array.html">CubbyFlow::Array</a>&lt; T, 1 &gt;::data </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -561,8 +625,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="adfa69badd43626a60751a5124fc61bcc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adfa69badd43626a60751a5124fc61bcc">&#9670;&nbsp;</a></span>Data() <span class="overload">[2/2]</span></h2>
+<a id="a021b67bde12e51230565e476c4dc0274"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a021b67bde12e51230565e476c4dc0274">&#9670;&nbsp;</a></span>data() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -570,7 +634,7 @@ template&lt;typename T &gt; </div>
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">const T * <a class="el" href="class_cubby_flow_1_1_array.html">CubbyFlow::Array</a>&lt; T, 1 &gt;::Data </td>
+          <td class="memname">const T * <a class="el" href="class_cubby_flow_1_1_array.html">CubbyFlow::Array</a>&lt; T, 1 &gt;::data </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -646,7 +710,7 @@ template&lt;typename Callback &gt; </div>
 
 <p>Iterates the array and invoke given <code>func</code> for each element. </p>
 <p>This function iterates the array elements and invoke the callback function <code>func</code>. The callback function takes array's element as its input. The order of execution will be 0 to N-1 where N is the size of the array. Below is the sample usage:</p>
-<div class="fragment"><div class="line">Array&lt;int, 1&gt; array(10, 4);</div><div class="line">array.ForEach([](<span class="keywordtype">int</span> elem) {</div><div class="line">    printf(<span class="stringliteral">&quot;%d\n&quot;</span>, elem);</div><div class="line">});</div></div><!-- fragment --> 
+<div class="fragment"><div class="line">Array&lt;int, 1&gt; array(10, 4);</div><div class="line">array.ForEach([](<span class="keywordtype">int</span> elem)</div><div class="line">{</div><div class="line">    printf(<span class="stringliteral">&quot;%d\n&quot;</span>, elem);</div><div class="line">});</div></div><!-- fragment --> 
 </div>
 </div>
 <a id="aa968ad09a1513e047940b472dfeffc80"></a>
@@ -671,7 +735,7 @@ template&lt;typename Callback &gt; </div>
 
 <p>Iterates the array and invoke given <code>func</code> for each index. </p>
 <p>This function iterates the array elements and invoke the callback function <code>func</code>. The callback function takes one parameter which is the index of the array. The order of execution will be 0 to N-1 where N is the size of the array. Below is the sample usage:</p>
-<div class="fragment"><div class="line">Array&lt;int, 1&gt; array(10, 4);</div><div class="line">array.ForEachIndex([&amp;](<span class="keywordtype">size_t</span> i) {</div><div class="line">    array[i] = 4.f * i + 1.5f;</div><div class="line">});</div></div><!-- fragment --> 
+<div class="fragment"><div class="line">Array&lt;int, 1&gt; array(10, 4);</div><div class="line">array.ForEachIndex([&amp;](<span class="keywordtype">size_t</span> i)</div><div class="line">{</div><div class="line">    array[i] = 4.f * i + 1.5f;</div><div class="line">});</div></div><!-- fragment --> 
 </div>
 </div>
 <a id="a5d71de7a8de420b373f111fa050d3f8c"></a>
@@ -717,7 +781,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a9bb7042c654c175caa35d6623d74082c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9bb7042c654c175caa35d6623d74082c">&#9670;&nbsp;</a></span>operator=() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bb7042c654c175caa35d6623d74082c">&#9670;&nbsp;</a></span>operator=() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -739,7 +803,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a4920121b869f5e8dbf73c90d9cf5db08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4920121b869f5e8dbf73c90d9cf5db08">&#9670;&nbsp;</a></span>operator=() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4920121b869f5e8dbf73c90d9cf5db08">&#9670;&nbsp;</a></span>operator=() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -760,8 +824,30 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="afc21c627948a784597fc673fad5033c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc21c627948a784597fc673fad5033c6">&#9670;&nbsp;</a></span>operator=() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_cubby_flow_1_1_array.html">Array</a>&lt; T, 1 &gt; &amp; <a class="el" href="class_cubby_flow_1_1_array.html">CubbyFlow::Array</a>&lt; T, 1 &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_cubby_flow_1_1_array.html">Array</a>&lt; T, 1 &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Moves given array <code>other</code> to this array. </p>
+
+</div>
+</div>
 <a id="a3b763dd608a5a0f3719bc9231d094760"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b763dd608a5a0f3719bc9231d094760">&#9670;&nbsp;</a></span>operator=() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b763dd608a5a0f3719bc9231d094760">&#9670;&nbsp;</a></span>operator=() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -848,7 +934,7 @@ template&lt;typename Callback &gt; </div>
 
 <p>Iterates the array and invoke given <code>func</code> for each element in parallel using multi-threading. </p>
 <p>This function iterates the array elements and invoke the callback function <code>func</code> in parallel using multi-threading. The callback function takes array's element as its input. The order of execution will be non-deterministic since it runs in parallel. Below is the sample usage:</p>
-<div class="fragment"><div class="line">Array&lt;int, 1&gt; array(1000, 4);</div><div class="line">array.ParallelForEach([](<span class="keywordtype">int</span>&amp; elem) {</div><div class="line">    elem *= 2;</div><div class="line">});</div></div><!-- fragment --><p>The parameter type of the callback function doesn't have to be T&amp;, but const T&amp; or T can be used as well. </p>
+<div class="fragment"><div class="line">Array&lt;int, 1&gt; array(1000, 4);</div><div class="line">array.ParallelForEach([](<span class="keywordtype">int</span>&amp; elem)</div><div class="line">{</div><div class="line">    elem *= 2;</div><div class="line">});</div></div><!-- fragment --><p>The parameter type of the callback function doesn't have to be T&amp;, but const T&amp; or T can be used as well. </p>
 
 </div>
 </div>
@@ -874,7 +960,7 @@ template&lt;typename Callback &gt; </div>
 
 <p>Iterates the array and invoke given <code>func</code> for each index in parallel using multi-threading. </p>
 <p>This function iterates the array elements and invoke the callback function <code>func</code> in parallel using multi-threading. The callback function takes one parameter which is the index of the array. The order of execution will be non-deterministic since it runs in parallel. Below is the sample usage:</p>
-<div class="fragment"><div class="line">Array&lt;int, 1&gt; array(1000, 4);</div><div class="line">array.ParallelForEachIndex([](<span class="keywordtype">size_t</span> i) {</div><div class="line">    array[i] *= 2;</div><div class="line">});</div></div><!-- fragment --> 
+<div class="fragment"><div class="line">Array&lt;int, 1&gt; array(1000, 4);</div><div class="line">array.ParallelForEachIndex([](<span class="keywordtype">size_t</span> i)</div><div class="line">{</div><div class="line">    array[i] *= 2;</div><div class="line">});</div></div><!-- fragment --> 
 </div>
 </div>
 <a id="a2999b45505b690769a1b0bc24a1788ba"></a>
@@ -975,8 +1061,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a07759915e2b5530bac4f2af6f0dd3089"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a07759915e2b5530bac4f2af6f0dd3089">&#9670;&nbsp;</a></span>Size()</h2>
+<a id="a6998dfe7c9027ce1b2861659f2e2588e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6998dfe7c9027ce1b2861659f2e2588e">&#9670;&nbsp;</a></span>size()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -984,7 +1070,7 @@ template&lt;typename T &gt; </div>
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">size_t <a class="el" href="class_cubby_flow_1_1_array.html">CubbyFlow::Array</a>&lt; T, 1 &gt;::<a class="el" href="namespace_cubby_flow.html#aaf27f462bf226eba34b7a8f4284c4fe2">Size</a> </td>
+          <td class="memname">size_t <a class="el" href="class_cubby_flow_1_1_array.html">CubbyFlow::Array</a>&lt; T, 1 &gt;::size </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1031,7 +1117,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 18 2017 12:56:05 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Oct 8 2017 12:21:05 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

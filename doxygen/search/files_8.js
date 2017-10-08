@@ -14,5 +14,13 @@ var searchData=
   ['matrix3x3_2dimpl_2eh',['Matrix3x3-Impl.h',['../_matrix3x3-_impl_8h.html',1,'']]],
   ['matrix3x3_2eh',['Matrix3x3.h',['../_matrix3x3_8h.html',1,'']]],
   ['matrix4x4_2dimpl_2eh',['Matrix4x4-Impl.h',['../_matrix4x4-_impl_8h.html',1,'']]],
-  ['matrix4x4_2eh',['Matrix4x4.h',['../_matrix4x4_8h.html',1,'']]]
+  ['matrix4x4_2eh',['Matrix4x4.h',['../_matrix4x4_8h.html',1,'']]],
+  ['matrixcsr_2dimpl_2eh',['MatrixCSR-Impl.h',['../_matrix_c_s_r-_impl_8h.html',1,'']]],
+  ['matrixcsr_2eh',['MatrixCSR.h',['../_matrix_c_s_r_8h.html',1,'']]],
+  ['matrixexpression_2dimpl_2eh',['MatrixExpression-Impl.h',['../_matrix_expression-_impl_8h.html',1,'']]],
+  ['matrixexpression_2eh',['MatrixExpression.h',['../_matrix_expression_8h.html',1,'']]],
+  ['matrixmxn_2dimpl_2eh',['MatrixMxN-Impl.h',['../_matrix_mx_n-_impl_8h.html',1,'']]],
+  ['matrixmxn_2eh',['MatrixMxN.h',['../_matrix_mx_n_8h.html',1,'']]],
+  ['multigrid_2dimpl_2eh',['MultiGrid-Impl.h',['../_multi_grid-_impl_8h.html',1,'']]],
+  ['multigrid_2eh',['MultiGrid.h',['../_multi_grid_8h.html',1,'']]]
 ];

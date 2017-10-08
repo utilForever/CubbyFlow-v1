@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['pi_5fdouble',['PI_DOUBLE',['../namespace_cubby_flow.html#a61fa80972ba32baa2da8921a3af9fa31',1,'CubbyFlow']]],
-  ['pi_5ffloat',['PI_FLOAT',['../namespace_cubby_flow.html#ac1449035a4e7df94d0c0b9dbfe17ee8d',1,'CubbyFlow']]],
-  ['point',['point',['../struct_cubby_flow_1_1_collider2_1_1_collider_query_result.html#a6fe19781af3a7860a83f62826670737f',1,'CubbyFlow::Collider2::ColliderQueryResult::point()'],['../struct_cubby_flow_1_1_collider3_1_1_collider_query_result.html#aa64f0e6cb06e88ac3b5ca1927ebc510d',1,'CubbyFlow::Collider3::ColliderQueryResult::point()'],['../class_cubby_flow_1_1_plane2.html#abe9c820de7cba9bec614d8a87555869c',1,'CubbyFlow::Plane2::point()'],['../class_cubby_flow_1_1_plane3.html#aef3ecc6a61118a552fd642c38759cd26',1,'CubbyFlow::Plane3::point()'],['../struct_cubby_flow_1_1_surface_ray_intersection2.html#a766d3a835796f3375c1fdff59e1a5bc3',1,'CubbyFlow::SurfaceRayIntersection2::point()'],['../struct_cubby_flow_1_1_surface_ray_intersection3.html#a687879026601a9c0073006932273d5df',1,'CubbyFlow::SurfaceRayIntersection3::point()']]],
-  ['points',['points',['../class_cubby_flow_1_1_triangle3.html#a5c1a46e7f14b027a1ded9c57cd02ff41',1,'CubbyFlow::Triangle3']]]
+  ['one_5fsize',['ONE_SIZE',['../namespace_cubby_flow.html#a1b2aad180552ac112ce4c05aa22d30ad',1,'CubbyFlow']]],
+  ['one_5fssize',['ONE_SSIZE',['../namespace_cubby_flow.html#ac5ad6888b963846156b683fc99f92211',1,'CubbyFlow']]],
+  ['origin',['origin',['../class_cubby_flow_1_1_ray_3_01_t_00_012_01_4.html#aa0156640f486f7bf770aa543b9590453',1,'CubbyFlow::Ray&lt; T, 2 &gt;::origin()'],['../class_cubby_flow_1_1_ray_3_01_t_00_013_01_4.html#ab6b2e99bc5c53f9422c9117101f5783d',1,'CubbyFlow::Ray&lt; T, 3 &gt;::origin()']]]
 ];

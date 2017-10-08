@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.5</a>
+                    <a class="navbar-brand">CubbyFlow v0.6</a>
                 </div>
             </div>
         </nav>
@@ -103,8 +103,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ab7f95b67d70d432a70f3ddeae219283f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns builder with domain.  <a href="#ab7f95b67d70d432a70f3ddeae219283f">More...</a><br /></td></tr>
 <tr class="separator:ab7f95b67d70d432a70f3ddeae219283f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabf6623522c5f871a986e1ea385cb5be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_cubby_flow_1_1_custom_implicit_surface2_1_1_builder.html">Builder</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_custom_implicit_surface2_1_1_builder.html#aabf6623522c5f871a986e1ea385cb5be">WithResolution</a> (double resolution)</td></tr>
-<tr class="memdesc:aabf6623522c5f871a986e1ea385cb5be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns builder with resolution.  <a href="#aabf6623522c5f871a986e1ea385cb5be">More...</a><br /></td></tr>
+<tr class="memdesc:aabf6623522c5f871a986e1ea385cb5be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns builder with finite differencing resolution.  <a href="#aabf6623522c5f871a986e1ea385cb5be">More...</a><br /></td></tr>
 <tr class="separator:aabf6623522c5f871a986e1ea385cb5be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79e62dee4b411e843079eaa344857a01"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_cubby_flow_1_1_custom_implicit_surface2_1_1_builder.html">Builder</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_custom_implicit_surface2_1_1_builder.html#a79e62dee4b411e843079eaa344857a01">WithRayMarchingResolution</a> (double rayMarchingResolution)</td></tr>
+<tr class="separator:a79e62dee4b411e843079eaa344857a01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad98c29668179bee1de51235f84273361"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_cubby_flow_1_1_custom_implicit_surface2_1_1_builder.html">Builder</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_custom_implicit_surface2_1_1_builder.html#ad98c29668179bee1de51235f84273361">WithMaxNumberOfIterations</a> (unsigned int numIter)</td></tr>
+<tr class="memdesc:ad98c29668179bee1de51235f84273361"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns builder with number of iterations for closest point/normal searches.  <a href="#ad98c29668179bee1de51235f84273361">More...</a><br /></td></tr>
+<tr class="separator:ad98c29668179bee1de51235f84273361"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4e9541e6588711902d5325c14e40923"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_cubby_flow_1_1_custom_implicit_surface2.html">CustomImplicitSurface2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_custom_implicit_surface2_1_1_builder.html#af4e9541e6588711902d5325c14e40923">Build</a> () const</td></tr>
 <tr class="memdesc:af4e9541e6588711902d5325c14e40923"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds <a class="el" href="class_cubby_flow_1_1_custom_implicit_surface2.html" title="Custom 2-D implicit surface using arbitrary function. ">CustomImplicitSurface2</a>.  <a href="#af4e9541e6588711902d5325c14e40923">More...</a><br /></td></tr>
 <tr class="separator:af4e9541e6588711902d5325c14e40923"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -194,6 +199,45 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="ad98c29668179bee1de51235f84273361"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad98c29668179bee1de51235f84273361">&#9670;&nbsp;</a></span>WithMaxNumberOfIterations()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_cubby_flow_1_1_custom_implicit_surface2_1_1_builder.html">Builder</a>&amp; CubbyFlow::CustomImplicitSurface2::Builder::WithMaxNumberOfIterations </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>numIter</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns builder with number of iterations for closest point/normal searches. </p>
+
+</div>
+</div>
+<a id="a79e62dee4b411e843079eaa344857a01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79e62dee4b411e843079eaa344857a01">&#9670;&nbsp;</a></span>WithRayMarchingResolution()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_cubby_flow_1_1_custom_implicit_surface2_1_1_builder.html">Builder</a>&amp; CubbyFlow::CustomImplicitSurface2::Builder::WithRayMarchingResolution </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>rayMarchingResolution</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns builder with ray marching resolution which determines the ray intersection quality. </p>
+
+</div>
+</div>
 <a id="aabf6623522c5f871a986e1ea385cb5be"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aabf6623522c5f871a986e1ea385cb5be">&#9670;&nbsp;</a></span>WithResolution()</h2>
 
@@ -210,7 +254,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns builder with resolution. </p>
+<p>Returns builder with finite differencing resolution. </p>
 
 </div>
 </div>
@@ -246,7 +290,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 18 2017 12:56:08 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Oct 8 2017 12:21:07 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

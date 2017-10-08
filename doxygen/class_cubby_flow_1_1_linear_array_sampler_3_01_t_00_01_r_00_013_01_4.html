@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.5</a>
+                    <a class="navbar-brand">CubbyFlow v0.6</a>
                 </div>
             </div>
         </nav>
@@ -99,6 +99,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a43ac09d44b2e2973d779a1c1605e2e29"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_linear_array_sampler_3_01_t_00_01_r_00_013_01_4.html#a43ac09d44b2e2973d779a1c1605e2e29">GetCoordinatesAndWeights</a> (const <a class="el" href="namespace_cubby_flow.html#ae792a8b1d5171792a83751e35c226581">Vector3</a>&lt; R &gt; &amp;pt, std::array&lt; <a class="el" href="namespace_cubby_flow.html#ae390cab31ca3b41c3a1c086c8210d410">Point3UI</a>, 8 &gt; *indices, std::array&lt; R, 8 &gt; *weights) const</td></tr>
 <tr class="memdesc:a43ac09d44b2e2973d779a1c1605e2e29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the indices of points and their sampling weight for given point.  <a href="#a43ac09d44b2e2973d779a1c1605e2e29">More...</a><br /></td></tr>
 <tr class="separator:a43ac09d44b2e2973d779a1c1605e2e29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a381814aaab115d2ef587944354870548"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_linear_array_sampler_3_01_t_00_01_r_00_013_01_4.html#a381814aaab115d2ef587944354870548">GetCoordinatesAndGradientWeights</a> (const <a class="el" href="namespace_cubby_flow.html#ae792a8b1d5171792a83751e35c226581">Vector3</a>&lt; R &gt; &amp;pt, std::array&lt; <a class="el" href="namespace_cubby_flow.html#ae390cab31ca3b41c3a1c086c8210d410">Point3UI</a>, 8 &gt; *indices, std::array&lt; <a class="el" href="namespace_cubby_flow.html#ae792a8b1d5171792a83751e35c226581">Vector3</a>&lt; R &gt;, 8 &gt; *weights) const</td></tr>
+<tr class="separator:a381814aaab115d2ef587944354870548"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d7fd8281e862910e7f21dfacbff0edf"><td class="memItemLeft" align="right" valign="top">std::function&lt; T(const <a class="el" href="namespace_cubby_flow.html#ae792a8b1d5171792a83751e35c226581">Vector3</a>&lt; R &gt; &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_linear_array_sampler_3_01_t_00_01_r_00_013_01_4.html#a5d7fd8281e862910e7f21dfacbff0edf">Functor</a> () const</td></tr>
 <tr class="memdesc:a5d7fd8281e862910e7f21dfacbff0edf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a function object that wraps this instance.  <a href="#a5d7fd8281e862910e7f21dfacbff0edf">More...</a><br /></td></tr>
 <tr class="separator:a5d7fd8281e862910e7f21dfacbff0edf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -215,6 +217,43 @@ template&lt;typename T , typename R &gt; </div>
 
 </div>
 </div>
+<a id="a381814aaab115d2ef587944354870548"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a381814aaab115d2ef587944354870548">&#9670;&nbsp;</a></span>GetCoordinatesAndGradientWeights()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename R &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_cubby_flow_1_1_linear_array_sampler.html">CubbyFlow::LinearArraySampler</a>&lt; T, R, 3 &gt;::GetCoordinatesAndGradientWeights </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespace_cubby_flow.html#ae792a8b1d5171792a83751e35c226581">Vector3</a>&lt; R &gt; &amp;&#160;</td>
+          <td class="paramname"><em>pt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::array&lt; <a class="el" href="namespace_cubby_flow.html#ae390cab31ca3b41c3a1c086c8210d410">Point3UI</a>, 8 &gt; *&#160;</td>
+          <td class="paramname"><em>indices</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::array&lt; <a class="el" href="namespace_cubby_flow.html#ae792a8b1d5171792a83751e35c226581">Vector3</a>&lt; R &gt;, 8 &gt; *&#160;</td>
+          <td class="paramname"><em>weights</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns the indices of points and their gradient of sampling weight for given point. </p>
+
+</div>
+</div>
 <a id="a43ac09d44b2e2973d779a1c1605e2e29"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a43ac09d44b2e2973d779a1c1605e2e29">&#9670;&nbsp;</a></span>GetCoordinatesAndWeights()</h2>
 
@@ -288,7 +327,7 @@ template&lt;typename T , typename R &gt; </div>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 18 2017 12:56:13 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Oct 8 2017 12:21:11 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

@@ -3,6 +3,8 @@ var searchData=
   ['advectionsolver2ptr',['AdvectionSolver2Ptr',['../namespace_cubby_flow.html#a9c16cac8bb57c75ba10741377f8966a4',1,'CubbyFlow']]],
   ['advectionsolver3ptr',['AdvectionSolver3Ptr',['../namespace_cubby_flow.html#acb775f54097320a5ac4302c3c33e4977',1,'CubbyFlow']]],
   ['animationptr',['AnimationPtr',['../namespace_cubby_flow.html#a1f10419319cd62b6281f54de6a900f14',1,'CubbyFlow']]],
+  ['apicsolver2ptr',['APICSolver2Ptr',['../namespace_cubby_flow.html#a627ffca5b0c81da59844f87916e5b5a1',1,'CubbyFlow']]],
+  ['apicsolver3ptr',['APICSolver3Ptr',['../namespace_cubby_flow.html#ac3448cbdea840d18b766d3b78824c7ec',1,'CubbyFlow']]],
   ['array1',['Array1',['../namespace_cubby_flow.html#a2fbda7925084b71604339e885b8a6053',1,'CubbyFlow']]],
   ['array2',['Array2',['../namespace_cubby_flow.html#a394dd521512ab234e41c897139f550ab',1,'CubbyFlow']]],
   ['array3',['Array3',['../namespace_cubby_flow.html#ae08c8be94de3a8ce4f625e7d869ba1bd',1,'CubbyFlow']]],

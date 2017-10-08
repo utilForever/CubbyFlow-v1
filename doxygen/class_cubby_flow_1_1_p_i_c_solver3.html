@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.5</a>
+                    <a class="navbar-brand">CubbyFlow v0.6</a>
                 </div>
             </div>
         </nav>
@@ -77,6 +77,7 @@ $(function() {
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="class_cubby_flow_1_1_p_i_c_solver3-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">CubbyFlow::PICSolver3 Class Reference</div>  </div>
@@ -93,10 +94,11 @@ Inheritance diagram for CubbyFlow::PICSolver3:</div>
  <div class="center">
   <img src="class_cubby_flow_1_1_p_i_c_solver3.png" usemap="#CubbyFlow::PICSolver3_map" alt=""/>
   <map id="CubbyFlow::PICSolver3_map" name="CubbyFlow::PICSolver3_map">
-<area href="class_cubby_flow_1_1_grid_fluid_solver3.html" title="Abstract base class for grid-based 3-D fluid solver. " alt="CubbyFlow::GridFluidSolver3" shape="rect" coords="0,112,181,136"/>
-<area href="class_cubby_flow_1_1_physics_animation.html" title="Abstract base class for physics-based animation. " alt="CubbyFlow::PhysicsAnimation" shape="rect" coords="0,56,181,80"/>
-<area href="class_cubby_flow_1_1_animation.html" title="Abstract base class for animation-related class. " alt="CubbyFlow::Animation" shape="rect" coords="0,0,181,24"/>
-<area href="class_cubby_flow_1_1_f_l_i_p_solver3.html" title="3-D Fluid-Implicit Particle (FLIP) implementation. " alt="CubbyFlow::FLIPSolver3" shape="rect" coords="0,224,181,248"/>
+<area href="class_cubby_flow_1_1_grid_fluid_solver3.html" title="Abstract base class for grid-based 3-D fluid solver. " alt="CubbyFlow::GridFluidSolver3" shape="rect" coords="95,112,276,136"/>
+<area href="class_cubby_flow_1_1_physics_animation.html" title="Abstract base class for physics-based animation. " alt="CubbyFlow::PhysicsAnimation" shape="rect" coords="95,56,276,80"/>
+<area href="class_cubby_flow_1_1_animation.html" title="Abstract base class for animation-related class. " alt="CubbyFlow::Animation" shape="rect" coords="95,0,276,24"/>
+<area href="class_cubby_flow_1_1_a_p_i_c_solver3.html" title="3-D Affine Particle-in-Cell (APIC) implementation " alt="CubbyFlow::APICSolver3" shape="rect" coords="0,224,181,248"/>
+<area href="class_cubby_flow_1_1_f_l_i_p_solver3.html" title="3-D Fluid-Implicit Particle (FLIP) implementation. " alt="CubbyFlow::FLIPSolver3" shape="rect" coords="191,224,372,248"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -327,6 +329,15 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:ac45f58b1cf8430828e5e1b3305125b8b inherit pro_methods_class_cubby_flow_1_1_grid_fluid_solver3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_cubby_flow.html#ae79aff2078c0903f587221a64e47c175">VectorField3Ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_grid_fluid_solver3.html#ac45f58b1cf8430828e5e1b3305125b8b">GetColliderVelocityField</a> () const</td></tr>
 <tr class="memdesc:ac45f58b1cf8430828e5e1b3305125b8b inherit pro_methods_class_cubby_flow_1_1_grid_fluid_solver3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the velocity field of the collider.  <a href="class_cubby_flow_1_1_grid_fluid_solver3.html#ac45f58b1cf8430828e5e1b3305125b8b">More...</a><br /></td></tr>
 <tr class="separator:ac45f58b1cf8430828e5e1b3305125b8b inherit pro_methods_class_cubby_flow_1_1_grid_fluid_solver3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a529628a25d4182ac1d0957c6b3cecac3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_cubby_flow.html#ae08c8be94de3a8ce4f625e7d869ba1bd">Array3</a>&lt; char &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_p_i_c_solver3.html#a529628a25d4182ac1d0957c6b3cecac3">m_uMarkers</a></td></tr>
+<tr class="separator:a529628a25d4182ac1d0957c6b3cecac3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac060ba33bf6290dac6bfeeee2b85f9fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_cubby_flow.html#ae08c8be94de3a8ce4f625e7d869ba1bd">Array3</a>&lt; char &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_p_i_c_solver3.html#ac060ba33bf6290dac6bfeeee2b85f9fe">m_vMarkers</a></td></tr>
+<tr class="separator:ac060ba33bf6290dac6bfeeee2b85f9fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a232649b872741769afa91930b9e6393d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_cubby_flow.html#ae08c8be94de3a8ce4f625e7d869ba1bd">Array3</a>&lt; char &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_p_i_c_solver3.html#a232649b872741769afa91930b9e6393d">m_wMarkers</a></td></tr>
+<tr class="separator:a232649b872741769afa91930b9e6393d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>3-D Particle-in-Cell (PIC) implementation. </p>
@@ -691,7 +702,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Transfers velocity field from grids to particles. </p>
 
-<p>Reimplemented in <a class="el" href="class_cubby_flow_1_1_f_l_i_p_solver3.html#ad919d74977a8a8237236e98431a1758a">CubbyFlow::FLIPSolver3</a>.</p>
+<p>Reimplemented in <a class="el" href="class_cubby_flow_1_1_f_l_i_p_solver3.html#ad919d74977a8a8237236e98431a1758a">CubbyFlow::FLIPSolver3</a>, and <a class="el" href="class_cubby_flow_1_1_a_p_i_c_solver3.html#af7d2fac4d5469dfc1c4f219113225d80">CubbyFlow::APICSolver3</a>.</p>
 
 </div>
 </div>
@@ -720,7 +731,74 @@ Protected Member Functions</h2></td></tr>
 
 <p>Transfers velocity field from particles to grids. </p>
 
-<p>Reimplemented in <a class="el" href="class_cubby_flow_1_1_f_l_i_p_solver3.html#af660c163d416e021d9d7873799a01ac2">CubbyFlow::FLIPSolver3</a>.</p>
+<p>Reimplemented in <a class="el" href="class_cubby_flow_1_1_f_l_i_p_solver3.html#af660c163d416e021d9d7873799a01ac2">CubbyFlow::FLIPSolver3</a>, and <a class="el" href="class_cubby_flow_1_1_a_p_i_c_solver3.html#a2f59c22b6fc66036b6fe9a46e9e51b57">CubbyFlow::APICSolver3</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a529628a25d4182ac1d0957c6b3cecac3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a529628a25d4182ac1d0957c6b3cecac3">&#9670;&nbsp;</a></span>m_uMarkers</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_cubby_flow.html#ae08c8be94de3a8ce4f625e7d869ba1bd">Array3</a>&lt;char&gt; CubbyFlow::PICSolver3::m_uMarkers</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac060ba33bf6290dac6bfeeee2b85f9fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac060ba33bf6290dac6bfeeee2b85f9fe">&#9670;&nbsp;</a></span>m_vMarkers</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_cubby_flow.html#ae08c8be94de3a8ce4f625e7d869ba1bd">Array3</a>&lt;char&gt; CubbyFlow::PICSolver3::m_vMarkers</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a232649b872741769afa91930b9e6393d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a232649b872741769afa91930b9e6393d">&#9670;&nbsp;</a></span>m_wMarkers</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_cubby_flow.html#ae08c8be94de3a8ce4f625e7d869ba1bd">Array3</a>&lt;char&gt; CubbyFlow::PICSolver3::m_wMarkers</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -736,7 +814,7 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 18 2017 12:56:16 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Oct 8 2017 12:21:14 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.5</a>
+                    <a class="navbar-brand">CubbyFlow v0.6</a>
                 </div>
             </div>
         </nav>
@@ -103,7 +103,7 @@ Public Types</h2></td></tr>
 <tr class="memdesc:afac99f46130b2ad754324ad1d4762596"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scalar data chunk.  <a href="#afac99f46130b2ad754324ad1d4762596">More...</a><br /></td></tr>
 <tr class="separator:afac99f46130b2ad754324ad1d4762596"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b02e5465b61eb248c87d9b06711c340"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_particle_system_data3.html#a0b02e5465b61eb248c87d9b06711c340">VectorData</a> = <a class="el" href="namespace_cubby_flow.html#a2fbda7925084b71604339e885b8a6053">Array1</a>&lt; <a class="el" href="namespace_cubby_flow.html#a7a0f165a2c76a196c9e23978ff7f2dcb">Vector3D</a> &gt;</td></tr>
-<tr class="memdesc:a0b02e5465b61eb248c87d9b06711c340"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_cubby_flow_1_1_vector.html" title="Generic N-D vector class. ">Vector</a> data chunk.  <a href="#a0b02e5465b61eb248c87d9b06711c340">More...</a><br /></td></tr>
+<tr class="memdesc:a0b02e5465b61eb248c87d9b06711c340"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_cubby_flow_1_1_vector.html" title="Generic statically-sized N-D vector class. ">Vector</a> data chunk.  <a href="#a0b02e5465b61eb248c87d9b06711c340">More...</a><br /></td></tr>
 <tr class="separator:a0b02e5465b61eb248c87d9b06711c340"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -247,7 +247,7 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_cubby_flow_1_1_vector.html" title="Generic N-D vector class. ">Vector</a> data chunk. </p>
+<p><a class="el" href="class_cubby_flow_1_1_vector.html" title="Generic statically-sized N-D vector class. ">Vector</a> data chunk. </p>
 
 </div>
 </div>
@@ -380,7 +380,7 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Adds a particle to the data structure. </p>
-<p>This function will add a single particle to the data structure. For custom data layers, zeros will be assigned for new particles. However, this will invalidate neighbor searcher and neighbor lists. It is users responsibility to call ParticleSystemData3::buildNeighborSearcher and ParticleSystemData3::buildNeighborLists to refresh those data.</p>
+<p>This function will add a single particle to the data structure. For custom data layers, zeros will be assigned for new particles. However, this will invalidate neighbor searcher and neighbor lists. It is users responsibility to call <a class="el" href="class_cubby_flow_1_1_particle_system_data3.html#ad976b68b2e57278f653f82b232518cc4" title="Builds neighbor searcher with given search radius. ">ParticleSystemData3::BuildNeighborSearcher</a> and <a class="el" href="class_cubby_flow_1_1_particle_system_data3.html#af6220f3fa2014aeb45c7e12bebe0d0e2" title="Builds neighbor lists with given search radius. ">ParticleSystemData3::BuildNeighborLists</a> to refresh those data.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">newPosition</td><td>The new position. </td></tr>
@@ -425,12 +425,12 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Adds particles to the data structure. </p>
-<p>This function will add particles to the data structure. For custom data layers, zeros will be assigned for new particles. However, this will invalidate neighbor searcher and neighbor lists. It is users responsibility to call ParticleSystemData3::buildNeighborSearcher and ParticleSystemData3::buildNeighborLists to refresh those data.</p>
+<p>This function will add particles to the data structure. For custom data layers, zeros will be assigned for new particles. However, this will invalidate neighbor searcher and neighbor lists. It is users responsibility to call <a class="el" href="class_cubby_flow_1_1_particle_system_data3.html#ad976b68b2e57278f653f82b232518cc4" title="Builds neighbor searcher with given search radius. ">ParticleSystemData3::BuildNeighborSearcher</a> and <a class="el" href="class_cubby_flow_1_1_particle_system_data3.html#af6220f3fa2014aeb45c7e12bebe0d0e2" title="Builds neighbor lists with given search radius. ">ParticleSystemData3::BuildNeighborLists</a> to refresh those data.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">newPosition</td><td>The new position. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">newVelocity</td><td>The new velocity. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">newForce</td><td>The new force. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">newPositions</td><td>The new positions. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">newVelocities</td><td>The new velocities. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">newForces</td><td>The new forces. </td></tr>
   </table>
   </dd>
 </dl>
@@ -768,7 +768,7 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns neighbor lists. </p>
-<p>This function returns neighbor lists which is available after calling PointParallelHashGridSearcher3::buildNeighborLists. Each list stores indices of the neighbors.</p>
+<p>This function returns neighbor lists which is available after calling PointParallelHashGridSearcher3::BuildNeighborLists. Each list stores indices of the neighbors.</p>
 <dl class="section return"><dt>Returns</dt><dd>Neighbor lists. </dd></dl>
 
 </div>
@@ -829,7 +829,7 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Resizes the number of particles of the container. </p>
-<p>This function will resize internal containers to store newly given number of particles including custom data layers. However, this will invalidate neighbor searcher and neighbor lists. It is users responsibility to call ParticleSystemData3::buildNeighborSearcher and ParticleSystemData3::buildNeighborLists to refresh those data.</p>
+<p>This function will resize internal containers to store newly given number of particles including custom data layers. However, this will invalidate neighbor searcher and neighbor lists. It is users responsibility to call <a class="el" href="class_cubby_flow_1_1_particle_system_data3.html#ad976b68b2e57278f653f82b232518cc4" title="Builds neighbor searcher with given search radius. ">ParticleSystemData3::BuildNeighborSearcher</a> and <a class="el" href="class_cubby_flow_1_1_particle_system_data3.html#af6220f3fa2014aeb45c7e12bebe0d0e2" title="Builds neighbor lists with given search radius. ">ParticleSystemData3::BuildNeighborLists</a> to refresh those data.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">newNumberOfParticles</td><td>New number of particles. </td></tr>
@@ -1099,7 +1099,7 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 18 2017 12:56:14 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Oct 8 2017 12:21:13 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

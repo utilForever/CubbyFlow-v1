@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.5</a>
+                    <a class="navbar-brand">CubbyFlow v0.6</a>
                 </div>
             </div>
         </nav>
@@ -106,6 +106,10 @@ Functions</h2></td></tr>
 <tr class="memitem:aa0b192df986d6c922bf1f6cf46b22f53"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_cubby_flow.html#aa0b192df986d6c922bf1f6cf46b22f53">CubbyFlow::ParallelFor</a> (IndexType beginIndexX, IndexType endIndexX, IndexType beginIndexY, IndexType endIndexY, IndexType beginIndexZ, IndexType endIndexZ, const Function &amp;function)</td></tr>
 <tr class="memdesc:aa0b192df986d6c922bf1f6cf46b22f53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes a 3D nested for-loop in parallel.  <a href="namespace_cubby_flow.html#aa0b192df986d6c922bf1f6cf46b22f53">More...</a><br /></td></tr>
 <tr class="separator:aa0b192df986d6c922bf1f6cf46b22f53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69ec011b5497e20d4719c43a06db3b5a"><td class="memTemplParams" colspan="2">template&lt;typename IndexType , typename Value , typename Function , typename Reduce &gt; </td></tr>
+<tr class="memitem:a69ec011b5497e20d4719c43a06db3b5a"><td class="memTemplItemLeft" align="right" valign="top">Value&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_cubby_flow.html#a69ec011b5497e20d4719c43a06db3b5a">CubbyFlow::ParallelReduce</a> (IndexType beginIndex, IndexType endIndex, const Value &amp;identity, const Function &amp;func, const Reduce &amp;reduce)</td></tr>
+<tr class="memdesc:a69ec011b5497e20d4719c43a06db3b5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs reduce operation in parallel.  <a href="namespace_cubby_flow.html#a69ec011b5497e20d4719c43a06db3b5a">More...</a><br /></td></tr>
+<tr class="separator:a69ec011b5497e20d4719c43a06db3b5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb43b9ad43d78b33a491586238b6cb7e"><td class="memTemplParams" colspan="2">template&lt;typename RandomIterator &gt; </td></tr>
 <tr class="memitem:aeb43b9ad43d78b33a491586238b6cb7e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_cubby_flow.html#aeb43b9ad43d78b33a491586238b6cb7e">CubbyFlow::ParallelSort</a> (RandomIterator begin, RandomIterator end)</td></tr>
 <tr class="memdesc:aeb43b9ad43d78b33a491586238b6cb7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts a container in parallel.  <a href="namespace_cubby_flow.html#aeb43b9ad43d78b33a491586238b6cb7e">More...</a><br /></td></tr>
@@ -124,7 +128,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 18 2017 12:56:05 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Oct 8 2017 12:21:04 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

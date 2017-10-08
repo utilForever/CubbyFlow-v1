@@ -23,5 +23,7 @@ var searchData=
   ['flipsolver3_2eh',['FLIPSolver3.h',['../_f_l_i_p_solver3_8h.html',1,'']]],
   ['fmmlevelsetsolver2_2eh',['FMMLevelSetSolver2.h',['../_f_m_m_level_set_solver2_8h.html',1,'']]],
   ['fmmlevelsetsolver3_2eh',['FMMLevelSetSolver3.h',['../_f_m_m_level_set_solver3_8h.html',1,'']]],
-  ['frame_2eh',['Frame.h',['../_frame_8h.html',1,'']]]
+  ['frame_2eh',['Frame.h',['../_frame_8h.html',1,'']]],
+  ['functors_2dimpl_2eh',['Functors-Impl.h',['../_functors-_impl_8h.html',1,'']]],
+  ['functors_2eh',['Functors.h',['../_functors_8h.html',1,'']]]
 ];

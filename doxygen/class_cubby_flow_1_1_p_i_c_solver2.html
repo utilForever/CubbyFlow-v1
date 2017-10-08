@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.5</a>
+                    <a class="navbar-brand">CubbyFlow v0.6</a>
                 </div>
             </div>
         </nav>
@@ -77,6 +77,7 @@ $(function() {
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="class_cubby_flow_1_1_p_i_c_solver2-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">CubbyFlow::PICSolver2 Class Reference</div>  </div>
@@ -93,10 +94,11 @@ Inheritance diagram for CubbyFlow::PICSolver2:</div>
  <div class="center">
   <img src="class_cubby_flow_1_1_p_i_c_solver2.png" usemap="#CubbyFlow::PICSolver2_map" alt=""/>
   <map id="CubbyFlow::PICSolver2_map" name="CubbyFlow::PICSolver2_map">
-<area href="class_cubby_flow_1_1_grid_fluid_solver2.html" title="Abstract base class for grid-based 2-D fluid solver. " alt="CubbyFlow::GridFluidSolver2" shape="rect" coords="0,112,181,136"/>
-<area href="class_cubby_flow_1_1_physics_animation.html" title="Abstract base class for physics-based animation. " alt="CubbyFlow::PhysicsAnimation" shape="rect" coords="0,56,181,80"/>
-<area href="class_cubby_flow_1_1_animation.html" title="Abstract base class for animation-related class. " alt="CubbyFlow::Animation" shape="rect" coords="0,0,181,24"/>
-<area href="class_cubby_flow_1_1_f_l_i_p_solver2.html" title="2-D Fluid-Implicit Particle (FLIP) implementation. " alt="CubbyFlow::FLIPSolver2" shape="rect" coords="0,224,181,248"/>
+<area href="class_cubby_flow_1_1_grid_fluid_solver2.html" title="Abstract base class for grid-based 2-D fluid solver. " alt="CubbyFlow::GridFluidSolver2" shape="rect" coords="95,112,276,136"/>
+<area href="class_cubby_flow_1_1_physics_animation.html" title="Abstract base class for physics-based animation. " alt="CubbyFlow::PhysicsAnimation" shape="rect" coords="95,56,276,80"/>
+<area href="class_cubby_flow_1_1_animation.html" title="Abstract base class for animation-related class. " alt="CubbyFlow::Animation" shape="rect" coords="95,0,276,24"/>
+<area href="class_cubby_flow_1_1_a_p_i_c_solver2.html" title="2-D Affine Particle-in-Cell (APIC) implementation " alt="CubbyFlow::APICSolver2" shape="rect" coords="0,224,181,248"/>
+<area href="class_cubby_flow_1_1_f_l_i_p_solver2.html" title="2-D Fluid-Implicit Particle (FLIP) implementation. " alt="CubbyFlow::FLIPSolver2" shape="rect" coords="191,224,372,248"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -327,6 +329,13 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a29719d9d6f0ef21969c32618ed89776b inherit pro_methods_class_cubby_flow_1_1_grid_fluid_solver2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_cubby_flow.html#ab71dea58b8939ced874c39bd1b9a6304">VectorField2Ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_grid_fluid_solver2.html#a29719d9d6f0ef21969c32618ed89776b">GetColliderVelocityField</a> () const</td></tr>
 <tr class="memdesc:a29719d9d6f0ef21969c32618ed89776b inherit pro_methods_class_cubby_flow_1_1_grid_fluid_solver2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the velocity field of the collider.  <a href="class_cubby_flow_1_1_grid_fluid_solver2.html#a29719d9d6f0ef21969c32618ed89776b">More...</a><br /></td></tr>
 <tr class="separator:a29719d9d6f0ef21969c32618ed89776b inherit pro_methods_class_cubby_flow_1_1_grid_fluid_solver2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a4dfa7d7064981a025d76a3d9ab007963"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_cubby_flow.html#a394dd521512ab234e41c897139f550ab">Array2</a>&lt; char &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_p_i_c_solver2.html#a4dfa7d7064981a025d76a3d9ab007963">m_uMarkers</a></td></tr>
+<tr class="separator:a4dfa7d7064981a025d76a3d9ab007963"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61e9dbf7e88b1d9fb09982cf00241731"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_cubby_flow.html#a394dd521512ab234e41c897139f550ab">Array2</a>&lt; char &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_p_i_c_solver2.html#a61e9dbf7e88b1d9fb09982cf00241731">m_vMarkers</a></td></tr>
+<tr class="separator:a61e9dbf7e88b1d9fb09982cf00241731"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>2-D Particle-in-Cell (PIC) implementation. </p>
@@ -691,7 +700,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Transfers velocity field from grids to particles. </p>
 
-<p>Reimplemented in <a class="el" href="class_cubby_flow_1_1_f_l_i_p_solver2.html#a72846e8e59b0a567d46239d70c402d7f">CubbyFlow::FLIPSolver2</a>.</p>
+<p>Reimplemented in <a class="el" href="class_cubby_flow_1_1_f_l_i_p_solver2.html#a72846e8e59b0a567d46239d70c402d7f">CubbyFlow::FLIPSolver2</a>, and <a class="el" href="class_cubby_flow_1_1_a_p_i_c_solver2.html#a61ac9cb24521fe30cb96b17ccd75560d">CubbyFlow::APICSolver2</a>.</p>
 
 </div>
 </div>
@@ -720,7 +729,52 @@ Protected Member Functions</h2></td></tr>
 
 <p>Transfers velocity field from particles to grids. </p>
 
-<p>Reimplemented in <a class="el" href="class_cubby_flow_1_1_f_l_i_p_solver2.html#a400ae8851217fdfb68f2a8db310584c1">CubbyFlow::FLIPSolver2</a>.</p>
+<p>Reimplemented in <a class="el" href="class_cubby_flow_1_1_f_l_i_p_solver2.html#a400ae8851217fdfb68f2a8db310584c1">CubbyFlow::FLIPSolver2</a>, and <a class="el" href="class_cubby_flow_1_1_a_p_i_c_solver2.html#ad4321f0c96e2402e8203ea7a25c5c1d6">CubbyFlow::APICSolver2</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a4dfa7d7064981a025d76a3d9ab007963"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4dfa7d7064981a025d76a3d9ab007963">&#9670;&nbsp;</a></span>m_uMarkers</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_cubby_flow.html#a394dd521512ab234e41c897139f550ab">Array2</a>&lt;char&gt; CubbyFlow::PICSolver2::m_uMarkers</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a61e9dbf7e88b1d9fb09982cf00241731"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61e9dbf7e88b1d9fb09982cf00241731">&#9670;&nbsp;</a></span>m_vMarkers</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_cubby_flow.html#a394dd521512ab234e41c897139f550ab">Array2</a>&lt;char&gt; CubbyFlow::PICSolver2::m_vMarkers</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -736,7 +790,7 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 18 2017 12:56:16 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Oct 8 2017 12:21:14 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

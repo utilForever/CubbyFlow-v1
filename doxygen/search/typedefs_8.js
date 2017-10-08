@@ -9,5 +9,21 @@ var searchData=
   ['matrix4x4',['Matrix4x4',['../namespace_cubby_flow.html#a4100869610778d2086891c33ca2875a7',1,'CubbyFlow']]],
   ['matrix4x4d',['Matrix4x4D',['../namespace_cubby_flow.html#a82af79e27452cbbbcb82e336f4aa2a37',1,'CubbyFlow']]],
   ['matrix4x4f',['Matrix4x4F',['../namespace_cubby_flow.html#ad07ca7335ee0e27690003a6df29670a1',1,'CubbyFlow']]],
-  ['matrixtype',['MatrixType',['../struct_cubby_flow_1_1_f_d_m_blas2.html#a32dd34c4434520d3a3e9303d6e3fd222',1,'CubbyFlow::FDMBlas2::MatrixType()'],['../struct_cubby_flow_1_1_f_d_m_blas3.html#a75f2bba6b7d5d1679356025909baa3a9',1,'CubbyFlow::FDMBlas3::MatrixType()'],['../struct_cubby_flow_1_1_b_l_a_s.html#a2493799f13939445ffe9c2cbc745c48d',1,'CubbyFlow::BLAS::MatrixType()']]]
+  ['matrixadd',['MatrixAdd',['../namespace_cubby_flow.html#a10bed19b26f2b9d2a5e0622227dc1000',1,'CubbyFlow']]],
+  ['matrixcsrd',['MatrixCSRD',['../namespace_cubby_flow.html#a68f24ef9a05e5d67ac6f93a803f7126d',1,'CubbyFlow']]],
+  ['matrixcsrf',['MatrixCSRF',['../namespace_cubby_flow.html#a3df04a8b8ffef73914aae897aadf9481',1,'CubbyFlow']]],
+  ['matrixmxnd',['MatrixMxND',['../namespace_cubby_flow.html#abb18d76d1b85b7f30708448e4a9e3f37',1,'CubbyFlow']]],
+  ['matrixmxnf',['MatrixMxNF',['../namespace_cubby_flow.html#a62d9de72768ade6a80403e63acb2d28c',1,'CubbyFlow']]],
+  ['matrixscalaradd',['MatrixScalarAdd',['../namespace_cubby_flow.html#a0b22595bf4a9df6b4b0585c3f866e911',1,'CubbyFlow']]],
+  ['matrixscalardiv',['MatrixScalarDiv',['../namespace_cubby_flow.html#aeb83b224c7cf9404ffcd02ca97163628',1,'CubbyFlow']]],
+  ['matrixscalarmul',['MatrixScalarMul',['../namespace_cubby_flow.html#a2a2ae2ab5e667e8012c85b7d484a6b89',1,'CubbyFlow']]],
+  ['matrixscalarrdiv',['MatrixScalarRDiv',['../namespace_cubby_flow.html#a9158fc0dfe05d68f783e1510cc68441f',1,'CubbyFlow']]],
+  ['matrixscalarrsub',['MatrixScalarRSub',['../namespace_cubby_flow.html#a0a80831b259f60f7f288a817c0827ba1',1,'CubbyFlow']]],
+  ['matrixscalarsub',['MatrixScalarSub',['../namespace_cubby_flow.html#a2b0f592381a6a42acb796ab43be1d64b',1,'CubbyFlow']]],
+  ['matrixsub',['MatrixSub',['../namespace_cubby_flow.html#a806c95b2e1a29fd47e863dccc37d4c3d',1,'CubbyFlow']]],
+  ['matrixtype',['MatrixType',['../struct_cubby_flow_1_1_f_d_m_blas2.html#a32dd34c4434520d3a3e9303d6e3fd222',1,'CubbyFlow::FDMBlas2::MatrixType()'],['../struct_cubby_flow_1_1_f_d_m_blas3.html#a75f2bba6b7d5d1679356025909baa3a9',1,'CubbyFlow::FDMBlas3::MatrixType()'],['../struct_cubby_flow_1_1_b_l_a_s.html#a2493799f13939445ffe9c2cbc745c48d',1,'CubbyFlow::BLAS::MatrixType()']]],
+  ['matrixtypecast',['MatrixTypeCast',['../namespace_cubby_flow.html#a1cdc6095758ce2cffed2412405a5f7cb',1,'CubbyFlow']]],
+  ['multigridcorrectfunc',['MultiGridCorrectFunc',['../namespace_cubby_flow.html#a64e82285738f75e7a94d223ea1cbd1ae',1,'CubbyFlow']]],
+  ['multigridrelaxfunc',['MultiGridRelaxFunc',['../namespace_cubby_flow.html#a92435a3f3dba549501a1d8879ab7fa28',1,'CubbyFlow']]],
+  ['multigridrestrictfunc',['MultiGridRestrictFunc',['../namespace_cubby_flow.html#adc3afaa6b619259a4b4668bb83c737df',1,'CubbyFlow']]]
 ];
