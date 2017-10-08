@@ -59,10 +59,6 @@ Here are some of the example simulations generated using CubbyFlow framework. Co
 
 ![PIC_dam_breaking](https://github.com/utilForever/CubbyFlow/blob/master/Medias/PIC_dam_breaking.png "PIC Example")
 
-#### APIC Simulation Example
-
-![APIC_dam_breaking](https://github.com/utilForever/CubbyFlow/blob/master/Medias/APIC_dam_breaking.png "APIC Example")
-
 #### Level Set Example with Different Viscosity (high / low)
 
 ![level_set_bunny_drop_high_viscosity](https://github.com/utilForever/CubbyFlow/blob/master/Medias/level_set_bunny_drop_high_viscosity.png "Level Set Bunny Drop - High Viscosity")
