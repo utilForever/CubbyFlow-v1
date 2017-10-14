@@ -383,6 +383,7 @@
     <ClCompile Include="APICSolver3Tests.cpp">
       <Filter>Solver\APIC</Filter>
     </ClCompile>
+    <ClCompile Include="UnitTestsUtils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -477,6 +478,9 @@
     </Filter>
     <Filter Include="Solver\APIC">
       <UniqueIdentifier>{9bf11397-4b67-4189-b986-af5a714d4de4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="QueryEngine">
+      <UniqueIdentifier>{c78109ae-3260-465a-9c7c-112986ba0b2a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
