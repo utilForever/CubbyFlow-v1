@@ -942,6 +942,9 @@
     <ClInclude Include="..\Includes\QueryEngine\NearestNeighborQueryEngine2.h">
       <Filter>QueryEngine</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\QueryEngine\NearestNeighborQueryEngine3.h">
+      <Filter>QueryEngine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
