@@ -384,6 +384,9 @@
       <Filter>Solver\APIC</Filter>
     </ClCompile>
     <ClCompile Include="UnitTestsUtils.cpp" />
+    <ClCompile Include="ListQueryEngine2Tests.cpp">
+      <Filter>QueryEngine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

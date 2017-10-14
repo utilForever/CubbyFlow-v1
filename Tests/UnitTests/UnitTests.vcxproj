@@ -130,6 +130,7 @@
     <ClCompile Include="ImplicitTriangleMesh3Tests.cpp" />
     <ClCompile Include="LevelSetLiquidSolversTests.cpp" />
     <ClCompile Include="LevelSetSolversTests.cpp" />
+    <ClCompile Include="ListQueryEngine2Tests.cpp" />
     <ClCompile Include="MathUtilsTests.cpp" />
     <ClCompile Include="Matrix2x2Tests.cpp" />
     <ClCompile Include="Matrix3x3Tests.cpp" />
