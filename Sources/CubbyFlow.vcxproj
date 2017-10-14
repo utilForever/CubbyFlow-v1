@@ -328,6 +328,7 @@ xcopy /y "$(SolutionDir)Includes" "$(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Point\Point3-Impl.h" />
     <ClInclude Include="..\Includes\Point\Point3.h" />
     <ClInclude Include="..\Includes\QueryEngine\IntersectionQueryEngine2.h" />
+    <ClInclude Include="..\Includes\QueryEngine\IntersectionQueryEngine3.h" />
     <ClInclude Include="..\Includes\QueryEngine\NearestNeighborQueryEngine2.h" />
     <ClInclude Include="..\Includes\QueryEngine\NearestNeighborQueryEngine3.h" />
     <ClInclude Include="..\Includes\Ray\Ray.h" />
