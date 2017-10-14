@@ -331,6 +331,8 @@ xcopy /y "$(SolutionDir)Includes" "$(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\QueryEngine\IntersectionQueryEngine3.h" />
     <ClInclude Include="..\Includes\QueryEngine\ListQueryEngine2-Impl.h" />
     <ClInclude Include="..\Includes\QueryEngine\ListQueryEngine2.h" />
+    <ClInclude Include="..\Includes\QueryEngine\ListQueryEngine3-Impl.h" />
+    <ClInclude Include="..\Includes\QueryEngine\ListQueryEngine3.h" />
     <ClInclude Include="..\Includes\QueryEngine\NearestNeighborQueryEngine2.h" />
     <ClInclude Include="..\Includes\QueryEngine\NearestNeighborQueryEngine3.h" />
     <ClInclude Include="..\Includes\Ray\Ray.h" />

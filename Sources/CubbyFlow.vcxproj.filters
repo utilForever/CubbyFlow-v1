@@ -957,6 +957,12 @@
     <ClInclude Include="..\Includes\QueryEngine\ListQueryEngine2-Impl.h">
       <Filter>QueryEngine</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\QueryEngine\ListQueryEngine3.h">
+      <Filter>QueryEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\QueryEngine\ListQueryEngine3-Impl.h">
+      <Filter>QueryEngine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
