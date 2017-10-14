@@ -115,6 +115,9 @@
     <Filter Include="Solver\APIC">
       <UniqueIdentifier>{78c9573b-abd3-413a-9dff-3d655cb5ed52}</UniqueIdentifier>
     </Filter>
+    <Filter Include="QueryEngine">
+      <UniqueIdentifier>{2771e784-61c7-4f3c-8770-05468a3d1a7b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Includes\Animation\Animation.h">
@@ -935,6 +938,9 @@
     </ClInclude>
     <ClInclude Include="..\Includes\Solver\APIC\APICSolver3.h">
       <Filter>Solver\APIC</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\QueryEngine\NearestNeighborQueryEngine2.h">
+      <Filter>QueryEngine</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
