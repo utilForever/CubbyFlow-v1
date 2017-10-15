@@ -140,6 +140,7 @@
     <ClCompile Include="MatrixMxNTests.cpp" />
     <ClCompile Include="MatrixTests.cpp" />
     <ClCompile Include="MultiGridTests.cpp" />
+    <ClCompile Include="OctreeTests.cpp" />
     <ClCompile Include="ParallelTests.cpp" />
     <ClCompile Include="ParticleSystemData2Tests.cpp" />
     <ClCompile Include="ParticleSystemData3Tests.cpp" />
