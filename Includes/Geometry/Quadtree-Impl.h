@@ -285,7 +285,7 @@ namespace CubbyFlow
 			// Refine
 			for (int i = 0; i < 4; ++i)
 			{
-				build(firstChild + i, depth + 1, bboxPerNode[i], testFunc);
+				Build(firstChild + i, depth + 1, bboxPerNode[i], testFunc);
 			}
 		}
 	}
