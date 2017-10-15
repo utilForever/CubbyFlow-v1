@@ -41,7 +41,7 @@ namespace CubbyFlow
 		m_bbox.upperCorner = m_bbox.lowerCorner + Vector3D(maxEdgeLen, maxEdgeLen, maxEdgeLen);
 
 		// Build
-		m_nodes.Resize(1);
+		m_nodes.resize(1);
 		m_nodes[0].items.resize(m_items.size());
 		std::iota(m_nodes[0].items.begin(), m_nodes[0].items.end(), ZERO_SIZE);
 
@@ -466,7 +466,7 @@ namespace CubbyFlow
 		{
 			for (int i = 0; i < 8; ++i)
 			{
-				best = GeClosestIntersection(
+				best = GetClosestIntersection(
 					ray, testFunc, node.firstChild + i,
 					BoundingBox3D(bound.Corner(i), bound.MidPoint()), best);
 			}
