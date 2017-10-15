@@ -240,7 +240,7 @@ namespace CubbyFlow
 	template <typename T>
 	Vector2<T> BoundingBox<T, 2>::Clamp(const Vector2<T>& pt) const
 	{
-		return Clamp(pt, lowerCorner, upperCorner);
+		return CubbyFlow::Clamp(pt, lowerCorner, upperCorner);
 	}
 }
 
