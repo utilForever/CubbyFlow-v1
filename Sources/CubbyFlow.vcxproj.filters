@@ -963,6 +963,12 @@
     <ClInclude Include="..\Includes\QueryEngine\ListQueryEngine3-Impl.h">
       <Filter>QueryEngine</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Geometry\Octree.h">
+      <Filter>Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Geometry\Octree-Impl.h">
+      <Filter>Geometry</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">

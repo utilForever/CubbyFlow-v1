@@ -257,6 +257,8 @@ xcopy /y "$(SolutionDir)Includes" "$(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Geometry\Box3.h" />
     <ClInclude Include="..\Includes\Geometry\Cylinder3.h" />
     <ClInclude Include="..\Includes\Geometry\ImplicitTriangleMesh3.h" />
+    <ClInclude Include="..\Includes\Geometry\Octree-Impl.h" />
+    <ClInclude Include="..\Includes\Geometry\Octree.h" />
     <ClInclude Include="..\Includes\Geometry\Plane2.h" />
     <ClInclude Include="..\Includes\Geometry\Plane3.h" />
     <ClInclude Include="..\Includes\Geometry\Sphere2.h" />
