@@ -113,6 +113,9 @@ namespace CubbyFlow
 
 		//! Returns corner position. Index starts from x-first order.
 		Vector3<T> Corner(size_t idx) const;
+
+		//! Returns the clamped point.
+		Vector3<T> Clamp(const Vector3<T>& pt) const;
 	};
 
 	//! Type alias for 3-D BoundingBox.
