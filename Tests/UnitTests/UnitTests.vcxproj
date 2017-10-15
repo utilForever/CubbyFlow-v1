@@ -162,6 +162,7 @@
     <ClCompile Include="PointTests.cpp" />
     <ClCompile Include="PointParticleEmitter2Tests.cpp" />
     <ClCompile Include="PointParticleEmitter3Tests.cpp" />
+    <ClCompile Include="QuadtreeTests.cpp" />
     <ClCompile Include="QuaternionTests.cpp" />
     <ClCompile Include="Ray2Tests.cpp" />
     <ClCompile Include="Ray3Tests.cpp" />

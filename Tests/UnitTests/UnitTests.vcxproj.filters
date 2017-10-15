@@ -390,6 +390,9 @@
     <ClCompile Include="ListQueryEngine3Tests.cpp">
       <Filter>QueryEngine</Filter>
     </ClCompile>
+    <ClCompile Include="QuadtreeTests.cpp">
+      <Filter>Geometry</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
