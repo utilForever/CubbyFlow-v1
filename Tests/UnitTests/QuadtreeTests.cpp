@@ -150,7 +150,7 @@ TEST(Quadtree, RayIntersects)
 		return bbox.Overlaps(a);
 	};
 
-	auto IsIntersectsFunc = [](const BoundingBox2D& a, const Ray2D& ray)
+	auto intersectsFunc = [](const BoundingBox2D& a, const Ray2D& ray)
 	{
 		return a.Intersects(ray);
 	};
@@ -179,7 +179,7 @@ TEST(Quadtree, RayIntersects)
 		bool ansInts = false;
 		for (size_t j = 0; j < numSamples / 2; ++j)
 		{
-			if (IsIntersectsFunc(items[j], ray))
+			if (intersectsFunc(items[j], ray))
 			{
 				ansInts = true;
 				break;
@@ -187,9 +187,9 @@ TEST(Quadtree, RayIntersects)
 		}
 
 		// quadtree search
-		bool octInts = quadtree.IsIntersects(ray, IsIntersectsFunc);
+		bool quadInts = quadtree.IsIntersects(ray, intersectsFunc);
 
-		EXPECT_EQ(ansInts, octInts);
+		EXPECT_EQ(ansInts, quadInts);
 	}
 }
 
@@ -202,7 +202,7 @@ TEST(Quadtree, ClosestIntersection)
 		return bbox.Overlaps(a);
 	};
 
-	auto IsIntersectsFunc = [](const BoundingBox2D& a, const Ray2D& ray)
+	auto intersectsFunc = [](const BoundingBox2D& a, const Ray2D& ray)
 	{
 		auto bboxResult = a.ClosestIntersection(ray);
 		
@@ -240,7 +240,7 @@ TEST(Quadtree, ClosestIntersection)
 		ClosestIntersectionQueryResult2<BoundingBox2D> ansInts;
 		for (size_t j = 0; j < numSamples / 2; ++j)
 		{
-			double dist = IsIntersectsFunc(items[j], ray);
+			double dist = intersectsFunc(items[j], ray);
 			if (dist < ansInts.distance)
 			{
 				ansInts.distance = dist;
@@ -249,9 +249,9 @@ TEST(Quadtree, ClosestIntersection)
 		}
 
 		// quadtree search
-		auto octInts = quadtree.GetClosestIntersection(ray, IsIntersectsFunc);
+		auto quadInts = quadtree.GetClosestIntersection(ray, intersectsFunc);
 
-		EXPECT_DOUBLE_EQ(ansInts.distance, octInts.distance);
-		EXPECT_EQ(ansInts.item, octInts.item);
+		EXPECT_DOUBLE_EQ(ansInts.distance, quadInts.distance);
+		EXPECT_EQ(ansInts.item, quadInts.item);
 	}
 }
