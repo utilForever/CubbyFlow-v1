@@ -969,6 +969,12 @@
     <ClInclude Include="..\Includes\Geometry\Octree-Impl.h">
       <Filter>Geometry</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Geometry\Quadtree.h">
+      <Filter>Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Geometry\Quadtree-Impl.h">
+      <Filter>Geometry</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
