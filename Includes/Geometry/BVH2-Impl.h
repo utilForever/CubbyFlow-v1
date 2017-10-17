@@ -230,7 +230,7 @@ namespace CubbyFlow
 			{
 				// get node children pointers for box
 				const Node* firstChild = node + 1;
-				const Node* secondChild = static_cast<Node*>(&m_nodes[node->child]);
+				const Node* secondChild = const_cast<Node*>(&m_nodes[node->child]);
 
 				// advance to next child node, possibly enqueue other child
 				if (!firstChild->bound.Overlaps(box))
@@ -301,11 +301,11 @@ namespace CubbyFlow
 				if (ray.direction[node->flags] > 0.0)
 				{
 					firstChild = node + 1;
-					secondChild = static_cast<Node*>(&m_nodes[node->child]);
+					secondChild = const_cast<Node*>(&m_nodes[node->child]);
 				}
 				else
 				{
-					firstChild = static_cast<Node*>(&m_nodes[node->child]);
+					firstChild = const_cast<Node*>(&m_nodes[node->child]);
 					secondChild = node + 1;
 				}
 
@@ -374,7 +374,7 @@ namespace CubbyFlow
 			{
 				// get node children pointers for box
 				const Node* firstChild = node + 1;
-				const Node* secondChild = static_cast<Node*>(&m_nodes[node->child]);
+				const Node* secondChild = const_cast<Node*>(&m_nodes[node->child]);
 
 				// advance to next child node, possibly enqueue other child
 				if (!firstChild->bound.Overlaps(box))
@@ -444,11 +444,11 @@ namespace CubbyFlow
 				if (ray.direction[node->flags] > 0.0)
 				{
 					firstChild = node + 1;
-					secondChild = static_cast<Node*>(&m_nodes[node->child]);
+					secondChild = const_cast<Node*>(&m_nodes[node->child]);
 				}
 				else
 				{
-					firstChild = static_cast<Node*>(&m_nodes[node->child]);
+					firstChild = const_cast<Node*>(&m_nodes[node->child]);
 					secondChild = node + 1;
 				}
 
@@ -525,11 +525,11 @@ namespace CubbyFlow
 				if (ray.direction[node->flags] > 0.0)
 				{
 					firstChild = node + 1;
-					secondChild = static_cast<Node*>(&m_nodes[node->child]);
+					secondChild = const_cast<Node*>(&m_nodes[node->child]);
 				}
 				else
 				{
-					firstChild = static_cast<Node*>(&m_nodes[node->child]);
+					firstChild = const_cast<Node*>(&m_nodes[node->child]);
 					secondChild = node + 1;
 				}
 
