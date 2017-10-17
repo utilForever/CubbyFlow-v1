@@ -396,6 +396,9 @@
     <ClCompile Include="OctreeTests.cpp">
       <Filter>Geometry</Filter>
     </ClCompile>
+    <ClCompile Include="BVH2Tests.cpp">
+      <Filter>Geometry</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
