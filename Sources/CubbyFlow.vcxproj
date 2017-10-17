@@ -468,6 +468,8 @@ xcopy /y "$(SolutionDir)Includes" "$(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Vector\VectorExpression.h" />
     <ClInclude Include="..\Includes\Vector\VectorN-Impl.h" />
     <ClInclude Include="..\Includes\Vector\VectorN.h" />
+    <ClInclude Include="Geometry\BVH2-Impl.h" />
+    <ClInclude Include="Geometry\BVH2.h" />
     <ClInclude Include="Utils\PhysicsHelpers.h" />
   </ItemGroup>
   <ItemGroup>
