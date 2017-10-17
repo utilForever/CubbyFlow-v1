@@ -975,16 +975,16 @@
     <ClInclude Include="..\Includes\Geometry\Quadtree-Impl.h">
       <Filter>Geometry</Filter>
     </ClInclude>
-    <ClInclude Include="Geometry\BVH2.h">
+    <ClInclude Include="..\Includes\Geometry\BVH3.h">
       <Filter>Geometry</Filter>
     </ClInclude>
-    <ClInclude Include="Geometry\BVH2-Impl.h">
+    <ClInclude Include="..\Includes\Geometry\BVH3-Impl.h">
       <Filter>Geometry</Filter>
     </ClInclude>
-    <ClInclude Include="Geometry\BVH3.h">
+    <ClInclude Include="..\Includes\Geometry\BVH2.h">
       <Filter>Geometry</Filter>
     </ClInclude>
-    <ClInclude Include="Geometry\BVH3-Impl.h">
+    <ClInclude Include="..\Includes\Geometry\BVH2-Impl.h">
       <Filter>Geometry</Filter>
     </ClInclude>
   </ItemGroup>
