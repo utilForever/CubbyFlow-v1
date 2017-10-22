@@ -9,6 +9,7 @@
 #ifndef CUBBYFLOW_SURFACE_SET3_H
 #define CUBBYFLOW_SURFACE_SET3_H
 
+#include <Geometry/BVH3.h>
 #include <Surface/Surface3.h>
 
 #include <vector>
@@ -53,6 +54,8 @@ namespace CubbyFlow
 
 	private:
 		std::vector<Surface3Ptr> m_surfaces;
+		mutable BVH3<Surface3Ptr> m_bvh;
+		mutable bool m_bvhInvalidated = true;
 
 		// Surface3 implementations
 		Vector3D ClosestPointLocal(const Vector3D& otherPoint) const override;
@@ -66,6 +69,10 @@ namespace CubbyFlow
 		Vector3D ClosestNormalLocal(const Vector3D& otherPoint) const override;
 
 		SurfaceRayIntersection3 ClosestIntersectionLocal(const Ray3D& ray) const override;
+
+		void InvalidateBVH() const;
+
+		void BuildBVH() const;
 	};
 
 	//! Shared pointer for the SurfaceSet3 type.

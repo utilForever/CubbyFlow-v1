@@ -9,6 +9,7 @@
 #ifndef CUBBYFLOW_SURFACE_SET2_H
 #define CUBBYFLOW_SURFACE_SET2_H
 
+#include <Geometry/BVH2.h>
 #include <Surface/Surface2.h>
 
 #include <vector>
@@ -53,6 +54,8 @@ namespace CubbyFlow
 
 	private:
 		std::vector<Surface2Ptr> m_surfaces;
+		mutable BVH2<Surface2Ptr> m_bvh;
+		mutable bool m_bvhInvalidated = true;
 
 		// Surface2 implementations
 		Vector2D ClosestPointLocal(const Vector2D& otherPoint) const override;
@@ -66,6 +69,10 @@ namespace CubbyFlow
 		Vector2D ClosestNormalLocal(const Vector2D& otherPoint) const override;
 
 		SurfaceRayIntersection2 ClosestIntersectionLocal(const Ray2D& ray) const override;
+
+		void InvalidateBVH() const;
+		
+		void BuildBVH() const;
 	};
 
 	//! Shared pointer for the SurfaceSet2 type.
