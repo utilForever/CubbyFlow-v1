@@ -26,8 +26,9 @@ TEST(ImplicitTriangleMesh3, SignedDistance)
 		.WithResolutionX(20)
 		.MakeShared();
 
-	for (auto sample : SAMPLE_POINTS3)
+	for (size_t i = 0; i < GetNumberOfSamplePoints3(); ++i)
 	{
+		auto sample = GetSamplePoints3()[i];
 		auto refAns = refSurf.SignedDistance(sample);
 		auto actAns = imesh->SignedDistance(sample);
 
