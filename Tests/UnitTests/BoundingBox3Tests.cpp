@@ -1,4 +1,5 @@
 #include "pch.h"
+#include "UnitTestsUtils.h"
 
 #include <BoundingBox/BoundingBox3.h>
 
@@ -245,4 +246,18 @@ TEST(BoundingBox3, Expand)
 	EXPECT_DOUBLE_EQ(7.0, box.upperCorner.x);
 	EXPECT_DOUBLE_EQ(6.0, box.upperCorner.y);
 	EXPECT_DOUBLE_EQ(8.0, box.upperCorner.z);
+}
+
+TEST(BoundingBox3, Corner)
+{
+	BoundingBox3D box(Vector3D(-2.0, -2.0, 1.0), Vector3D(4.0, 3.0, 5.0));
+	
+	EXPECT_VECTOR3_EQ(Vector3D(-2.0, -2.0, 1.0), box.Corner(0));
+	EXPECT_VECTOR3_EQ(Vector3D(4.0, -2.0, 1.0), box.Corner(1));
+	EXPECT_VECTOR3_EQ(Vector3D(-2.0, 3.0, 1.0), box.Corner(2));
+	EXPECT_VECTOR3_EQ(Vector3D(4.0, 3.0, 1.0), box.Corner(3));
+	EXPECT_VECTOR3_EQ(Vector3D(-2.0, -2.0, 5.0), box.Corner(4));
+	EXPECT_VECTOR3_EQ(Vector3D(4.0, -2.0, 5.0), box.Corner(5));
+	EXPECT_VECTOR3_EQ(Vector3D(-2.0, 3.0, 5.0), box.Corner(6));
+	EXPECT_VECTOR3_EQ(Vector3D(4.0, 3.0, 5.0), box.Corner(7));
 }
