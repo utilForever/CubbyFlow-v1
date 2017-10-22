@@ -368,7 +368,7 @@ namespace CubbyFlow
 		// Number of normal indices must match with number of point indices once
 		// you decided to add normal indices. Same for the uvs as well.
 		assert(m_pointIndices.size() == m_normalIndices.size());
-		assert(m_pointIndices.size() == m_uvs.size());
+		assert(m_pointIndices.size() == m_uvIndices.size());
 		m_pointIndices.Append(newPointIndices);
 		m_normalIndices.Append(newNormalIndices);
 		m_uvIndices.Append(newUVIndices);
