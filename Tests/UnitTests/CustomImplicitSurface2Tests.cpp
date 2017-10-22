@@ -31,8 +31,9 @@ TEST(CustomImplicitSurface2, ClosestPoint)
 		return refSurf.SignedDistance(pt);
 	}, BoundingBox2D({ 0, 0 }, { 1, 1 }), 1e-3);
 	
-	for (auto sample : SAMPLE_POINTS2)
+	for (size_t i = 0; i < GetNumberOfSamplePoints2(); ++i)
 	{
+		auto sample = GetSamplePoints2()[i];
 		if ((sample - sphere->center).Length() > 0.01)
 		{
 			auto refAns = refSurf.ClosestPoint(sample);
@@ -55,8 +56,9 @@ TEST(CustomImplicitSurface2, ClosestNormal)
 		return refSurf.SignedDistance(pt);
 	}, BoundingBox2D({ 0, 0 }, { 1, 1 }), 1e-3);
 	
-	for (auto sample : SAMPLE_POINTS2)
+	for (size_t i = 0; i < GetNumberOfSamplePoints2(); ++i)
 	{
+		auto sample = GetSamplePoints2()[i];
 		auto refAns = refSurf.ClosestNormal(sample);
 		auto actAns = cis1.ClosestNormal(sample);
 		
@@ -76,11 +78,10 @@ TEST(CustomImplicitSurface2, Intersects)
 		return refSurf.SignedDistance(pt);
 	}, BoundingBox2D({ 0, 0 }, { 1, 1 }), 1e-3);
 	
-	size_t n = sizeof(SAMPLE_POINTS2) / sizeof(SAMPLE_POINTS2[0]);
-	for (size_t i = 0; i < n; ++i)
+	for (size_t i = 0; i < GetNumberOfSamplePoints2(); ++i)
 	{
-		auto x = SAMPLE_POINTS2[i];
-		auto d = SAMPLE_DIRS2[i];
+		auto x = GetSamplePoints2()[i];
+		auto d = GetSampleDirs2()[i];
 		bool refAns = refSurf.Intersects(Ray2D(x, d));
 		bool actAns = cis1.Intersects(Ray2D(x, d));
 		
@@ -100,11 +101,10 @@ TEST(CustomImplicitSurface2, ClosestIntersection)
 		return refSurf.SignedDistance(pt);
 	}, BoundingBox2D({ 0, 0 }, { 1, 1 }), 1e-3, 1e-6);
 	
-	size_t n = sizeof(SAMPLE_POINTS2) / sizeof(SAMPLE_POINTS2[0]);
-	for (size_t i = 0; i < n; ++i)
+	for (size_t i = 0; i < GetNumberOfSamplePoints2(); ++i)
 	{
-		auto x = SAMPLE_POINTS2[i];
-		auto d = SAMPLE_DIRS2[i];
+		auto x = GetSamplePoints2()[i];
+		auto d = GetSampleDirs2()[i];
 		auto refAns = refSurf.ClosestIntersection(Ray2D(x, d));
 		auto actAns = cis1.ClosestIntersection(Ray2D(x, d));
 

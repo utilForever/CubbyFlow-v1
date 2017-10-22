@@ -31,8 +31,9 @@ TEST(CustomImplicitSurface3, ClosestPoint)
 		return refSurf.SignedDistance(pt);
 	}, BoundingBox3D({ 0, 0, 0 }, { 1, 1, 1 }), 1e-3);
 	
-	for (auto sample : SAMPLE_POINTS3)
+	for (size_t i = 0; i < GetNumberOfSamplePoints3(); ++i)
 	{
+		auto sample = GetSamplePoints3()[i];
 		if ((sample - sphere->center).Length() > 0.01)
 		{
 			auto refAns = refSurf.ClosestPoint(sample);
@@ -55,8 +56,9 @@ TEST(CustomImplicitSurface3, ClosestNormal)
 		return refSurf.SignedDistance(pt);
 	}, BoundingBox3D({ 0, 0, 0 }, { 1, 1, 1 }), 1e-3);
 	
-	for (auto sample : SAMPLE_POINTS3)
+	for (size_t i = 0; i < GetNumberOfSamplePoints3(); ++i)
 	{
+		auto sample = GetSamplePoints3()[i];
 		auto refAns = refSurf.ClosestNormal(sample);
 		auto actAns = cis1.ClosestNormal(sample);
 		
@@ -76,11 +78,10 @@ TEST(CustomImplicitSurface3, Intersects)
 		return refSurf.SignedDistance(pt);
 	}, BoundingBox3D({ 0, 0, 0 }, { 1, 1, 1 }), 1e-3);
 	
-	size_t n = sizeof(SAMPLE_POINTS3) / sizeof(SAMPLE_POINTS3[0]);
-	for (size_t i = 0; i < n; ++i)
+	for (size_t i = 0; i < GetNumberOfSamplePoints3(); ++i)
 	{
-		auto x = SAMPLE_POINTS3[i];
-		auto d = SAMPLE_DIRS3[i];
+		auto x = GetSamplePoints3()[i];
+		auto d = GetSampleDirs3()[i];
 		bool refAns = refSurf.Intersects(Ray3D(x, d));
 		bool actAns = cis1.Intersects(Ray3D(x, d));
 
@@ -100,11 +101,10 @@ TEST(CustomImplicitSurface3, ClosestIntersection)
 		return refSurf.SignedDistance(pt);
 	}, BoundingBox3D({ 0, 0, 0 }, { 1, 1, 1 }), 1e-3, 1e-6);
 	
-	size_t n = sizeof(SAMPLE_POINTS3) / sizeof(SAMPLE_POINTS3[0]);
-	for (size_t i = 0; i < n; ++i)
+	for (size_t i = 0; i < GetNumberOfSamplePoints3(); ++i)
 	{
-		auto x = SAMPLE_POINTS3[i];
-		auto d = SAMPLE_DIRS3[i];
+		auto x = GetSamplePoints3()[i];
+		auto d = GetSampleDirs3()[i];
 		auto refAns = refSurf.ClosestIntersection(Ray3D(x, d));
 		auto actAns = cis1.ClosestIntersection(Ray3D(x, d));
 
