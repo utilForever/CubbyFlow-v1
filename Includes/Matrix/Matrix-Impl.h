@@ -115,7 +115,7 @@ namespace CubbyFlow
 	template <typename E>
 	void Matrix<T, M, N>::SetRow(size_t i, const VectorExpression<T, E>& row)
 	{
-		assert(cols() == row.size());
+		assert(Cols() == row.size());
 
 		const E& e = row();
 
@@ -129,7 +129,7 @@ namespace CubbyFlow
 	template <typename E>
 	void Matrix<T, M, N>::SetColumn(size_t j, const VectorExpression<T, E>& col)
 	{
-		assert(rows() == col.size());
+		assert(Rows() == col.size());
 
 		const E& e = col();
 
