@@ -9,7 +9,8 @@
 #ifndef CUBBYFLOW_IMPLICIT_SURFACE_SET3_H
 #define CUBBYFLOW_IMPLICIT_SURFACE_SET3_H
 
-#include <Surface\Implicit\ImplicitSurface3.h>
+#include <Geometry/BVH3.h>
+#include <Surface/Implicit/ImplicitSurface3.h>
 
 #include <vector>
 
@@ -62,6 +63,8 @@ namespace CubbyFlow
 
 	private:
 		std::vector<ImplicitSurface3Ptr> m_surfaces;
+		mutable BVH3<ImplicitSurface3Ptr> m_bvh;
+		mutable bool m_bvhInvalidated = true;
 
 		// Surface3 implementations.
 		Vector3D ClosestPointLocal(const Vector3D& otherPoint) const override;
@@ -78,6 +81,10 @@ namespace CubbyFlow
 
 		// ImplicitSurface3 implementations.
 		double SignedDistanceLocal(const Vector3D& otherPoint) const override;
+
+		void InvalidateBVH() const;
+
+		void BuildBVH() const;
 	};
 
 	//! Shared pointer type for the ImplicitSurfaceSet3.

@@ -9,6 +9,7 @@
 #ifndef CUBBYFLOW_IMPLICIT_SURFACE_SET2_H
 #define CUBBYFLOW_IMPLICIT_SURFACE_SET2_H
 
+#include <Geometry/BVH2.h>
 #include <Surface/Implicit/ImplicitSurface2.h>
 
 #include <vector>
@@ -62,6 +63,8 @@ namespace CubbyFlow
 
 	private:
 		std::vector<ImplicitSurface2Ptr> m_surfaces;
+		mutable BVH2<ImplicitSurface2Ptr> m_bvh;
+		mutable bool m_bvhInvalidated = true;
 
 		// Surface2 implementations
 		Vector2D ClosestPointLocal(const Vector2D& otherPoint) const override;
@@ -78,6 +81,10 @@ namespace CubbyFlow
 
 		// ImplicitSurface2 implementations
 		double SignedDistanceLocal(const Vector2D& otherPoint) const override;
+
+		void InvalidateBVH() const;
+
+		void BuildBVH() const;
 	};
 
 	//! Shared pointer type for the ImplicitSurfaceSet2.

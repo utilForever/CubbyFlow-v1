@@ -56,108 +56,96 @@ namespace CubbyFlow
 	void ImplicitSurfaceSet2::AddExplicitSurface(const Surface2Ptr& surface)
 	{
 		m_surfaces.push_back(std::make_shared<SurfaceToImplicit2>(surface));
+		InvalidateBVH();
 	}
 
 	void ImplicitSurfaceSet2::AddSurface(const ImplicitSurface2Ptr& surface)
 	{
 		m_surfaces.push_back(surface);
+		InvalidateBVH();
 	}
 
 	Vector2D ImplicitSurfaceSet2::ClosestPointLocal(const Vector2D& otherPoint) const
 	{
-		Vector2D result(std::numeric_limits<double>::max(), std::numeric_limits<double>::max());
-		double minimumDistance = std::numeric_limits<double>::max();
+		BuildBVH();
 
-		for (const auto& surface : m_surfaces)
+		const auto distanceFunc = [](const Surface2Ptr& surface, const Vector2D& pt)
 		{
-			Vector2D localClosestPoint = surface->ClosestPoint(otherPoint);
-			double localDistance = surface->ClosestDistance(otherPoint);
+			return surface->ClosestDistance(pt);
+		};
 
-			if (localDistance < minimumDistance)
-			{
-				result = localClosestPoint;
-				minimumDistance = localDistance;
-			}
-		}
-
-		return result;
+		const auto queryResult = m_bvh.GetNearestNeighbor(otherPoint, distanceFunc);
+		return (*queryResult.item)->ClosestPoint(otherPoint);
 	}
 
 	double ImplicitSurfaceSet2::ClosestDistanceLocal(const Vector2D& otherPoint) const
 	{
-		double minimumDistance = std::numeric_limits<double>::max();
+		BuildBVH();
 
-		for (const auto& surface : m_surfaces)
+		const auto distanceFunc = [](const Surface2Ptr& surface, const Vector2D& pt)
 		{
-			double localDistance = surface->ClosestDistance(otherPoint);
-			minimumDistance = std::min(localDistance, minimumDistance);
-		}
+			return surface->ClosestDistance(pt);
+		};
 
-		return minimumDistance;
+		const auto queryResult = m_bvh.GetNearestNeighbor(otherPoint, distanceFunc);
+		return queryResult.distance;
 	}
 
 	Vector2D ImplicitSurfaceSet2::ClosestNormalLocal(const Vector2D& otherPoint) const
 	{
-		Vector2D result(1, 0);
-		double minimumDistance = std::numeric_limits<double>::max();
+		BuildBVH();
 
-		for (const auto& surface : m_surfaces)
+		const auto distanceFunc = [](const Surface2Ptr& surface, const Vector2D& pt)
 		{
-			Vector2D localClosestNormal = surface->ClosestNormal(otherPoint);
-			double localDistance = surface->ClosestDistance(otherPoint);
+			return surface->ClosestDistance(pt);
+		};
 
-			if (localDistance < minimumDistance)
-			{
-				result = localClosestNormal;
-				minimumDistance = localDistance;
-			}
+		const auto queryResult = m_bvh.GetNearestNeighbor(otherPoint, distanceFunc);
+		return (*queryResult.item)->ClosestNormal(otherPoint);
+	}
+
+	bool ImplicitSurfaceSet2::IntersectsLocal(const Ray2D& ray) const
+	{
+		BuildBVH();
+
+		const auto testFunc = [](const Surface2Ptr& surface, const Ray2D& ray)
+		{
+			return surface->Intersects(ray);
+		};
+
+		return m_bvh.IsIntersects(ray, testFunc);
+	}
+
+	SurfaceRayIntersection2 ImplicitSurfaceSet2::ClosestIntersectionLocal(const Ray2D& ray) const
+	{
+		BuildBVH();
+
+		const auto testFunc = [](const Surface2Ptr& surface, const Ray2D& ray)
+		{
+			SurfaceRayIntersection2 result = surface->ClosestIntersection(ray);
+			return result.distance;
+		};
+
+		const auto queryResult = m_bvh.GetClosestIntersection(ray, testFunc);
+
+		SurfaceRayIntersection2 result;
+		result.distance = queryResult.distance;
+		result.isIntersecting = queryResult.item != nullptr;
+
+		if (queryResult.item != nullptr)
+		{
+			result.point = ray.PointAt(queryResult.distance);
+			result.normal = (*queryResult.item)->ClosestNormal(result.point);
 		}
 
 		return result;
 	}
 
-	bool ImplicitSurfaceSet2::IntersectsLocal(const Ray2D& ray) const
-	{
-		for (const auto& surface : m_surfaces)
-		{
-			if (surface->Intersects(ray))
-			{
-				return true;
-			}
-		}
-
-		return false;
-	}
-
-	SurfaceRayIntersection2 ImplicitSurfaceSet2::ClosestIntersectionLocal(const Ray2D& ray) const
-	{
-		SurfaceRayIntersection2 intersection;
-		double min = std::numeric_limits<double>::max();
-
-		for (const auto& surface : m_surfaces)
-		{
-			SurfaceRayIntersection2 localResult = surface->ClosestIntersection(ray);
-
-			if (localResult.isIntersecting && localResult.distance < min)
-			{
-				intersection = localResult;
-				min = localResult.distance;
-			}
-		}
-
-		return intersection;
-	}
-
 	BoundingBox2D ImplicitSurfaceSet2::BoundingBoxLocal() const
 	{
-		BoundingBox2D bbox;
+		BuildBVH();
 
-		for (const auto& surface : m_surfaces)
-		{
-			bbox.Merge(surface->BoundingBox());
-		}
-
-		return bbox;
+		return m_bvh.GetBoundingBox();
 	}
 
 	double ImplicitSurfaceSet2::SignedDistanceLocal(const Vector2D& otherPoint) const
@@ -170,6 +158,27 @@ namespace CubbyFlow
 		}
 
 		return sdf;
+	}
+
+	void ImplicitSurfaceSet2::InvalidateBVH() const
+	{
+		m_bvhInvalidated = true;
+	}
+
+	void ImplicitSurfaceSet2::BuildBVH() const
+	{
+		if (m_bvhInvalidated)
+		{
+			std::vector<BoundingBox2D> bounds(m_surfaces.size());
+
+			for (size_t i = 0; i < m_surfaces.size(); ++i)
+			{
+				bounds[i] = m_surfaces[i]->BoundingBox();
+			}
+
+			m_bvh.Build(m_surfaces, bounds);
+			m_bvhInvalidated = false;
+		}
 	}
 
 	ImplicitSurfaceSet2::Builder ImplicitSurfaceSet2::GetBuilder()
