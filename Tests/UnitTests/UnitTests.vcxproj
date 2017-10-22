@@ -181,6 +181,7 @@
     <ClCompile Include="SPHStdKernel3Tests.cpp" />
     <ClCompile Include="SPHSystemData2Tests.cpp" />
     <ClCompile Include="SPHSystemData3Tests.cpp" />
+    <ClCompile Include="SurfaceSet3Tests.cpp" />
     <ClCompile Include="SurfaceToImplicit2Tests.cpp" />
     <ClCompile Include="SurfaceToImplicit3Tests.cpp" />
     <ClCompile Include="TimerTests.cpp" />
