@@ -58,108 +58,91 @@ namespace CubbyFlow
 
 	Vector3D TriangleMesh3::ClosestPointLocal(const Vector3D& otherPoint) const
 	{
-		static const double m = std::numeric_limits<double>::max();
-		Vector3D minDistPt(m, m, m);
-		double minDistSquared = m;
+		BuildBVH();
 
-		for (size_t i = 0; i < NumberOfTriangles(); ++i)
+		const auto distanceFunc = [this](const size_t& triIdx, const Vector3D& pt)
 		{
-			Triangle3 tri = Triangle(i);
-			Vector3D pt = tri.ClosestPoint(otherPoint);
-			double distSquared = (otherPoint - pt).LengthSquared();
-			
-			if (distSquared < minDistSquared)
-			{
-				minDistSquared = distSquared;
-				minDistPt = pt;
-			}
-		}
+			Triangle3 tri = Triangle(triIdx);
+			return tri.ClosestDistance(pt);
+		};
 
-		return minDistPt;
+		const auto queryResult = m_bvh.GetNearestNeighbor(otherPoint, distanceFunc);
+		return Triangle(*queryResult.item).ClosestPoint(otherPoint);
 	}
 
 	Vector3D TriangleMesh3::ClosestNormalLocal(const Vector3D& otherPoint) const
 	{
-		static const double m = std::numeric_limits<double>::max();
-		Vector3D minDistNormal(1, 0, 0);
-		double minDistSquared = m;
+		BuildBVH();
 
-		for (size_t i = 0; i < NumberOfTriangles(); ++i)
+		const auto distanceFunc = [this](const size_t& triIdx, const Vector3D& pt)
 		{
-			Triangle3 tri = Triangle(i);
-			Vector3D pt = tri.ClosestPoint(otherPoint);
-			double distSquared = (otherPoint - pt).LengthSquared();
+			Triangle3 tri = Triangle(triIdx);
+			return tri.ClosestDistance(pt);
+		};
 
-			if (distSquared < minDistSquared)
-			{
-				minDistSquared = distSquared;
-				minDistNormal = tri.ClosestNormal(otherPoint);
-			}
-		}
-
-		return minDistNormal;
+		const auto queryResult = m_bvh.GetNearestNeighbor(otherPoint, distanceFunc);
+		return Triangle(*queryResult.item).ClosestNormal(otherPoint);
 	}
 
 	SurfaceRayIntersection3 TriangleMesh3::ClosestIntersectionLocal(const Ray3D& ray) const
 	{
-		SurfaceRayIntersection3 intersection;
-		double t = std::numeric_limits<double>::max();
+		BuildBVH();
 
-		for (size_t i = 0; i < NumberOfTriangles(); ++i)
+		const auto testFunc = [this](const size_t& triIdx, const Ray3D& ray)
 		{
-			Triangle3 tri = Triangle(i);
-			SurfaceRayIntersection3 tmpIntersection	= tri.ClosestIntersection(ray);
+			Triangle3 tri = Triangle(triIdx);
+			SurfaceRayIntersection3 result = tri.ClosestIntersection(ray);
 
-			if (tmpIntersection.distance < t)
-			{
-				t = tmpIntersection.distance;
-				intersection = tmpIntersection;
-			}
+			return result.distance;
+		};
+
+		const auto queryResult = m_bvh.GetClosestIntersection(ray, testFunc);
+
+		SurfaceRayIntersection3 result;
+		result.distance = queryResult.distance;
+		result.isIntersecting = queryResult.item != nullptr;
+
+		if (queryResult.item != nullptr)
+		{
+			result.point = ray.PointAt(queryResult.distance);
+			result.normal = Triangle(*queryResult.item).ClosestNormal(result.point);
 		}
 
-		return intersection;
+		return result;
 	}
 
 	BoundingBox3D TriangleMesh3::BoundingBoxLocal() const
 	{
-		BoundingBox3D box;
+		BuildBVH();
 
-		for (size_t i = 0; i < m_pointIndices.size(); ++i)
-		{
-			const Point3UI& face = m_pointIndices[i];
-			box.Merge(m_points[face[0]]);
-			box.Merge(m_points[face[1]]);
-			box.Merge(m_points[face[2]]);
-		}
-
-		return box;
+		return m_bvh.GetBoundingBox();
 	}
 
 	bool TriangleMesh3::IntersectsLocal(const Ray3D& ray) const
 	{
-		for (size_t i = 0; i < NumberOfTriangles(); ++i)
-		{
-			Triangle3 tri = Triangle(i);
-			if (tri.Intersects(ray))
-			{
-				return true;
-			}
-		}
+		BuildBVH();
 
-		return false;
+		const auto testFunc = [this](const size_t& triIdx, const Ray3D& ray)
+		{
+			Triangle3 tri = Triangle(triIdx);
+			return tri.Intersects(ray);
+		};
+
+		return m_bvh.IsIntersects(ray, testFunc);
 	}
 
 	double TriangleMesh3::ClosestDistanceLocal(const Vector3D& otherPoint) const
 	{
-		double minDist = std::numeric_limits<double>::max();
+		BuildBVH();
 
-		for (size_t i = 0; i < NumberOfTriangles(); ++i)
+		const auto distanceFunc = [this](const size_t& triIdx, const Vector3D& pt)
 		{
-			Triangle3 tri = Triangle(i);
-			minDist = std::min(minDist, tri.ClosestDistance(otherPoint));
-		}
+			Triangle3 tri = Triangle(triIdx);
+			return tri.ClosestDistance(pt);
+		};
 
-		return minDist;
+		const auto queryResult = m_bvh.GetNearestNeighbor(otherPoint, distanceFunc);
+		return queryResult.distance;
 	}
 
 	void TriangleMesh3::Clear()
@@ -170,6 +153,8 @@ namespace CubbyFlow
 		m_pointIndices.Clear();
 		m_normalIndices.Clear();
 		m_uvIndices.Clear();
+
+		InvalidateBVH();
 	}
 
 	void TriangleMesh3::Set(const TriangleMesh3& other)
@@ -225,6 +210,7 @@ namespace CubbyFlow
 
 	Vector3D& TriangleMesh3::Point(size_t i)
 	{
+		InvalidateBVH();
 		return m_points[i];
 	}
 
@@ -357,6 +343,7 @@ namespace CubbyFlow
 	void TriangleMesh3::AddPointTriangle(const Point3UI& newPointIndices)
 	{
 		m_pointIndices.Append(newPointIndices);
+		InvalidateBVH();
 	}
 
 	void TriangleMesh3::AddPointNormalTriangle(
@@ -369,6 +356,8 @@ namespace CubbyFlow
 
 		m_pointIndices.Append(newPointIndices);
 		m_normalIndices.Append(newNormalIndices);
+
+		InvalidateBVH();
 	}
 
 	void TriangleMesh3::AddPointUVNormalTriangle(
@@ -383,6 +372,8 @@ namespace CubbyFlow
 		m_pointIndices.Append(newPointIndices);
 		m_normalIndices.Append(newNormalIndices);
 		m_uvIndices.Append(newUVIndices);
+
+		InvalidateBVH();
 	}
 
 	void TriangleMesh3::AddPointUVTriangle(
@@ -394,6 +385,8 @@ namespace CubbyFlow
 		assert(m_pointIndices.size() == m_uvs.size());
 		m_pointIndices.Append(newPointIndices);
 		m_uvIndices.Append(newUvIndices);
+
+		InvalidateBVH();
 	}
 
 	void TriangleMesh3::AddTriangle(const Triangle3& tri)
@@ -419,6 +412,8 @@ namespace CubbyFlow
 		m_pointIndices.Append(newPointIndices);
 		m_normalIndices.Append(newNormalIndices);
 		m_uvIndices.Append(newUvIndices);
+
+		InvalidateBVH();
 	}
 
 	void TriangleMesh3::SetFaceNormal()
@@ -520,6 +515,8 @@ namespace CubbyFlow
 		{
 			m_points[i] *= factor;
 		});
+
+		InvalidateBVH();
 	}
 
 	void TriangleMesh3::Translate(const Vector3D& t)
@@ -529,6 +526,8 @@ namespace CubbyFlow
 		{
 			m_points[i] += t;
 		});
+
+		InvalidateBVH();
 	}
 
 	void TriangleMesh3::Rotate(const QuaternionD& q)
@@ -544,6 +543,8 @@ namespace CubbyFlow
 		{
 			m_normals[i] = q * m_normals[i];
 		});
+
+		InvalidateBVH();
 	}
 
 	void TriangleMesh3::WriteObj(std::ostream* stream) const
@@ -815,6 +816,8 @@ namespace CubbyFlow
 			// Do nothing
 		});
 
+		InvalidateBVH();
+
 		return parser.parse(*stream);
 	}
 
@@ -829,6 +832,30 @@ namespace CubbyFlow
 		return Builder();
 	}
 
+	void TriangleMesh3::InvalidateBVH() const
+	{
+		m_bvhInvalidated = true;
+	}
+
+	void TriangleMesh3::BuildBVH() const
+	{
+		if (m_bvhInvalidated)
+		{
+			size_t nTris = NumberOfTriangles();
+
+			std::vector<size_t> ids(nTris);
+			std::vector<BoundingBox3D> bounds(nTris);
+			for (size_t i = 0; i < nTris; ++i)
+			{
+				ids[i] = i;
+				bounds[i] = Triangle(i).BoundingBox();
+			}
+
+			m_bvh.Build(ids, bounds);
+			m_bvhInvalidated = false;
+		}
+	}
+	
 	TriangleMesh3::Builder& TriangleMesh3::Builder::WithPoints(const PointArray& points)
 	{
 		m_points = points;

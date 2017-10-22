@@ -10,6 +10,7 @@
 #define CUBBYFLOW_TRIANGLE_MESH3_H
 
 #include <Array/Array1.h>
+#include <Geometry/BVH3.h>
 #include <Geometry/Triangle3.h>
 #include <Point/Point3.h>
 #include <Surface/Surface3.h>
@@ -28,13 +29,13 @@ namespace CubbyFlow
 	public:
 		class Builder;
 
-		typedef Array1<Vector2D> Vector2DArray;
-		typedef Array1<Vector3D> Vector3DArray;
-		typedef Array1<Point3UI> IndexArray;
+		using Vector2DArray = Array1<Vector2D>;
+		using Vector3DArray = Array1<Vector3D>;
+		using IndexArray = Array1<Point3UI>;
 
-		typedef Vector3DArray PointArray;
-		typedef Vector3DArray NormalArray;
-		typedef Vector2DArray UVArray;
+		using PointArray = Vector3DArray;
+		using NormalArray = Vector3DArray;
+		using UVArray = Vector2DArray;
 
 		//! Default constructor.
 		TriangleMesh3(
@@ -205,6 +206,13 @@ namespace CubbyFlow
 		IndexArray m_pointIndices;
 		IndexArray m_normalIndices;
 		IndexArray m_uvIndices;
+
+		mutable BVH3<size_t> m_bvh;
+		mutable bool m_bvhInvalidated = true;
+
+		void InvalidateBVH() const;
+
+		void BuildBVH() const;
 	};
 
 	//! Shared pointer for the TriangleMesh3 type.
