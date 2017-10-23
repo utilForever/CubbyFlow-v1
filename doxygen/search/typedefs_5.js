@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['getrayintersectionfunc2',['GetRayIntersectionFunc2',['../namespace_cubby_flow.html#a62644b81225bdbdded35576966957b55',1,'CubbyFlow']]],
+  ['getrayintersectionfunc3',['GetRayIntersectionFunc3',['../namespace_cubby_flow.html#ac271d4aab48ed14a0ad80753cdafe651',1,'CubbyFlow']]],
   ['gridbackwardeulerdiffusionsolver2ptr',['GridBackwardEulerDiffusionSolver2Ptr',['../namespace_cubby_flow.html#a968003323cd6072de1bc84af9f7c1bf7',1,'CubbyFlow']]],
   ['gridbackwardeulerdiffusionsolver3ptr',['GridBackwardEulerDiffusionSolver3Ptr',['../namespace_cubby_flow.html#a5b6957d50739c62e57065052a351cfca',1,'CubbyFlow']]],
   ['gridblockedboundaryconditionsolver2ptr',['GridBlockedBoundaryConditionSolver2Ptr',['../namespace_cubby_flow.html#aada67cbfa532b4a2beb69e65340a2322',1,'CubbyFlow']]],

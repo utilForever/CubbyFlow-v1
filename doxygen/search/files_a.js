@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['quaternion_2dimpl_2eh',['Quaternion-Impl.h',['../_quaternion-_impl_8h.html',1,'']]],
-  ['quaternion_2eh',['Quaternion.h',['../_quaternion_8h.html',1,'']]]
+  ['octree_2dimpl_2eh',['Octree-Impl.h',['../_octree-_impl_8h.html',1,'']]],
+  ['octree_2eh',['Octree.h',['../_octree_8h.html',1,'']]]
 ];

@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.6</a>
+                    <a class="navbar-brand">CubbyFlow v0.61</a>
                 </div>
             </div>
         </nav>
@@ -297,7 +297,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstract base class for grid-based 2-D fluid solver. </p>
-<p>This is an abstract base class for grid-based 2-D fluid solver based on Jos Stam's famous 1999 paper - "Stable Fluids". This solver takes fractional step method as its foundation which is consisted of independent advection, diffusion, external forces, and pressure projection steps. Each step is configurable so that a custom step can be implemented. For example, if a user wants to change the advection solver to her/his own implementation, simply call GridFluidSolver2::setAdvectionSolver(newSolver). </p>
+<p>This is an abstract base class for grid-based 2-D fluid solver based on Jos Stam's famous 1999 paper - "Stable Fluids". This solver takes fractional step method as its foundation which is consisted of independent advection, diffusion, external forces, and pressure projection steps. Each step is configurable so that a custom step can be implemented. For example, if a user wants to change the advection solver to her/his own implementation, simply call GridFluidSolver2::SetAdvectionSolver(newSolver). </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a399d74272d8fab8f4f3943e1a5e30713"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a399d74272d8fab8f4f3943e1a5e30713">&#9670;&nbsp;</a></span>GridFluidSolver2() <span class="overload">[1/2]</span></h2>
@@ -907,7 +907,7 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the origin of the grid system data. </p>
-<p>This function returns the resolution of the grid system data. This is equivalent to calling gridSystemData()-&gt;origin(), but provides a shortcut. </p>
+<p>This function returns the resolution of the grid system data. This is equivalent to calling <a class="el" href="class_cubby_flow_1_1_grid_fluid_solver2.html#ae14a87d0a72bafd9c1e59d2731d1e336" title="Returns the grid system data. ">GetGridSystemData()</a>-&gt;Origin(), but provides a shortcut. </p>
 
 </div>
 </div>
@@ -927,7 +927,7 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the resolution of the grid system data. </p>
-<p>This function returns the resolution of the grid system data. This is equivalent to calling gridSystemData()-&gt;resolution(), but provides a shortcut. </p>
+<p>This function returns the resolution of the grid system data. This is equivalent to calling <a class="el" href="class_cubby_flow_1_1_grid_fluid_solver2.html#ae14a87d0a72bafd9c1e59d2731d1e336" title="Returns the grid system data. ">GetGridSystemData()</a>-&gt;Resolution(), but provides a shortcut. </p>
 
 </div>
 </div>
@@ -947,7 +947,7 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the grid spacing of the grid system data. </p>
-<p>This function returns the resolution of the grid system data. This is equivalent to calling gridSystemData()-&gt;gridSpacing(), but provides a shortcut. </p>
+<p>This function returns the resolution of the grid system data. This is equivalent to calling <a class="el" href="class_cubby_flow_1_1_grid_fluid_solver2.html#ae14a87d0a72bafd9c1e59d2731d1e336" title="Returns the grid system data. ">GetGridSystemData()</a>-&gt;GridSpacing(), but provides a shortcut. </p>
 
 </div>
 </div>
@@ -1235,7 +1235,7 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Resizes grid system data. </p>
-<p>This function resizes grid system data. You can also resize the grid by calling resize function directly from GridFluidSolver2::gridSystemData(), but this function provides a shortcut for the same operation.</p>
+<p>This function resizes grid system data. You can also resize the grid by calling resize function directly from <a class="el" href="class_cubby_flow_1_1_grid_fluid_solver2.html#ae14a87d0a72bafd9c1e59d2731d1e336" title="Returns the grid system data. ">GridFluidSolver2::GetGridSystemData()</a>, but this function provides a shortcut for the same operation.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">newSize</td><td>The new size. </td></tr>
@@ -1446,7 +1446,7 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 8 2017 12:21:10 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Oct 23 2017 12:42:59 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

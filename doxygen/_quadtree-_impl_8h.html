@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
         <meta name="generator" content="Doxygen 1.8.13"/>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <title>CubbyFlow: Solver/SPH/SPHSolver3.h File Reference</title>
+        <title>CubbyFlow: Geometry/Quadtree-Impl.h File Reference</title>
         <!--<link href="tabs.css" rel="stylesheet" type="text/css"/>-->
         <script type="text/javascript" src="dynsections.js"></script>
         <link href="search/search.css" rel="stylesheet" type="text/css"/>
@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.6</a>
+                    <a class="navbar-brand">CubbyFlow v0.61</a>
                 </div>
             </div>
         </nav>
@@ -68,45 +68,25 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_bbfb5cf133b5ee2ba5207ad49be3b96c.html">Solver</a></li><li class="navelem"><a class="el" href="dir_5c15152557972b03aa984941c18ddaf8.html">SPH</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_eccc925508204c58f9de69585b548932.html">Geometry</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
+<a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
-<div class="title">SPHSolver3.h File Reference</div>  </div>
+<div class="title">Quadtree-Impl.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="_particle_system_solver3_8h_source.html">Solver/Particle/ParticleSystemSolver3.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="_s_p_h_system_data3_8h_source.html">SPH/SPHSystemData3.h</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;numeric&gt;</code><br />
+<code>#include &lt;stack&gt;</code><br />
 </div>
-<p><a href="_solver_2_s_p_h_2_s_p_h_solver3_8h_source.html">Go to the source code of this file.</a></p>
+<p><a href="_quadtree-_impl_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_s_p_h_solver3.html">CubbyFlow::SPHSolver3</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">3-D SPH solver.  <a href="class_cubby_flow_1_1_s_p_h_solver3.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_s_p_h_solver_builder_base3.html">CubbyFlow::SPHSolverBuilderBase3&lt; DerivedBuilder &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for SPH-based fluid solver builder.  <a href="class_cubby_flow_1_1_s_p_h_solver_builder_base3.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_s_p_h_solver3_1_1_builder.html">CubbyFlow::SPHSolver3::Builder</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Front-end to create <a class="el" href="class_cubby_flow_1_1_s_p_h_solver3.html" title="3-D SPH solver. ">SPHSolver3</a> objects step by step.  <a href="class_cubby_flow_1_1_s_p_h_solver3_1_1_builder.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespace_cubby_flow"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_cubby_flow.html">CubbyFlow</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a8d8d301b55843a71faa4a88039ef15e5"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_cubby_flow.html#a8d8d301b55843a71faa4a88039ef15e5">CubbyFlow::SPHSolver3Ptr</a> = std::shared_ptr&lt; SPHSolver3 &gt;</td></tr>
-<tr class="memdesc:a8d8d301b55843a71faa4a88039ef15e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared pointer type for the <a class="el" href="class_cubby_flow_1_1_s_p_h_solver3.html" title="3-D SPH solver. ">SPHSolver3</a>.  <a href="namespace_cubby_flow.html#a8d8d301b55843a71faa4a88039ef15e5">More...</a><br /></td></tr>
-<tr class="separator:a8d8d301b55843a71faa4a88039ef15e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.8-->
@@ -117,7 +97,7 @@ Typedefs</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 8 2017 12:21:03 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Oct 23 2017 12:42:35 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

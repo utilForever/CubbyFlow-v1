@@ -4,6 +4,8 @@ var searchData=
   ['cellcenteredscalargrid3',['CellCenteredScalarGrid3',['../class_cubby_flow_1_1_cell_centered_scalar_grid3.html',1,'CubbyFlow']]],
   ['cellcenteredvectorgrid2',['CellCenteredVectorGrid2',['../class_cubby_flow_1_1_cell_centered_vector_grid2.html',1,'CubbyFlow']]],
   ['cellcenteredvectorgrid3',['CellCenteredVectorGrid3',['../class_cubby_flow_1_1_cell_centered_vector_grid3.html',1,'CubbyFlow']]],
+  ['closestintersectionqueryresult2',['ClosestIntersectionQueryResult2',['../struct_cubby_flow_1_1_closest_intersection_query_result2.html',1,'CubbyFlow']]],
+  ['closestintersectionqueryresult3',['ClosestIntersectionQueryResult3',['../struct_cubby_flow_1_1_closest_intersection_query_result3.html',1,'CubbyFlow']]],
   ['collider2',['Collider2',['../class_cubby_flow_1_1_collider2.html',1,'CubbyFlow']]],
   ['collider3',['Collider3',['../class_cubby_flow_1_1_collider3.html',1,'CubbyFlow']]],
   ['colliderqueryresult',['ColliderQueryResult',['../struct_cubby_flow_1_1_collider2_1_1_collider_query_result.html',1,'CubbyFlow::Collider2::ColliderQueryResult'],['../struct_cubby_flow_1_1_collider3_1_1_collider_query_result.html',1,'CubbyFlow::Collider3::ColliderQueryResult']]],
