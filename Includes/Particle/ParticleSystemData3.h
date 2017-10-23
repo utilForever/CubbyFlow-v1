@@ -86,7 +86,7 @@ namespace CubbyFlow
 		//! This function adds a new scalar data layer to the system. It can be used
 		//! for adding a scalar attribute, such as temperature, to the particles.
 		//!
-		//! \params[in] initialVal  Initial value of the new scalar data.
+		//! \param[in] initialVal  Initial value of the new scalar data.
 		//!
 		size_t AddScalarData(double initialVal = 0.0);
 
@@ -96,7 +96,7 @@ namespace CubbyFlow
 		//! This function adds a new vector data layer to the system. It can be used
 		//! for adding a vector attribute, such as vortex, to the particles.
 		//!
-		//! \params[in] initialVal  Initial value of the new vector data.
+		//! \param[in] initialVal  Initial value of the new vector data.
 		//!
 		size_t AddVectorData(const Vector3D& initialVal = Vector3D());
 

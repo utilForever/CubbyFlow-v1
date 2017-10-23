@@ -28,7 +28,7 @@ namespace CubbyFlow
 	//! diffusion, external forces, and pressure projection steps. Each step is
 	//! configurable so that a custom step can be implemented. For example, if a
 	//! user wants to change the advection solver to her/his own implementation,
-	//! simply call GridFluidSolver2::setAdvectionSolver(newSolver).
+	//! simply call GridFluidSolver2::SetAdvectionSolver(newSolver).
 	//!
 	class GridFluidSolver2 : public PhysicsAnimation
 	{
@@ -119,7 +119,7 @@ namespace CubbyFlow
 		//!
 		//! This function resizes grid system data. You can also resize the grid by
 		//! calling resize function directly from
-		//! GridFluidSolver2::gridSystemData(), but this function provides a
+		//! GridFluidSolver2::GetGridSystemData(), but this function provides a
 		//! shortcut for the same operation.
 		//!
 		//! \param[in] newSize        The new size.
@@ -135,7 +135,7 @@ namespace CubbyFlow
 		//! \brief Returns the resolution of the grid system data.
 		//!
 		//! This function returns the resolution of the grid system data. This is
-		//! equivalent to calling gridSystemData()->resolution(), but provides a
+		//! equivalent to calling GetGridSystemData()->Resolution(), but provides a
 		//! shortcut.
 		//!
 		Size2 GetGridResolution() const;
@@ -144,7 +144,7 @@ namespace CubbyFlow
 		//! \brief Returns the grid spacing of the grid system data.
 		//!
 		//! This function returns the resolution of the grid system data. This is
-		//! equivalent to calling gridSystemData()->gridSpacing(), but provides a
+		//! equivalent to calling GetGridSystemData()->GridSpacing(), but provides a
 		//! shortcut.
 		//!
 		Vector2D GetGridSpacing() const;
@@ -153,7 +153,7 @@ namespace CubbyFlow
 		//! \brief Returns the origin of the grid system data.
 		//!
 		//! This function returns the resolution of the grid system data. This is
-		//! equivalent to calling gridSystemData()->origin(), but provides a
+		//! equivalent to calling GetGridSystemData()->Origin(), but provides a
 		//! shortcut.
 		//!
 		Vector2D GetGridOrigin() const;

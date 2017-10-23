@@ -63,6 +63,7 @@ namespace CubbyFlow
 		//! \param[in]    timeIntervalInSeconds The time interval for the sim.
 		//! \param[inout] output                The output velocity field.
 		//! \param[in]    boundarySDF           The SDF of the boundary.
+		//! \param[in]    boundaryVelocity      The velocity of the boundary.
 		//! \param[in]    fluidSDF              The SDF of the fluid/atmosphere.
 		//!
 		void Solve(

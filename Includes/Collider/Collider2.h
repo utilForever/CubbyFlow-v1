@@ -50,7 +50,7 @@ namespace CubbyFlow
 		//! \param radius Radius of the colliding point.
 		//! \param restitutionCoefficient Defines the restitution effect.
 		//! \param position Input and output position of the point.
-		//! \param position Input and output velocity of the point.
+		//! \param velocity Input and output velocity of the point.
 		//!
 		void ResolveCollision(double radius, double restitutionCoefficient, Vector2D* position, Vector2D* velocity);
 

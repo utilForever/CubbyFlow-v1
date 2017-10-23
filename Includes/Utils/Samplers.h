@@ -74,8 +74,6 @@ namespace CubbyFlow
 	//!
 	//! \param[in]  u1    First random sample.
 	//! \param[in]  u2    Second random sample.
-	//! \param[in]  axis  The axis of the cone.
-	//! \param[in]  angle The angle of the cone.
 	//!
 	//! \tparam     T     Real number type.
 	//!

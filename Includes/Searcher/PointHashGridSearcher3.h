@@ -51,7 +51,7 @@ namespace CubbyFlow
 		//!
 		//! \param[in]  resolutionX The resolution x.
 		//! \param[in]  resolutionY The resolution y.
-		//! \param[in]  resolutionY The resolution z.
+		//! \param[in]  resolutionZ The resolution z.
 		//! \param[in]  gridSpacing The grid spacing.
 		//!
 		PointHashGridSearcher3(size_t resolutionX, size_t resolutionY, size_t resolutionZ, double gridSpacing);

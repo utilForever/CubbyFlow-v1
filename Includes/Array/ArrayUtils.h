@@ -132,7 +132,7 @@ namespace CubbyFlow
 	//! \brief Converts 2-D array to Comma Separated Value (CSV) stream.
 	//!
 	//! \param data - data to convert
-	//! \param strm - stream object to write CSV
+	//! \param stream - stream object to write CSV
 	//!
 	template <typename ArrayType>
 	void ConvertToCSV(const ArrayType& data, std::ostream* stream);

@@ -42,7 +42,7 @@ namespace CubbyFlow
 		//! \param timeIntervalInSeconds Small time-interval that diffusion occur.
 		//! \param dest Output scalar field.
 		//! \param boundarySDF Shape of the solid boundary that is empty by default.
-		//! \param boundarySDF Shape of the fluid boundary that is full by default.
+		//! \param fluidSDF Shape of the fluid boundary that is full by default.
 		//!
 		virtual void Solve(
 			const ScalarGrid2& source,
@@ -60,7 +60,7 @@ namespace CubbyFlow
 		//! \param timeIntervalInSeconds Small time-interval that diffusion occur.
 		//! \param dest Output collocated vector field.
 		//! \param boundarySDF Shape of the solid boundary that is empty by default.
-		//! \param boundarySDF Shape of the fluid boundary that is full by default.
+		//! \param fluidSDF Shape of the fluid boundary that is full by default.
 		//!
 		virtual void Solve(
 			const CollocatedVectorGrid2& source,
@@ -78,7 +78,7 @@ namespace CubbyFlow
 		//! \param timeIntervalInSeconds Small time-interval that diffusion occur.
 		//! \param dest Output face-centered vector field.
 		//! \param boundarySDF Shape of the solid boundary that is empty by default.
-		//! \param boundarySDF Shape of the fluid boundary that is full by default.
+		//! \param fluidSDF Shape of the fluid boundary that is full by default.
 		//!
 		virtual void Solve(
 			const FaceCenteredGrid2& source,
