@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_PCISPH_SOLVER2_H
 #define CUBBYFLOW_PCISPH_SOLVER2_H
 
-#include <SPH/SPHSolver2.h>
+#include <Solver/SPH/SPHSolver2.h>
 
 namespace CubbyFlow
 {
