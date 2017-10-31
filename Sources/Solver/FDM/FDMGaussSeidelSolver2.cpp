@@ -13,12 +13,16 @@ namespace CubbyFlow
 	FDMGaussSeidelSolver2::FDMGaussSeidelSolver2(
 		unsigned int maxNumberOfIterations,
 		unsigned int residualCheckInterval,
-		double tolerance) :
+		double tolerance,
+		double sorFactor,
+		bool useRedBlackOrdering) :
 		m_maxNumberOfIterations(maxNumberOfIterations),
 		m_lastNumberOfIterations(0),
 		m_residualCheckInterval(residualCheckInterval),
 		m_tolerance(tolerance),
-		m_lastResidual(std::numeric_limits<double>::max())
+		m_lastResidual(std::numeric_limits<double>::max()),
+		m_sorFactor(sorFactor),
+		m_useRedBlackOrdering(useRedBlackOrdering)
 	{
 		// Do nothing
 	}
@@ -31,7 +35,14 @@ namespace CubbyFlow
 
 		for (unsigned int iter = 0; iter < m_maxNumberOfIterations; ++iter)
 		{
-			Relax(system);
+			if (m_useRedBlackOrdering)
+			{
+				RelaxRedBlack(system->A, system->b, m_sorFactor, &system->x);
+			}
+			else
+			{
+				Relax(system->A, system->b, m_sorFactor, &system->x);
+			}
 
 			if (iter != 0 && iter % m_residualCheckInterval == 0)
 			{
@@ -71,22 +82,85 @@ namespace CubbyFlow
 		return m_lastResidual;
 	}
 
-	void FDMGaussSeidelSolver2::Relax(FDMLinearSystem2* system)
+	double FDMGaussSeidelSolver2::GetSORFactor() const
 	{
-		Size2 size = system->x.size();
-		FDMMatrix2& A = system->A;
-		FDMVector2& x = system->x;
-		FDMVector2& b = system->b;
+		return m_sorFactor;
+	}
+
+	bool FDMGaussSeidelSolver2::GetUseRedBlackOrdering() const
+	{
+		return m_useRedBlackOrdering;
+	}
+
+	void FDMGaussSeidelSolver2::Relax(const FDMMatrix2& A, const FDMVector2& b,
+		double sorFactor, FDMVector2* x)
+	{
+		Size2 size = A.size();
+		FDMVector2& refX = *x;
 
 		A.ForEachIndex([&](size_t i, size_t j)
 		{
 			double r =
-				((i > 0) ? A(i - 1, j).right * x(i - 1, j) : 0.0) +
-				((i + 1 < size.x) ? A(i, j).right * x(i + 1, j) : 0.0) +
-				((j > 0) ? A(i, j - 1).up * x(i, j - 1) : 0.0) +
-				((j + 1 < size.y) ? A(i, j).up * x(i, j + 1) : 0.0);
+				((i > 0) ? A(i - 1, j).right * refX(i - 1, j) : 0.0) +
+				((i + 1 < size.x) ? A(i, j).right * refX(i + 1, j) : 0.0) +
+				((j > 0) ? A(i, j - 1).up * refX(i, j - 1) : 0.0) +
+				((j + 1 < size.y) ? A(i, j).up * refX(i, j + 1) : 0.0);
 
-			x(i, j) = (b(i, j) - r) / A(i, j).center;
+			refX(i, j) = (1.0 - sorFactor) * refX(i, j) +
+				sorFactor * (b(i, j) - r) / A(i, j).center;
+		});
+	}
+
+	void FDMGaussSeidelSolver2::RelaxRedBlack(const FDMMatrix2& A, const FDMVector2& b,
+		double sorFactor, FDMVector2* x)
+	{
+		Size2 size = A.size();
+		FDMVector2& refX = *x;
+
+		// Red update
+		ParallelRangeFor(
+			ZERO_SIZE, size.x, ZERO_SIZE, size.y,
+			[&](size_t iBegin, size_t iEnd, size_t jBegin, size_t jEnd)
+		{
+			for (size_t j = jBegin; j < jEnd; ++j)
+			{
+				// i.e. (0, 0)
+				size_t i = j % 2 + iBegin;
+				
+				for (; i < iEnd; i += 2)
+				{
+					double r =
+						((i > 0) ? A(i - 1, j).right * refX(i - 1, j) : 0.0) +
+						((i + 1 < size.x) ? A(i, j).right * refX(i + 1, j) : 0.0) +
+						((j > 0) ? A(i, j - 1).up * refX(i, j - 1) : 0.0) +
+						((j + 1 < size.y) ? A(i, j).up * refX(i, j + 1) : 0.0);
+
+					refX(i, j) = (1.0 - sorFactor) * refX(i, j) + sorFactor * (b(i, j) - r) / A(i, j).center;
+				}
+			}
+		});
+
+		// Black update
+		ParallelRangeFor(
+			ZERO_SIZE, size.x, ZERO_SIZE, size.y,
+			[&](size_t iBegin, size_t iEnd, size_t jBegin, size_t jEnd)
+		{
+			for (size_t j = jBegin; j < jEnd; ++j)
+			{
+				size_t i = 1 - j % 2 + iBegin;  // i.e. (1, 0)
+				
+				for (; i < iEnd; i += 2)
+				{
+					double r =
+						((i > 0) ? A(i - 1, j).right * refX(i - 1, j) : 0.0) +
+						((i + 1 < size.x) ? A(i, j).right * refX(i + 1, j) : 0.0) +
+						((j > 0) ? A(i, j - 1).up * refX(i, j - 1) : 0.0) +
+						((j + 1 < size.y) ? A(i, j).up * refX(i, j + 1) : 0.0);
+
+					refX(i, j) = (1.0 - sorFactor) * refX(i, j) +
+						sorFactor * (b(i, j) - r) / A(i, j).center;
+				}
+			}
 		});
 	}
 }

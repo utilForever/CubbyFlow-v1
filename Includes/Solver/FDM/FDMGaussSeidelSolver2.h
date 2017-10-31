@@ -21,7 +21,9 @@ namespace CubbyFlow
 		FDMGaussSeidelSolver2(
 			unsigned int maxNumberOfIterations,
 			unsigned int residualCheckInterval,
-			double tolerance);
+			double tolerance,
+			double sorFactor = 1.0,
+			bool useRedBlackOrdering = false);
 
 		//! Solves the given linear system.
 		bool Solve(FDMLinearSystem2* system) override;
@@ -38,16 +40,30 @@ namespace CubbyFlow
 		//! Returns the last residual after the Gauss-Seidel iterations.
 		double GetLastResidual() const;
 
+		//! Returns the SOR (Successive Over Relaxation) factor.
+		double GetSORFactor() const;
+
+		//! Returns true if red-black ordering is enabled.
+		bool GetUseRedBlackOrdering() const;
+
+		//! Performs single natural Gauss-Seidel relaxation step.
+		static void Relax(const FDMMatrix2& A, const FDMVector2& b,
+			double sorFactor, FDMVector2* x);
+
+		//! Performs single Red-Black Gauss-Seidel relaxation step.
+		static void RelaxRedBlack(const FDMMatrix2& A, const FDMVector2& b,
+			double sorFactor, FDMVector2* x);
+
 	private:
 		unsigned int m_maxNumberOfIterations;
 		unsigned int m_lastNumberOfIterations;
 		unsigned int m_residualCheckInterval;
 		double m_tolerance;
 		double m_lastResidual;
+		double m_sorFactor;
+		double m_useRedBlackOrdering;
 
 		FDMVector2 m_residual;
-
-		void Relax(FDMLinearSystem2* system);
 	};
 
 	//! Shared pointer type for the FDMGaussSeidelSolver2.
