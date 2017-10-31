@@ -11,6 +11,9 @@
 
 namespace CubbyFlow
 {
+	//! Execution policy tag.
+	enum class ExecutionPolicy { Serial, Parallel };
+
 	//!
 	//! \brief      Fills from \p begin to \p end with \p value in parallel.
 	//!
@@ -21,12 +24,16 @@ namespace CubbyFlow
 	//! \param[in]  begin          The begin iterator of a container.
 	//! \param[in]  end            The end iterator of a container.
 	//! \param[in]  value          The value to fill a container.
+	//! \param[in]  policy         The execution policy (parallel or serial).
 	//!
 	//! \tparam     RandomIterator Random iterator type.
 	//! \tparam     T              Value type of a container.
 	//!
 	template <typename RandomIterator, typename T>
-	void ParallelFill(const RandomIterator& begin, const RandomIterator& end, const T& value);
+	void ParallelFill(
+		const RandomIterator& begin, const RandomIterator& end,
+		const T& value,
+		ExecutionPolicy policy = ExecutionPolicy::Parallel);
 
 	//!
 	//! \brief      Makes a for-loop from \p beginIndex \p to endIndex in parallel.
@@ -38,12 +45,16 @@ namespace CubbyFlow
 	//! \param[in]  beginIndex The begin index.
 	//! \param[in]  endIndex   The end index.
 	//! \param[in]  function   The function to call for each index.
+	//! \param[in]  policy     The execution policy (parallel or serial).
 	//!
 	//! \tparam     IndexType  Index type.
 	//! \tparam     Function   Function type.
 	//!
 	template <typename IndexType, typename Function>
-	void ParallelFor(IndexType beginIndex, IndexType endIndex, const Function& function);
+	void ParallelFor(
+		IndexType beginIndex, IndexType endIndex,
+		const Function& function,
+		ExecutionPolicy policy = ExecutionPolicy::Parallel);
 
 	//!
 	//! \brief      Makes a 2D nested for-loop in parallel.
@@ -58,6 +69,7 @@ namespace CubbyFlow
 	//! \param[in]  beginIndexY The begin index in Y dimension.
 	//! \param[in]  endIndexY   The end index in Y dimension.
 	//! \param[in]  function    The function to call for each index (i, j).
+	//! \param[in]  policy      The execution policy (parallel or serial).
 	//!
 	//! \tparam     IndexType   Index type.
 	//! \tparam     Function    Function type.
@@ -66,7 +78,8 @@ namespace CubbyFlow
 	void ParallelFor(
 		IndexType beginIndexX, IndexType endIndexX,
 		IndexType beginIndexY, IndexType endIndexY,
-		const Function& function);
+		const Function& function,
+		ExecutionPolicy policy = ExecutionPolicy::Parallel);
 
 	//!
 	//! \brief      Makes a 3D nested for-loop in parallel.
@@ -83,6 +96,7 @@ namespace CubbyFlow
 	//! \param[in]  beginIndexZ The begin index in Z dimension.
 	//! \param[in]  endIndexZ   The end index in Z dimension.
 	//! \param[in]  function    The function to call for each index (i, j, k).
+	//! \param[in]  policy      The execution policy (parallel or serial).
 	//!
 	//! \tparam     IndexType   Index type.
 	//! \tparam     Function    Function type.
@@ -92,7 +106,8 @@ namespace CubbyFlow
 		IndexType beginIndexX, IndexType endIndexX,
 		IndexType beginIndexY, IndexType endIndexY,
 		IndexType beginIndexZ, IndexType endIndexZ,
-		const Function& function);
+		const Function& function,
+		ExecutionPolicy policy = ExecutionPolicy::Parallel);
 
 	//!
 	//! \brief      Performs reduce operation in parallel.
@@ -103,15 +118,20 @@ namespace CubbyFlow
 	//! \param[in]  beginIndex The begin index.
 	//! \param[in]  endIndex   The end index.
 	//! \param[in]  identity   Identity value for the reduce operation.
-	//! \param[in]  func       The function for reducing subrange.
+	//! \param[in]  function   The function for reducing subrange.
 	//! \param[in]  reduce     The reduce operator.
+	//! \param[in]  policy     The execution policy (parallel or serial).
 	//!
 	//! \tparam     IndexType  Index type.
 	//! \tparam     Value      Value type.
 	//! \tparam     Function   Reduce function type.
 	//!
 	template <typename IndexType, typename Value, typename Function, typename Reduce>
-	Value ParallelReduce(IndexType beginIndex, IndexType endIndex, const Value& identity, const Function& func, const Reduce& reduce);
+	Value ParallelReduce(
+		IndexType beginIndex, IndexType endIndex,
+		const Value& identity, const Function& function,
+		const Reduce& reduce,
+		ExecutionPolicy policy = ExecutionPolicy::Parallel);
 
 	//!
 	//! \brief      Sorts a container in parallel.
@@ -120,11 +140,14 @@ namespace CubbyFlow
 	//!
 	//! \param[in]  begin          The begin random access iterator.
 	//! \param[in]  end            The end random access iterator.
+	//! \param[in]  policy         The execution policy (parallel or serial).
 	//!
 	//! \tparam     RandomIterator Iterator type.
 	//!
 	template<typename RandomIterator>
-	void ParallelSort(RandomIterator begin, RandomIterator end);
+	void ParallelSort(
+		RandomIterator begin, RandomIterator end,
+		ExecutionPolicy policy = ExecutionPolicy::Parallel);
 
 	//!
 	//! \brief      Sorts a container in parallel with a custom compare function.
@@ -136,12 +159,22 @@ namespace CubbyFlow
 	//! \param[in]  begin           The begin random access iterator.
 	//! \param[in]  end             The end random access iterator.
 	//! \param[in]  compare         The compare function.
+	//! \param[in]  policy          The execution policy (parallel or serial).
 	//!
 	//! \tparam     RandomIterator  Iterator type.
 	//! \tparam     CompareFunction Compare function type.
 	//!
 	template<typename RandomIterator, typename CompareFunction>
-	void ParallelSort(RandomIterator begin, RandomIterator end, CompareFunction compare);
+	void ParallelSort(
+		RandomIterator begin, RandomIterator end,
+		CompareFunction compare,
+		ExecutionPolicy policy = ExecutionPolicy::Parallel);
+
+	//! Sets maximum number of threads to use.
+	void SetMaxNumberOfThreads(unsigned int numThreads);
+
+	//! Returns maximum number of threads to use.
+	unsigned int GetMaxNumberOfThreads();
 }
 
 #include <Utils/Parallel-Impl.h>

@@ -104,7 +104,9 @@ namespace CubbyFlow
 	}
 
 	template <typename RandomIterator, typename T>
-	void ParallelFill(const RandomIterator& begin, const RandomIterator& end, const T& value)
+	void ParallelFill(
+		const RandomIterator& begin, const RandomIterator& end,
+		const T& value, ExecutionPolicy policy)
 	{
 		auto diff = end - begin;
 		if (diff <= 0)
@@ -116,12 +118,14 @@ namespace CubbyFlow
 		ParallelFor(ZERO_SIZE, size, [begin, value](size_t i)
 		{
 			begin[i] = value;
-		});
+		}, policy);
 	}
 
 	// Adopted from http://ideone.com/Z7zldb
 	template <typename IndexType, typename Function>
-	void ParallelFor(IndexType beginIndex, IndexType endIndex, const Function& function)
+	void ParallelFor(
+		IndexType beginIndex, IndexType endIndex,
+		const Function& function, ExecutionPolicy policy)
 	{
 		if (beginIndex > endIndex)
 		{
@@ -129,8 +133,9 @@ namespace CubbyFlow
 		}
 
 		// Estimate number of threads in the pool
-		static const unsigned int numThreadsHint = std::thread::hardware_concurrency();
-		static const unsigned int numThreads = (numThreadsHint == 0u ? 8u : numThreadsHint);
+		const unsigned int numThreadsHint = GetMaxNumberOfThreads();
+		const unsigned int numThreads = (policy == ExecutionPolicy::Parallel) ?
+			(numThreadsHint == 0u ? 8u : numThreadsHint) : 1;
 
 		// Size of a slice for the range functions
 		IndexType n = endIndex - beginIndex + 1;
@@ -178,7 +183,7 @@ namespace CubbyFlow
 	void ParallelFor(
 		IndexType beginIndexX, IndexType endIndexX,
 		IndexType beginIndexY, IndexType endIndexY,
-		const Function& function)
+		const Function& function, ExecutionPolicy policy)
 	{
 		ParallelFor(beginIndexY, endIndexY, [&](size_t j)
 		{
@@ -186,7 +191,7 @@ namespace CubbyFlow
 			{
 				function(i, j);
 			}
-		});
+		}, policy);
 	}
 
 	template <typename IndexType, typename Function>
@@ -194,7 +199,7 @@ namespace CubbyFlow
 		IndexType beginIndexX, IndexType endIndexX,
 		IndexType beginIndexY, IndexType endIndexY,
 		IndexType beginIndexZ, IndexType endIndexZ,
-		const Function& function)
+		const Function& function, ExecutionPolicy policy)
 	{
 		ParallelFor(beginIndexZ, endIndexZ, [&](size_t k)
 		{
@@ -205,11 +210,14 @@ namespace CubbyFlow
 					function(i, j, k);
 				}
 			}
-		});
+		}, policy);
 	}
 
 	template <typename IndexType, typename Value, typename Function, typename Reduce>
-	Value ParallelReduce(IndexType start, IndexType end, const Value& identity, const Function& func, const Reduce& reduce)
+	Value ParallelReduce(
+		IndexType start, IndexType end,
+		const Value& identity, const Function& func,
+		const Reduce& reduce, ExecutionPolicy policy)
 	{
 		if (start > end)
 		{
@@ -217,8 +225,9 @@ namespace CubbyFlow
 		}
 		
 		// Estimate number of threads in the pool
-		static const unsigned int numThreadsHint = std::thread::hardware_concurrency();
-		static const unsigned int numThreads = (numThreadsHint == 0u ? 8u : numThreadsHint);
+		const unsigned int numThreadsHint = GetMaxNumberOfThreads();
+		const unsigned int numThreads = (policy == ExecutionPolicy::Parallel) ?
+			(numThreadsHint == 0u ? 8u : numThreadsHint) : 1;
 		
 		// Size of a slice for the range functions
 		IndexType n = end - start + 1;
@@ -274,13 +283,17 @@ namespace CubbyFlow
 	}
 
 	template<typename RandomIterator>
-	void ParallelSort(RandomIterator begin, RandomIterator end)
+	void ParallelSort(
+		RandomIterator begin, RandomIterator end,
+		ExecutionPolicy policy)
 	{
-		ParallelSort(begin, end, std::less<typename std::iterator_traits<RandomIterator>::value_type>());
+		ParallelSort(begin, end, std::less<typename std::iterator_traits<RandomIterator>::value_type>(), policy);
 	}
 
 	template<typename RandomIterator, typename CompareFunction>
-	void ParallelSort(RandomIterator begin, RandomIterator end, CompareFunction compareFunction)
+	void ParallelSort(
+		RandomIterator begin, RandomIterator end,
+		CompareFunction compareFunction, ExecutionPolicy policy)
 	{
 		if (begin > end)
 		{
@@ -293,8 +306,9 @@ namespace CubbyFlow
 		std::vector<value_type> temp(size);
 
 		// Estimate number of threads in the pool
-		static const unsigned int numThreadsHint = std::thread::hardware_concurrency();
-		static const unsigned int numThreads = (numThreadsHint == 0u ? 8u : numThreadsHint);
+		const unsigned int numThreadsHint = GetMaxNumberOfThreads();
+		const unsigned int numThreads = (policy == ExecutionPolicy::Parallel) ?
+			(numThreadsHint == 0u ? 8u : numThreadsHint) : 1;
 
 		Internal::ParallelMergeSort(begin, size, temp.begin(), numThreads, compareFunction);
 	}

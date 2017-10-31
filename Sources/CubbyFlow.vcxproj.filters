@@ -1499,5 +1499,8 @@
     <ClCompile Include="Solver\APIC\APICSolver3.cpp">
       <Filter>Solver\APIC</Filter>
     </ClCompile>
+    <ClCompile Include="Utils\Parallel.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

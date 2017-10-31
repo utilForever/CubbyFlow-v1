@@ -647,6 +647,7 @@ xcopy /y "$(SolutionDir)Includes" "$(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="Surface\Implicit\CustomImplicitSurface2.cpp" />
     <ClCompile Include="Surface\Implicit\CustomImplicitSurface3.cpp" />
     <ClCompile Include="Utils\Factory.cpp" />
+    <ClCompile Include="Utils\Parallel.cpp" />
     <ClCompile Include="Utils\Serialization.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
