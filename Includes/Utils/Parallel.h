@@ -57,6 +57,29 @@ namespace CubbyFlow
 		ExecutionPolicy policy = ExecutionPolicy::Parallel);
 
 	//!
+	//! \brief      Makes a range-loop from \p beginIndex \p to endIndex in
+	//!             parallel.
+	//!
+	//! This function makes a for-loop specified by begin and end indices in
+	//! parallel. Unlike parallelFor function, the input function object takes range
+	//! instead of single index. The order of the visit is not guaranteed due to the
+	//! nature of parallel execution.
+	//!
+	//! \param[in]  beginIndex The begin index.
+	//! \param[in]  endIndex   The end index.
+	//! \param[in]  function   The function to call for each index range.
+	//! \param[in]  policy     The execution policy (parallel or serial).
+	//!
+	//! \tparam     IndexType  Index type.
+	//! \tparam     Function   Function type.
+	//!
+	template <typename IndexType, typename Function>
+	void ParallelRangeFor(
+		IndexType beginIndex, IndexType endIndex,
+		const Function& function,
+		ExecutionPolicy policy = ExecutionPolicy::Parallel);
+
+	//!
 	//! \brief      Makes a 2D nested for-loop in parallel.
 	//!
 	//! This function makes a 2D nested for-loop specified by begin and end indices
@@ -76,6 +99,32 @@ namespace CubbyFlow
 	//!
 	template <typename IndexType, typename Function>
 	void ParallelFor(
+		IndexType beginIndexX, IndexType endIndexX,
+		IndexType beginIndexY, IndexType endIndexY,
+		const Function& function,
+		ExecutionPolicy policy = ExecutionPolicy::Parallel);
+
+	//!
+	//! \brief      Makes a 2D nested range-loop in parallel.
+	//!
+	//! This function makes a 2D nested for-loop specified by begin and end indices
+	//! for each dimension. X will be the inner-most loop while Y is the outer-most.
+	//! Unlike parallelFor function, the input function object takes range instead
+	//! of single index. The order of the visit is not guaranteed due to the nature
+	//! of parallel execution.
+	//!
+	//! \param[in]  beginIndexX The begin index in X dimension.
+	//! \param[in]  endIndexX   The end index in X dimension.
+	//! \param[in]  beginIndexY The begin index in Y dimension.
+	//! \param[in]  endIndexY   The end index in Y dimension.
+	//! \param[in]  function    The function to call for each index range.
+	//! \param[in]  policy      The execution policy (parallel or serial).
+	//!
+	//! \tparam     IndexType  Index type.
+	//! \tparam     Function   Function type.
+	//!
+	template <typename IndexType, typename Function>
+	void ParallelRangeFor(
 		IndexType beginIndexX, IndexType endIndexX,
 		IndexType beginIndexY, IndexType endIndexY,
 		const Function& function,
@@ -103,6 +152,35 @@ namespace CubbyFlow
 	//!
 	template <typename IndexType, typename Function>
 	void ParallelFor(
+		IndexType beginIndexX, IndexType endIndexX,
+		IndexType beginIndexY, IndexType endIndexY,
+		IndexType beginIndexZ, IndexType endIndexZ,
+		const Function& function,
+		ExecutionPolicy policy = ExecutionPolicy::Parallel);
+
+	//!
+	//! \brief      Makes a 3D nested range-loop in parallel.
+	//!
+	//! This function makes a 3D nested for-loop specified by begin and end indices
+	//! for each dimension. X will be the inner-most loop while Z is the outer-most.
+	//! Unlike parallelFor function, the input function object takes range instead
+	//! of single index. The order of the visit is not guaranteed due to the nature
+	//! of parallel execution.
+	//!
+	//! \param[in]  beginIndexX The begin index in X dimension.
+	//! \param[in]  endIndexX   The end index in X dimension.
+	//! \param[in]  beginIndexY The begin index in Y dimension.
+	//! \param[in]  endIndexY   The end index in Y dimension.
+	//! \param[in]  beginIndexZ The begin index in Z dimension.
+	//! \param[in]  endIndexZ   The end index in Z dimension.
+	//! \param[in]  function    The function to call for each index (i, j, k).
+	//! \param[in]  policy      The execution policy (parallel or serial).
+	//!
+	//! \tparam     IndexType   Index type.
+	//! \tparam     Function    Function type.
+	//!
+	template <typename IndexType, typename Function>
+	void ParallelRangeFor(
 		IndexType beginIndexX, IndexType endIndexX,
 		IndexType beginIndexY, IndexType endIndexY,
 		IndexType beginIndexZ, IndexType endIndexZ,

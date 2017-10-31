@@ -180,6 +180,54 @@ namespace CubbyFlow
 	}
 
 	template <typename IndexType, typename Function>
+	void ParallelRangeFor(
+		IndexType beginIndex, IndexType endIndex,
+		const Function& function, ExecutionPolicy policy)
+	{
+		if (beginIndex > endIndex)
+		{
+			return;
+		}
+
+		// Estimate number of threads in the pool
+		const unsigned int numThreadsHint = GetMaxNumberOfThreads();
+		const unsigned int numThreads = (policy == ExecutionPolicy::Parallel) ?
+			(numThreadsHint == 0u ? 8u : numThreadsHint) : 1;
+
+		// Size of a slice for the range functions
+		IndexType n = endIndex - beginIndex + 1;
+		IndexType slice = static_cast<IndexType>(std::round(n / static_cast<double>(numThreads)));
+		slice = std::max(slice, IndexType(1));
+
+		// Create pool and launch jobs
+		std::vector<std::thread> pool;
+		pool.reserve(numThreads);
+		IndexType i1 = beginIndex;
+		IndexType i2 = std::min(beginIndex + slice, endIndex);
+
+		for (unsigned int i = 0; i + 1 < numThreads && i1 < endIndex; ++i)
+		{
+			pool.emplace_back(function, i1, i2);
+			i1 = i2;
+			i2 = std::min(i2 + slice, endIndex);
+		}
+
+		if (i1 < endIndex)
+		{
+			pool.emplace_back(function, i1, endIndex);
+		}
+
+		// Wait for jobs to finish
+		for (std::thread& t : pool)
+		{
+			if (t.joinable())
+			{
+				t.join();
+			}
+		}
+	}
+
+	template <typename IndexType, typename Function>
 	void ParallelFor(
 		IndexType beginIndexX, IndexType endIndexX,
 		IndexType beginIndexY, IndexType endIndexY,
@@ -191,6 +239,19 @@ namespace CubbyFlow
 			{
 				function(i, j);
 			}
+		}, policy);
+	}
+
+	template <typename IndexType, typename Function>
+	void ParallelRangeFor(
+		IndexType beginIndexX, IndexType endIndexX,
+		IndexType beginIndexY, IndexType endIndexY,
+		const Function& function, ExecutionPolicy policy)
+	{
+		ParallelRangeFor(beginIndexY, endIndexY,
+			[&](IndexType jBegin, IndexType jEnd)
+		{
+			function(beginIndexX, endIndexX, jBegin, jEnd);
 		}, policy);
 	}
 
@@ -210,6 +271,20 @@ namespace CubbyFlow
 					function(i, j, k);
 				}
 			}
+		}, policy);
+	}
+
+	template <typename IndexType, typename Function>
+	void ParallelRangeFor(
+		IndexType beginIndexX, IndexType endIndexX,
+		IndexType beginIndexY, IndexType endIndexY,
+		IndexType beginIndexZ, IndexType endIndexZ,
+		const Function& function, ExecutionPolicy policy)
+	{
+		ParallelRangeFor(beginIndexZ, endIndexZ,
+			[&](IndexType kBegin, IndexType kEnd)
+		{
+			function(beginIndexX, endIndexX, beginIndexY, endIndexY, kBegin, kEnd);
 		}, policy);
 	}
 
