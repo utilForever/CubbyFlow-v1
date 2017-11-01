@@ -512,5 +512,8 @@
     <ClInclude Include="FDMLinearSystemSolverTestHelper2.h">
       <Filter>Solver\FDM</Filter>
     </ClInclude>
+    <ClInclude Include="FDMLinearSystemSolverTestHelper3.h">
+      <Filter>Solver\FDM</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
