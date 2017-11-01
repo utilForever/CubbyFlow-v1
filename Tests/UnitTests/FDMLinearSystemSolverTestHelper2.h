@@ -5,7 +5,7 @@
 
 namespace CubbyFlow
 {
-	class FdmLinearSystemSolverTestHelper2
+	class FDMLinearSystemSolverTestHelper2
 	{
 	public:
 		static void BuildTestLinearSystem(FDMLinearSystem2* system, const Size2& size)
