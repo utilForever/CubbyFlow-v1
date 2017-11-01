@@ -38,6 +38,10 @@ namespace CubbyFlow
 		//! Returns the last residual after the Jacobi iterations.
 		double GetLastResidual() const;
 
+		//! Performs single Jacobi relaxation step.
+		static void Relax(const FDMMatrix3& A, const FDMVector3& b,
+			FDMVector3* x, FDMVector3* xTemp);
+
 	private:
 		unsigned int m_maxNumberOfIterations;
 		unsigned int m_lastNumberOfIterations;
@@ -47,8 +51,6 @@ namespace CubbyFlow
 
 		FDMVector3 m_xTemp;
 		FDMVector3 m_residual;
-
-		void Relax(FDMLinearSystem3* system, FDMVector3* xTemp);
 	};
 
 	//! Shared pointer type for the FDMJacobiSolver3.
