@@ -509,5 +509,8 @@
       <Filter>Precompiled Header</Filter>
     </ClInclude>
     <ClInclude Include="UnitTestsUtils.h" />
+    <ClInclude Include="FDMLinearSystemSolverTestHelper2.h">
+      <Filter>Solver\FDM</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

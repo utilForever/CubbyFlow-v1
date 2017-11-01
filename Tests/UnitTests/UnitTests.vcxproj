@@ -63,6 +63,7 @@
     <IntDir>$(SolutionDir)obj\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <ItemGroup>
+    <ClInclude Include="FDMLinearSystemSolverTestHelper2.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="UnitTestsUtils.h" />
   </ItemGroup>
