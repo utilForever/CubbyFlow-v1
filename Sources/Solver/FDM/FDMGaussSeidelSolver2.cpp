@@ -135,7 +135,8 @@ namespace CubbyFlow
 						((j > 0) ? A(i, j - 1).up * refX(i, j - 1) : 0.0) +
 						((j + 1 < size.y) ? A(i, j).up * refX(i, j + 1) : 0.0);
 
-					refX(i, j) = (1.0 - sorFactor) * refX(i, j) + sorFactor * (b(i, j) - r) / A(i, j).center;
+					refX(i, j) = (1.0 - sorFactor) * refX(i, j) +
+						sorFactor * (b(i, j) - r) / A(i, j).center;
 				}
 			}
 		});
