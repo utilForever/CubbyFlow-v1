@@ -32,7 +32,7 @@ namespace CubbyFlow
 
 		for (unsigned int iter = 0; iter < m_maxNumberOfIterations; ++iter)
 		{
-			Relax(system, &m_xTemp);
+			Relax(system->A, system->b, &system->x, &m_xTemp);
 			m_xTemp.Swap(system->x);
 
 			if (iter != 0 && iter % m_residualCheckInterval == 0)
@@ -73,22 +73,22 @@ namespace CubbyFlow
 		return m_lastResidual;
 	}
 
-	void FDMJacobiSolver2::Relax(FDMLinearSystem2* system, FDMVector2* xTemp)
+	void FDMJacobiSolver2::Relax(const FDMMatrix2& A, const FDMVector2& b,
+		FDMVector2* x, FDMVector2* xTemp)
 	{
-		Size2 size = system->x.size();
-		FDMMatrix2& A = system->A;
-		FDMVector2& x = system->x;
-		FDMVector2& b = system->b;
+		Size2 size = A.size();
+		FDMVector2& refX = *x;
+		FDMVector2& refXTemp = *xTemp;
 
 		A.ParallelForEachIndex([&](size_t i, size_t j)
 		{
 			double r =
-				((i > 0) ? A(i - 1, j).right * x(i - 1, j) : 0.0) +
-				((i + 1 < size.x) ? A(i, j).right * x(i + 1, j) : 0.0) +
-				((j > 0) ? A(i, j - 1).up * x(i, j - 1) : 0.0) +
-				((j + 1 < size.y) ? A(i, j).up * x(i, j + 1) : 0.0);
+				((i > 0) ? A(i - 1, j).right * refX(i - 1, j) : 0.0) +
+				((i + 1 < size.x) ? A(i, j).right * refX(i + 1, j) : 0.0) +
+				((j > 0) ? A(i, j - 1).up * refX(i, j - 1) : 0.0) +
+				((j + 1 < size.y) ? A(i, j).up * refX(i, j + 1) : 0.0);
 
-			(*xTemp)(i, j) = (b(i, j) - r) / A(i, j).center;
+			refXTemp(i, j) = (b(i, j) - r) / A(i, j).center;
 		});
 	}
 }
