@@ -1,50 +1,26 @@
 #include "pch.h"
+#include "FDMLinearSystemSolverTestHelper2.h"
 
 #include <Solver/FDM/FDMICCGSolver2.h>
 
 using namespace CubbyFlow;
 
-TEST(FDMICCGSolver2, Constructors)
+TEST(FDMICCGSolver2, SolveLowRes)
 {
 	FDMLinearSystem2 system;
-	system.A.Resize(3, 3);
-	system.x.Resize(3, 3);
-	system.b.Resize(3, 3);
-
-	system.A.ForEachIndex([&](size_t i, size_t j)
-	{
-		if (i > 0)
-		{
-			system.A(i, j).center += 1.0;
-		}
-		if (i < system.A.Width() - 1)
-		{
-			system.A(i, j).center += 1.0;
-			system.A(i, j).right -= 1.0;
-		}
-
-		if (j > 0)
-		{
-			system.A(i, j).center += 1.0;
-		}
-		else
-		{
-			system.b(i, j) += 1.0;
-		}
-
-		if (j < system.A.Height() - 1)
-		{
-			system.A(i, j).center += 1.0;
-			system.A(i, j).up -= 1.0;
-		}
-		else
-		{
-			system.b(i, j) -= 1.0;
-		}
-	});
+	FDMLinearSystemSolverTestHelper2::BuildTestLinearSystem(&system, { 3, 3 });
 
 	FDMICCGSolver2 solver(10, 1e-9);
 	solver.Solve(&system);
 
 	EXPECT_GT(solver.GetTolerance(), solver.GetLastResidual());
+}
+
+TEST(FDMICCGSolver2, Solve)
+{
+	FDMLinearSystem2 system;
+	FDMLinearSystemSolverTestHelper2::BuildTestLinearSystem(&system, { 128, 128 });
+
+	FDMICCGSolver2 solver(200, 1e-4);
+	EXPECT_TRUE(solver.Solve(&system));
 }
