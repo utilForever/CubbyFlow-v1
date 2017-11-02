@@ -66,8 +66,6 @@ namespace CubbyFlow
 		BLASType::Set(0, q);
 		BLASType::Set(0, s);
 
-		M->Build(A);
-
 		// r = b - Ax
 		BLASType::Residual(A, *x, b, r);
 
@@ -128,7 +126,9 @@ namespace CubbyFlow
 		}
 
 		*lastNumberOfIterations = iter;
-		*lastResidualNorm = std::sqrt(sigmaNew);
+
+		// std::fabs(sigmaNew) - Workaround for negative zero
+		*lastResidualNorm = std::sqrt(std::fabs(sigmaNew));
 	}
 }
 
