@@ -1,60 +1,28 @@
 #include "pch.h"
+#include "FDMLinearSystemSolverTestHelper3.h"
 
 #include <Solver/FDM/FDMICCGSolver3.h>
 
 using namespace CubbyFlow;
 
-TEST(FDMICCGSolver3, Constructors)
+TEST(FDMICCGSolver3, SolveLowRes)
 {
 	FDMLinearSystem3 system;
-	system.A.Resize(3, 3, 3);
-	system.x.Resize(3, 3, 3);
-	system.b.Resize(3, 3, 3);
-
-	system.A.ForEachIndex([&](size_t i, size_t j, size_t k)
-	{
-		if (i > 0)
-		{
-			system.A(i, j, k).center += 1.0;
-		}
-		if (i < system.A.Width() - 1)
-		{
-			system.A(i, j, k).center += 1.0;
-			system.A(i, j, k).right -= 1.0;
-		}
-
-		if (j > 0)
-		{
-			system.A(i, j, k).center += 1.0;
-		}
-		else
-		{
-			system.b(i, j, k) += 1.0;
-		}
-
-		if (j < system.A.Height() - 1)
-		{
-			system.A(i, j, k).center += 1.0;
-			system.A(i, j, k).up -= 1.0;
-		}
-		else
-		{
-			system.b(i, j, k) -= 1.0;
-		}
-
-		if (k > 0)
-		{
-			system.A(i, j, k).center += 1.0;
-		}
-		if (k < system.A.Depth() - 1)
-		{
-			system.A(i, j, k).center += 1.0;
-			system.A(i, j, k).front -= 1.0;
-		}
-	});
+	FDMLinearSystemSolverTestHelper3::BuildTestLinearSystem(&system, { 3, 3, 3 });
 
 	FDMICCGSolver3 solver(100, 1e-9);
 	solver.Solve(&system);
 
 	EXPECT_GT(solver.GetTolerance(), solver.GetLastResidual());
+}
+
+TEST(FDMICCGSolver3, Solve)
+{
+	FDMLinearSystem3 system;
+	FDMLinearSystemSolverTestHelper3::BuildTestLinearSystem(&system, { 32, 32, 32 });
+
+	FDMICCGSolver3 solver(100, 1e-4);
+	solver.Solve(&system);
+
+	EXPECT_TRUE(solver.Solve(&system));
 }
