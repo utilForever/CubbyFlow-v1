@@ -41,6 +41,26 @@ TEST(Parallel, For)
 	});
 }
 
+TEST(Parallel, RangeFor)
+{
+	size_t N = std::max(20u, (3 * NUM_CORES) / 2);
+	std::vector<double> a(N);
+
+	for (size_t i = 0; i < N; ++i)
+	{
+		a[i] = static_cast<double>(i);
+	}
+
+	ParallelRangeFor(ZERO_SIZE, a.size(), [&a](size_t iBegin, size_t iEnd)
+	{
+		for (size_t i = iBegin; i < iEnd; ++i)
+		{
+			double expected = static_cast<double>(i);
+			EXPECT_DOUBLE_EQ(expected, a[i]);
+		}
+	});
+}
+
 TEST(Parallel, For2D)
 {
 	size_t nX = std::max(20u, (3 * NUM_CORES) / 2);
@@ -62,6 +82,36 @@ TEST(Parallel, For2D)
 	{
 		double expected = static_cast<double>(i + j * nX);
 		EXPECT_DOUBLE_EQ(expected, a(i, j));
+	});
+}
+
+TEST(Parallel, RangeFor2D)
+{
+	size_t nX = std::max(20u, (3 * NUM_CORES) / 2);
+	size_t nY = std::max(30u, (3 * NUM_CORES) / 2);
+	Array2<double> a(nX, nY);
+
+	for (size_t j = 0; j < nY; ++j)
+	{
+		for (size_t i = 0; i < nX; ++i)
+		{
+			a(i, j) = static_cast<double>(i + j * nX);
+		}
+	}
+
+	ParallelRangeFor(
+		ZERO_SIZE, a.Width(),
+		ZERO_SIZE, a.Height(),
+		[&](size_t iBegin, size_t iEnd, size_t jBegin, size_t jEnd)
+	{
+		for (size_t j = jBegin; j < jEnd; ++j)
+		{
+			for (size_t i = iBegin; i < iEnd; ++i)
+			{
+				double expected = static_cast<double>(i + j * nX);
+				EXPECT_DOUBLE_EQ(expected, a(i, j));
+			}
+		}
 	});
 }
 
@@ -91,6 +141,44 @@ TEST(Parallel, For3D)
 	{
 		double expected = static_cast<double>(i + (j + k * nY) * nX);
 		EXPECT_DOUBLE_EQ(expected, a(i, j, k));
+	});
+}
+
+TEST(Parallel, RangeFor3D)
+{
+	size_t nX = std::max(20u, (3 * NUM_CORES) / 2);
+	size_t nY = std::max(30u, (3 * NUM_CORES) / 2);
+	size_t nZ = std::max(30u, (3 * NUM_CORES) / 2);
+	Array3<double> a(nX, nY, nZ);
+
+	for (size_t k = 0; k < nZ; ++k)
+	{
+		for (size_t j = 0; j < nY; ++j)
+		{
+			for (size_t i = 0; i < nX; ++i)
+			{
+				a(i, j, k) = static_cast<double>(i + (j + k * nY) * nX);
+			}
+		}
+	}
+
+	ParallelRangeFor(
+		ZERO_SIZE, a.Width(),
+		ZERO_SIZE, a.Height(),
+		ZERO_SIZE, a.Depth(),
+		[&](size_t iBegin, size_t iEnd, size_t jBegin, size_t jEnd, size_t kBegin, size_t kEnd)
+	{
+		for (size_t k = kBegin; k < kEnd; ++k)
+		{
+			for (size_t j = jBegin; j < jEnd; ++j)
+			{
+				for (size_t i = iBegin; i < iEnd; ++i)
+				{
+					double expected = static_cast<double>(i + (j + k * nY) * nX);
+					EXPECT_DOUBLE_EQ(expected, a(i, j, k));
+				}
+			}
+		}
 	});
 }
 
