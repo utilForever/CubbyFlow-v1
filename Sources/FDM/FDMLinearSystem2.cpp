@@ -10,6 +10,13 @@
 
 namespace CubbyFlow
 {
+	void FDMLinearSystem2::Clear()
+	{
+		A.Clear();
+		x.Clear();
+		b.Clear();
+	}
+
 	void FDMBlas2::Set(double s, FDMVector2* result)
 	{
 		result->Set(s);

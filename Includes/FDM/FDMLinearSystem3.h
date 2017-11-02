@@ -40,6 +40,8 @@ namespace CubbyFlow
 	{
 		FDMMatrix3 A;
 		FDMVector3 x, b;
+
+		void Clear();
 	};
 
 	//! BLAS operator wrapper for 3-D finite differencing.
