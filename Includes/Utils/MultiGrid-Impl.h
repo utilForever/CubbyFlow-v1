@@ -14,10 +14,10 @@ namespace CubbyFlow
 	namespace Internal
 	{
 		template <typename BlasType>
-		MultiGridResult MultiGridVCycle(
-			const MultiGridMatrix<BlasType>& A, MultiGridParameters<BlasType> params,
-			unsigned int currentLevel, MultiGridVector<BlasType>* x,
-			MultiGridVector<BlasType>* b, MultiGridVector<BlasType>* buffer)
+		MGResult MGVCycle(
+			const MGMatrix<BlasType>& A, MGParameters<BlasType> params,
+			unsigned int currentLevel, MGVector<BlasType>* x,
+			MGVector<BlasType>* b, MGVector<BlasType>* buffer)
 		{
 			// 1) Relax a few times on Ax = b, with arbitrary x
 			params.relaxFunc(A[currentLevel], (*b)[currentLevel],
@@ -35,7 +35,7 @@ namespace CubbyFlow
 
 				params.maxTolerance *= 0.5;
 				// Solve Ae = r
-				MultiGridVCycle(A, params, currentLevel + 1, x, b, buffer);
+				MGVCycle(A, params, currentLevel + 1, x, b, buffer);
 				params.maxTolerance *= 2.0;
 
 				// 3) correct
@@ -67,67 +67,67 @@ namespace CubbyFlow
 
 			BlasType::Residual(A[currentLevel], (*x)[currentLevel], (*b)[currentLevel], &(*buffer)[currentLevel]);
 
-			MultiGridResult result;
+			MGResult result;
 			result.lastResidualNorm = BlasType::L2Norm((*buffer)[currentLevel]);
 			return result;
 		}
 	}
 
 	template <typename BlasType>
-	const typename BlasType::MatrixType& MultiGridMatrix<BlasType>::operator[](size_t i) const
+	const typename BlasType::MatrixType& MGMatrix<BlasType>::operator[](size_t i) const
 	{
 		return levels[i];
 	}
 
 	template <typename BlasType>
-	typename BlasType::MatrixType& MultiGridMatrix<BlasType>::operator[](size_t i)
+	typename BlasType::MatrixType& MGMatrix<BlasType>::operator[](size_t i)
 	{
 		return levels[i];
 	}
 
 	template <typename BlasType>
-	const typename BlasType::MatrixType& MultiGridMatrix<BlasType>::Finest() const
+	const typename BlasType::MatrixType& MGMatrix<BlasType>::Finest() const
 	{
 		return levels.Front();
 	}
 
 	template <typename BlasType>
-	typename BlasType::MatrixType& MultiGridMatrix<BlasType>::Finest()
+	typename BlasType::MatrixType& MGMatrix<BlasType>::Finest()
 	{
 		return levels.Front();
 	}
 
 	template <typename BlasType>
-	const typename BlasType::VectorType& MultiGridVector<BlasType>::operator[](size_t i) const
+	const typename BlasType::VectorType& MGVector<BlasType>::operator[](size_t i) const
 	{
 		return levels[i];
 	}
 
 	template <typename BlasType>
-	typename BlasType::VectorType& MultiGridVector<BlasType>::operator[](size_t i)
+	typename BlasType::VectorType& MGVector<BlasType>::operator[](size_t i)
 	{
 		return levels[i];
 	}
 
 	template <typename BlasType>
-	const typename BlasType::VectorType& MultiGridVector<BlasType>::Finest() const
+	const typename BlasType::VectorType& MGVector<BlasType>::Finest() const
 	{
 		return levels.Front();
 	}
 
 	template <typename BlasType>
-	typename BlasType::VectorType& MultiGridVector<BlasType>::Finest()
+	typename BlasType::VectorType& MGVector<BlasType>::Finest()
 	{
 		return levels.Front();
 	}
 
 	template <typename BlasType>
-	MultiGridResult MultiGridVCycle(
-		const MultiGridMatrix<BlasType>& A, MultiGridParameters<BlasType> params,
-		MultiGridVector<BlasType>* x, MultiGridVector<BlasType>* b,
-		MultiGridVector<BlasType>* buffer)
+	MGResult MGCycle(
+		const MGMatrix<BlasType>& A, MGParameters<BlasType> params,
+		MGVector<BlasType>* x, MGVector<BlasType>* b,
+		MGVector<BlasType>* buffer)
 	{
-		return Internal::MultiGridVCycle<BlasType>(A, params, 0u, x, b, buffer);
+		return Internal::MGVCycle<BlasType>(A, params, 0u, x, b, buffer);
 	}
 }
 

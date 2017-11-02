@@ -15,7 +15,7 @@ namespace CubbyFlow
 {
 	//! Multi-grid matrix wrapper.
 	template <typename BlasType>
-	struct MultiGridMatrix
+	struct MGMatrix
 	{
 		std::vector<typename BlasType::MatrixType> levels;
 		const typename BlasType::MatrixType& operator[](size_t i) const;
@@ -26,7 +26,7 @@ namespace CubbyFlow
 
 	//! Multi-grid vector wrapper.
 	template <typename BlasType>
-	struct MultiGridVector
+	struct MGVector
 	{
 		std::vector<typename BlasType::VectorType> levels;
 		const typename BlasType::VectorType& operator[](size_t i) const;
@@ -37,7 +37,7 @@ namespace CubbyFlow
 
 	//! Multi-grid relax function type.
 	template <typename BlasType>
-	using MultiGridRelaxFunc = std::function<void(
+	using MGRelaxFunc = std::function<void(
 		const typename BlasType::MatrixType& A,
 		const typename BlasType::VectorType& b, unsigned int numberOfIterations,
 		double maxTolerance, typename BlasType::VectorType* x,
@@ -45,19 +45,19 @@ namespace CubbyFlow
 
 	//! Multi-grid restriction function type.
 	template <typename BlasType>
-	using MultiGridRestrictFunc = std::function<void(
+	using MGRestrictFunc = std::function<void(
 		const typename BlasType::VectorType& finer,
 		typename BlasType::VectorType* coarser)>;
 
 	//! Multi-grid correction function type.
 	template <typename BlasType>
-	using MultiGridCorrectFunc = std::function<void(
+	using MGCorrectFunc = std::function<void(
 		const typename BlasType::VectorType& coarser,
 		typename BlasType::VectorType* finer)>;
 
 	//! Multi-grid input parameter set.
 	template <typename BlasType>
-	struct MultiGridParameters
+	struct MGParameters
 	{
 		//! Max number of multi-grid levels.
 		size_t maxNumberOfLevels = 1;
@@ -75,20 +75,20 @@ namespace CubbyFlow
 		unsigned int numberOfFinalIter = 20;
 
 		//! Relaxation function such as Jacobi or Gauss-Seidel.
-		MultiGridRelaxFunc<BlasType> relaxFunc;
+		MGRelaxFunc<BlasType> relaxFunc;
 
 		//! Restrict function that maps finer to coarser grid.
-		MultiGridRestrictFunc<BlasType> restrictFunc;
+		MGRestrictFunc<BlasType> restrictFunc;
 
 		//! Correction function that maps coarser to finer grid.
-		MultiGridCorrectFunc<BlasType> correctFunc;
+		MGCorrectFunc<BlasType> correctFunc;
 
 		//! Max error tolerance.
 		double maxTolerance = 1e-9;
 	};
 
 	//! Multi-grid result type.
-	struct MultiGridResult
+	struct MGResult
 	{
 		//! Lastly measured norm of residual.
 		double lastResidualNorm;
@@ -101,10 +101,10 @@ namespace CubbyFlow
 	//! computes the solution \p x using Multi-grid method with V-cycle.
 	//!
 	template <typename BlasType>
-	MultiGridResult MultiGridVCycle(
-		const MultiGridMatrix<BlasType>& A, MultiGridParameters<BlasType> params,
-		MultiGridVector<BlasType>* x, MultiGridVector<BlasType>* b,
-		MultiGridVector<BlasType>* buffer);
+	MGResult MGCycle(
+		const MGMatrix<BlasType>& A, MGParameters<BlasType> params,
+		MGVector<BlasType>* x, MGVector<BlasType>* b,
+		MGVector<BlasType>* buffer);
 }
 
 #include <Utils/MultiGrid-Impl.h>
