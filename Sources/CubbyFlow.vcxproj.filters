@@ -897,12 +897,6 @@
     <ClInclude Include="..\Includes\Utils\Functors-Impl.h">
       <Filter>Utils</Filter>
     </ClInclude>
-    <ClInclude Include="..\Includes\Utils\MultiGrid.h">
-      <Filter>Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Includes\Utils\MultiGrid-Impl.h">
-      <Filter>Utils</Filter>
-    </ClInclude>
     <ClInclude Include="..\Includes\Vector\VectorExpression.h">
       <Filter>Vector</Filter>
     </ClInclude>
@@ -986,6 +980,12 @@
     </ClInclude>
     <ClInclude Include="..\Includes\Geometry\BVH2-Impl.h">
       <Filter>Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Utils\MG.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Utils\MG-Impl.h">
+      <Filter>Utils</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

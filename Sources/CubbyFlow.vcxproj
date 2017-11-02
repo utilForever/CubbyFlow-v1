@@ -448,8 +448,8 @@ xcopy /y "$(SolutionDir)Includes" "$(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Utils\Functors.h" />
     <ClInclude Include="..\Includes\Utils\Logger.h" />
     <ClInclude Include="..\Includes\Utils\Macros.h" />
-    <ClInclude Include="..\Includes\Utils\MultiGrid-Impl.h" />
-    <ClInclude Include="..\Includes\Utils\MultiGrid.h" />
+    <ClInclude Include="..\Includes\Utils\MG-Impl.h" />
+    <ClInclude Include="..\Includes\Utils\MG.h" />
     <ClInclude Include="..\Includes\Utils\Parallel-Impl.h" />
     <ClInclude Include="..\Includes\Utils\Parallel.h" />
     <ClInclude Include="..\Includes\Utils\Samplers-Impl.h" />

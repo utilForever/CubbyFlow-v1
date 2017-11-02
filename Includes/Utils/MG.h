@@ -107,6 +107,6 @@ namespace CubbyFlow
 		MGVector<BlasType>* buffer);
 }
 
-#include <Utils/MultiGrid-Impl.h>
+#include <Utils/MG-Impl.h>
 
 #endif
