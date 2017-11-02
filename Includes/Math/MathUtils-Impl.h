@@ -69,6 +69,40 @@ namespace CubbyFlow
 
 		return m;
 	}
+
+	template <typename T>
+	inline size_t ArgMin2(T x, T y)
+	{
+		return (x < y) ? 0 : 1;
+	}
+
+	template <typename T>
+	inline size_t ArgMax2(T x, T y)
+	{
+		return (x > y) ? 0 : 1;
+	}
+
+	template <typename T>
+	inline size_t ArgMin3(T x, T y, T z)
+	{
+		if (x < y)
+		{
+			return (x < z) ? 0 : 2;
+		}
+
+		return (y < z) ? 1 : 2;
+	}
+
+	template <typename T>
+	inline size_t ArgMax3(T x, T y, T z)
+	{
+		if (x > y)
+		{
+			return (x > z) ? 0 : 2;
+		}
+
+		return (y > z) ? 1 : 2;
+	}
 	
 	template <typename T>
 	inline T Square(T x)

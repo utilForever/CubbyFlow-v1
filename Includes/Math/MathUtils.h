@@ -73,6 +73,18 @@ namespace CubbyFlow
 	template <typename T>
 	inline T AbsMaxN(const T* x, size_t n);
 
+	template <typename T>
+	inline size_t ArgMin2(T x, T y);
+
+	template <typename T>
+	inline size_t ArgMax2(T x, T y);
+
+	template <typename T>
+	inline size_t ArgMin3(T x, T y, T z);
+
+	template <typename T>
+	inline size_t ArgMax3(T x, T y, T z);
+
 	//!
 	//! \brief      Returns the square of \p x.
 	//!
