@@ -353,9 +353,6 @@
     <ClCompile Include="MatrixMxNTests.cpp">
       <Filter>Matrix</Filter>
     </ClCompile>
-    <ClCompile Include="MultiGridTests.cpp">
-      <Filter>Utils</Filter>
-    </ClCompile>
     <ClCompile Include="LevelSetSolversTests.cpp">
       <Filter>Solver\LevelSet</Filter>
     </ClCompile>
@@ -404,6 +401,9 @@
     </ClCompile>
     <ClCompile Include="SurfaceSet3Tests.cpp">
       <Filter>Surface</Filter>
+    </ClCompile>
+    <ClCompile Include="MGTests.cpp">
+      <Filter>Utils</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

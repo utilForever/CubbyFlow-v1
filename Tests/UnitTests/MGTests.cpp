@@ -2,7 +2,7 @@
 
 #include <Math/BLAS.h>
 #include <Matrix/MatrixMxN.h>
-#include <Utils/MultiGrid.h>
+#include <Utils/MG.h>
 #include <Vector/VectorN.h>
 
 using namespace CubbyFlow;
@@ -75,11 +75,11 @@ namespace
 	}
 }
 
-TEST(MultiGrid, Solve)
+TEST(MG, Solve)
 {
-	MultiGridMatrix<BLASType> A;
-	MultiGridVector<BLASType> x, b, tmp;
-	MultiGridParameters<BLASType> params;
+	MGMatrix<BLASType> A;
+	MGVector<BLASType> x, b, tmp;
+	MGParameters<BLASType> params;
 
 	size_t n = 128;
 	size_t levels = 6;
@@ -145,7 +145,7 @@ TEST(MultiGrid, Solve)
 	params.restrictFunc = Rest;
 	params.correctFunc = Corr;
 
-	auto result = MultiGridVCycle(A, params, &x, &b, &tmp);
+	auto result = MGCycle(A, params, &x, &b, &tmp);
 	EXPECT_GT(r0, result.lastResidualNorm);
 	EXPECT_GT(r1, result.lastResidualNorm);
 }
