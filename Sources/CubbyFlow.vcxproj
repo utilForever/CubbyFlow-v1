@@ -381,6 +381,7 @@ xcopy /y "$(SolutionDir)Includes" "$(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Solver\FDM\FDMJacobiSolver3.h" />
     <ClInclude Include="..\Includes\Solver\FDM\FDMLinearSystemSolver2.h" />
     <ClInclude Include="..\Includes\Solver\FDM\FDMLinearSystemSolver3.h" />
+    <ClInclude Include="..\Includes\Solver\FDM\FDMMGSolver2.h" />
     <ClInclude Include="..\Includes\Solver\FLIP\FLIPSolver2.h" />
     <ClInclude Include="..\Includes\Solver\FLIP\FLIPSolver3.h" />
     <ClInclude Include="..\Includes\Solver\Grid\GridBackwardEulerDiffusionSolver2.h" />
@@ -599,6 +600,7 @@ xcopy /y "$(SolutionDir)Includes" "$(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="Solver\FDM\FDMICCGSolver3.cpp" />
     <ClCompile Include="Solver\FDM\FDMJacobiSolver2.cpp" />
     <ClCompile Include="Solver\FDM\FDMJacobiSolver3.cpp" />
+    <ClCompile Include="Solver\FDM\FDMMGSolver2.cpp" />
     <ClCompile Include="Solver\FLIP\FLIPSolver2.cpp" />
     <ClCompile Include="Solver\FLIP\FLIPSolver3.cpp" />
     <ClCompile Include="Solver\Grid\GridBackwardEulerDiffusionSolver2.cpp" />
