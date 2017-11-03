@@ -993,6 +993,12 @@
     <ClInclude Include="..\Includes\FDM\FDMMGLinearSystem2-Impl.h">
       <Filter>FDM</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\FDM\FDMMGLinearSystem3.h">
+      <Filter>FDM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\FDM\FDMMGLinearSystem3-Impl.h">
+      <Filter>FDM</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
@@ -1509,6 +1515,9 @@
       <Filter>Utils</Filter>
     </ClCompile>
     <ClCompile Include="FDM\FDMMGLinearSystem2.cpp">
+      <Filter>FDM</Filter>
+    </ClCompile>
+    <ClCompile Include="FDM\FDMMGLinearSystem3.cpp">
       <Filter>FDM</Filter>
     </ClCompile>
   </ItemGroup>

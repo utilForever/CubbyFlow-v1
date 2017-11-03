@@ -240,6 +240,8 @@ xcopy /y "$(SolutionDir)Includes" "$(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\FDM\FDMLinearSystem3.h" />
     <ClInclude Include="..\Includes\FDM\FDMMGLinearSystem2-Impl.h" />
     <ClInclude Include="..\Includes\FDM\FDMMGLinearSystem2.h" />
+    <ClInclude Include="..\Includes\FDM\FDMMGLinearSystem3-Impl.h" />
+    <ClInclude Include="..\Includes\FDM\FDMMGLinearSystem3.h" />
     <ClInclude Include="..\Includes\FDM\FDMUtils.h" />
     <ClInclude Include="..\Includes\Field\ConstantScalarField2.h" />
     <ClInclude Include="..\Includes\Field\ConstantScalarField3.h" />
@@ -535,6 +537,7 @@ xcopy /y "$(SolutionDir)Includes" "$(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="FDM\FDMLinearSystem2.cpp" />
     <ClCompile Include="FDM\FDMLinearSystem3.cpp" />
     <ClCompile Include="FDM\FDMMGLinearSystem2.cpp" />
+    <ClCompile Include="FDM\FDMMGLinearSystem3.cpp" />
     <ClCompile Include="FDM\FDMUtils.cpp" />
     <ClCompile Include="Geometry\Box2.cpp" />
     <ClCompile Include="Geometry\Box3.cpp" />
