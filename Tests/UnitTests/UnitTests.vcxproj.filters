@@ -411,6 +411,9 @@
     <ClCompile Include="FDMMGSolver2Tests.cpp">
       <Filter>Solver\FDM</Filter>
     </ClCompile>
+    <ClCompile Include="FDMMGSolver3Tests.cpp">
+      <Filter>Solver\FDM</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -110,6 +110,7 @@
     <ClCompile Include="FDMJacobiSolver3Tests.cpp" />
     <ClCompile Include="FDMMGLinearSystem2Tests.cpp" />
     <ClCompile Include="FDMMGSolver2Tests.cpp" />
+    <ClCompile Include="FDMMGSolver3Tests.cpp" />
     <ClCompile Include="FDMUtilsTests.cpp" />
     <ClCompile Include="FLIPSolver2Tests.cpp" />
     <ClCompile Include="FLIPSolver3Tests.cpp" />
