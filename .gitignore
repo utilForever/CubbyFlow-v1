@@ -257,3 +257,7 @@ paket-files/
 
 ## except resource files
 !Resources/
+
+## CppDepend files
+CppDependOut/
+*.cdproj
