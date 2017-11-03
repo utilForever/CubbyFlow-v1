@@ -122,7 +122,7 @@ namespace CubbyFlow
 	}
 
 	template <typename BlasType>
-	MGResult MGCycle(
+	MGResult MGVCycle(
 		const MGMatrix<BlasType>& A, MGParameters<BlasType> params,
 		MGVector<BlasType>* x, MGVector<BlasType>* b,
 		MGVector<BlasType>* buffer)
