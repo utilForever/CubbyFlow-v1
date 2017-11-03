@@ -145,7 +145,7 @@ TEST(MG, Solve)
 	params.restrictFunc = Rest;
 	params.correctFunc = Corr;
 
-	auto result = MGCycle(A, params, &x, &b, &tmp);
+	auto result = MGVCycle(A, params, &x, &b, &tmp);
 	EXPECT_GT(r0, result.lastResidualNorm);
 	EXPECT_GT(r1, result.lastResidualNorm);
 }
