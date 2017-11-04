@@ -19,6 +19,79 @@ namespace CubbyFlow
 
 	const double DEFAULT_TOLERANCE = 1e-6;
 
+	namespace
+	{
+		void BuildSingleSystem(FDMMatrix3* A, FDMVector3* b,
+			const Array3<char>& markers,
+			const FaceCenteredGrid3& input)
+		{
+			Size3 size = input.Resolution();
+			const Vector3D invH = 1.0 / input.GridSpacing();
+			Vector3D invHSqr = invH * invH;
+
+			// Build linear system
+			A->ParallelForEachIndex([&](size_t i, size_t j, size_t k)
+			{
+				auto& row = (*A)(i, j, k);
+
+				// initialize
+				row.center = row.right = row.up = row.front = 0.0;
+				(*b)(i, j, k) = 0.0;
+
+				if (markers(i, j, k) == FLUID)
+				{
+					(*b)(i, j, k) = input.DivergenceAtCellCenter(i, j, k);
+
+					if (i + 1 < size.x && markers(i + 1, j, k) != BOUNDARY)
+					{
+						row.center += invHSqr.x;
+						if (markers(i + 1, j, k) == FLUID)
+						{
+							row.right -= invHSqr.x;
+						}
+					}
+
+					if (i > 0 && markers(i - 1, j, k) != BOUNDARY)
+					{
+						row.center += invHSqr.x;
+					}
+
+					if (j + 1 < size.y && markers(i, j + 1, k) != BOUNDARY)
+					{
+						row.center += invHSqr.y;
+						if (markers(i, j + 1, k) == FLUID)
+						{
+							row.up -= invHSqr.y;
+						}
+					}
+
+					if (j > 0 && markers(i, j - 1, k) != BOUNDARY)
+					{
+						row.center += invHSqr.y;
+					}
+
+					if (k + 1 < size.z && markers(i, j, k + 1) != BOUNDARY)
+					{
+						row.center += invHSqr.z;
+						if (markers(i, j, k + 1) == FLUID)
+						{
+							row.front -= invHSqr.z;
+						}
+					}
+
+					if (k > 0 && markers(i, j, k - 1) != BOUNDARY)
+					{
+						row.center += invHSqr.z;
+					}
+				}
+				else
+				{
+					row.center = 1.0;
+				}
+			});
+		}
+	}
+
 	GridSinglePhasePressureSolver3::GridSinglePhasePressureSolver3()
 	{
 		m_systemSolver = std::make_shared<FDMICCGSolver3>(100, DEFAULT_TOLERANCE);
@@ -37,7 +110,7 @@ namespace CubbyFlow
 		const VectorField3& boundaryVelocity,
 		const ScalarField3& fluidSDF)
 	{
-		auto pos = input.CellCenterPosition();
+		const auto pos = input.CellCenterPosition();
 
 		BuildMarkers(input.Resolution(), pos, boundarySDF, fluidSDF);
 		BuildSystem(input);
@@ -45,7 +118,14 @@ namespace CubbyFlow
 		if (m_systemSolver != nullptr)
 		{
 			// Solve the system
-			m_systemSolver->Solve(&m_system);
+			if (m_mgSystemSolver == nullptr)
+			{
+				m_systemSolver->Solve(&m_system);
+			}
+			else
+			{
+				m_mgSystemSolver->Solve(&m_mgSystem);
+			}
 
 			// Apply pressure gradient
 			ApplyPressureGradient(input, output);
@@ -60,11 +140,28 @@ namespace CubbyFlow
 	void GridSinglePhasePressureSolver3::SetLinearSystemSolver(const FDMLinearSystemSolver3Ptr& solver)
 	{
 		m_systemSolver = solver;
+		m_mgSystemSolver = std::dynamic_pointer_cast<FDMMGSolver3>(m_systemSolver);
+
+		if (m_mgSystemSolver == nullptr)
+		{
+			// In case of non-mg system, use flat structure.
+			m_mgSystem.Clear();
+		}
+		else
+		{
+			// In case of mg system, use multi-level structure.
+			m_system.Clear();
+		}
 	}
 
 	const FDMVector3& GridSinglePhasePressureSolver3::GetPressure() const
 	{
-		return m_system.x;
+		if (m_mgSystemSolver == nullptr)
+		{
+			return m_system.x;
+		}
+
+		return m_mgSystem.x.levels.front();
 	}
 
 	void GridSinglePhasePressureSolver3::BuildMarkers(
@@ -73,95 +170,154 @@ namespace CubbyFlow
 		const ScalarField3& boundarySDF,
 		const ScalarField3& fluidSDF)
 	{
-		m_markers.Resize(size);
-		m_markers.ParallelForEachIndex([&](size_t i, size_t j, size_t k)
+		// Build levels
+		size_t maxLevels = 1;
+		if (m_mgSystemSolver != nullptr)
+		{
+			maxLevels = m_mgSystemSolver->GetParams().maxNumberOfLevels;
+		}
+		FDMMGUtils3::ResizeArrayWithFinest(size, maxLevels, &m_markers);
+
+		// Build top-level markers
+		m_markers[0].ParallelForEachIndex([&](size_t i, size_t j, size_t k)
 		{
 			Vector3D pt = pos(i, j, k);
 			if (IsInsideSDF(boundarySDF.Sample(pt)))
 			{
-				m_markers(i, j, k) = BOUNDARY;
+				m_markers[0](i, j, k) = BOUNDARY;
 			}
 			else if (IsInsideSDF(fluidSDF.Sample(pt)))
 			{
-				m_markers(i, j, k) = FLUID;
+				m_markers[0](i, j, k) = FLUID;
 			}
 			else
 			{
-				m_markers(i, j, k) = AIR;
+				m_markers[0](i, j, k) = AIR;
 			}
 		});
+
+		// Build sub-level markers
+		for (size_t l = 1; l < m_markers.size(); ++l)
+		{
+			const auto& finer = m_markers[l - 1];
+			auto& coarser = m_markers[l];
+			const Size3 n = coarser.size();
+
+			ParallelRangeFor(ZERO_SIZE, n.x, ZERO_SIZE, n.y, ZERO_SIZE, n.z,
+				[&](size_t iBegin, size_t iEnd, size_t jBegin, size_t jEnd, size_t kBegin, size_t kEnd)
+			{
+				std::array<size_t, 4> kIndices;
+
+				for (size_t k = kBegin; k < kEnd; ++k)
+				{
+					kIndices[0] = (k > 0) ? 2 * k - 1 : 2 * k;
+					kIndices[1] = 2 * k;
+					kIndices[2] = 2 * k + 1;
+					kIndices[3] = (k + 1 < n.z) ? 2 * k + 2 : 2 * k + 1;
+
+					std::array<size_t, 4> jIndices;
+
+					for (size_t j = jBegin; j < jEnd; ++j)
+					{
+						jIndices[0] = (j > 0) ? 2 * j - 1 : 2 * j;
+						jIndices[1] = 2 * j;
+						jIndices[2] = 2 * j + 1;
+						jIndices[3] = (j + 1 < n.y) ? 2 * j + 2 : 2 * j + 1;
+
+						std::array<size_t, 4> iIndices;
+						for (size_t i = iBegin; i < iEnd; ++i)
+						{
+							iIndices[0] = (i > 0) ? 2 * i - 1 : 2 * i;
+							iIndices[1] = 2 * i;
+							iIndices[2] = 2 * i + 1;
+							iIndices[3] = (i + 1 < n.x) ? 2 * i + 2 : 2 * i + 1;
+
+							int cnt[3] = { 0, 0, 0 };
+							for (size_t z = 0; z < 4; ++z)
+							{
+								for (size_t y = 0; y < 4; ++y)
+								{
+									for (size_t x = 0; x < 4; ++x)
+									{
+										char f = finer(iIndices[x], jIndices[y], kIndices[z]);
+										if (f == BOUNDARY)
+										{
+											++cnt[static_cast<int>(BOUNDARY)];
+										}
+										else if (f == FLUID)
+										{
+											++cnt[static_cast<int>(FLUID)];
+										}
+										else
+										{
+											++cnt[static_cast<int>(AIR)];
+										}
+									}
+								}
+							}
+
+							coarser(i, j, k) = static_cast<char>(ArgMax3(cnt[0], cnt[1], cnt[2]));
+						}
+					}
+				}
+			});
+		}
 	}
 
 	void GridSinglePhasePressureSolver3::BuildSystem(const FaceCenteredGrid3& input)
 	{
-		Size3 size = input.Resolution();
-		m_system.A.Resize(size);
-		m_system.x.Resize(size);
-		m_system.b.Resize(size);
+		const Size3 size = input.Resolution();
+		size_t numLevels = 1;
+		FDMMatrix3* A;
+		FDMVector3* b;
 
-		Vector3D invH = 1.0 / input.GridSpacing();
-		Vector3D invHSqr = invH * invH;
-
-		// Build linear system
-		m_system.A.ParallelForEachIndex([&](size_t i, size_t j, size_t k)
+		if (m_mgSystemSolver == nullptr)
 		{
-			auto& row = m_system.A(i, j, k);
+			m_system.A.Resize(size);
+			m_system.x.Resize(size);
+			m_system.b.Resize(size);
+			A = &m_system.A;
+			b = &m_system.b;
+		}
+		else
+		{
+			// Build levels
+			const size_t maxLevels = m_mgSystemSolver->GetParams().maxNumberOfLevels;
+			FDMMGUtils3::ResizeArrayWithFinest(size, maxLevels, &m_mgSystem.A.levels);
+			FDMMGUtils3::ResizeArrayWithFinest(size, maxLevels, &m_mgSystem.x.levels);
+			FDMMGUtils3::ResizeArrayWithFinest(size, maxLevels, &m_mgSystem.b.levels);
 
-			// initialize
-			row.center = row.right = row.up = row.front = 0.0;
-			m_system.b(i, j, k) = 0.0;
+			A = &m_mgSystem.A.levels.front();
+			b = &m_mgSystem.b.levels.front();
+			numLevels = m_mgSystem.A.levels.size();
+		}
 
-			if (m_markers(i, j, k) == FLUID)
-			{
-				m_system.b(i, j, k) = input.DivergenceAtCellCenter(i, j, k);
-
-				if (i + 1 < size.x && m_markers(i + 1, j, k) != BOUNDARY)
-				{
-					row.center += invHSqr.x;
-					if (m_markers(i + 1, j, k) == FLUID)
-					{
-						row.right -= invHSqr.x;
-					}
-				}
-
-				if (i > 0 && m_markers(i - 1, j, k) != BOUNDARY)
-				{
-					row.center += invHSqr.x;
-				}
-
-				if (j + 1 < size.y && m_markers(i, j + 1, k) != BOUNDARY)
-				{
-					row.center += invHSqr.y;
-					if (m_markers(i, j + 1, k) == FLUID)
-					{
-						row.up -= invHSqr.y;
-					}
-				}
-
-				if (j > 0 && m_markers(i, j - 1, k) != BOUNDARY)
-				{
-					row.center += invHSqr.y;
-				}
-
-				if (k + 1 < size.z && m_markers(i, j, k + 1) != BOUNDARY)
-				{
-					row.center += invHSqr.z;
-					if (m_markers(i, j, k + 1) == FLUID)
-					{
-						row.front -= invHSqr.z;
-					}
-				}
-
-				if (k > 0 && m_markers(i, j, k - 1) != BOUNDARY)
-				{
-					row.center += invHSqr.z;
-				}
-			}
-			else
-			{
-				row.center = 1.0;
-			}
-		});
+		// Build top level
+		const FaceCenteredGrid3* finer = &input;
+		BuildSingleSystem(A, b, m_markers[0], *finer);
+		
+		// Build sub-levels
+		FaceCenteredGrid3 coarser;
+		for (size_t l = 1; l < numLevels; ++l)
+		{
+			auto res = finer->Resolution();
+			auto h = finer->GridSpacing();
+			const auto o = finer->Origin();
+			res.x = res.x >> 1;
+			res.y = res.y >> 1;
+			res.z = res.z >> 1;
+			h *= 2.0;
+			
+			// Down sample
+			coarser.Resize(res, h, o);
+			coarser.Fill(finer->Sampler());
+			
+			A = &m_mgSystem.A.levels[l];
+			b = &m_mgSystem.b.levels[l];
+			BuildSingleSystem(A, b, m_markers[l], coarser);
+			
+			finer = &coarser;
+		}
 	}
 
 	void GridSinglePhasePressureSolver3::ApplyPressureGradient(const FaceCenteredGrid3& input, FaceCenteredGrid3* output)
@@ -174,23 +330,25 @@ namespace CubbyFlow
 		auto v0 = output->GetVAccessor();
 		auto w0 = output->GetWAccessor();
 
+		const auto& x = GetPressure();
+
 		Vector3D invH = 1.0 / input.GridSpacing();
 
-		m_system.x.ParallelForEachIndex([&](size_t i, size_t j, size_t k)
+		x.ParallelForEachIndex([&](size_t i, size_t j, size_t k)
 		{
-			if (m_markers(i, j, k) == FLUID)
+			if (m_markers[0](i, j, k) == FLUID)
 			{
-				if (i + 1 < size.x && m_markers(i + 1, j, k) != BOUNDARY)
+				if (i + 1 < size.x && m_markers[0](i + 1, j, k) != BOUNDARY)
 				{
-					u0(i + 1, j, k) = u(i + 1, j, k) + invH.x * (m_system.x(i + 1, j, k) - m_system.x(i, j, k));
+					u0(i + 1, j, k) = u(i + 1, j, k) + invH.x * (x(i + 1, j, k) - x(i, j, k));
 				}
-				if (j + 1 < size.y && m_markers(i, j + 1, k) != BOUNDARY)
+				if (j + 1 < size.y && m_markers[0](i, j + 1, k) != BOUNDARY)
 				{
-					v0(i, j + 1, k) = v(i, j + 1, k) + invH.y * (m_system.x(i, j + 1, k) - m_system.x(i, j, k));
+					v0(i, j + 1, k) = v(i, j + 1, k) + invH.y * (x(i, j + 1, k) - x(i, j, k));
 				}
-				if (k + 1 < size.z && m_markers(i, j, k + 1) != BOUNDARY)
+				if (k + 1 < size.z && m_markers[0](i, j, k + 1) != BOUNDARY)
 				{
-					w0(i, j, k + 1) = w(i, j, k + 1) + invH.z * (m_system.x(i, j, k + 1) - m_system.x(i, j, k));
+					w0(i, j, k + 1) = w(i, j, k + 1) + invH.z * (x(i, j, k + 1) - x(i, j, k));
 				}
 			}
 		});

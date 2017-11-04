@@ -9,7 +9,9 @@
 #ifndef CUBBYFLOW_SINGLE_PHASE_PRESSURE_SOLVER3_H
 #define CUBBYFLOW_SINGLE_PHASE_PRESSURE_SOLVER3_H
 
+#include <FDM/FDMMGLinearSystem3.h>
 #include <Solver/FDM/FDMLinearSystemSolver3.h>
+#include <Solver/FDM/FDMMGSolver3.h>
 #include <Solver/Grid/GridPressureSolver3.h>
 
 namespace CubbyFlow
@@ -87,7 +89,11 @@ namespace CubbyFlow
 	private:
 		FDMLinearSystem3 m_system;
 		FDMLinearSystemSolver3Ptr m_systemSolver;
-		Array3<char> m_markers;
+
+		FDMMGLinearSystem3 m_mgSystem;
+		FDMMGSolver3Ptr m_mgSystemSolver;
+
+		std::vector<Array3<char>> m_markers;
 
 		void BuildMarkers(
 			const Size3& size,
