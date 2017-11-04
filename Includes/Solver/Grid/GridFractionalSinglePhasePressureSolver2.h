@@ -9,7 +9,9 @@
 #ifndef CUBBYFLOW_FRACTIONAL_SINGLE_PHASE_PRESSURE_SOLVER2_H
 #define CUBBYFLOW_FRACTIONAL_SINGLE_PHASE_PRESSURE_SOLVER2_H
 
+#include <FDM/FDMMGLinearSystem2.h>
 #include <Solver/FDM/FDMLinearSystemSolver2.h>
+#include <Solver/FDM/FDMMGSolver2.h>
 #include <Solver/Grid/GridPressureSolver2.h>
 
 namespace CubbyFlow
@@ -96,9 +98,14 @@ namespace CubbyFlow
 	private:
 		FDMLinearSystem2 m_system;
 		FDMLinearSystemSolver2Ptr m_systemSolver;
-		Array2<float> m_uWeights;
-		Array2<float> m_vWeights;
-		Array2<float> m_fluidSDF;
+		
+		FDMMGLinearSystem2 m_mgSystem;
+		FDMMGSolver2Ptr m_mgSystemSolver;
+		
+		std::vector<Array2<float>> m_uWeights;
+		std::vector<Array2<float>> m_vWeights;
+		std::vector<Array2<float>> m_fluidSDF;
+
 		std::function<Vector2D(const Vector2D&)> m_boundaryVel;
 
 		void BuildWeights(
@@ -107,9 +114,9 @@ namespace CubbyFlow
 			const VectorField2& boundaryVelocity,
 			const ScalarField2& fluidSDF);
 
-		virtual void BuildSystem(const FaceCenteredGrid2& input);
+		void BuildSystem(const FaceCenteredGrid2& input);
 
-		virtual void ApplyPressureGradient(const FaceCenteredGrid2& input, FaceCenteredGrid2* output);
+		void ApplyPressureGradient(const FaceCenteredGrid2& input, FaceCenteredGrid2* output);
 	};
 
 	//! Shared pointer type for the GridFractionalSinglePhasePressureSolver2.
