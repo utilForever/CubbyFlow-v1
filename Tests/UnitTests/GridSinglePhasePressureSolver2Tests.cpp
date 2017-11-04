@@ -281,3 +281,53 @@ TEST(GridSinglePhasePressureSolver2, SolveFreeSurfaceWithBoundary)
 		}
 	}
 }
+
+TEST(GridSinglePhasePressureSolver2, SolveSinglePhaseWithMG)
+{
+	const size_t n = 64;
+	FaceCenteredGrid2 vel(n, n);
+
+	for (size_t j = 0; j < n; ++j)
+	{
+		for (size_t i = 0; i < n + 1; ++i)
+		{
+			vel.GetU(i, j) = 0.0;
+		}
+	}
+
+	for (size_t j = 0; j < n + 1; ++j)
+	{
+		for (size_t i = 0; i < n; ++i)
+		{
+			if (j == 0 || j == n)
+			{
+				vel.GetV(i, j) = 0.0;
+			}
+			else
+			{
+				vel.GetV(i, j) = 1.0;
+			}
+		}
+	}
+
+	GridSinglePhasePressureSolver2 solver;
+	solver.SetLinearSystemSolver(std::make_shared<FDMMGSolver2>(5, 10, 10, 40, 10));
+
+	solver.Solve(vel, 1.0, &vel);
+
+	for (size_t j = 0; j < n; ++j)
+	{
+		for (size_t i = 0; i < n + 1; ++i)
+		{
+			EXPECT_NEAR(0.0, vel.GetU(i, j), 0.01);
+		}
+	}
+
+	for (size_t j = 0; j < n + 1; ++j)
+	{
+		for (size_t i = 0; i < n; ++i)
+		{
+			EXPECT_NEAR(0.0, vel.GetV(i, j), 0.05);
+		}
+	}
+}
