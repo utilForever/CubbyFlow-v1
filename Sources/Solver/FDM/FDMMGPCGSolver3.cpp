@@ -37,7 +37,7 @@ namespace CubbyFlow
 	}
 
 	FDMMGPCGSolver3::FDMMGPCGSolver3(
-		unsigned int numberOfCgIter,
+		unsigned int numberOfCGIter,
 		size_t maxNumberOfLevels,
 		unsigned int numberOfRestrictionIter,
 		unsigned int numberOfCorrectionIter,
@@ -50,7 +50,7 @@ namespace CubbyFlow
 			maxNumberOfLevels, numberOfRestrictionIter,
 			numberOfCorrectionIter, numberOfCoarsestIter,
 			numberOfFinalIter, maxTolerance, sorFactor, useRedBlackOrdering),
-		m_maxNumberOfIterations(numberOfCgIter),
+		m_maxNumberOfIterations(numberOfCGIter),
 		m_lastNumberOfIterations(0),
 		m_tolerance(maxTolerance),
 		m_lastResidualNorm(std::numeric_limits<double>::max())
