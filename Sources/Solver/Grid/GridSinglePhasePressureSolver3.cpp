@@ -137,6 +137,11 @@ namespace CubbyFlow
 		return std::make_shared<GridBlockedBoundaryConditionSolver3>();
 	}
 
+	const FDMLinearSystemSolver3Ptr& GridSinglePhasePressureSolver3::GetLinearSystemSolver() const
+	{
+		return m_systemSolver;
+	}
+
 	void GridSinglePhasePressureSolver3::SetLinearSystemSolver(const FDMLinearSystemSolver3Ptr& solver)
 	{
 		m_systemSolver = solver;

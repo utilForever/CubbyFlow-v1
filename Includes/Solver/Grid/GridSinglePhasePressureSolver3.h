@@ -80,6 +80,9 @@ namespace CubbyFlow
 		//!
 		GridBoundaryConditionSolver3Ptr SuggestedBoundaryConditionSolver() const override;
 
+		//! Returns the linear system solver.
+		const FDMLinearSystemSolver3Ptr& GetLinearSystemSolver() const;
+
 		//! Sets the linear system solver.
 		void SetLinearSystemSolver(const FDMLinearSystemSolver3Ptr& solver);
 
