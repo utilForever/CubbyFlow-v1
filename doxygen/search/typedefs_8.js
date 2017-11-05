@@ -23,7 +23,7 @@ var searchData=
   ['matrixsub',['MatrixSub',['../namespace_cubby_flow.html#a806c95b2e1a29fd47e863dccc37d4c3d',1,'CubbyFlow']]],
   ['matrixtype',['MatrixType',['../struct_cubby_flow_1_1_f_d_m_blas2.html#a32dd34c4434520d3a3e9303d6e3fd222',1,'CubbyFlow::FDMBlas2::MatrixType()'],['../struct_cubby_flow_1_1_f_d_m_blas3.html#a75f2bba6b7d5d1679356025909baa3a9',1,'CubbyFlow::FDMBlas3::MatrixType()'],['../struct_cubby_flow_1_1_b_l_a_s.html#a2493799f13939445ffe9c2cbc745c48d',1,'CubbyFlow::BLAS::MatrixType()']]],
   ['matrixtypecast',['MatrixTypeCast',['../namespace_cubby_flow.html#a1cdc6095758ce2cffed2412405a5f7cb',1,'CubbyFlow']]],
-  ['multigridcorrectfunc',['MultiGridCorrectFunc',['../namespace_cubby_flow.html#a64e82285738f75e7a94d223ea1cbd1ae',1,'CubbyFlow']]],
-  ['multigridrelaxfunc',['MultiGridRelaxFunc',['../namespace_cubby_flow.html#a92435a3f3dba549501a1d8879ab7fa28',1,'CubbyFlow']]],
-  ['multigridrestrictfunc',['MultiGridRestrictFunc',['../namespace_cubby_flow.html#adc3afaa6b619259a4b4668bb83c737df',1,'CubbyFlow']]]
+  ['mgcorrectfunc',['MGCorrectFunc',['../namespace_cubby_flow.html#a67d640ca846ab57fa1db8a14aee695d8',1,'CubbyFlow']]],
+  ['mgrelaxfunc',['MGRelaxFunc',['../namespace_cubby_flow.html#a4a2072e14a4564ea35f3fb30e5c567ec',1,'CubbyFlow']]],
+  ['mgrestrictfunc',['MGRestrictFunc',['../namespace_cubby_flow.html#a0b90c24442ed1e334782cd84bf81b16d',1,'CubbyFlow']]]
 ];

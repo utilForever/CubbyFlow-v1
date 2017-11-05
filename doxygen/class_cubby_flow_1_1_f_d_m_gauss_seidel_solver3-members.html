@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.61</a>
+                    <a class="navbar-brand">CubbyFlow v0.62</a>
                 </div>
             </div>
         </nav>
@@ -79,11 +79,15 @@ $(function() {
 
 <p>This is the complete list of members for <a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver3.html">CubbyFlow::FDMGaussSeidelSolver3</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver3.html#a2013aeb3bbe5ad7bc3b67b12c27e9335">FDMGaussSeidelSolver3</a>(unsigned int maxNumberOfIterations, unsigned int residualCheckInterval, double tolerance)</td><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver3.html">CubbyFlow::FDMGaussSeidelSolver3</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver3.html#a149751cdbd2bbb36d291e9ea0f0a16fe">FDMGaussSeidelSolver3</a>(unsigned int maxNumberOfIterations, unsigned int residualCheckInterval, double tolerance, double sorFactor=1.0, bool useRedBlackOrdering=false)</td><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver3.html">CubbyFlow::FDMGaussSeidelSolver3</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver3.html#a444dcc0418908e4d959f2d3d189a3afe">GetLastNumberOfIterations</a>() const</td><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver3.html">CubbyFlow::FDMGaussSeidelSolver3</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver3.html#a3b21e05b948560501c1720b9620d38d1">GetLastResidual</a>() const</td><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver3.html">CubbyFlow::FDMGaussSeidelSolver3</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver3.html#ae0850561fbc98c79241d2b7f45cbef78">GetMaxNumberOfIterations</a>() const</td><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver3.html">CubbyFlow::FDMGaussSeidelSolver3</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver3.html#a128daba851598c4513a4feeb93e379cd">GetTolerance</a>() const</td><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver3.html">CubbyFlow::FDMGaussSeidelSolver3</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver3.html#a42b24fb0cb1165b798ab9769bfe7c2ad">GetSORFactor</a>() const</td><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver3.html">CubbyFlow::FDMGaussSeidelSolver3</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver3.html#a128daba851598c4513a4feeb93e379cd">GetTolerance</a>() const</td><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver3.html">CubbyFlow::FDMGaussSeidelSolver3</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver3.html#a265980d46684b6eb56020e7ff676f4d8">GetUseRedBlackOrdering</a>() const</td><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver3.html">CubbyFlow::FDMGaussSeidelSolver3</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver3.html#ad98078a14ab2469b58e45190ba88719e">Relax</a>(const FDMMatrix3 &amp;A, const FDMVector3 &amp;b, double sorFactor, FDMVector3 *x)</td><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver3.html">CubbyFlow::FDMGaussSeidelSolver3</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver3.html#ad7c19164a1f8b00cd5e169b6251f50f0">RelaxRedBlack</a>(const FDMMatrix3 &amp;A, const FDMVector3 &amp;b, double sorFactor, FDMVector3 *x)</td><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver3.html">CubbyFlow::FDMGaussSeidelSolver3</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver3.html#a9022ca77c90e24fa4a60e581632f35f5">Solve</a>(FDMLinearSystem3 *system) override</td><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver3.html">CubbyFlow::FDMGaussSeidelSolver3</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_linear_system_solver3.html#ae6ec24d5f45d31745e8c4d84face83eb">~FDMLinearSystemSolver3</a>()=default</td><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_linear_system_solver3.html">CubbyFlow::FDMLinearSystemSolver3</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
@@ -95,7 +99,7 @@ $(function() {
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 23 2017 12:42:54 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Nov 5 2017 23:42:41 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

@@ -30,8 +30,14 @@ var searchData=
   ['matrixtriangular',['MatrixTriangular',['../class_cubby_flow_1_1_matrix_triangular.html',1,'CubbyFlow']]],
   ['matrixunaryop',['MatrixUnaryOp',['../class_cubby_flow_1_1_matrix_unary_op.html',1,'CubbyFlow']]],
   ['matrixvectormul',['MatrixVectorMul',['../class_cubby_flow_1_1_matrix_vector_mul.html',1,'CubbyFlow']]],
-  ['multigridmatrix',['MultiGridMatrix',['../struct_cubby_flow_1_1_multi_grid_matrix.html',1,'CubbyFlow']]],
-  ['multigridparameters',['MultiGridParameters',['../struct_cubby_flow_1_1_multi_grid_parameters.html',1,'CubbyFlow']]],
-  ['multigridresult',['MultiGridResult',['../struct_cubby_flow_1_1_multi_grid_result.html',1,'CubbyFlow']]],
-  ['multigridvector',['MultiGridVector',['../struct_cubby_flow_1_1_multi_grid_vector.html',1,'CubbyFlow']]]
+  ['mgmatrix',['MGMatrix',['../struct_cubby_flow_1_1_m_g_matrix.html',1,'CubbyFlow']]],
+  ['mgmatrix_3c_20fdmblas2_20_3e',['MGMatrix&lt; FDMBlas2 &gt;',['../struct_cubby_flow_1_1_m_g_matrix.html',1,'CubbyFlow']]],
+  ['mgmatrix_3c_20fdmblas3_20_3e',['MGMatrix&lt; FDMBlas3 &gt;',['../struct_cubby_flow_1_1_m_g_matrix.html',1,'CubbyFlow']]],
+  ['mgparameters',['MGParameters',['../struct_cubby_flow_1_1_m_g_parameters.html',1,'CubbyFlow']]],
+  ['mgparameters_3c_20cubbyflow_3a_3afdmblas2_20_3e',['MGParameters&lt; CubbyFlow::FDMBlas2 &gt;',['../struct_cubby_flow_1_1_m_g_parameters.html',1,'CubbyFlow']]],
+  ['mgparameters_3c_20cubbyflow_3a_3afdmblas3_20_3e',['MGParameters&lt; CubbyFlow::FDMBlas3 &gt;',['../struct_cubby_flow_1_1_m_g_parameters.html',1,'CubbyFlow']]],
+  ['mgresult',['MGResult',['../struct_cubby_flow_1_1_m_g_result.html',1,'CubbyFlow']]],
+  ['mgvector',['MGVector',['../struct_cubby_flow_1_1_m_g_vector.html',1,'CubbyFlow']]],
+  ['mgvector_3c_20fdmblas2_20_3e',['MGVector&lt; FDMBlas2 &gt;',['../struct_cubby_flow_1_1_m_g_vector.html',1,'CubbyFlow']]],
+  ['mgvector_3c_20fdmblas3_20_3e',['MGVector&lt; FDMBlas3 &gt;',['../struct_cubby_flow_1_1_m_g_vector.html',1,'CubbyFlow']]]
 ];

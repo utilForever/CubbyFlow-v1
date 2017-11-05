@@ -15,6 +15,6 @@ var searchData=
   ['m_5fusedomainsize',['m_useDomainSize',['../class_cubby_flow_1_1_grid_fluid_solver_builder_base2.html#a0c35e8172d4f0b0721e283388cf8a9f1',1,'CubbyFlow::GridFluidSolverBuilderBase2::m_useDomainSize()'],['../class_cubby_flow_1_1_grid_fluid_solver_builder_base3.html#a05de1179dc2fd97a518c956b1ad15f4e',1,'CubbyFlow::GridFluidSolverBuilderBase3::m_useDomainSize()']]],
   ['m_5fvmarkers',['m_vMarkers',['../class_cubby_flow_1_1_p_i_c_solver2.html#a61e9dbf7e88b1d9fb09982cf00241731',1,'CubbyFlow::PICSolver2::m_vMarkers()'],['../class_cubby_flow_1_1_p_i_c_solver3.html#ac060ba33bf6290dac6bfeeee2b85f9fe',1,'CubbyFlow::PICSolver3::m_vMarkers()']]],
   ['m_5fwmarkers',['m_wMarkers',['../class_cubby_flow_1_1_p_i_c_solver3.html#a232649b872741769afa91930b9e6393d',1,'CubbyFlow::PICSolver3']]],
-  ['maxnumberoflevels',['maxNumberOfLevels',['../struct_cubby_flow_1_1_multi_grid_parameters.html#a1b76a859b77090ae16400c88c606f0c1',1,'CubbyFlow::MultiGridParameters']]],
-  ['maxtolerance',['maxTolerance',['../struct_cubby_flow_1_1_multi_grid_parameters.html#a777bc398158bb8203cadb1254cf6b891',1,'CubbyFlow::MultiGridParameters']]]
+  ['maxnumberoflevels',['maxNumberOfLevels',['../struct_cubby_flow_1_1_m_g_parameters.html#a9191c9d279f4fd80bb6128c52b874241',1,'CubbyFlow::MGParameters']]],
+  ['maxtolerance',['maxTolerance',['../struct_cubby_flow_1_1_m_g_parameters.html#a3036e07e770c4b3668b26f17306b8b4b',1,'CubbyFlow::MGParameters']]]
 ];

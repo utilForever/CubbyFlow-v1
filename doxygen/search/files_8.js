@@ -21,6 +21,6 @@ var searchData=
   ['matrixexpression_2eh',['MatrixExpression.h',['../_matrix_expression_8h.html',1,'']]],
   ['matrixmxn_2dimpl_2eh',['MatrixMxN-Impl.h',['../_matrix_mx_n-_impl_8h.html',1,'']]],
   ['matrixmxn_2eh',['MatrixMxN.h',['../_matrix_mx_n_8h.html',1,'']]],
-  ['multigrid_2dimpl_2eh',['MultiGrid-Impl.h',['../_multi_grid-_impl_8h.html',1,'']]],
-  ['multigrid_2eh',['MultiGrid.h',['../_multi_grid_8h.html',1,'']]]
+  ['mg_2dimpl_2eh',['MG-Impl.h',['../_m_g-_impl_8h.html',1,'']]],
+  ['mg_2eh',['MG.h',['../_m_g_8h.html',1,'']]]
 ];

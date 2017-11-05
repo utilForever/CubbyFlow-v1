@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.61</a>
+                    <a class="navbar-brand">CubbyFlow v0.62</a>
                 </div>
             </div>
         </nav>
@@ -81,9 +81,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a43aa6e5b4dc37116d2c88acc4ee9473e"><td class="memTemplParams" colspan="2">template&lt;typename BlasType &gt; </td></tr>
-<tr class="memitem:a43aa6e5b4dc37116d2c88acc4ee9473e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="struct_cubby_flow_1_1_multi_grid_result.html">MultiGridResult</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_cubby_flow_1_1_internal.html#a43aa6e5b4dc37116d2c88acc4ee9473e">MultiGridVCycle</a> (const <a class="el" href="struct_cubby_flow_1_1_multi_grid_matrix.html">MultiGridMatrix</a>&lt; BlasType &gt; &amp;A, <a class="el" href="struct_cubby_flow_1_1_multi_grid_parameters.html">MultiGridParameters</a>&lt; BlasType &gt; params, unsigned int currentLevel, <a class="el" href="struct_cubby_flow_1_1_multi_grid_vector.html">MultiGridVector</a>&lt; BlasType &gt; *x, <a class="el" href="struct_cubby_flow_1_1_multi_grid_vector.html">MultiGridVector</a>&lt; BlasType &gt; *b, <a class="el" href="struct_cubby_flow_1_1_multi_grid_vector.html">MultiGridVector</a>&lt; BlasType &gt; *buffer)</td></tr>
-<tr class="separator:a43aa6e5b4dc37116d2c88acc4ee9473e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9e920e459198e2ce6f003aa4c412211"><td class="memTemplParams" colspan="2">template&lt;typename BlasType &gt; </td></tr>
+<tr class="memitem:ae9e920e459198e2ce6f003aa4c412211"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="struct_cubby_flow_1_1_m_g_result.html">MGResult</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_cubby_flow_1_1_internal.html#ae9e920e459198e2ce6f003aa4c412211">MGVCycle</a> (const <a class="el" href="struct_cubby_flow_1_1_m_g_matrix.html">MGMatrix</a>&lt; BlasType &gt; &amp;A, <a class="el" href="struct_cubby_flow_1_1_m_g_parameters.html">MGParameters</a>&lt; BlasType &gt; params, unsigned int currentLevel, <a class="el" href="struct_cubby_flow_1_1_m_g_vector.html">MGVector</a>&lt; BlasType &gt; *x, <a class="el" href="struct_cubby_flow_1_1_m_g_vector.html">MGVector</a>&lt; BlasType &gt; *b, <a class="el" href="struct_cubby_flow_1_1_m_g_vector.html">MGVector</a>&lt; BlasType &gt; *buffer)</td></tr>
+<tr class="separator:ae9e920e459198e2ce6f003aa4c412211"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:affe154a5ffdf9715bd5c0a3aed053a3d"><td class="memTemplParams" colspan="2">template&lt;typename RandomIterator , typename RandomIterator2 , typename CompareFunction &gt; </td></tr>
 <tr class="memitem:affe154a5ffdf9715bd5c0a3aed053a3d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_cubby_flow_1_1_internal.html#affe154a5ffdf9715bd5c0a3aed053a3d">Merge</a> (RandomIterator a, size_t size, RandomIterator2 temp, CompareFunction compareFunction)</td></tr>
 <tr class="separator:affe154a5ffdf9715bd5c0a3aed053a3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -134,8 +134,8 @@ template&lt;typename RandomIterator , typename RandomIterator2 , typename Compar
 
 </div>
 </div>
-<a id="a43aa6e5b4dc37116d2c88acc4ee9473e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43aa6e5b4dc37116d2c88acc4ee9473e">&#9670;&nbsp;</a></span>MultiGridVCycle()</h2>
+<a id="ae9e920e459198e2ce6f003aa4c412211"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9e920e459198e2ce6f003aa4c412211">&#9670;&nbsp;</a></span>MGVCycle()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -143,15 +143,15 @@ template&lt;typename RandomIterator , typename RandomIterator2 , typename Compar
 template&lt;typename BlasType &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_cubby_flow_1_1_multi_grid_result.html">MultiGridResult</a> CubbyFlow::Internal::MultiGridVCycle </td>
+          <td class="memname"><a class="el" href="struct_cubby_flow_1_1_m_g_result.html">MGResult</a> CubbyFlow::Internal::MGVCycle </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="struct_cubby_flow_1_1_multi_grid_matrix.html">MultiGridMatrix</a>&lt; BlasType &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="struct_cubby_flow_1_1_m_g_matrix.html">MGMatrix</a>&lt; BlasType &gt; &amp;&#160;</td>
           <td class="paramname"><em>A</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="struct_cubby_flow_1_1_multi_grid_parameters.html">MultiGridParameters</a>&lt; BlasType &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="struct_cubby_flow_1_1_m_g_parameters.html">MGParameters</a>&lt; BlasType &gt;&#160;</td>
           <td class="paramname"><em>params</em>, </td>
         </tr>
         <tr>
@@ -163,19 +163,19 @@ template&lt;typename BlasType &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="struct_cubby_flow_1_1_multi_grid_vector.html">MultiGridVector</a>&lt; BlasType &gt; *&#160;</td>
+          <td class="paramtype"><a class="el" href="struct_cubby_flow_1_1_m_g_vector.html">MGVector</a>&lt; BlasType &gt; *&#160;</td>
           <td class="paramname"><em>x</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="struct_cubby_flow_1_1_multi_grid_vector.html">MultiGridVector</a>&lt; BlasType &gt; *&#160;</td>
+          <td class="paramtype"><a class="el" href="struct_cubby_flow_1_1_m_g_vector.html">MGVector</a>&lt; BlasType &gt; *&#160;</td>
           <td class="paramname"><em>b</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="struct_cubby_flow_1_1_multi_grid_vector.html">MultiGridVector</a>&lt; BlasType &gt; *&#160;</td>
+          <td class="paramtype"><a class="el" href="struct_cubby_flow_1_1_m_g_vector.html">MGVector</a>&lt; BlasType &gt; *&#160;</td>
           <td class="paramname"><em>buffer</em>&#160;</td>
         </tr>
         <tr>
@@ -245,7 +245,7 @@ template&lt;typename RandomIterator , typename RandomIterator2 , typename Compar
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 23 2017 12:43:26 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Nov 5 2017 23:42:50 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>
