@@ -382,6 +382,7 @@ xcopy /y "$(SolutionDir)Includes" "$(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Solver\FDM\FDMLinearSystemSolver2.h" />
     <ClInclude Include="..\Includes\Solver\FDM\FDMLinearSystemSolver3.h" />
     <ClInclude Include="..\Includes\Solver\FDM\FDMMGPCGSolver2.h" />
+    <ClInclude Include="..\Includes\Solver\FDM\FDMMGPCGSolver3.h" />
     <ClInclude Include="..\Includes\Solver\FDM\FDMMGSolver2.h" />
     <ClInclude Include="..\Includes\Solver\FDM\FDMMGSolver3.h" />
     <ClInclude Include="..\Includes\Solver\FLIP\FLIPSolver2.h" />
@@ -603,6 +604,7 @@ xcopy /y "$(SolutionDir)Includes" "$(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="Solver\FDM\FDMJacobiSolver2.cpp" />
     <ClCompile Include="Solver\FDM\FDMJacobiSolver3.cpp" />
     <ClCompile Include="Solver\FDM\FDMMGPCGSolver2.cpp" />
+    <ClCompile Include="Solver\FDM\FDMMGPCGSolver3.cpp" />
     <ClCompile Include="Solver\FDM\FDMMGSolver2.cpp" />
     <ClCompile Include="Solver\FDM\FDMMGSolver3.cpp" />
     <ClCompile Include="Solver\FLIP\FLIPSolver2.cpp" />
