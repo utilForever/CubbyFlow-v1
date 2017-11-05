@@ -1005,6 +1005,9 @@
     <ClInclude Include="..\Includes\Solver\FDM\FDMMGSolver3.h">
       <Filter>Solver\FDM</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Solver\FDM\FDMMGPCGSolver2.h">
+      <Filter>Solver\FDM</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
@@ -1530,6 +1533,9 @@
       <Filter>Solver\FDM</Filter>
     </ClCompile>
     <ClCompile Include="Solver\FDM\FDMMGSolver3.cpp">
+      <Filter>Solver\FDM</Filter>
+    </ClCompile>
+    <ClCompile Include="Solver\FDM\FDMMGPCGSolver2.cpp">
       <Filter>Solver\FDM</Filter>
     </ClCompile>
   </ItemGroup>
