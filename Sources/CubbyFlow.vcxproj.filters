@@ -1017,6 +1017,9 @@
     <ClInclude Include="..\Includes\Point\Implicit\PointsToImplicit2.h">
       <Filter>Point\Implicit</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Point\Implicit\PointsToImplicit3.h">
+      <Filter>Point\Implicit</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
