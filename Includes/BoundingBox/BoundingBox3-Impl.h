@@ -273,6 +273,12 @@ namespace CubbyFlow
 	{
 	    return CubbyFlow::Clamp(pt, lowerCorner, upperCorner);
 	}
+
+	template <typename T>
+	bool BoundingBox<T, 3>::IsEmpty() const
+	{
+		return (lowerCorner.x >= upperCorner.x || lowerCorner.y >= upperCorner.y || lowerCorner.z >= upperCorner.z);
+	}
 }
 
 #endif

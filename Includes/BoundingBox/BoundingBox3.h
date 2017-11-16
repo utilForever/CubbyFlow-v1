@@ -40,7 +40,6 @@ namespace CubbyFlow
 	//! \brief 3-D axis-aligned bounding box class.
 	//!
 	//! \tparam T - Real number type.
-	//! \tparam N - Dimension.
 	//!
 	template <typename T>
 	class BoundingBox<T, 3>
@@ -116,6 +115,9 @@ namespace CubbyFlow
 
 		//! Returns the clamped point.
 		Vector3<T> Clamp(const Vector3<T>& pt) const;
+
+		//! Returns true if the box is empty.
+		bool IsEmpty() const;
 	};
 
 	//! Type alias for 3-D BoundingBox.
