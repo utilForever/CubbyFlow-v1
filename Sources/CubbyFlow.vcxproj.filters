@@ -1550,5 +1550,8 @@
     <ClCompile Include="Solver\FDM\FDMMGPCGSolver3.cpp">
       <Filter>Solver\FDM</Filter>
     </ClCompile>
+    <ClCompile Include="Point\Implicit\PointsToImplicit2.cpp">
+      <Filter>Point\Implicit</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

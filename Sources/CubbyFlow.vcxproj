@@ -580,6 +580,7 @@ xcopy /y "$(SolutionDir)Includes" "$(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="PointGenerator\PointGenerator2.cpp" />
     <ClCompile Include="PointGenerator\PointGenerator3.cpp" />
     <ClCompile Include="PointGenerator\TrianglePointGenerator.cpp" />
+    <ClCompile Include="Point\Implicit\PointsToImplicit2.cpp" />
     <ClCompile Include="Searcher\PointHashGridSearcher2.cpp" />
     <ClCompile Include="Searcher\PointHashGridSearcher3.cpp" />
     <ClCompile Include="Searcher\PointNeighborSearcher2.cpp" />
