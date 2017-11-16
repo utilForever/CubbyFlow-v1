@@ -118,6 +118,9 @@
     <Filter Include="QueryEngine">
       <UniqueIdentifier>{2771e784-61c7-4f3c-8770-05468a3d1a7b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Point\Implicit">
+      <UniqueIdentifier>{b874aff1-e9b2-407e-88c5-c69a4de92709}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Includes\Animation\Animation.h">
@@ -1010,6 +1013,9 @@
     </ClInclude>
     <ClInclude Include="..\Includes\Solver\FDM\FDMMGPCGSolver3.h">
       <Filter>Solver\FDM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Point\Implicit\PointsToImplicit2.h">
+      <Filter>Point\Implicit</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
