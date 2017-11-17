@@ -140,6 +140,7 @@
     <ClCompile Include="SphericalPointsToImplicit3Tests.cpp" />
     <ClCompile Include="SPHKernelTests.cpp" />
     <ClCompile Include="SPHPointsToImplicit2Tests.cpp" />
+    <ClCompile Include="SPHPointsToImplicit3Tests.cpp" />
     <ClCompile Include="SPHSolver2Tests.cpp" />
     <ClCompile Include="SPHSolver3Tests.cpp" />
     <ClCompile Include="SPHSystemDataTests.cpp" />
