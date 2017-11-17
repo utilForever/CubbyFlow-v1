@@ -40,6 +40,7 @@
     <ClCompile Include="APICSolver3Tests.cpp" />
     <ClCompile Include="SphericalPointsToImplicit2Tests.cpp" />
     <ClCompile Include="SphericalPointsToImplicit3Tests.cpp" />
+    <ClCompile Include="SPHPointsToImplicit2Tests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Precompiled Header">
