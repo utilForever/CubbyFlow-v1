@@ -261,21 +261,3 @@ TEST(BoundingBox3, Corner)
 	EXPECT_VECTOR3_EQ(Vector3D(-2.0, 3.0, 5.0), box.Corner(6));
 	EXPECT_VECTOR3_EQ(Vector3D(4.0, 3.0, 5.0), box.Corner(7));
 }
-
-TEST(BoundingBox3, IsEmpty)
-{
-	BoundingBox3D box(Vector3D(-2.0, -2.0, 1.0), Vector3D(4.0, 3.0, 5.0));
-	EXPECT_FALSE(box.IsEmpty());
-
-	box.lowerCorner = Vector3D(5.0, 1.0, 3.0);
-	EXPECT_TRUE(box.IsEmpty());
-
-	box.lowerCorner = Vector3D(2.0, 4.0, 3.0);
-	EXPECT_TRUE(box.IsEmpty());
-
-	box.lowerCorner = Vector3D(2.0, 1.0, 6.0);
-	EXPECT_TRUE(box.IsEmpty());
-
-	box.lowerCorner = Vector3D(4.0, 1.0, 3.0);
-	EXPECT_TRUE(box.IsEmpty());
-}
