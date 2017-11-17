@@ -588,6 +588,7 @@ xcopy /y "$(SolutionDir)Includes" "$(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="Point\Implicit\PointsToImplicit3.cpp" />
     <ClCompile Include="Point\Implicit\SphericalPointsToImplicit2.cpp" />
     <ClCompile Include="Point\Implicit\SphericalPointsToImplicit3.cpp" />
+    <ClCompile Include="Point\Implicit\SPHPointsToImplicit2.cpp" />
     <ClCompile Include="Searcher\PointHashGridSearcher2.cpp" />
     <ClCompile Include="Searcher\PointHashGridSearcher3.cpp" />
     <ClCompile Include="Searcher\PointNeighborSearcher2.cpp" />
