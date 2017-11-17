@@ -223,3 +223,18 @@ TEST(BoundingBox2, Corner)
 	EXPECT_VECTOR2_EQ(Vector2D(-2.0, 3.0), box.Corner(2));
 	EXPECT_VECTOR2_EQ(Vector2D(4.0, 3.0), box.Corner(3));
 }
+
+TEST(BoundingBox2, IsEmpty)
+{
+	BoundingBox2D box(Vector2D(-2.0, -2.0), Vector2D(4.0, 3.0));
+	EXPECT_FALSE(box.IsEmpty());
+
+	box.lowerCorner = Vector2D(5.0, 1.0);
+	EXPECT_TRUE(box.IsEmpty());
+
+	box.lowerCorner = Vector2D(2.0, 4.0);
+	EXPECT_TRUE(box.IsEmpty());
+
+	box.lowerCorner = Vector2D(4.0, 1.0);
+	EXPECT_TRUE(box.IsEmpty());
+}
