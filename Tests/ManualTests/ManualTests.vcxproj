@@ -148,6 +148,7 @@
     <ClCompile Include="TriangleMeshToSDFTests.cpp" />
     <ClCompile Include="VolumeParticleEmitterTests.cpp" />
     <ClCompile Include="ZhuBridsonPointsToImplicit2Tests.cpp" />
+    <ClCompile Include="ZhuBridsonPointsToImplicit3Tests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">
