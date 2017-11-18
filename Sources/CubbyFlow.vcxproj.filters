@@ -1586,5 +1586,8 @@
     <ClCompile Include="Point\Implicit\SPHPointsToImplicit3.cpp">
       <Filter>Point\Implicit</Filter>
     </ClCompile>
+    <ClCompile Include="Point\Implicit\ZhuBridsonPointsToImplicit2.cpp">
+      <Filter>Point\Implicit</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
