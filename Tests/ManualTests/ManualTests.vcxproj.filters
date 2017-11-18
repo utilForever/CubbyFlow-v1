@@ -42,6 +42,7 @@
     <ClCompile Include="SphericalPointsToImplicit3Tests.cpp" />
     <ClCompile Include="SPHPointsToImplicit2Tests.cpp" />
     <ClCompile Include="SPHPointsToImplicit3Tests.cpp" />
+    <ClCompile Include="ZhuBridsonPointsToImplicit2Tests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Precompiled Header">

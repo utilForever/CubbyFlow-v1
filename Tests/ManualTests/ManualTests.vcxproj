@@ -147,6 +147,7 @@
     <ClCompile Include="TriangleMesh3Tests.cpp" />
     <ClCompile Include="TriangleMeshToSDFTests.cpp" />
     <ClCompile Include="VolumeParticleEmitterTests.cpp" />
+    <ClCompile Include="ZhuBridsonPointsToImplicit2Tests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">
