@@ -340,6 +340,7 @@ xcopy /y "$(SolutionDir)Includes" "$(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Point\Implicit\SPHPointsToImplicit2.h" />
     <ClInclude Include="..\Includes\Point\Implicit\SPHPointsToImplicit3.h" />
     <ClInclude Include="..\Includes\Point\Implicit\ZhuBridsonPointsToImplicit2.h" />
+    <ClInclude Include="..\Includes\Point\Implicit\ZhuBridsonPointsToImplicit3.h" />
     <ClInclude Include="..\Includes\Point\Point-Impl.h" />
     <ClInclude Include="..\Includes\Point\Point.h" />
     <ClInclude Include="..\Includes\Point\Point2-Impl.h" />
