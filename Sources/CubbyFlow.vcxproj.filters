@@ -1032,6 +1032,9 @@
     <ClInclude Include="..\Includes\Point\Implicit\SPHPointsToImplicit3.h">
       <Filter>Point\Implicit</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Point\Implicit\ZhuBridsonPointsToImplicit2.h">
+      <Filter>Point\Implicit</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
