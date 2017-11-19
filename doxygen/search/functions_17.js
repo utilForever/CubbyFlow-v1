@@ -70,6 +70,8 @@ var searchData=
   ['_7epointneighborsearcher3',['~PointNeighborSearcher3',['../class_cubby_flow_1_1_point_neighbor_searcher3.html#ae1ee536bc598a49a1fd0d22902ef45e7',1,'CubbyFlow::PointNeighborSearcher3']]],
   ['_7epointneighborsearcherbuilder2',['~PointNeighborSearcherBuilder2',['../class_cubby_flow_1_1_point_neighbor_searcher_builder2.html#a7f545c2c20339dcc1a665b5fe2baf747',1,'CubbyFlow::PointNeighborSearcherBuilder2']]],
   ['_7epointneighborsearcherbuilder3',['~PointNeighborSearcherBuilder3',['../class_cubby_flow_1_1_point_neighbor_searcher_builder3.html#ac0399edd2ac6fc2aba690c15bc6d3417',1,'CubbyFlow::PointNeighborSearcherBuilder3']]],
+  ['_7epointstoimplicit2',['~PointsToImplicit2',['../class_cubby_flow_1_1_points_to_implicit2.html#a5cc7733fd1ab1665a0d9ff57d4a91110',1,'CubbyFlow::PointsToImplicit2']]],
+  ['_7epointstoimplicit3',['~PointsToImplicit3',['../class_cubby_flow_1_1_points_to_implicit3.html#a132d10b33daf3b0dc91ae16222184ead',1,'CubbyFlow::PointsToImplicit3']]],
   ['_7escalarfield2',['~ScalarField2',['../class_cubby_flow_1_1_scalar_field2.html#a1430a59df0a77924b49542c741f35d25',1,'CubbyFlow::ScalarField2']]],
   ['_7escalarfield3',['~ScalarField3',['../class_cubby_flow_1_1_scalar_field3.html#a4d5f76f5a7dedc77bcde22fc8666b323',1,'CubbyFlow::ScalarField3']]],
   ['_7escalargrid2',['~ScalarGrid2',['../class_cubby_flow_1_1_scalar_grid2.html#a9ba2a9fdf0b6959d3dc6d1f9ef4ff7d0',1,'CubbyFlow::ScalarGrid2']]],

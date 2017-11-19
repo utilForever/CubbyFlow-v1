@@ -63,7 +63,8 @@ var menudata={children:[
 {text:"r",url:"namespacemembers_type_r.html#index_r"},
 {text:"s",url:"namespacemembers_type_s.html#index_s"},
 {text:"t",url:"namespacemembers_type_t.html#index_t"},
-{text:"v",url:"namespacemembers_type_v.html#index_v"}]},
+{text:"v",url:"namespacemembers_type_v.html#index_v"},
+{text:"z",url:"namespacemembers_type_z.html#index_z"}]},
 {text:"Enumerations",url:"namespacemembers_enum.html"}]}]},
 {text:"Classes",url:"annotated.html",children:[
 {text:"Class List",url:"annotated.html"},
@@ -121,6 +122,7 @@ var menudata={children:[
 {text:"u",url:"functions_func_u.html#index_u"},
 {text:"v",url:"functions_func_v.html#index_v"},
 {text:"w",url:"functions_func_w.html#index_w"},
+{text:"z",url:"functions_func_z.html#index_z"},
 {text:"~",url:"functions_func_0x7e.html#index_0x7e"}]},
 {text:"Variables",url:"functions_vars.html",children:[
 {text:"a",url:"functions_vars.html#index_a"},

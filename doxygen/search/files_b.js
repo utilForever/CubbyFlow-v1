@@ -36,5 +36,7 @@ var searchData=
   ['pointparticleemitter2_2eh',['PointParticleEmitter2.h',['../_point_particle_emitter2_8h.html',1,'']]],
   ['pointparticleemitter3_2eh',['PointParticleEmitter3.h',['../_point_particle_emitter3_8h.html',1,'']]],
   ['pointsimplelistsearcher2_2eh',['PointSimpleListSearcher2.h',['../_point_simple_list_searcher2_8h.html',1,'']]],
-  ['pointsimplelistsearcher3_2eh',['PointSimpleListSearcher3.h',['../_point_simple_list_searcher3_8h.html',1,'']]]
+  ['pointsimplelistsearcher3_2eh',['PointSimpleListSearcher3.h',['../_point_simple_list_searcher3_8h.html',1,'']]],
+  ['pointstoimplicit2_2eh',['PointsToImplicit2.h',['../_points_to_implicit2_8h.html',1,'']]],
+  ['pointstoimplicit3_2eh',['PointsToImplicit3.h',['../_points_to_implicit3_8h.html',1,'']]]
 ];

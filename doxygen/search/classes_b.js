@@ -35,5 +35,7 @@ var searchData=
   ['pointparticleemitter2',['PointParticleEmitter2',['../class_cubby_flow_1_1_point_particle_emitter2.html',1,'CubbyFlow']]],
   ['pointparticleemitter3',['PointParticleEmitter3',['../class_cubby_flow_1_1_point_particle_emitter3.html',1,'CubbyFlow']]],
   ['pointsimplelistsearcher2',['PointSimpleListSearcher2',['../class_cubby_flow_1_1_point_simple_list_searcher2.html',1,'CubbyFlow']]],
-  ['pointsimplelistsearcher3',['PointSimpleListSearcher3',['../class_cubby_flow_1_1_point_simple_list_searcher3.html',1,'CubbyFlow']]]
+  ['pointsimplelistsearcher3',['PointSimpleListSearcher3',['../class_cubby_flow_1_1_point_simple_list_searcher3.html',1,'CubbyFlow']]],
+  ['pointstoimplicit2',['PointsToImplicit2',['../class_cubby_flow_1_1_points_to_implicit2.html',1,'CubbyFlow']]],
+  ['pointstoimplicit3',['PointsToImplicit3',['../class_cubby_flow_1_1_points_to_implicit3.html',1,'CubbyFlow']]]
 ];
