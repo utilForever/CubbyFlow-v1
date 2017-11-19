@@ -335,6 +335,7 @@ xcopy /y "$(SolutionDir)Includes" "$(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\PointGenerator\PointGenerator2.h" />
     <ClInclude Include="..\Includes\PointGenerator\PointGenerator3.h" />
     <ClInclude Include="..\Includes\PointGenerator\TrianglePointGenerator.h" />
+    <ClInclude Include="..\Includes\Point\Implicit\AnisotropicPointsToImplicit2.h" />
     <ClInclude Include="..\Includes\Point\Implicit\PointsToImplicit2.h" />
     <ClInclude Include="..\Includes\Point\Implicit\PointsToImplicit3.h" />
     <ClInclude Include="..\Includes\Point\Implicit\SphericalPointsToImplicit2.h" />
