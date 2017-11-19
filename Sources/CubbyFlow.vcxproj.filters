@@ -1047,6 +1047,9 @@
     <ClInclude Include="..\Includes\Point\Implicit\AnisotropicPointsToImplicit2.h">
       <Filter>Point\Implicit</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Point\Implicit\AnisotropicPointsToImplicit3.h">
+      <Filter>Point\Implicit</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
