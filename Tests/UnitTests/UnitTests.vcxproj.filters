@@ -420,6 +420,9 @@
     <ClCompile Include="FDMMGPCGSolver3Tests.cpp">
       <Filter>Solver\FDM</Filter>
     </ClCompile>
+    <ClCompile Include="SVDTests.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

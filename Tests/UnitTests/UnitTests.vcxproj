@@ -191,6 +191,7 @@
     <ClCompile Include="SurfaceSet3Tests.cpp" />
     <ClCompile Include="SurfaceToImplicit2Tests.cpp" />
     <ClCompile Include="SurfaceToImplicit3Tests.cpp" />
+    <ClCompile Include="SVDTests.cpp" />
     <ClCompile Include="TimerTests.cpp" />
     <ClCompile Include="Transform2Tests.cpp" />
     <ClCompile Include="Transform3Tests.cpp" />
