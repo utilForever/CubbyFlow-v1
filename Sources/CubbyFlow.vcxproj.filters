@@ -1041,6 +1041,9 @@
     <ClInclude Include="..\Includes\Math\SVD.h">
       <Filter>Math</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Math\SVD-Impl.h">
+      <Filter>Math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
