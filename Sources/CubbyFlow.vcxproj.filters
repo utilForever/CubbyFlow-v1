@@ -1610,5 +1610,8 @@
     <ClCompile Include="Point\Implicit\AnisotropicPointsToImplicit2.cpp">
       <Filter>Point\Implicit</Filter>
     </ClCompile>
+    <ClCompile Include="Point\Implicit\AnisotropicPointsToImplicit3.cpp">
+      <Filter>Point\Implicit</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

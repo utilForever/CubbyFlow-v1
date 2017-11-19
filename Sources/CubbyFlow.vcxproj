@@ -592,6 +592,7 @@ xcopy /y "$(SolutionDir)Includes" "$(SolutionDir)Results\$(Platform)\$(Configura
     <ClCompile Include="PointGenerator\PointGenerator3.cpp" />
     <ClCompile Include="PointGenerator\TrianglePointGenerator.cpp" />
     <ClCompile Include="Point\Implicit\AnisotropicPointsToImplicit2.cpp" />
+    <ClCompile Include="Point\Implicit\AnisotropicPointsToImplicit3.cpp" />
     <ClCompile Include="Point\Implicit\PointsToImplicit2.cpp" />
     <ClCompile Include="Point\Implicit\PointsToImplicit3.cpp" />
     <ClCompile Include="Point\Implicit\SphericalPointsToImplicit2.cpp" />
