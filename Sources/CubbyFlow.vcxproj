@@ -311,6 +311,7 @@ xcopy /y "$(SolutionDir)Includes" "$(SolutionDir)Results\$(Platform)\$(Configura
     <ClInclude Include="..\Includes\Math\PDE.h" />
     <ClInclude Include="..\Includes\Math\Quaternion-Impl.h" />
     <ClInclude Include="..\Includes\Math\Quaternion.h" />
+    <ClInclude Include="..\Includes\Math\SVD.h" />
     <ClInclude Include="..\Includes\Matrix\Matrix-Impl.h" />
     <ClInclude Include="..\Includes\Matrix\Matrix.h" />
     <ClInclude Include="..\Includes\Matrix\Matrix2x2-Impl.h" />
