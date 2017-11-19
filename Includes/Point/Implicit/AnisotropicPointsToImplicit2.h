@@ -40,8 +40,7 @@ namespace CubbyFlow
 			double kernelRadius = 1.0,
 			double cutOffDensity = 0.5,
 			double positionSmoothingFactor = 0.5,
-			size_t minNumNeighbors = 8,
-			bool isOutputSDF = true);
+			size_t minNumNeighbors = 8);
 
 		//! Converts the given points to implicit surface scalar field.
 		void Convert(const ConstArrayAccessor1<Vector2D>& points, ScalarGrid2* output) const override;
@@ -51,7 +50,6 @@ namespace CubbyFlow
 		double m_cutOffDensity = 0.5;
 		double m_positionSmoothingFactor = 0.0;
 		size_t m_minNumNeighbors = 8;
-		bool m_isOutputSDF = true;
 	};
 
 	//! Shared pointer for the AnisotropicPointsToImplicit2 type.
