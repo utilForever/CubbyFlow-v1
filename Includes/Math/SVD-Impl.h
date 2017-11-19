@@ -56,7 +56,10 @@ namespace CubbyFlow
 		T c = 0, f = 0, h = 0, s = 0, x = 0, y = 0, z = 0;
 		T anorm = 0, g = 0, scale = 0;
 
-		static_assert(m >= n, "Number of rows of input matrix must greater than or equal to columns.");
+		if (m < n)
+		{
+			throw std::invalid_argument("Number of rows of input matrix must greater than or equal to columns.");
+		}
 
 		// Prepare workspace
 		VectorN<T> rv1(n, 0);
