@@ -107,7 +107,7 @@ namespace CubbyFlow
 			{
 				// get node children pointers for sphere
 				const Node* firstChild = node + 1;
-				const Node* secondChild = static_cast<Node*>(&m_nodes[node->child]);
+				const Node* secondChild = const_cast<Node*>(&m_nodes[node->child]);
 
 				// advance to next child node, possibly enqueue other child
 				const size_t axis = node->flags;
@@ -170,7 +170,7 @@ namespace CubbyFlow
 			{
 				// get node children pointers for sphere
 				const Node* firstChild = node + 1;
-				const Node* secondChild = static_cast<Node*>(&m_nodes[node->child]);
+				const Node* secondChild = const_cast<Node*>(&m_nodes[node->child]);
 
 				// advance to next child node, possibly enqueue other child
 				const size_t axis = node->flags;
