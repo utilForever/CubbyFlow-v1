@@ -1059,6 +1059,9 @@
     <ClInclude Include="..\Includes\Searcher\PointKdTreeSearcher2.h">
       <Filter>Searcher</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Searcher\PointKdTreeSearcher3.h">
+      <Filter>Searcher</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Field\CustomScalarField2.cpp">
