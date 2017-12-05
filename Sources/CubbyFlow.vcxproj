@@ -606,6 +606,7 @@ xcopy /s /y "$(SolutionDir)Includes\*.*" "$(SolutionDir)Results\$(Platform)\$(Co
     <ClCompile Include="Point\Implicit\ZhuBridsonPointsToImplicit3.cpp" />
     <ClCompile Include="Searcher\PointHashGridSearcher2.cpp" />
     <ClCompile Include="Searcher\PointHashGridSearcher3.cpp" />
+    <ClCompile Include="Searcher\PointKdTreeSearcher2.cpp" />
     <ClCompile Include="Searcher\PointNeighborSearcher2.cpp" />
     <ClCompile Include="Searcher\PointNeighborSearcher3.cpp" />
     <ClCompile Include="Searcher\PointParallelHashGridSearcher2.cpp" />
