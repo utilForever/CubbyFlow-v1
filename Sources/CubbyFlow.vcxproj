@@ -368,6 +368,7 @@ xcopy /s /y "$(SolutionDir)Includes\*.*" "$(SolutionDir)Results\$(Platform)\$(Co
     <ClInclude Include="..\Includes\Ray\Ray3.h" />
     <ClInclude Include="..\Includes\Searcher\PointHashGridSearcher2.h" />
     <ClInclude Include="..\Includes\Searcher\PointHashGridSearcher3.h" />
+    <ClInclude Include="..\Includes\Searcher\PointKdTreeSearcher2.h" />
     <ClInclude Include="..\Includes\Searcher\PointNeighborSearcher2.h" />
     <ClInclude Include="..\Includes\Searcher\PointNeighborSearcher3.h" />
     <ClInclude Include="..\Includes\Searcher\PointParallelHashGridSearcher2.h" />
