@@ -57,8 +57,8 @@ void AccumulateWaveToHeightField(const double x, const double waveLength, const 
 			iNew = 2 * BUFFER_SIZE - i - 1;
 		}
 
-		double distance = fabs((i + 0.5) / BUFFER_SIZE - x);
-		double height = maxHeight * 0.5 * (cos(std::min(distance * M_PI / quarterWaveLength, M_PI)) + 1.0);
+		const double distance = fabs((i + 0.5) / BUFFER_SIZE - x);
+		const double height = maxHeight * 0.5 * (cos(std::min(distance * M_PI / quarterWaveLength, M_PI)) + 1.0);
 		(*heightField)[iNew] += height;
 	}
 }
@@ -70,8 +70,8 @@ void Draw(const std::array<double, BUFFER_SIZE>& heightField)
 	// Convert height field to grayscale
 	for (size_t i = 0; i < BUFFER_SIZE; ++i)
 	{
-		double height = heightField[i];
-		size_t tableIndex = std::min(static_cast<size_t>(floor(GRAY_SCALE_TABLE_SIZE * height)), GRAY_SCALE_TABLE_SIZE - 1);
+		const double height = heightField[i];
+		const size_t tableIndex = std::min(static_cast<size_t>(floor(GRAY_SCALE_TABLE_SIZE * height)), GRAY_SCALE_TABLE_SIZE - 1);
 		buffer[i] = GRAY_SCALE_TABLE[tableIndex];
 	}
 
