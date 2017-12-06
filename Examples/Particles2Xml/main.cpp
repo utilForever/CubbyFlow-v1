@@ -123,7 +123,7 @@ int main(int argc, char* argv[])
 	std::ifstream positionFile(inputFileName.c_str(), std::ifstream::binary);
 	if (positionFile)
 	{
-		std::vector<uint8_t> buffer(
+		const std::vector<uint8_t> buffer(
 			(std::istreambuf_iterator<char>(positionFile)),
 			(std::istreambuf_iterator<char>()));
 		Deserialize(buffer, &positions);
