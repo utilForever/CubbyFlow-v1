@@ -18,6 +18,8 @@
 #include <Grid/VertexCenteredVectorGrid3.h>
 #include <Searcher/PointHashGridSearcher2.h>
 #include <Searcher/PointHashGridSearcher3.h>
+#include <Searcher/PointKdTreeSearcher2.h>
+#include <Searcher/PointKdTreeSearcher3.h>
 #include <Searcher/PointParallelHashGridSearcher2.h>
 #include <Searcher/PointParallelHashGridSearcher3.h>
 #include <Searcher/PointSimpleListSearcher2.h>
@@ -84,6 +86,9 @@ namespace CubbyFlow
 
 			REGISTER_POINT_NEIGHBOR_SEARCHER2_BUILDER(PointSimpleListSearcher2)
 			REGISTER_POINT_NEIGHBOR_SEARCHER3_BUILDER(PointSimpleListSearcher3)
+
+			REGISTER_POINT_NEIGHBOR_SEARCHER2_BUILDER(PointKdTreeSearcher2)
+			REGISTER_POINT_NEIGHBOR_SEARCHER3_BUILDER(PointKdTreeSearcher3)
 		}
 	};
 
