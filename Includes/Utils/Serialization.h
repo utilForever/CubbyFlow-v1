@@ -32,15 +32,17 @@ namespace CubbyFlow
 	//! Serializes data chunk using common schema.
 	void Serialize(const uint8_t* data, size_t size, std::vector<uint8_t>* buffer);
 
+	//! Serializes data chunk using common schema.
 	template <typename T>
-	void Serialize(const Array1<T>& array, std::vector<uint8_t>* buffer);
+	void Serialize(const ConstArrayAccessor1<T>& array, std::vector<uint8_t>* buffer);
 
-	//! Serializes serializable object.
+	//! Deserializes buffer to serializable object.
 	void Deserialize(const std::vector<uint8_t>& buffer, Serializable* serializable);
 
-	//! Serializes data chunk using common schema.
+	//! Deserializes buffer to data chunk using common schema.
 	void Deserialize(const std::vector<uint8_t>& buffer, std::vector<uint8_t>* data);
 
+	//! Deserializes buffer to data chunk using common schema.
 	template <typename T>
 	void Deserialize(const std::vector<uint8_t>& buffer, Array1<T>* array);
 }
