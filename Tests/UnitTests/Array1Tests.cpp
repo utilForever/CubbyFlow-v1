@@ -172,7 +172,7 @@ TEST(Array1, Serialization)
 
 	// Serialize to in-memory stream
 	std::vector<uint8_t> buffer1;
-	Serialize(arr1, &buffer1);
+	Serialize(arr1.ConstAccessor(), &buffer1);
 
 	// Deserialize to non-zero array
 	Array1<float> arr2 = { 5.f, 6.f, 7.f };
@@ -185,7 +185,7 @@ TEST(Array1, Serialization)
 
 	// Serialize zero-Sized array
 	Array1<float> arr3;
-	Serialize(arr3, &buffer1);
+	Serialize(arr3.ConstAccessor(), &buffer1);
 
 	// Deserialize to non-zero array
 	Deserialize(buffer1, &arr3);
