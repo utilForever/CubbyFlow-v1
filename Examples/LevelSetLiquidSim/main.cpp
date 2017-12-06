@@ -40,10 +40,7 @@
 
 using namespace CubbyFlow;
 
-void SaveTriangleMesh(
-	const TriangleMesh3& mesh,
-	const std::string& rootDir,
-	int frameCnt)
+void SaveTriangleMesh(const TriangleMesh3& mesh, const std::string& rootDir, int frameCnt)
 {
 	char baseName[256];
 	snprintf(baseName, sizeof(baseName), "frame_%06d.obj", frameCnt);
@@ -57,13 +54,10 @@ void SaveTriangleMesh(
 	}
 }
 
-void TriangulateAndSave(
-	const ScalarGrid3Ptr& sdf,
-	const std::string& rootDir,
-	int frameCnt)
+void TriangulateAndSave(const ScalarGrid3Ptr& sdf, const std::string& rootDir, int frameCnt)
 {
 	TriangleMesh3 mesh;
-	int flag = DIRECTION_ALL & ~DIRECTION_DOWN;
+	const int flag = DIRECTION_ALL & ~DIRECTION_DOWN;
 	MarchingCubes(
 		sdf->GetConstDataAccessor(),
 		sdf->GridSpacing(),
@@ -83,18 +77,17 @@ void PrintUsage()
 		"   -f, --frames: total number of frames (default is 100)\n"
 		"   -p, --fps: frames per second (default is 60.0)\n"
 		"   -l, --log: log filename (default is " APP_NAME ".log)\n"
-		"   -o, --output: output directory name "
-		"(default is " APP_NAME "_output)\n"
+		"   -o, --output: output directory name (default is " APP_NAME "_output)\n"
 		"   -e, --example: example number (between 1 and 4, default is 1)\n"
 		"   -h, --help: print this message\n");
 }
 
 void PrintInfo(const LevelSetLiquidSolver3Ptr& solver)
 {
-	auto grids = solver->GetGridSystemData();
-	Size3 resolution = grids->GetResolution();
-	BoundingBox3D domain = grids->GetBoundingBox();
-	Vector3D gridSpacing = grids->GetGridSpacing();
+	const auto grids = solver->GetGridSystemData();
+	const Size3 resolution = grids->GetResolution();
+	const BoundingBox3D domain = grids->GetBoundingBox();
+	const Vector3D gridSpacing = grids->GetGridSpacing();
 
 	printf(
 		"Resolution: %zu x %zu x %zu\n",
@@ -108,13 +101,9 @@ void PrintInfo(const LevelSetLiquidSolver3Ptr& solver)
 		gridSpacing.x, gridSpacing.y, gridSpacing.z);
 }
 
-void RunSimulation(
-	const std::string& rootDir,
-	const LevelSetLiquidSolver3Ptr& solver,
-	int numberOfFrames,
-	double fps)
+void RunSimulation(const std::string& rootDir, const LevelSetLiquidSolver3Ptr& solver, int numberOfFrames, double fps)
 {
-	auto sdf = solver->GetSignedDistanceField();
+	const auto sdf = solver->GetSignedDistanceField();
 
 	for (Frame frame(0, 1.0 / fps); frame.index < numberOfFrames; ++frame)
 	{
@@ -125,11 +114,7 @@ void RunSimulation(
 }
 
 // Water-drop example
-void RunExample1(
-	const std::string& rootDir,
-	size_t resX,
-	int numberOfFrames,
-	double fps)
+void RunExample1(const std::string& rootDir, size_t resX, int numberOfFrames, double fps)
 {
 	// Build solver
 	auto solver = LevelSetLiquidSolver3::Builder()
@@ -137,21 +122,21 @@ void RunExample1(
 		.WithDomainSizeX(1.0)
 		.MakeShared();
 
-	auto grids = solver->GetGridSystemData();
+	const auto grids = solver->GetGridSystemData();
 	BoundingBox3D domain = grids->GetBoundingBox();
 
 	// Build emitter
-	auto plane = Plane3::Builder()
+	const auto plane = Plane3::Builder()
 		.WithNormal({ 0, 1, 0 })
 		.WithPoint({ 0, 0.25 * domain.Height(), 0 })
 		.MakeShared();
 
-	auto sphere = Sphere3::Builder()
+	const auto sphere = Sphere3::Builder()
 		.WithCenter(domain.MidPoint())
 		.WithRadius(0.15 * domain.Width())
 		.MakeShared();
 
-	auto surfaceSet = ImplicitSurfaceSet3::Builder()
+	const auto surfaceSet = ImplicitSurfaceSet3::Builder()
 		.WithExplicitSurfaces({ plane, sphere })
 		.MakeShared();
 
@@ -171,11 +156,7 @@ void RunExample1(
 }
 
 // Dam-breaking example
-void RunExample2(
-	const std::string& rootDir,
-	size_t resX,
-	int numberOfFrames,
-	double fps)
+void RunExample2(const std::string& rootDir, size_t resX, int numberOfFrames, double fps)
 {
 	// Build solver
 	auto solver = LevelSetLiquidSolver3::Builder()
@@ -183,22 +164,22 @@ void RunExample2(
 		.WithDomainSizeX(3.0)
 		.MakeShared();
 
-	auto grids = solver->GetGridSystemData();
+	const auto grids = solver->GetGridSystemData();
 	BoundingBox3D domain = grids->GetBoundingBox();
-	double lz = domain.Depth();
+	const double lz = domain.Depth();
 
 	// Build emitter
-	auto box1 = Box3::Builder()
+	const auto box1 = Box3::Builder()
 		.WithLowerCorner({ -0.5, -0.5, -0.5 * lz })
 		.WithUpperCorner({ 0.5, 0.75, 0.75 * lz })
 		.MakeShared();
 
-	auto box2 = Box3::Builder()
+	const auto box2 = Box3::Builder()
 		.WithLowerCorner({ 2.5, -0.5, 0.25 * lz })
 		.WithUpperCorner({ 3.5, 0.75, 1.5 * lz })
 		.MakeShared();
 
-	auto boxSet = ImplicitSurfaceSet3::Builder()
+	const auto boxSet = ImplicitSurfaceSet3::Builder()
 		.WithExplicitSurfaces({ box1, box2 })
 		.MakeShared();
 
@@ -210,29 +191,29 @@ void RunExample2(
 	emitter->AddSignedDistanceTarget(solver->GetSignedDistanceField());
 
 	// Build collider
-	auto cyl1 = Cylinder3::Builder()
+	const auto cyl1 = Cylinder3::Builder()
 		.WithCenter({ 1, 0.375, 0.375 })
 		.WithRadius(0.1)
 		.WithHeight(0.75)
 		.MakeShared();
 
-	auto cyl2 = Cylinder3::Builder()
+	const auto cyl2 = Cylinder3::Builder()
 		.WithCenter({ 1.5, 0.375, 0.75 })
 		.WithRadius(0.1)
 		.WithHeight(0.75)
 		.MakeShared();
 
-	auto cyl3 = Cylinder3::Builder()
+	const auto cyl3 = Cylinder3::Builder()
 		.WithCenter({ 2, 0.375, 1.125 })
 		.WithRadius(0.1)
 		.WithHeight(0.75)
 		.MakeShared();
 
-	auto cylSet = ImplicitSurfaceSet3::Builder()
+	const auto cylSet = ImplicitSurfaceSet3::Builder()
 		.WithExplicitSurfaces({ cyl1, cyl2, cyl3 })
 		.MakeShared();
 
-	auto collider = RigidBodyCollider3::Builder()
+	const auto collider = RigidBodyCollider3::Builder()
 		.WithSurface(cylSet)
 		.MakeShared();
 
@@ -247,11 +228,7 @@ void RunExample2(
 }
 
 // High-viscosity example (bunny-drop)
-void RunExample3(
-	const std::string& rootDir,
-	size_t resX,
-	int numberOfFrames,
-	double fps)
+void RunExample3(const std::string& rootDir, size_t resX, int numberOfFrames, double fps)
 {
 	// Build solver
 	auto solver = LevelSetLiquidSolver3::Builder()
@@ -277,7 +254,7 @@ void RunExample3(
 		exit(EXIT_FAILURE);
 	}
 
-	auto bunny = ImplicitTriangleMesh3::Builder()
+	const auto bunny = ImplicitTriangleMesh3::Builder()
 		.WithTriangleMesh(bunnyMesh)
 		.WithResolutionX(resX)
 		.MakeShared();
@@ -298,11 +275,7 @@ void RunExample3(
 }
 
 // Low-viscosity example (bunny-drop)
-void RunExample4(
-	const std::string& rootDir,
-	size_t resX,
-	int numberOfFrames,
-	double fps)
+void RunExample4(const std::string& rootDir, size_t resX, int numberOfFrames, double fps)
 {
 	// Build solver
 	auto solver = LevelSetLiquidSolver3::Builder()
@@ -328,7 +301,7 @@ void RunExample4(
 		exit(EXIT_FAILURE);
 	}
 
-	auto bunny = ImplicitTriangleMesh3::Builder()
+	const auto bunny = ImplicitTriangleMesh3::Builder()
 		.WithTriangleMesh(bunnyMesh)
 		.WithResolutionX(resX)
 		.MakeShared();
