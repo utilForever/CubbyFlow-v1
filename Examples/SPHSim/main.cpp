@@ -83,8 +83,7 @@ void PrintUsage()
 		"   -f, --frames: total number of frames (default is 100)\n"
 		"   -p, --fps: frames per second (default is 60.0)\n"
 		"   -l, --log: log filename (default is " APP_NAME ".log)\n"
-		"   -o, --output: output directory name "
-		"(default is " APP_NAME "_output)\n"
+		"   -o, --output: output directory name (default is " APP_NAME "_output)\n"
 		"   -m, --format: particle output format (xyz or pos. default is xyz)\n"
 		"   -e, --example: example number (between 1 and 3, default is 1)\n"
 		"   -h, --help: print this message\n");
