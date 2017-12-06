@@ -426,6 +426,9 @@
     <ClCompile Include="PointKdTreeSearcher2Tests.cpp">
       <Filter>Searcher</Filter>
     </ClCompile>
+    <ClCompile Include="PointKdTreeSearcher3Tests.cpp">
+      <Filter>Searcher</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
