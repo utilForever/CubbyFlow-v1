@@ -45,15 +45,12 @@ const double TGA_SCALE = 10.0;
 
 inline float SmoothStep(float edge0, float edge1, float x)
 {
-	float t = Clamp((x - edge0) / (edge1 - edge0), 0.f, 1.f);
+	const float t = Clamp((x - edge0) / (edge1 - edge0), 0.f, 1.f);
 	return t * t * (3.f - 2.f * t);
 }
 
 // Export density field to Mitsuba volume file.
-void SaveVolumeAsVol(
-	const ScalarGrid3Ptr& density,
-	const std::string& rootDir,
-	int frameCnt)
+void SaveVolumeAsVol(const ScalarGrid3Ptr& density, const std::string& rootDir, int frameCnt)
 {
 	char baseName[256];
 	snprintf(baseName, sizeof(baseName), "frame_%06d.vol", frameCnt);
@@ -71,13 +68,15 @@ void SaveVolumeAsVol(
 		header[1] = 'O';
 		header[2] = 'L';
 		header[3] = 3;
+
 		int32_t* encoding = reinterpret_cast<int32_t*>(header + 4);
 		encoding[0] = 1;  // 32-bit float
 		encoding[1] = static_cast<int32_t>(density->GetDataSize().x);
 		encoding[2] = static_cast<int32_t>(density->GetDataSize().y);
 		encoding[3] = static_cast<int32_t>(density->GetDataSize().z);
 		encoding[4] = 1;  // number of channels
-		BoundingBox3D domain = density->BoundingBox();
+
+		const BoundingBox3D domain = density->BoundingBox();
 		float* bbox = reinterpret_cast<float*>(encoding + 5);
 		bbox[0] = static_cast<float>(domain.lowerCorner.x);
 		bbox[1] = static_cast<float>(domain.lowerCorner.y);
@@ -130,10 +129,7 @@ void SaveVolumeAsVol(
 	}
 }
 
-void SaveVolumeAsTga(
-	const ScalarGrid3Ptr& density,
-	const std::string& rootDir,
-	int frameCnt)
+void SaveVolumeAsTga(const ScalarGrid3Ptr& density, const std::string& rootDir, int frameCnt)
 {
 	char baseName[256];
 	snprintf(baseName, sizeof(baseName), "frame_%06d.tga", frameCnt);
@@ -148,8 +144,8 @@ void SaveVolumeAsTga(
 		std::array<char, 18> header;
 		header.fill(0);
 
-		int imgWidth = static_cast<int>(dataSize.x);
-		int imgHeight = static_cast<int>(dataSize.y);
+		const int imgWidth = static_cast<int>(dataSize.x);
+		const int imgHeight = static_cast<int>(dataSize.y);
 
 		header[2] = 2;
 		header[12] = static_cast<char>(imgWidth & 0xff);
@@ -174,7 +170,7 @@ void SaveVolumeAsTga(
 		std::vector<char> img(3 * dataSize.x * dataSize.y);
 		for (size_t i = 0; i < dataSize.x * dataSize.y; ++i)
 		{
-			char val = static_cast<char>(Clamp(hdrImg[i], 0.0, 1.0) * 255.0);
+			const char val = static_cast<char>(Clamp(hdrImg[i], 0.0, 1.0) * 255.0);
 			img[3 * i + 0] = val;
 			img[3 * i + 1] = val;
 			img[3 * i + 2] = val;
@@ -195,8 +191,7 @@ void PrintUsage()
 		"   -f, --frames: total number of frames (default is 100)\n"
 		"   -p, --fps: frames per second (default is 60.0)\n"
 		"   -l, --log: log file name (default is " APP_NAME ".log)\n"
-		"   -o, --output: output directory name "
-		"(default is " APP_NAME "_output)\n"
+		"   -o, --output: output directory name (default is " APP_NAME "_output)\n"
 		"   -e, --example: example number (between 1 and 5, default is 1)\n"
 		"   -m, --format: particle output format (tga or vol. default is tga)\n"
 		"   -h, --help: print this message\n");
@@ -204,10 +199,10 @@ void PrintUsage()
 
 void PrintInfo(const GridSmokeSolver3Ptr& solver)
 {
-	auto grids = solver->GetGridSystemData();
-	Size3 resolution = grids->GetResolution();
-	BoundingBox3D domain = grids->GetBoundingBox();
-	Vector3D gridSpacing = grids->GetGridSpacing();
+	const auto grids = solver->GetGridSystemData();
+	const Size3 resolution = grids->GetResolution();
+	const BoundingBox3D domain = grids->GetBoundingBox();
+	const Vector3D gridSpacing = grids->GetGridSpacing();
 
 	printf(
 		"Resolution: %zu x %zu x %zu\n",
@@ -221,14 +216,9 @@ void PrintInfo(const GridSmokeSolver3Ptr& solver)
 		gridSpacing.x, gridSpacing.y, gridSpacing.z);
 }
 
-void RunSimulation(
-	const std::string& rootDir,
-	const GridSmokeSolver3Ptr& solver,
-	int numberOfFrames,
-	const std::string& format,
-	double fps)
+void RunSimulation(const std::string& rootDir, const GridSmokeSolver3Ptr& solver, int numberOfFrames, const std::string& format, double fps)
 {
-	auto density = solver->GetSmokeDensity();
+	const auto density = solver->GetSmokeDensity();
 
 	for (Frame frame(0, 1.0 / fps); frame.index < numberOfFrames; ++frame)
 	{
@@ -245,12 +235,7 @@ void RunSimulation(
 	}
 }
 
-void RunExample1(
-	const std::string& rootDir,
-	size_t resolutionX,
-	int numberOfFrames,
-	const std::string& format,
-	double fps)
+void RunExample1(const std::string& rootDir, size_t resolutionX, int numberOfFrames, const std::string& format, double fps)
 {
 	// Build solver
 	auto solver = GridSmokeSolver3::Builder()
@@ -260,11 +245,11 @@ void RunExample1(
 
 	solver->SetAdvectionSolver(std::make_shared<CubicSemiLagrangian3>());
 
-	auto grids = solver->GetGridSystemData();
+	const auto grids = solver->GetGridSystemData();
 	BoundingBox3D domain = grids->GetBoundingBox();
 
 	// Build emitter
-	auto box = Box3::Builder()
+	const auto box = Box3::Builder()
 		.WithLowerCorner({ 0.45, -1, 0.45 })
 		.WithUpperCorner({ 0.55, 0.05, 0.55 })
 		.MakeShared();
@@ -279,12 +264,12 @@ void RunExample1(
 	emitter->AddStepFunctionTarget(solver->GetTemperature(), 0, 1);
 
 	// Build collider
-	auto sphere = Sphere3::Builder()
+	const auto sphere = Sphere3::Builder()
 		.WithCenter({ 0.5, 0.3, 0.5 })
 		.WithRadius(0.075 * domain.Width())
 		.MakeShared();
 
-	auto collider = RigidBodyCollider3::Builder()
+	const auto collider = RigidBodyCollider3::Builder()
 		.WithSurface(sphere)
 		.MakeShared();
 
@@ -298,12 +283,7 @@ void RunExample1(
 	RunSimulation(rootDir, solver, numberOfFrames, format, fps);
 }
 
-void RunExample2(
-	const std::string& rootDir,
-	size_t resolutionX,
-	int numberOfFrames,
-	const std::string& format,
-	double fps)
+void RunExample2(const std::string& rootDir, size_t resolutionX, int numberOfFrames, const std::string& format, double fps)
 {
 	// Build solver
 	auto solver = GridSmokeSolver3::Builder()
@@ -313,11 +293,11 @@ void RunExample2(
 
 	solver->SetAdvectionSolver(std::make_shared<SemiLagrangian3>());
 
-	auto grids = solver->GetGridSystemData();
+	const auto grids = solver->GetGridSystemData();
 	BoundingBox3D domain = grids->GetBoundingBox();
 
 	// Build emitter
-	auto box = Box3::Builder()
+	const auto box = Box3::Builder()
 		.WithLowerCorner({ 0.45, -1, 0.45 })
 		.WithUpperCorner({ 0.55, 0.05, 0.55 })
 		.MakeShared();
@@ -332,12 +312,12 @@ void RunExample2(
 	emitter->AddStepFunctionTarget(solver->GetTemperature(), 0, 1);
 
 	// Build collider
-	auto sphere = Sphere3::Builder()
+	const auto sphere = Sphere3::Builder()
 		.WithCenter({ 0.5, 0.3, 0.5 })
 		.WithRadius(0.075 * domain.Width())
 		.MakeShared();
 
-	auto collider = RigidBodyCollider3::Builder()
+	const auto collider = RigidBodyCollider3::Builder()
 		.WithSurface(sphere)
 		.MakeShared();
 
@@ -351,12 +331,7 @@ void RunExample2(
 	RunSimulation(rootDir, solver, numberOfFrames, format, fps);
 }
 
-void RunExample3(
-	const std::string& rootDir,
-	size_t resolutionX,
-	int numberOfFrames,
-	const std::string& format,
-	double fps)
+void RunExample3(const std::string& rootDir, size_t resolutionX, int numberOfFrames, const std::string& format, double fps)
 {
 	// Build solver
 	auto solver = GridSmokeSolver3::Builder()
@@ -378,7 +353,7 @@ void RunExample3(
 		exit(EXIT_FAILURE);
 	}
 
-	auto dragon = ImplicitTriangleMesh3::Builder()
+	const auto dragon = ImplicitTriangleMesh3::Builder()
 		.WithTriangleMesh(dragonMesh)
 		.WithResolutionX(resolutionX)
 		.MakeShared();
@@ -400,12 +375,7 @@ void RunExample3(
 	RunSimulation(rootDir, solver, numberOfFrames, format, fps);
 }
 
-void RunExample4(
-	const std::string& rootDir,
-	size_t resolutionX,
-	int numberOfFrames,
-	const std::string& format,
-	double fps)
+void RunExample4(const std::string& rootDir, size_t resolutionX, int numberOfFrames, const std::string& format, double fps)
 {
 	// Build solver
 	auto solver = GridSmokeSolver3::Builder()
@@ -416,7 +386,7 @@ void RunExample4(
 	solver->SetBuoyancyTemperatureFactor(2.0);
 
 	// Build emitter
-	auto box = Box3::Builder()
+	const auto box = Box3::Builder()
 		.WithLowerCorner({ 0.05, 0.1, 0.225 })
 		.WithUpperCorner({ 0.1, 0.15, 0.275 })
 		.MakeShared();
@@ -450,12 +420,7 @@ void RunExample4(
 	RunSimulation(rootDir, solver, numberOfFrames, format, fps);
 }
 
-void RunExample5(
-	const std::string& rootDir,
-	size_t resolutionX,
-	int numberOfFrames,
-	const std::string& format,
-	double fps)
+void RunExample5(const std::string& rootDir, size_t resolutionX, int numberOfFrames, const std::string& format, double fps)
 {
 	// Build solver
 	auto solver = GridSmokeSolver3::Builder()
@@ -467,7 +432,7 @@ void RunExample5(
 	solver->SetAdvectionSolver(std::make_shared<SemiLagrangian3>());
 
 	// Build emitter
-	auto box = Box3::Builder()
+	const auto box = Box3::Builder()
 		.WithLowerCorner({ 0.05, 0.1, 0.225 })
 		.WithUpperCorner({ 0.1, 0.15, 0.275 })
 		.MakeShared();
