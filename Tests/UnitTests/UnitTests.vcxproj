@@ -165,6 +165,7 @@
     <ClCompile Include="Point3Tests.cpp" />
     <ClCompile Include="PointHashGridSearcher2Tests.cpp" />
     <ClCompile Include="PointHashGridSearcher3Tests.cpp" />
+    <ClCompile Include="PointKdTreeSearcher2Tests.cpp" />
     <ClCompile Include="PointParallelHashGridSearcher2Tests.cpp" />
     <ClCompile Include="PointParallelHashGridSearcher3Tests.cpp" />
     <ClCompile Include="PointSimpleListSearcher3Tests.cpp" />
