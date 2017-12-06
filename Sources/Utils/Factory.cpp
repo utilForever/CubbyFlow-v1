@@ -92,14 +92,12 @@ namespace CubbyFlow
 		}
 	};
 
-	static Registry sRegistry;
-
 	ScalarGrid2Ptr Factory::BuildScalarGrid2(const std::string& name)
 	{
-		auto result = sScalarGrid2Builders.find(name);
+		const auto result = sScalarGrid2Builders.find(name);
 		if (result != sScalarGrid2Builders.end())
 		{
-			auto builder = result->second;
+			const auto builder = result->second;
 			return builder->Build({ 0, 0 }, { 1, 1 }, { 0, 0 }, 0.0);
 		}
 
@@ -108,10 +106,10 @@ namespace CubbyFlow
 
 	ScalarGrid3Ptr Factory::BuildScalarGrid3(const std::string& name)
 	{
-		auto result = sScalarGrid3Builders.find(name);
+		const auto result = sScalarGrid3Builders.find(name);
 		if (result != sScalarGrid3Builders.end())
 		{
-			auto builder = result->second;
+			const auto builder = result->second;
 			return builder->Build({ 0, 0, 0 }, { 1, 1, 1 }, { 0, 0, 0 }, 0.0);
 		}
 
@@ -120,10 +118,10 @@ namespace CubbyFlow
 
 	VectorGrid2Ptr Factory::BuildVectorGrid2(const std::string& name)
 	{
-		auto result = sVectorGrid2Builders.find(name);
+		const auto result = sVectorGrid2Builders.find(name);
 		if (result != sVectorGrid2Builders.end())
 		{
-			auto builder = result->second;
+			const auto builder = result->second;
 			return builder->Build({ 0, 0 }, { 1, 1 }, { 0, 0 }, { 0, 0 });
 		}
 
@@ -132,10 +130,10 @@ namespace CubbyFlow
 
 	VectorGrid3Ptr Factory::BuildVectorGrid3(const std::string& name)
 	{
-		auto result = sVectorGrid3Builders.find(name);
+		const auto result = sVectorGrid3Builders.find(name);
 		if (result != sVectorGrid3Builders.end())
 		{
-			auto builder = result->second;
+			const auto builder = result->second;
 			return builder->Build({ 0, 0, 0 }, { 1, 1, 1 }, { 0, 0, 0 }, { 0, 0, 0 });
 		}
 		
@@ -144,10 +142,10 @@ namespace CubbyFlow
 
 	PointNeighborSearcher2Ptr Factory::BuildPointNeighborSearcher2(const std::string& name)
 	{
-		auto result = sPointNeighborSearcher2Builders.find(name);
+		const auto result = sPointNeighborSearcher2Builders.find(name);
 		if (result != sPointNeighborSearcher2Builders.end())
 		{
-			auto builder = result->second;
+			const auto builder = result->second;
 			return builder->BuildPointNeighborSearcher();
 		}
 		
@@ -156,10 +154,10 @@ namespace CubbyFlow
 
 	PointNeighborSearcher3Ptr Factory::BuildPointNeighborSearcher3(const std::string& name)
 	{
-		auto result = sPointNeighborSearcher3Builders.find(name);
+		const auto result = sPointNeighborSearcher3Builders.find(name);
 		if (result != sPointNeighborSearcher3Builders.end())
 		{
-			auto builder = result->second;
+			const auto builder = result->second;
 			return builder->BuildPointNeighborSearcher();
 		}
 
