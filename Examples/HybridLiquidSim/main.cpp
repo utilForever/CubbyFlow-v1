@@ -42,10 +42,7 @@
 
 using namespace CubbyFlow;
 
-void SaveParticleAsPos(
-	const ParticleSystemData3Ptr& particles,
-	const std::string& rootDir,
-	int frameCnt)
+void SaveParticleAsPos(const ParticleSystemData3Ptr& particles, const std::string& rootDir, int frameCnt)
 {
 	Array1<Vector3D> positions(particles->NumberOfParticles());
 	CopyRange1(particles->GetPositions(), particles->NumberOfParticles(), &positions);
@@ -57,16 +54,13 @@ void SaveParticleAsPos(
 	{
 		printf("Writing %s...\n", fileName.c_str());
 		std::vector<uint8_t> buffer;
-		Serialize(positions, &buffer);
+		Serialize(positions.ConstAccessor(), &buffer);
 		file.write(reinterpret_cast<char*>(buffer.data()), buffer.size());
 		file.close();
 	}
 }
 
-void SaveParticleAsXYZ(
-	const ParticleSystemData3Ptr& particles,
-	const std::string& rootDir,
-	int frameCnt)
+void SaveParticleAsXYZ(const ParticleSystemData3Ptr& particles, const std::string& rootDir, int frameCnt)
 {
 	Array1<Vector3D> positions(particles->NumberOfParticles());
 	CopyRange1(particles->GetPositions(), particles->NumberOfParticles(), &positions);
@@ -94,8 +88,7 @@ void PrintUsage()
 		"   -f, --frames: total number of frames (default is 100)\n"
 		"   -p, --fps: frames per second (default is 60.0)\n"
 		"   -l, --log: log file name (default is " APP_NAME ".log)\n"
-		"   -o, --output: output directory name "
-		"(default is " APP_NAME "_output)\n"
+		"   -o, --output: output directory name (default is " APP_NAME "_output)\n"
 		"   -e, --example: example number (between 1 and 6, default is 1)\n"
 		"   -m, --format: particle output format (xyz or pos. default is xyz)\n"
 		"   -h, --help: print this message\n");
@@ -103,10 +96,10 @@ void PrintUsage()
 
 void PrintInfo(const PICSolver3Ptr& solver)
 {
-	auto grids = solver->GetGridSystemData();
-	Size3 resolution = grids->GetResolution();
-	BoundingBox3D domain = grids->GetBoundingBox();
-	Vector3D gridSpacing = grids->GetGridSpacing();
+	const auto grids = solver->GetGridSystemData();
+	const Size3 resolution = grids->GetResolution();
+	const BoundingBox3D domain = grids->GetBoundingBox();
+	const Vector3D gridSpacing = grids->GetGridSpacing();
 
 	printf(
 		"Resolution: %zu x %zu x %zu\n",
@@ -120,14 +113,9 @@ void PrintInfo(const PICSolver3Ptr& solver)
 		gridSpacing.x, gridSpacing.y, gridSpacing.z);
 }
 
-void RunSimulation(
-	const std::string& rootDir,
-	const PICSolver3Ptr& solver,
-	int numberOfFrames,
-	const std::string& format,
-	double fps)
+void RunSimulation(const std::string& rootDir, const PICSolver3Ptr& solver, int numberOfFrames, const std::string& format, double fps)
 {
-	auto particles = solver->GetParticleSystemData();
+	const auto particles = solver->GetParticleSystemData();
 
 	for (Frame frame(0, 1.0 / fps); frame.index < numberOfFrames; ++frame)
 	{
@@ -144,12 +132,7 @@ void RunSimulation(
 }
 
 // Water-drop example (FLIP)
-void RunExample1(
-	const std::string& rootDir,
-	size_t resolutionX,
-	int numberOfFrames,
-	const std::string& format,
-	double fps)
+void RunExample1(const std::string& rootDir, size_t resolutionX, int numberOfFrames, const std::string& format, double fps)
 {
 	// Build solver
 	auto solver = FLIPSolver3::Builder()
@@ -157,20 +140,20 @@ void RunExample1(
 		.WithDomainSizeX(1.0)
 		.MakeShared();
 
-	auto grids = solver->GetGridSystemData();
+	const auto grids = solver->GetGridSystemData();
 	auto particles = solver->GetParticleSystemData();
 
-	Vector3D gridSpacing = grids->GetGridSpacing();
-	double dx = gridSpacing.x;
+	const Vector3D gridSpacing = grids->GetGridSpacing();
+	const double dx = gridSpacing.x;
 	BoundingBox3D domain = grids->GetBoundingBox();
 
 	// Build emitter
-	auto plane = Plane3::Builder()
+	const auto plane = Plane3::Builder()
 		.WithNormal({ 0, 1, 0 })
 		.WithPoint({ 0, 0.25 * domain.Height(), 0 })
 		.MakeShared();
 
-	auto sphere = Sphere3::Builder()
+	const auto sphere = Sphere3::Builder()
 		.WithCenter(domain.MidPoint())
 		.WithRadius(0.15 * domain.Width())
 		.MakeShared();
@@ -191,7 +174,7 @@ void RunExample1(
 		.MakeShared();
 	emitter2->SetPointGenerator(std::make_shared<GridPointGenerator3>());
 
-	auto emitterSet = ParticleEmitterSet3::Builder()
+	const auto emitterSet = ParticleEmitterSet3::Builder()
 		.WithEmitters({ emitter1, emitter2 })
 		.MakeShared();
 
@@ -206,12 +189,7 @@ void RunExample1(
 }
 
 // Water-drop example (PIC)
-void RunExample2(
-	const std::string& rootDir,
-	size_t resolutionX,
-	int numberOfFrames,
-	const std::string& format,
-	double fps)
+void RunExample2(const std::string& rootDir, size_t resolutionX, int numberOfFrames, const std::string& format, double fps)
 {
 	// Build solver
 	auto solver = PICSolver3::Builder()
@@ -219,20 +197,20 @@ void RunExample2(
 		.WithDomainSizeX(1.0)
 		.MakeShared();
 
-	auto grids = solver->GetGridSystemData();
+	const auto grids = solver->GetGridSystemData();
 	auto particles = solver->GetParticleSystemData();
 
-	Vector3D gridSpacing = grids->GetGridSpacing();
+	const Vector3D gridSpacing = grids->GetGridSpacing();
 	double dx = gridSpacing.x;
 	BoundingBox3D domain = grids->GetBoundingBox();
 
 	// Build emitter
-	auto plane = Plane3::Builder()
+	const auto plane = Plane3::Builder()
 		.WithNormal({ 0, 1, 0 })
 		.WithPoint({ 0, 0.25 * domain.Height(), 0 })
 		.MakeShared();
 
-	auto sphere = Sphere3::Builder()
+	const auto sphere = Sphere3::Builder()
 		.WithCenter(domain.MidPoint())
 		.WithRadius(0.15 * domain.Width())
 		.MakeShared();
@@ -253,7 +231,7 @@ void RunExample2(
 		.MakeShared();
 	emitter2->SetPointGenerator(std::make_shared<GridPointGenerator3>());
 
-	auto emitterSet = ParticleEmitterSet3::Builder()
+	const auto emitterSet = ParticleEmitterSet3::Builder()
 		.WithEmitters({ emitter1, emitter2 })
 		.MakeShared();
 
@@ -268,37 +246,32 @@ void RunExample2(
 }
 
 // Dam-breaking example (FLIP)
-void RunExample3(
-	const std::string& rootDir,
-	size_t resolutionX,
-	int numberOfFrames,
-	const std::string& format,
-	double fps)
+void RunExample3(const std::string& rootDir, size_t resolutionX, int numberOfFrames, const std::string& format, double fps)
 {
 	// Build solver
-	Size3 resolution{ 3 * resolutionX, 2 * resolutionX, (3 * resolutionX) / 2 };
+	const Size3 resolution{ 3 * resolutionX, 2 * resolutionX, (3 * resolutionX) / 2 };
 	auto solver = FLIPSolver3::Builder()
 		.WithResolution(resolution)
 		.WithDomainSizeX(3.0)
 		.MakeShared();
 
-	auto grids = solver->GetGridSystemData();
-	double dx = grids->GetGridSpacing().x;
-	BoundingBox3D domain = grids->GetBoundingBox();
-	double lz = domain.Depth();
+	const auto grids = solver->GetGridSystemData();
+	const double dx = grids->GetGridSpacing().x;
+	const BoundingBox3D domain = grids->GetBoundingBox();
+	const double lz = domain.Depth();
 
 	// Build emitter
-	auto box1 = Box3::Builder()
+	const auto box1 = Box3::Builder()
 		.WithLowerCorner({ 0, 0, 0 })
 		.WithUpperCorner({ 0.5 + 0.001, 0.75 + 0.001, 0.75 * lz + 0.001 })
 		.MakeShared();
 
-	auto box2 = Box3::Builder()
+	const auto box2 = Box3::Builder()
 		.WithLowerCorner({ 2.5 - 0.001, 0, 0.25 * lz - 0.001 })
 		.WithUpperCorner({ 3.5 + 0.001, 0.75 + 0.001, 1.5 * lz + 0.001 })
 		.MakeShared();
 
-	auto boxSet = ImplicitSurfaceSet3::Builder()
+	const auto boxSet = ImplicitSurfaceSet3::Builder()
 		.WithExplicitSurfaces({ box1, box2 })
 		.MakeShared();
 
@@ -312,29 +285,29 @@ void RunExample3(
 	solver->SetParticleEmitter(emitter);
 
 	// Build collider
-	auto cyl1 = Cylinder3::Builder()
+	const auto cyl1 = Cylinder3::Builder()
 		.WithCenter({ 1, 0.375, 0.375 })
 		.WithRadius(0.1)
 		.WithHeight(0.75)
 		.MakeShared();
 
-	auto cyl2 = Cylinder3::Builder()
+	const auto cyl2 = Cylinder3::Builder()
 		.WithCenter({ 1.5, 0.375, 0.75 })
 		.WithRadius(0.1)
 		.WithHeight(0.75)
 		.MakeShared();
 
-	auto cyl3 = Cylinder3::Builder()
+	const auto cyl3 = Cylinder3::Builder()
 		.WithCenter({ 2, 0.375, 1.125 })
 		.WithRadius(0.1)
 		.WithHeight(0.75)
 		.MakeShared();
 
-	auto cylSet = ImplicitSurfaceSet3::Builder()
+	const auto cylSet = ImplicitSurfaceSet3::Builder()
 		.WithExplicitSurfaces({ cyl1, cyl2, cyl3 })
 		.MakeShared();
 
-	auto collider = RigidBodyCollider3::Builder()
+	const auto collider = RigidBodyCollider3::Builder()
 		.WithSurface(cylSet)
 		.MakeShared();
 
@@ -349,37 +322,32 @@ void RunExample3(
 }
 
 // Dam-breaking example (PIC)
-void RunExample4(
-	const std::string& rootDir,
-	size_t resolutionX,
-	int numberOfFrames,
-	const std::string& format,
-	double fps)
+void RunExample4(const std::string& rootDir, size_t resolutionX, int numberOfFrames, const std::string& format, double fps)
 {
 	// Build solver
-	Size3 resolution{ 3 * resolutionX, 2 * resolutionX, (3 * resolutionX) / 2 };
+	const Size3 resolution{ 3 * resolutionX, 2 * resolutionX, (3 * resolutionX) / 2 };
 	auto solver = PICSolver3::Builder()
 		.WithResolution(resolution)
 		.WithDomainSizeX(3.0)
 		.MakeShared();
 
-	auto grids = solver->GetGridSystemData();
-	double dx = grids->GetGridSpacing().x;
-	BoundingBox3D domain = grids->GetBoundingBox();
-	double lz = domain.Depth();
+	const auto grids = solver->GetGridSystemData();
+	const double dx = grids->GetGridSpacing().x;
+	const BoundingBox3D domain = grids->GetBoundingBox();
+	const double lz = domain.Depth();
 
 	// Build emitter
-	auto box1 = Box3::Builder()
+	const auto box1 = Box3::Builder()
 		.WithLowerCorner({ 0, 0, 0 })
 		.WithUpperCorner({ 0.5 + 0.001, 0.75 + 0.001, 0.75 * lz + 0.001 })
 		.MakeShared();
 
-	auto box2 = Box3::Builder()
+	const auto box2 = Box3::Builder()
 		.WithLowerCorner({ 2.5 - 0.001, 0, 0.25 * lz - 0.001 })
 		.WithUpperCorner({ 3.5 + 0.001, 0.75 + 0.001, 1.5 * lz + 0.001 })
 		.MakeShared();
 
-	auto boxSet = ImplicitSurfaceSet3::Builder()
+	const auto boxSet = ImplicitSurfaceSet3::Builder()
 		.WithExplicitSurfaces({ box1, box2 })
 		.MakeShared();
 
@@ -393,29 +361,29 @@ void RunExample4(
 	solver->SetParticleEmitter(emitter);
 
 	// Build collider
-	auto cyl1 = Cylinder3::Builder()
+	const auto cyl1 = Cylinder3::Builder()
 		.WithCenter({ 1, 0.375, 0.375 })
 		.WithRadius(0.1)
 		.WithHeight(0.75)
 		.MakeShared();
 
-	auto cyl2 = Cylinder3::Builder()
+	const auto cyl2 = Cylinder3::Builder()
 		.WithCenter({ 1.5, 0.375, 0.75 })
 		.WithRadius(0.1)
 		.WithHeight(0.75)
 		.MakeShared();
 
-	auto cyl3 = Cylinder3::Builder()
+	const auto cyl3 = Cylinder3::Builder()
 		.WithCenter({ 2, 0.375, 1.125 })
 		.WithRadius(0.1)
 		.WithHeight(0.75)
 		.MakeShared();
 
-	auto cylSet = ImplicitSurfaceSet3::Builder()
+	const auto cylSet = ImplicitSurfaceSet3::Builder()
 		.WithExplicitSurfaces({ cyl1, cyl2, cyl3 })
 		.MakeShared();
 
-	auto collider = RigidBodyCollider3::Builder()
+	const auto collider = RigidBodyCollider3::Builder()
 		.WithSurface(cylSet)
 		.MakeShared();
 
@@ -430,141 +398,130 @@ void RunExample4(
 }
 
 // Dam-breaking example (APIC)
-void RunExample5(
-    const std::string& rootDir,
-    size_t resolutionX,
-    unsigned int numberOfFrames,
-    const std::string& format,
-    double fps)
+void RunExample5(const std::string& rootDir, size_t resolutionX, unsigned int numberOfFrames, const std::string& format, double fps)
 {
-    // Build solver
-    Size3 resolution{ 3 * resolutionX, 2 * resolutionX, (3 * resolutionX) / 2 };
-    auto solver = APICSolver3::Builder()
-        .WithResolution(resolution)
-        .WithDomainSizeX(3.0)
-        .MakeShared();
+	// Build solver
+	const Size3 resolution{ 3 * resolutionX, 2 * resolutionX, (3 * resolutionX) / 2 };
+	auto solver = APICSolver3::Builder()
+		.WithResolution(resolution)
+		.WithDomainSizeX(3.0)
+		.MakeShared();
 
-    auto grids = solver->GetGridSystemData();
-    double dx = grids->GetGridSpacing().x;
-    BoundingBox3D domain = grids->GetBoundingBox();
-    double lz = domain.Depth();
+	const auto grids = solver->GetGridSystemData();
+	const double dx = grids->GetGridSpacing().x;
+	const BoundingBox3D domain = grids->GetBoundingBox();
+	const double lz = domain.Depth();
 
-    // Build emitter
-    auto box1 = Box3::Builder()
-        .WithLowerCorner({ 0, 0, 0 })
-        .WithUpperCorner({ 0.5 + 0.001, 0.75 + 0.001, 0.75 * lz + 0.001 })
-        .MakeShared();
+	// Build emitter
+	const auto box1 = Box3::Builder()
+		.WithLowerCorner({ 0, 0, 0 })
+		.WithUpperCorner({ 0.5 + 0.001, 0.75 + 0.001, 0.75 * lz + 0.001 })
+		.MakeShared();
 
-    auto box2 = Box3::Builder()
-        .WithLowerCorner({ 2.5 - 0.001, 0, 0.25 * lz - 0.001 })
-        .WithUpperCorner({ 3.5 + 0.001, 0.75 + 0.001, 1.5 * lz + 0.001 })
-        .MakeShared();
+	const auto box2 = Box3::Builder()
+		.WithLowerCorner({ 2.5 - 0.001, 0, 0.25 * lz - 0.001 })
+		.WithUpperCorner({ 3.5 + 0.001, 0.75 + 0.001, 1.5 * lz + 0.001 })
+		.MakeShared();
 
-    auto boxSet = ImplicitSurfaceSet3::Builder()
-        .WithExplicitSurfaces({ box1, box2 })
-        .MakeShared();
+	const auto boxSet = ImplicitSurfaceSet3::Builder()
+		.WithExplicitSurfaces({ box1, box2 })
+		.MakeShared();
 
-    auto emitter = VolumeParticleEmitter3::Builder()
-        .WithSurface(boxSet)
-        .WithMaxRegion(domain)
-        .WithSpacing(0.5 * dx)
-        .MakeShared();
+	auto emitter = VolumeParticleEmitter3::Builder()
+		.WithSurface(boxSet)
+		.WithMaxRegion(domain)
+		.WithSpacing(0.5 * dx)
+		.MakeShared();
 
-    emitter->SetPointGenerator(std::make_shared<GridPointGenerator3>());
-    solver->SetParticleEmitter(emitter);
+	emitter->SetPointGenerator(std::make_shared<GridPointGenerator3>());
+	solver->SetParticleEmitter(emitter);
 
-    // Build collider
-    auto cyl1 = Cylinder3::Builder()
-        .WithCenter({ 1, 0.375, 0.375 })
-        .WithRadius(0.1)
-        .WithHeight(0.75)
-        .MakeShared();
+	// Build collider
+	const auto cyl1 = Cylinder3::Builder()
+		.WithCenter({ 1, 0.375, 0.375 })
+		.WithRadius(0.1)
+		.WithHeight(0.75)
+		.MakeShared();
 
-    auto cyl2 = Cylinder3::Builder()
-        .WithCenter({ 1.5, 0.375, 0.75 })
-        .WithRadius(0.1)
-        .WithHeight(0.75)
-        .MakeShared();
+	const auto cyl2 = Cylinder3::Builder()
+		.WithCenter({ 1.5, 0.375, 0.75 })
+		.WithRadius(0.1)
+		.WithHeight(0.75)
+		.MakeShared();
 
-    auto cyl3 = Cylinder3::Builder()
-        .WithCenter({ 2, 0.375, 1.125 })
-        .WithRadius(0.1)
-        .WithHeight(0.75)
-        .MakeShared();
+	const auto cyl3 = Cylinder3::Builder()
+		.WithCenter({ 2, 0.375, 1.125 })
+		.WithRadius(0.1)
+		.WithHeight(0.75)
+		.MakeShared();
 
-    auto cylSet = ImplicitSurfaceSet3::Builder()
-        .WithExplicitSurfaces({ cyl1, cyl2, cyl3 })
-        .MakeShared();
+	const auto cylSet = ImplicitSurfaceSet3::Builder()
+		.WithExplicitSurfaces({ cyl1, cyl2, cyl3 })
+		.MakeShared();
 
-    auto collider = RigidBodyCollider3::Builder()
-        .WithSurface(cylSet)
-        .MakeShared();
+	const auto collider = RigidBodyCollider3::Builder()
+		.WithSurface(cylSet)
+		.MakeShared();
 
-    solver->SetCollider(collider);
+	solver->SetCollider(collider);
 
-    // Print simulation info
-    printf("Running example 5 (dam-breaking with APIC)\n");
-    PrintInfo(solver);
+	// Print simulation info
+	printf("Running example 5 (dam-breaking with APIC)\n");
+	PrintInfo(solver);
 
-    // Run simulation
-    RunSimulation(rootDir, solver, numberOfFrames, format, fps);
+	// Run simulation
+	RunSimulation(rootDir, solver, numberOfFrames, format, fps);
 }
 
 // Sphere boundary with APIC
-void RunExample6(
-    const std::string& rootDir,
-    size_t resolutionX,
-    unsigned int numberOfFrames,
-    const std::string& format,
-    double fps)
+void RunExample6(const std::string& rootDir, size_t resolutionX, unsigned int numberOfFrames, const std::string& format, double fps)
 {
-    // Build solver
-    auto solver = APICSolver3::Builder()
-        .WithResolution({ resolutionX, resolutionX, resolutionX })
-        .WithDomainSizeX(1.0)
-        .MakeShared();
+	// Build solver
+	auto solver = APICSolver3::Builder()
+		.WithResolution({ resolutionX, resolutionX, resolutionX })
+		.WithDomainSizeX(1.0)
+		.MakeShared();
 
-    // Build collider
-    auto sphere = Sphere3::Builder()
-        .WithCenter({ 0.5, 0.5, 0.5 })
-        .WithRadius(0.4)
-        .WithIsNormalFlipped(true)
-        .MakeShared();
+	// Build collider
+	const auto sphere = Sphere3::Builder()
+		.WithCenter({ 0.5, 0.5, 0.5 })
+		.WithRadius(0.4)
+		.WithIsNormalFlipped(true)
+		.MakeShared();
 
-    auto collider = RigidBodyCollider3::Builder()
-        .WithSurface(sphere)
-        .MakeShared();
+	const auto collider = RigidBodyCollider3::Builder()
+		.WithSurface(sphere)
+		.MakeShared();
 
-    solver->SetCollider(collider);
+	solver->SetCollider(collider);
 
-    // Manually emit particles
-    std::mt19937 rng;
-    std::uniform_real_distribution<> dist(-0.1 * solver->GetGridSpacing().x, 0.1 * solver->GetGridSpacing().x);
-    BccLatticePointGenerator pointGenerator;
-    
-    pointGenerator.ForEachPoint(
-        BoundingBox3D({ 0.75, 0, 0 }, { 1, 1, 1 }), 0.5 * solver->GetGridSpacing().x,
-        [&](const Vector3D& pt) -> bool
-    {
-        Vector3D newPos = pt + Vector3D{ dist(rng), dist(rng), dist(rng) };
+	// Manually emit particles
+	std::mt19937 rng;
+	std::uniform_real_distribution<> dist(-0.1 * solver->GetGridSpacing().x, 0.1 * solver->GetGridSpacing().x);
+	const BccLatticePointGenerator pointGenerator;
+	
+	pointGenerator.ForEachPoint(
+		BoundingBox3D({ 0.75, 0, 0 }, { 1, 1, 1 }), 0.5 * solver->GetGridSpacing().x,
+		[&](const Vector3D& pt) -> bool
+	{
+		Vector3D newPos = pt + Vector3D{ dist(rng), dist(rng), dist(rng) };
 
-        if ((pt - Vector3D{ 0.5, 0.5, 0.5 }).Length() < 0.4)
-        {
-            solver->GetParticleSystemData()->AddParticle(newPos);
-        }
+		if ((pt - Vector3D{ 0.5, 0.5, 0.5 }).Length() < 0.4)
+		{
+			solver->GetParticleSystemData()->AddParticle(newPos);
+		}
 
-        return true;
-    });
+		return true;
+	});
 
-    printf("Number of particles: %zu\n",
-        solver->GetParticleSystemData()->NumberOfParticles());
+	printf("Number of particles: %zu\n", solver->GetParticleSystemData()->NumberOfParticles());
 
-    // Print simulation info
-    printf("Running example 6 (sphere boundary with APIC)\n");
-    PrintInfo(solver);
+	// Print simulation info
+	printf("Running example 6 (sphere boundary with APIC)\n");
+	PrintInfo(solver);
 
-    // Run simulation
-    RunSimulation(rootDir, solver, numberOfFrames, format, fps);
+	// Run simulation
+	RunSimulation(rootDir, solver, numberOfFrames, format, fps);
 }
 
 int main(int argc, char* argv[])
@@ -658,12 +615,12 @@ int main(int argc, char* argv[])
 	case 4:
 		RunExample4(outputDir, resolutionX, numberOfFrames, format, fps);
 		break;
-    case 5:
-        RunExample5(outputDir, resolutionX, numberOfFrames, format, fps);
-        break;
-    case 6:
-        RunExample6(outputDir, resolutionX, numberOfFrames, format, fps);
-        break;
+	case 5:
+		RunExample5(outputDir, resolutionX, numberOfFrames, format, fps);
+		break;
+	case 6:
+		RunExample6(outputDir, resolutionX, numberOfFrames, format, fps);
+		break;
 	default:
 		PrintUsage();
 		exit(EXIT_FAILURE);
