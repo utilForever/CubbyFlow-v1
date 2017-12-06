@@ -9,6 +9,7 @@
 #include <Math/SVD.h>
 #include <Matrix/Matrix3x3.h>
 #include <Point/Implicit/AnisotropicPointsToImplicit3.h>
+#include <Searcher/PointKdTreeSearcher3.h>
 #include <Solver/LevelSet/FMMLevelSetSolver3.h>
 #include <SPH/SPHSystemData3.h>
 #include <Utils/Logger.h>
@@ -53,11 +54,13 @@ namespace CubbyFlow
 		double kernelRadius,
 		double cutOffDensity,
 		double positionSmoothingFactor,
-		size_t minNumNeighbors) :
+		size_t minNumNeighbors,
+		bool isOutputSDF) :
 		m_kernelRadius(kernelRadius),
 		m_cutOffDensity(cutOffDensity),
 		m_positionSmoothingFactor(positionSmoothingFactor),
-		m_minNumNeighbors(minNumNeighbors)
+		m_minNumNeighbors(minNumNeighbors),
+		m_isOutputSDF(isOutputSDF)
 	{
 		// Do nothing
 	}
@@ -89,14 +92,17 @@ namespace CubbyFlow
 		const double r = 2.0 * h;
 
 		// Mean estimator for cov. mat.
-		ParticleSystemData3 meanParticles;
+		const auto meanNeighborSearcher = PointKdTreeSearcher3::Builder().MakeShared();
+		meanNeighborSearcher->Build(points);
+
+		SPHSystemData3 meanParticles;
 		meanParticles.AddParticles(points);
-		meanParticles.BuildNeighborSearcher(r);
-		const auto meanNeighborSearcher = meanParticles.GetNeighborSearcher();
+		meanParticles.SetNeighborSearcher(meanNeighborSearcher);
+		meanParticles.SetKernelRadius(r);
 
 		// Compute G and xMean
 		std::vector<Matrix3x3D> gs(points.size());
-		std::vector<Vector3D> xMeans(points.size());
+		Array1<Vector3D> xMeans(points.size());
 
 		ParallelFor(ZERO_SIZE, points.size(), [&](size_t i)
 		{
@@ -165,25 +171,20 @@ namespace CubbyFlow
 		});
 
 		// SPH estimator
-		SPHSystemData3 sphParticles;
-		sphParticles.AddParticles(ConstArrayAccessor1<Vector3D>(xMeans.size(), xMeans.data()));
-		sphParticles.SetKernelRadius(h);
-		sphParticles.BuildNeighborSearcher();
-		sphParticles.UpdateDensities();
-		const auto d = sphParticles.GetDensities();
-		const double m = sphParticles.GetMass();
+		meanParticles.SetKernelRadius(h);
+		meanParticles.UpdateDensities();
+		const auto d = meanParticles.GetDensities();
+		const double m = meanParticles.GetMass();
 
-		meanParticles.Resize(0);
-		meanParticles.AddParticles(ConstArrayAccessor1<Vector3D>(xMeans.size(), xMeans.data()));
-		meanParticles.BuildNeighborSearcher(r);
-		const auto meanNeighborSearcher3 = meanParticles.GetNeighborSearcher();
+		PointKdTreeSearcher3 meanNeighborSearcher3;
+		meanNeighborSearcher3.Build(xMeans);
 
 		// Compute SDF
 		auto temp = output->Clone();
 		temp->Fill([&](const Vector3D& x)
 		{
 			double sum = 0.0;
-			meanNeighborSearcher3->ForEachNearbyPoint(x, r,
+			meanNeighborSearcher3.ForEachNearbyPoint(x, r,
 				[&](size_t i, const Vector3D& neighborPosition)
 			{
 				sum += m / d[i] * W(neighborPosition - x, gs[i], gs[i].Determinant());
@@ -192,7 +193,14 @@ namespace CubbyFlow
 			return m_cutOffDensity - sum;
 		});
 
-		FMMLevelSetSolver3 solver;
-		solver.Reinitialize(*temp, std::numeric_limits<double>::max(), output);
+		if (m_isOutputSDF)
+		{
+			FMMLevelSetSolver3 solver;
+			solver.Reinitialize(*temp, std::numeric_limits<double>::max(), output);
+		}
+		else
+		{
+			temp->Swap(output);
+		}
 	}
 }
