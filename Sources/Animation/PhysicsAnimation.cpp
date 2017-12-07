@@ -8,6 +8,7 @@
 *************************************************************************/
 #include <Animation/PhysicsAnimation.h>
 #include <Utils/Logger.h>
+#include <Utils/Macros.h>
 #include <Utils/Timer.h>
 
 namespace CubbyFlow
@@ -66,6 +67,8 @@ namespace CubbyFlow
 
 	unsigned int PhysicsAnimation::NumberOfSubTimeSteps(double timeIntervalInSeconds) const
 	{
+		UNUSED_VARIABLE(timeIntervalInSeconds);
+
 		// Returns number of fixed sub-timesteps by default
 		return m_numberOfFixedSubTimeSteps;
 	}
