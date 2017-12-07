@@ -19,10 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="pystring\pystring.h" />
+    <ClInclude Include="pystring.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="pystring\pystring.cpp" />
+    <ClCompile Include="pystring.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{A581EA54-58DB-4AF7-972A-202927F26BD0}</ProjectGuid>

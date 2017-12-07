@@ -11,12 +11,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="pystring\pystring.h">
+    <ClInclude Include="pystring.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="pystring\pystring.cpp">
+    <ClCompile Include="pystring.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
