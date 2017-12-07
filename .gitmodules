@@ -4,3 +4,6 @@
 [submodule "Libraries/pystring/pystring"]
 	path = Libraries/pystring/pystring
 	url = http://www.github.com/imageworks/pystring
+[submodule "Libraries/googletest"]
+	path = Libraries/googletest
+	url = http://www.github.com/google/googletest
