@@ -1,4 +1,3 @@
-
 #
 # Platform and architecture setup
 #
@@ -12,17 +11,15 @@ if(CMAKE_SIZEOF_VOID_P EQUAL 8)
     set(X64 ON)
 endif()
 
-
 #
 # Project options
 #
 
 set(DEFAULT_PROJECT_OPTIONS
-    CXX_STANDARD              17 # Not available before CMake 3.1; see below for manual command line argument addition
+    CXX_STANDARD              17 # Not available before CMake 3.8.2; see below for manual command line argument addition
     LINKER_LANGUAGE           "CXX"
     POSITION_INDEPENDENT_CODE ON
 )
-
 
 #
 # Include directories
@@ -30,13 +27,11 @@ set(DEFAULT_PROJECT_OPTIONS
 
 set(DEFAULT_INCLUDE_DIRECTORIES)
 
-
 #
 # Libraries
 #
 
 set(DEFAULT_LIBRARIES)
-
 
 #
 # Compile definitions
@@ -54,7 +49,6 @@ if (CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
     )
 endif ()
 
-
 #
 # Compile options
 #
@@ -63,19 +57,25 @@ set(DEFAULT_COMPILE_OPTIONS)
 
 # MSVC compiler options
 if (CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
+    # remove default warning level from CMAKE_CXX_FLAGS
+    string (REGEX REPLACE "/W[0-4]" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+endif()
+
+# MSVC compiler options
+if (CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
     set(DEFAULT_COMPILE_OPTIONS ${DEFAULT_COMPILE_OPTIONS}
         /MP           # -> build with multiple processes
         /W4           # -> warning level 4
         /WX           # -> treat warnings as errors
 
-        # /wd4251       # -> disable warning: 'identifier': class 'type' needs to have dll-interface to be used by clients of class 'type2'
-        # /wd4592       # -> disable warning: 'identifier': symbol will be dynamically initialized (implementation limitation)
+        # /wd4251     # -> disable warning: 'identifier': class 'type' needs to have dll-interface to be used by clients of class 'type2'
+        # /wd4592     # -> disable warning: 'identifier': symbol will be dynamically initialized (implementation limitation)
         # /wd4201     # -> disable warning: nonstandard extension used: nameless struct/union (caused by GLM)
         # /wd4127     # -> disable warning: conditional expression is constant (caused by Qt)
-        /wd4717 # -> disable warning:  recursive on all control paths, function will cause runtime stack overflow (wrong warning)
+        /wd4717       # -> disable warning: recursive on all control paths, function will cause runtime stack overflow (wrong warning)
 
         #$<$<CONFIG:Debug>:
-        #/RTCc         # -> value is assigned to a smaller data type and results in a data loss
+        #/RTCc        # -> value is assigned to a smaller data type and results in a data loss
         #>
 
         $<$<CONFIG:Release>:
@@ -94,14 +94,8 @@ if (CMAKE_CXX_COMPILER_ID MATCHES "GNU" OR CMAKE_CXX_COMPILER_ID MATCHES "Clang"
     set(DEFAULT_COMPILE_OPTIONS ${DEFAULT_COMPILE_OPTIONS}
         -Wall
         -Werror
-
-        # Required for CMake < 3.1; should be removed if minimum required CMake version is raised.
-        $<$<VERSION_LESS:${CMAKE_VERSION},3.1>:
-            -std=c++11
-        >
     )
 endif ()
-
 
 #
 # Linker options
