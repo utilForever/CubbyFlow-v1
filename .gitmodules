@@ -1,5 +1,5 @@
-[submodule "Libraries/gtest/googletest"]
-	path = Libraries/gtest/googletest
+[submodule "Libraries/googletest"]
+	path = Libraries/googletest
 	url = http://www.github.com/google/googletest
 [submodule "Libraries/cnpy/cnpy"]
 	path = Libraries/cnpy/cnpy
