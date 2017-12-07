@@ -25,4 +25,8 @@
 typedef SSIZE_T ssize_t;
 #endif
 
+#ifndef UNUSED_VARIABLE
+#	define UNUSED_VARIABLE(x) ((void)x)
+#endif
+
 #endif
