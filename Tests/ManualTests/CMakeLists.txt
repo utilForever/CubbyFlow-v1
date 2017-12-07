@@ -24,6 +24,7 @@ if (CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
         /wd4018       # -> disable warning: signed/unsigned mismatch (because of cnpy)
         /wd4100       # -> disable warning: unreferenced formal parameter (because of cnpy)
         /wd4310       # -> disable warning: cast truncates constant value (because of cnpy)
+        /wd4996       # -> disable warning: non-Standard std::tr1 namespace and TR1-only machinery (because of gtest)
         )
     add_definitions(-D_USE_MATH_DEFINES) # for M_PI
 endif ()
