@@ -19,13 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="cnpy\cnpy.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="cnpy\cnpy.h" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cnpy.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="cnpy.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{2FB522FB-8504-4522-89CB-8D7F8969E4F4}</ProjectGuid>
