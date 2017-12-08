@@ -37,6 +37,8 @@ namespace CubbyFlow
 
 	Vector2D Plane2::ClosestNormalLocal(const Vector2D& otherPoint) const
 	{
+		UNUSED_VARIABLE(otherPoint);
+
 		return normal;
 	}
 

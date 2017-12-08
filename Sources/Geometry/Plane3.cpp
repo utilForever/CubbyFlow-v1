@@ -45,6 +45,8 @@ namespace CubbyFlow
 
 	Vector3D Plane3::ClosestNormalLocal(const Vector3D& otherPoint) const
 	{
+		UNUSED_VARIABLE(otherPoint);
+
 		return normal;
 	}
 
