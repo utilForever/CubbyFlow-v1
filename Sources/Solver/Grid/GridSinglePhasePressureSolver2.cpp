@@ -95,6 +95,9 @@ namespace CubbyFlow
 		const VectorField2& boundaryVelocity,
 		const ScalarField2& fluidSDF)
 	{
+		UNUSED_VARIABLE(timeIntervalInSeconds);
+		UNUSED_VARIABLE(boundaryVelocity);
+
 		const auto pos = input.CellCenterPosition();
 		
 		BuildMarkers(input.Resolution(), pos, boundarySDF, fluidSDF);
