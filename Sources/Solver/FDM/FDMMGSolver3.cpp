@@ -34,6 +34,9 @@ namespace CubbyFlow
 			m_mgParams.relaxFunc = [sorFactor](const FDMMatrix3& A, const FDMVector3& b,
 				unsigned int numberOfIterations, double maxTolerance, FDMVector3* x, FDMVector3* buffer)
 			{
+				UNUSED_VARIABLE(maxTolerance);
+				UNUSED_VARIABLE(buffer);
+
 				for (unsigned int iter = 0; iter < numberOfIterations; ++iter)
 				{
 					FDMGaussSeidelSolver3::RelaxRedBlack(A, b, sorFactor, x);
@@ -45,6 +48,9 @@ namespace CubbyFlow
 			m_mgParams.relaxFunc = [sorFactor](const FDMMatrix3& A, const FDMVector3& b,
 				unsigned int numberOfIterations, double maxTolerance, FDMVector3* x, FDMVector3* buffer)
 			{
+				UNUSED_VARIABLE(maxTolerance);
+				UNUSED_VARIABLE(buffer);
+
 				for (unsigned int iter = 0; iter < numberOfIterations; ++iter)
 				{
 					FDMGaussSeidelSolver3::Relax(A, b, sorFactor, x);
@@ -75,6 +81,8 @@ namespace CubbyFlow
 
 	bool FDMMGSolver3::Solve(FDMLinearSystem3* system)
 	{
+		UNUSED_VARIABLE(system);
+
 		return false;
 	}
 
