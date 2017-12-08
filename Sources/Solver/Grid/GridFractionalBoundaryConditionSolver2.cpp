@@ -246,6 +246,8 @@ namespace CubbyFlow
 			m_colliderVel = CustomVectorField2::Builder()
 				.WithFunction([](const Vector2D& x)
 			{
+				UNUSED_VARIABLE(x);
+
 				return Vector2D();
 			})
 				.WithDerivativeResolution(gridSpacing.x)

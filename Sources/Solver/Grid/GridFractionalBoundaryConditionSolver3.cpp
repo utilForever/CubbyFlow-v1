@@ -335,6 +335,8 @@ namespace CubbyFlow
 			m_colliderVel = CustomVectorField3::Builder()
 				.WithFunction([](const Vector3D& x)
 			{
+				UNUSED_VARIABLE(x);
+
 				return Vector3D();
 			})
 				.WithDerivativeResolution(GridSpacing.x)
