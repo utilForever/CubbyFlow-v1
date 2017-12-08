@@ -342,6 +342,8 @@ namespace CubbyFlow
 		const VectorField3& boundaryVelocity,
 		const ScalarField3& fluidSDF)
 	{
+		UNUSED_VARIABLE(timeIntervalInSeconds);
+
 		BuildWeights(input, boundarySDF, boundaryVelocity, fluidSDF);
 		BuildSystem(input);
 
