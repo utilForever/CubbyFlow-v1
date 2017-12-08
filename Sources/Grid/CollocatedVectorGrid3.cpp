@@ -178,6 +178,10 @@ namespace CubbyFlow
 		const Vector3D& origin,
 		const Vector3D& initialValue)
 	{
+		UNUSED_VARIABLE(resolution);
+		UNUSED_VARIABLE(gridSpacing);
+		UNUSED_VARIABLE(origin);
+
 		m_data.Resize(GetDataSize(), initialValue);
 		ResetSampler();
 	}

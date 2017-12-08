@@ -163,6 +163,10 @@ namespace CubbyFlow
 		const Vector2D& origin,
 		const Vector2D& initialValue)
 	{
+		UNUSED_VARIABLE(resolution);
+		UNUSED_VARIABLE(gridSpacing);
+		UNUSED_VARIABLE(origin);
+
 		m_data.Resize(GetDataSize(), initialValue);
 		ResetSampler();
 	}
