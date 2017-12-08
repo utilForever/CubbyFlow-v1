@@ -242,12 +242,12 @@ namespace CubbyFlow
 
 	void GridFluidSolver2::OnBeginAdvanceTimeStep(double timeIntervalInSeconds)
 	{
-		// Do nothing
+		UNUSED_VARIABLE(timeIntervalInSeconds);
 	}
 
 	void GridFluidSolver2::OnEndAdvanceTimeStep(double timeIntervalInSeconds)
 	{
-		// Do nothing
+		UNUSED_VARIABLE(timeIntervalInSeconds);
 	}
 
 	void GridFluidSolver2::ComputeExternalForces(double timeIntervalInSeconds)
