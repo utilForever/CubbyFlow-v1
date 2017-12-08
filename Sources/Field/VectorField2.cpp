@@ -22,11 +22,15 @@ namespace CubbyFlow
 
 	double VectorField2::Divergence(const Vector2D& x) const
 	{
+		UNUSED_VARIABLE(x);
+
 		return 0.0;
 	}
 
 	double VectorField2::Curl(const Vector2D& x) const
 	{
+		UNUSED_VARIABLE(x);
+
 		return 0.0;
 	}
 
