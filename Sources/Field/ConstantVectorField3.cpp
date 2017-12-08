@@ -7,6 +7,7 @@
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <Field/ConstantVectorField3.h>
+#include <Utils/Macros.h>
 
 namespace CubbyFlow
 {
@@ -16,9 +17,10 @@ namespace CubbyFlow
 		// Do nothing
 	}
 
-	// TODO: x is unused variable.
 	Vector3D ConstantVectorField3::Sample(const Vector3D& x) const
 	{
+		UNUSED_VARIABLE(x);
+
 		return m_value;
 	}
 
