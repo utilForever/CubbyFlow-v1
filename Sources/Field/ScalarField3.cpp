@@ -22,11 +22,15 @@ namespace CubbyFlow
 
 	Vector3D ScalarField3::Gradient(const Vector3D& x) const
 	{
+		UNUSED_VARIABLE(x);
+
 		return Vector3D(0, 0, 0);
 	}
 
 	double ScalarField3::Laplacian(const Vector3D& x) const
 	{
+		UNUSED_VARIABLE(x);
+
 		return 0.0;
 	}
 

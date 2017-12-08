@@ -22,11 +22,15 @@ namespace CubbyFlow
 
 	Vector2D ScalarField2::Gradient(const Vector2D& x) const
 	{
+		UNUSED_VARIABLE(x);
+
 		return Vector2D(0, 0);
 	}
 
 	double ScalarField2::Laplacian(const Vector2D& x) const
 	{
+		UNUSED_VARIABLE(x);
+
 		return 0.0;
 	}
 
