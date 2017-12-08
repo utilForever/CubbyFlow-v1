@@ -11,9 +11,6 @@
 
 #include <Particle/ParticleSystemData3.h>
 
-#include <functional>
-#include <memory>
-
 namespace CubbyFlow
 {
 	//!

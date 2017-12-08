@@ -11,7 +11,6 @@
 #include <Grid/FaceCenteredGrid2.h>
 #include <LevelSet/LevelSetUtils.h>
 #include <Surface/Implicit/SurfaceToImplicit2.h>
-#include <Utils/Macros.h>
 
 namespace CubbyFlow
 {
@@ -70,9 +69,6 @@ namespace CubbyFlow
 
 	void VolumeGridEmitter2::OnUpdate(double currentTimeInSeconds, double timeIntervalInSeconds)
 	{
-		UNUSED_VARIABLE(currentTimeInSeconds);
-		UNUSED_VARIABLE(timeIntervalInSeconds);
-
 		if (m_hasEmitted && m_isOneShot)
 		{
 			return;

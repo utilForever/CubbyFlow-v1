@@ -9,17 +9,11 @@
 #ifndef CUBBYFLOW_VOLUME_PARTICLE_EMITTER3_H
 #define CUBBYFLOW_VOLUME_PARTICLE_EMITTER3_H
 
-#include <Array/Array1.h>
-#include <BoundingBox/BoundingBox3.h>
 #include <Emitter/ParticleEmitter3.h>
-#include <Particle/ParticleSystemData3.h>
 #include <PointGenerator/PointGenerator3.h>
-#include <Surface/Surface3.h>
 #include <Surface/Implicit/ImplicitSurface3.h>
-#include <Vector/Vector3.h>
 
 #include <random>
-#include <memory>
 
 namespace CubbyFlow
 {

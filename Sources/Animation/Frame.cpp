@@ -7,7 +7,6 @@
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <Animation/Frame.h>
-#include <Utils/Macros.h>
 
 namespace CubbyFlow
 {
@@ -45,8 +44,6 @@ namespace CubbyFlow
 
 	Frame Frame::operator++(int i)
 	{
-		UNUSED_VARIABLE(i);
-
 		Frame result = *this;
 		Advance();
 		return result;

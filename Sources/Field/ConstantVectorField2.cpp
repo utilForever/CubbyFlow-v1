@@ -7,7 +7,6 @@
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <Field/ConstantVectorField2.h>
-#include <Utils/Macros.h>
 
 namespace CubbyFlow
 {
@@ -20,8 +19,6 @@ namespace CubbyFlow
 	// TODO: x is unused variable.
 	Vector2D ConstantVectorField2::Sample(const Vector2D& x) const
 	{
-		UNUSED_VARIABLE(x);
-
 		return m_value;
 	}
 
