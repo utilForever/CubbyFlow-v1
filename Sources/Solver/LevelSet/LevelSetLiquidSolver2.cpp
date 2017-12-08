@@ -82,6 +82,8 @@ namespace CubbyFlow
 
 	void LevelSetLiquidSolver2::OnBeginAdvanceTimeStep(double timeIntervalInSeconds)
 	{
+		UNUSED_VARIABLE(timeIntervalInSeconds);
+
 		// Measure current volume
 		m_lastKnownVolume = ComputeVolume();
 
