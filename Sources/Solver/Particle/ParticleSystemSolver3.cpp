@@ -141,6 +141,8 @@ namespace CubbyFlow
 
 	void ParticleSystemSolver3::AccumulateForces(double timeStepInSeconds)
 	{
+		UNUSED_VARIABLE(timeStepInSeconds);
+
 		// Add external forces
 		AccumulateExternalForces();
 	}
@@ -188,12 +190,12 @@ namespace CubbyFlow
 
 	void ParticleSystemSolver3::OnBeginAdvanceTimeStep(double timeStepInSeconds)
 	{
-		// Do nothing
+		UNUSED_VARIABLE(timeStepInSeconds);
 	}
 
 	void ParticleSystemSolver3::OnEndAdvanceTimeStep(double timeStepInSeconds)
 	{
-		// Do nothing
+		UNUSED_VARIABLE(timeStepInSeconds);
 	}
 
 	void ParticleSystemSolver3::ResolveCollision()
