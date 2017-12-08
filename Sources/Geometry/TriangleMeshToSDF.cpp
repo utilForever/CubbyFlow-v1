@@ -30,10 +30,18 @@
 // SOFTWARE.
 
 #include <Array/Array3.h>
-#include <Array/ArrayUtils.h>
+#include <Geometry/Triangle3.h>
+#include <Geometry/TriangleMesh3.h>
 #include <Geometry/TriangleMeshToSDF.h>
+#include <Grid/ScalarGrid3.h>
+#include <Point/Point3.h>
+#include <Size/Size3.h>
+#include <Utils/Constants.h>
+#include <Utils/Macros.h>
+#include <Vector/Vector3.h>
 
 #include <algorithm>
+#include <cassert>
 
 namespace CubbyFlow
 {
