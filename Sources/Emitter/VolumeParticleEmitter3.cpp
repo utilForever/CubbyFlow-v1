@@ -41,6 +41,9 @@ namespace CubbyFlow
 
 	void VolumeParticleEmitter3::OnUpdate(double currentTimeInSeconds, double timeIntervalInSeconds)
 	{
+		UNUSED_VARIABLE(currentTimeInSeconds);
+		UNUSED_VARIABLE(timeIntervalInSeconds);
+
 		auto particles = Target();
 
 		if (particles == nullptr)
