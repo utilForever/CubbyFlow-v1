@@ -7,6 +7,7 @@
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <Emitter/ParticleEmitter2.h>
+#include <Utils/Macros.h>
 
 namespace CubbyFlow
 {
@@ -45,7 +46,7 @@ namespace CubbyFlow
 	// TODO: particles is unused variable.
 	void ParticleEmitter2::OnSetTarget(const ParticleSystemData2Ptr& particles)
 	{
-		// Do nothing
+		UNUSED_VARIABLE(particles);
 	}
 
 	void ParticleEmitter2::SetOnBeginUpdateCallback(const OnBeginUpdateCallback& callback)
