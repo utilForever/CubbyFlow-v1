@@ -27,7 +27,11 @@ namespace CubbyFlow
 		CollocatedVectorGrid2* target,
 		const ScalarField2& boundarySDF)
 	{
-		// Do nothing
+		UNUSED_VARIABLE(source);
+		UNUSED_VARIABLE(flow);
+		UNUSED_VARIABLE(dt);
+		UNUSED_VARIABLE(target);
+		UNUSED_VARIABLE(boundarySDF);
 	}
 
 	void AdvectionSolver2::Advect(
@@ -37,6 +41,10 @@ namespace CubbyFlow
 		FaceCenteredGrid2* target,
 		const ScalarField2& boundarySDF)
 	{
-		// Do nothing
+		UNUSED_VARIABLE(source);
+		UNUSED_VARIABLE(flow);
+		UNUSED_VARIABLE(dt);
+		UNUSED_VARIABLE(target);
+		UNUSED_VARIABLE(boundarySDF);
 	}
 }
