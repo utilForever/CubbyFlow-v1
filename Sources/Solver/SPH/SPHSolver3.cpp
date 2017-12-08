@@ -135,6 +135,8 @@ namespace CubbyFlow
 
 	void SPHSolver3::OnBeginAdvanceTimeStep(double timeStepInSeconds)
 	{
+		UNUSED_VARIABLE(timeStepInSeconds);
+
 		auto particles = GetSPHSystemData();
 
 		Timer timer;
@@ -174,6 +176,8 @@ namespace CubbyFlow
 
 	void SPHSolver3::AccumulatePressureForce(double timeStepInSeconds)
 	{
+		UNUSED_VARIABLE(timeStepInSeconds);
+
 		auto particles = GetSPHSystemData();
 		auto x = particles->GetPositions();
 		auto d = particles->GetDensities();
