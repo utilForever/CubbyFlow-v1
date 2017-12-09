@@ -1,7 +1,7 @@
 #include "pch.h"
 
 #include <Collider/RigidBodyCollider2.h>
-#include <Collider/RigidbodyCollider3.h>
+#include <Collider/RigidBodyCollider3.h>
 #include <Emitter/VolumeGridEmitter2.h>
 #include <Emitter/VolumeGridEmitter3.h>
 #include <Geometry/Box2.h>
