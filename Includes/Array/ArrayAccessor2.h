@@ -11,7 +11,7 @@
 
 #include <Array/ArrayAccessor.h>
 
-#include <SIze/Size2.h>
+#include <Size/Size2.h>
 
 namespace CubbyFlow
 {
