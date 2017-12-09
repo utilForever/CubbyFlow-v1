@@ -12,6 +12,7 @@
 #include <Point/Point2.h>
 
 #include <cassert>
+#include <cmath>
 
 namespace CubbyFlow
 {

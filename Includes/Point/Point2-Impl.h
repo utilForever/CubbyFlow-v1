@@ -12,6 +12,7 @@
 #include <Math/MathUtils.h>
 
 #include <cassert>
+#include <cmath>
 
 namespace CubbyFlow
 {
