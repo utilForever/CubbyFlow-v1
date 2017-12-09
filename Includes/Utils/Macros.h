@@ -23,6 +23,8 @@
 #ifdef CUBBYFLOW_WINDOWS
 #include <BaseTsd.h>
 typedef SSIZE_T ssize_t;
+#else
+#include <sys/types.h>
 #endif
 
 #ifndef UNUSED_VARIABLE
