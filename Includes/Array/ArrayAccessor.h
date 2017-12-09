@@ -9,6 +9,8 @@
 #ifndef CUBBYFLOW_ARRAY_ACCESSOR_H
 #define CUBBYFLOW_ARRAY_ACCESSOR_H
 
+#include <cstddef>
+
 namespace CubbyFlow
 {
 	//!
