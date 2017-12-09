@@ -14,6 +14,8 @@
 #include <Utils/Serialization.h>
 #include <Vector/Vector3.h>
 
+#include <string>
+
 namespace CubbyFlow
 {
 	//!
