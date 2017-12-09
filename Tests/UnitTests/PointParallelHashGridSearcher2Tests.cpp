@@ -121,6 +121,8 @@ TEST(PointParallelHashGridSearcher2, Serialization)
 		Vector2D(), std::numeric_limits<double>::max(),
 		[&](size_t i, const Vector2D& pt)
 	{
+		UNUSED_VARIABLE(i);
+
 		tmp.push_back(pt);
 	});
 
@@ -128,6 +130,8 @@ TEST(PointParallelHashGridSearcher2, Serialization)
 		Vector2D(),  std::numeric_limits<double>::max(),
 		[&](size_t i, const Vector2D& pt)
 	{
+		UNUSED_VARIABLE(i);
+
 		tmp2.push_back(pt);
 	});
 
