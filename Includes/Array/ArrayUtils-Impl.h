@@ -231,7 +231,7 @@ namespace CubbyFlow
 				auto val = data(i, j);
 
 				// TODO: Hack to handle char and unsigned char
-				if (sizeof(decltype(val)) == 1)
+				if constexpr (sizeof(decltype(val)) == 1)
 				{
 					*stream << static_cast<int>(val);
 				}
