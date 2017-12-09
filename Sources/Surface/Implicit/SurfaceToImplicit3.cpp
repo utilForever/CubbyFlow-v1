@@ -97,7 +97,7 @@ namespace CubbyFlow
 		return SurfaceToImplicit3(m_surface, m_transform, m_isNormalFlipped);
 	}
 
-	SurfaceToImplicit3 SurfaceToImplicit3::Builder::MakeShared() const
+	SurfaceToImplicit3Ptr SurfaceToImplicit3::Builder::MakeShared() const
 	{
 		return std::shared_ptr<SurfaceToImplicit3>(
 			new SurfaceToImplicit3(m_surface, m_transform, m_isNormalFlipped),

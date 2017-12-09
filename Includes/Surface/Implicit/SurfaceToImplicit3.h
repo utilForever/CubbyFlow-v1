@@ -79,7 +79,7 @@ namespace CubbyFlow
 		SurfaceToImplicit3 Build() const;
 
 		//! Builds shared pointer of SurfaceToImplicit3 instance.
-		SurfaceToImplicit3 MakeShared() const;
+		SurfaceToImplicit3Ptr MakeShared() const;
 	private:
 		Surface3Ptr m_surface;
 	};
