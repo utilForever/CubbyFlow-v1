@@ -9,6 +9,8 @@
 #ifndef CUBBYFLOW_MATH_UTILS_IMPL_H
 #define CUBBYFLOW_MATH_UTILS_IMPL_H
 
+#include <Utils/Constants.h>
+
 #include <algorithm>
 
 namespace CubbyFlow

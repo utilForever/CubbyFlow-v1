@@ -11,6 +11,9 @@
 
 #include <Utils/Macros.h>
 
+#include <cstddef>
+#include <limits>
+
 namespace CubbyFlow
 {
 	//!
