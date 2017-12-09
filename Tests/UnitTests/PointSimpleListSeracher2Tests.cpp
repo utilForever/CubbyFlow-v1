@@ -75,6 +75,8 @@ TEST(PointSimpleListSearcher2, Serialize)
 		Vector2D(0, 0), std::numeric_limits<double>::max(),
 		[&](size_t i, const Vector2D& pt)
 	{
+		UNUSED_VARIABLE(i);
+
 		result.push_back(pt);
 	});
 

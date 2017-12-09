@@ -75,6 +75,8 @@ TEST(PointSimpleListSearcher3, Serialize)
 		Vector3D(), std::sqrt(std::numeric_limits<double>::max()),
 		[&](size_t i, const Vector3D& pt)
 	{
+		UNUSED_VARIABLE(i);
+
 		result.push_back(pt);
 	});
 
