@@ -3,7 +3,7 @@
 <img src="https://github.com/utilForever/CubbyFlow/blob/master/Logo.png" align="center" />
 
 CubbyFlow is voxel-based fluid simulation engine for computer games based on [Jet framework](https://github.com/doyubkim/fluid-engine-dev) that was created by [Doyub Kim](https://twitter.com/doyub).
-The code is built on C++17 and can be compiled with commonly available compilers such as VC++. Currently tested platforms are Windows (Visual Studio 2017).
+The code is built on C++17 and can be compiled with commonly available compilers such as g++, clang++, or Microsoft Visual Studio. CubbyFlow currently supports macOS (10.12.6 or later), Ubuntu (17.04 or later), and Windows (Visual Studio 2017 or later). Other untested platforms that support C++17 also should be able to build Jet.
 
 [![License](https://img.shields.io/badge/Licence-MIT-blue.svg)](https://github.com/utilForever/CubbyFlow/blob/master/LICENSE)
 
@@ -31,7 +31,38 @@ The code is built on C++17 and can be compiled with commonly available compilers
 
 Every simulator has both 2-D and 3-D implementations.
 
-## How to Build
+## Quick Start
+
+You will need CMake to build the code. If you're using Windows, you need Visual Studio 2017 in addition to CMake.
+
+First, clone the code:
+
+```
+git clone https://github.com/utilForever/CubbyFlow.git --recursive
+cd CubbyFlow
+```
+
+### C++ API
+
+For macOS or Linux:
+
+```
+mkdir build && cd build && cmake .. && make
+```
+
+For Windows:
+
+```
+mkdir build && cd build && cmake .. -G"Visual Studio 15 2017 Win64" && MSBuild CubbyFlow.sln /p:Configuration=Release
+```
+
+Now run some examples, such as:
+
+```
+bin/HybridLiquidSim
+```
+
+### More Instructions of Building the Code
 
 To learn how to build, test, and install the SDK, please check out [INSTALL.md](https://github.com/utilForever/CubbyFlow/blob/master/INSTALL.md).
 
