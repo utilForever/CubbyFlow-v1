@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.63</a>
+                    <a class="navbar-brand">CubbyFlow v0.64</a>
                 </div>
             </div>
         </nav>
@@ -96,9 +96,9 @@ Inheritance diagram for CubbyFlow::AnisotropicPointsToImplicit3:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a47f4d74ff9d3dd863fa44f75a7a27e7d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_anisotropic_points_to_implicit3.html#a47f4d74ff9d3dd863fa44f75a7a27e7d">AnisotropicPointsToImplicit3</a> (double kernelRadius=1.0, double cutOffDensity=0.5, double positionSmoothingFactor=0.5, size_t minNumNeighbors=25)</td></tr>
-<tr class="memdesc:a47f4d74ff9d3dd863fa44f75a7a27e7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the converter with given parameters.  <a href="#a47f4d74ff9d3dd863fa44f75a7a27e7d">More...</a><br /></td></tr>
-<tr class="separator:a47f4d74ff9d3dd863fa44f75a7a27e7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad39458ab80580d228677f741e6314098"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_anisotropic_points_to_implicit3.html#ad39458ab80580d228677f741e6314098">AnisotropicPointsToImplicit3</a> (double kernelRadius=1.0, double cutOffDensity=0.5, double positionSmoothingFactor=0.5, size_t minNumNeighbors=25, bool isOutputSDF=true)</td></tr>
+<tr class="memdesc:ad39458ab80580d228677f741e6314098"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the converter with given parameters.  <a href="#ad39458ab80580d228677f741e6314098">More...</a><br /></td></tr>
+<tr class="separator:ad39458ab80580d228677f741e6314098"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a115faa74c181fea146918605f94b0905"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_anisotropic_points_to_implicit3.html#a115faa74c181fea146918605f94b0905">Convert</a> (const <a class="el" href="namespace_cubby_flow.html#a54017cf5da78c67bd485460e49536fee">ConstArrayAccessor1</a>&lt; <a class="el" href="namespace_cubby_flow.html#a7a0f165a2c76a196c9e23978ff7f2dcb">Vector3D</a> &gt; &amp;points, <a class="el" href="class_cubby_flow_1_1_scalar_grid3.html">ScalarGrid3</a> *output) const override</td></tr>
 <tr class="memdesc:a115faa74c181fea146918605f94b0905"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the given points to implicit surface scalar field.  <a href="#a115faa74c181fea146918605f94b0905">More...</a><br /></td></tr>
 <tr class="separator:a115faa74c181fea146918605f94b0905"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -116,8 +116,8 @@ Public Member Functions</h2></td></tr>
 <dl class="section see"><dt>See also</dt><dd>Yu, Jihun, and Greg Turk. "Reconstructing surfaces of particle-based
      fluids using anisotropic kernels." ACM Transactions on Graphics (TOG) 32.1 (2013): 5. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a47f4d74ff9d3dd863fa44f75a7a27e7d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a47f4d74ff9d3dd863fa44f75a7a27e7d">&#9670;&nbsp;</a></span>AnisotropicPointsToImplicit3()</h2>
+<a id="ad39458ab80580d228677f741e6314098"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad39458ab80580d228677f741e6314098">&#9670;&nbsp;</a></span>AnisotropicPointsToImplicit3()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -144,7 +144,13 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>minNumNeighbors</em> = <code>25</code>&#160;</td>
+          <td class="paramname"><em>minNumNeighbors</em> = <code>25</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isOutputSDF</em> = <code>true</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -220,7 +226,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 20 2017 00:44:13 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Dec 9 2017 16:13:54 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.63</a>
+                    <a class="navbar-brand">CubbyFlow v0.64</a>
                 </div>
             </div>
         </nav>
@@ -114,6 +114,9 @@ $(function() {
 , <a class="el" href="class_cubby_flow_1_1_sphere2.html#a3ba58a5f24749a8b77a0168bc93f0c34">CubbyFlow::Sphere2</a>
 , <a class="el" href="class_cubby_flow_1_1_sphere3.html#ab750f634c13ec7c060e22800acdf379f">CubbyFlow::Sphere3</a>
 </li>
+<li>child
+: <a class="el" href="struct_cubby_flow_1_1_kd_tree_1_1_node.html#a6eb1e4b0c9990d655843772bbdd265e0">CubbyFlow::KdTree&lt; T, K &gt;::Node</a>
+</li>
 <li>Clamp()
 : <a class="el" href="class_cubby_flow_1_1_bounding_box_3_01_t_00_012_01_4.html#ae186aaada0e0787577a4454cac0978d6">CubbyFlow::BoundingBox&lt; T, 2 &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_bounding_box_3_01_t_00_013_01_4.html#a7d9746f27e45ef99c97d126b4c891dc4">CubbyFlow::BoundingBox&lt; T, 3 &gt;</a>
@@ -145,6 +148,8 @@ $(function() {
 , <a class="el" href="class_cubby_flow_1_1_face_centered_grid3.html#ac33593e29c8819bee2e54482eb7d1e9d">CubbyFlow::FaceCenteredGrid3</a>
 , <a class="el" href="class_cubby_flow_1_1_point_hash_grid_searcher2.html#a93a86c397648173efe6e96f804a29de8">CubbyFlow::PointHashGridSearcher2</a>
 , <a class="el" href="class_cubby_flow_1_1_point_hash_grid_searcher3.html#a91678d7dc1f6e20ef328639d7da76645">CubbyFlow::PointHashGridSearcher3</a>
+, <a class="el" href="class_cubby_flow_1_1_point_kd_tree_searcher2.html#ad6600a8a9d1498e2367ba2f504e4a09a">CubbyFlow::PointKdTreeSearcher2</a>
+, <a class="el" href="class_cubby_flow_1_1_point_kd_tree_searcher3.html#aecd8a03ea8d36297eb1d58e27a2aa797">CubbyFlow::PointKdTreeSearcher3</a>
 , <a class="el" href="class_cubby_flow_1_1_point_neighbor_searcher2.html#a2d195b92227613a85bef0222a3548f43">CubbyFlow::PointNeighborSearcher2</a>
 , <a class="el" href="class_cubby_flow_1_1_point_neighbor_searcher3.html#a546d81870395e673875d1825fd395427">CubbyFlow::PointNeighborSearcher3</a>
 , <a class="el" href="class_cubby_flow_1_1_point_parallel_hash_grid_searcher2.html#a134298cbb48247fd350965ad36f10068">CubbyFlow::PointParallelHashGridSearcher2</a>
@@ -287,7 +292,7 @@ $(function() {
 : <a class="el" href="class_cubby_flow_1_1_matrix_c_s_r.html#a2d293d5c33cd210d74aa502f8641d547">CubbyFlow::MatrixCSR&lt; T &gt;</a>
 </li>
 <li>Compress()
-: <a class="el" href="class_cubby_flow_1_1_matrix_c_s_r.html#a01346b4c17db925170a940fdd875d56c">CubbyFlow::MatrixCSR&lt; T &gt;</a>
+: <a class="el" href="class_cubby_flow_1_1_matrix_c_s_r.html#a15898935802836af1d88eda1acdfc14c">CubbyFlow::MatrixCSR&lt; T &gt;</a>
 </li>
 <li>ComputeAdvection()
 : <a class="el" href="class_cubby_flow_1_1_grid_fluid_solver2.html#acf7193983844c79cc2d6156f3c91e356">CubbyFlow::GridFluidSolver2</a>
@@ -346,8 +351,8 @@ $(function() {
 </li>
 <li>ConstArrayAccessor()
 : <a class="el" href="class_cubby_flow_1_1_const_array_accessor_3_01_t_00_011_01_4.html#a81c5e38f743180233fd248fe24f9def8">CubbyFlow::ConstArrayAccessor&lt; T, 1 &gt;</a>
-, <a class="el" href="class_cubby_flow_1_1_const_array_accessor_3_01_t_00_012_01_4.html#abc4653f41199490859031e0f58e21e94">CubbyFlow::ConstArrayAccessor&lt; T, 2 &gt;</a>
-, <a class="el" href="class_cubby_flow_1_1_const_array_accessor_3_01_t_00_013_01_4.html#adcd8e921dde7497a24d1191e36bfa95e">CubbyFlow::ConstArrayAccessor&lt; T, 3 &gt;</a>
+, <a class="el" href="class_cubby_flow_1_1_const_array_accessor_3_01_t_00_012_01_4.html#abf577b9d3574650521b12bf69ac26940">CubbyFlow::ConstArrayAccessor&lt; T, 2 &gt;</a>
+, <a class="el" href="class_cubby_flow_1_1_const_array_accessor_3_01_t_00_013_01_4.html#a1ffe90a6f25e4056d5393cc67500cded">CubbyFlow::ConstArrayAccessor&lt; T, 3 &gt;</a>
 </li>
 <li>ConstIndexIterator
 : <a class="el" href="class_cubby_flow_1_1_matrix_c_s_r.html#a16589233270b763e148a85fbd3a819c6">CubbyFlow::MatrixCSR&lt; T &gt;</a>
@@ -358,10 +363,14 @@ $(function() {
 , <a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_013_01_4.html#a26c2750f423eae60bbad705ab6ca7e69">CubbyFlow::Array&lt; T, 3 &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_b_v_h2.html#a469c7b0495fd5d85a8e6a69a79088ecb">CubbyFlow::BVH2&lt; T &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_b_v_h3.html#a0c8a21ccf8cd29550ce5ddec18b6b600">CubbyFlow::BVH3&lt; T &gt;</a>
+, <a class="el" href="class_cubby_flow_1_1_kd_tree.html#a7d34910dd7ad4c29f3cccf234c4ffdd4">CubbyFlow::KdTree&lt; T, K &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_matrix.html#a309018c370ddf1c3727dc568720cf651">CubbyFlow::Matrix&lt; T, M, N &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_matrix_mx_n.html#a6091b1c9735098de7504d1be2338aa99">CubbyFlow::MatrixMxN&lt; T &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_octree.html#a7e55aff2b5dc4096e4b6c1e3cb1726d7">CubbyFlow::Octree&lt; T &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_quadtree.html#ae4ae9d87e35585122ffa21ee645c2fc0">CubbyFlow::Quadtree&lt; T &gt;</a>
+</li>
+<li>ConstNodeIterator
+: <a class="el" href="class_cubby_flow_1_1_kd_tree.html#a318b39866b477d2c1bea1d5a5ea95970">CubbyFlow::KdTree&lt; T, K &gt;</a>
 </li>
 <li>ConstNonZeroIterator
 : <a class="el" href="class_cubby_flow_1_1_matrix_c_s_r.html#a0ee4edcd7666471f32afe9def4be1a37">CubbyFlow::MatrixCSR&lt; T &gt;</a>
@@ -390,6 +399,7 @@ $(function() {
 , <a class="el" href="class_cubby_flow_1_1_array_3_01_t_00_013_01_4.html#a4a7365689fb986ec1529f0e05bffb13c">CubbyFlow::Array&lt; T, 3 &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_b_v_h2.html#a244fece02ad98a2979c78477d245eccc">CubbyFlow::BVH2&lt; T &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_b_v_h3.html#ae0cd4d78e855e8824ff515b185e1748c">CubbyFlow::BVH3&lt; T &gt;</a>
+, <a class="el" href="class_cubby_flow_1_1_kd_tree.html#aae5106eebab50cbf8477a586932445e0">CubbyFlow::KdTree&lt; T, K &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_matrix.html#afd816987f09820adbdd3d21e978fc071">CubbyFlow::Matrix&lt; T, M, N &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_matrix_mx_n.html#a2e259ce59fd5bee5ce59a72da05e8f28">CubbyFlow::MatrixMxN&lt; T &gt;</a>
 , <a class="el" href="class_cubby_flow_1_1_octree.html#a4ff82760a7d49afe1b9f5d35cf972e78">CubbyFlow::Octree&lt; T &gt;</a>
@@ -480,7 +490,7 @@ $(function() {
 : <a class="el" href="class_cubby_flow_1_1_custom_scalar_field2.html#a46e3de8e6aaec3484eacb72d8252bbb8">CubbyFlow::CustomScalarField2</a>
 </li>
 <li>CustomScalarField3()
-: <a class="el" href="class_cubby_flow_1_1_custom_scalar_field3.html#ac63f5612f9cacccf8ba93cadbc4ad210">CubbyFlow::CustomScalarField3</a>
+: <a class="el" href="class_cubby_flow_1_1_custom_scalar_field3.html#a9d97b716fdf23c8253ed025595dc087b">CubbyFlow::CustomScalarField3</a>
 </li>
 <li>CustomVectorField2()
 : <a class="el" href="class_cubby_flow_1_1_custom_vector_field2.html#a04f7cd55a0301b3cb8d68888af7e625e">CubbyFlow::CustomVectorField2</a>
@@ -489,7 +499,7 @@ $(function() {
 : <a class="el" href="class_cubby_flow_1_1_custom_vector_field3.html#a7660f0a6d063293f3119890c2943f061">CubbyFlow::CustomVectorField3</a>
 </li>
 <li>Cylinder3()
-: <a class="el" href="class_cubby_flow_1_1_cylinder3.html#a42e6f5e6e883bdace5fbacec1e379740">CubbyFlow::Cylinder3</a>
+: <a class="el" href="class_cubby_flow_1_1_cylinder3.html#a40851a0b22bc7209bcd5449c0ce8bc60">CubbyFlow::Cylinder3</a>
 </li>
 </ul>
 </div><!-- contents -->
@@ -501,7 +511,7 @@ $(function() {
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 20 2017 00:44:28 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Dec 9 2017 16:14:12 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

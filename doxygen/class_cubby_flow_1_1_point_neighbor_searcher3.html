@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.63</a>
+                    <a class="navbar-brand">CubbyFlow v0.64</a>
                 </div>
             </div>
         </nav>
@@ -91,10 +91,11 @@ Inheritance diagram for CubbyFlow::PointNeighborSearcher3:</div>
  <div class="center">
   <img src="class_cubby_flow_1_1_point_neighbor_searcher3.png" usemap="#CubbyFlow::PointNeighborSearcher3_map" alt=""/>
   <map id="CubbyFlow::PointNeighborSearcher3_map" name="CubbyFlow::PointNeighborSearcher3_map">
-<area href="class_cubby_flow_1_1_serializable.html" title="Abstract base class for any serializable class. " alt="CubbyFlow::Serializable" shape="rect" coords="276,0,542,24"/>
+<area href="class_cubby_flow_1_1_serializable.html" title="Abstract base class for any serializable class. " alt="CubbyFlow::Serializable" shape="rect" coords="414,0,680,24"/>
 <area href="class_cubby_flow_1_1_point_hash_grid_searcher3.html" title="Hash grid-based 3-D point searcher. " alt="CubbyFlow::PointHashGridSearcher3" shape="rect" coords="0,112,266,136"/>
-<area href="class_cubby_flow_1_1_point_parallel_hash_grid_searcher3.html" title="Parallel version of hash grid-based 3-D point searcher. " alt="CubbyFlow::PointParallelHashGridSearcher3" shape="rect" coords="276,112,542,136"/>
-<area href="class_cubby_flow_1_1_point_simple_list_searcher3.html" title="Simple ad-hoc 3-D point searcher. " alt="CubbyFlow::PointSimpleListSearcher3" shape="rect" coords="552,112,818,136"/>
+<area href="class_cubby_flow_1_1_point_kd_tree_searcher3.html" title="KdTree-based 3-D point searcher. " alt="CubbyFlow::PointKdTreeSearcher3" shape="rect" coords="276,112,542,136"/>
+<area href="class_cubby_flow_1_1_point_parallel_hash_grid_searcher3.html" title="Parallel version of hash grid-based 3-D point searcher. " alt="CubbyFlow::PointParallelHashGridSearcher3" shape="rect" coords="552,112,818,136"/>
+<area href="class_cubby_flow_1_1_point_simple_list_searcher3.html" title="Simple ad-hoc 3-D point searcher. " alt="CubbyFlow::PointSimpleListSearcher3" shape="rect" coords="828,112,1094,136"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -225,7 +226,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Builds internal acceleration structure for given points list. </p>
 
-<p>Implemented in <a class="el" href="class_cubby_flow_1_1_point_parallel_hash_grid_searcher3.html#aeecc448316d1db52a0d7af3b7c44a821">CubbyFlow::PointParallelHashGridSearcher3</a>, <a class="el" href="class_cubby_flow_1_1_point_hash_grid_searcher3.html#ad134680dbe8268dedd813a327935c039">CubbyFlow::PointHashGridSearcher3</a>, and <a class="el" href="class_cubby_flow_1_1_point_simple_list_searcher3.html#a8b088f499242f9c827754e58ef69bb5e">CubbyFlow::PointSimpleListSearcher3</a>.</p>
+<p>Implemented in <a class="el" href="class_cubby_flow_1_1_point_parallel_hash_grid_searcher3.html#aeecc448316d1db52a0d7af3b7c44a821">CubbyFlow::PointParallelHashGridSearcher3</a>, <a class="el" href="class_cubby_flow_1_1_point_hash_grid_searcher3.html#ad134680dbe8268dedd813a327935c039">CubbyFlow::PointHashGridSearcher3</a>, <a class="el" href="class_cubby_flow_1_1_point_simple_list_searcher3.html#a8b088f499242f9c827754e58ef69bb5e">CubbyFlow::PointSimpleListSearcher3</a>, and <a class="el" href="class_cubby_flow_1_1_point_kd_tree_searcher3.html#ad69a16ce382488e056e140db3f3b3c4d">CubbyFlow::PointKdTreeSearcher3</a>.</p>
 
 </div>
 </div>
@@ -255,7 +256,7 @@ Public Member Functions</h2></td></tr>
 <p>Creates a new instance of the object with same properties than original. </p>
 <dl class="section return"><dt>Returns</dt><dd>Copy of this object. </dd></dl>
 
-<p>Implemented in <a class="el" href="class_cubby_flow_1_1_point_parallel_hash_grid_searcher3.html#ac786f42886364677a2cff64d55b70206">CubbyFlow::PointParallelHashGridSearcher3</a>, <a class="el" href="class_cubby_flow_1_1_point_hash_grid_searcher3.html#a91678d7dc1f6e20ef328639d7da76645">CubbyFlow::PointHashGridSearcher3</a>, and <a class="el" href="class_cubby_flow_1_1_point_simple_list_searcher3.html#ac9f9ed33d3a55c0f9cec491b3ff0efd8">CubbyFlow::PointSimpleListSearcher3</a>.</p>
+<p>Implemented in <a class="el" href="class_cubby_flow_1_1_point_parallel_hash_grid_searcher3.html#ac786f42886364677a2cff64d55b70206">CubbyFlow::PointParallelHashGridSearcher3</a>, <a class="el" href="class_cubby_flow_1_1_point_hash_grid_searcher3.html#a91678d7dc1f6e20ef328639d7da76645">CubbyFlow::PointHashGridSearcher3</a>, <a class="el" href="class_cubby_flow_1_1_point_simple_list_searcher3.html#ac9f9ed33d3a55c0f9cec491b3ff0efd8">CubbyFlow::PointSimpleListSearcher3</a>, and <a class="el" href="class_cubby_flow_1_1_point_kd_tree_searcher3.html#aecd8a03ea8d36297eb1d58e27a2aa797">CubbyFlow::PointKdTreeSearcher3</a>.</p>
 
 </div>
 </div>
@@ -308,7 +309,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="class_cubby_flow_1_1_point_parallel_hash_grid_searcher3.html#ad3d327a2c95f4abb65d20f5e85a4136c">CubbyFlow::PointParallelHashGridSearcher3</a>, <a class="el" href="class_cubby_flow_1_1_point_hash_grid_searcher3.html#abee22b3b3a3d0791898335ba938e102f">CubbyFlow::PointHashGridSearcher3</a>, and <a class="el" href="class_cubby_flow_1_1_point_simple_list_searcher3.html#a745b8716b426b0806241e5963acb5cc3">CubbyFlow::PointSimpleListSearcher3</a>.</p>
+<p>Implemented in <a class="el" href="class_cubby_flow_1_1_point_parallel_hash_grid_searcher3.html#ad3d327a2c95f4abb65d20f5e85a4136c">CubbyFlow::PointParallelHashGridSearcher3</a>, <a class="el" href="class_cubby_flow_1_1_point_hash_grid_searcher3.html#abee22b3b3a3d0791898335ba938e102f">CubbyFlow::PointHashGridSearcher3</a>, <a class="el" href="class_cubby_flow_1_1_point_simple_list_searcher3.html#a745b8716b426b0806241e5963acb5cc3">CubbyFlow::PointSimpleListSearcher3</a>, and <a class="el" href="class_cubby_flow_1_1_point_kd_tree_searcher3.html#a239e4e795f908c2c5cc2f19a8bedfc38">CubbyFlow::PointKdTreeSearcher3</a>.</p>
 
 </div>
 </div>
@@ -355,7 +356,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if has nearby point, false otherwise. </dd></dl>
 
-<p>Implemented in <a class="el" href="class_cubby_flow_1_1_point_parallel_hash_grid_searcher3.html#abc274fbfb4e005b51e73398e8fbfd3df">CubbyFlow::PointParallelHashGridSearcher3</a>, <a class="el" href="class_cubby_flow_1_1_point_hash_grid_searcher3.html#ae6102c20749b415b874febddcda4cd28">CubbyFlow::PointHashGridSearcher3</a>, and <a class="el" href="class_cubby_flow_1_1_point_simple_list_searcher3.html#a84540c1987fc84737568ac9283b0d181">CubbyFlow::PointSimpleListSearcher3</a>.</p>
+<p>Implemented in <a class="el" href="class_cubby_flow_1_1_point_parallel_hash_grid_searcher3.html#abc274fbfb4e005b51e73398e8fbfd3df">CubbyFlow::PointParallelHashGridSearcher3</a>, <a class="el" href="class_cubby_flow_1_1_point_hash_grid_searcher3.html#ae6102c20749b415b874febddcda4cd28">CubbyFlow::PointHashGridSearcher3</a>, <a class="el" href="class_cubby_flow_1_1_point_simple_list_searcher3.html#a84540c1987fc84737568ac9283b0d181">CubbyFlow::PointSimpleListSearcher3</a>, and <a class="el" href="class_cubby_flow_1_1_point_kd_tree_searcher3.html#a9e94ea7105945f33c53c84e93109bf06">CubbyFlow::PointKdTreeSearcher3</a>.</p>
 
 </div>
 </div>
@@ -398,7 +399,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 20 2017 00:44:22 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Dec 9 2017 16:14:05 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>
