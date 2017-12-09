@@ -19,7 +19,7 @@
 #include <Size/Size3.h>
 #include <Utils/Serialization.h>
 
-#include <pystring.h>
+#include <pystring/pystring.h>
 
 #include <getopt.h>
 
