@@ -21,9 +21,9 @@ TEST(Triangle3, Constructors)
 		}
 	}
 
-	std::array<Vector3D, 3> points = { Vector3D(1, 2, 3), Vector3D(4, 5, 6), Vector3D(7, 8, 9) };
-	std::array<Vector3D, 3> normals = { Vector3D(1, 0, 0), Vector3D(0, 1, 0), Vector3D(0, 0, 1) };
-	std::array<Vector2D, 3> uvs = { Vector2D(1, 0), Vector2D(0, 1), Vector2D(0.5, 0.5) };
+	std::array<Vector3D, 3> points = { { Vector3D(1, 2, 3), Vector3D(4, 5, 6), Vector3D(7, 8, 9) } };
+	std::array<Vector3D, 3> normals = { { Vector3D(1, 0, 0), Vector3D(0, 1, 0), Vector3D(0, 0, 1) } };
+	std::array<Vector2D, 3> uvs = { { Vector2D(1, 0), Vector2D(0, 1), Vector2D(0.5, 0.5) } };
 
 	Triangle3 tri2(points, normals, uvs);
 	for (int i = 0; i < 3; ++i)
@@ -108,9 +108,9 @@ TEST(Triangle3, SurfaceGetters)
 
 TEST(Triangle3, Builder)
 {
-	std::array<Vector3D, 3> points = { Vector3D(1, 2, 3), Vector3D(4, 5, 6), Vector3D(7, 8, 9) };
-	std::array<Vector3D, 3> normals = { Vector3D(1, 0, 0), Vector3D(0, 1, 0), Vector3D(0, 0, 1) };
-	std::array<Vector2D, 3> uvs = { Vector2D(1, 0), Vector2D(0, 1), Vector2D(0.5, 0.5) };
+	std::array<Vector3D, 3> points = { { Vector3D(1, 2, 3), Vector3D(4, 5, 6), Vector3D(7, 8, 9) } };
+	std::array<Vector3D, 3> normals = { { Vector3D(1, 0, 0), Vector3D(0, 1, 0), Vector3D(0, 0, 1) } };
+	std::array<Vector2D, 3> uvs = { { Vector2D(1, 0), Vector2D(0, 1), Vector2D(0.5, 0.5) } };
 
 	Triangle3 tri = Triangle3::GetBuilder()
 		.WithPoints(points)
