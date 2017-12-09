@@ -6,7 +6,7 @@
 #include <Emitter/VolumeParticleEmitter2.h>
 #include <Geometry/Box2.h>
 #include <Geometry/Plane2.h>
-#include <Geometry/SPHere2.h>
+#include <Geometry/Sphere2.h>
 #include <Solver/PCISPH/PCISPHSolver2.h>
 #include <Surface/Implicit/ImplicitSurfaceSet2.h>
 #include <Surface/Implicit/SurfaceToImplicit2.h>
