@@ -16,7 +16,7 @@ CUBBYFLOW_BEGIN_TEST_F(ZhuBridsonPointsToImplicit2, ConvertTwo)
 	Array1<Vector2D> points;
 
 	std::mt19937 rng{ 0 };
-	const std::uniform_real_distribution<> dist(0.2, 0.8);
+	std::uniform_real_distribution<> dist(0.2, 0.8);
 	for (size_t i = 0; i < 2; ++i)
 	{
 		points.Append({ dist(rng), dist(rng) });
@@ -37,7 +37,7 @@ CUBBYFLOW_BEGIN_TEST_F(ZhuBridsonPointsToImplicit2, ConvertMany)
 	Array1<Vector2D> points;
 
 	std::mt19937 rng{ 0 };
-	const std::uniform_real_distribution<> dist(0.2, 0.8);
+	std::uniform_real_distribution<> dist(0.2, 0.8);
 	for (size_t i = 0; i < 200; ++i)
 	{
 		points.Append({ dist(rng), dist(rng) });
