@@ -21,6 +21,7 @@
 #include <Utils/Constants.h>
 
 #include <algorithm>
+#include <cmath>
 
 namespace CubbyFlow
 {
