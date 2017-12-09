@@ -7,8 +7,8 @@
 #include <Geometry/TriangleMesh3.h>
 #include <Utils/Macros.h>
 
-#include <cnpy.h>
-#include <pystring.h>
+#include <cnpy/cnpy.h>
+#include <pystring/pystring.h>
 
 #include <fstream>
 #include <string>
