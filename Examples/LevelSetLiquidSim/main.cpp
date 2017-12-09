@@ -22,7 +22,7 @@
 #include <Surface/Implicit/ImplicitSurfaceSet3.h>
 #include <Utils/Logger.h>
 
-#include <pystring.h>
+#include <pystring/pystring.h>
 
 #ifdef CUBBYFLOW_WINDOWS
 #include <direct.h>
