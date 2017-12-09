@@ -17,6 +17,9 @@ namespace
 		typename BLASType::VectorType* x,
 		typename BLASType::VectorType* buffer)
 	{
+		UNUSED_VARIABLE(maxTolerance);
+		UNUSED_VARIABLE(buffer);
+
 		size_t n = a.Rows();
 
 		for (unsigned int iter = 0; iter < numberOfIterations; ++iter)
