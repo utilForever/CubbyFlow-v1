@@ -14,6 +14,8 @@
 #include <Utils/Parallel.h>
 #include <Utils/TypeHelpers.h>
 
+#include <iostream>
+
 namespace CubbyFlow
 {
 	template <typename ArrayType, typename T>
