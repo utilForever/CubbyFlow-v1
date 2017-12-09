@@ -10,6 +10,7 @@
 #define CUBBYFLOW_BLAS_IMPL_H
 
 #include <algorithm>
+#include <cmath>
 
 namespace CubbyFlow
 {
