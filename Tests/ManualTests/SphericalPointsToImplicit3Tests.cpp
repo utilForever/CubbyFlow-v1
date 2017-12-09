@@ -17,7 +17,7 @@ CUBBYFLOW_BEGIN_TEST_F(SphericalPointsToImplicit3, ConvertTwo)
 	Array1<Vector3D> points;
 
 	std::mt19937 rng{ 0 };
-	const std::uniform_real_distribution<> dist(0.2, 0.8);
+	std::uniform_real_distribution<> dist(0.2, 0.8);
 	for (size_t i = 0; i < 2; ++i)
 	{
 		points.Append({ dist(rng), dist(rng), dist(rng) });
@@ -40,7 +40,7 @@ CUBBYFLOW_BEGIN_TEST_F(SphericalPointsToImplicit3, ConvertMany)
 	Array1<Vector3D> points;
 
 	std::mt19937 rng{ 0 };
-	const std::uniform_real_distribution<> dist(0.2, 0.8);
+	std::uniform_real_distribution<> dist(0.2, 0.8);
 	for (size_t i = 0; i < 500; ++i)
 	{
 		points.Append({ dist(rng), dist(rng), dist(rng) });
