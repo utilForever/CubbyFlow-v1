@@ -234,7 +234,7 @@ namespace CubbyFlow
 		IndexType beginIndexY, IndexType endIndexY,
 		const Function& function, ExecutionPolicy policy)
 	{
-		ParallelFor(beginIndexY, endIndexY, [&](size_t j)
+		ParallelFor(beginIndexY, endIndexY, [&](IndexType j)
 		{
 			for (IndexType i = beginIndexX; i < endIndexX; ++i)
 			{
@@ -263,7 +263,7 @@ namespace CubbyFlow
 		IndexType beginIndexZ, IndexType endIndexZ,
 		const Function& function, ExecutionPolicy policy)
 	{
-		ParallelFor(beginIndexZ, endIndexZ, [&](size_t k)
+		ParallelFor(beginIndexZ, endIndexZ, [&](IndexType k)
 		{
 			for (IndexType j = beginIndexY; j < endIndexY; ++j)
 			{
