@@ -101,7 +101,7 @@ void PrintInfo(const LevelSetLiquidSolver3Ptr& solver)
 		gridSpacing.x, gridSpacing.y, gridSpacing.z);
 }
 
-void RunSimulation(const std::string& rootDir, const LevelSetLiquidSolver3Ptr& solver, int numberOfFrames, double fps)
+void RunSimulation(const std::string& rootDir, const LevelSetLiquidSolver3Ptr& solver, unsigned int numberOfFrames, double fps)
 {
 	const auto sdf = solver->GetSignedDistanceField();
 

@@ -216,7 +216,7 @@ void PrintInfo(const GridSmokeSolver3Ptr& solver)
 		gridSpacing.x, gridSpacing.y, gridSpacing.z);
 }
 
-void RunSimulation(const std::string& rootDir, const GridSmokeSolver3Ptr& solver, int numberOfFrames, const std::string& format, double fps)
+void RunSimulation(const std::string& rootDir, const GridSmokeSolver3Ptr& solver, unsigned int numberOfFrames, const std::string& format, double fps)
 {
 	const auto density = solver->GetSmokeDensity();
 
