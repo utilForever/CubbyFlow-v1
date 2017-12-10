@@ -47,7 +47,7 @@ CUBBYFLOW_BEGIN_TEST_F(LevelSetLiquidSolver2, Drop)
 	snprintf(fileName, sizeof(fileName), "data.#grid2,0000.npy");
 	SaveData(output.ConstAccessor(), fileName);
 
-	for (Frame frame(0, 1.0 / 60.0); frame.index < 120; frame.Advance())
+	for (Frame frame(1, 1.0 / 60.0); frame.index < 120; frame.Advance())
 	{
 		solver.Update(frame);
 
@@ -188,7 +188,7 @@ CUBBYFLOW_BEGIN_TEST_F(LevelSetLiquidSolver2, DropHighRes)
 	snprintf(fileName, sizeof(fileName), "data.#grid2,0000.npy");
 	SaveData(output.ConstAccessor(), fileName);
 
-	for (Frame frame(0, 1.0 / 60.0); frame.index < 120; frame.Advance())
+	for (Frame frame(1, 1.0 / 60.0); frame.index < 120; frame.Advance())
 	{
 		solver.Update(frame);
 
@@ -241,7 +241,7 @@ CUBBYFLOW_BEGIN_TEST_F(LevelSetLiquidSolver2, DropWithCollider)
 	snprintf(fileName, sizeof(fileName), "data.#grid2,0000.npy");
 	SaveData(output.ConstAccessor(), fileName);
 
-	for (Frame frame(0, 1.0 / 60.0); frame.index < 240; frame.Advance())
+	for (Frame frame(1, 1.0 / 60.0); frame.index < 240; frame.Advance())
 	{
 		double t = frame.TimeInSeconds();
 		sphere->center = Vector2D(domain.MidPoint().x, 0.75 - std::cos(t));
@@ -294,7 +294,7 @@ CUBBYFLOW_BEGIN_TEST_F(LevelSetLiquidSolver2, DropVariational)
 	snprintf(fileName, sizeof(fileName), "data.#grid2,0000.npy");
 	SaveData(output.ConstAccessor(), fileName);
 
-	for (Frame frame(0, 1.0 / 60.0); frame.index < 120; frame.Advance())
+	for (Frame frame(1, 1.0 / 60.0); frame.index < 120; frame.Advance())
 	{
 		solver.Update(frame);
 
@@ -348,7 +348,7 @@ CUBBYFLOW_BEGIN_TEST_F(LevelSetLiquidSolver2, DropWithColliderVariational)
 	snprintf(fileName, sizeof(fileName), "data.#grid2,0000.npy");
 	SaveData(output.ConstAccessor(), fileName);
 
-	for (Frame frame(0, 1.0 / 60.0); frame.index < 240; frame.Advance())
+	for (Frame frame(1, 1.0 / 60.0); frame.index < 240; frame.Advance())
 	{
 		double t = frame.TimeInSeconds();
 		sphere->center = Vector2D(domain.MidPoint().x, 0.75 - std::cos(t));
@@ -402,7 +402,7 @@ CUBBYFLOW_BEGIN_TEST_F(LevelSetLiquidSolver2, ViscousDropVariational)
 	snprintf(fileName, sizeof(fileName), "data.#grid2,0000.npy");
 	SaveData(output.ConstAccessor(), fileName);
 
-	for (Frame frame(0, 1.0 / 60.0); frame.index < 120; frame.Advance())
+	for (Frame frame(1, 1.0 / 60.0); frame.index < 120; frame.Advance())
 	{
 		solver.Update(frame);
 
@@ -450,7 +450,7 @@ CUBBYFLOW_BEGIN_TEST_F(LevelSetLiquidSolver2, DropWithoutGlobalComp)
 	snprintf(fileName, sizeof(fileName), "data.#grid2,0000.npy");
 	SaveData(output.ConstAccessor(), fileName);
 
-	for (Frame frame(0, 1.0 / 60.0); frame.index < 120; frame.Advance())
+	for (Frame frame(1, 1.0 / 60.0); frame.index < 120; frame.Advance())
 	{
 		solver.Update(frame);
 
@@ -498,7 +498,7 @@ CUBBYFLOW_BEGIN_TEST_F(LevelSetLiquidSolver2, DropWithGlobalComp)
 	snprintf(fileName, sizeof(fileName), "data.#grid2,0000.npy");
 	SaveData(output.ConstAccessor(), fileName);
 
-	for (Frame frame(0, 1.0 / 60.0); frame.index < 120; frame.Advance())
+	for (Frame frame(1, 1.0 / 60.0); frame.index < 120; frame.Advance())
 	{
 		solver.Update(frame);
 
@@ -564,7 +564,7 @@ CUBBYFLOW_BEGIN_TEST_F(LevelSetLiquidSolver2, RisingFloor)
 	auto data = solver->GetGridSystemData();
 	auto sdf = solver->GetSignedDistanceField();
 
-	for (Frame frame(0, 1 / 100.0); frame.index < 120; ++frame)
+	for (Frame frame(1, 1 / 100.0); frame.index < 120; ++frame)
 	{
 		solver->Update(frame);
 

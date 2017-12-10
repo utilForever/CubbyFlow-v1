@@ -281,7 +281,7 @@ CUBBYFLOW_BEGIN_TEST_F(GridSmokeSolver3, Rising)
 	auto density = solver->GetSmokeDensity();
 	char fileName[256];
 
-	for (Frame frame(0, 1.0 / 60.0); frame.index < 240; ++frame)
+	for (Frame frame(1, 1.0 / 60.0); frame.index < 240; ++frame)
 	{
 		solver->Update(frame);
 
@@ -347,7 +347,7 @@ CUBBYFLOW_BEGIN_TEST_F(GridSmokeSolver3, RisingWithCollider)
 	auto density = solver->GetSmokeDensity();
 	char fileName[256];
 
-	for (Frame frame(0, 1.0 / 60.0); frame.index < 240; ++frame)
+	for (Frame frame(1, 1.0 / 60.0); frame.index < 240; ++frame)
 	{
 		solver->Update(frame);
 
@@ -413,7 +413,7 @@ CUBBYFLOW_BEGIN_TEST_F(GridSmokeSolver3, RisingWithColliderLinear)
 	auto density = solver->GetSmokeDensity();
 	char fileName[256];
 
-	for (Frame frame(0, 1.0 / 60.0); frame.index < 240; ++frame)
+	for (Frame frame(1, 1.0 / 60.0); frame.index < 240; ++frame)
 	{
 		solver->Update(frame);
 

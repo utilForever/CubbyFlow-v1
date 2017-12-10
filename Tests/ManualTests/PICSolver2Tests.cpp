@@ -178,7 +178,7 @@ CUBBYFLOW_BEGIN_TEST_F(PICSolver2, DamBreakingWithCollider)
 
 	solver->SetCollider(collider);
 
-	for (Frame frame(0, 1.0 / 60.0); frame.index < 240; ++frame)
+	for (Frame frame(1, 1.0 / 60.0); frame.index < 240; ++frame)
 	{
 		solver->Update(frame);
 

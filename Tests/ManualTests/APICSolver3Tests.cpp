@@ -193,7 +193,7 @@ CUBBYFLOW_BEGIN_TEST_F(APICSolver3, Spherical)
         }
     }
 
-    for (Frame frame(0, 0.01); frame.index < 240; ++frame)
+    for (Frame frame(1, 0.01); frame.index < 240; ++frame)
     {
         solver->Update(frame);
 
@@ -240,7 +240,7 @@ CUBBYFLOW_BEGIN_TEST_F(APICSolver3, SphericalNonVariational)
         }
     }
 
-    for (Frame frame(0, 0.01); frame.index < 240; ++frame)
+    for (Frame frame(1, 0.01); frame.index < 240; ++frame)
     {
         solver->Update(frame);
 

@@ -43,7 +43,7 @@ CUBBYFLOW_BEGIN_TEST_F(PCISPHSolver3, SteadyState)
 
 	SaveParticleDataXY(particles, 0);
 
-	for (Frame frame(0, 1.0 / 60.0); frame.index < 100; ++frame)
+	for (Frame frame(1, 1.0 / 60.0); frame.index < 100; ++frame)
 	{
 		solver.Update(frame);
 
@@ -89,7 +89,7 @@ CUBBYFLOW_BEGIN_TEST_F(PCISPHSolver3, WaterDrop)
 
 	SaveParticleDataXY(particles, 0);
 
-	for (Frame frame(0, 1.0 / 60.0); frame.index < 100; ++frame)
+	for (Frame frame(1, 1.0 / 60.0); frame.index < 100; ++frame)
 	{
 		solver.Update(frame);
 

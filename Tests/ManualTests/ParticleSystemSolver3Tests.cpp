@@ -191,7 +191,7 @@ CUBBYFLOW_BEGIN_TEST_F(ParticleSystemSolver3, Update)
 	solver->SetDragCoefficient(0.0);
 	solver->SetRestitutionCoefficient(0.5);
 
-	for (Frame frame(0, 1.0 / 60.0); frame.index < 360; ++frame)
+	for (Frame frame(1, 1.0 / 60.0); frame.index < 360; ++frame)
 	{
 		solver->Update(frame);
 

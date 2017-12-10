@@ -30,7 +30,7 @@ CUBBYFLOW_BEGIN_TEST_F(VolumeParticleEmitter2, EmitContinuousNonOverlapping)
 
 	SaveParticleDataXY(particles, 0);
 
-	for (Frame frame(0, 1.0 / 60.0); frame.index < 120; ++frame)
+	for (Frame frame(1, 1.0 / 60.0); frame.index < 120; ++frame)
 	{
 		solver.Update(frame);
 
