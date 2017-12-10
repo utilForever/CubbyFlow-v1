@@ -92,6 +92,8 @@ namespace CubbyFlow
 		}
 	};
 
+    static Registry sRegistry;
+
 	ScalarGrid2Ptr Factory::BuildScalarGrid2(const std::string& name)
 	{
 		const auto result = sScalarGrid2Builders.find(name);
