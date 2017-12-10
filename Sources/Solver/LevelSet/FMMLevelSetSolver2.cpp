@@ -436,7 +436,7 @@ namespace CubbyFlow
 			sdfAtV(i, j) = sdf.Sample(vPos(i, j));
 		});
 
-		Extrapolate(v, sdfAtV, gridSpacing, maxDistance, output->GetUAccessor());
+		Extrapolate(v, sdfAtV, gridSpacing, maxDistance, output->GetVAccessor());
 	}
 
 	void FMMLevelSetSolver2::Extrapolate(
