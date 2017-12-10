@@ -102,6 +102,8 @@ TEST(PCG, Solve)
 		double lastResidualNorm;
 		DiagonalPreconditioner precond;
 
+        precond.Build(matrix);
+
 		PCG<BLASType>(
 			matrix,
 			rhs,
