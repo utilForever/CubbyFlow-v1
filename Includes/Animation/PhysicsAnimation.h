@@ -137,7 +137,6 @@ namespace CubbyFlow
 		Frame m_currentFrame;
 		bool m_isUsingFixedSubTimeSteps = true;
 		unsigned int m_numberOfFixedSubTimeSteps = 1;
-	    bool m_hasInitialized = false;
 		double m_currentTime = 0.0;
 
 		void OnUpdate(const Frame& frame) final;
