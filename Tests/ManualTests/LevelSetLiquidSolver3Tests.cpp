@@ -77,7 +77,7 @@ CUBBYFLOW_BEGIN_TEST_F(LevelSetLiquidSolver3, SubtleSloshing)
 		"data.#grid2,0000.obj");
 	TriangulateAndSave(sdf, GetFullFilePath(fileName));
 
-	for (Frame frame(1, 1.0 / 60.0); frame.index < 120; frame.Advance())
+	for (Frame frame(0, 1.0 / 60.0); frame.index < 120; frame.Advance())
 	{
 		solver.Update(frame);
 
