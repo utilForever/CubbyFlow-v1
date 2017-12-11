@@ -95,7 +95,7 @@ void PrintInfo(const SPHSolver3Ptr& solver)
 	printf("Number of particles: %zu\n", particles->NumberOfParticles());
 }
 
-void RunSimulation(const std::string& rootDir, const SPHSolver3Ptr& solver, unsigned int numberOfFrames, const std::string& format, double fps)
+void RunSimulation(const std::string& rootDir, const SPHSolver3Ptr& solver, int numberOfFrames, const std::string& format, double fps)
 {
 	const auto particles = solver->GetSPHSystemData();
 
