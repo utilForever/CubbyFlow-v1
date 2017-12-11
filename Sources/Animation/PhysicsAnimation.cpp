@@ -15,7 +15,7 @@ namespace CubbyFlow
 {
 	PhysicsAnimation::PhysicsAnimation()
 	{
-		// Do nothing
+		m_currentFrame.index = -1;
 	}
 
 	PhysicsAnimation::~PhysicsAnimation()
@@ -45,8 +45,9 @@ namespace CubbyFlow
 
 	void PhysicsAnimation::AdvanceSingleFrame()
 	{
-		++m_currentFrame;
 		Update(m_currentFrame);
+		Frame f = m_currentFrame;
+		Update(++f);
 	}
 
 	Frame PhysicsAnimation::CurrentFrame() const
@@ -74,21 +75,22 @@ namespace CubbyFlow
 
 	void PhysicsAnimation::OnUpdate(const Frame& frame)
 	{
-	    if (frame.index > m_currentFrame.index)
-        {
-            unsigned int numberOfFrames = frame.index - m_currentFrame.index;
+		if (frame.index > m_currentFrame.index)
+		{
+			if (m_currentFrame.index < 0)
+			{
+				Initialize();
+			}
 
-            for (unsigned int i = 0; i < numberOfFrames; ++i)
-            {
-                AdvanceTimeStep(frame.timeIntervalInSeconds);
-            }
+			int32_t numberOfFrames = frame.index - m_currentFrame.index;
 
-            m_currentFrame = frame;
-        }
-        else if (frame.index == 0 && !m_hasInitialized)
-        {
-            Initialize();
-        }
+			for (int32_t i = 0; i < numberOfFrames; ++i)
+			{
+				AdvanceTimeStep(frame.timeIntervalInSeconds);
+			}
+
+			m_currentFrame = frame;
+		}
 	}
 
 	void PhysicsAnimation::AdvanceTimeStep(double timeIntervalInSeconds)
@@ -147,7 +149,6 @@ namespace CubbyFlow
 	void PhysicsAnimation::Initialize()
 	{
 		OnInitialize();
-	    m_hasInitialized = true;
 	}
 
 	void PhysicsAnimation::OnInitialize()
