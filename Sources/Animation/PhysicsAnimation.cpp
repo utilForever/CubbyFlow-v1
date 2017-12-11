@@ -45,7 +45,6 @@ namespace CubbyFlow
 
 	void PhysicsAnimation::AdvanceSingleFrame()
 	{
-		Update(m_currentFrame);
 		Frame f = m_currentFrame;
 		Update(++f);
 	}
