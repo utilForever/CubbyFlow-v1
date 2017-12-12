@@ -91,7 +91,7 @@ namespace CubbyFlow
 		SurfaceRayIntersection3 lowerIntersection = lowerPlane.ClosestIntersection(ray);
 
 		// In case the ray does not intersect with infinite cylinder
-		if (A < std::numeric_limits<double>::epsilon() || B*B - A*C < 0.0)
+		if (A < std::numeric_limits<double>::epsilon() || B * B - A * C < 0.0)
 		{
 			// Check if the ray is inside the infinite cylinder
 			Vector3D r = ray.origin - center;
@@ -108,8 +108,8 @@ namespace CubbyFlow
 			return false;
 		}
 
-		double t1 = (-B + std::sqrt(B*B - A*C)) / A;
-		double t2 = (-B - std::sqrt(B*B - A*C)) / A;
+		double t1 = (-B + std::sqrt(B * B - A * C)) / A;
+		double t2 = (-B - std::sqrt(B * B - A * C)) / A;
 		double tCylinder = t2;
 
 		if (t2 < 0.0)
@@ -174,7 +174,7 @@ namespace CubbyFlow
 		intersection.isIntersecting = false;
 
 		// In case the ray does not intersect with infinite cylinder
-		if (A < std::numeric_limits<double>::epsilon() || B*B - A*C < 0.0)
+		if (A < std::numeric_limits<double>::epsilon() || B * B - A * C < 0.0)
 		{
 			// Check if the ray is inside the infinite cylinder
 			Vector3D r = ray.origin - center;
@@ -195,8 +195,8 @@ namespace CubbyFlow
 			return intersection;
 		}
 
-		double t1 = (-B + std::sqrt(B*B - A*C)) / A;
-		double t2 = (-B - std::sqrt(B*B - A*C)) / A;
+		double t1 = (-B + std::sqrt(B * B - A * C)) / A;
+		double t2 = (-B - std::sqrt(B * B - A * C)) / A;
 		double tCylinder = t2;
 
 		if (t2 < 0.0)
@@ -239,7 +239,7 @@ namespace CubbyFlow
 			
 			if (r.LengthSquared() > Square(radius))
 			{
-				// Do nothing
+                // Do nothing
 			}
 			else if (lowerIntersection.distance < intersection.distance)
 			{
