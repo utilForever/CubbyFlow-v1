@@ -244,10 +244,8 @@ namespace CubbyFlow
 			m_colliderSDF->Fill(std::numeric_limits<double>::max());
 
 			m_colliderVel = CustomVectorField2::Builder()
-				.WithFunction([](const Vector2D& x)
+				.WithFunction([](const Vector2D&)
 			{
-				UNUSED_VARIABLE(x);
-
 				return Vector2D();
 			})
 				.WithDerivativeResolution(gridSpacing.x)

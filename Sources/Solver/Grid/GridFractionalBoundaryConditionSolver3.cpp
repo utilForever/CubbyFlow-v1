@@ -296,7 +296,7 @@ namespace CubbyFlow
 
 	void GridFractionalBoundaryConditionSolver3::OnColliderUpdated(
 		const Size3& gridSize,
-		const Vector3D& GridSpacing,
+		const Vector3D& gridSpacing,
 		const Vector3D& gridOrigin)
 	{
 		if (m_colliderSDF == nullptr)
@@ -304,7 +304,7 @@ namespace CubbyFlow
 			m_colliderSDF = std::make_shared<CellCenteredScalarGrid3>();
 		}
 
-		m_colliderSDF->Resize(gridSize, GridSpacing, gridOrigin);
+		m_colliderSDF->Resize(gridSize, gridSpacing, gridOrigin);
 
 		if (GetCollider() != nullptr)
 		{
@@ -325,7 +325,7 @@ namespace CubbyFlow
 			{
 				return GetCollider()->VelocityAt(x);
 			})
-				.WithDerivativeResolution(GridSpacing.x)
+				.WithDerivativeResolution(gridSpacing.x)
 				.MakeShared();
 		}
 		else
@@ -333,13 +333,11 @@ namespace CubbyFlow
 			m_colliderSDF->Fill(std::numeric_limits<double>::max());
 
 			m_colliderVel = CustomVectorField3::Builder()
-				.WithFunction([](const Vector3D& x)
+				.WithFunction([](const Vector3D&)
 			{
-				UNUSED_VARIABLE(x);
-
 				return Vector3D();
 			})
-				.WithDerivativeResolution(GridSpacing.x)
+				.WithDerivativeResolution(gridSpacing.x)
 				.MakeShared();
 		}
 	}
