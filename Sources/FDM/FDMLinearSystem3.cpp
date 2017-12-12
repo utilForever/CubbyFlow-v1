@@ -43,7 +43,7 @@ namespace CubbyFlow
 	{
 		Size3 size = a.size();
 
-		assert(size != b.size());
+		assert(size == b.size());
 
 		double result = 0.0;
 
