@@ -20,17 +20,13 @@ namespace CubbyFlow
 		// Do nothing
 	}
 
-	Vector3D ScalarField3::Gradient(const Vector3D& x) const
+	Vector3D ScalarField3::Gradient(const Vector3D&) const
 	{
-		UNUSED_VARIABLE(x);
-
 		return Vector3D(0, 0, 0);
 	}
 
-	double ScalarField3::Laplacian(const Vector3D& x) const
+	double ScalarField3::Laplacian(const Vector3D&) const
 	{
-		UNUSED_VARIABLE(x);
-
 		return 0.0;
 	}
 
