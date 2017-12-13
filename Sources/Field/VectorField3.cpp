@@ -20,17 +20,13 @@ namespace CubbyFlow
 		// Do nothing
 	}
 
-	double VectorField3::Divergence(const Vector3D& x) const
+	double VectorField3::Divergence(const Vector3D&) const
 	{
-		UNUSED_VARIABLE(x);
-
 		return 0.0;
 	}
 
-	Vector3D VectorField3::Curl(const Vector3D& x) const
+	Vector3D VectorField3::Curl(const Vector3D&) const
 	{
-		UNUSED_VARIABLE(x);
-
 		return Vector3D(0, 0, 0);
 	}
 
