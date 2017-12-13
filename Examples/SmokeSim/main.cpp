@@ -400,10 +400,8 @@ void RunExample4(const std::string& rootDir, size_t resolutionX, int numberOfFra
 	emitter->AddStepFunctionTarget(solver->GetSmokeDensity(), 0, 1);
 	emitter->AddStepFunctionTarget(solver->GetTemperature(), 0, 1);
 	emitter->AddTarget(solver->GetVelocity(),
-		[](double sdf, const Vector3D& pt, const Vector3D& oldVal)
+		[](double sdf, const Vector3D&, const Vector3D& oldVal)
 	{
-		UNUSED_VARIABLE(pt);
-
 		if (sdf < 0.05)
 		{
 			return Vector3D(0.5, oldVal.y, oldVal.z);
