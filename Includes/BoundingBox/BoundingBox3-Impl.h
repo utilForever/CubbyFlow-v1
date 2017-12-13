@@ -236,36 +236,14 @@ namespace CubbyFlow
 	template <typename T>
 	Vector3<T> BoundingBox<T, 3>::Corner(size_t idx) const
 	{
-		Vector3<T> result;
+        static const T h = static_cast<T>(1) / 2;
+        static const Vector3<T> offset[8] =
+        {
+            { -h, -h, -h }, { +h, -h, -h }, { -h, +h, -h }, { +h, +h, -h },
+            { -h, -h, +h },{  +h, -h, +h }, { -h, +h, +h }, { +h, +h, +h }
+        };
 
-		if (idx & 1)
-		{
-			result.x = upperCorner.x;
-		}
-		else
-		{
-			result.x = lowerCorner.x;
-		}
-
-		if (idx & 2)
-		{
-			result.y = upperCorner.y;
-		}
-		else
-		{
-			result.y = lowerCorner.y;
-		}
-
-		if (idx & 4)
-		{
-			result.z = upperCorner.z;
-		}
-		else
-		{
-			result.z = lowerCorner.z;
-		}
-
-		return result;
+        return Vector3<T>(Width(), Height(), Depth()) * offset[idx] + MidPoint();
 	}
 
 	template <typename T>

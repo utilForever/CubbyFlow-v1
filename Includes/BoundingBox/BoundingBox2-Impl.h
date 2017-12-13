@@ -214,27 +214,13 @@ namespace CubbyFlow
 	template <typename T>
 	Vector2<T> BoundingBox<T, 2>::Corner(size_t idx) const
 	{
-		Vector2<T> result;
+        static const T h = static_cast<T>(1) / 2;
+        static const Vector2<T> offset[4] =
+        {
+            { -h, -h }, { +h, -h }, { -h, +h }, { +h, +h }
+        };
 
-		if (idx & 1)
-		{
-			result.x = upperCorner.x;
-		}
-		else
-		{
-			result.x = lowerCorner.x;
-		}
-
-		if (idx & 2)
-		{
-			result.y = upperCorner.y;
-		}
-		else
-		{
-			result.y = lowerCorner.y;
-		}
-
-		return result;
+        return Vector2<T>(Width(), Height()) * offset[idx] + MidPoint();
 	}
 
 	template <typename T>
