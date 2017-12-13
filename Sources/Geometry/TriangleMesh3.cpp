@@ -165,6 +165,8 @@ namespace CubbyFlow
 		m_pointIndices.Set(other.m_pointIndices);
 		m_normalIndices.Set(other.m_normalIndices);
 		m_uvIndices.Set(other.m_uvIndices);
+
+        InvalidateBVH();
 	}
 
 	void TriangleMesh3::Swap(TriangleMesh3& other)
