@@ -385,6 +385,7 @@ namespace CubbyFlow
 			auto vel = m_grids->GetVelocity();
 			auto u = vel->GetUAccessor();
 			auto v = vel->GetVAccessor();
+            auto w = vel->GetWAccessor();
 
 			if (std::abs(m_gravity.x) > std::numeric_limits<double>::epsilon())
 			{
@@ -404,9 +405,9 @@ namespace CubbyFlow
 
 			if (std::abs(m_gravity.z) > std::numeric_limits<double>::epsilon())
 			{
-				vel->ForEachVIndex([&](size_t i, size_t j, size_t k)
+				vel->ForEachWIndex([&](size_t i, size_t j, size_t k)
 				{
-					v(i, j, k) += timeIntervalInSeconds * m_gravity.z;
+					w(i, j, k) += timeIntervalInSeconds * m_gravity.z;
 				});
 			}
 
@@ -432,7 +433,14 @@ namespace CubbyFlow
 		
 		marker.ParallelForEachIndex([&](size_t i, size_t j, size_t k)
 		{
-			marker(i, j, k) = IsInsideSDF(GetColliderSDF()->Sample(pos(i, j, k)));
+            if (IsInsideSDF(GetColliderSDF()->Sample(pos(i, j, k))))
+            {
+                marker(i, j, k) = 0;
+            }
+            else
+            {
+                marker(i, j, k) = 1;
+            }
 		});
 
 		unsigned int depth = static_cast<unsigned int>(std::ceil(m_maxCFL));
@@ -446,7 +454,14 @@ namespace CubbyFlow
 
 		marker.ParallelForEachIndex([&](size_t i, size_t j, size_t k)
 		{
-			marker(i, j, k) = IsInsideSDF(GetColliderSDF()->Sample(pos(i, j, k)));
+            if (IsInsideSDF(GetColliderSDF()->Sample(pos(i, j, k))))
+            {
+                marker(i, j, k) = 0;
+            }
+            else
+            {
+                marker(i, j, k) = 1;
+            }
 		});
 
 		unsigned int depth = static_cast<unsigned int>(std::ceil(m_maxCFL));
@@ -470,23 +485,44 @@ namespace CubbyFlow
 
 		uMarker.ParallelForEachIndex([&](size_t i, size_t j, size_t k)
 		{
-			uMarker(i, j, k) = IsInsideSDF(GetColliderSDF()->Sample(uPos(i, j, k)));
+            if (IsInsideSDF(GetColliderSDF()->Sample(uPos(i, j, k))))
+            {
+                uMarker(i, j, k) = 0;
+            }
+            else
+            {
+                uMarker(i, j, k) = 1;
+            }
 		});
 
 		vMarker.ParallelForEachIndex([&](size_t i, size_t j, size_t k)
 		{
-			vMarker(i, j, k) = IsInsideSDF(GetColliderSDF()->Sample(vPos(i, j, k)));
+            if (IsInsideSDF(GetColliderSDF()->Sample(vPos(i, j, k))))
+            {
+                vMarker(i, j, k) = 0;
+            }
+            else
+            {
+                vMarker(i, j, k) = 1;
+            }
 		});
 
 		wMarker.ParallelForEachIndex([&](size_t i, size_t j, size_t k)
 		{
-			wMarker(i, j, k) = IsInsideSDF(GetColliderSDF()->Sample(wPos(i, j, k)));
+            if (IsInsideSDF(GetColliderSDF()->Sample(wPos(i, j, k))))
+            {
+                wMarker(i, j, k) = 0;
+            }
+            else
+            {
+                wMarker(i, j, k) = 1;
+            }
 		});
 
 		unsigned int depth = static_cast<unsigned int>(std::ceil(m_maxCFL));
 		ExtrapolateToRegion(grid->GetUConstAccessor(), uMarker, depth, u);
-		ExtrapolateToRegion(grid->GetUConstAccessor(), vMarker, depth, v);
-		ExtrapolateToRegion(grid->GetUConstAccessor(), wMarker, depth, w);
+		ExtrapolateToRegion(grid->GetVConstAccessor(), vMarker, depth, v);
+		ExtrapolateToRegion(grid->GetWConstAccessor(), wMarker, depth, w);
 	}
 
 	ScalarField3Ptr GridFluidSolver3::GetColliderSDF() const

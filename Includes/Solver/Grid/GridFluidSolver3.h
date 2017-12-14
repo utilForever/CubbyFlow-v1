@@ -263,7 +263,7 @@ namespace CubbyFlow
 		VectorField3Ptr GetColliderVelocityField() const;
 
 	private:
-		Vector3D m_gravity = Vector3D(0.0, 0.0, -9.8);
+		Vector3D m_gravity = Vector3D(0.0, -9.8, 0.0);
 		double m_viscosityCoefficient = 0.0;
 		double m_maxCFL = 5.0;
 		int m_closedDomainBoundaryFlag = DIRECTION_ALL;
@@ -346,6 +346,7 @@ namespace CubbyFlow
 	{
 		m_gridSpacing.x = gridSpacing;
 		m_gridSpacing.y = gridSpacing;
+        m_gridSpacing.z = gridSpacing;
 		m_useDomainSize = false;
 		return static_cast<T&>(*this);
 	}
