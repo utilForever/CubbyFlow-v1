@@ -55,8 +55,7 @@ namespace CubbyFlow
 
 	void ImplicitSurfaceSet3::AddExplicitSurface(const Surface3Ptr& surface)
 	{
-		m_surfaces.push_back(std::make_shared<SurfaceToImplicit3>(surface));
-		InvalidateBVH();
+        AddSurface(std::make_shared<SurfaceToImplicit3>(surface));
 	}
 
 	void ImplicitSurfaceSet3::AddSurface(const ImplicitSurface3Ptr& surface)
