@@ -35,7 +35,7 @@ namespace CubbyFlow
 		ImplicitSurfaceSet3(
 			const std::vector<ImplicitSurface3Ptr>& surfaces,
 			const Transform3& transform = Transform3(),
-			bool isNormalFlopped = false);
+			bool isNormalFlipped = false);
 
 		//! Constructs an implicit surface set using list of other surfaces.
 		ImplicitSurfaceSet3(
