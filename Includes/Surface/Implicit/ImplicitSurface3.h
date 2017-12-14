@@ -13,7 +13,7 @@
 
 namespace CubbyFlow
 {
-	//! Abstract base class for 3-d implicit surface.
+	//! Abstract base class for 3-D implicit surface.
 	class ImplicitSurface3 : public Surface3
 	{
 	public:
@@ -28,7 +28,7 @@ namespace CubbyFlow
 		//! Default destructor.
 		virtual ~ImplicitSurface3();
 
-		//! Returns signed distance from the given given point \p otherPoint.
+		//! Returns signed distance from the given point \p otherPoint.
 		double SignedDistance(const Vector3D& otherPoint) const;
 		
 	protected:
