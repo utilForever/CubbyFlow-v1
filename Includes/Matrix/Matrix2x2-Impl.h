@@ -29,7 +29,7 @@ namespace CubbyFlow
 
 	template <typename T>
 	Matrix<T, 2, 2>::Matrix(T m00, T m01,
-							T m10, T m11)
+		T m10, T m11)
 	{
 		Set(m00, m01,
 			m10, m11);
@@ -51,8 +51,7 @@ namespace CubbyFlow
 	template <typename T>
 	Matrix<T, 2, 2>::Matrix(const T* arr)
 	{
-		Set(arr[0], arr[1],
-			arr[2], arr[3]);
+		Set(arr);
 	}
 
 	template <typename T>
@@ -66,7 +65,7 @@ namespace CubbyFlow
 
 	template <typename T>
 	void Matrix<T, 2, 2>::Set(T m00, T m01,
-							  T m10, T m11)
+		T m10, T m11)
 	{
 		m_elements[0] = m00;
 		m_elements[1] = m01;
@@ -103,9 +102,12 @@ namespace CubbyFlow
 	template <typename T>
 	void Matrix<T, 2, 2>::Set(const Matrix& m)
 	{
-		m_elements = m.m_elements;
+		for (size_t i = 0; i < 4; ++i)
+		{
+			m_elements[i] = m.m_elements[i];
+		}
 	}
-	
+
 	template <typename T>
 	void Matrix<T, 2, 2>::Set(const T* arr)
 	{
@@ -146,15 +148,11 @@ namespace CubbyFlow
 	template <typename T>
 	bool Matrix<T, 2, 2>::IsSimilar(const Matrix& m, double tol) const
 	{
-		for (size_t i = 0; i < 4; ++i)
-		{
-			if (std::fabs(m_elements[i] - m.m_elements[i]) > tol)
-			{
-				return false;
-			}
-		}
-
-		return true;
+		return
+			(std::fabs(m_elements[0] - m.m_elements[0]) < tol) &&
+			(std::fabs(m_elements[1] - m.m_elements[1]) < tol) &&
+			(std::fabs(m_elements[2] - m.m_elements[2]) < tol) &&
+			(std::fabs(m_elements[3] - m.m_elements[3]) < tol);
 	}
 
 	template <typename T>
@@ -202,7 +200,7 @@ namespace CubbyFlow
 			m_elements[0] + m.m_elements[0], m_elements[1] + m.m_elements[1],
 			m_elements[2] + m.m_elements[2], m_elements[3] + m.m_elements[3]);
 	}
-	
+
 	template <typename T>
 	Matrix<T, 2, 2> Matrix<T, 2, 2>::Sub(T s) const
 	{
@@ -376,7 +374,16 @@ namespace CubbyFlow
 	template <typename T>
 	void Matrix<T, 2, 2>::Invert()
 	{
-		Set(Matrix(m_elements[3], -m_elements[1], -m_elements[2], m_elements[0]) / Determinant());
+		T d = Determinant();
+
+		Matrix m;
+		m.m_elements[0] = m_elements[3];
+		m.m_elements[1] = -m_elements[1];
+		m.m_elements[2] = -m_elements[2];
+		m.m_elements[3] = m_elements[0];
+		m.IDiv(d);
+
+		Set(m);
 	}
 
 	template <typename T>
@@ -384,7 +391,7 @@ namespace CubbyFlow
 	{
 		T sum = 0;
 
-		for (int i = 0; i < 4; ++i)
+		for (size_t i = 0; i < 4; ++i)
 		{
 			sum += m_elements[i];
 		}
@@ -401,13 +408,13 @@ namespace CubbyFlow
 	template <typename T>
 	T Matrix<T, 2, 2>::Min() const
 	{
-		return m_elements[std::min_element(m_elements.begin(), m_elements.end()) - m_elements.begin()];
+		return m_elements[std::distance(std::begin(m_elements), std::min_element(std::begin(m_elements), std::end(m_elements)))];
 	}
 
 	template <typename T>
 	T Matrix<T, 2, 2>::Max() const
 	{
-		return m_elements[std::max_element(m_elements.begin(), m_elements.end()) - m_elements.begin()];
+		return m_elements[std::distance(std::begin(m_elements), std::max_element(std::begin(m_elements), std::end(m_elements)))];
 	}
 
 	template <typename T>
@@ -432,8 +439,8 @@ namespace CubbyFlow
 	T Matrix<T, 2, 2>::Determinant() const
 	{
 		return
-			  m_elements[0] * m_elements[3]
-			- m_elements[1] * m_elements[2];
+			m_elements[0] * m_elements[3] -
+			m_elements[1] * m_elements[2];
 	}
 
 	template <typename T>
@@ -524,7 +531,7 @@ namespace CubbyFlow
 		IAdd(m);
 		return *this;
 	}
-	
+
 	template <typename T>
 	Matrix<T, 2, 2>& Matrix<T, 2, 2>::operator+=(T s)
 	{
@@ -572,7 +579,7 @@ namespace CubbyFlow
 	{
 		return m_elements[i];
 	}
-	
+
 	template <typename T>
 	const T& Matrix<T, 2, 2>::operator[](size_t i) const
 	{
@@ -594,21 +601,21 @@ namespace CubbyFlow
 	template <typename T>
 	bool Matrix<T, 2, 2>::operator==(const Matrix& m) const
 	{
-		for (size_t i = 0; i < 4; ++i)
-		{
-			if (m_elements[i] != m.m_elements[i])
-			{
-				return false;
-			}
-		}
-
-		return true;
+		return
+			m_elements[0] == m.m_elements[0] &&
+			m_elements[1] == m.m_elements[1] &&
+			m_elements[2] == m.m_elements[2] &&
+			m_elements[3] == m.m_elements[3];
 	}
 
 	template <typename T>
 	bool Matrix<T, 2, 2>::operator!=(const Matrix& m) const
 	{
-		return !(*this == m);
+		return
+			m_elements[0] != m.m_elements[0] ||
+			m_elements[1] != m.m_elements[1] ||
+			m_elements[2] != m.m_elements[2] ||
+			m_elements[3] != m.m_elements[3];
 	}
 
 	template <typename T>
@@ -640,7 +647,7 @@ namespace CubbyFlow
 	{
 		return Matrix<T, 2, 2>(
 			std::cos(rad), -std::sin(rad),
-			std::sin(rad),  std::cos(rad));
+			std::sin(rad), std::cos(rad));
 	}
 
 	template <typename T>

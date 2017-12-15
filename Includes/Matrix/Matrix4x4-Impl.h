@@ -33,7 +33,9 @@ namespace CubbyFlow
 							T m10, T m11, T m12,
 							T m20, T m21, T m22)
 	{
-		Set(m00, m01, m02, m10, m11, m12, m20, m21, m22);
+		Set(m00, m01, m02,
+			m10, m11, m12,
+			m20, m21, m22);
 	}
 
 	template <typename T>
@@ -43,7 +45,10 @@ namespace CubbyFlow
 				T m20, T m21, T m22, T m23,
 				T m30, T m31, T m32, T m33)
 	{
-		Set(m00, m01, m02, m03, m10, m11, m12, m13, m20, m21, m22, m23, m30, m31, m32, m33);
+		Set(m00, m01, m02, m03,
+			m10, m11, m12, m13,
+			m20, m21, m22, m23,
+			m30, m31, m32, m33);
 	}
 
 	template <typename T>
@@ -170,8 +175,7 @@ namespace CubbyFlow
 	template <typename T>
 	void Matrix<T, 4, 4>::Set(const Matrix<T, 3, 3>& m33)
 	{
-		Set(
-			m33[0], m33[1], m33[2], 0,
+		Set(m33[0], m33[1], m33[2], 0,
 			m33[3], m33[4], m33[5], 0,
 			m33[6], m33[7], m33[8], 0,
 			0,		0,		0,		1);
@@ -180,7 +184,10 @@ namespace CubbyFlow
 	template <typename T>
 	void Matrix<T, 4, 4>::Set(const Matrix& m)
 	{
-		m_elements = m.m_elements;
+		for (size_t i = 0; i < 16; ++i)
+		{
+			m_elements[i] = m.m_elements[i];
+		}
 	}
 
 	template <typename T>
@@ -204,13 +211,18 @@ namespace CubbyFlow
 	template <typename T>
 	void Matrix<T, 4, 4>::SetOffDiagonal(T s)
 	{
-		for (size_t i = 0; i < 16; i++)
-		{
-			if (i % 5 != 0)
-			{
-				m_elements[i] = s;
-			}
-		}
+		m_elements[1] = s;
+		m_elements[2] = s;
+		m_elements[3] = s;
+		m_elements[4] = s;
+		m_elements[6] = s;
+		m_elements[7] = s;
+		m_elements[8] = s;
+		m_elements[9] = s;
+		m_elements[11] = s;
+		m_elements[12] = s;
+		m_elements[13] = s;
+		m_elements[14] = s;
 	}
 
 	template <typename T>
@@ -234,15 +246,23 @@ namespace CubbyFlow
 	template <typename T>
 	bool Matrix<T, 4, 4>::IsSimilar(const Matrix& m, double tol) const
 	{
-		for (size_t i = 0; i < 16; ++i)
-		{
-			if (std::fabs(m_elements[i] - m.m_elements[i]) > tol)
-			{
-				return false;
-			}
-		}
-
-		return true;
+		return
+			std::fabs(m_elements[0] - m.m_elements[0]) < tol &&
+			std::fabs(m_elements[1] - m.m_elements[1]) < tol &&
+			std::fabs(m_elements[2] - m.m_elements[2]) < tol &&
+			std::fabs(m_elements[3] - m.m_elements[3]) < tol &&
+			std::fabs(m_elements[4] - m.m_elements[4]) < tol &&
+			std::fabs(m_elements[5] - m.m_elements[5]) < tol &&
+			std::fabs(m_elements[6] - m.m_elements[6]) < tol &&
+			std::fabs(m_elements[7] - m.m_elements[7]) < tol &&
+			std::fabs(m_elements[8] - m.m_elements[8]) < tol &&
+			std::fabs(m_elements[9] - m.m_elements[9]) < tol &&
+			std::fabs(m_elements[10] - m.m_elements[10]) < tol &&
+			std::fabs(m_elements[11] - m.m_elements[11]) < tol &&
+			std::fabs(m_elements[12] - m.m_elements[12]) < tol &&
+			std::fabs(m_elements[13] - m.m_elements[13]) < tol &&
+			std::fabs(m_elements[14] - m.m_elements[14]) < tol &&
+			std::fabs(m_elements[15] - m.m_elements[15]) < tol;
 	}
 
 	template <typename T>
@@ -347,21 +367,26 @@ namespace CubbyFlow
 	template <typename T>
 	Matrix<T, 4, 4> Matrix<T, 4, 4>::Mul(const Matrix& m) const
 	{
-		Matrix<T, 4, 4> tmp;
+		return Matrix(
+			m_elements[0] * m.m_elements[0] + m_elements[1] * m.m_elements[4] + m_elements[2] * m.m_elements[8] + m_elements[3] * m.m_elements[12],
+			m_elements[0] * m.m_elements[1] + m_elements[1] * m.m_elements[5] + m_elements[2] * m.m_elements[9] + m_elements[3] * m.m_elements[13],
+			m_elements[0] * m.m_elements[2] + m_elements[1] * m.m_elements[6] + m_elements[2] * m.m_elements[10] + m_elements[3] * m.m_elements[14],
+			m_elements[0] * m.m_elements[3] + m_elements[1] * m.m_elements[7] + m_elements[2] * m.m_elements[11] + m_elements[3] * m.m_elements[15],
 
-		for (size_t i = 0; i < 4; ++i)
-		{
-			for (size_t j = 0; j < 4; ++j)
-			{
-				tmp.m_elements[i * 4 + j] =
-					  m_elements[i * 4]		* m.m_elements[j]
-					+ m_elements[i * 4 + 1] * m.m_elements[j + 4]
-					+ m_elements[i * 4 + 2] * m.m_elements[j + 8]
-					+ m_elements[i * 4 + 3] * m.m_elements[j + 12];
-			}
-		}
+			m_elements[4] * m.m_elements[0] + m_elements[5] * m.m_elements[4] + m_elements[6] * m.m_elements[8] + m_elements[7] * m.m_elements[12],
+			m_elements[4] * m.m_elements[1] + m_elements[5] * m.m_elements[5] + m_elements[6] * m.m_elements[9] + m_elements[7] * m.m_elements[13],
+			m_elements[4] * m.m_elements[2] + m_elements[5] * m.m_elements[6] + m_elements[6] * m.m_elements[10] + m_elements[7] * m.m_elements[14],
+			m_elements[4] * m.m_elements[3] + m_elements[5] * m.m_elements[7] + m_elements[6] * m.m_elements[11] + m_elements[7] * m.m_elements[15],
 
-		return tmp;
+			m_elements[8] * m.m_elements[0] + m_elements[9] * m.m_elements[4] + m_elements[10] * m.m_elements[8] + m_elements[11] * m.m_elements[12],
+			m_elements[8] * m.m_elements[1] + m_elements[9] * m.m_elements[5] + m_elements[10] * m.m_elements[9] + m_elements[11] * m.m_elements[13],
+			m_elements[8] * m.m_elements[2] + m_elements[9] * m.m_elements[6] + m_elements[10] * m.m_elements[10] + m_elements[11] * m.m_elements[14],
+			m_elements[8] * m.m_elements[3] + m_elements[9] * m.m_elements[7] + m_elements[10] * m.m_elements[11] + m_elements[11] * m.m_elements[15],
+
+			m_elements[12] * m.m_elements[0] + m_elements[13] * m.m_elements[4] + m_elements[14] * m.m_elements[8] + m_elements[15] * m.m_elements[12],
+			m_elements[12] * m.m_elements[1] + m_elements[13] * m.m_elements[5] + m_elements[14] * m.m_elements[9] + m_elements[15] * m.m_elements[13],
+			m_elements[12] * m.m_elements[2] + m_elements[13] * m.m_elements[6] + m_elements[14] * m.m_elements[10] + m_elements[15] * m.m_elements[14],
+			m_elements[12] * m.m_elements[3] + m_elements[13] * m.m_elements[7] + m_elements[14] * m.m_elements[11] + m_elements[15] * m.m_elements[15]);
 	}
 
 	template <typename T>
@@ -443,46 +468,106 @@ namespace CubbyFlow
 	template <typename T>
 	void Matrix<T, 4, 4>::IAdd(T s)
 	{
-		for (size_t i = 0; i < 16; ++i)
-		{
-			m_elements[i] += s;
-		}
+		m_elements[0] += s;
+		m_elements[1] += s;
+		m_elements[2] += s;
+		m_elements[3] += s;
+		m_elements[4] += s;
+		m_elements[5] += s;
+		m_elements[6] += s;
+		m_elements[7] += s;
+		m_elements[8] += s;
+		m_elements[9] += s;
+		m_elements[10] += s;
+		m_elements[11] += s;
+		m_elements[12] += s;
+		m_elements[13] += s;
+		m_elements[14] += s;
+		m_elements[15] += s;
 	}
 
 	template <typename T>
 	void Matrix<T, 4, 4>::IAdd(const Matrix& m)
 	{
-		for (size_t i = 0; i < 16; ++i)
-		{
-			m_elements[i] += m.m_elements[i];
-		}
+		m_elements[0] += m.m_elements[0];
+		m_elements[1] += m.m_elements[1];
+		m_elements[2] += m.m_elements[2];
+		m_elements[3] += m.m_elements[3];
+		m_elements[4] += m.m_elements[4];
+		m_elements[5] += m.m_elements[5];
+		m_elements[6] += m.m_elements[6];
+		m_elements[7] += m.m_elements[7];
+		m_elements[8] += m.m_elements[8];
+		m_elements[9] += m.m_elements[9];
+		m_elements[10] += m.m_elements[10];
+		m_elements[11] += m.m_elements[11];
+		m_elements[12] += m.m_elements[12];
+		m_elements[13] += m.m_elements[13];
+		m_elements[14] += m.m_elements[14];
+		m_elements[15] += m.m_elements[15];
 	}
 
 	template <typename T>
 	void Matrix<T, 4, 4>::ISub(T s)
 	{
-		for (size_t i = 0; i < 16; ++i)
-		{
-			m_elements[i] -= s;
-		}
+		m_elements[0] -= s;
+		m_elements[1] -= s;
+		m_elements[2] -= s;
+		m_elements[3] -= s;
+		m_elements[4] -= s;
+		m_elements[5] -= s;
+		m_elements[6] -= s;
+		m_elements[7] -= s;
+		m_elements[8] -= s;
+		m_elements[9] -= s;
+		m_elements[10] -= s;
+		m_elements[11] -= s;
+		m_elements[12] -= s;
+		m_elements[13] -= s;
+		m_elements[14] -= s;
+		m_elements[15] -= s;
 	}
 
 	template <typename T>
 	void Matrix<T, 4, 4>::ISub(const Matrix& m)
 	{
-		for (size_t i = 0; i < 16; ++i)
-		{
-			m_elements[i] -= m.m_elements[i];
-		}
+		m_elements[0] -= m.m_elements[0];
+		m_elements[1] -= m.m_elements[1];
+		m_elements[2] -= m.m_elements[2];
+		m_elements[3] -= m.m_elements[3];
+		m_elements[4] -= m.m_elements[4];
+		m_elements[5] -= m.m_elements[5];
+		m_elements[6] -= m.m_elements[6];
+		m_elements[7] -= m.m_elements[7];
+		m_elements[8] -= m.m_elements[8];
+		m_elements[9] -= m.m_elements[9];
+		m_elements[10] -= m.m_elements[10];
+		m_elements[11] -= m.m_elements[11];
+		m_elements[12] -= m.m_elements[12];
+		m_elements[13] -= m.m_elements[13];
+		m_elements[14] -= m.m_elements[14];
+		m_elements[15] -= m.m_elements[15];
 	}
 
 	template <typename T>
 	void Matrix<T, 4, 4>::IMul(T s)
 	{
-		for (size_t i = 0; i < 16; ++i)
-		{
-			m_elements[i] *= s;
-		}
+		m_elements[0] *= s;
+		m_elements[1] *= s;
+		m_elements[2] *= s;
+		m_elements[3] *= s;
+		m_elements[4] *= s;
+		m_elements[5] *= s;
+		m_elements[6] *= s;
+		m_elements[7] *= s;
+		m_elements[8] *= s;
+		m_elements[9] *= s;
+		m_elements[10] *= s;
+		m_elements[11] *= s;
+		m_elements[12] *= s;
+		m_elements[13] *= s;
+		m_elements[14] *= s;
+		m_elements[15] *= s;
 	}
 
 	template <typename T>
@@ -494,10 +579,22 @@ namespace CubbyFlow
 	template <typename T>
 	void Matrix<T, 4, 4>::IDiv(T s)
 	{
-		for (size_t i = 0; i < 16; ++i)
-		{
-			m_elements[i] /= s;
-		}
+		m_elements[0] /= s;
+		m_elements[1] /= s;
+		m_elements[2] /= s;
+		m_elements[3] /= s;
+		m_elements[4] /= s;
+		m_elements[5] /= s;
+		m_elements[6] /= s;
+		m_elements[7] /= s;
+		m_elements[8] /= s;
+		m_elements[9] /= s;
+		m_elements[10] /= s;
+		m_elements[11] /= s;
+		m_elements[12] /= s;
+		m_elements[13] /= s;
+		m_elements[14] /= s;
+		m_elements[15] /= s;
 	}
 
 	template <typename T>
@@ -514,6 +611,8 @@ namespace CubbyFlow
 	template <typename T>
 	void Matrix<T, 4, 4>::Invert()
 	{
+		T d = Determinant();
+
 		Matrix m;
 		m.m_elements[0] = m_elements[5] * m_elements[10] * m_elements[15] + m_elements[6] * m_elements[11] * m_elements[13] + m_elements[7] * m_elements[9] * m_elements[14] - m_elements[5] * m_elements[11] * m_elements[14] - m_elements[6] * m_elements[9] * m_elements[15] - m_elements[7] * m_elements[10] * m_elements[13];
 		m.m_elements[1] = m_elements[1] * m_elements[11] * m_elements[14] + m_elements[2] * m_elements[9] * m_elements[15] + m_elements[3] * m_elements[10] * m_elements[13] - m_elements[1] * m_elements[10] * m_elements[15] - m_elements[2] * m_elements[11] * m_elements[13] - m_elements[3] * m_elements[9] * m_elements[14];
@@ -531,8 +630,8 @@ namespace CubbyFlow
 		m.m_elements[13] = m_elements[0] * m_elements[9] * m_elements[14] + m_elements[1] * m_elements[10] * m_elements[12] + m_elements[2] * m_elements[8] * m_elements[13] - m_elements[0] * m_elements[10] * m_elements[13] - m_elements[1] * m_elements[8] * m_elements[14] - m_elements[2] * m_elements[9] * m_elements[12];
 		m.m_elements[14] = m_elements[0] * m_elements[6] * m_elements[13] + m_elements[1] * m_elements[4] * m_elements[14] + m_elements[2] * m_elements[5] * m_elements[12] - m_elements[0] * m_elements[5] * m_elements[14] - m_elements[1] * m_elements[6] * m_elements[12] - m_elements[2] * m_elements[4] * m_elements[13];
 		m.m_elements[15] = m_elements[0] * m_elements[5] * m_elements[10] + m_elements[1] * m_elements[6] * m_elements[8] + m_elements[2] * m_elements[4] * m_elements[9] - m_elements[0] * m_elements[6] * m_elements[9] - m_elements[1] * m_elements[4] * m_elements[10] - m_elements[2] * m_elements[5] * m_elements[8];
-		
-		m.IDiv(Determinant());
+		m.IDiv(d);
+
 		Set(m);
 	}
 
@@ -541,7 +640,7 @@ namespace CubbyFlow
 	{
 		T sum = 0;
 
-		for (int i = 0; i < 16; ++i)
+		for (size_t i = 0; i < 16; ++i)
 		{
 			sum += m_elements[i];
 		}
@@ -558,13 +657,13 @@ namespace CubbyFlow
 	template <typename T>
 	T Matrix<T, 4, 4>::Min() const
 	{
-		return m_elements[std::min_element(m_elements.begin(), m_elements.end()) - m_elements.begin()];
+		return m_elements[std::distance(std::begin(m_elements), std::min_element(std::begin(m_elements), std::end(m_elements)))];
 	}
 
 	template <typename T>
 	T Matrix<T, 4, 4>::Max() const
 	{
-		return m_elements[std::max_element(m_elements.begin(), m_elements.end()) - m_elements.begin()];
+		return m_elements[std::distance(std::begin(m_elements), std::max_element(std::begin(m_elements), std::end(m_elements)))];
 	}
 
 	template <typename T>
@@ -589,14 +688,14 @@ namespace CubbyFlow
 	T Matrix<T, 4, 4>::Determinant() const
 	{
 		return
-			m_elements[0] * m_elements[5] * m_elements[10] * m_elements[15] + m_elements[0] * m_elements[6] * m_elements[11] * m_elements[13] + m_elements[0] * m_elements[7] * m_elements[9] * m_elements[14]
-			+ m_elements[1] * m_elements[4] * m_elements[11] * m_elements[14] + m_elements[1] * m_elements[6] * m_elements[8] * m_elements[15] + m_elements[1] * m_elements[7] * m_elements[10] * m_elements[12]
-			+ m_elements[2] * m_elements[4] * m_elements[9] * m_elements[15] + m_elements[2] * m_elements[5] * m_elements[11] * m_elements[12] + m_elements[2] * m_elements[7] * m_elements[8] * m_elements[13]
-			+ m_elements[3] * m_elements[4] * m_elements[10] * m_elements[13] + m_elements[3] * m_elements[5] * m_elements[8] * m_elements[14] + m_elements[3] * m_elements[6] * m_elements[9] * m_elements[12]
-			- m_elements[0] * m_elements[5] * m_elements[11] * m_elements[14] - m_elements[0] * m_elements[6] * m_elements[9] * m_elements[15] - m_elements[0] * m_elements[7] * m_elements[10] * m_elements[13]
-			- m_elements[1] * m_elements[4] * m_elements[10] * m_elements[15] - m_elements[1] * m_elements[6] * m_elements[11] * m_elements[12] - m_elements[1] * m_elements[7] * m_elements[8] * m_elements[14]
-			- m_elements[2] * m_elements[4] * m_elements[11] * m_elements[13] - m_elements[2] * m_elements[5] * m_elements[8] * m_elements[15] - m_elements[2] * m_elements[7] * m_elements[9] * m_elements[12]
-			- m_elements[3] * m_elements[4] * m_elements[9] * m_elements[14] - m_elements[3] * m_elements[5] * m_elements[10] * m_elements[12] - m_elements[3] * m_elements[6] * m_elements[8] * m_elements[13];
+			m_elements[0] * m_elements[5] * m_elements[10] * m_elements[15] + m_elements[0] * m_elements[6] * m_elements[11] * m_elements[13] + m_elements[0] * m_elements[7] * m_elements[9] * m_elements[14] +
+			m_elements[1] * m_elements[4] * m_elements[11] * m_elements[14] + m_elements[1] * m_elements[6] * m_elements[8] * m_elements[15] + m_elements[1] * m_elements[7] * m_elements[10] * m_elements[12] +
+			m_elements[2] * m_elements[4] * m_elements[9] * m_elements[15] + m_elements[2] * m_elements[5] * m_elements[11] * m_elements[12] + m_elements[2] * m_elements[7] * m_elements[8] * m_elements[13] +
+			m_elements[3] * m_elements[4] * m_elements[10] * m_elements[13] + m_elements[3] * m_elements[5] * m_elements[8] * m_elements[14] + m_elements[3] * m_elements[6] * m_elements[9] * m_elements[12] -
+			m_elements[0] * m_elements[5] * m_elements[11] * m_elements[14] - m_elements[0] * m_elements[6] * m_elements[9] * m_elements[15] - m_elements[0] * m_elements[7] * m_elements[10] * m_elements[13] -
+			m_elements[1] * m_elements[4] * m_elements[10] * m_elements[15] - m_elements[1] * m_elements[6] * m_elements[11] * m_elements[12] - m_elements[1] * m_elements[7] * m_elements[8] * m_elements[14] -
+			m_elements[2] * m_elements[4] * m_elements[11] * m_elements[13] - m_elements[2] * m_elements[5] * m_elements[8] * m_elements[15] - m_elements[2] * m_elements[7] * m_elements[9] * m_elements[12] -
+			m_elements[3] * m_elements[4] * m_elements[9] * m_elements[14] - m_elements[3] * m_elements[5] * m_elements[10] * m_elements[12] - m_elements[3] * m_elements[6] * m_elements[8] * m_elements[13];
 	}
 
 	template <typename T>
@@ -682,10 +781,22 @@ namespace CubbyFlow
 	Matrix<U, 4, 4> Matrix<T, 4, 4>::CastTo() const
 	{
 		return Matrix<U, 4, 4>(
-			static_cast<U>(m_elements[0]), static_cast<U>(m_elements[1]), static_cast<U>(m_elements[2]), static_cast<U>(m_elements[3]), 
-			static_cast<U>(m_elements[4]), static_cast<U>(m_elements[5]), static_cast<U>(m_elements[6]), static_cast<U>(m_elements[7]), 
-			static_cast<U>(m_elements[8]), static_cast<U>(m_elements[9]), static_cast<U>(m_elements[10]), static_cast<U>(m_elements[11]), 
-			static_cast<U>(m_elements[12]), static_cast<U>(m_elements[13]), static_cast<U>(m_elements[14]), static_cast<U>(m_elements[15]));
+			static_cast<U>(m_elements[0]),
+			static_cast<U>(m_elements[1]),
+			static_cast<U>(m_elements[2]),
+			static_cast<U>(m_elements[3]), 
+			static_cast<U>(m_elements[4]),
+			static_cast<U>(m_elements[5]),
+			static_cast<U>(m_elements[6]),
+			static_cast<U>(m_elements[7]), 
+			static_cast<U>(m_elements[8]),
+			static_cast<U>(m_elements[9]),
+			static_cast<U>(m_elements[10]),
+			static_cast<U>(m_elements[11]), 
+			static_cast<U>(m_elements[12]),
+			static_cast<U>(m_elements[13]),
+			static_cast<U>(m_elements[14]),
+			static_cast<U>(m_elements[15]));
 	}
 
 	template <typename T>
@@ -771,21 +882,45 @@ namespace CubbyFlow
 	template <typename T>
 	bool Matrix<T, 4, 4>::operator==(const Matrix& m) const
 	{
-		for (size_t i = 0; i < 16; ++i)
-		{
-			if (m_elements[i] != m.m_elements[i])
-			{
-				return false;
-			}
-		}
-
-		return true;
+		return
+			m_elements[0] == m.m_elements[0] &&
+			m_elements[1] == m.m_elements[1] &&
+			m_elements[2] == m.m_elements[2] &&
+			m_elements[3] == m.m_elements[3] &&
+			m_elements[4] == m.m_elements[4] &&
+			m_elements[5] == m.m_elements[5] &&
+			m_elements[6] == m.m_elements[6] &&
+			m_elements[7] == m.m_elements[7] &&
+			m_elements[8] == m.m_elements[8] &&
+			m_elements[9] == m.m_elements[9] &&
+			m_elements[10] == m.m_elements[10] &&
+			m_elements[11] == m.m_elements[11] &&
+			m_elements[12] == m.m_elements[12] &&
+			m_elements[13] == m.m_elements[13] &&
+			m_elements[14] == m.m_elements[14] &&
+			m_elements[15] == m.m_elements[15];
 	}
 
 	template <typename T>
 	bool Matrix<T, 4, 4>::operator!=(const Matrix& m) const
 	{
-		return !(*this == m);
+		return
+			m_elements[0] != m.m_elements[0] ||
+			m_elements[1] != m.m_elements[1] ||
+			m_elements[2] != m.m_elements[2] ||
+			m_elements[3] != m.m_elements[3] ||
+			m_elements[4] != m.m_elements[4] ||
+			m_elements[5] != m.m_elements[5] ||
+			m_elements[6] != m.m_elements[6] ||
+			m_elements[7] != m.m_elements[7] ||
+			m_elements[8] != m.m_elements[8] ||
+			m_elements[9] != m.m_elements[9] ||
+			m_elements[10] != m.m_elements[10] ||
+			m_elements[11] != m.m_elements[11] ||
+			m_elements[12] != m.m_elements[12] ||
+			m_elements[13] != m.m_elements[13] ||
+			m_elements[14] != m.m_elements[14] ||
+			m_elements[15] != m.m_elements[15];
 	}
 
 	template <typename T>

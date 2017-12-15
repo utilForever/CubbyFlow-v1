@@ -28,9 +28,9 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	Matrix<T, 3, 3>::Matrix(T m00, T m01, T m02, 
-							T m10, T m11, T m12, 
-							T m20, T m21, T m22)
+	Matrix<T, 3, 3>::Matrix(T m00, T m01, T m02,
+		T m10, T m11, T m12,
+		T m20, T m21, T m22)
 	{
 		Set(m00, m01, m02,
 			m10, m11, m12,
@@ -72,8 +72,8 @@ namespace CubbyFlow
 
 	template <typename T>
 	void Matrix<T, 3, 3>::Set(T m00, T m01, T m02,
-							  T m10, T m11, T m12,
-							  T m20, T m21, T m22)
+		T m10, T m11, T m12,
+		T m20, T m21, T m22)
 	{
 		m_elements[0] = m00;
 		m_elements[1] = m01;
@@ -115,7 +115,10 @@ namespace CubbyFlow
 	template <typename T>
 	void Matrix<T, 3, 3>::Set(const Matrix& m)
 	{
-		m_elements = m.m_elements;
+		for (size_t i = 0; i < 9; ++i)
+		{
+			m_elements[i] = m.m_elements[i];
+		}
 	}
 
 	template <typename T>
@@ -165,15 +168,16 @@ namespace CubbyFlow
 	template <typename T>
 	bool Matrix<T, 3, 3>::IsSimilar(const Matrix& m, double tol) const
 	{
-		for (size_t i = 0; i < 9; ++i)
-		{
-			if (std::fabs(m_elements[i] - m.m_elements[i]) > tol)
-			{
-				return false;
-			}
-		}
-
-		return true;
+		return
+			std::fabs(m_elements[0] - m.m_elements[0]) < tol &&
+			std::fabs(m_elements[1] - m.m_elements[1]) < tol &&
+			std::fabs(m_elements[2] - m.m_elements[2]) < tol &&
+			std::fabs(m_elements[3] - m.m_elements[3]) < tol &&
+			std::fabs(m_elements[4] - m.m_elements[4]) < tol &&
+			std::fabs(m_elements[5] - m.m_elements[5]) < tol &&
+			std::fabs(m_elements[6] - m.m_elements[6]) < tol &&
+			std::fabs(m_elements[7] - m.m_elements[7]) < tol &&
+			std::fabs(m_elements[8] - m.m_elements[8]) < tol;
 	}
 
 	template <typename T>
@@ -263,20 +267,18 @@ namespace CubbyFlow
 	template <typename T>
 	Matrix<T, 3, 3> Matrix<T, 3, 3>::Mul(const Matrix& m) const
 	{
-		Matrix tmp;
+		return Matrix(
+			m_elements[0] * m.m_elements[0] + m_elements[1] * m.m_elements[3] + m_elements[2] * m.m_elements[6],
+			m_elements[0] * m.m_elements[1] + m_elements[1] * m.m_elements[4] + m_elements[2] * m.m_elements[7],
+			m_elements[0] * m.m_elements[2] + m_elements[1] * m.m_elements[5] + m_elements[2] * m.m_elements[8],
 
-		for (size_t i = 0; i < 3; ++i)
-		{
-			for (size_t j = 0; j < 3; ++j)
-			{
-				tmp.m_elements[i * 3 + j] =
-					m_elements[i * 3] * m.m_elements[j]
-					+ m_elements[i * 3 + 1] * m.m_elements[j + 3]
-					+ m_elements[i * 3 + 2] * m.m_elements[j + 6];
-			}
-		}
+			m_elements[3] * m.m_elements[0] + m_elements[4] * m.m_elements[3] + m_elements[5] * m.m_elements[6],
+			m_elements[3] * m.m_elements[1] + m_elements[4] * m.m_elements[4] + m_elements[5] * m.m_elements[7],
+			m_elements[3] * m.m_elements[2] + m_elements[4] * m.m_elements[5] + m_elements[5] * m.m_elements[8],
 
-		return tmp;
+			m_elements[6] * m.m_elements[0] + m_elements[7] * m.m_elements[3] + m_elements[8] * m.m_elements[6],
+			m_elements[6] * m.m_elements[1] + m_elements[7] * m.m_elements[4] + m_elements[8] * m.m_elements[7],
+			m_elements[6] * m.m_elements[2] + m_elements[7] * m.m_elements[5] + m_elements[8] * m.m_elements[8]);
 	}
 
 	template <typename T>
@@ -351,46 +353,71 @@ namespace CubbyFlow
 	template <typename T>
 	void Matrix<T, 3, 3>::IAdd(T s)
 	{
-		for (size_t i = 0; i < 9; ++i)
-		{
-			m_elements[i] += s;
-		}
+		m_elements[0] += s;
+		m_elements[1] += s;
+		m_elements[2] += s;
+		m_elements[3] += s;
+		m_elements[4] += s;
+		m_elements[5] += s;
+		m_elements[6] += s;
+		m_elements[7] += s;
+		m_elements[8] += s;
 	}
 
 	template <typename T>
 	void Matrix<T, 3, 3>::IAdd(const Matrix& m)
 	{
-		for (size_t i = 0; i < 9; ++i)
-		{
-			m_elements[i] += m.m_elements[i];
-		}
+		m_elements[0] += m.m_elements[0];
+		m_elements[1] += m.m_elements[1];
+		m_elements[2] += m.m_elements[2];
+		m_elements[3] += m.m_elements[3];
+		m_elements[4] += m.m_elements[4];
+		m_elements[5] += m.m_elements[5];
+		m_elements[6] += m.m_elements[6];
+		m_elements[7] += m.m_elements[7];
+		m_elements[8] += m.m_elements[8];
 	}
 
 	template <typename T>
 	void Matrix<T, 3, 3>::ISub(T s)
 	{
-		for (size_t i = 0; i < 9; ++i)
-		{
-			m_elements[i] -= s;
-		}
+		m_elements[0] -= s;
+		m_elements[1] -= s;
+		m_elements[2] -= s;
+		m_elements[3] -= s;
+		m_elements[4] -= s;
+		m_elements[5] -= s;
+		m_elements[6] -= s;
+		m_elements[7] -= s;
+		m_elements[8] -= s;
 	}
 
 	template <typename T>
 	void Matrix<T, 3, 3>::ISub(const Matrix& m)
 	{
-		for (size_t i = 0; i < 9; ++i)
-		{
-			m_elements[i] -= m.m_elements[i];
-		}
+		m_elements[0] -= m.m_elements[0];
+		m_elements[1] -= m.m_elements[1];
+		m_elements[2] -= m.m_elements[2];
+		m_elements[3] -= m.m_elements[3];
+		m_elements[4] -= m.m_elements[4];
+		m_elements[5] -= m.m_elements[5];
+		m_elements[6] -= m.m_elements[6];
+		m_elements[7] -= m.m_elements[7];
+		m_elements[8] -= m.m_elements[8];
 	}
 
 	template <typename T>
 	void Matrix<T, 3, 3>::IMul(T s)
 	{
-		for (size_t i = 0; i < 9; ++i)
-		{
-			m_elements[i] *= s;
-		}
+		m_elements[0] *= s;
+		m_elements[1] *= s;
+		m_elements[2] *= s;
+		m_elements[3] *= s;
+		m_elements[4] *= s;
+		m_elements[5] *= s;
+		m_elements[6] *= s;
+		m_elements[7] *= s;
+		m_elements[8] *= s;
 	}
 
 	template <typename T>
@@ -402,10 +429,15 @@ namespace CubbyFlow
 	template <typename T>
 	void Matrix<T, 3, 3>::IDiv(T s)
 	{
-		for (size_t i = 0; i < 9; ++i)
-		{
-			m_elements[i] /= s;
-		}
+		m_elements[0] /= s;
+		m_elements[1] /= s;
+		m_elements[2] /= s;
+		m_elements[3] /= s;
+		m_elements[4] /= s;
+		m_elements[5] /= s;
+		m_elements[6] /= s;
+		m_elements[7] /= s;
+		m_elements[8] /= s;
 	}
 
 	template <typename T>
@@ -419,6 +451,8 @@ namespace CubbyFlow
 	template <typename T>
 	void Matrix<T, 3, 3>::Invert()
 	{
+		T d = Determinant();
+
 		Matrix m;
 		m.m_elements[0] = m_elements[4] * m_elements[8] - m_elements[5] * m_elements[7];
 		m.m_elements[1] = m_elements[2] * m_elements[7] - m_elements[1] * m_elements[8];
@@ -429,8 +463,8 @@ namespace CubbyFlow
 		m.m_elements[6] = m_elements[3] * m_elements[7] - m_elements[4] * m_elements[6];
 		m.m_elements[7] = m_elements[1] * m_elements[6] - m_elements[0] * m_elements[7];
 		m.m_elements[8] = m_elements[0] * m_elements[4] - m_elements[1] * m_elements[3];
+		m.IDiv(d);
 
-		m.IDiv(Determinant());
 		Set(m);
 	}
 
@@ -439,7 +473,7 @@ namespace CubbyFlow
 	{
 		T sum = 0;
 
-		for (int i = 0; i < 9; ++i)
+		for (size_t i = 0; i < 9; ++i)
 		{
 			sum += m_elements[i];
 		}
@@ -456,13 +490,13 @@ namespace CubbyFlow
 	template <typename T>
 	T Matrix<T, 3, 3>::Min() const
 	{
-		return m_elements[std::min_element(m_elements.begin(), m_elements.end()) - m_elements.begin()];
+		return m_elements[std::distance(std::begin(m_elements), std::min_element(std::begin(m_elements), std::end(m_elements)))];
 	}
 
 	template <typename T>
 	T Matrix<T, 3, 3>::Max() const
 	{
-		return m_elements[std::max_element(m_elements.begin(), m_elements.end()) - m_elements.begin()];
+		return m_elements[std::distance(std::begin(m_elements), std::max_element(std::begin(m_elements), std::end(m_elements)))];
 	}
 
 	template <typename T>
@@ -487,9 +521,12 @@ namespace CubbyFlow
 	T Matrix<T, 3, 3>::Determinant() const
 	{
 		return
-			  m_elements[0] * (m_elements[4] * m_elements[8] - m_elements[5] * m_elements[7])
-			- m_elements[1] * (m_elements[3] * m_elements[8] - m_elements[5] * m_elements[6])
-			+ m_elements[2] * (m_elements[3] * m_elements[7] - m_elements[4] * m_elements[6]);
+			m_elements[0] * m_elements[4] * m_elements[8] -
+			m_elements[0] * m_elements[5] * m_elements[7] +
+			m_elements[1] * m_elements[5] * m_elements[6] -
+			m_elements[1] * m_elements[3] * m_elements[8] +
+			m_elements[2] * m_elements[3] * m_elements[7] -
+			m_elements[2] * m_elements[4] * m_elements[6];
 	}
 
 	template <typename T>
@@ -662,21 +699,31 @@ namespace CubbyFlow
 	template <typename T>
 	bool Matrix<T, 3, 3>::operator==(const Matrix& m) const
 	{
-		for (size_t i = 0; i < 9; ++i)
-		{
-			if (m_elements[i] != m.m_elements[i])
-			{
-				return false;
-			}
-		}
-
-		return true;
+		return
+			m_elements[0] == m.m_elements[0] &&
+			m_elements[1] == m.m_elements[1] &&
+			m_elements[2] == m.m_elements[2] &&
+			m_elements[3] == m.m_elements[3] &&
+			m_elements[4] == m.m_elements[4] &&
+			m_elements[5] == m.m_elements[5] &&
+			m_elements[6] == m.m_elements[6] &&
+			m_elements[7] == m.m_elements[7] &&
+			m_elements[8] == m.m_elements[8];
 	}
 
 	template <typename T>
 	bool Matrix<T, 3, 3>::operator!=(const Matrix& m) const
 	{
-		return !(*this == m);
+		return
+			m_elements[0] != m.m_elements[0] ||
+			m_elements[1] != m.m_elements[1] ||
+			m_elements[2] != m.m_elements[2] ||
+			m_elements[3] != m.m_elements[3] ||
+			m_elements[4] != m.m_elements[4] ||
+			m_elements[5] != m.m_elements[5] ||
+			m_elements[6] != m.m_elements[6] ||
+			m_elements[7] != m.m_elements[7] ||
+			m_elements[8] != m.m_elements[8];
 	}
 
 	template <typename T>
@@ -715,18 +762,18 @@ namespace CubbyFlow
 	template <typename T>
 	Matrix<T, 3, 3> Matrix<T, 3, 3>::MakeRotationMatrix(const Vector3<T>& axis, const T rad)
 	{
-		return Matrix<T, 3, 3>(
-			std::cos(rad) + axis.x * axis.x * (1 - std::cos(rad)),
-			axis.x * axis.y * (1 - std::cos(rad)) - axis.z * std::sin(rad),
-			axis.x * axis.z * (1 - std::cos(rad)) + axis.y * std::sin(rad),
-			
-			axis.y * axis.x * (1 - std::cos(rad)) + axis.z * std::sin(rad), 
-			std::cos(rad) + axis.y * axis.y * (1 - std::cos(rad)),
-			axis.y * axis.z * (1 - std::cos(rad)) - axis.x * std::sin(rad),
+		return Matrix(
+			1 + (1 - std::cos(rad)) * (axis.x * axis.x - 1),
+			-axis.z * std::sin(rad) + (1 - std::cos(rad)) * axis.x * axis.y,
+			axis.y * std::sin(rad) + (1 - std::cos(rad)) * axis.x * axis.z,
 
-			axis.z * axis.x * (1 - std::cos(rad)) - axis.y * std::sin(rad),
-			axis.z * axis.y * (1 - std::cos(rad)) + axis.x * std::sin(rad),
-			std::cos(rad) + axis.z * axis.z * (1 - std::cos(rad)));
+			axis.z * std::sin(rad) + (1 - std::cos(rad)) * axis.x * axis.y,
+			1 + (1 - std::cos(rad)) * (axis.y * axis.y - 1),
+			-axis.x * std::sin(rad) + (1 - std::cos(rad)) * axis.y * axis.z,
+
+			-axis.y * std::sin(rad) + (1 - std::cos(rad)) * axis.x * axis.z,
+			axis.x * std::sin(rad) + (1 - std::cos(rad)) * axis.y * axis.z,
+			1 + (1 - std::cos(rad)) * (axis.z * axis.z - 1));
 	}
 
 	template <typename T>
