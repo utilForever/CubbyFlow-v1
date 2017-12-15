@@ -166,10 +166,7 @@ namespace CubbyFlow
 
 	//! Computes spherical linear interpolation.
 	template <typename T>
-	Quaternion<T> Slerp(
-		const Quaternion<T>& a,
-		const Quaternion<T>& b,
-		T t);
+	Quaternion<T> Slerp(const Quaternion<T>& a, const Quaternion<T>& b, T t);
 
 	//! Returns quaternion q * vector v.
 	template <typename T>

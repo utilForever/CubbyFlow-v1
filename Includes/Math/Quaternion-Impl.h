@@ -231,10 +231,11 @@ namespace CubbyFlow
 	template <typename T>
 	Quaternion<T> Quaternion<T>::Mul(const Quaternion& other) const
 	{
-		Vector3<T> v1 = Vector3<T>(x, y, z);
-		Vector3<T> v2 = Vector3<T>(other.x, other.y, other.z);
-		Vector3<T> res = v2 * w + v1 * other.w + v1.Cross(v2);
-		return Quaternion(w * other.w - v1.Dot(v2), res.x, res.y, res.z);
+        return Quaternion(
+            w * other.w - x * other.x - y * other.y - z * other.z,
+            w * other.x + x * other.w + y * other.z - z * other.y,
+            w * other.y - x * other.z + y * other.w + z * other.x,
+            w * other.z + x * other.y - y * other.x + z * other.w);
 	}
 
 	template <typename T>
@@ -246,10 +247,11 @@ namespace CubbyFlow
 	template <typename T>
 	Quaternion<T> Quaternion<T>::RMul(const Quaternion& other) const
 	{
-		Vector3<T> v1 = Vector3<T>(x, y, z);
-		Vector3<T> v2 = Vector3<T>(other.x, other.y, other.z);
-		Vector3<T> res = v2 * w + v1 * other.w + v2.Cross(v1);
-		return Quaternion(w * other.w - v1.Dot(v2), res.x, res.y, res.z);
+        return Quaternion(
+            other.w * w - other.x * x - other.y * y - other.z * z,
+            other.w * x + other.x * w + other.y * z - other.z * y,
+            other.w * y - other.x * z + other.y * w + other.z * x,
+            other.w * z + other.x * y - other.y * x + other.z * w);
 	}
 
 	template <typename T>
@@ -425,7 +427,7 @@ namespace CubbyFlow
 	template <typename T>
 	bool Quaternion<T>::operator!=(const Quaternion& other) const
 	{
-		return !(w == other.w && x == other.x && y == other.y && z == other.z);
+		return (w != other.w || x != other.x || y != other.y || z != other.z);
 	}
 
 	template <typename T>
@@ -435,10 +437,7 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	Quaternion<T> Slerp(
-		const Quaternion<T>& a,
-		const Quaternion<T>& b,
-		T t)
+	Quaternion<T> Slerp(const Quaternion<T>& a, const Quaternion<T>& b, T t)
 	{
 		static const double threshold = 0.01;
 		static const T eps = std::numeric_limits<T>::epsilon();
