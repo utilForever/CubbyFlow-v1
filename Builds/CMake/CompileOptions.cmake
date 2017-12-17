@@ -93,7 +93,7 @@ endif ()
 if (CMAKE_CXX_COMPILER_ID MATCHES "GNU" OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
     set(DEFAULT_COMPILE_OPTIONS ${DEFAULT_COMPILE_OPTIONS}
         -Wall
-        -Werror
+        #-Werror
         -std=c++1z
     )
 endif ()
