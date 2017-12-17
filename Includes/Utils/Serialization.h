@@ -12,6 +12,7 @@
 #include <Array/Array1.h>
 
 #include <vector>
+#include <cstring>
 
 namespace CubbyFlow
 {
