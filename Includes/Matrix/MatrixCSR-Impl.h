@@ -110,7 +110,7 @@ namespace CubbyFlow
 	template <typename T>
 	MatrixCSR<T>::MatrixCSR()
 	{
-		m_rowPointers.push_back(0);
+        Clear();
 	}
 
 	template <typename T>
@@ -136,6 +136,16 @@ namespace CubbyFlow
 	MatrixCSR<T>::MatrixCSR(MatrixCSR&& other) noexcept
 	{
 		(*this) = std::move(other);
+	}
+
+    template <typename T>
+    void MatrixCSR<T>::Clear()
+	{
+        m_size = { 0, 0 };
+        m_nonZeros.clear();
+        m_rowPointers.clear();
+        m_columnIndices.clear();
+        m_rowPointers.push_back(0);
 	}
 
 	template <typename T>

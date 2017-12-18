@@ -161,6 +161,9 @@ namespace CubbyFlow
 		MatrixCSR(MatrixCSR&& other) noexcept;
 
 		// MARK: Basic setters
+        //! Clears the matrix and make it zero-dimensional.
+        void Clear();
+
 		//! Sets whole matrix with input scalar.
 		void Set(const T& s);
 
