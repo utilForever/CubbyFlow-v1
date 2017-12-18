@@ -56,6 +56,9 @@ namespace CubbyFlow
 		//! Resizes to \p n dimensional vector with initial value \p val.
 		void Resize(size_t n, const T& val = 0);
 
+        //! Clears the vector and make it zero-dimensional.
+        void Clear();
+
 		//! Sets all elements to \p s.
 		void Set(const T& s);
 
@@ -66,6 +69,9 @@ namespace CubbyFlow
 		//! Sets vector with expression template.
 		template <typename E>
 		void Set(const VectorExpression<T, E>& other);
+
+        //! Adds an element.
+        void Append(const T& val);
 
 		//! Swaps the content of the vector with \p other vector.
 		void Swap(VectorN& other);

@@ -59,6 +59,12 @@ namespace CubbyFlow
 		m_elements.resize(n, val);
 	}
 
+    template <typename T>
+    void VectorN<T>::Clear()
+	{
+        m_elements.clear();
+	}
+
 	template <typename T>
 	void VectorN<T>::Set(const T& s)
 	{
@@ -81,6 +87,12 @@ namespace CubbyFlow
 		// Parallel evaluation of the expression
 		const E& expression = other();
 		ParallelForEachIndex([&](size_t i) { m_elements[i] = expression[i]; });
+	}
+
+    template <typename T>
+    void VectorN<T>::Append(const T& val)
+	{
+        m_elements.push_back(val);
 	}
 
 	template <typename T>
