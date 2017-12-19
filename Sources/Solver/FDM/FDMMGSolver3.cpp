@@ -64,7 +64,7 @@ namespace CubbyFlow
 		m_useRedBlackOrdering = useRedBlackOrdering;
 	}
 
-	const MGParameters<FDMBlas3>& FDMMGSolver3::GetParams() const
+	const MGParameters<FDMBLAS3>& FDMMGSolver3::GetParams() const
 	{
 		return m_mgParams;
 	}

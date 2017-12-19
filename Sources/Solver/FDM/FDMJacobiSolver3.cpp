@@ -37,9 +37,9 @@ namespace CubbyFlow
 
 			if (iter != 0 && iter % m_residualCheckInterval == 0)
 			{
-				FDMBlas3::Residual(system->A, system->x, system->b, &m_residual);
+				FDMBLAS3::Residual(system->A, system->x, system->b, &m_residual);
 
-				if (FDMBlas3::L2Norm(m_residual) < m_tolerance)
+				if (FDMBLAS3::L2Norm(m_residual) < m_tolerance)
 				{
 					m_lastNumberOfIterations = iter + 1;
 					break;
@@ -47,8 +47,8 @@ namespace CubbyFlow
 			}
 		}
 
-		FDMBlas3::Residual(system->A, system->x, system->b, &m_residual);
-		m_lastResidual = FDMBlas3::L2Norm(m_residual);
+		FDMBLAS3::Residual(system->A, system->x, system->b, &m_residual);
+		m_lastResidual = FDMBLAS3::L2Norm(m_residual);
 
 		return m_lastResidual < m_tolerance;
 	}

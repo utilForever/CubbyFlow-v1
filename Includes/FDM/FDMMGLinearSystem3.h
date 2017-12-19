@@ -15,10 +15,10 @@
 namespace CubbyFlow
 {
 	//! Multigrid-style 3-D FDM matrix.
-	using FDMMGMatrix3 = MGMatrix<FDMBlas3>;
+	using FDMMGMatrix3 = MGMatrix<FDMBLAS3>;
 
 	//! Multigrid-style 3-D FDM vector.
-	using FDMMGVector3 = MGVector<FDMBlas3>;
+	using FDMMGVector3 = MGVector<FDMBLAS3>;
 
 	//! Multigrid-syle 3-D linear system.
 	struct FDMMGLinearSystem3

@@ -7,6 +7,10 @@
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <FDM/FDMLinearSystem3.h>
+#include <Math/MathUtils.h>
+
+#include <algorithm>
+#include <cassert>
 
 namespace CubbyFlow
 {
@@ -17,29 +21,36 @@ namespace CubbyFlow
 		b.Clear();
 	}
 
-	void FDMBlas3::Set(double s, FDMVector3* result)
+    void FDMLinearSystem3::Resize(const Size3& size)
+    {
+        A.Resize(size);
+        x.Resize(size);
+        b.Resize(size);
+    }
+
+	void FDMBLAS3::Set(double s, FDMVector3* result)
 	{
 		result->Set(s);
 	}
 
-	void FDMBlas3::Set(const FDMVector3& v, FDMVector3* result)
+	void FDMBLAS3::Set(const FDMVector3& v, FDMVector3* result)
 	{
 		result->Set(v);
 	}
 
-	void FDMBlas3::Set(double s, FDMMatrix3* result)
+	void FDMBLAS3::Set(double s, FDMMatrix3* result)
 	{
 		FDMMatrixRow3 row;
 		row.center = row.right = row.up = row.front = s;
 		result->Set(row);
 	}
 
-	void FDMBlas3::Set(const FDMMatrix3& m, FDMMatrix3* result)
+	void FDMBLAS3::Set(const FDMMatrix3& m, FDMMatrix3* result)
 	{
 		result->Set(m);
 	}
 
-	double FDMBlas3::Dot(const FDMVector3& a, const FDMVector3& b)
+	double FDMBLAS3::Dot(const FDMVector3& a, const FDMVector3& b)
 	{
 		Size3 size = a.size();
 
@@ -61,7 +72,7 @@ namespace CubbyFlow
 		return result;
 	}
 
-	void FDMBlas3::AXPlusY(double a, const FDMVector3& x, const FDMVector3& y, FDMVector3* result)
+	void FDMBLAS3::AXPlusY(double a, const FDMVector3& x, const FDMVector3& y, FDMVector3* result)
 	{
 		assert(x.size() == y.size());
 		assert(x.size() == result->size());
@@ -72,7 +83,7 @@ namespace CubbyFlow
 		});
 	}
 
-	void FDMBlas3::MVM(const FDMMatrix3& m, const FDMVector3& v, FDMVector3* result)
+	void FDMBLAS3::MVM(const FDMMatrix3& m, const FDMVector3& v, FDMVector3* result)
 	{
 		Size3 size = m.size();
 
@@ -92,7 +103,7 @@ namespace CubbyFlow
 		});
 	}
 
-	void FDMBlas3::Residual(const FDMMatrix3& a, const FDMVector3& x, const FDMVector3& b, FDMVector3* result)
+	void FDMBLAS3::Residual(const FDMMatrix3& a, const FDMVector3& x, const FDMVector3& b, FDMVector3* result)
 	{
 		Size3 size = a.size();
 
@@ -114,12 +125,12 @@ namespace CubbyFlow
 		});
 	}
 
-	double FDMBlas3::L2Norm(const FDMVector3& v)
+	double FDMBLAS3::L2Norm(const FDMVector3& v)
 	{
 		return std::sqrt(Dot(v, v));
 	}
 
-	double FDMBlas3::LInfNorm(const FDMVector3& v)
+	double FDMBLAS3::LInfNorm(const FDMVector3& v)
 	{
 		Size3 size = v.size();
 		double result = 0.0;
@@ -137,4 +148,90 @@ namespace CubbyFlow
 
 		return std::fabs(result);
 	}
+
+    void FDMCompressedBLAS3::Set(double s, VectorND* result)
+	{
+	    result->Set(s);
+	}
+
+    void FDMCompressedBLAS3::Set(const VectorND& v, VectorND* result)
+    {
+        result->Set(v);
+    }
+
+    void FDMCompressedBLAS3::Set(double s, MatrixCSRD* result)
+	{
+	    result->Set(s);
+	}
+
+    void FDMCompressedBLAS3::Set(const MatrixCSRD& m, MatrixCSRD* result)
+    {
+        result->Set(m);
+    }
+
+    double FDMCompressedBLAS3::Dot(const VectorND& a, const VectorND& b)
+    {
+        return a.Dot(b);
+    }
+
+    void FDMCompressedBLAS3::AXPlusY(double a, const VectorND& x, const VectorND& y, VectorND* result)
+    {
+        *result = a * x + y;
+    }
+
+    void FDMCompressedBLAS3::MVM(const MatrixCSRD& m, const VectorND& v, VectorND* result)
+    {
+        const auto rp = m.RowPointersBegin();
+        const auto ci = m.ColumnIndicesBegin();
+        const auto nnz = m.NonZeroBegin();
+
+        v.ParallelForEachIndex([&](size_t i)
+        {
+            const size_t rowBegin = rp[i];
+            const size_t rowEnd = rp[i + 1];
+
+            double sum = 0.0;
+
+            for (size_t jj = rowBegin; jj < rowEnd; ++jj)
+            {
+                size_t j = ci[jj];
+                sum += nnz[jj] * v[j];
+            }
+
+            (*result)[i] = sum;
+        });
+    }
+
+    void FDMCompressedBLAS3::Residual(const MatrixCSRD& a, const VectorND& x, const VectorND& b, VectorND* result)
+    {
+        const auto rp = a.RowPointersBegin();
+        const auto ci = a.ColumnIndicesBegin();
+        const auto nnz = a.NonZeroBegin();
+
+        x.ParallelForEachIndex([&](size_t i)
+        {
+            const size_t rowBegin = rp[i];
+            const size_t rowEnd = rp[i + 1];
+
+            double sum = 0.0;
+
+            for (size_t jj = rowBegin; jj < rowEnd; ++jj)
+            {
+                size_t j = ci[jj];
+                sum += nnz[jj] * x[j];
+            }
+
+            (*result)[i] = b[i] - sum;
+        });
+    }
+
+    double FDMCompressedBLAS3::L2Norm(const VectorND& v)
+    {
+        return std::sqrt(v.Dot(v));
+    }
+
+    double FDMCompressedBLAS3::LInfNorm(const VectorND& v)
+    {
+        return std::fabs(v.AbsMax());
+    }
 }
