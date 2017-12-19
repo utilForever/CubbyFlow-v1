@@ -57,6 +57,22 @@ namespace CubbyFlow
 		void Resize(const Size3& size);
 	};
 
+    //! Compressed linear system (Ax=b) for 3-D finite differencing.
+    struct FDMCompressedLinearSystem3
+    {
+        //! System matrix.
+        MatrixCSRD A;
+
+        //! Solution vector.
+        VectorND x;
+
+        //! RHS vector.
+        VectorND b;
+
+        //! Clears all the data.
+        void Clear();
+    };
+
 	//! BLAS operator wrapper for 3-D finite differencing.
 	struct FDMBLAS3
 	{
