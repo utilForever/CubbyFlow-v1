@@ -28,6 +28,9 @@ namespace CubbyFlow
 		//! Solves the given linear system.
 		bool Solve(FDMLinearSystem3* system) override;
 
+        //! Solves the given compressed linear system.
+        bool SolveCompressed(FDMCompressedLinearSystem3* system) override;
+
 		//! Returns the max number of Gauss-Seidel iterations.
 		unsigned int GetMaxNumberOfIterations() const;
 
@@ -47,12 +50,13 @@ namespace CubbyFlow
 		bool GetUseRedBlackOrdering() const;
 
 		//! Performs single natural Gauss-Seidel relaxation step.
-		static void Relax(const FDMMatrix3& A, const FDMVector3& b,
-			double sorFactor, FDMVector3* x);
+		static void Relax(const FDMMatrix3& A, const FDMVector3& b, double sorFactor, FDMVector3* x);
+
+        //! Performs single natural Gauss-Seidel relaxation step for compressed sys.
+        static void Relax(const MatrixCSRD& A, const VectorND& b, double sorFactor, VectorND* x);
 
 		//! Performs single Red-Black Gauss-Seidel relaxation step.
-		static void RelaxRedBlack(const FDMMatrix3& A, const FDMVector3& b,
-			double sorFactor, FDMVector3* x);
+		static void RelaxRedBlack(const FDMMatrix3& A, const FDMVector3& b, double sorFactor, FDMVector3* x);
 
 	private:
 		unsigned int m_maxNumberOfIterations;
@@ -63,7 +67,14 @@ namespace CubbyFlow
 		double m_sorFactor;
 		bool m_useRedBlackOrdering;
 
-		FDMVector3 m_residual;
+        // Uncompressed vectors
+        FDMVector3 m_residual;
+
+        // Compressed vectors
+        VectorND m_residualComp;
+
+        void ClearUncompressedVectors();
+        void ClearCompressedVectors();
 	};
 
 	//! Shared pointer type for the FDMGaussSeidelSolver3.
