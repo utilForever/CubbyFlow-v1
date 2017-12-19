@@ -29,7 +29,9 @@ namespace CubbyFlow
 		assert(matrix.size() == rhs.size());
 		assert(matrix.size() == solution.size());
 
-		Size3 size = matrix.size();
+        ClearCompressedVectors();
+
+		const Size3 size = matrix.size();
 		m_r.Resize(size);
 		m_d.Resize(size);
 		m_q.Resize(size);
@@ -41,21 +43,37 @@ namespace CubbyFlow
 		m_q.Set(0.0);
 		m_s.Set(0.0);
 
-		CG<FDMBLAS3>(
-			matrix,
-			rhs,
-			m_maxNumberOfIterations,
-			m_tolerance,
-			&solution,
-			&m_r,
-			&m_d,
-			&m_q,
-			&m_s,
-			&m_lastNumberOfIterations,
-			&m_lastResidual);
+		CG<FDMBLAS3>(matrix, rhs, m_maxNumberOfIterations, m_tolerance, &solution,
+			&m_r, &m_d, &m_q, &m_s, &m_lastNumberOfIterations, &m_lastResidual);
 
 		return (m_lastResidual <= m_tolerance) || (m_lastNumberOfIterations < m_maxNumberOfIterations);
 	}
+
+    bool FDMCGSolver3::SolveCompressed(FDMCompressedLinearSystem3* system)
+    {
+        MatrixCSRD& matrix = system->A;
+        VectorND& solution = system->x;
+        VectorND& rhs = system->b;
+
+        ClearUncompressedVectors();
+
+        const size_t size = solution.size();
+        m_rComp.Resize(size);
+        m_dComp.Resize(size);
+        m_qComp.Resize(size);
+        m_sComp.Resize(size);
+
+        system->x.Set(0.0);
+        m_rComp.Set(0.0);
+        m_dComp.Set(0.0);
+        m_qComp.Set(0.0);
+        m_sComp.Set(0.0);
+
+        CG<FDMCompressedBLAS3>(matrix, rhs, m_maxNumberOfIterations, m_tolerance, &solution,
+            &m_rComp, &m_dComp, &m_qComp, &m_sComp, &m_lastNumberOfIterations, &m_lastResidual);
+
+        return (m_lastResidual <= m_tolerance) || (m_lastNumberOfIterations < m_maxNumberOfIterations);
+    }
 
 	unsigned int FDMCGSolver3::GetMaxNumberOfIterations() const
 	{
@@ -76,4 +94,20 @@ namespace CubbyFlow
 	{
 		return m_lastResidual;
 	}
+
+    void FDMCGSolver3::ClearUncompressedVectors()
+    {
+        m_r.Clear();
+        m_d.Clear();
+        m_q.Clear();
+        m_s.Clear();
+    }
+
+    void FDMCGSolver3::ClearCompressedVectors()
+    {
+        m_rComp.Clear();
+        m_dComp.Clear();
+        m_qComp.Clear();
+        m_sComp.Clear();
+    }
 }
