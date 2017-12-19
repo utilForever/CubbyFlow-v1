@@ -21,6 +21,12 @@ namespace CubbyFlow
 
 		//! Solves the given linear system.
 		virtual bool Solve(FDMLinearSystem2* system) = 0;
+
+		//! Solves the given compressed linear system.
+		virtual bool SolveCompressed(FDMCompressedLinearSystem2*)
+		{
+			return false;
+		}
 	};
 
 	//! Shared pointer type for the FDMLinearSystemSolver2.
