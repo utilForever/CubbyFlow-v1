@@ -27,6 +27,9 @@ namespace CubbyFlow
 		//! Solves the given linear system.
 		bool Solve(FDMLinearSystem3* system) override;
 
+        //! Solves the given compressed linear system.
+        bool SolveCompressed(FDMCompressedLinearSystem3* system) override;
+
 		//! Returns the max number of Jacobi iterations.
 		unsigned int GetMaxNumberOfIterations() const;
 
@@ -51,16 +54,38 @@ namespace CubbyFlow
 			void Solve(const FDMVector3& b, FDMVector3* x);
 		};
 
+        struct PreconditionerCompressed final
+        {
+            const MatrixCSRD* A;
+            VectorND d;
+            VectorND y;
+
+            void Build(const MatrixCSRD& matrix);
+
+            void Solve(const VectorND& b, VectorND* x);
+        };
+
 		unsigned int m_maxNumberOfIterations;
 		unsigned int m_lastNumberOfIterations;
 		double m_tolerance;
 		double m_lastResidualNorm;
 
-		FDMVector3 m_r;
-		FDMVector3 m_d;
-		FDMVector3 m_q;
-		FDMVector3 m_s;
-		Preconditioner m_precond;
+        // Uncompressed vectors and preconditioner
+        FDMVector3 m_r;
+        FDMVector3 m_d;
+        FDMVector3 m_q;
+        FDMVector3 m_s;
+        Preconditioner m_precond;
+
+        // Compressed vectors and preconditioner
+        VectorND m_rComp;
+        VectorND m_dComp;
+        VectorND m_qComp;
+        VectorND m_sComp;
+        PreconditionerCompressed m_precondComp;
+
+        void ClearUncompressedVectors();
+        void ClearCompressedVectors();
 	};
 
 	//! Shared pointer type for the FDMICCGSolver3.

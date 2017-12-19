@@ -15,7 +15,7 @@ namespace CubbyFlow
 {
 	void FDMICCGSolver3::Preconditioner::Build(const FDMMatrix3& matrix)
 	{
-		Size3 size = matrix.size();
+		const Size3 size = matrix.size();
 		A = matrix.ConstAccessor();
 
 		d.Resize(size, 0.0);
@@ -42,10 +42,10 @@ namespace CubbyFlow
 
 	void FDMICCGSolver3::Preconditioner::Solve(const FDMVector3& b, FDMVector3* x)
 	{
-		Size3 size = b.size();
-		ssize_t sx = static_cast<ssize_t>(size.x);
-		ssize_t sy = static_cast<ssize_t>(size.y);
-		ssize_t sz = static_cast<ssize_t>(size.z);
+		const Size3 size = b.size();
+		const ssize_t sx = static_cast<ssize_t>(size.x);
+		const ssize_t sy = static_cast<ssize_t>(size.y);
+		const ssize_t sz = static_cast<ssize_t>(size.z);
 
 		b.ForEachIndex([&](size_t i, size_t j, size_t k)
 		{
@@ -74,6 +74,96 @@ namespace CubbyFlow
 		}
 	}
 
+	void FDMICCGSolver3::PreconditionerCompressed::Build(const MatrixCSRD& matrix)
+	{
+		const size_t size = matrix.Cols();
+		A = &matrix;
+
+		d.Resize(size, 0.0);
+		y.Resize(size, 0.0);
+
+		const auto rp = A->RowPointersBegin();
+		const auto ci = A->ColumnIndicesBegin();
+		const auto nnz = A->NonZeroBegin();
+
+		d.ForEachIndex([&](size_t i)
+		{
+			const size_t rowBegin = rp[i];
+			const size_t rowEnd = rp[i + 1];
+
+			double denom = 0.0;
+			for (size_t jj = rowBegin; jj < rowEnd; ++jj)
+			{
+				size_t j = ci[jj];
+
+				if (j == i)
+				{
+					denom += nnz[jj];
+				}
+				else if (j < i)
+				{
+					denom -= Square(nnz[jj]) * d[j];
+				}
+			}
+
+			if (std::fabs(denom) > 0.0)
+			{
+				d[i] = 1.0 / denom;
+			}
+			else
+			{
+				d[i] = 0.0;
+			}
+		});
+	}
+
+	void FDMICCGSolver3::PreconditionerCompressed::Solve(const VectorND& b, VectorND* x)
+	{
+		const ssize_t size = static_cast<ssize_t>(b.size());
+
+		const auto rp = A->RowPointersBegin();
+		const auto ci = A->ColumnIndicesBegin();
+		const auto nnz = A->NonZeroBegin();
+
+		b.ForEachIndex([&](size_t i)
+		{
+			const size_t rowBegin = rp[i];
+			const size_t rowEnd = rp[i + 1];
+
+			double sum = b[i];
+			for (size_t jj = rowBegin; jj < rowEnd; ++jj)
+			{
+				size_t j = ci[jj];
+
+				if (j < i)
+				{
+					sum -= nnz[jj] * y[j];
+				}
+			}
+
+			y[i] = sum * d[i];
+		});
+
+		for (ssize_t i = size - 1; i >= 0; --i)
+		{
+			const size_t rowBegin = rp[i];
+			const size_t rowEnd = rp[i + 1];
+
+			double sum = y[i];
+			for (size_t jj = rowBegin; jj < rowEnd; ++jj)
+			{
+				const ssize_t j = static_cast<ssize_t>(ci[jj]);
+
+				if (j > i)
+				{
+					sum -= nnz[jj] * (*x)[j];
+				}
+			}
+
+			(*x)[i] = sum * d[i];
+		}
+	}
+
 	FDMICCGSolver3::FDMICCGSolver3(unsigned int maxNumberOfIterations, double tolerance) :
 		m_maxNumberOfIterations(maxNumberOfIterations),
 		m_lastNumberOfIterations(0),
@@ -89,10 +179,12 @@ namespace CubbyFlow
 		FDMVector3& solution = system->x;
 		FDMVector3& rhs = system->b;
 
+		ClearCompressedVectors();
+
 		assert(matrix.size() == rhs.size());
 		assert(matrix.size() == solution.size());
 
-		Size3 size = matrix.size();
+		const Size3 size = matrix.size();
 		m_r.Resize(size);
 		m_d.Resize(size);
 		m_q.Resize(size);
@@ -106,21 +198,42 @@ namespace CubbyFlow
 
 		m_precond.Build(matrix);
 
-		PCG<FDMBLAS3, Preconditioner>(
-			matrix,
-			rhs,
-			m_maxNumberOfIterations,
-			m_tolerance,
-			&m_precond,
-			&solution,
-			&m_r,
-			&m_d,
-			&m_q,
-			&m_s,
-			&m_lastNumberOfIterations,
-			&m_lastResidualNorm);
+		PCG<FDMBLAS3, Preconditioner>(matrix, rhs, m_maxNumberOfIterations, m_tolerance, &m_precond, &solution,
+			&m_r, &m_d, &m_q, &m_s, &m_lastNumberOfIterations, &m_lastResidualNorm);
 
 		CUBBYFLOW_INFO << "Residual norm after solving ICCG: " << m_lastResidualNorm
+			<< " Number of ICCG iterations: " << m_lastNumberOfIterations;
+
+		return (m_lastResidualNorm <= m_tolerance) || (m_lastNumberOfIterations < m_maxNumberOfIterations);
+	}
+
+	bool FDMICCGSolver3::SolveCompressed(FDMCompressedLinearSystem3* system)
+	{
+		MatrixCSRD& matrix = system->A;
+		VectorND& solution = system->x;
+		VectorND& rhs = system->b;
+
+		ClearUncompressedVectors();
+
+		const size_t size = solution.size();
+		m_rComp.Resize(size);
+		m_dComp.Resize(size);
+		m_qComp.Resize(size);
+		m_sComp.Resize(size);
+
+		system->x.Set(0.0);
+		m_rComp.Set(0.0);
+		m_dComp.Set(0.0);
+		m_qComp.Set(0.0);
+		m_sComp.Set(0.0);
+
+		m_precondComp.Build(matrix);
+
+		PCG<FDMCompressedBLAS3, PreconditionerCompressed>(
+			matrix, rhs, m_maxNumberOfIterations, m_tolerance, &m_precondComp, &solution,
+			&m_rComp, &m_dComp, &m_qComp, &m_sComp, &m_lastNumberOfIterations, &m_lastResidualNorm);
+
+		CUBBYFLOW_INFO << "Residual after solving ICCG: " << m_lastResidualNorm
 			<< " Number of ICCG iterations: " << m_lastNumberOfIterations;
 
 		return (m_lastResidualNorm <= m_tolerance) || (m_lastNumberOfIterations < m_maxNumberOfIterations);
@@ -144,5 +257,21 @@ namespace CubbyFlow
 	double FDMICCGSolver3::GetLastResidual() const
 	{
 		return m_lastResidualNorm;
+	}
+
+	void FDMICCGSolver3::ClearUncompressedVectors()
+	{
+		m_r.Clear();
+		m_d.Clear();
+		m_q.Clear();
+		m_s.Clear();
+	}
+
+	void FDMICCGSolver3::ClearCompressedVectors()
+	{
+		m_r.Clear();
+		m_d.Clear();
+		m_q.Clear();
+		m_s.Clear();
 	}
 }
