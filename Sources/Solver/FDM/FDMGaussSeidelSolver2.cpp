@@ -29,6 +29,8 @@ namespace CubbyFlow
 
 	bool FDMGaussSeidelSolver2::Solve(FDMLinearSystem2* system)
 	{
+		ClearCompressedVectors();
+
 		m_residual.Resize(system->x.size());
 
 		m_lastNumberOfIterations = m_maxNumberOfIterations;
@@ -58,6 +60,36 @@ namespace CubbyFlow
 
 		FDMBLAS2::Residual(system->A, system->x, system->b, &m_residual);
 		m_lastResidual = FDMBLAS2::L2Norm(m_residual);
+
+		return m_lastResidual < m_tolerance;
+	}
+
+	bool FDMGaussSeidelSolver2::SolveCompressed(FDMCompressedLinearSystem2* system)
+	{
+		ClearUncompressedVectors();
+
+		m_residualComp.Resize(system->x.size());
+
+		m_lastNumberOfIterations = m_maxNumberOfIterations;
+
+		for (unsigned int iter = 0; iter < m_maxNumberOfIterations; ++iter)
+		{
+			Relax(system->A, system->b, m_sorFactor, &system->x);
+
+			if (iter != 0 && iter % m_residualCheckInterval == 0)
+			{
+				FDMCompressedBLAS2::Residual(system->A, system->x, system->b, &m_residualComp);
+
+				if (FDMCompressedBLAS2::L2Norm(m_residualComp) < m_tolerance)
+				{
+					m_lastNumberOfIterations = iter + 1;
+					break;
+				}
+			}
+		}
+
+		FDMCompressedBLAS2::Residual(system->A, system->x, system->b, &m_residualComp);
+		m_lastResidual = FDMCompressedBLAS2::L2Norm(m_residualComp);
 
 		return m_lastResidual < m_tolerance;
 	}
@@ -108,6 +140,39 @@ namespace CubbyFlow
 
 			refX(i, j) = (1.0 - sorFactor) * refX(i, j) +
 				sorFactor * (b(i, j) - r) / A(i, j).center;
+		});
+	}
+
+	void FDMGaussSeidelSolver2::Relax(const MatrixCSRD& A, const VectorND& b, double sorFactor, VectorND* x_)
+	{
+		const auto rp = A.RowPointersBegin();
+		const auto ci = A.ColumnIndicesBegin();
+		const auto nnz = A.NonZeroBegin();
+
+		VectorND& x = *x_;
+
+		b.ForEachIndex([&](size_t i)
+		{
+			const size_t rowBegin = rp[i];
+			const size_t rowEnd = rp[i + 1];
+
+			double r = 0.0;
+			double diag = 1.0;
+			for (size_t jj = rowBegin; jj < rowEnd; ++jj)
+			{
+				size_t j = ci[jj];
+
+				if (i == j)
+				{
+					diag = nnz[jj];
+				}
+				else
+				{
+					r += nnz[jj] * x[j];
+				}
+			}
+
+			x[i] = (1.0 - sorFactor) * x[i] + sorFactor * (b[i] - r) / diag;
 		});
 	}
 
@@ -163,5 +228,15 @@ namespace CubbyFlow
 				}
 			}
 		});
+	}
+
+    void FDMGaussSeidelSolver2::ClearUncompressedVectors()
+	{
+	    m_residual.Clear();
+	}
+
+    void FDMGaussSeidelSolver2::ClearCompressedVectors()
+	{
+	    m_residualComp.Clear();
 	}
 }
