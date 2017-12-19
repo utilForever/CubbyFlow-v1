@@ -7,6 +7,10 @@
 > Copyright (c) 2017, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <FDM/FDMLinearSystem2.h>
+#include <Math/MathUtils.h>
+
+#include <algorithm>
+#include <cassert>
 
 namespace CubbyFlow
 {
@@ -17,29 +21,36 @@ namespace CubbyFlow
 		b.Clear();
 	}
 
-	void FDMBlas2::Set(double s, FDMVector2* result)
+	void FDMLinearSystem2::Resize(const Size2& size)
+	{
+		A.Resize(size);
+		x.Resize(size);
+		b.Resize(size);
+	}
+
+	void FDMBLAS2::Set(double s, FDMVector2* result)
 	{
 		result->Set(s);
 	}
 
-	void FDMBlas2::Set(const FDMVector2& v, FDMVector2* result)
+	void FDMBLAS2::Set(const FDMVector2& v, FDMVector2* result)
 	{
 		result->Set(v);
 	}
 
-	void FDMBlas2::Set(double s, FDMMatrix2* result)
+	void FDMBLAS2::Set(double s, FDMMatrix2* result)
 	{
 		FDMMatrixRow2 row;
 		row.center = row.right = row.up = s;
 		result->Set(row);
 	}
 
-	void FDMBlas2::Set(const FDMMatrix2& m, FDMMatrix2* result)
+	void FDMBLAS2::Set(const FDMMatrix2& m, FDMMatrix2* result)
 	{
 		result->Set(m);
 	}
 
-	double FDMBlas2::Dot(const FDMVector2& a, const FDMVector2& b)
+	double FDMBLAS2::Dot(const FDMVector2& a, const FDMVector2& b)
 	{
 		Size2 size = a.size();
 		
@@ -58,7 +69,7 @@ namespace CubbyFlow
 		return result;
 	}
 
-	void FDMBlas2::AXPlusY(double a, const FDMVector2& x, const FDMVector2& y, FDMVector2* result)
+	void FDMBLAS2::AXPlusY(double a, const FDMVector2& x, const FDMVector2& y, FDMVector2* result)
 	{
 		assert(x.size() == y.size());
 		assert(x.size() == result->size());
@@ -69,7 +80,7 @@ namespace CubbyFlow
 		});
 	}
 
-	void FDMBlas2::MVM(const FDMMatrix2& m, const FDMVector2& v, FDMVector2* result)
+	void FDMBLAS2::MVM(const FDMMatrix2& m, const FDMVector2& v, FDMVector2* result)
 	{
 		Size2 size = m.size();
 
@@ -87,7 +98,7 @@ namespace CubbyFlow
 		});
 	}
 
-	void FDMBlas2::Residual(const FDMMatrix2& a, const FDMVector2& x, const FDMVector2& b, FDMVector2* result)
+	void FDMBLAS2::Residual(const FDMMatrix2& a, const FDMVector2& x, const FDMVector2& b, FDMVector2* result)
 	{
 		Size2 size = a.size();
 
@@ -107,12 +118,12 @@ namespace CubbyFlow
 		});
 	}
 
-	double FDMBlas2::L2Norm(const FDMVector2& v)
+	double FDMBLAS2::L2Norm(const FDMVector2& v)
 	{
 		return std::sqrt(Dot(v, v));
 	}
 
-	double FDMBlas2::LInfNorm(const FDMVector2& v)
+	double FDMBLAS2::LInfNorm(const FDMVector2& v)
 	{
 		Size2 size = v.size();
 		double result = 0.0;
@@ -126,5 +137,91 @@ namespace CubbyFlow
 		}
 
 		return std::fabs(result);
+	}
+
+	void FDMCompressedBLAS2::Set(double s, VectorND* result)
+	{
+	    result->Set(s);
+	}
+
+	void FDMCompressedBLAS2::Set(const VectorND& v, VectorND* result)
+    {
+		result->Set(v);
+	}
+
+	void FDMCompressedBLAS2::Set(double s, MatrixCSRD* result)
+	{
+	    result->Set(s);
+	}
+
+	void FDMCompressedBLAS2::Set(const MatrixCSRD& m, MatrixCSRD* result)
+    {
+		result->Set(m);
+	}
+
+	double FDMCompressedBLAS2::Dot(const VectorND& a, const VectorND& b)
+    {
+		return a.Dot(b);
+	}
+
+	void FDMCompressedBLAS2::AXPlusY(double a, const VectorND& x, const VectorND& y, VectorND* result)
+    {
+		*result = a * x + y;
+	}
+
+	void FDMCompressedBLAS2::MVM(const MatrixCSRD& m, const VectorND& v, VectorND* result)
+    {
+		const auto rp = m.RowPointersBegin();
+		const auto ci = m.ColumnIndicesBegin();
+		const auto nnz = m.NonZeroBegin();
+
+		v.ParallelForEachIndex([&](size_t i)
+        {
+			const size_t rowBegin = rp[i];
+			const size_t rowEnd = rp[i + 1];
+
+			double sum = 0.0;
+
+			for (size_t jj = rowBegin; jj < rowEnd; ++jj)
+            {
+				size_t j = ci[jj];
+				sum += nnz[jj] * v[j];
+			}
+
+			(*result)[i] = sum;
+		});
+	}
+
+	void FDMCompressedBLAS2::Residual(const MatrixCSRD& a, const VectorND& x, const VectorND& b, VectorND* result)
+    {
+		const auto rp = a.RowPointersBegin();
+		const auto ci = a.ColumnIndicesBegin();
+		const auto nnz = a.NonZeroBegin();
+
+		x.ParallelForEachIndex([&](size_t i)
+        {
+			const size_t rowBegin = rp[i];
+			const size_t rowEnd = rp[i + 1];
+
+			double sum = 0.0;
+
+			for (size_t jj = rowBegin; jj < rowEnd; ++jj)
+            {
+				size_t j = ci[jj];
+				sum += nnz[jj] * x[j];
+			}
+
+			(*result)[i] = b[i] - sum;
+		});
+	}
+
+	double FDMCompressedBLAS2::L2Norm(const VectorND& v)
+    {
+		return std::sqrt(v.Dot(v));
+	}
+
+	double FDMCompressedBLAS2::LInfNorm(const VectorND& v)
+    {
+		return std::fabs(v.AbsMax());
 	}
 }

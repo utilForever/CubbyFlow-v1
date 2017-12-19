@@ -15,10 +15,10 @@
 namespace CubbyFlow
 {
 	//! Multigrid-style 2-D FDM matrix.
-	using FDMMGMatrix2 = MGMatrix<FDMBlas2>;
+	using FDMMGMatrix2 = MGMatrix<FDMBLAS2>;
 
 	//! Multigrid-style 2-D FDM vector.
-	using FDMMGVector2 = MGVector<FDMBlas2>;
+	using FDMMGVector2 = MGVector<FDMBLAS2>;
 
 	//! Multigrid-syle 2-D linear system.
 	struct FDMMGLinearSystem2

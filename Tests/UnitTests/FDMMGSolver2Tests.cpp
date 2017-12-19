@@ -53,14 +53,14 @@ TEST(FDMMGSolver2, Solve)
 	}
 
 	auto buffer = system.x[0];
-	FDMBlas2::Residual(system.A[0], system.x[0], system.b[0], &buffer);
-	double norm0 = FDMBlas2::L2Norm(buffer);
+	FDMBLAS2::Residual(system.A[0], system.x[0], system.b[0], &buffer);
+	double norm0 = FDMBLAS2::L2Norm(buffer);
 
 	FDMMGSolver2 solver(levels, 5, 5, 20, 20, 1e-9);
 	solver.Solve(&system);
 
-	FDMBlas2::Residual(system.A[0], system.x[0], system.b[0], &buffer);
-	double norm1 = FDMBlas2::L2Norm(buffer);
+	FDMBLAS2::Residual(system.A[0], system.x[0], system.b[0], &buffer);
+	double norm1 = FDMBLAS2::L2Norm(buffer);
 
 	EXPECT_LT(norm1, norm0);
 }

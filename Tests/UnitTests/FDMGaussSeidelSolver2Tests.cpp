@@ -22,14 +22,14 @@ TEST(FDMGaussSeidelSolver2, Solve)
 	FDMLinearSystemSolverTestHelper2::BuildTestLinearSystem(&system, { 128, 128 });
 
 	auto buffer = system.x;
-	FDMBlas2::Residual(system.A, system.x, system.b, &buffer);
-	double norm0 = FDMBlas2::L2Norm(buffer);
+	FDMBLAS2::Residual(system.A, system.x, system.b, &buffer);
+	double norm0 = FDMBLAS2::L2Norm(buffer);
 
 	FDMGaussSeidelSolver2 solver(100, 10, 1e-9);
 	solver.Solve(&system);
 
-	FDMBlas2::Residual(system.A, system.x, system.b, &buffer);
-	double norm1 = FDMBlas2::L2Norm(buffer);
+	FDMBLAS2::Residual(system.A, system.x, system.b, &buffer);
+	double norm1 = FDMBLAS2::L2Norm(buffer);
 
 	EXPECT_LT(norm1, norm0);
 }
@@ -40,15 +40,15 @@ TEST(FDMGaussSeidelSolver2, Relax)
 	FDMLinearSystemSolverTestHelper2::BuildTestLinearSystem(&system, { 128, 128 });
 
 	auto buffer = system.x;
-	FDMBlas2::Residual(system.A, system.x, system.b, &buffer);
-	double norm0 = FDMBlas2::L2Norm(buffer);
+	FDMBLAS2::Residual(system.A, system.x, system.b, &buffer);
+	double norm0 = FDMBLAS2::L2Norm(buffer);
 
 	for (int i = 0; i < 200; ++i)
 	{
 		FDMGaussSeidelSolver2::Relax(system.A, system.b, 1.0, &system.x);
 
-		FDMBlas2::Residual(system.A, system.x, system.b, &buffer);
-		double norm = FDMBlas2::L2Norm(buffer);
+		FDMBLAS2::Residual(system.A, system.x, system.b, &buffer);
+		double norm = FDMBLAS2::L2Norm(buffer);
 		EXPECT_LT(norm, norm0);
 
 		norm0 = norm;
@@ -61,15 +61,15 @@ TEST(FDMGaussSeidelSolver2, RelaxRedBlack)
 	FDMLinearSystemSolverTestHelper2::BuildTestLinearSystem(&system, { 128, 128 });
 
 	auto buffer = system.x;
-	FDMBlas2::Residual(system.A, system.x, system.b, &buffer);
-	double norm0 = FDMBlas2::L2Norm(buffer);
+	FDMBLAS2::Residual(system.A, system.x, system.b, &buffer);
+	double norm0 = FDMBLAS2::L2Norm(buffer);
 
 	for (int i = 0; i < 200; ++i)
 	{
 		FDMGaussSeidelSolver2::RelaxRedBlack(system.A, system.b, 1.0, &system.x);
 
-		FDMBlas2::Residual(system.A, system.x, system.b, &buffer);
-		double norm = FDMBlas2::L2Norm(buffer);
+		FDMBLAS2::Residual(system.A, system.x, system.b, &buffer);
+		double norm = FDMBLAS2::L2Norm(buffer);
 		EXPECT_LT(norm, norm0);
 
 		norm0 = norm;

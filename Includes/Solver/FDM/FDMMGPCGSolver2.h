@@ -66,9 +66,9 @@ namespace CubbyFlow
 		struct Preconditioner final
 		{
 			FDMMGLinearSystem2* system;
-			MGParameters<FDMBlas2> mgParams;
+			MGParameters<FDMBLAS2> mgParams;
 
-			void Build(FDMMGLinearSystem2* system, MGParameters<FDMBlas2> mgParams);
+			void Build(FDMMGLinearSystem2* system, MGParameters<FDMBLAS2> mgParams);
 
 			void Solve(const FDMVector2& b, FDMVector2* x) const;
 		};

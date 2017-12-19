@@ -31,7 +31,7 @@ namespace CubbyFlow
 			bool useRedBlackOrdering = false);
 
 		//! Returns the Multigrid parameters.
-		const MGParameters<FDMBlas2>& GetParams() const;
+		const MGParameters<FDMBLAS2>& GetParams() const;
 
 		//! Returns the SOR (Successive Over Relaxation) factor.
 		double GetSORFactor() const;
@@ -46,7 +46,7 @@ namespace CubbyFlow
 		virtual bool Solve(FDMMGLinearSystem2* system);
 
 	private:
-		MGParameters<FDMBlas2> m_mgParams;
+		MGParameters<FDMBLAS2> m_mgParams;
 		double m_sorFactor;
 		bool m_useRedBlackOrdering;
 	};

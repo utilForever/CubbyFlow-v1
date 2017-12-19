@@ -13,7 +13,7 @@
 
 namespace CubbyFlow
 {
-	void FDMMGPCGSolver2::Preconditioner::Build(FDMMGLinearSystem2* _system, MGParameters<FDMBlas2> _mgParams)
+	void FDMMGPCGSolver2::Preconditioner::Build(FDMMGLinearSystem2* _system, MGParameters<FDMBLAS2> _mgParams)
 	{
 		system = _system;
 		mgParams = _mgParams;
@@ -74,7 +74,7 @@ namespace CubbyFlow
 
 		m_precond.Build(system, GetParams());
 
-		PCG<FDMBlas2, Preconditioner>(
+		PCG<FDMBLAS2, Preconditioner>(
 			system->A.levels.front(),
 			system->b.levels.front(),
 			m_maxNumberOfIterations, m_tolerance, &m_precond,

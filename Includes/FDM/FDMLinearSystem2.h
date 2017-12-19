@@ -10,6 +10,9 @@
 #define CUBBYFLOW_FDM_LINEAR_SYSTEM2_H
 
 #include <Array/Array2.h>
+#include <Matrix/MatrixCSR.h>
+#include <Size/Size2.h>
+#include <Vector/VectorN.h>
 
 namespace CubbyFlow
 {
@@ -35,49 +38,112 @@ namespace CubbyFlow
 	//! Linear system (Ax=b) for 2-D finite differencing.
 	struct FDMLinearSystem2
 	{
+		//! System matrix.
 		FDMMatrix2 A;
-		FDMVector2 x, b;
 
+		//! Solution vector.
+		FDMVector2 x;
+		
+		//! RHS vector.
+		FDMVector2 b;
+
+		//! Clears all the data.
+		void Clear();
+
+		//! Resizes the arrays with given grid size.
+		void Resize(const Size2& size);
+	};
+
+	//! Compressed linear system (Ax=b) for 2-D finite differencing.
+	struct FDMCompressedLinearSystem2
+	{
+		//! System matrix.
+		MatrixCSRD A;
+
+		//! Solution vector.
+		VectorND x;
+
+		//! RHS vector.
+		VectorND b;
+
+		//! Clears all the data.
 		void Clear();
 	};
 
 	//! BLAS operator wrapper for 2-D finite differencing.
-	struct FDMBlas2
+	struct FDMBLAS2
 	{
 		using ScalarType = double;
 		using VectorType = FDMVector2;
 		using MatrixType = FDMMatrix2;
 
 		//! Sets entire element of given vector \p result with scalar \p s.
-		static void Set(double s, FDMVector2* result);
+		static void Set(ScalarType s, VectorType* result);
 
 		//! Copies entire element of given vector \p result with other vector \p v.
-		static void Set(const FDMVector2& v, FDMVector2* result);
+		static void Set(const VectorType& v, VectorType* result);
 
 		//! Sets entire element of given matrix \p result with scalar \p s.
-		static void Set(double s, FDMMatrix2* result);
+		static void Set(ScalarType s, MatrixType* result);
 
 		//! Copies entire element of given matrix \p result with other matrix \p v.
-		static void Set(const FDMMatrix2& m, FDMMatrix2* result);
+		static void Set(const MatrixType& m, MatrixType* result);
 
 		//! Performs dot product with vector \p a and \p b.
-		static double Dot(const FDMVector2& a, const FDMVector2& b);
+		static double Dot(const VectorType& a, const VectorType& b);
 
-		//! Performs ax + y operation where \p a is a matrix and \p x and \p y are
-		//! vectors.
-		static void AXPlusY(double a, const FDMVector2& x, const FDMVector2& y, FDMVector2* result);
+		//! Performs ax + y operation where \p a is a matrix and \p x and \p y are vectors.
+		static void AXPlusY(double a, const VectorType& x, const VectorType& y, VectorType* result);
 
 		//! Performs matrix-vector multiplication.
-		static void MVM(const FDMMatrix2& m, const FDMVector2& v, FDMVector2* result);
+		static void MVM(const MatrixType& m, const VectorType& v, VectorType* result);
 
 		//! Computes residual vector (b - ax).
-		static void Residual(const FDMMatrix2& a, const FDMVector2& x, const FDMVector2& b, FDMVector2* result);
+		static void Residual(const MatrixType& a, const VectorType& x, const VectorType& b, VectorType* result);
 
 		//! Returns L2-norm of the given vector \p v.
-		static double L2Norm(const FDMVector2& v);
+		static ScalarType L2Norm(const VectorType& v);
 
-		//! Returns L-inf-norm of the given vector \p v.
-		static double LInfNorm(const FDMVector2& v);
+		//! Returns Linf-norm of the given vector \p v.
+		static ScalarType LInfNorm(const VectorType& v);
+	};
+
+	//! BLAS operator wrapper for compressed 2-D finite differencing.
+	struct FDMCompressedBLAS2
+	{
+		using ScalarType = double;
+		using VectorType = VectorND;
+		using MatrixType = MatrixCSRD;
+
+		//! Sets entire element of given vector \p result with scalar \p s.
+		static void Set(ScalarType s, VectorType* result);
+
+		//! Copies entire element of given vector \p result with other vector \p v.
+		static void Set(const VectorType& v, VectorType* result);
+
+		//! Sets entire element of given matrix \p result with scalar \p s.
+		static void Set(ScalarType s, MatrixType* result);
+
+		//! Copies entire element of given matrix \p result with other matrix \p v.
+		static void Set(const MatrixType& m, MatrixType* result);
+
+		//! Performs dot product with vector \p a and \p b.
+		static double Dot(const VectorType& a, const VectorType& b);
+
+		//! Performs ax + y operation where \p a is a matrix and \p x and \p y are vectors.
+		static void AXPlusY(double a, const VectorType& x, const VectorType& y, VectorType* result);
+
+		//! Performs matrix-vector multiplication.
+		static void MVM(const MatrixType& m, const VectorType& v, VectorType* result);
+
+		//! Computes residual vector (b - ax).
+		static void Residual(const MatrixType& a, const VectorType& x, const VectorType& b, VectorType* result);
+
+		//! Returns L2-norm of the given vector \p v.
+		static ScalarType L2Norm(const VectorType& v);
+
+		//! Returns Linf-norm of the given vector \p v.
+		static ScalarType LInfNorm(const VectorType& v);
 	};
 }
 

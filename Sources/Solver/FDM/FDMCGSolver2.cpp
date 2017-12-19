@@ -41,7 +41,7 @@ namespace CubbyFlow
 		m_q.Set(0.0);
 		m_s.Set(0.0);
 
-		CG<FDMBlas2>(
+		CG<FDMBLAS2>(
 			matrix,
 			rhs,
 			m_maxNumberOfIterations,

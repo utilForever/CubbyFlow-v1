@@ -99,7 +99,7 @@ namespace CubbyFlow
 
 		m_precond.Build(matrix);
 		
-		PCG<FDMBlas2, Preconditioner>(
+		PCG<FDMBLAS2, Preconditioner>(
 			matrix,
 			rhs,
 			m_maxNumberOfIterations,
