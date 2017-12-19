@@ -9,7 +9,6 @@
 #include <FDM/FDMLinearSystem2.h>
 #include <Math/MathUtils.h>
 
-#include <algorithm>
 #include <cassert>
 
 namespace CubbyFlow
@@ -26,6 +25,13 @@ namespace CubbyFlow
 		A.Resize(size);
 		x.Resize(size);
 		b.Resize(size);
+	}
+
+    void FDMCompressedLinearSystem2::Clear()
+	{
+        A.Clear();
+        x.Clear();
+        b.Clear();
 	}
 
 	void FDMBLAS2::Set(double s, FDMVector2* result)
