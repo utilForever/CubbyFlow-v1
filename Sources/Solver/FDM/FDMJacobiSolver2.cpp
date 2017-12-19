@@ -25,6 +25,8 @@ namespace CubbyFlow
 
 	bool FDMJacobiSolver2::Solve(FDMLinearSystem2* system)
 	{
+        ClearCompressedVectors();
+
 		m_xTemp.Resize(system->x.size());
 		m_residual.Resize(system->x.size());
 
@@ -53,6 +55,39 @@ namespace CubbyFlow
 		return m_lastResidual < m_tolerance;
 	}
 
+	bool FDMJacobiSolver2::SolveCompressed(FDMCompressedLinearSystem2* system)
+	{
+		ClearUncompressedVectors();
+
+		m_xTempComp.Resize(system->x.size());
+		m_residualComp.Resize(system->x.size());
+
+		m_lastNumberOfIterations = m_maxNumberOfIterations;
+
+		for (unsigned int iter = 0; iter < m_maxNumberOfIterations; ++iter)
+		{
+			Relax(system->A, system->b, &system->x, &m_xTempComp);
+
+			m_xTempComp.Swap(system->x);
+
+			if (iter != 0 && iter % m_residualCheckInterval == 0)
+			{
+				FDMCompressedBLAS2::Residual(system->A, system->x, system->b, &m_residualComp);
+
+				if (FDMCompressedBLAS2::L2Norm(m_residualComp) < m_tolerance)
+				{
+					m_lastNumberOfIterations = iter + 1;
+					break;
+				}
+			}
+		}
+
+		FDMCompressedBLAS2::Residual(system->A, system->x, system->b, &m_residualComp);
+		m_lastResidual = FDMCompressedBLAS2::L2Norm(m_residualComp);
+
+		return m_lastResidual < m_tolerance;
+	}
+
 	unsigned int FDMJacobiSolver2::GetMaxNumberOfIterations() const 
 	{
 		return m_maxNumberOfIterations;
@@ -73,8 +108,7 @@ namespace CubbyFlow
 		return m_lastResidual;
 	}
 
-	void FDMJacobiSolver2::Relax(const FDMMatrix2& A, const FDMVector2& b,
-		FDMVector2* x, FDMVector2* xTemp)
+	void FDMJacobiSolver2::Relax(const FDMMatrix2& A, const FDMVector2& b, FDMVector2* x, FDMVector2* xTemp)
 	{
 		Size2 size = A.size();
 		FDMVector2& refX = *x;
@@ -90,5 +124,51 @@ namespace CubbyFlow
 
 			refXTemp(i, j) = (b(i, j) - r) / A(i, j).center;
 		});
+	}
+
+	void FDMJacobiSolver2::Relax(const MatrixCSRD& A, const VectorND& b, VectorND* x_, VectorND* xTemp_)
+	{
+		const auto rp = A.RowPointersBegin();
+		const auto ci = A.ColumnIndicesBegin();
+		const auto nnz = A.NonZeroBegin();
+
+		VectorND& x = *x_;
+		VectorND& xTemp = *xTemp_;
+
+		b.ParallelForEachIndex([&](size_t i)
+		{
+			const size_t rowBegin = rp[i];
+			const size_t rowEnd = rp[i + 1];
+
+			double r = 0.0;
+			double diag = 1.0;
+			for (size_t jj = rowBegin; jj < rowEnd; ++jj)
+			{
+				size_t j = ci[jj];
+
+				if (i == j)
+				{
+					diag = nnz[jj];
+				}
+				else
+				{
+					r += nnz[jj] * x[j];
+				}
+			}
+
+			xTemp[i] = (b[i] - r) / diag;
+		});
+	}
+
+	void FDMJacobiSolver2::ClearUncompressedVectors()
+	{
+		m_xTempComp.Clear();
+		m_residualComp.Clear();
+	}
+
+	void FDMJacobiSolver2::ClearCompressedVectors()
+	{
+		m_xTemp.Clear();
+		m_residual.Clear();
 	}
 }
