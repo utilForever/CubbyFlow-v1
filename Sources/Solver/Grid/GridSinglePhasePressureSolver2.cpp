@@ -75,6 +75,97 @@ namespace CubbyFlow
 				}
 			});
 		}
+
+		void BuildSingleSystem(MatrixCSRD* A, VectorND* x, VectorND* b,
+			const Array2<char>& markers,
+			const FaceCenteredGrid2& input)
+		{
+			Size2 size = input.Resolution();
+			const Vector2D invH = 1.0 / input.GridSpacing();
+			Vector2D invHSqr = invH * invH;
+
+			const auto markerAcc = markers.ConstAccessor();
+
+			A->Clear();
+			b->Clear();
+
+			size_t numRows = 0;
+			Array2<size_t> coordToIndex(size);
+			markers.ForEachIndex([&](size_t i, size_t j)
+			{
+				const size_t cIdx = markerAcc.Index(i, j);
+
+				if (markerAcc[cIdx] == FLUID)
+				{
+					coordToIndex[cIdx] = numRows++;
+				}
+			});
+
+			markers.ForEachIndex([&](size_t i, size_t j)
+			{
+				const size_t cIdx = markerAcc.Index(i, j);
+
+				if (markerAcc[cIdx] == FLUID)
+				{
+					b->Append(input.DivergenceAtCellCenter(i, j));
+
+					std::vector<double> row(1, 0.0);
+					std::vector<size_t> colIdx(1, coordToIndex[cIdx]);
+
+					if (i + 1 < size.x && markers(i + 1, j) != BOUNDARY)
+					{
+						row[0] += invHSqr.x;
+						const size_t rIdx = markerAcc.Index(i + 1, j);
+						
+						if (markers[rIdx] == FLUID)
+						{
+							row.push_back(-invHSqr.x);
+							colIdx.push_back(coordToIndex[rIdx]);
+						}
+					}
+
+					if (i > 0 && markers(i - 1, j) != BOUNDARY)
+					{
+						row[0] += invHSqr.x;
+						const size_t lIdx = markerAcc.Index(i - 1, j);
+					   
+						if (markers[lIdx] == FLUID)
+						{
+							row.push_back(-invHSqr.x);
+							colIdx.push_back(coordToIndex[lIdx]);
+						}
+					}
+
+					if (j + 1 < size.y && markers(i, j + 1) != BOUNDARY)
+					{
+						row[0] += invHSqr.y;
+						const size_t uIdx = markerAcc.Index(i, j + 1);
+						
+						if (markers[uIdx] == FLUID)
+						{
+							row.push_back(-invHSqr.y);
+							colIdx.push_back(coordToIndex[uIdx]);
+						}
+					}
+
+					if (j > 0 && markers(i, j - 1) != BOUNDARY)
+					{
+						row[0] += invHSqr.y;
+						const size_t dIdx = markerAcc.Index(i, j - 1);
+					   
+						if (markers[dIdx] == FLUID)
+						{
+							row.push_back(-invHSqr.y);
+							colIdx.push_back(coordToIndex[dIdx]);
+						}
+					}
+
+					A->AddRow(row, colIdx);
+				}
+			});
+
+			x->Resize(b->size(), 0.0);
+		}
 	}
 
 	GridSinglePhasePressureSolver2::GridSinglePhasePressureSolver2()
@@ -93,7 +184,8 @@ namespace CubbyFlow
 		FaceCenteredGrid2* output,
 		const ScalarField2& boundarySDF,
 		const VectorField2& boundaryVelocity,
-		const ScalarField2& fluidSDF)
+		const ScalarField2& fluidSDF,
+		bool useCompressed)
 	{
 		UNUSED_VARIABLE(timeIntervalInSeconds);
 		UNUSED_VARIABLE(boundaryVelocity);
@@ -101,14 +193,24 @@ namespace CubbyFlow
 		const auto pos = input.CellCenterPosition();
 		
 		BuildMarkers(input.Resolution(), pos, boundarySDF, fluidSDF);
-		BuildSystem(input);
+		BuildSystem(input, useCompressed);
 
 		if (m_systemSolver != nullptr)
 		{
 			// Solve the system
 			if (m_mgSystemSolver == nullptr)
 			{
-				m_systemSolver->Solve(&m_system);
+				if (useCompressed)
+				{
+					m_system.Clear();
+					m_systemSolver->SolveCompressed(&m_compSystem);
+					DecompressSolution();
+				}
+				else
+				{
+					m_compSystem.Clear();
+					m_systemSolver->Solve(&m_system);
+				}
 			}
 			else
 			{
@@ -140,9 +242,11 @@ namespace CubbyFlow
 			// In case of non-mg system, use flat structure.
 			m_mgSystem.Clear();
 		}
-		else {
+		else
+		{
 			// In case of mg system, use multi-level structure.
 			m_system.Clear();
+			m_compSystem.Clear();
 		}
 	}
 
@@ -243,20 +347,33 @@ namespace CubbyFlow
 		}
 	}
 
-	void GridSinglePhasePressureSolver2::BuildSystem(const FaceCenteredGrid2& input)
+	void GridSinglePhasePressureSolver2::DecompressSolution()
+	{
+		const auto acc = m_markers[0].ConstAccessor();
+		m_system.x.Resize(acc.size());
+
+		size_t row = 0;
+		m_markers[0].ForEachIndex([&](size_t i, size_t j)
+		{
+			if (acc(i, j) == FLUID)
+			{
+				m_system.x(i, j) = m_compSystem.x[row];
+				++row;
+			}
+		});
+	}
+
+	void GridSinglePhasePressureSolver2::BuildSystem(const FaceCenteredGrid2& input, bool useCompressed)
 	{
 		const Size2 size = input.Resolution();
 		size_t numLevels = 1;
-		FDMMatrix2* A;
-		FDMVector2* b;
 
 		if (m_mgSystemSolver == nullptr)
 		{
-			m_system.A.Resize(size);
-			m_system.x.Resize(size);
-			m_system.b.Resize(size);
-			A = &m_system.A;
-			b = &m_system.b;
+			if (!useCompressed)
+			{
+				m_system.Resize(size);
+			}
 		}
 		else
 		{
@@ -266,14 +383,26 @@ namespace CubbyFlow
 			FDMMGUtils2::ResizeArrayWithFinest(size, maxLevels, &m_mgSystem.x.levels);
 			FDMMGUtils2::ResizeArrayWithFinest(size, maxLevels, &m_mgSystem.b.levels);
 			
-			A = &m_mgSystem.A.levels.front();
-			b = &m_mgSystem.b.levels.front();
 			numLevels = m_mgSystem.A.levels.size();
 		}
 
 		// Build top level
 		const FaceCenteredGrid2* finer = &input;
-		BuildSingleSystem(A, b, m_markers[0], *finer);
+		if (m_mgSystemSolver == nullptr)
+		{
+			if (useCompressed)
+			{
+				BuildSingleSystem(&m_compSystem.A, &m_compSystem.x, &m_compSystem.b, m_markers[0], *finer);
+			}
+			else
+			{
+				BuildSingleSystem(&m_system.A, &m_system.b, m_markers[0], *finer);
+			}
+		}
+		else
+		{
+			BuildSingleSystem(&m_mgSystem.A.levels.front(), &m_mgSystem.b.levels.front(), m_markers[0], *finer);
+		}
 
 		// Build sub-levels
 		FaceCenteredGrid2 coarser;
@@ -290,9 +419,7 @@ namespace CubbyFlow
 			coarser.Resize(res, h, o);
 			coarser.Fill(finer->Sampler());
 
-			A = &m_mgSystem.A.levels[l];
-			b = &m_mgSystem.b.levels[l];
-			BuildSingleSystem(A, b, m_markers[l], coarser);
+			BuildSingleSystem(&m_mgSystem.A.levels[l], &m_mgSystem.b.levels[l], m_markers[l], coarser);
 
 			finer = &coarser;
 		}
