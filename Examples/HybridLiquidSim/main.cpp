@@ -254,6 +254,7 @@ void RunExample3(const std::string& rootDir, size_t resolutionX, int numberOfFra
 		.WithResolution(resolution)
 		.WithDomainSizeX(3.0)
 		.MakeShared();
+	solver->SetUseCompressedLinearSystem(true);
 
 	const auto grids = solver->GetGridSystemData();
 	const double dx = grids->GetGridSpacing().x;
@@ -330,6 +331,7 @@ void RunExample4(const std::string& rootDir, size_t resolutionX, int numberOfFra
 		.WithResolution(resolution)
 		.WithDomainSizeX(3.0)
 		.MakeShared();
+	solver->SetUseCompressedLinearSystem(true);
 
 	const auto grids = solver->GetGridSystemData();
 	const double dx = grids->GetGridSpacing().x;
@@ -406,6 +408,7 @@ void RunExample5(const std::string& rootDir, size_t resolutionX, unsigned int nu
 		.WithResolution(resolution)
 		.WithDomainSizeX(3.0)
 		.MakeShared();
+	solver->SetUseCompressedLinearSystem(true);
 
 	const auto grids = solver->GetGridSystemData();
 	const double dx = grids->GetGridSpacing().x;
@@ -481,6 +484,7 @@ void RunExample6(const std::string& rootDir, size_t resolutionX, unsigned int nu
 		.WithResolution({ resolutionX, resolutionX, resolutionX })
 		.WithDomainSizeX(1.0)
 		.MakeShared();
+	solver->SetUseCompressedLinearSystem(true);
 
 	// Build collider
 	const auto sphere = Sphere3::Builder()
@@ -496,6 +500,7 @@ void RunExample6(const std::string& rootDir, size_t resolutionX, unsigned int nu
 	solver->SetCollider(collider);
 
 	// Manually emit particles
+	printf("Start emitting particles...\n");
 	std::mt19937 rng;
 	std::uniform_real_distribution<> dist(-0.1 * solver->GetGridSpacing().x, 0.1 * solver->GetGridSpacing().x);
 	const BccLatticePointGenerator pointGenerator;

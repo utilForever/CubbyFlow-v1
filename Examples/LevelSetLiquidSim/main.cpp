@@ -163,6 +163,7 @@ void RunExample2(const std::string& rootDir, size_t resX, int numberOfFrames, do
 		.WithResolution({ 3 * resX, 2 * resX, (3 * resX) / 2 })
 		.WithDomainSizeX(3.0)
 		.MakeShared();
+	solver->SetUseCompressedLinearSystem(true);
 
 	const auto grids = solver->GetGridSystemData();
 	BoundingBox3D domain = grids->GetBoundingBox();
@@ -235,6 +236,7 @@ void RunExample3(const std::string& rootDir, size_t resX, int numberOfFrames, do
 		.WithResolution({ resX, resX, resX })
 		.WithDomainSizeX(1.0)
 		.MakeShared();
+	solver->SetUseCompressedLinearSystem(true);
 
 	solver->SetViscosityCoefficient(1.0);
 	solver->SetIsGlobalCompensationEnabled(true);
@@ -282,6 +284,7 @@ void RunExample4(const std::string& rootDir, size_t resX, int numberOfFrames, do
 		.WithResolution({ resX, resX, resX })
 		.WithDomainSizeX(1.0)
 		.MakeShared();
+	solver->SetUseCompressedLinearSystem(true);
 
 	solver->SetViscosityCoefficient(0.0);
 	solver->SetIsGlobalCompensationEnabled(true);
