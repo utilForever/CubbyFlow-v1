@@ -1,50 +1,29 @@
 #include "pch.h"
 
+#include <FDMLinearSystemSolverTestHelper2.h>
+
 #include <Solver/FDM/FDMJacobiSolver2.h>
 
 using namespace CubbyFlow;
 
-TEST(FDMJacobiSolver2, Constructors)
+TEST(FDMJacobiSolver2, Solve)
 {
-	FDMLinearSystem2 system;
-	system.A.Resize(3, 3);
-	system.x.Resize(3, 3);
-	system.b.Resize(3, 3);
+    FDMLinearSystem2 system;
+    FDMLinearSystemSolverTestHelper2::BuildTestLinearSystem(&system, { 3, 3 });
 
-	system.A.ForEachIndex([&](size_t i, size_t j)
-	{
-		if (i > 0)
-		{
-			system.A(i, j).center += 1.0;
-		}
-		if (i < system.A.Width() - 1)
-		{
-			system.A(i, j).center += 1.0;
-			system.A(i, j).right -= 1.0;
-		}
+    FDMJacobiSolver2 solver(100, 10, 1e-9);
+    solver.Solve(&system);
 
-		if (j > 0)
-		{
-			system.A(i, j).center += 1.0;
-		}
-		else
-		{
-			system.b(i, j) += 1.0;
-		}
+    EXPECT_GT(solver.GetTolerance(), solver.GetLastResidual());
+}
 
-		if (j < system.A.Height() - 1)
-		{
-			system.A(i, j).center += 1.0;
-			system.A(i, j).up -= 1.0;
-		}
-		else
-		{
-			system.b(i, j) -= 1.0;
-		}
-	});
+TEST(FDMJacobiSolver2, SolveCompressed)
+{
+    FDMCompressedLinearSystem2 system;
+    FDMLinearSystemSolverTestHelper2::BuildTestCompressedLinearSystem(&system, { 3, 3 });
 
-	FDMJacobiSolver2 solver(100, 10, 1e-9);
-	solver.Solve(&system);
+    FDMJacobiSolver2 solver(100, 10, 1e-9);
+    solver.SolveCompressed(&system);
 
-	EXPECT_GT(solver.GetTolerance(), solver.GetLastResidual());
+    EXPECT_GT(solver.GetTolerance(), solver.GetLastResidual());
 }

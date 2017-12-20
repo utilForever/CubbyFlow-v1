@@ -86,6 +86,7 @@ CUBBYFLOW_BEGIN_TEST_F(PICSolver3, DamBreakingWithCollider)
 		.WithResolution(resolution)
 		.WithDomainSizeX(3.0)
 		.MakeShared();
+	solver->SetUseCompressedLinearSystem(true);
 
 	auto grids = solver->GetGridSystemData();
 	double dx = grids->GetGridSpacing().x;

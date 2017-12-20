@@ -1,60 +1,29 @@
 #include "pch.h"
 
+#include <FDMLinearSystemSolverTestHelper3.h>
+
 #include <Solver/FDM/FDMCGSolver3.h>
 
 using namespace CubbyFlow;
 
-TEST(FDMCGSolver3, Constructors)
+TEST(FDMCGSolver3, Solve)
 {
-	FDMLinearSystem3 system;
-	system.A.Resize(3, 3, 3);
-	system.x.Resize(3, 3, 3);
-	system.b.Resize(3, 3, 3);
+    FDMLinearSystem3 system;
+    FDMLinearSystemSolverTestHelper3::BuildTestLinearSystem(&system, { 3, 3, 3 });
 
-	system.A.ForEachIndex([&](size_t i, size_t j, size_t k)
-	{
-		if (i > 0)
-		{
-			system.A(i, j, k).center += 1.0;
-		}
-		if (i < system.A.Width() - 1)
-		{
-			system.A(i, j, k).center += 1.0;
-			system.A(i, j, k).right -= 1.0;
-		}
+    FDMCGSolver3 solver(100, 1e-9);
+    solver.Solve(&system);
 
-		if (j > 0)
-		{
-			system.A(i, j, k).center += 1.0;
-		}
-		else
-		{
-			system.b(i, j, k) += 1.0;
-		}
+    EXPECT_GT(solver.GetTolerance(), solver.GetLastResidual());
+}
 
-		if (j < system.A.Height() - 1)
-		{
-			system.A(i, j, k).center += 1.0;
-			system.A(i, j, k).up -= 1.0;
-		}
-		else
-		{
-			system.b(i, j, k) -= 1.0;
-		}
+TEST(FDMCGSolver3, SolveCompressed)
+{
+    FDMCompressedLinearSystem3 system;
+    FDMLinearSystemSolverTestHelper3::BuildTestCompressedLinearSystem(&system, { 3, 3, 3 });
 
-		if (k > 0)
-		{
-			system.A(i, j, k).center += 1.0;
-		}
-		if (k < system.A.Depth() - 1)
-		{
-			system.A(i, j, k).center += 1.0;
-			system.A(i, j, k).front -= 1.0;
-		}
-	});
+    FDMCGSolver3 solver(100, 1e-9);
+    solver.SolveCompressed(&system);
 
-	FDMCGSolver3 solver(100, 1e-9);
-	solver.Solve(&system);
-
-	EXPECT_GT(solver.GetTolerance(), solver.GetLastResidual());
+    EXPECT_GT(solver.GetTolerance(), solver.GetLastResidual());
 }
