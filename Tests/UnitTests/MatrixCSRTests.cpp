@@ -230,6 +230,14 @@ TEST(MatrixCSR, BasicSetters)
 	EXPECT_EQ(-4.0, iterAddRow[5]);
 	EXPECT_EQ(1.0, iterAddRow[6]);
 	EXPECT_EQ(5.0, iterAddRow[7]);
+
+    // Clear
+    matAddRow.Clear();
+    EXPECT_EQ(0u, matAddRow.Rows());
+    EXPECT_EQ(0u, matAddRow.Cols());
+    EXPECT_EQ(0u, matAddRow.NumberOfNonZeros());
+    EXPECT_EQ(1u, matAddRow.RowPointersEnd() - matAddRow.RowPointersBegin());
+    EXPECT_EQ(0u, matAddRow.RowPointersBegin()[0]);
 }
 
 TEST(MatrixCSR, BinaryOperatorMethods)
