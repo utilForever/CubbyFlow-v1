@@ -322,6 +322,229 @@ namespace CubbyFlow
 				}
 			});
 		}
+
+		void BuildSingleSystem(MatrixCSRD* A, VectorND* x, VectorND* b,
+			const Array3<float>& fluidSDF,
+			const Array3<float>& uWeights,
+			const Array3<float>& vWeights,
+			const Array3<float>& wWeights,
+			std::function<Vector3D(const Vector3D&)> boundaryVel,
+			const FaceCenteredGrid3& input)
+		{
+			const Size3 size = input.Resolution();
+			const auto uPos = input.GetUPosition();
+			const auto vPos = input.GetVPosition();
+			const auto wPos = input.GetWPosition();
+
+			const Vector3D invH = 1.0 / input.GridSpacing();
+			const Vector3D invHSqr = invH * invH;
+
+			const auto fluidSDFAcc = fluidSDF.ConstAccessor();
+
+			A->Clear();
+			b->Clear();
+
+			size_t numRows = 0;
+			Array3<size_t> coordToIndex(size);
+			fluidSDF.ForEachIndex([&](size_t i, size_t j, size_t k)
+			{
+				const size_t cIdx = fluidSDFAcc.Index(i, j, k);
+				const double centerPhi = fluidSDF[cIdx];
+
+				if (IsInsideSDF(centerPhi))
+				{
+					coordToIndex[cIdx] = numRows++;
+				}
+			});
+
+			fluidSDF.ForEachIndex([&](size_t i, size_t j, size_t k)
+			{
+				const size_t cIdx = fluidSDFAcc.Index(i, j, k);
+				const double centerPhi = fluidSDF[cIdx];
+
+				if (IsInsideSDF(centerPhi))
+				{
+					double bijk = 0.0;
+
+					std::vector<double> row(1, 0.0);
+					std::vector<size_t> colIdx(1, coordToIndex[cIdx]);
+
+					double term;
+
+					if (i + 1 < size.x)
+					{
+						term = uWeights(i + 1, j, k) * invHSqr.x;
+						const double rightPhi = fluidSDF(i + 1, j, k);
+						
+						if (IsInsideSDF(rightPhi))
+						{
+							row[0] += term;
+							row.push_back(-term);
+							colIdx.push_back(coordToIndex(i + 1, j, k));
+						}
+						else 
+						{
+							double theta = FractionInsideSDF(centerPhi, rightPhi);
+							theta = std::max(theta, 0.01);
+							row[0] += term / theta;
+						}
+						
+						bijk += uWeights(i + 1, j, k) * input.GetU(i + 1, j, k) * invH.x;
+					}
+					else
+					{
+						bijk += input.GetU(i + 1, j, k) * invH.x;
+					}
+
+					if (i > 0)
+					{
+						term = uWeights(i, j, k) * invHSqr.x;
+						const double leftPhi = fluidSDF(i - 1, j, k);
+						
+						if (IsInsideSDF(leftPhi))
+						{
+							row[0] += term;
+							row.push_back(-term);
+							colIdx.push_back(coordToIndex(i - 1, j, k));
+						}
+						else
+						{
+							double theta = FractionInsideSDF(centerPhi, leftPhi);
+							theta = std::max(theta, 0.01);
+							row[0] += term / theta;
+						}
+
+						bijk -= uWeights(i, j, k) * input.GetU(i, j, k) * invH.x;
+					}
+					else
+					{
+						bijk -= input.GetU(i, j, k) * invH.x;
+					}
+
+					if (j + 1 < size.y)
+					{
+						term = vWeights(i, j + 1, k) * invHSqr.y;
+						const double upPhi = fluidSDF(i, j + 1, k);
+
+						if (IsInsideSDF(upPhi))
+						{
+							row[0] += term;
+							row.push_back(-term);
+							colIdx.push_back(coordToIndex(i, j + 1, k));
+						}
+						else
+						{
+							double theta = FractionInsideSDF(centerPhi, upPhi);
+							theta = std::max(theta, 0.01);
+							row[0] += term / theta;
+						}
+						
+						bijk += vWeights(i, j + 1, k) * input.GetV(i, j + 1, k) * invH.y;
+					}
+					else
+					{
+						bijk += input.GetV(i, j + 1, k) * invH.y;
+					}
+
+					if (j > 0)
+					{
+						term = vWeights(i, j, k) * invHSqr.y;
+						const double downPhi = fluidSDF(i, j - 1, k);
+						
+						if (IsInsideSDF(downPhi))
+						{
+							row[0] += term;
+							row.push_back(-term);
+							colIdx.push_back(coordToIndex(i, j - 1, k));
+						}
+						else
+						{
+							double theta = FractionInsideSDF(centerPhi, downPhi);
+							theta = std::max(theta, 0.01);
+							row[0] += term / theta;
+						}
+
+						bijk -= vWeights(i, j, k) * input.GetV(i, j, k) * invH.y;
+					}
+					else
+					{
+						bijk -= input.GetV(i, j, k) * invH.y;
+					}
+
+					if (k + 1 < size.z)
+					{
+						term = wWeights(i, j, k + 1) * invHSqr.z;
+						const double frontPhi = fluidSDF(i, j, k + 1);
+						
+						if (IsInsideSDF(frontPhi))
+						{
+							row[0] += term;
+							row.push_back(-term);
+							colIdx.push_back(coordToIndex(i, j, k + 1));
+						}
+						else
+						{
+							double theta = FractionInsideSDF(centerPhi, frontPhi);
+							theta = std::max(theta, 0.01);
+							row[0] += term / theta;
+						}
+
+						bijk += wWeights(i, j, k + 1) * input.GetW(i, j, k + 1) * invH.z;
+					}
+					else
+					{
+						bijk += input.GetW(i, j, k + 1) * invH.z;
+					}
+
+					if (k > 0) 
+					{
+						term = wWeights(i, j, k) * invHSqr.z;
+						const double backPhi = fluidSDF(i, j, k - 1);
+						
+						if (IsInsideSDF(backPhi))
+						{
+							row[0] += term;
+							row.push_back(-term);
+							colIdx.push_back(coordToIndex(i, j, k - 1));
+						}
+						else
+						{
+							double theta = FractionInsideSDF(centerPhi, backPhi);
+							theta = std::max(theta, 0.01);
+							row[0] += term / theta;
+						}
+
+						bijk -= wWeights(i, j, k) * input.GetW(i, j, k) * invH.z;
+					}
+					else
+					{
+						bijk -= input.GetW(i, j, k) * invH.z;
+					}
+
+					// Accumulate contributions from the moving boundary
+					double boundaryContribution =
+						(1.0 - uWeights(i + 1, j, k)) * boundaryVel(uPos(i + 1, j, k)).x * invH.x -
+						(1.0 - uWeights(i, j, k)) * boundaryVel(uPos(i, j, k)).x * invH.x +
+						(1.0 - vWeights(i, j + 1, k)) * boundaryVel(vPos(i, j + 1, k)).y * invH.y -
+						(1.0 - vWeights(i, j, k)) * boundaryVel(vPos(i, j, k)).y * invH.y +
+						(1.0 - wWeights(i, j, k + 1)) * boundaryVel(wPos(i, j, k + 1)).z * invH.z -
+						(1.0 - wWeights(i, j, k)) * boundaryVel(wPos(i, j, k)).z * invH.z;
+					bijk += boundaryContribution;
+
+					// If row.center is near-zero, the cell is likely inside a solid boundary.
+					if (row[0] < std::numeric_limits<double>::epsilon())
+					{
+						row[0] = 1.0;
+						bijk = 0.0;
+					}
+
+					A->AddRow(row, colIdx);
+					b->Append(bijk);
+				}
+			});
+
+			x->Resize(b->size(), 0.0);
+		}
 	}
 
 	GridFractionalSinglePhasePressureSolver3::GridFractionalSinglePhasePressureSolver3()
@@ -340,19 +563,30 @@ namespace CubbyFlow
 		FaceCenteredGrid3* output,
 		const ScalarField3& boundarySDF,
 		const VectorField3& boundaryVelocity,
-		const ScalarField3& fluidSDF)
+		const ScalarField3& fluidSDF,
+		bool useCompressed)
 	{
 		UNUSED_VARIABLE(timeIntervalInSeconds);
 
 		BuildWeights(input, boundarySDF, boundaryVelocity, fluidSDF);
-		BuildSystem(input);
+		BuildSystem(input, useCompressed);
 
 		if (m_systemSolver != nullptr)
 		{
 			// Solve the system
 			if (m_mgSystemSolver == nullptr)
 			{
-				m_systemSolver->Solve(&m_system);
+				if (useCompressed)
+				{
+					m_system.Clear();
+					m_systemSolver->SolveCompressed(&m_compSystem);
+					DecompressSolution();
+				}
+				else
+				{
+					m_compSystem.Clear();
+					m_systemSolver->Solve(&m_system);
+				}
 			}
 			else
 			{
@@ -388,6 +622,7 @@ namespace CubbyFlow
 		{
 			// In case of mg system, use multi-level structure.
 			m_system.Clear();
+			m_compSystem.Clear();
 		}
 	}
 
@@ -520,20 +755,33 @@ namespace CubbyFlow
 		}
 	}
 
-	void GridFractionalSinglePhasePressureSolver3::BuildSystem(const FaceCenteredGrid3& input)
+	void GridFractionalSinglePhasePressureSolver3::DecompressSolution()
+	{
+		const auto acc = m_fluidSDF[0].ConstAccessor();
+		m_system.x.Resize(acc.size());
+
+		size_t row = 0;
+		m_fluidSDF[0].ForEachIndex([&](size_t i, size_t j, size_t k)
+		{
+			if (IsInsideSDF(acc(i, j, k)))
+			{
+				m_system.x(i, j, k) = m_compSystem.x[row];
+				++row;
+			}
+		});
+	}
+
+	void GridFractionalSinglePhasePressureSolver3::BuildSystem(const FaceCenteredGrid3& input, bool useCompressed)
 	{
 		const Size3 size = input.Resolution();
 		size_t numLevels = 1;
-		FDMMatrix3* A;
-		FDMVector3* b;
 
 		if (m_mgSystemSolver == nullptr)
 		{
-			m_system.A.Resize(size);
-			m_system.x.Resize(size);
-			m_system.b.Resize(size);
-			A = &m_system.A;
-			b = &m_system.b;
+			if (!useCompressed)
+			{
+				m_system.Resize(size);
+			}
 		}
 		else
 		{
@@ -543,15 +791,35 @@ namespace CubbyFlow
 			FDMMGUtils3::ResizeArrayWithFinest(size, maxLevels, &m_mgSystem.x.levels);
 			FDMMGUtils3::ResizeArrayWithFinest(size, maxLevels, &m_mgSystem.b.levels);
 
-			A = &m_mgSystem.A.levels.front();
-			b = &m_mgSystem.b.levels.front();
-
 			numLevels = m_mgSystem.A.levels.size();
 		}
 
 		// Build top level
 		const FaceCenteredGrid3* finer = &input;
-		BuildSingleSystem(A, b, m_fluidSDF[0], m_uWeights[0], m_vWeights[0], m_wWeights[0], m_boundaryVel, *finer);
+		if (m_mgSystemSolver == nullptr)
+		{
+			if (useCompressed)
+			{
+				BuildSingleSystem(
+					&m_compSystem.A, &m_compSystem.x, &m_compSystem.b,
+					m_fluidSDF[0], m_uWeights[0], m_vWeights[0], m_wWeights[0],
+					m_boundaryVel, *finer);
+			}
+			else
+			{
+				BuildSingleSystem(
+					&m_system.A, &m_system.b,
+					m_fluidSDF[0], m_uWeights[0], m_vWeights[0], m_wWeights[0],
+					m_boundaryVel, *finer);
+			}
+		}
+		else
+		{
+			BuildSingleSystem(
+				&m_mgSystem.A.levels.front(), &m_mgSystem.b.levels.front(),
+				m_fluidSDF[0], m_uWeights[0], m_vWeights[0], m_wWeights[0],
+				m_boundaryVel, *finer);
+		}
 		
 		// Build sub-levels
 		FaceCenteredGrid3 coarser;
@@ -569,9 +837,10 @@ namespace CubbyFlow
 			coarser.Resize(res, h, o);
 			coarser.Fill(finer->Sampler());
 			
-			A = &m_mgSystem.A.levels[l];
-			b = &m_mgSystem.b.levels[l];
-			BuildSingleSystem(A, b, m_fluidSDF[l], m_uWeights[l], m_vWeights[l], m_wWeights[l], m_boundaryVel, coarser);
+			BuildSingleSystem(
+				&m_mgSystem.A.levels[l], &m_mgSystem.b.levels[l],
+				m_fluidSDF[l], m_uWeights[l], m_vWeights[l], m_wWeights[l],
+				m_boundaryVel, coarser);
 			
 			finer = &coarser;
 		}
