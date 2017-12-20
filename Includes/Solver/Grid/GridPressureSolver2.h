@@ -53,6 +53,7 @@ namespace CubbyFlow
 		//! \param[in]    boundarySDF           The SDF of the boundary.
 		//! \param[in]    boundaryVelocity      The velocity of the boundary.
 		//! \param[in]    fluidSDF              The SDF of the fluid/atmosphere.
+		//! \param[in]    useCompressed         True if it uses compressed system.
 		//!
 		virtual void Solve(
 			const FaceCenteredGrid2& input,
@@ -60,7 +61,8 @@ namespace CubbyFlow
 			FaceCenteredGrid2* output,
 			const ScalarField2& boundarySDF = ConstantScalarField2(std::numeric_limits<double>::max()),
 			const VectorField2& boundaryVelocity = ConstantVectorField2({ 0, 0 }),
-			const ScalarField2& fluidSDF = ConstantScalarField2(-std::numeric_limits<double>::max())) = 0;
+			const ScalarField2& fluidSDF = ConstantScalarField2(-std::numeric_limits<double>::max()),
+			bool useCompressed = false) = 0;
 
 		//!
 		//! \brief Returns the best boundary condition solver for this solver.
