@@ -79,6 +79,12 @@ namespace CubbyFlow
 		//! Sets the max allowed CFL number.
 		void SetMaxCFL(double newCFL);
 
+		//! Returns true if the solver is using compressed linear system.
+		bool GetUseCompressedLinearSystem() const;
+		
+		//! Sets whether the solver should use compressed linear system.
+		void SetUseCompressedLinearSystem(bool onoff);
+
 		//! Returns the advection solver instance.
 		const AdvectionSolver2Ptr& GetAdvectionSolver() const;
 
@@ -266,6 +272,7 @@ namespace CubbyFlow
 		Vector2D m_gravity = Vector2D(0.0, -9.8);
 		double m_viscosityCoefficient = 0.0;
 		double m_maxCFL = 5.0;
+		bool m_useCompressedLinearSys = false;
 		int m_closedDomainBoundaryFlag = DIRECTION_ALL;
 
 		GridSystemData2Ptr m_grids;
