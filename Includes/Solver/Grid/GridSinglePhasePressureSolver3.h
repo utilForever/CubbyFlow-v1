@@ -59,6 +59,7 @@ namespace CubbyFlow
 		//! \param[in]    boundarySDF           The SDF of the boundary.
 		//! \param[in]    boundaryVelocity      The velocity of the boundary.
 		//! \param[in]    fluidSDF              The SDF of the fluid/atmosphere.
+		//! \param[in]    useCompressed         True if it uses compressed system.
 		//!
 		void Solve(
 			const FaceCenteredGrid3& input,
@@ -66,7 +67,8 @@ namespace CubbyFlow
 			FaceCenteredGrid3* output,
 			const ScalarField3& boundarySDF = ConstantScalarField3(std::numeric_limits<double>::max()),
 			const VectorField3& boundaryVelocity = ConstantVectorField3({ 0, 0, 0 }),
-			const ScalarField3& fluidSDF = ConstantScalarField3(-std::numeric_limits<double>::max())) override;
+			const ScalarField3& fluidSDF = ConstantScalarField3(-std::numeric_limits<double>::max()),
+			bool useCompressed = false) override;
 
 		//!
 		//! \brief Returns the best boundary condition solver for this solver.
@@ -91,6 +93,7 @@ namespace CubbyFlow
 
 	private:
 		FDMLinearSystem3 m_system;
+		FDMCompressedLinearSystem3 m_compSystem;
 		FDMLinearSystemSolver3Ptr m_systemSolver;
 
 		FDMMGLinearSystem3 m_mgSystem;
@@ -104,7 +107,9 @@ namespace CubbyFlow
 			const ScalarField3& boundarySDF,
 			const ScalarField3& fluidSDF);
 
-		virtual void BuildSystem(const FaceCenteredGrid3& input);
+		void DecompressSolution();
+
+		virtual void BuildSystem(const FaceCenteredGrid3& input, bool useCompressed);
 
 		virtual void ApplyPressureGradient(const FaceCenteredGrid3& input, FaceCenteredGrid3* output);
 	};
