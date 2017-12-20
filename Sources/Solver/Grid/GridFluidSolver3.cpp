@@ -89,6 +89,16 @@ namespace CubbyFlow
 		m_maxCFL = std::max(newCFL, std::numeric_limits<double>::epsilon());
 	}
 
+	bool GridFluidSolver3::GetUseCompressedLinearSystem() const
+	{
+		return m_useCompressedLinearSys;
+	}
+
+	void GridFluidSolver3::SetUseCompressedLinearSystem(bool onoff)
+	{
+		m_useCompressedLinearSys = onoff;
+	}
+
 	const AdvectionSolver3Ptr& GridFluidSolver3::GetAdvectionSolver() const
 	{
 		return m_advectionSolver;
