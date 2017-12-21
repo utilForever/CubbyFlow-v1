@@ -120,13 +120,13 @@ namespace CubbyFlow
 			if (m_smokeDiffusionCoefficient > std::numeric_limits<double>::epsilon())
 			{
 				auto den = GetSmokeDensity();
-				auto den0 = std::dynamic_pointer_cast<CellCenteredScalarGrid2>(den->Clone());
+				const auto den0 = std::dynamic_pointer_cast<CellCenteredScalarGrid2>(den->Clone());
 
 				GetDiffusionSolver()->Solve(
 					*den0,
 					m_smokeDiffusionCoefficient,
 					timeIntervalInSeconds,
-					den0.get(),
+					den.get(),
 					*GetColliderSDF());
 				ExtrapolateIntoCollider(den.get());
 			}
@@ -134,7 +134,7 @@ namespace CubbyFlow
 			if (m_temperatureDiffusionCoefficient > std::numeric_limits<double>::epsilon())
 			{
 				auto temp = GetSmokeDensity();
-				auto temp0 = std::dynamic_pointer_cast<CellCenteredScalarGrid2>(temp->Clone());
+				const auto temp0 = std::dynamic_pointer_cast<CellCenteredScalarGrid2>(temp->Clone());
 
 				GetDiffusionSolver()->Solve(
 					*temp0,
@@ -160,7 +160,7 @@ namespace CubbyFlow
 
 	void GridSmokeSolver2::ComputeBuoyancyForce(double timeIntervalInSeconds)
 	{
-		auto grids = GetGridSystemData();
+		const auto grids = GetGridSystemData();
 		auto vel = grids->GetVelocity();
 
 		Vector2D up(0, 1);
