@@ -95,6 +95,8 @@ namespace CubbyFlow
 		const auto meanNeighborSearcher = PointKdTreeSearcher2::Builder().MakeShared();
 		meanNeighborSearcher->Build(points);
 
+		CUBBYFLOW_INFO << "Built neighbor searcher.";
+
 		SPHSystemData2 meanParticles;
 		meanParticles.AddParticles(points);
 		meanParticles.SetNeighborSearcher(meanNeighborSearcher);
@@ -155,19 +157,27 @@ namespace CubbyFlow
 				Matrix2x2D w;
 				SVD(cov, u, v, w);
 
+				// Take off the sign
+				v.x = std::fabs(v.x);
+				v.y = std::fabs(v.y);
+
 				// Constrain Sigma
-				const double maxSingularVal = v.AbsMax();
+				const double maxSingularVal = v.Max();
 				const double kr = 4.0;
-				v[0] = std::max(v[0], maxSingularVal / kr);
-				v[1] = std::max(v[1], maxSingularVal / kr);
+				v.x = std::max(v.x, maxSingularVal / kr);
+				v.y = std::max(v.y, maxSingularVal / kr);
+
 				const auto invSigma = Matrix2x2D::MakeScaleMatrix(1.0 / v);
 
 				// Compute G
-				const double relA = v[0] * v[1];
-				const Matrix2x2D g = invH * std::sqrt(relA) * (w * invSigma * u.Transposed());
+				// Area preservation
+				const double scale = std::sqrt(v.x * v.y);
+				const Matrix2x2D g = invH * scale * (w * invSigma * u.Transposed());
 				gs[i] = g;
 			}
 		});
+
+		CUBBYFLOW_INFO << "Computed G and means.";
 
 		// SPH estimator
 		meanParticles.SetKernelRadius(h);
@@ -192,14 +202,20 @@ namespace CubbyFlow
 			return m_cutOffDensity - sum;
 		});
 
+		CUBBYFLOW_INFO << "Computed SDF.";
+
 		if (m_isOutputSDF)
 		{
 			FMMLevelSetSolver2 solver;
 			solver.Reinitialize(*temp, std::numeric_limits<double>::max(), output);
+
+			CUBBYFLOW_INFO << "Completed initialization.";
 		}
 		else
 		{
 			temp->Swap(output);
 		}
+
+		CUBBYFLOW_INFO << "Done converting points to implicit surface.";
 	}
 }
