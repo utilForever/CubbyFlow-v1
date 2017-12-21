@@ -71,6 +71,11 @@ namespace CubbyFlow
 		return result.isIntersecting;
 	}
 
+	void Surface3::UpdateQueryEngine()
+	{
+		// Do nothing
+	}
+
 	double Surface3::ClosestDistanceLocal(const Vector3D& otherPoint) const
 	{
 		return otherPoint.DistanceTo(ClosestPointLocal(otherPoint));

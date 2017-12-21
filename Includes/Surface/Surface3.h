@@ -69,6 +69,9 @@ namespace CubbyFlow
 		//! point \p otherPoint.
 		Vector3D ClosestNormal(const Vector3D& otherPoint) const;
 
+        //! Updates internal spatial query engine.
+        virtual void UpdateQueryEngine();
+
 	protected:
 		//! Returns the closest point from the given point \p otherPoint to the
 		//! surface in local frame.

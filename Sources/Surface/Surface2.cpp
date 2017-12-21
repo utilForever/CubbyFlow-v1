@@ -65,6 +65,11 @@ namespace CubbyFlow
 		return result;
 	}
 
+	void Surface2::UpdateQueryEngine()
+	{
+		// Do nothing
+	}
+
 	bool Surface2::IntersectsLocal(const Ray2D& ray) const
 	{
 		auto result = ClosestIntersectionLocal(ray);
