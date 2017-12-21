@@ -56,6 +56,11 @@ namespace CubbyFlow
 		Set(other);
 	}
 
+	void TriangleMesh3::UpdateQueryEngine()
+	{
+		BuildBVH();
+	}
+
 	Vector3D TriangleMesh3::ClosestPointLocal(const Vector3D& otherPoint) const
 	{
 		BuildBVH();
@@ -166,7 +171,7 @@ namespace CubbyFlow
 		m_normalIndices.Set(other.m_normalIndices);
 		m_uvIndices.Set(other.m_uvIndices);
 
-        InvalidateBVH();
+		InvalidateBVH();
 	}
 
 	void TriangleMesh3::Swap(TriangleMesh3& other)

@@ -56,6 +56,9 @@ namespace CubbyFlow
 		//! Copy constructor.
 		TriangleMesh3(const TriangleMesh3& other);
 
+		//! Updates internal spatial query engine.
+		void UpdateQueryEngine() override;
+
 		//! Clears all content.
 		void Clear();
 
