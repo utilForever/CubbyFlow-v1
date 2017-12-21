@@ -40,6 +40,9 @@ namespace CubbyFlow
 		//! Copy constructor.
 		SurfaceSet3(const SurfaceSet3& other);
 
+		//! Updates internal spatial query engine.
+		void UpdateQueryEngine() override;
+
 		//! Returns the number of surfaces.
 		size_t NumberOfSurfaces() const;
 

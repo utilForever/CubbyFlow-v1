@@ -30,6 +30,11 @@ namespace CubbyFlow
 		InvalidateBVH();
 	}
 
+	void SurfaceSet2::UpdateQueryEngine()
+	{
+		BuildBVH();
+	}
+
 	size_t SurfaceSet2::NumberOfSurfaces() const
 	{
 		return m_surfaces.size();
