@@ -104,6 +104,8 @@ namespace CubbyFlow
 
 	void Collider2::Update(double currentTimeInSeconds, double timeIntervalInSeconds)
 	{
+		m_surface->UpdateQueryEngine();
+
 		if (m_onUpdateCallback)
 		{
 			m_onUpdateCallback(this, currentTimeInSeconds, timeIntervalInSeconds);
