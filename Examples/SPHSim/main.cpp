@@ -77,8 +77,7 @@ void SaveParticleAsXYZ(const ParticleSystemData3Ptr& particles, const std::strin
 void PrintUsage()
 {
 	printf(
-		"Usage: " APP_NAME " "
-		"-s spacing -l length -f frames -e example_num\n"
+		"Usage: " APP_NAME " [options]\n"
 		"   -s, --spacing: target particle spacing (default is 0.02)\n"
 		"   -f, --frames: total number of frames (default is 100)\n"
 		"   -p, --fps: frames per second (default is 60.0)\n"

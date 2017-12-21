@@ -185,8 +185,7 @@ void SaveVolumeAsTga(const ScalarGrid3Ptr& density, const std::string& rootDir, 
 void PrintUsage() 
 {
 	printf(
-		"Usage: " APP_NAME " "
-		"-r resolution -l length -f frames -e example_num\n"
+		"Usage: " APP_NAME " [options]\n"
 		"   -r, --resx: grid resolution in x-axis (default is 50)\n"
 		"   -f, --frames: total number of frames (default is 100)\n"
 		"   -p, --fps: frames per second (default is 60.0)\n"
