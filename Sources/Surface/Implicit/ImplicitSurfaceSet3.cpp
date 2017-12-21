@@ -43,6 +43,11 @@ namespace CubbyFlow
 		// Do nothing
 	}
 
+	void ImplicitSurfaceSet3::UpdateQueryEngine()
+	{
+		BuildBVH();
+	}
+
 	size_t ImplicitSurfaceSet3::NumberOfSurfaces() const
 	{
 		return m_surfaces.size();
@@ -55,7 +60,7 @@ namespace CubbyFlow
 
 	void ImplicitSurfaceSet3::AddExplicitSurface(const Surface3Ptr& surface)
 	{
-        AddSurface(std::make_shared<SurfaceToImplicit3>(surface));
+		AddSurface(std::make_shared<SurfaceToImplicit3>(surface));
 	}
 
 	void ImplicitSurfaceSet3::AddSurface(const ImplicitSurface3Ptr& surface)

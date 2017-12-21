@@ -46,6 +46,9 @@ namespace CubbyFlow
 		//! Copy constructor.
 		ImplicitSurfaceSet3(const ImplicitSurfaceSet3& other);
 
+		//! Updates internal spatial query engine.
+		void UpdateQueryEngine() override;
+
 		//! Returns the number of implicit surfaces.
 		size_t NumberOfSurfaces() const;
 
