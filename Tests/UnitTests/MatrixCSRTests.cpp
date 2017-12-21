@@ -153,6 +153,8 @@ TEST(MatrixCSR, BasicSetters)
 
 	// Set other CSR mat
 	matInitLst.Set(matSparse);
+	iterInitLst = matInitLst.NonZeroBegin();
+
 	for (size_t i = 0; i < 8; ++i)
 	{
 		EXPECT_EQ(iterSparse[i], iterInitLst[i]);
@@ -231,13 +233,13 @@ TEST(MatrixCSR, BasicSetters)
 	EXPECT_EQ(1.0, iterAddRow[6]);
 	EXPECT_EQ(5.0, iterAddRow[7]);
 
-    // Clear
-    matAddRow.Clear();
-    EXPECT_EQ(0u, matAddRow.Rows());
-    EXPECT_EQ(0u, matAddRow.Cols());
-    EXPECT_EQ(0u, matAddRow.NumberOfNonZeros());
-    EXPECT_EQ(1u, matAddRow.RowPointersEnd() - matAddRow.RowPointersBegin());
-    EXPECT_EQ(0u, matAddRow.RowPointersBegin()[0]);
+	// Clear
+	matAddRow.Clear();
+	EXPECT_EQ(0u, matAddRow.Rows());
+	EXPECT_EQ(0u, matAddRow.Cols());
+	EXPECT_EQ(0u, matAddRow.NumberOfNonZeros());
+	EXPECT_EQ(1u, matAddRow.RowPointersEnd() - matAddRow.RowPointersBegin());
+	EXPECT_EQ(0u, matAddRow.RowPointersBegin()[0]);
 }
 
 TEST(MatrixCSR, BinaryOperatorMethods)
