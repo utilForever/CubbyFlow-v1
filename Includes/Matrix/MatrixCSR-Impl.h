@@ -110,7 +110,7 @@ namespace CubbyFlow
 	template <typename T>
 	MatrixCSR<T>::MatrixCSR()
 	{
-        Clear();
+		Clear();
 	}
 
 	template <typename T>
@@ -138,14 +138,14 @@ namespace CubbyFlow
 		(*this) = std::move(other);
 	}
 
-    template <typename T>
-    void MatrixCSR<T>::Clear()
+	template <typename T>
+	void MatrixCSR<T>::Clear()
 	{
-        m_size = { 0, 0 };
-        m_nonZeros.clear();
-        m_rowPointers.clear();
-        m_columnIndices.clear();
-        m_rowPointers.push_back(0);
+		m_size = { 0, 0 };
+		m_nonZeros.clear();
+		m_rowPointers.clear();
+		m_columnIndices.clear();
+		m_rowPointers.push_back(0);
 	}
 
 	template <typename T>
@@ -981,14 +981,14 @@ namespace CubbyFlow
 
 			while (colIterA != colEndA || colIterB != colEndB)
 			{
-				if (*colIterA < *colIterB || colIterB == colEndB)
+				if (colIterB == colEndB || *colIterA < *colIterB)
 				{
 					col.push_back(*colIterA);
 					nnz.push_back(op(*nnzIterA, 0));
 					++colIterA;
 					++nnzIterA;
 				}
-				else if (*colIterA > *colIterB || colIterA == colEndA)
+				else if (colIterA == colEndA || *colIterA > *colIterB)
 				{
 					col.push_back(*colIterB);
 					nnz.push_back(op(0, *nnzIterB));
