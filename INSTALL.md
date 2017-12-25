@@ -124,9 +124,15 @@ Currently, GCC 5.4 is installed on WSL. GCC 7 or later must be installed to use 
     contrib/download_prerequisites
     ```
 
-    NOTE: At this point, we can configure the build. In order to keep the system clean, we will use /usr/local/gcc-7.1 for the installation folder and append the suffix -7.1 to the GCC compilers. You typically don’t want to mess the system’s default GCC because other packages may depend on this.
+4. At this point, we can configure the build. In order to keep the system clean, we will use /usr/local/gcc-7.1 for the installation folder and append the suffix -7.1 to the GCC compilers. You typically don’t want to mess the system’s default GCC because other packages may depend on this.
 
-4. We are ready to build GCC, you typically want to pass twice the number of your computer cores to the make command in order to speed up the build. I have a quad-core system, so I will use 8 parallel jobs to build GCC:
+    ```
+    cd ~
+    mkdir build && cd build
+    ../gcc-7.1.0/configure -v --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --prefix=/usr/local/gcc-7.1 --enable-checking=release --enable-languages=c,c++,fortran --disable-multilib --program-suffix=-7.1
+    ```
+
+5. We are ready to build GCC, you typically want to pass twice the number of your computer cores to the make command in order to speed up the build. I have a quad-core system, so I will use 8 parallel jobs to build GCC:
 
     ```
     make -j 8
@@ -134,13 +140,13 @@ Currently, GCC 5.4 is installed on WSL. GCC 7 or later must be installed to use 
 
     NOTE: Depending on the speed of your computer the build phase could take from about 30 minutes to a few hours.
 
-5. Once the above phase is finished, you can install the built GCC with:
+6. Once the above phase is finished, you can install the built GCC with:
 
     ```
     sudo make install
     ```
 
-6. If you want to permanently add the compilers to your system’s path, use the next commands:
+7. If you want to permanently add the compilers to your system’s path, use the next commands:
 
     ```
     cd ~
