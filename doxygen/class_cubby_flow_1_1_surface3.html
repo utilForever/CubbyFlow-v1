@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.64</a>
+                    <a class="navbar-brand">CubbyFlow v0.68</a>
                 </div>
             </div>
         </nav>
@@ -94,7 +94,7 @@ Inheritance diagram for CubbyFlow::Surface3:</div>
   <map id="CubbyFlow::Surface3_map" name="CubbyFlow::Surface3_map">
 <area href="class_cubby_flow_1_1_box3.html" title="3-D box geometry. " alt="CubbyFlow::Box3" shape="rect" coords="182,56,354,80"/>
 <area href="class_cubby_flow_1_1_cylinder3.html" title="3-D cylinder geometry. " alt="CubbyFlow::Cylinder3" shape="rect" coords="182,112,354,136"/>
-<area href="class_cubby_flow_1_1_implicit_surface3.html" title="Abstract base class for 3-d implicit surface. " alt="CubbyFlow::ImplicitSurface3" shape="rect" coords="182,168,354,192"/>
+<area href="class_cubby_flow_1_1_implicit_surface3.html" title="Abstract base class for 3-D implicit surface. " alt="CubbyFlow::ImplicitSurface3" shape="rect" coords="182,168,354,192"/>
 <area href="class_cubby_flow_1_1_plane3.html" title="3-D plane geometry. " alt="CubbyFlow::Plane3" shape="rect" coords="182,224,354,248"/>
 <area href="class_cubby_flow_1_1_sphere3.html" title="3-D sphere geometry. " alt="CubbyFlow::Sphere3" shape="rect" coords="182,280,354,304"/>
 <area href="class_cubby_flow_1_1_surface_set3.html" title="3-D surface set. " alt="CubbyFlow::SurfaceSet3" shape="rect" coords="182,336,354,360"/>
@@ -130,6 +130,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a1f99931a4f2bcea2900c76a953680f92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a852dc7af2975b43239aa842e2bc5238d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_cubby_flow.html#a7a0f165a2c76a196c9e23978ff7f2dcb">Vector3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_surface3.html#a852dc7af2975b43239aa842e2bc5238d">ClosestNormal</a> (const <a class="el" href="namespace_cubby_flow.html#a7a0f165a2c76a196c9e23978ff7f2dcb">Vector3D</a> &amp;otherPoint) const</td></tr>
 <tr class="separator:a852dc7af2975b43239aa842e2bc5238d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d2e863aece2b444b60ae8274d86d417"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_surface3.html#a0d2e863aece2b444b60ae8274d86d417">UpdateQueryEngine</a> ()</td></tr>
+<tr class="memdesc:a0d2e863aece2b444b60ae8274d86d417"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates internal spatial query engine.  <a href="#a0d2e863aece2b444b60ae8274d86d417">More...</a><br /></td></tr>
+<tr class="separator:a0d2e863aece2b444b60ae8274d86d417"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -530,6 +533,35 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a0d2e863aece2b444b60ae8274d86d417"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d2e863aece2b444b60ae8274d86d417">&#9670;&nbsp;</a></span>UpdateQueryEngine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void CubbyFlow::Surface3::UpdateQueryEngine </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Updates internal spatial query engine. </p>
+
+<p>Reimplemented in <a class="el" href="class_cubby_flow_1_1_triangle_mesh3.html#aef0a282706ba0c3c867ae68ec7f0160e">CubbyFlow::TriangleMesh3</a>, <a class="el" href="class_cubby_flow_1_1_implicit_surface_set3.html#acc951b1f5369b4f691f9337b1db70a94">CubbyFlow::ImplicitSurfaceSet3</a>, and <a class="el" href="class_cubby_flow_1_1_surface_set3.html#a182ef0a71a2150b33720643fc84ef6ea">CubbyFlow::SurfaceSet3</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="a72d33029c181964ddf2f46df0faa2b59"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a72d33029c181964ddf2f46df0faa2b59">&#9670;&nbsp;</a></span>isNormalFlipped</h2>
@@ -575,7 +607,7 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Dec 9 2017 16:14:08 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 25 2017 22:42:44 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

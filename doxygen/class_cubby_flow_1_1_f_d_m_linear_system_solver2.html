@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.64</a>
+                    <a class="navbar-brand">CubbyFlow v0.68</a>
                 </div>
             </div>
         </nav>
@@ -92,7 +92,7 @@ Inheritance diagram for CubbyFlow::FDMLinearSystemSolver2:</div>
   <map id="CubbyFlow::FDMLinearSystemSolver2_map" name="CubbyFlow::FDMLinearSystemSolver2_map">
 <area href="class_cubby_flow_1_1_f_d_m_c_g_solver2.html" title="2-D finite difference-type linear system solver using conjugate gradient. " alt="CubbyFlow::FDMCGSolver2" shape="rect" coords="0,56,230,80"/>
 <area href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver2.html" title="2-D finite difference-type linear system solver using Gauss-Seidel method. " alt="CubbyFlow::FDMGaussSeidelSolver2" shape="rect" coords="240,56,470,80"/>
-<area href="class_cubby_flow_1_1_f_d_m_i_c_c_g_solver2.html" alt="CubbyFlow::FDMICCGSolver2" shape="rect" coords="480,56,710,80"/>
+<area href="class_cubby_flow_1_1_f_d_m_i_c_c_g_solver2.html" title="2-D finite difference-type linear system solver using incomplete Cholesky conjugate gradient (ICCG)..." alt="CubbyFlow::FDMICCGSolver2" shape="rect" coords="480,56,710,80"/>
 <area href="class_cubby_flow_1_1_f_d_m_jacobi_solver2.html" title="2-D finite difference-type linear system solver using Jacobi method. " alt="CubbyFlow::FDMJacobiSolver2" shape="rect" coords="720,56,950,80"/>
 <area href="class_cubby_flow_1_1_f_d_m_m_g_solver2.html" title="2-D finite difference-type linear system solver using Multigrid. " alt="CubbyFlow::FDMMGSolver2" shape="rect" coords="960,56,1190,80"/>
 <area href="class_cubby_flow_1_1_f_d_m_m_g_p_c_g_solver2.html" title="2-D finite difference-type linear system solver using Multigrid Preconditioned conjugate gradient (MG..." alt="CubbyFlow::FDMMGPCGSolver2" shape="rect" coords="960,112,1190,136"/>
@@ -106,6 +106,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8e22dffd2753541d30781092a912080a"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_f_d_m_linear_system_solver2.html#a8e22dffd2753541d30781092a912080a">Solve</a> (<a class="el" href="struct_cubby_flow_1_1_f_d_m_linear_system2.html">FDMLinearSystem2</a> *system)=0</td></tr>
 <tr class="memdesc:a8e22dffd2753541d30781092a912080a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solves the given linear system.  <a href="#a8e22dffd2753541d30781092a912080a">More...</a><br /></td></tr>
 <tr class="separator:a8e22dffd2753541d30781092a912080a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc3143790e2ddfa200313e527cfbcb1f"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_f_d_m_linear_system_solver2.html#abc3143790e2ddfa200313e527cfbcb1f">SolveCompressed</a> (<a class="el" href="struct_cubby_flow_1_1_f_d_m_compressed_linear_system2.html">FDMCompressedLinearSystem2</a> *)</td></tr>
+<tr class="memdesc:abc3143790e2ddfa200313e527cfbcb1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solves the given compressed linear system.  <a href="#abc3143790e2ddfa200313e527cfbcb1f">More...</a><br /></td></tr>
+<tr class="separator:abc3143790e2ddfa200313e527cfbcb1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstract base class for 2-D finite difference-type linear system solver. </p>
@@ -162,7 +165,37 @@ Public Member Functions</h2></td></tr>
 
 <p>Solves the given linear system. </p>
 
-<p>Implemented in <a class="el" href="class_cubby_flow_1_1_f_d_m_m_g_solver2.html#a190898d2c934b0c8f09264669e47bf74">CubbyFlow::FDMMGSolver2</a>, <a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver2.html#af03e8513ffa74680cfe80e88e526963f">CubbyFlow::FDMGaussSeidelSolver2</a>, <a class="el" href="class_cubby_flow_1_1_f_d_m_jacobi_solver2.html#aaa38a6171371a9223f1418135565a1d7">CubbyFlow::FDMJacobiSolver2</a>, <a class="el" href="class_cubby_flow_1_1_f_d_m_c_g_solver2.html#a07b717455d5aa563def61b7ac8aedc59">CubbyFlow::FDMCGSolver2</a>, and <a class="el" href="class_cubby_flow_1_1_f_d_m_i_c_c_g_solver2.html#a20d156c0e1601fd108721d4fefa9ba7a">CubbyFlow::FDMICCGSolver2</a>.</p>
+<p>Implemented in <a class="el" href="class_cubby_flow_1_1_f_d_m_m_g_solver2.html#a190898d2c934b0c8f09264669e47bf74">CubbyFlow::FDMMGSolver2</a>, <a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver2.html#af03e8513ffa74680cfe80e88e526963f">CubbyFlow::FDMGaussSeidelSolver2</a>, <a class="el" href="class_cubby_flow_1_1_f_d_m_i_c_c_g_solver2.html#a20d156c0e1601fd108721d4fefa9ba7a">CubbyFlow::FDMICCGSolver2</a>, <a class="el" href="class_cubby_flow_1_1_f_d_m_jacobi_solver2.html#aaa38a6171371a9223f1418135565a1d7">CubbyFlow::FDMJacobiSolver2</a>, and <a class="el" href="class_cubby_flow_1_1_f_d_m_c_g_solver2.html#a07b717455d5aa563def61b7ac8aedc59">CubbyFlow::FDMCGSolver2</a>.</p>
+
+</div>
+</div>
+<a id="abc3143790e2ddfa200313e527cfbcb1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc3143790e2ddfa200313e527cfbcb1f">&#9670;&nbsp;</a></span>SolveCompressed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool CubbyFlow::FDMLinearSystemSolver2::SolveCompressed </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_cubby_flow_1_1_f_d_m_compressed_linear_system2.html">FDMCompressedLinearSystem2</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Solves the given compressed linear system. </p>
+
+<p>Reimplemented in <a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver2.html#ad5622aec48111ff012d7e4e7866b9d76">CubbyFlow::FDMGaussSeidelSolver2</a>, <a class="el" href="class_cubby_flow_1_1_f_d_m_i_c_c_g_solver2.html#ac5dc6621b6995e59cb12cdc6ae7fc709">CubbyFlow::FDMICCGSolver2</a>, <a class="el" href="class_cubby_flow_1_1_f_d_m_jacobi_solver2.html#a41128c6408481dd229823f3beacb650f">CubbyFlow::FDMJacobiSolver2</a>, and <a class="el" href="class_cubby_flow_1_1_f_d_m_c_g_solver2.html#a5221802c789046a965be1e10fcde7c34">CubbyFlow::FDMCGSolver2</a>.</p>
 
 </div>
 </div>
@@ -178,7 +211,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Dec 9 2017 16:13:58 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 25 2017 22:42:35 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

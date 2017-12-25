@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.64</a>
+                    <a class="navbar-brand">CubbyFlow v0.68</a>
                 </div>
             </div>
         </nav>
@@ -81,6 +81,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="_array3_8h_source.html">Array/Array3.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="_matrix_c_s_r_8h_source.html">Matrix/MatrixCSR.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="_size3_8h_source.html">Size/Size3.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="_vector_n_8h_source.html">Vector/VectorN.h</a>&gt;</code><br />
 </div>
 <p><a href="_f_d_m_linear_system3_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -92,8 +95,14 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_cubby_flow_1_1_f_d_m_linear_system3.html">CubbyFlow::FDMLinearSystem3</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linear system (Ax=b) for 3-D finite differencing.  <a href="struct_cubby_flow_1_1_f_d_m_linear_system3.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_cubby_flow_1_1_f_d_m_blas3.html">CubbyFlow::FDMBlas3</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_cubby_flow_1_1_b_l_a_s.html" title="Generic BLAS operator wrapper class. ">BLAS</a> operator wrapper for 3-D finite differencing.  <a href="struct_cubby_flow_1_1_f_d_m_blas3.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_cubby_flow_1_1_f_d_m_compressed_linear_system3.html">CubbyFlow::FDMCompressedLinearSystem3</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compressed linear system (Ax=b) for 3-D finite differencing.  <a href="struct_cubby_flow_1_1_f_d_m_compressed_linear_system3.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_cubby_flow_1_1_f_d_m_b_l_a_s3.html">CubbyFlow::FDMBLAS3</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_cubby_flow_1_1_b_l_a_s.html" title="Generic BLAS operator wrapper class. ">BLAS</a> operator wrapper for 3-D finite differencing.  <a href="struct_cubby_flow_1_1_f_d_m_b_l_a_s3.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_cubby_flow_1_1_f_d_m_compressed_b_l_a_s3.html">CubbyFlow::FDMCompressedBLAS3</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_cubby_flow_1_1_b_l_a_s.html" title="Generic BLAS operator wrapper class. ">BLAS</a> operator wrapper for compressed 3-D finite differencing.  <a href="struct_cubby_flow_1_1_f_d_m_compressed_b_l_a_s3.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -119,7 +128,7 @@ Typedefs</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Dec 9 2017 16:13:48 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 25 2017 22:42:27 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

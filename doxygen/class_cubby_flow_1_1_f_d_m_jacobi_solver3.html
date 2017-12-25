@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.64</a>
+                    <a class="navbar-brand">CubbyFlow v0.68</a>
                 </div>
             </div>
         </nav>
@@ -103,6 +103,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2b9071a821701ad111ab2115496c7f5e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_f_d_m_jacobi_solver3.html#a2b9071a821701ad111ab2115496c7f5e">Solve</a> (<a class="el" href="struct_cubby_flow_1_1_f_d_m_linear_system3.html">FDMLinearSystem3</a> *system) override</td></tr>
 <tr class="memdesc:a2b9071a821701ad111ab2115496c7f5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solves the given linear system.  <a href="#a2b9071a821701ad111ab2115496c7f5e">More...</a><br /></td></tr>
 <tr class="separator:a2b9071a821701ad111ab2115496c7f5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02f9e33f03b224a02d25f8cf4251b364"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_f_d_m_jacobi_solver3.html#a02f9e33f03b224a02d25f8cf4251b364">SolveCompressed</a> (<a class="el" href="struct_cubby_flow_1_1_f_d_m_compressed_linear_system3.html">FDMCompressedLinearSystem3</a> *system) override</td></tr>
+<tr class="memdesc:a02f9e33f03b224a02d25f8cf4251b364"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solves the given compressed linear system.  <a href="#a02f9e33f03b224a02d25f8cf4251b364">More...</a><br /></td></tr>
+<tr class="separator:a02f9e33f03b224a02d25f8cf4251b364"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae450f83aeb5aefd1e1664be44d6d6771"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_f_d_m_jacobi_solver3.html#ae450f83aeb5aefd1e1664be44d6d6771">GetMaxNumberOfIterations</a> () const</td></tr>
 <tr class="memdesc:ae450f83aeb5aefd1e1664be44d6d6771"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the max number of Jacobi iterations.  <a href="#ae450f83aeb5aefd1e1664be44d6d6771">More...</a><br /></td></tr>
 <tr class="separator:ae450f83aeb5aefd1e1664be44d6d6771"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -124,6 +127,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a2e7d71078be8080411ff5352a412dca0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_f_d_m_jacobi_solver3.html#a2e7d71078be8080411ff5352a412dca0">Relax</a> (const <a class="el" href="namespace_cubby_flow.html#abcc5034ce087c0ebc5191085f1ebd6f9">FDMMatrix3</a> &amp;A, const <a class="el" href="namespace_cubby_flow.html#ac4b7ad28ccc8a45e876bf2c631187603">FDMVector3</a> &amp;b, <a class="el" href="namespace_cubby_flow.html#ac4b7ad28ccc8a45e876bf2c631187603">FDMVector3</a> *x, <a class="el" href="namespace_cubby_flow.html#ac4b7ad28ccc8a45e876bf2c631187603">FDMVector3</a> *xTemp)</td></tr>
 <tr class="memdesc:a2e7d71078be8080411ff5352a412dca0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs single Jacobi relaxation step.  <a href="#a2e7d71078be8080411ff5352a412dca0">More...</a><br /></td></tr>
 <tr class="separator:a2e7d71078be8080411ff5352a412dca0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1fd6a3a2ad0248156e985e850e6c07b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_f_d_m_jacobi_solver3.html#ab1fd6a3a2ad0248156e985e850e6c07b">Relax</a> (const <a class="el" href="namespace_cubby_flow.html#a68f24ef9a05e5d67ac6f93a803f7126d">MatrixCSRD</a> &amp;A, const <a class="el" href="namespace_cubby_flow.html#a6c837d6e5437ce05918ea055d97f3854">VectorND</a> &amp;b, <a class="el" href="namespace_cubby_flow.html#a6c837d6e5437ce05918ea055d97f3854">VectorND</a> *x, <a class="el" href="namespace_cubby_flow.html#a6c837d6e5437ce05918ea055d97f3854">VectorND</a> *xTemp)</td></tr>
+<tr class="memdesc:ab1fd6a3a2ad0248156e985e850e6c07b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs single Jacobi relaxation step for compressed sys.  <a href="#ab1fd6a3a2ad0248156e985e850e6c07b">More...</a><br /></td></tr>
+<tr class="separator:ab1fd6a3a2ad0248156e985e850e6c07b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>3-D finite difference-type linear system solver using Jacobi method. </p>
@@ -242,7 +248,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a2e7d71078be8080411ff5352a412dca0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e7d71078be8080411ff5352a412dca0">&#9670;&nbsp;</a></span>Relax()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e7d71078be8080411ff5352a412dca0">&#9670;&nbsp;</a></span>Relax() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -291,6 +297,56 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ab1fd6a3a2ad0248156e985e850e6c07b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1fd6a3a2ad0248156e985e850e6c07b">&#9670;&nbsp;</a></span>Relax() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void CubbyFlow::FDMJacobiSolver3::Relax </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespace_cubby_flow.html#a68f24ef9a05e5d67ac6f93a803f7126d">MatrixCSRD</a> &amp;&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespace_cubby_flow.html#a6c837d6e5437ce05918ea055d97f3854">VectorND</a> &amp;&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_cubby_flow.html#a6c837d6e5437ce05918ea055d97f3854">VectorND</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_cubby_flow.html#a6c837d6e5437ce05918ea055d97f3854">VectorND</a> *&#160;</td>
+          <td class="paramname"><em>xTemp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Performs single Jacobi relaxation step for compressed sys. </p>
+
+</div>
+</div>
 <a id="a2b9071a821701ad111ab2115496c7f5e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2b9071a821701ad111ab2115496c7f5e">&#9670;&nbsp;</a></span>Solve()</h2>
 
@@ -321,6 +377,36 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a02f9e33f03b224a02d25f8cf4251b364"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02f9e33f03b224a02d25f8cf4251b364">&#9670;&nbsp;</a></span>SolveCompressed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CubbyFlow::FDMJacobiSolver3::SolveCompressed </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_cubby_flow_1_1_f_d_m_compressed_linear_system3.html">FDMCompressedLinearSystem3</a> *&#160;</td>
+          <td class="paramname"><em>system</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Solves the given compressed linear system. </p>
+
+<p>Reimplemented from <a class="el" href="class_cubby_flow_1_1_f_d_m_linear_system_solver3.html#a2d1488d741354ba27e2c0ad81347f42f">CubbyFlow::FDMLinearSystemSolver3</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>Solver/FDM/<a class="el" href="_f_d_m_jacobi_solver3_8h_source.html">FDMJacobiSolver3.h</a></li>
 </ul>
@@ -333,7 +419,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Dec 9 2017 16:13:58 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 25 2017 22:42:35 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

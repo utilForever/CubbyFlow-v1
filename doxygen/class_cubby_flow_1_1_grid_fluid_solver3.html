@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.64</a>
+                    <a class="navbar-brand">CubbyFlow v0.68</a>
                 </div>
             </div>
         </nav>
@@ -141,6 +141,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae757930b2d0ba8c33e1bb2ab08eada8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_grid_fluid_solver3.html#ae757930b2d0ba8c33e1bb2ab08eada8e">SetMaxCFL</a> (double newCFL)</td></tr>
 <tr class="memdesc:ae757930b2d0ba8c33e1bb2ab08eada8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the max allowed CFL number.  <a href="#ae757930b2d0ba8c33e1bb2ab08eada8e">More...</a><br /></td></tr>
 <tr class="separator:ae757930b2d0ba8c33e1bb2ab08eada8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae93e55c4bf8d2618e99f7949a3dc003a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_grid_fluid_solver3.html#ae93e55c4bf8d2618e99f7949a3dc003a">GetUseCompressedLinearSystem</a> () const</td></tr>
+<tr class="memdesc:ae93e55c4bf8d2618e99f7949a3dc003a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the solver is using compressed linear system.  <a href="#ae93e55c4bf8d2618e99f7949a3dc003a">More...</a><br /></td></tr>
+<tr class="separator:ae93e55c4bf8d2618e99f7949a3dc003a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c3c2ca109b85890f409a68be0769d61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_grid_fluid_solver3.html#a9c3c2ca109b85890f409a68be0769d61">SetUseCompressedLinearSystem</a> (bool onoff)</td></tr>
+<tr class="memdesc:a9c3c2ca109b85890f409a68be0769d61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets whether the solver should use compressed linear system.  <a href="#a9c3c2ca109b85890f409a68be0769d61">More...</a><br /></td></tr>
+<tr class="separator:a9c3c2ca109b85890f409a68be0769d61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f005387448c03263827945376c353a2"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespace_cubby_flow.html#acb775f54097320a5ac4302c3c33e4977">AdvectionSolver3Ptr</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_grid_fluid_solver3.html#a2f005387448c03263827945376c353a2">GetAdvectionSolver</a> () const</td></tr>
 <tr class="memdesc:a2f005387448c03263827945376c353a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the advection solver instance.  <a href="#a2f005387448c03263827945376c353a2">More...</a><br /></td></tr>
 <tr class="separator:a2f005387448c03263827945376c353a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1010,6 +1016,25 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ae93e55c4bf8d2618e99f7949a3dc003a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae93e55c4bf8d2618e99f7949a3dc003a">&#9670;&nbsp;</a></span>GetUseCompressedLinearSystem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CubbyFlow::GridFluidSolver3::GetUseCompressedLinearSystem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns true if the solver is using compressed linear system. </p>
+
+</div>
+</div>
 <a id="a4d2b94afaaf9b655db514fe9e6d4693b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4d2b94afaaf9b655db514fe9e6d4693b">&#9670;&nbsp;</a></span>GetVelocity()</h2>
 
@@ -1407,6 +1432,26 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a9c3c2ca109b85890f409a68be0769d61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c3c2ca109b85890f409a68be0769d61">&#9670;&nbsp;</a></span>SetUseCompressedLinearSystem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CubbyFlow::GridFluidSolver3::SetUseCompressedLinearSystem </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>onoff</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets whether the solver should use compressed linear system. </p>
+
+</div>
+</div>
 <a id="a19943f671bbafdf8a9f4059a4c72b575"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a19943f671bbafdf8a9f4059a4c72b575">&#9670;&nbsp;</a></span>SetViscosityCoefficient()</h2>
 
@@ -1446,7 +1491,7 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Dec 9 2017 16:14:00 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 25 2017 22:42:37 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

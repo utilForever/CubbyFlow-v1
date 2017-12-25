@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.64</a>
+                    <a class="navbar-brand">CubbyFlow v0.68</a>
                 </div>
             </div>
         </nav>
@@ -89,15 +89,22 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab7cfa92ef0deef4297fa4a8870b2f71e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_cubby_flow_1_1_f_d_m_linear_system2.html#ab7cfa92ef0deef4297fa4a8870b2f71e">Clear</a> ()</td></tr>
+<tr class="memdesc:ab7cfa92ef0deef4297fa4a8870b2f71e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears all the data.  <a href="#ab7cfa92ef0deef4297fa4a8870b2f71e">More...</a><br /></td></tr>
 <tr class="separator:ab7cfa92ef0deef4297fa4a8870b2f71e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2e5f9f33bafa17768cdce520dccbad4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_cubby_flow_1_1_f_d_m_linear_system2.html#ae2e5f9f33bafa17768cdce520dccbad4">Resize</a> (const <a class="el" href="namespace_cubby_flow.html#a9952585eeca96a7396c1514b8ff5c3d3">Size2</a> &amp;size)</td></tr>
+<tr class="memdesc:ae2e5f9f33bafa17768cdce520dccbad4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resizes the arrays with given grid size.  <a href="#ae2e5f9f33bafa17768cdce520dccbad4">More...</a><br /></td></tr>
+<tr class="separator:ae2e5f9f33bafa17768cdce520dccbad4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a5efc5e2bc13e2289ce52d46c7633c544"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_cubby_flow.html#a501b3a606c2bee0035e5e2946fb06fb0">FDMMatrix2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_cubby_flow_1_1_f_d_m_linear_system2.html#a5efc5e2bc13e2289ce52d46c7633c544">A</a></td></tr>
+<tr class="memdesc:a5efc5e2bc13e2289ce52d46c7633c544"><td class="mdescLeft">&#160;</td><td class="mdescRight">System matrix.  <a href="#a5efc5e2bc13e2289ce52d46c7633c544">More...</a><br /></td></tr>
 <tr class="separator:a5efc5e2bc13e2289ce52d46c7633c544"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98cbf7ba0cfd2da24f370cc08464250d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_cubby_flow.html#aa399c549b850bb7d74ee00db425d13d8">FDMVector2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_cubby_flow_1_1_f_d_m_linear_system2.html#a98cbf7ba0cfd2da24f370cc08464250d">x</a></td></tr>
+<tr class="memdesc:a98cbf7ba0cfd2da24f370cc08464250d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solution vector.  <a href="#a98cbf7ba0cfd2da24f370cc08464250d">More...</a><br /></td></tr>
 <tr class="separator:a98cbf7ba0cfd2da24f370cc08464250d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1095c36f76966207bd7b8dd28804d5e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_cubby_flow.html#aa399c549b850bb7d74ee00db425d13d8">FDMVector2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_cubby_flow_1_1_f_d_m_linear_system2.html#ae1095c36f76966207bd7b8dd28804d5e">b</a></td></tr>
+<tr class="memdesc:ae1095c36f76966207bd7b8dd28804d5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">RHS vector.  <a href="#ae1095c36f76966207bd7b8dd28804d5e">More...</a><br /></td></tr>
 <tr class="separator:ae1095c36f76966207bd7b8dd28804d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -118,6 +125,28 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Clears all the data. </p>
+
+</div>
+</div>
+<a id="ae2e5f9f33bafa17768cdce520dccbad4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2e5f9f33bafa17768cdce520dccbad4">&#9670;&nbsp;</a></span>Resize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CubbyFlow::FDMLinearSystem2::Resize </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespace_cubby_flow.html#a9952585eeca96a7396c1514b8ff5c3d3">Size2</a> &amp;&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resizes the arrays with given grid size. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -133,6 +162,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>System matrix. </p>
+
 </div>
 </div>
 <a id="ae1095c36f76966207bd7b8dd28804d5e"></a>
@@ -146,6 +177,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>RHS vector. </p>
 
 </div>
 </div>
@@ -161,6 +194,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Solution vector. </p>
+
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
@@ -175,7 +210,7 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Dec 9 2017 16:13:58 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 25 2017 22:42:35 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.64</a>
+                    <a class="navbar-brand">CubbyFlow v0.68</a>
                 </div>
             </div>
         </nav>
@@ -102,9 +102,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aca0e119dc098dbd72e5bc12e1513bd97"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_grid_fractional_single_phase_pressure_solver2.html#aca0e119dc098dbd72e5bc12e1513bd97">~GridFractionalSinglePhasePressureSolver2</a> ()</td></tr>
 <tr class="memdesc:aca0e119dc098dbd72e5bc12e1513bd97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <a href="#aca0e119dc098dbd72e5bc12e1513bd97">More...</a><br /></td></tr>
 <tr class="separator:aca0e119dc098dbd72e5bc12e1513bd97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad502c499c017e669f8f301c41b967179"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_grid_fractional_single_phase_pressure_solver2.html#ad502c499c017e669f8f301c41b967179">Solve</a> (const <a class="el" href="class_cubby_flow_1_1_face_centered_grid2.html">FaceCenteredGrid2</a> &amp;input, double timeIntervalInSeconds, <a class="el" href="class_cubby_flow_1_1_face_centered_grid2.html">FaceCenteredGrid2</a> *output, const <a class="el" href="class_cubby_flow_1_1_scalar_field2.html">ScalarField2</a> &amp;boundarySDF=<a class="el" href="class_cubby_flow_1_1_constant_scalar_field2.html">ConstantScalarField2</a>(std::numeric_limits&lt; double &gt;::max()), const <a class="el" href="class_cubby_flow_1_1_vector_field2.html">VectorField2</a> &amp;boundaryVelocity=<a class="el" href="class_cubby_flow_1_1_constant_vector_field2.html">ConstantVectorField2</a>({ 0, 0 }), const <a class="el" href="class_cubby_flow_1_1_scalar_field2.html">ScalarField2</a> &amp;fluidSDF=<a class="el" href="class_cubby_flow_1_1_constant_scalar_field2.html">ConstantScalarField2</a>(-std::numeric_limits&lt; double &gt;::max())) override</td></tr>
-<tr class="memdesc:ad502c499c017e669f8f301c41b967179"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solves the pressure term and apply it to the velocity field.  <a href="#ad502c499c017e669f8f301c41b967179">More...</a><br /></td></tr>
-<tr class="separator:ad502c499c017e669f8f301c41b967179"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c2557bd386b3d6dd8edc6f23e6137e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_grid_fractional_single_phase_pressure_solver2.html#a4c2557bd386b3d6dd8edc6f23e6137e2">Solve</a> (const <a class="el" href="class_cubby_flow_1_1_face_centered_grid2.html">FaceCenteredGrid2</a> &amp;input, double timeIntervalInSeconds, <a class="el" href="class_cubby_flow_1_1_face_centered_grid2.html">FaceCenteredGrid2</a> *output, const <a class="el" href="class_cubby_flow_1_1_scalar_field2.html">ScalarField2</a> &amp;boundarySDF=<a class="el" href="class_cubby_flow_1_1_constant_scalar_field2.html">ConstantScalarField2</a>(std::numeric_limits&lt; double &gt;::max()), const <a class="el" href="class_cubby_flow_1_1_vector_field2.html">VectorField2</a> &amp;boundaryVelocity=<a class="el" href="class_cubby_flow_1_1_constant_vector_field2.html">ConstantVectorField2</a>({ 0, 0 }), const <a class="el" href="class_cubby_flow_1_1_scalar_field2.html">ScalarField2</a> &amp;fluidSDF=<a class="el" href="class_cubby_flow_1_1_constant_scalar_field2.html">ConstantScalarField2</a>(-std::numeric_limits&lt; double &gt;::max()), bool useCompressed=false) override</td></tr>
+<tr class="memdesc:a4c2557bd386b3d6dd8edc6f23e6137e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solves the pressure term and apply it to the velocity field.  <a href="#a4c2557bd386b3d6dd8edc6f23e6137e2">More...</a><br /></td></tr>
+<tr class="separator:a4c2557bd386b3d6dd8edc6f23e6137e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3476250487577a22703ab276376bb8ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_cubby_flow.html#ac90e67469bebf45dd30365640df8ccc8">GridBoundaryConditionSolver2Ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_grid_fractional_single_phase_pressure_solver2.html#a3476250487577a22703ab276376bb8ec">SuggestedBoundaryConditionSolver</a> () const override</td></tr>
 <tr class="memdesc:a3476250487577a22703ab276376bb8ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the best boundary condition solver for this solver.  <a href="#a3476250487577a22703ab276376bb8ec">More...</a><br /></td></tr>
 <tr class="separator:a3476250487577a22703ab276376bb8ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -237,8 +237,8 @@ Enright, Doug, et al. "Using the particle level set method and a second order ac
 
 </div>
 </div>
-<a id="ad502c499c017e669f8f301c41b967179"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad502c499c017e669f8f301c41b967179">&#9670;&nbsp;</a></span>Solve()</h2>
+<a id="a4c2557bd386b3d6dd8edc6f23e6137e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c2557bd386b3d6dd8edc6f23e6137e2">&#9670;&nbsp;</a></span>Solve()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -280,7 +280,13 @@ Enright, Doug, et al. "Using the particle level set method and a second order ac
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="class_cubby_flow_1_1_scalar_field2.html">ScalarField2</a> &amp;&#160;</td>
-          <td class="paramname"><em>fluidSDF</em> = <code><a class="el" href="class_cubby_flow_1_1_constant_scalar_field2.html">ConstantScalarField2</a>(-std::numeric_limits&lt;&#160;double&#160;&gt;::max())</code>&#160;</td>
+          <td class="paramname"><em>fluidSDF</em> = <code><a class="el" href="class_cubby_flow_1_1_constant_scalar_field2.html">ConstantScalarField2</a>(-std::numeric_limits&lt;&#160;double&#160;&gt;::max())</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>useCompressed</em> = <code>false</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -305,11 +311,12 @@ Enright, Doug, et al. "Using the particle level set method and a second order ac
     <tr><td class="paramdir">[in]</td><td class="paramname">boundarySDF</td><td>The SDF of the boundary. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">boundaryVelocity</td><td>The velocity of the boundary. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">fluidSDF</td><td>The SDF of the fluid/atmosphere. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">useCompressed</td><td>True if it uses compressed system. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="class_cubby_flow_1_1_grid_pressure_solver2.html#af419b60dad26f4186bb5b6730f2274a9">CubbyFlow::GridPressureSolver2</a>.</p>
+<p>Implements <a class="el" href="class_cubby_flow_1_1_grid_pressure_solver2.html#a41159ce7f3cbd549fbe901b54373fa84">CubbyFlow::GridPressureSolver2</a>.</p>
 
 </div>
 </div>
@@ -355,7 +362,7 @@ Enright, Doug, et al. "Using the particle level set method and a second order ac
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Dec 9 2017 16:14:00 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 25 2017 22:42:37 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

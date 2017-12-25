@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.64</a>
+                    <a class="navbar-brand">CubbyFlow v0.68</a>
                 </div>
             </div>
         </nav>
@@ -80,7 +80,7 @@ $(function() {
 <div class="ttc" id="class_cubby_flow_1_1_const_array_accessor_3_01_t_00_012_01_4_html"><div class="ttname"><a href="class_cubby_flow_1_1_const_array_accessor_3_01_t_00_012_01_4.html">CubbyFlow::ConstArrayAccessor&lt; T, 2 &gt;</a></div><div class="ttdoc">2-D read-only array accessor class. </div><div class="ttdef"><b>Definition:</b> ArrayAccessor2.h:262</div></div>
 <div class="ttc" id="class_cubby_flow_1_1_scalar_grid2_html_ae557057f6ed258fed2c8a98c4a77f537"><div class="ttname"><a href="class_cubby_flow_1_1_scalar_grid2.html#ae557057f6ed258fed2c8a98c4a77f537">CubbyFlow::ScalarGrid2::SetData</a></div><div class="ttdeci">void SetData(const std::vector&lt; double &gt; &amp;data) override</div><div class="ttdoc">Sets the data from a continuous linear array. </div></div>
 <div class="ttc" id="class_cubby_flow_1_1_scalar_grid2_html_ae8fcd60fba00f2a55b911ceedb50b822"><div class="ttname"><a href="class_cubby_flow_1_1_scalar_grid2.html#ae8fcd60fba00f2a55b911ceedb50b822">CubbyFlow::ScalarGrid2::ParallelForEachDataPointIndex</a></div><div class="ttdeci">void ParallelForEachDataPointIndex(const std::function&lt; void(size_t, size_t)&gt; &amp;func) const</div><div class="ttdoc">Invokes the given function func for each data point in parallel. </div></div>
-<div class="ttc" id="class_cubby_flow_1_1_grid2_html"><div class="ttname"><a href="class_cubby_flow_1_1_grid2.html">CubbyFlow::Grid2</a></div><div class="ttdoc">Abstract base class for 2-D cartesian grid structure. </div><div class="ttdef"><b>Definition:</b> Grid2.h:27</div></div>
+<div class="ttc" id="class_cubby_flow_1_1_grid2_html"><div class="ttname"><a href="class_cubby_flow_1_1_grid2.html">CubbyFlow::Grid2</a></div><div class="ttdoc">Abstract base class for 2-D cartesian grid structure. </div><div class="ttdef"><b>Definition:</b> Grid2.h:29</div></div>
 <div class="ttc" id="class_cubby_flow_1_1_scalar_field2_html"><div class="ttname"><a href="class_cubby_flow_1_1_scalar_field2.html">CubbyFlow::ScalarField2</a></div><div class="ttdoc">Abstract base class for 2-D scalar field. </div><div class="ttdef"><b>Definition:</b> ScalarField2.h:22</div></div>
 <div class="ttc" id="class_cubby_flow_1_1_scalar_grid2_html_ab40926e41bf80072c5c0230a8103af0d"><div class="ttname"><a href="class_cubby_flow_1_1_scalar_grid2.html#ab40926e41bf80072c5c0230a8103af0d">CubbyFlow::ScalarGrid2::GetDataSize</a></div><div class="ttdeci">virtual Size2 GetDataSize() const =0</div><div class="ttdoc">Returns the size of the grid data. </div></div>
 <div class="ttc" id="class_cubby_flow_1_1_scalar_grid2_html_aa1d7f4f22150f773dc800dddad6dc316"><div class="ttname"><a href="class_cubby_flow_1_1_scalar_grid2.html#aa1d7f4f22150f773dc800dddad6dc316">CubbyFlow::ScalarGrid2::ForEachDataPointIndex</a></div><div class="ttdeci">void ForEachDataPointIndex(const std::function&lt; void(size_t, size_t)&gt; &amp;func) const</div><div class="ttdoc">Invokes the given function func for each data point. </div></div>
@@ -119,7 +119,7 @@ $(function() {
 <div class="ttc" id="_array_samplers2_8h_html"><div class="ttname"><a href="_array_samplers2_8h.html">ArraySamplers2.h</a></div></div>
 <div class="ttc" id="class_cubby_flow_1_1_scalar_grid2_html"><div class="ttname"><a href="class_cubby_flow_1_1_scalar_grid2.html">CubbyFlow::ScalarGrid2</a></div><div class="ttdoc">Abstract base class for 2-D scalar grid structure. </div><div class="ttdef"><b>Definition:</b> ScalarGrid2.h:21</div></div>
 <div class="ttc" id="class_cubby_flow_1_1_scalar_grid2_html_a17b0b9853141e391be3bc58de03f832b"><div class="ttname"><a href="class_cubby_flow_1_1_scalar_grid2.html#a17b0b9853141e391be3bc58de03f832b">CubbyFlow::ScalarGrid2::Deserialize</a></div><div class="ttdeci">void Deserialize(const std::vector&lt; uint8_t &gt; &amp;buffer) override</div><div class="ttdoc">Deserializes the input buffer to the grid instance. </div></div>
-<div class="ttc" id="class_cubby_flow_1_1_grid2_html_ad02c267f3b24fe2de73ff3f6058f8629"><div class="ttname"><a href="class_cubby_flow_1_1_grid2.html#ad02c267f3b24fe2de73ff3f6058f8629">CubbyFlow::Grid2::DataPositionFunc</a></div><div class="ttdeci">std::function&lt; Vector2D(size_t, size_t)&gt; DataPositionFunc</div><div class="ttdoc">Function type for mapping data index to actual position. </div><div class="ttdef"><b>Definition:</b> Grid2.h:31</div></div>
+<div class="ttc" id="class_cubby_flow_1_1_grid2_html_ad02c267f3b24fe2de73ff3f6058f8629"><div class="ttname"><a href="class_cubby_flow_1_1_grid2.html#ad02c267f3b24fe2de73ff3f6058f8629">CubbyFlow::Grid2::DataPositionFunc</a></div><div class="ttdeci">std::function&lt; Vector2D(size_t, size_t)&gt; DataPositionFunc</div><div class="ttdoc">Function type for mapping data index to actual position. </div><div class="ttdef"><b>Definition:</b> Grid2.h:33</div></div>
 <div class="ttc" id="class_cubby_flow_1_1_scalar_grid2_html_a13aceaa887cedc40f95d90b83e6bdfc8"><div class="ttname"><a href="class_cubby_flow_1_1_scalar_grid2.html#a13aceaa887cedc40f95d90b83e6bdfc8">CubbyFlow::ScalarGrid2::GetConstDataAccessor</a></div><div class="ttdeci">ConstScalarDataAccessor GetConstDataAccessor() const</div><div class="ttdoc">Returns the read-only data array accessor. </div></div>
 <div class="ttc" id="_array2_8h_html"><div class="ttname"><a href="_array2_8h.html">Array2.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -131,7 +131,7 @@ $(function() {
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Dec 9 2017 16:13:41 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 25 2017 22:42:21 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

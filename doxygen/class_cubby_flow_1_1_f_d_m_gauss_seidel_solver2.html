@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.64</a>
+                    <a class="navbar-brand">CubbyFlow v0.68</a>
                 </div>
             </div>
         </nav>
@@ -103,6 +103,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af03e8513ffa74680cfe80e88e526963f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver2.html#af03e8513ffa74680cfe80e88e526963f">Solve</a> (<a class="el" href="struct_cubby_flow_1_1_f_d_m_linear_system2.html">FDMLinearSystem2</a> *system) override</td></tr>
 <tr class="memdesc:af03e8513ffa74680cfe80e88e526963f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solves the given linear system.  <a href="#af03e8513ffa74680cfe80e88e526963f">More...</a><br /></td></tr>
 <tr class="separator:af03e8513ffa74680cfe80e88e526963f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5622aec48111ff012d7e4e7866b9d76"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver2.html#ad5622aec48111ff012d7e4e7866b9d76">SolveCompressed</a> (<a class="el" href="struct_cubby_flow_1_1_f_d_m_compressed_linear_system2.html">FDMCompressedLinearSystem2</a> *system) override</td></tr>
+<tr class="memdesc:ad5622aec48111ff012d7e4e7866b9d76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solves the given compressed linear system.  <a href="#ad5622aec48111ff012d7e4e7866b9d76">More...</a><br /></td></tr>
+<tr class="separator:ad5622aec48111ff012d7e4e7866b9d76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85b43d4c0ac74a14aa167051da987a5a"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver2.html#a85b43d4c0ac74a14aa167051da987a5a">GetMaxNumberOfIterations</a> () const</td></tr>
 <tr class="memdesc:a85b43d4c0ac74a14aa167051da987a5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the max number of Gauss-Seidel iterations.  <a href="#a85b43d4c0ac74a14aa167051da987a5a">More...</a><br /></td></tr>
 <tr class="separator:a85b43d4c0ac74a14aa167051da987a5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -130,6 +133,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a9941b9233f07ac2792f3b38b7c3a51e3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver2.html#a9941b9233f07ac2792f3b38b7c3a51e3">Relax</a> (const <a class="el" href="namespace_cubby_flow.html#a501b3a606c2bee0035e5e2946fb06fb0">FDMMatrix2</a> &amp;A, const <a class="el" href="namespace_cubby_flow.html#aa399c549b850bb7d74ee00db425d13d8">FDMVector2</a> &amp;b, double sorFactor, <a class="el" href="namespace_cubby_flow.html#aa399c549b850bb7d74ee00db425d13d8">FDMVector2</a> *x)</td></tr>
 <tr class="memdesc:a9941b9233f07ac2792f3b38b7c3a51e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs single natural Gauss-Seidel relaxation step.  <a href="#a9941b9233f07ac2792f3b38b7c3a51e3">More...</a><br /></td></tr>
 <tr class="separator:a9941b9233f07ac2792f3b38b7c3a51e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada1d5cb11f269aff82f73174f1c98754"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver2.html#ada1d5cb11f269aff82f73174f1c98754">Relax</a> (const <a class="el" href="namespace_cubby_flow.html#a68f24ef9a05e5d67ac6f93a803f7126d">MatrixCSRD</a> &amp;A, const <a class="el" href="namespace_cubby_flow.html#a6c837d6e5437ce05918ea055d97f3854">VectorND</a> &amp;b, double sorFactor, <a class="el" href="namespace_cubby_flow.html#a6c837d6e5437ce05918ea055d97f3854">VectorND</a> *x)</td></tr>
+<tr class="memdesc:ada1d5cb11f269aff82f73174f1c98754"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs single natural Gauss-Seidel relaxation step for compressed sys.  <a href="#ada1d5cb11f269aff82f73174f1c98754">More...</a><br /></td></tr>
+<tr class="separator:ada1d5cb11f269aff82f73174f1c98754"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad628eb86a5a279a375c47c78efd4e906"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver2.html#ad628eb86a5a279a375c47c78efd4e906">RelaxRedBlack</a> (const <a class="el" href="namespace_cubby_flow.html#a501b3a606c2bee0035e5e2946fb06fb0">FDMMatrix2</a> &amp;A, const <a class="el" href="namespace_cubby_flow.html#aa399c549b850bb7d74ee00db425d13d8">FDMVector2</a> &amp;b, double sorFactor, <a class="el" href="namespace_cubby_flow.html#aa399c549b850bb7d74ee00db425d13d8">FDMVector2</a> *x)</td></tr>
 <tr class="memdesc:ad628eb86a5a279a375c47c78efd4e906"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs single Red-Black Gauss-Seidel relaxation step.  <a href="#ad628eb86a5a279a375c47c78efd4e906">More...</a><br /></td></tr>
 <tr class="separator:ad628eb86a5a279a375c47c78efd4e906"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -301,7 +307,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a9941b9233f07ac2792f3b38b7c3a51e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9941b9233f07ac2792f3b38b7c3a51e3">&#9670;&nbsp;</a></span>Relax()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9941b9233f07ac2792f3b38b7c3a51e3">&#9670;&nbsp;</a></span>Relax() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -347,6 +353,56 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Performs single natural Gauss-Seidel relaxation step. </p>
+
+</div>
+</div>
+<a id="ada1d5cb11f269aff82f73174f1c98754"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada1d5cb11f269aff82f73174f1c98754">&#9670;&nbsp;</a></span>Relax() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void CubbyFlow::FDMGaussSeidelSolver2::Relax </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespace_cubby_flow.html#a68f24ef9a05e5d67ac6f93a803f7126d">MatrixCSRD</a> &amp;&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespace_cubby_flow.html#a6c837d6e5437ce05918ea055d97f3854">VectorND</a> &amp;&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>sorFactor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_cubby_flow.html#a6c837d6e5437ce05918ea055d97f3854">VectorND</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Performs single natural Gauss-Seidel relaxation step for compressed sys. </p>
 
 </div>
 </div>
@@ -430,6 +486,36 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ad5622aec48111ff012d7e4e7866b9d76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5622aec48111ff012d7e4e7866b9d76">&#9670;&nbsp;</a></span>SolveCompressed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CubbyFlow::FDMGaussSeidelSolver2::SolveCompressed </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_cubby_flow_1_1_f_d_m_compressed_linear_system2.html">FDMCompressedLinearSystem2</a> *&#160;</td>
+          <td class="paramname"><em>system</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Solves the given compressed linear system. </p>
+
+<p>Reimplemented from <a class="el" href="class_cubby_flow_1_1_f_d_m_linear_system_solver2.html#abc3143790e2ddfa200313e527cfbcb1f">CubbyFlow::FDMLinearSystemSolver2</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>Solver/FDM/<a class="el" href="_f_d_m_gauss_seidel_solver2_8h_source.html">FDMGaussSeidelSolver2.h</a></li>
 </ul>
@@ -442,7 +528,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Dec 9 2017 16:13:58 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 25 2017 22:42:35 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

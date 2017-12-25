@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.64</a>
+                    <a class="navbar-brand">CubbyFlow v0.68</a>
                 </div>
             </div>
         </nav>
@@ -125,6 +125,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a17032f75c603078f6d7254d27be678d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_vector_n.html#a17032f75c603078f6d7254d27be678d3">Resize</a> (size_t n, const T &amp;val=0)</td></tr>
 <tr class="memdesc:a17032f75c603078f6d7254d27be678d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resizes to <code>n</code> dimensional vector with initial value <code>val</code>.  <a href="#a17032f75c603078f6d7254d27be678d3">More...</a><br /></td></tr>
 <tr class="separator:a17032f75c603078f6d7254d27be678d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affdb9914a694f51a2f9d00fbd8274637"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_vector_n.html#affdb9914a694f51a2f9d00fbd8274637">Clear</a> ()</td></tr>
+<tr class="memdesc:affdb9914a694f51a2f9d00fbd8274637"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the vector and make it zero-dimensional.  <a href="#affdb9914a694f51a2f9d00fbd8274637">More...</a><br /></td></tr>
+<tr class="separator:affdb9914a694f51a2f9d00fbd8274637"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a899271876a6e17be975a9c9e8f205479"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_vector_n.html#a899271876a6e17be975a9c9e8f205479">Set</a> (const T &amp;s)</td></tr>
 <tr class="memdesc:a899271876a6e17be975a9c9e8f205479"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets all elements to <code>s</code>.  <a href="#a899271876a6e17be975a9c9e8f205479">More...</a><br /></td></tr>
 <tr class="separator:a899271876a6e17be975a9c9e8f205479"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,6 +139,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a02af9636edf1703c0604e6c935d2b74c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_vector_n.html#a02af9636edf1703c0604e6c935d2b74c">Set</a> (const <a class="el" href="class_cubby_flow_1_1_vector_expression.html">VectorExpression</a>&lt; T, E &gt; &amp;other)</td></tr>
 <tr class="memdesc:a02af9636edf1703c0604e6c935d2b74c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets vector with expression template.  <a href="#a02af9636edf1703c0604e6c935d2b74c">More...</a><br /></td></tr>
 <tr class="separator:a02af9636edf1703c0604e6c935d2b74c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a624225dff2dc8565d7e2f596b1360793"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_vector_n.html#a624225dff2dc8565d7e2f596b1360793">Append</a> (const T &amp;val)</td></tr>
+<tr class="memdesc:a624225dff2dc8565d7e2f596b1360793"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an element.  <a href="#a624225dff2dc8565d7e2f596b1360793">More...</a><br /></td></tr>
+<tr class="separator:a624225dff2dc8565d7e2f596b1360793"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65fb4cb4bbac32034ee793a98eb63130"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_vector_n.html#a65fb4cb4bbac32034ee793a98eb63130">Swap</a> (<a class="el" href="class_cubby_flow_1_1_vector_n.html">VectorN</a> &amp;other)</td></tr>
 <tr class="memdesc:a65fb4cb4bbac32034ee793a98eb63130"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swaps the content of the vector with <code>other</code> vector.  <a href="#a65fb4cb4bbac32034ee793a98eb63130">More...</a><br /></td></tr>
 <tr class="separator:a65fb4cb4bbac32034ee793a98eb63130"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -478,7 +484,7 @@ template&lt;typename T &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="class_cubby_flow_1_1_vector_n.html">CubbyFlow::VectorN</a>&lt; T &gt;::<a class="el" href="class_cubby_flow_1_1_vector_n.html">VectorN</a> </td>
@@ -534,7 +540,7 @@ template&lt;typename U &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T&gt; </div>
 <div class="memtemplate">
 template&lt;typename E &gt; </div>
       <table class="memname">
@@ -558,7 +564,7 @@ template&lt;typename E &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="class_cubby_flow_1_1_vector_n.html">CubbyFlow::VectorN</a>&lt; T &gt;::<a class="el" href="class_cubby_flow_1_1_vector_n.html">VectorN</a> </td>
@@ -580,7 +586,7 @@ template&lt;typename T &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -698,7 +704,7 @@ template&lt;typename E &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="namespace_cubby_flow.html#a496d229f464444284946aa757ada9065">VectorScalarAdd</a>&lt; T, <a class="el" href="class_cubby_flow_1_1_vector_n.html">VectorN</a>&lt; T &gt; &gt; <a class="el" href="class_cubby_flow_1_1_vector_n.html">CubbyFlow::VectorN</a>&lt; T &gt;::Add </td>
@@ -733,6 +739,28 @@ template&lt;typename E &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a624225dff2dc8565d7e2f596b1360793"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a624225dff2dc8565d7e2f596b1360793">&#9670;&nbsp;</a></span>Append()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_cubby_flow_1_1_vector_n.html">CubbyFlow::VectorN</a>&lt; T &gt;::Append </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds an element. </p>
 
 </div>
 </div>
@@ -863,6 +891,27 @@ template&lt;typename U &gt; </div>
 </div><div class="memdoc">
 
 <p>Returns a vector with different value type. </p>
+
+</div>
+</div>
+<a id="affdb9914a694f51a2f9d00fbd8274637"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affdb9914a694f51a2f9d00fbd8274637">&#9670;&nbsp;</a></span>Clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_cubby_flow_1_1_vector_n.html">CubbyFlow::VectorN</a>&lt; T &gt;::Clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Clears the vector and make it zero-dimensional. </p>
 
 </div>
 </div>
@@ -1007,7 +1056,7 @@ template&lt;typename E &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="namespace_cubby_flow.html#a68290cd7b95c2239d53c9319451985a5">VectorScalarDiv</a>&lt; T, <a class="el" href="class_cubby_flow_1_1_vector_n.html">VectorN</a>&lt; T &gt; &gt; <a class="el" href="class_cubby_flow_1_1_vector_n.html">CubbyFlow::VectorN</a>&lt; T &gt;::Div </td>
@@ -1188,7 +1237,7 @@ template&lt;typename Callback &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="class_cubby_flow_1_1_vector_n.html">CubbyFlow::VectorN</a>&lt; T &gt;::IAdd </td>
@@ -1234,7 +1283,7 @@ template&lt;typename E &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="class_cubby_flow_1_1_vector_n.html">CubbyFlow::VectorN</a>&lt; T &gt;::IDiv </td>
@@ -1280,7 +1329,7 @@ template&lt;typename E &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="class_cubby_flow_1_1_vector_n.html">CubbyFlow::VectorN</a>&lt; T &gt;::IMul </td>
@@ -1350,7 +1399,7 @@ template&lt;typename E &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T&gt; </div>
 <div class="memtemplate">
 template&lt;typename E &gt; </div>
       <table class="memname">
@@ -1384,7 +1433,7 @@ template&lt;typename E &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="class_cubby_flow_1_1_vector_n.html">CubbyFlow::VectorN</a>&lt; T &gt;::ISub </td>
@@ -1538,7 +1587,7 @@ template&lt;typename E &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="namespace_cubby_flow.html#a25bac26324adb07c0bf2e7523920071f">VectorScalarMul</a>&lt; T, <a class="el" href="class_cubby_flow_1_1_vector_n.html">VectorN</a>&lt; T &gt; &gt; <a class="el" href="class_cubby_flow_1_1_vector_n.html">CubbyFlow::VectorN</a>&lt; T &gt;::Mul </td>
@@ -1648,7 +1697,7 @@ template&lt;typename E &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="class_cubby_flow_1_1_vector_n.html">VectorN</a>&lt; T &gt; &amp; <a class="el" href="class_cubby_flow_1_1_vector_n.html">CubbyFlow::VectorN</a>&lt; T &gt;::operator*= </td>
@@ -1716,7 +1765,7 @@ template&lt;typename E &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="class_cubby_flow_1_1_vector_n.html">VectorN</a>&lt; T &gt; &amp; <a class="el" href="class_cubby_flow_1_1_vector_n.html">CubbyFlow::VectorN</a>&lt; T &gt;::operator+= </td>
@@ -1784,7 +1833,7 @@ template&lt;typename E &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="class_cubby_flow_1_1_vector_n.html">VectorN</a>&lt; T &gt; &amp; <a class="el" href="class_cubby_flow_1_1_vector_n.html">CubbyFlow::VectorN</a>&lt; T &gt;::operator-= </td>
@@ -1852,7 +1901,7 @@ template&lt;typename E &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="class_cubby_flow_1_1_vector_n.html">VectorN</a>&lt; T &gt; &amp; <a class="el" href="class_cubby_flow_1_1_vector_n.html">CubbyFlow::VectorN</a>&lt; T &gt;::operator/= </td>
@@ -2183,7 +2232,7 @@ template&lt;typename Callback &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="namespace_cubby_flow.html#a16c093b5b27b70dbe16410f8fb6ccc1e">VectorScalarRDiv</a>&lt; T, <a class="el" href="class_cubby_flow_1_1_vector_n.html">VectorN</a>&lt; T &gt; &gt; <a class="el" href="class_cubby_flow_1_1_vector_n.html">CubbyFlow::VectorN</a>&lt; T &gt;::RDiv </td>
@@ -2251,7 +2300,7 @@ template&lt;typename E &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="class_cubby_flow_1_1_vector_n.html">CubbyFlow::VectorN</a>&lt; T &gt;::Resize </td>
@@ -2283,7 +2332,7 @@ template&lt;typename T &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="namespace_cubby_flow.html#ae16e19184e1abba1ceb56e42b7a0d315">VectorScalarRSub</a>&lt; T, <a class="el" href="class_cubby_flow_1_1_vector_n.html">VectorN</a>&lt; T &gt; &gt; <a class="el" href="class_cubby_flow_1_1_vector_n.html">CubbyFlow::VectorN</a>&lt; T &gt;::RSub </td>
@@ -2351,7 +2400,7 @@ template&lt;typename E &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="class_cubby_flow_1_1_vector_n.html">CubbyFlow::VectorN</a>&lt; T &gt;::Set </td>
@@ -2397,7 +2446,7 @@ template&lt;typename U &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T&gt; </div>
 <div class="memtemplate">
 template&lt;typename E &gt; </div>
       <table class="memname">
@@ -2487,7 +2536,7 @@ template&lt;typename E &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="namespace_cubby_flow.html#abb2e863e0f8a79a45f2b9c0b2bbf2364">VectorScalarSub</a>&lt; T, <a class="el" href="class_cubby_flow_1_1_vector_n.html">VectorN</a>&lt; T &gt; &gt; <a class="el" href="class_cubby_flow_1_1_vector_n.html">CubbyFlow::VectorN</a>&lt; T &gt;::Sub </td>
@@ -2602,7 +2651,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Dec 9 2017 16:14:09 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 25 2017 22:42:45 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

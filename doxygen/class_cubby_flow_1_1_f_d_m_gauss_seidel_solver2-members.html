@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.64</a>
+                    <a class="navbar-brand">CubbyFlow v0.68</a>
                 </div>
             </div>
         </nav>
@@ -87,8 +87,10 @@ $(function() {
   <tr><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver2.html#a8a1b0a6435aaa4b2dda78693871c5adf">GetTolerance</a>() const</td><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver2.html">CubbyFlow::FDMGaussSeidelSolver2</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver2.html#a7011751794631135d1bca5949fdc51aa">GetUseRedBlackOrdering</a>() const</td><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver2.html">CubbyFlow::FDMGaussSeidelSolver2</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver2.html#a9941b9233f07ac2792f3b38b7c3a51e3">Relax</a>(const FDMMatrix2 &amp;A, const FDMVector2 &amp;b, double sorFactor, FDMVector2 *x)</td><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver2.html">CubbyFlow::FDMGaussSeidelSolver2</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver2.html#ad628eb86a5a279a375c47c78efd4e906">RelaxRedBlack</a>(const FDMMatrix2 &amp;A, const FDMVector2 &amp;b, double sorFactor, FDMVector2 *x)</td><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver2.html">CubbyFlow::FDMGaussSeidelSolver2</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver2.html#af03e8513ffa74680cfe80e88e526963f">Solve</a>(FDMLinearSystem2 *system) override</td><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver2.html">CubbyFlow::FDMGaussSeidelSolver2</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver2.html#ada1d5cb11f269aff82f73174f1c98754">Relax</a>(const MatrixCSRD &amp;A, const VectorND &amp;b, double sorFactor, VectorND *x)</td><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver2.html">CubbyFlow::FDMGaussSeidelSolver2</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver2.html#ad628eb86a5a279a375c47c78efd4e906">RelaxRedBlack</a>(const FDMMatrix2 &amp;A, const FDMVector2 &amp;b, double sorFactor, FDMVector2 *x)</td><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver2.html">CubbyFlow::FDMGaussSeidelSolver2</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver2.html#af03e8513ffa74680cfe80e88e526963f">Solve</a>(FDMLinearSystem2 *system) override</td><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver2.html">CubbyFlow::FDMGaussSeidelSolver2</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver2.html#ad5622aec48111ff012d7e4e7866b9d76">SolveCompressed</a>(FDMCompressedLinearSystem2 *system) override</td><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_gauss_seidel_solver2.html">CubbyFlow::FDMGaussSeidelSolver2</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_linear_system_solver2.html#a03ef6571c8135ee867b5fde2d96bcb99">~FDMLinearSystemSolver2</a>()=default</td><td class="entry"><a class="el" href="class_cubby_flow_1_1_f_d_m_linear_system_solver2.html">CubbyFlow::FDMLinearSystemSolver2</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.8-->
@@ -99,7 +101,7 @@ $(function() {
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Dec 9 2017 16:13:58 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 25 2017 22:42:35 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

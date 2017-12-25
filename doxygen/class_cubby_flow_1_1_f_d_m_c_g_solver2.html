@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.64</a>
+                    <a class="navbar-brand">CubbyFlow v0.68</a>
                 </div>
             </div>
         </nav>
@@ -102,6 +102,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a07b717455d5aa563def61b7ac8aedc59"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_f_d_m_c_g_solver2.html#a07b717455d5aa563def61b7ac8aedc59">Solve</a> (<a class="el" href="struct_cubby_flow_1_1_f_d_m_linear_system2.html">FDMLinearSystem2</a> *system) override</td></tr>
 <tr class="memdesc:a07b717455d5aa563def61b7ac8aedc59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solves the given linear system.  <a href="#a07b717455d5aa563def61b7ac8aedc59">More...</a><br /></td></tr>
 <tr class="separator:a07b717455d5aa563def61b7ac8aedc59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5221802c789046a965be1e10fcde7c34"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_f_d_m_c_g_solver2.html#a5221802c789046a965be1e10fcde7c34">SolveCompressed</a> (<a class="el" href="struct_cubby_flow_1_1_f_d_m_compressed_linear_system2.html">FDMCompressedLinearSystem2</a> *system) override</td></tr>
+<tr class="memdesc:a5221802c789046a965be1e10fcde7c34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solves the given compressed linear system.  <a href="#a5221802c789046a965be1e10fcde7c34">More...</a><br /></td></tr>
+<tr class="separator:a5221802c789046a965be1e10fcde7c34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6cfa0e89cf465ba7b267098b041254a2"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_f_d_m_c_g_solver2.html#a6cfa0e89cf465ba7b267098b041254a2">GetMaxNumberOfIterations</a> () const</td></tr>
 <tr class="memdesc:a6cfa0e89cf465ba7b267098b041254a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the max number of Jacobi iterations.  <a href="#a6cfa0e89cf465ba7b267098b041254a2">More...</a><br /></td></tr>
 <tr class="separator:a6cfa0e89cf465ba7b267098b041254a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -258,6 +261,36 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a5221802c789046a965be1e10fcde7c34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5221802c789046a965be1e10fcde7c34">&#9670;&nbsp;</a></span>SolveCompressed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CubbyFlow::FDMCGSolver2::SolveCompressed </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_cubby_flow_1_1_f_d_m_compressed_linear_system2.html">FDMCompressedLinearSystem2</a> *&#160;</td>
+          <td class="paramname"><em>system</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Solves the given compressed linear system. </p>
+
+<p>Reimplemented from <a class="el" href="class_cubby_flow_1_1_f_d_m_linear_system_solver2.html#abc3143790e2ddfa200313e527cfbcb1f">CubbyFlow::FDMLinearSystemSolver2</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>Solver/FDM/<a class="el" href="_f_d_m_c_g_solver2_8h_source.html">FDMCGSolver2.h</a></li>
 </ul>
@@ -270,7 +303,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Dec 9 2017 16:13:58 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 25 2017 22:42:35 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

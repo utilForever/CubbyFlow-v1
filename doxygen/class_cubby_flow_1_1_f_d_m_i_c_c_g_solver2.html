@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.64</a>
+                    <a class="navbar-brand">CubbyFlow v0.68</a>
                 </div>
             </div>
         </nav>
@@ -81,6 +81,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>2-D finite difference-type linear system solver using incomplete Cholesky conjugate gradient (ICCG).  
+ <a href="class_cubby_flow_1_1_f_d_m_i_c_c_g_solver2.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_f_d_m_i_c_c_g_solver2_8h_source.html">Solver/FDM/FDMICCGSolver2.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for CubbyFlow::FDMICCGSolver2:</div>
@@ -100,6 +103,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a20d156c0e1601fd108721d4fefa9ba7a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_f_d_m_i_c_c_g_solver2.html#a20d156c0e1601fd108721d4fefa9ba7a">Solve</a> (<a class="el" href="struct_cubby_flow_1_1_f_d_m_linear_system2.html">FDMLinearSystem2</a> *system) override</td></tr>
 <tr class="memdesc:a20d156c0e1601fd108721d4fefa9ba7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solves the given linear system.  <a href="#a20d156c0e1601fd108721d4fefa9ba7a">More...</a><br /></td></tr>
 <tr class="separator:a20d156c0e1601fd108721d4fefa9ba7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5dc6621b6995e59cb12cdc6ae7fc709"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_f_d_m_i_c_c_g_solver2.html#ac5dc6621b6995e59cb12cdc6ae7fc709">SolveCompressed</a> (<a class="el" href="struct_cubby_flow_1_1_f_d_m_compressed_linear_system2.html">FDMCompressedLinearSystem2</a> *system) override</td></tr>
+<tr class="memdesc:ac5dc6621b6995e59cb12cdc6ae7fc709"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solves the given compressed linear system.  <a href="#ac5dc6621b6995e59cb12cdc6ae7fc709">More...</a><br /></td></tr>
+<tr class="separator:ac5dc6621b6995e59cb12cdc6ae7fc709"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aefb352272e8641e6b57a6de20eb64c8b"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_f_d_m_i_c_c_g_solver2.html#aefb352272e8641e6b57a6de20eb64c8b">GetMaxNumberOfIterations</a> () const</td></tr>
 <tr class="memdesc:aefb352272e8641e6b57a6de20eb64c8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the max number of Jacobi iterations.  <a href="#aefb352272e8641e6b57a6de20eb64c8b">More...</a><br /></td></tr>
 <tr class="separator:aefb352272e8641e6b57a6de20eb64c8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -116,7 +122,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a03ef6571c8135ee867b5fde2d96bcb99 inherit pub_methods_class_cubby_flow_1_1_f_d_m_linear_system_solver2"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_f_d_m_linear_system_solver2.html#a03ef6571c8135ee867b5fde2d96bcb99">~FDMLinearSystemSolver2</a> ()=default</td></tr>
 <tr class="separator:a03ef6571c8135ee867b5fde2d96bcb99 inherit pub_methods_class_cubby_flow_1_1_f_d_m_linear_system_solver2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>2-D finite difference-type linear system solver using incomplete Cholesky conjugate gradient (ICCG). </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a43a588f5fef66f877259d14f6d95328f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a43a588f5fef66f877259d14f6d95328f">&#9670;&nbsp;</a></span>FDMICCGSolver2()</h2>
 
@@ -254,6 +262,36 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ac5dc6621b6995e59cb12cdc6ae7fc709"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5dc6621b6995e59cb12cdc6ae7fc709">&#9670;&nbsp;</a></span>SolveCompressed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CubbyFlow::FDMICCGSolver2::SolveCompressed </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_cubby_flow_1_1_f_d_m_compressed_linear_system2.html">FDMCompressedLinearSystem2</a> *&#160;</td>
+          <td class="paramname"><em>system</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Solves the given compressed linear system. </p>
+
+<p>Reimplemented from <a class="el" href="class_cubby_flow_1_1_f_d_m_linear_system_solver2.html#abc3143790e2ddfa200313e527cfbcb1f">CubbyFlow::FDMLinearSystemSolver2</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>Solver/FDM/<a class="el" href="_f_d_m_i_c_c_g_solver2_8h_source.html">FDMICCGSolver2.h</a></li>
 </ul>
@@ -266,7 +304,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Dec 9 2017 16:13:58 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 25 2017 22:42:35 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>
