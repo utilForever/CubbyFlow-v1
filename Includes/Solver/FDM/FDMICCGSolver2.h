@@ -14,6 +14,10 @@
 
 namespace CubbyFlow
 {
+    //!
+    //! \brief 2-D finite difference-type linear system solver using incomplete
+    //!        Cholesky conjugate gradient (ICCG).
+    //!
 	class FDMICCGSolver2 final : public FDMLinearSystemSolver2
 	{
 	public:
