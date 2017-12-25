@@ -32,7 +32,7 @@ cmake ..
 make
 ```
 
-> Of course, use `make -j<num_threads>` flag to boost up the build performance by using multithreads.
+> Of course, use `make -j <num_threads>` flag to boost up the build performance by using multithreads.
 
 This will build entire codebase. To run the unit test, execute
 
@@ -50,7 +50,7 @@ CubbyFlow supports Ubuntu 17.04 or higher. Using `apt-get`, install required too
 sudo apt-get install build-essential python-dev python-pip cmake
 ```
 
-This will install GNU compilers, python, and CMake. Once installed, build the code by running
+This will install GNU compilers, Python, and CMake. Once installed, build the code by running
 
 ```
 mkdir build
@@ -59,7 +59,7 @@ cmake ..
 make
 ```
 
-> Again, use `make -j<num_threads>` flag to boost up the build performance by using multithreads.
+> Again, use `make -j <num_threads>` flag to boost up the build performance by using multithreads.
 
 This will build entire codebase. To run the unit test, execute
 
@@ -94,6 +94,133 @@ This will build the whole solution in release mode. Once built, run the followin
 ```
 bin\Release\UnitTests.exe
 ```
+
+### Building from Windows Subsystem for Linux (WSL)
+
+To build the code on Windows Subsystem for Linux, CMake, Python, and GCC 7.1 is required. Linux' version of CMake is available from [this website](https://cmake.org/), Python installer can be downloaded from [here](https://python.org/). For Python, version 2.7.9 or later is recommended. GCC 7.1 can be downloaded from [here](http://gcc.parentingamerica.com/releases/gcc-7.1.0/gcc-7.1.0.tar.bz2).
+
+Currently, GCC 5.4 is installed on WSL. GCC 7 or later must be installed to use C++17 features. To install GCC 7.1, use these instructions manually.
+
+1. Start WSL (use the Bash on Ubuntu on Windows console or write bash in a Command Prompt window) and write
+
+    ```
+    sudo apt update
+    sudo apt upgrade
+    ```
+
+2. Install the default GCC toolchain with:
+
+    ```
+    sudo apt install build-essential
+    ```
+
+3. Download the GCC 7.1 source and prerequisites from http://gcc.gnu.org/mirrors.html:
+
+    ```
+    cd ~
+    wget http://gcc.parentingamerica.com/releases/gcc-7.1.0/gcc-7.1.0.tar.bz2
+    tar xf gcc-7.1.0.tar.bz2
+    cd gcc-7.1.0
+    contrib/download_prerequisites
+    ```
+
+    NOTE: At this point, we can configure the build. In order to keep the system clean, we will use /usr/local/gcc-7.1 for the installation folder and append the suffix -7.1 to the GCC compilers. You typically don’t want to mess the system’s default GCC because other packages may depend on this.
+
+4. We are ready to build GCC, you typically want to pass twice the number of your computer cores to the make command in order to speed up the build. I have a quad-core system, so I will use 8 parallel jobs to build GCC:
+
+    ```
+    make -j 8
+    ```
+
+    NOTE: Depending on the speed of your computer the build phase could take from about 30 minutes to a few hours.
+
+5. Once the above phase is finished, you can install the built GCC with:
+
+    ```
+    sudo make install
+    ```
+
+6. If you want to permanently add the compilers to your system’s path, use the next commands:
+
+    ```
+    cd ~
+    echo 'export PATH=/usr/local/gcc-7.1/bin:$PATH' >> .bashrc
+    echo 'export LD_LIBRARY_PATH=/usr/local/gcc-7.1/lib64:$LD_LIBRARY_PATH' >> .bashrc
+    source .bashrc
+    ```
+
+    NOTE: The above will append the path to GCC 7.1 at the end of your .bashrc file.
+
+Also, CMake is not installed on WSL. CMake 3.8.2 or later must be installed to use C++17 features. To install CMake 3.10.1, use these instructions manually.
+
+1. Download the CMake 3.10.1 source from https://cmake.org/download/:
+
+    ```
+    cd ~
+    wget https://cmake.org/files/v3.10/cmake-3.10.1.tar.gz
+    tar xf cmake-3.10.1.tar.gz
+    cd cmake-3.10.1
+    ```
+
+2. Prepare to build using the bootstrap script with:
+
+    ```
+    ./bootstrap --prefix=/usr
+    ```
+
+    NOTE: ```--prefix=/usr``` is used to specify the CMake path on the WSL.
+
+3. We are ready to build CMake, you typically want to pass twice the number of your computer cores to the make command in order to speed up the build. I have a quad-core system, so I will use 8 parallel jobs to build CMake:
+
+    ```
+    make -j 8
+    ```
+
+4. Once the above phase is finished, you can install the built CMake with:
+
+    ```
+    sudo make install
+    ```
+
+Once everything is installed, add the following line to CMakeLists.txt using ```vi```:
+
+```
+vi CMakeLists.txt
+```
+
+NOTE: Please move to CubbyFlow folder.
+
+```
+# CMake version
+cmake_minimum_required(VERSION 3.8.2 FATAL_ERROR)
+
+# ADD THE FOLLOWING LINE
+set(CMAKE_C_COMPILER "gcc-7.1")
+set(CMAKE_CXX_COMPILER "g++-7.1")
+# ADD THE FOLLOWING LINE
+
+# Include cmake modules
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/Builds/CMake")
+```
+
+Finally, ready to build CubbyFlow. Run the following commands:
+
+```
+mkdir build
+cd build
+cmake ..
+make
+```
+
+> Again, use `make -j <num_threads>` flag to boost up the build performance by using multithreads.
+
+This will build entire codebase. To run the unit test, execute
+
+```
+bin/UnitTests
+```
+
+It should show all the tests are passing.
 
 ### Running Tests
 
