@@ -93,36 +93,58 @@ namespace CubbyFlow
 		//           to
 		//  1/4   3/4   3/4   1/4
 		// --*--|--*--|--*--|--*--
-		static const std::array<double, 4> kernel = { { 0.25, 0.75, 0.75, 0.25 } };
-
-		const Size2 n = coarser.size();
+		const Size2 n = finer->size();
 		ParallelRangeFor(ZERO_SIZE, n.x, ZERO_SIZE, n.y,
 			[&](size_t iBegin, size_t iEnd, size_t jBegin, size_t jEnd)
 		{
-			std::array<size_t, 4> jIndices;
-
 			for (size_t j = jBegin; j < jEnd; ++j)
 			{
-				jIndices[0] = (j > 0) ? 2 * j - 1 : 2 * j;
-				jIndices[1] = 2 * j;
-				jIndices[2] = 2 * j + 1;
-				jIndices[3] = (j + 1 < n.y) ? 2 * j + 2 : 2 * j + 1;
-
-				std::array<size_t, 4> iIndices;
 				for (size_t i = iBegin; i < iEnd; ++i)
 				{
-					iIndices[0] = (i > 0) ? 2 * i - 1 : 2 * i;
-					iIndices[1] = 2 * i;
-					iIndices[2] = 2 * i + 1;
-					iIndices[3] = (i + 1 < n.x) ? 2 * i + 2 : 2 * i + 1;
+					std::array<size_t, 2> iIndices;
+					std::array<size_t, 2> jIndices;
+					std::array<double, 2> iWeights;
+					std::array<double, 2> jWeights;
 
-					double cij = coarser(i, j);
-					for (size_t y = 0; y < 4; ++y)
+					const size_t ci = i / 2;
+					const size_t cj = j / 2;
+
+					if (i % 2 == 0)
 					{
-						for (size_t x = 0; x < 4; ++x)
+						iIndices[0] = (i > 1) ? ci - 1 : ci;
+						iIndices[1] = ci;
+						iWeights[0] = 0.25;
+						iWeights[1] = 0.75;
+					}
+					else
+					{
+						iIndices[0] = ci;
+						iIndices[1] = (i + 1 < n.x) ? ci + 1 : ci;
+						iWeights[0] = 0.75;
+						iWeights[1] = 0.25;
+					}
+
+					if (j % 2 == 0)
+					{
+						jIndices[0] = (j > 1) ? cj - 1 : cj;
+						jIndices[1] = cj;
+						jWeights[0] = 0.25;
+						jWeights[1] = 0.75;
+					}
+					else
+					{
+						jIndices[0] = cj;
+						jIndices[1] = (j + 1 < n.y) ? cj + 1 : cj;
+						jWeights[0] = 0.75;
+						jWeights[1] = 0.25;
+					}
+
+					for (size_t y = 0; y < 2; ++y)
+					{
+						for (size_t x = 0; x < 2; ++x)
 						{
-							double w = kernel[x] * kernel[y];
-							(*finer)(iIndices[x], jIndices[y]) += w * cij;
+							double w = iWeights[x] * jWeights[y] * coarser(iIndices[x], jIndices[y]);
+							(*finer)(i, j) += w;
 						}
 					}
 				}
