@@ -4,7 +4,7 @@
 > Author: Dongmin Kim
 > Purpose: Quaternion class defined as q = w + xi + yj + zk.
 > Created Time: 2017/03/21
-> Copyright (c) 2017, Dongmin Kim
+> Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
 #ifndef CUBBYFLOW_QUATERNION_IMPL_H
 #define CUBBYFLOW_QUATERNION_IMPL_H

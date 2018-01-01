@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Abstract base class for 3-D neighbor point searcher.
 > Created Time: 2017/05/07
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <Searcher/PointNeighborSearcher3.h>
 

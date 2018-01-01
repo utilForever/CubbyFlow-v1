@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Abstract base class for 3-D level set solver.
 > Created Time: 2017/08/29
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <Solver/LevelSet/LevelSetSolver3.h>
 

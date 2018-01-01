@@ -4,7 +4,7 @@
 > Author: Dongmin Kim
 > Purpose: 3-D sphere geometry.
 > Created Time: 2017/04/11
-> Copyright (c) 2017, Dongmin Kim
+> Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
 #include <Geometry/Sphere3.h>
 #include <Math/MathUtils.h>

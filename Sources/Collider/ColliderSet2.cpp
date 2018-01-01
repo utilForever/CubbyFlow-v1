@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Collection of 2-D colliders.
 > Created Time: 2017/05/09
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <Collider/ColliderSet2.h>
 #include <Surface/SurfaceSet2.h>

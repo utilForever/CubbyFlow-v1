@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Abstract base class for 3-D vector field.
 > Created Time: 2017/03/14
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_VECTOR_FIELD3_H
 #define CUBBYFLOW_VECTOR_FIELD3_H

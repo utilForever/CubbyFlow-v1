@@ -4,7 +4,7 @@
 > Author: Dongmin Kim
 > Purpose: Class for 2-D ray.
 > Created Time: 2017/03/25
-> Copyright (c) 2017, Dongmin Kim
+> Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
 #ifndef CUBBYFLOW_RAY2_IMPL_H
 #define CUBBYFLOW_RAY2_IMPL_H

@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: 2-D grid-based volumetric emitter.
 > Created Time: 2017/08/06
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <Emitter/VolumeGridEmitter2.h>
 #include <Grid/CollocatedVectorGrid2.h>

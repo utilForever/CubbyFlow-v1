@@ -4,7 +4,7 @@
 > Author: Dongmin Kim
 > Purpose: Basic 3-D particle system solver.
 > Created Time: 2017/05/22
-> Copyright (c) 2017, Dongmin Kim
+> Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
 #include <Array/ArrayUtils.h>
 #include <Field/ConstantVectorField3.h>

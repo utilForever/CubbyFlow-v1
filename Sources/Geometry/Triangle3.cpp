@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: 3-D triangle geometry.
 > Created Time: 2017/04/14
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <Geometry/Triangle3.h>
 

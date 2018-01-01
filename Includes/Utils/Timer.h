@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Simple timer class.
 > Created Time: 2017/04/19
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_TIMER_H
 #define CUBBYFLOW_TIMER_H

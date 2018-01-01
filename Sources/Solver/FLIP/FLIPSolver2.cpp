@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: 2-D Fluid-Implicit Particle (FLIP) implementation.
 > Created Time: 2017/09/13
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <Solver/FLIP/FLIPSolver2.h>
 

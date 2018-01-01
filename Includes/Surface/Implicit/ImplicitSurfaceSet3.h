@@ -4,7 +4,7 @@
 > Author: Dongmin Kim
 > Purpose: 3-D implicit surface set.
 > Created Time: 2017/04/18
-> Copyright (c) 2017, Dongmin Kim
+> Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
 #ifndef CUBBYFLOW_IMPLICIT_SURFACE_SET3_H
 #define CUBBYFLOW_IMPLICIT_SURFACE_SET3_H

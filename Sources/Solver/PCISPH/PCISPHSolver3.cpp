@@ -4,7 +4,7 @@
 > Author: Dongmin Kim
 > Purpose: 3-D PCISPH solver.
 > Created Time: 2017/06/10
-> Copyright (c) 2017, Dongmin Kim
+> Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
 #include <PointGenerator/BccLatticePointGenerator.h>
 #include <Solver/PCISPH/PCISPHSolver3.h>

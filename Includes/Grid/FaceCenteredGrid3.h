@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: 3-D face-centered (a.k.a MAC or staggered) grid.
 > Created Time: 2017/08/03
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_FACE_CENTERED_GRID3_H
 #define CUBBYFLOW_FACE_CENTERED_GRID3_H

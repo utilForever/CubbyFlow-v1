@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Body-centered lattice points generator.
 > Created Time: 2017/06/05
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <PointGenerator/BccLatticePointGenerator.h>
 

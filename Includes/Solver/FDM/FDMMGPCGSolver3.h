@@ -5,7 +5,7 @@
 > Purpose: 3-D finite difference-type linear system solver using Multigrid
 >          Preconditioned conjugate gradient (MGPCG).
 > Created Time: 2017/11/05
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_FDM_MGPCG_SOLVER3_H
 #define CUBBYFLOW_FDM_MGPCG_SOLVER3_H

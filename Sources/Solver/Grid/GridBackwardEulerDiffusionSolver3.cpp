@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: 3-D grid-based backward Euler diffusion Solver.
 > Created Time: 2017/08/13
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <LevelSet/LevelSetUtils.h>
 #include <Solver/FDM/FDMICCGSolver3.h>

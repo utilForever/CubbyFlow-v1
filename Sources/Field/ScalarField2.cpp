@@ -4,7 +4,7 @@
 > Author: Dongmin Kim
 > Purpose: Abstract base class for 2-D scalar field.
 > Created Time: 2017/03/16
-> Copyright (c) 2017, Dongmin Kim
+> Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
 #include <Field/ScalarField2.h>
 

@@ -4,7 +4,7 @@
 > Author: Dongmin Kim
 > Purpose: 3-D matrix class.
 > Created Time: 2017/03/07
-> Copyright (c) 2017, Dongmin Kim
+> Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
 #ifndef CUBBYFLOW_MATRIX3X3_IMPL_H
 #define CUBBYFLOW_MATRIX3X3_IMPL_H

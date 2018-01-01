@@ -4,7 +4,7 @@
 > Author: Dongmin Kim
 > Purpose: Generic N-D axis-aligned bounding box class.
 > Created Time: 2017/03/30
-> Copyright (c) 2017, Dongmin Kim
+> Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
 #ifndef CUBBYFLOW_BOUNDING_BOX_IMPL_H
 #define CUBBYFLOW_BOUNDING_BOX_IMPL_H

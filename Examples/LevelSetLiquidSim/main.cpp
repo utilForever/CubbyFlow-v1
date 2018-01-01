@@ -4,7 +4,7 @@
 > Author: Dongmin Kim
 > Purpose: Level-set Liquid Simulator
 > Created Time: 2017/09/09
-> Copyright (c) 2017, Dongmin Kim
+> Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
 #include <Array/Array2.h>
 #include <Collider/RigidBodyCollider3.h>

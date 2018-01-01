@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: 2-D finite difference-type linear system solver using Multigrid.
 > Created Time: 2017/11/03
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_FDM_MG_SOLVER2_H
 #define CUBBYFLOW_FDM_MG_SOLVER2_H

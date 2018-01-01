@@ -4,7 +4,7 @@
 > Author: Dongmin Kim
 > Purpose: Simple ad-hoc 3-D point searcher.
 > Created Time: 2017/05/26
-> Copyright (c) 2017, Dongmin Kim
+> Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
 #include <Searcher/PointSimpleListSearcher3.h>
 #include <Utils/FlatbuffersHelper.h>

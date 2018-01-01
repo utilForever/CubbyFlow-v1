@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Constant lists for CubbyFlow.
 > Created Time: 2017/01/31
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_CONSTANTS_H
 #define CUBBYFLOW_CONSTANTS_H

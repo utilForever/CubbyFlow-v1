@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Two-dimensional fast marching method (FMM) implementation.
 > Created Time: 2017/09/01
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <FDM/FDMUtils.h>
 #include <LevelSet/LevelSetUtils.h>

@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Multigrid-syle 3-D linear system.
 > Created Time: 2017/11/03
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <FDM/FDMMGLinearSystem3.h>
 

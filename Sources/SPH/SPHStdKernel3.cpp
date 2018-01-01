@@ -4,7 +4,7 @@
 > Author: Dongmin Kim
 > Purpose: Standard 3-D SPH kernel function object.
 > Created Time: 2017/06/03
-> Copyright (c) 2017, Dongmin Kim
+> Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
 
 // Adopted from the sample code of:

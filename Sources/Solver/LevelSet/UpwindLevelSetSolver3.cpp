@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Three-dimensional first-order upwind-based iterative level set solver.
 > Created Time: 2017/09/03
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <Math/PDE.h>
 #include <Solver/LevelSet/UpwindLevelSetSolver3.h>

@@ -4,7 +4,7 @@
 > Author: Dongmin Kim
 > Purpose: 2-D nearest array sampler class.
 > Created Time: 2017/05/10
-> Copyright (c) 2017, Dongmin Kim
+> Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
 #ifndef CUBBYFLOW_ARRAY_SAMPLERS2_IMPL_H
 #define CUBBYFLOW_ARRAY_SAMPLERS2_IMPL_H

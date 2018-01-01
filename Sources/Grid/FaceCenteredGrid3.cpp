@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: 2-D face-centered (a.k.a MAC or staggered) grid.
 > Created Time: 2017/08/04
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <Grid/FaceCenteredGrid3.h>
 #include "Grid/FaceCenteredGrid2.h"

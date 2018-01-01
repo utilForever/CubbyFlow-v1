@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: TriangleMesh3 to ImplicitSurface3 converter.
 > Created Time: 2017/09/23
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_IMPLICIT_TRIANGLE_MESH3_H
 #define CUBBYFLOW_IMPLICIT_TRIANGLE_MESH3_H

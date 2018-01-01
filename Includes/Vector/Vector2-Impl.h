@@ -4,7 +4,7 @@
 > Author: Dongmin Kim
 > Purpose: 2-D vector class.
 > Created Time: 2017/02/21
-> Copyright (c) 2017, Dongmin Kim
+> Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
 #ifndef CUBBYFLOW_VECTOR2_IMPL_H
 #define CUBBYFLOW_VECTOR2_IMPL_H

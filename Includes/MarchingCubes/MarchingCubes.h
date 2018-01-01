@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Computes marching cubes and extract triangle mesh from grid.
 > Created Time: 2017/07/09
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_MARCHING_CUBES_H
 #define CUBBYFLOW_MARCHING_CUBES_H

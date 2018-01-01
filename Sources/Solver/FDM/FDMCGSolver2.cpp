@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: 2-D finite difference-type linear system solver using conjugate gradient.
 > Created Time: 2017/08/16
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <Math/CG.h>
 #include <Solver/FDM/FDMCGSolver2.h>

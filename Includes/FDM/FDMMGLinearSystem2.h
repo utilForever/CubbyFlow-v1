@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Multigrid-syle 2-D linear system.
 > Created Time: 2017/11/02
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_FDM_MG_LINEAR_SYSTEM2_H
 #define CUBBYFLOW_FDM_MG_LINEAR_SYSTEM2_H

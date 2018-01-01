@@ -4,7 +4,7 @@
 > Author: Dongmin Kim
 > Purpose: Represents 2-D rigid body transform.
 > Created Time: 2017/03/30
-> Copyright (c) 2017, Dongmin Kim
+> Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
 #include <Transform/Transform2.h>
 

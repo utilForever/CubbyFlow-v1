@@ -4,7 +4,7 @@
 > Author: Dongmin Kim
 > Purpose: 3-D grid-based smoke solver.
 > Created Time: 2017/08/18
-> Copyright (c) 2017, Dongmin Kim
+> Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
 #ifndef CUBBYFLOW_GRID_SMOKE_SOLVER3_H
 #define CUBBYFLOW_GRID_SMOKE_SOLVER3_H

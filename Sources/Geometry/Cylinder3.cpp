@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: 3-D cylinder geometry.
 > Created Time: 2017/06/24
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <Geometry/Box2.h>
 #include <Geometry/Cylinder3.h>

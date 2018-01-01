@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Finite Difference Method util functions for CubbyFlow.
 > Created Time: 2017/07/06
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_FDM_UTILS_H
 #define CUBBYFLOW_FDM_UTILS_H

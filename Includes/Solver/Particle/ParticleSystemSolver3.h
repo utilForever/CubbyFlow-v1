@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Basic 3-D particle system solver.
 > Created Time: 2017/05/21
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_PARTICLE_SYSTEM_SOLVER3_H
 #define CUBBYFLOW_PARTICLE_SYSTEM_SOLVER3_H

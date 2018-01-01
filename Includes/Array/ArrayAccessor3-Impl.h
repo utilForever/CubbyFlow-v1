@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk, Dongmin Kim
 > Purpose: 3-D array accessor class.
 > Created Time: 2017/01/28
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_ARRAY_ACCESSOR3_IMPL_H
 #define CUBBYFLOW_ARRAY_ACCESSOR3_IMPL_H

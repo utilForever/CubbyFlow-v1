@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: 2-D regular-grid point generator.
 > Created Time: 2017/08/07
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_GRID_POINT_GENERATOR2_H
 #define CUBBYFLOW_GRID_POINT_GENERATOR2_H

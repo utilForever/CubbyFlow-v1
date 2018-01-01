@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: 2-D SPH solver.
 > Created Time: 2017/06/03
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <Solver/SPH/SPHSolver2.h>
 #include <SPH/SPHStdKernel2.h>

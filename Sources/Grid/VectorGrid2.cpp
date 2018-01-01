@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Abstract base class for 2-D vector grid structure.
 > Created Time: 2017/07/26
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <Grid/VectorGrid2.h>
 #include <Utils/FlatbuffersHelper.h>

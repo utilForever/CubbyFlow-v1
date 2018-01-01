@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Type helpers for CubbyFlow.
 > Created Time: 2017/03/03
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_TYPE_HELPERS_H
 #define CUBBYFLOW_TYPE_HELPERS_H

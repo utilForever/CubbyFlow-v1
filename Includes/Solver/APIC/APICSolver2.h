@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: 2-D Affine Particle-in-Cell (APIC) implementation.
 > Created Time: 2017/10/06
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_APIC_SOLVER2_H
 #define CUBBYFLOW_APIC_SOLVER2_H

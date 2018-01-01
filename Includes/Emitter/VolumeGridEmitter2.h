@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: 2-D grid-based volumetric emitter.
 > Created Time: 2017/08/06
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_VOLUME_GRID_EMITTER2_H
 #define CUBBYFLOW_VOLUME_GRID_EMITTER2_H

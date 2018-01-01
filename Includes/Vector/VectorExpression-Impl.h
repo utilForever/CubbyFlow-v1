@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Base class for vector expression.
 > Created Time: 2017/09/27
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_VECTOR_EXPRESSION_IMPL_H
 #define CUBBYFLOW_VECTOR_EXPRESSION_IMPL_H

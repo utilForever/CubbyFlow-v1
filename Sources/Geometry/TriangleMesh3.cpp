@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: 3-D triangle mesh geometry.
 > Created Time: 2017/04/15
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <Geometry/TriangleMesh3.h>
 #include <Math/MathUtils.h>

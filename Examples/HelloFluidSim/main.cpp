@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Hello, Fluid Simulator
 > Created Time: 2017/01/22
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef _USE_MATH_DEFINES
 #define _USE_MATH_DEFINES

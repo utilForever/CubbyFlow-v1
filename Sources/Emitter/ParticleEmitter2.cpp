@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Abstract base class for 2-D particle emitter.
 > Created Time: 2017/05/19
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <Emitter/ParticleEmitter2.h>
 #include <Utils/Macros.h>

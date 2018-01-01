@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Simple ad-hoc 2-D point searcher.
 > Created Time: 2017/05/26
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <Searcher/PointSimpleListSearcher2.h>
 #include <Utils/FlatbuffersHelper.h>

@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: 2-D finite difference-type linear system solver using Gauss-Seidel method.
 > Created Time: 2017/08/17
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <Solver/FDM/FDMGaussSeidelSolver2.h>
 

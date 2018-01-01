@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: 2-D constant scalar field.
 > Created Time: 2017/04/01
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_CONSTANT_SCALAR_FIELD2_H
 #define CUBBYFLOW_CONSTANT_SCALAR_FIELD2_H

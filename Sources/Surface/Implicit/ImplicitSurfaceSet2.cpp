@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: 2-D implicit surface set.
 > Created Time: 2017/04/16
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <Surface/Implicit/ImplicitSurfaceSet2.h>
 #include <Surface/Implicit/SurfaceToImplicit2.h>

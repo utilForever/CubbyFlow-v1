@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: KdTree-based 2-D point searcher.
 > Created Time: 2017/12/05
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_POINT_KDTREE_SEARCHER2_H
 #define CUBBYFLOW_POINT_KDTREE_SEARCHER2_H

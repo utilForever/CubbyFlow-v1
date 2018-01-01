@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: KdTree-based 3-D point searcher.
 > Created Time: 2017/12/05
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <Searcher/PointKdTreeSearcher3.h>
 #include <Utils/FlatbuffersHelper.h>

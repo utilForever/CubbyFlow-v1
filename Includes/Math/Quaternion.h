@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Quaternion class defined as q = w + xi + yj + zk.
 > Created Time: 2017/03/21
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_QUATERNION_H
 #define CUBBYFLOW_QUATERNION_H

@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: 2-D fractional single-phase pressure solver.
 > Created Time: 2017/08/14
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_FRACTIONAL_SINGLE_PHASE_PRESSURE_SOLVER2_H
 #define CUBBYFLOW_FRACTIONAL_SINGLE_PHASE_PRESSURE_SOLVER2_H

@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: 2-D rigid body collider class.
 > Created Time: 2017/06/23
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_RIGID_BODY_COLLIDER2_H
 #define CUBBYFLOW_RIGID_BODY_COLLIDER2_H

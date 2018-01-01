@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Abstract base class for 2-D intersection test query engine.
 > Created Time: 2017/10/14
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_INTERSECTION_QUERY_ENGINE2_H
 #define CUBBYFLOW_INTERSECTION_QUERY_ENGINE2_H

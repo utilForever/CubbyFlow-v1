@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Bounding Volume Hierarchy (BVH) in 2D.
 > Created Time: 2017/10/17
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_BVH2_IMPL_H
 #define CUBBYFLOW_BVH2_IMPL_H

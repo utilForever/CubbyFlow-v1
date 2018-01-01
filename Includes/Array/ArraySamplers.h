@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Generic N-D nearest array sampler class.
 > Created Time: 2017/04/29
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_ARRAY_SAMPLERS_H
 #define CUBBYFLOW_ARRAY_SAMPLERS_H

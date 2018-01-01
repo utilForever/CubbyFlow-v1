@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Blocked 2-D boundary condition solver for grids.
 > Created Time: 2017/08/10
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <LevelSet/LevelSetUtils.h>
 #include <Solver/Grid/GridBlockedBoundaryConditionSolver2.h>

@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: 3-D points-to-implicit converter based on Zhu and Bridson's method.
 > Created Time: 2017/11/18
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <Particle/ParticleSystemData3.h>
 #include <Point/Implicit/ZhuBridsonPointsToImplicit3.h>

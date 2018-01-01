@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Two-dimensional third-order ENO-based iterative level set solver.
 > Created Time: 2017/08/31
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_ENO_LEVEL_SET_SOLVER2_H
 #define CUBBYFLOW_ENO_LEVEL_SET_SOLVER2_H

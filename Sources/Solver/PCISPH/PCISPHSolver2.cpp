@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: 2-D PCISPH solver.
 > Created Time: 2017/06/10
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <PointGenerator/TrianglePointGenerator.h>
 #include <Solver/PCISPH/PCISPHSolver2.h>

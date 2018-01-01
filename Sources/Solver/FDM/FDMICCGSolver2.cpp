@@ -5,7 +5,7 @@
 > Purpose: 2-D finite difference-type linear system solver using incomplete
 >          Cholesky conjugate gradient (ICCG).
 > Created Time: 2017/08/12
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <Math/CG.h>
 #include <Solver/FDM/FDMICCGSolver2.h>

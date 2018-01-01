@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Convert object file to spatial data format file.
 > Created Time: 2017/09/08
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <Geometry/TriangleMesh3.h>
 #include <Geometry/TriangleMeshToSDF.h>

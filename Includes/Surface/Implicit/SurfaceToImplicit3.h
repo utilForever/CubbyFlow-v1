@@ -4,7 +4,7 @@
 > Author: Dongmin Kim
 > Purpose: 3-D implicit surface wrapper for generic Surface3 instance.
 > Created Time: 2017/04/18
-> Copyright (c) 2017, Dongmin Kim
+> Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
 #ifndef CUBBYFLOW_SURFACE_TO_IMPLICIT3_H
 #define CUBBYFLOW_SURFACE_TO_IMPLICIT3_H

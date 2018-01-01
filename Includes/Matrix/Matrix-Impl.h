@@ -4,7 +4,7 @@
 > Author: Dongmin Kim
 > Purpose: Static-sized M x N matrix class.
 > Created Time: 2017/03/06
-> Copyright (c) 2017, Dongmin Kim
+> Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
 #ifndef CUBBYFLOW_MATRIX_IMPL_H
 #define CUBBYFLOW_MATRIX_IMPL_H

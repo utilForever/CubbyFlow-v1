@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: 2-D grid-based smoke solver.
 > Created Time: 2017/08/17
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_GRID_SMOKE_SOLVER2_H
 #define CUBBYFLOW_GRID_SMOKE_SOLVER2_H

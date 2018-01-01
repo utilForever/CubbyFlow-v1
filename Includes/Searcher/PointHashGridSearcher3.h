@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Hash grid-based 3-D point searcher.
 > Created Time: 2017/05/23
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_POINT_HASH_GRID_SEARCHER3_H
 #define CUBBYFLOW_POINT_HASH_GRID_SEARCHER3_H

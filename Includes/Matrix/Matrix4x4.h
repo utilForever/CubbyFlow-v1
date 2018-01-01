@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: 4-D matrix class.
 > Created Time: 2017/03/06
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_MATRIX4X4_H
 #define CUBBYFLOW_MATRIX4X4_H

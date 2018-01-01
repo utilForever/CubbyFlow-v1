@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Mathematics util functions for CubbyFlow.
 > Created Time: 2017/02/27
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_MATH_UTILS_IMPL_H
 #define CUBBYFLOW_MATH_UTILS_IMPL_H

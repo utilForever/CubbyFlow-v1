@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Three-dimensional fast marching method (FMM) implementation.
 > Created Time: 2017/09/01
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_FMM_LEVEL_SET_SOLVER3_H
 #define CUBBYFLOW_FMM_LEVEL_SET_SOLVER3_H

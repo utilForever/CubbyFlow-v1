@@ -4,7 +4,7 @@
 > Author: Dongmin Kim
 > Purpose: 3-D axis-aligned bounding box class.
 > Created Time: 2017/04/01
-> Copyright (c) 2017, Dongmin Kim
+> Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
 #ifndef CUBBYFLOW_BOUNDING_BOX3_IMPL_H
 #define CUBBYFLOW_BOUNDING_BOX3_IMPL_H

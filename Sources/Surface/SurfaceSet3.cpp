@@ -4,7 +4,7 @@
 > Author: Dongmin Kim
 > Purpose: 3-D surface set.
 > Created Time: 2017/04/14
-> Copyright (c) 2017, Dongmin Kim
+> Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
 #include <Surface/SurfaceSet3.h>
 

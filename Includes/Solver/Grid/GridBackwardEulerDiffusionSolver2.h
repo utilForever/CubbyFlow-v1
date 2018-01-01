@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: 2-D grid-based backward Euler diffusion solver.
 > Created Time: 2017/08/11
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_GRID_BACKWARD_EULER_DIFFUSION_SOLVER2_H
 #define CUBBYFLOW_GRID_BACKWARD_EULER_DIFFUSION_SOLVER2_H

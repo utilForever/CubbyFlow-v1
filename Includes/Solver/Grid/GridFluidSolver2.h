@@ -4,7 +4,7 @@
 > Author: Dongmin Kim
 > Purpose: Abstract base class for grid-based 2-D fluid solver.
 > Created Time: 2017/08/10
-> Copyright (c) 2017, Dongmin Kim
+> Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
 #ifndef CUBBYFLOW_GRID_FLUID_SOLVER2_H
 #define CUBBYFLOW_GRID_FLUID_SOLVER2_H

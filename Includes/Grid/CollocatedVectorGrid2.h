@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Abstract base class for 2-D collocated vector grid structure.
 > Created Time: 2017/08/02
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_COLLOCATED_VECTOR_GRID2_H
 #define CUBBYFLOW_COLLOCATED_VECTOR_GRID2_H

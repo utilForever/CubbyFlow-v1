@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: 2-D points-to-implicit converter using Anisotropic kernels.
 > Created Time: 2017/11/19
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_ANISOTROPIC_POINTS_TO_IMPLICIT2_H
 #define CUBBYFLOW_ANISOTROPIC_POINTS_TO_IMPLICIT2_H

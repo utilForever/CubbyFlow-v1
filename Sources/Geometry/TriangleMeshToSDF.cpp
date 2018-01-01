@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Generates signed-distance field out of given triangle mesh.
 > Created Time: 2017/08/24
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 // This code is ported from Christopher Batty's SDFGen software.
 // (https://github.com/christopherbatty/SDFGen)

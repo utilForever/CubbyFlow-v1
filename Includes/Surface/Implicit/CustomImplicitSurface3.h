@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Custom 3-D implicit surface using arbitrary function.
 > Created Time: 2017/09/08
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_CUSTOM_IMPLICIT_SURFACE3_H
 #define CUBBYFLOW_CUSTOM_IMPLICIT_SURFACE3_H

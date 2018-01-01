@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Abstract based class for 2-D grid-based advection solver.
 > Created Time: 2017/08/07
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_ADVECTION_SOLVER2_H
 #define CUBBYFLOW_ADVECTION_SOLVER2_H

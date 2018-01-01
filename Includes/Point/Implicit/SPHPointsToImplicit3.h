@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: 3-D points-to-implicit converter based on standard SPH kernel.
 > Created Time: 2017/11/18
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_SPH_POINTS_TO_IMPLICIT3_H
 #define CUBBYFLOW_SPH_POINTS_TO_IMPLICIT3_H

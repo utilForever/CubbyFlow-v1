@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Level set util functions for CubbyFlow.
 > Created Time: 2017/07/13
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_LEVEL_SET_UTILS_H
 #define CUBBYFLOW_LEVEL_SET_UTILS_H

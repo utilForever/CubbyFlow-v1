@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Linear system (Ax=b) for 3-D finite differencing.
 > Created Time: 2017/08/12
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_FDM_LINEAR_SYSTEM3_H
 #define CUBBYFLOW_FDM_LINEAR_SYSTEM3_H

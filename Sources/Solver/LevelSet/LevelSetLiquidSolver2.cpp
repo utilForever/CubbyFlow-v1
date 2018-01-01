@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Level set based 2-D liquid solver.
 > Created Time: 2017/08/30
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <Grid/CellCenteredScalarGrid2.h>
 #include <LevelSet/LevelSetUtils.h>

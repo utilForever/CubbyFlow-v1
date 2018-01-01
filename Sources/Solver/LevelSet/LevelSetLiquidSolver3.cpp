@@ -4,7 +4,7 @@
 > Author: Dongmin Kim
 > Purpose: Level set based 3-D liquid solver.
 > Created Time: 2017/09/06
-> Copyright (c) 2017, Dongmin Kim
+> Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
 #include <Grid/CellCenteredScalarGrid3.h>
 #include <LevelSet/LevelSetUtils.h>

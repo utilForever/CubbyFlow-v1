@@ -4,7 +4,7 @@
 > Author: Dongmin Kim
 > Purpose: Hash grid-based 2-D point searcher.
 > Created Time: 2017/05/23
-> Copyright (c) 2017, Dongmin Kim
+> Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
 #include <Searcher/PointHashGridSearcher2.h>
 #include <Utils/FlatbuffersHelper.h>

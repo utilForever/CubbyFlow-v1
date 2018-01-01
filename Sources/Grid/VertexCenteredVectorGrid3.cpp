@@ -4,7 +4,7 @@
 > Author: Dongmin Kim
 > Purpose: 3-D Vertex-centered vector grid structure.
 > Created Time: 2017/08/04
-> Copyright (c) 2017, Dongmin Kim
+> Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
 #include <Grid/VertexCenteredVectorGrid3.h>
 

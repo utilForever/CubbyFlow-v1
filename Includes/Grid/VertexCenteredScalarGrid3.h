@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: 3-D Vertex-centered scalar grid structure.
 > Created Time: 2017/07/08
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_VERTEX_CENTERED_SCALAR_GRID3_H
 #define CUBBYFLOW_VERTEX_CENTERED_SCALAR_GRID3_H

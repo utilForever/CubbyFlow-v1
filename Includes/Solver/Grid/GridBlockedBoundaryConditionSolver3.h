@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Blocked 3-D boundary condition solver for grids.
 > Created Time: 2017/08/10
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_GRID_BLOCKED_BOUNDARY_CONDITION_SOLVER3_H
 #define CUBBYFLOW_GRID_BLOCKED_BOUNDARY_CONDITION_SOLVER3_H

@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: 2-D particle system data.
 > Created Time: 2017/04/28
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_PARTICLE_SYSTEM_DATA2_H
 #define CUBBYFLOW_PARTICLE_SYSTEM_DATA2_H

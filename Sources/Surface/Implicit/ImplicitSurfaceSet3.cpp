@@ -4,7 +4,7 @@
 > Author: Dongmin Kim
 > Purpose: 3-D implicit surface set.
 > Created Time: 2017/04/18
-> Copyright (c) 2017, Dongmin Kim
+> Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
 #include <Surface/Implicit/ImplicitSurfaceSet3.h>
 #include <Surface/Implicit/SurfaceToImplicit3.h>

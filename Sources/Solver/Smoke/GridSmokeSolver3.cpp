@@ -4,7 +4,7 @@
 > Author: Dongmin Kim
 > Purpose: 3-D grid-based smoke solver.
 > Created Time: 2017/08/18
-> Copyright (c) 2017, Dongmin Kim
+> Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
 #include <Grid/CellCenteredScalarGrid3.h>
 #include <Solver/Smoke/GridSmokeSolver3.h>

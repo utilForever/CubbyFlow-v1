@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Parallel version of hash grid-based 2-D point searcher.
 > Created Time: 2017/04/30
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_POINT_PARALLEL_HASH_GRID_SEARCHER2_H
 #define CUBBYFLOW_POINT_PARALLEL_HASH_GRID_SEARCHER2_H

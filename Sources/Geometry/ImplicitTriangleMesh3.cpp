@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: TriangleMesh3 to ImplicitSurface3 converter.
 > Created Time: 2017/09/23
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <Geometry/ImplicitTriangleMesh3.h>
 #include <Geometry/TriangleMeshToSDF.h>

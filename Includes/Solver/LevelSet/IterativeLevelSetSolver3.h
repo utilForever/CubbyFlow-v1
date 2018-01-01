@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Abstract base class for 3-D PDE-based iterative level set solver.
 > Created Time: 2017/08/30
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_ITERATIVE_LEVEL_SET_SOLVER3_H
 #define CUBBYFLOW_ITERATIVE_LEVEL_SET_SOLVER3_H

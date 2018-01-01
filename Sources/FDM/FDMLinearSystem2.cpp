@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Linear system (Ax=b) for 2-D finite differencing.
 > Created Time: 2017/08/12
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <FDM/FDMLinearSystem2.h>
 #include <Math/MathUtils.h>

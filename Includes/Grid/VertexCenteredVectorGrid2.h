@@ -4,7 +4,7 @@
 > Author: Dongmin Kim
 > Purpose: 2-D Vertex-centered vector grid structure.
 > Created Time: 2017/08/04
-> Copyright (c) 2017, Dongmin Kim
+> Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
 #ifndef CUBBYFLOW_VERTEX_CENTERED_VECTOR_GRID2_H
 #define CUBBYFLOW_VERTEX_CENTERED_VECTOR_GRID2_H

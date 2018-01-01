@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Basic 2-D particle system solver.
 > Created Time: 2017/05/21
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <Array/ArrayUtils.h>
 #include <Field/ConstantVectorField2.h>

@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: 3-D particle-based emitter set.
 > Created Time: 2017/05/10
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_PARTICLE_EMITTER_SET3_H
 #define CUBBYFLOW_PARTICLE_EMITTER_SET3_H

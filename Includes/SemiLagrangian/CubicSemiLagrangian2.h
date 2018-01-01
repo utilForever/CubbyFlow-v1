@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Implementation of 2-D cubic semi-Lagrangian advection solver.
 > Created Time: 2017/08/08
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_CUBIC_SEMI_LAGRANGIAN2_H
 #define CUBBYFLOW_CUBIC_SEMI_LAGRANGIAN2_H

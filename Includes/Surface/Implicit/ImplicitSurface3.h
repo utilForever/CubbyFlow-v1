@@ -4,7 +4,7 @@
 > Author: Dongmin Kim
 > Purpose: Abstract base class for 3-D implicit surface.
 > Created Time: 2017/04/18
-> Copyright (c) 2017, Dongmin Kim
+> Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
 #ifndef CUBBYFLOW_IMPLICIT_SURFACE3_H
 #define CUBBYFLOW_IMPLICIT_SURFACE3_H

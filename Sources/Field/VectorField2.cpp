@@ -4,7 +4,7 @@
 > Author: Dongmin Kim
 > Purpose: Abstract base class for 2-D vector field.
 > Created Time: 2017/03/14
-> Copyright (c) 2017, Dongmin Kim
+> Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
 #include <Field/VectorField2.h>
 

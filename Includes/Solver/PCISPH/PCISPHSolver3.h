@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: 3-D PCISPH solver.
 > Created Time: 2017/06/09
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_PCISPH_SOLVER3_H
 #define CUBBYFLOW_PCISPH_SOLVER3_H

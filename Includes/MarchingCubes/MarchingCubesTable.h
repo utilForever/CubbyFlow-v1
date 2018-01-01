@@ -5,7 +5,7 @@
 > Purpose: A simple, portable and complete implementation of the Marching Cubes
 >          and Marching Tetrahedrons algorithms.
 > Created Time: 2017/07/09
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 
 // Marching Cubes Example Program

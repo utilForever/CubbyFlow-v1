@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Generic octree data structure.
 > Created Time: 2017/10/15
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_OCTREE_IMPL_H
 #define CUBBYFLOW_OCTREE_IMPL_H

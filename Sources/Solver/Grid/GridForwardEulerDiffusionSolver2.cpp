@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: 2-D grid-based forward Euler diffusion solver.
 > Created Time: 2017/08/12
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <LevelSet/LevelSetUtils.h>
 #include <Solver/Grid/GridForwardEulerDiffusionSolver2.h>

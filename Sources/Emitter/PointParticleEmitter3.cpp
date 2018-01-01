@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: 3-D point particle emitter.
 > Created Time: 2017/07/22
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <Emitter/PointParticleEmitter3.h>
 #include <Matrix/Matrix3x3.h>

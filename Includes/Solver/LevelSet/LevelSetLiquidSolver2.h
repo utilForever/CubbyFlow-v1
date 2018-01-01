@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: Level set based 2-D liquid solver.
 > Created Time: 2017/08/30
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_LEVEL_SET_LIQUID_SOLVER2_H
 #define CUBBYFLOW_LEVEL_SET_LIQUID_SOLVER2_H

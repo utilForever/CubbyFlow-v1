@@ -4,7 +4,7 @@
 > Author: Dongmin Kim
 > Purpose: 3-D SPH particle system data.
 > Created Time: 2017/06/03
-> Copyright (c) 2017, Dongmin Kim
+> Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
 #include <BoundingBox/BoundingBox3.h>
 #include <PointGenerator/BccLatticePointGenerator.h>

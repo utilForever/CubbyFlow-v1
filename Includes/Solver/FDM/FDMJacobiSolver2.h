@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: 2-D finite difference-type linear system solver using Jacobi method.
 > Created Time: 2017/08/17
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #ifndef CUBBYFLOW_FDM_JACOBI_SOLVER2_H
 #define CUBBYFLOW_FDM_JACOBI_SOLVER2_H

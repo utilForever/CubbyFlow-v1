@@ -4,7 +4,7 @@
 > Author: Chan-Ho Chris Ohk
 > Purpose: 2-D points-to-implicit converter based on simple sphere model.
 > Created Time: 2017/11/16
-> Copyright (c) 2017, Chan-Ho Chris Ohk
+> Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <Particle/ParticleSystemData2.h>
 #include <Point/Implicit/SphericalPointsToImplicit2.h>
