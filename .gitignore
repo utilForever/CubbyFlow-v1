@@ -261,3 +261,4 @@ paket-files/
 ## CppDepend files
 CppDependOut/
 *.cdproj
+/build
