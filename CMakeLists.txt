@@ -68,7 +68,6 @@ add_subdirectory(Examples/Particles2Obj)
 add_subdirectory(Examples/Particles2Xml)
 add_subdirectory(Examples/SmokeSim)
 add_subdirectory(Examples/SPHSim)
-add_subdirectory(Examples/DirectX11)
 
 if (BUILD_FROM_PIP)
     set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${DEFAULT_CMAKE_LIBRARY_OUTPUT_DIRECTORY})
