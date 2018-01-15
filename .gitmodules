@@ -4,3 +4,6 @@
 [submodule "Libraries/googlebenchmark"]
 	path = Libraries/googlebenchmark
 	url = https://github.com/google/benchmark.git
+[submodule "Libraries/pybind11"]
+	path = Libraries/pybind11
+	url = https://github.com/pybind/pybind11.git
