@@ -12,7 +12,7 @@ include_directories(
 
 # Sources
 file(GLOB header_dir
-    ${root_dir}/Includes)
+    ${root_dir}/Includes/Core)
 
 file(GLOB_RECURSE headers
     ${header_dir}/*.h)
