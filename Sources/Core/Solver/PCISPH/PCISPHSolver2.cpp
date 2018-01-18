@@ -6,10 +6,10 @@
 > Created Time: 2017/06/10
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <PointGenerator/TrianglePointGenerator.h>
-#include <Solver/PCISPH/PCISPHSolver2.h>
-#include <SPH/SPHStdKernel2.h>
-#include <Utils/Logger.h>
+#include <Core/PointGenerator/TrianglePointGenerator.h>
+#include <Core/Solver/PCISPH/PCISPHSolver2.h>
+#include <Core/SPH/SPHStdKernel2.h>
+#include <Core/Utils/Logger.h>
 
 namespace CubbyFlow
 {

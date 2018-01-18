@@ -6,7 +6,7 @@
 > Created Time: 2017/05/07
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Searcher/PointNeighborSearcher3.h>
+#include <Core/Searcher/PointNeighborSearcher3.h>
 
 namespace CubbyFlow
 {

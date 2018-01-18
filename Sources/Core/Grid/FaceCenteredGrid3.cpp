@@ -6,8 +6,7 @@
 > Created Time: 2017/08/04
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Grid/FaceCenteredGrid3.h>
-#include "Grid/FaceCenteredGrid2.h"
+#include <Core/Grid/FaceCenteredGrid3.h>
 
 namespace CubbyFlow
 {

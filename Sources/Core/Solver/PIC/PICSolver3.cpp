@@ -6,11 +6,11 @@
 > Created Time: 2017/09/12
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Array/ArrayUtils.h>
-#include <Grid/CellCenteredScalarGrid3.h>
-#include <Solver/PIC/PICSolver3.h>
-#include <Utils/Logger.h>
-#include <Utils/Timer.h>
+#include <Core/Array/ArrayUtils.h>
+#include <Core/Grid/CellCenteredScalarGrid3.h>
+#include <Core/Solver/PIC/PICSolver3.h>
+#include <Core/Utils/Logger.h>
+#include <Core/Utils/Timer.h>
 
 namespace CubbyFlow
 {

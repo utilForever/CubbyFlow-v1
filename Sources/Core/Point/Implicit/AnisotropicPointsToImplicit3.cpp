@@ -6,13 +6,13 @@
 > Created Time: 2017/11/19
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Math/SVD.h>
-#include <Matrix/Matrix3x3.h>
-#include <Point/Implicit/AnisotropicPointsToImplicit3.h>
-#include <Searcher/PointKdTreeSearcher3.h>
-#include <Solver/LevelSet/FMMLevelSetSolver3.h>
-#include <SPH/SPHSystemData3.h>
-#include <Utils/Logger.h>
+#include <Core/Math/SVD.h>
+#include <Core/Matrix/Matrix3x3.h>
+#include <Core/Point/Implicit/AnisotropicPointsToImplicit3.h>
+#include <Core/Searcher/PointKdTreeSearcher3.h>
+#include <Core/Solver/LevelSet/FMMLevelSetSolver3.h>
+#include <Core/SPH/SPHSystemData3.h>
+#include <Core/Utils/Logger.h>
 
 namespace CubbyFlow
 {

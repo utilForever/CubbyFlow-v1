@@ -6,7 +6,7 @@
 > Created Time: 2017/03/14
 > Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
-#include <Field/VectorField3.h>
+#include <Core/Field/VectorField3.h>
 
 namespace CubbyFlow
 {

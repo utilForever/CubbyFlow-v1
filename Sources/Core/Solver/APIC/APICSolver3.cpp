@@ -6,7 +6,7 @@
 > Created Time: 2017/10/06
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Solver/APIC/APICSolver3.h>
+#include <Core/Solver/APIC/APICSolver3.h>
 
 namespace CubbyFlow
 {

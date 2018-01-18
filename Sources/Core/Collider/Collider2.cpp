@@ -6,7 +6,7 @@
 > Created Time: 2017/05/09
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Collider/Collider2.h>
+#include <Core/Collider/Collider2.h>
 
 namespace CubbyFlow
 {

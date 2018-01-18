@@ -6,8 +6,8 @@
 > Created Time: 2017/07/05
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Grid/Grid2.h>
-#include <Utils/Serial.h>
+#include <Core/Grid/Grid2.h>
+#include <Core/Utils/Serial.h>
 
 namespace CubbyFlow
 {

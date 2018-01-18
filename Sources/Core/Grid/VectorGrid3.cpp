@@ -6,8 +6,8 @@
 > Created Time: 2017/07/26
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Grid/VectorGrid3.h>
-#include <Utils/FlatbuffersHelper.h>
+#include <Core/Grid/VectorGrid3.h>
+#include <Core/Utils/FlatbuffersHelper.h>
 
 #include <Flatbuffers/generated/VectorGrid3_generated.h>
 

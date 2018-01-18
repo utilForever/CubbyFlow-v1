@@ -6,13 +6,13 @@
 > Created Time: 2017/09/06
 > Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
-#include <Grid/CellCenteredScalarGrid3.h>
-#include <LevelSet/LevelSetUtils.h>
-#include <Solver/LevelSet/ENOLevelSetSolver3.h>
-#include <Solver/LevelSet/FMMLevelSetSolver3.h>
-#include <Solver/LevelSet/LevelSetLiquidSolver3.h>
-#include <Utils/Logger.h>
-#include <Utils/Timer.h>
+#include <Core/Grid/CellCenteredScalarGrid3.h>
+#include <Core/LevelSet/LevelSetUtils.h>
+#include <Core/Solver/LevelSet/ENOLevelSetSolver3.h>
+#include <Core/Solver/LevelSet/FMMLevelSetSolver3.h>
+#include <Core/Solver/LevelSet/LevelSetLiquidSolver3.h>
+#include <Core/Utils/Logger.h>
+#include <Core/Utils/Timer.h>
 
 namespace CubbyFlow
 {

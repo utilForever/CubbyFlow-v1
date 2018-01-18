@@ -6,9 +6,9 @@
 > Created Time: 2017/08/05
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Grid/GridSystemData3.h>
-#include <Utils/Factory.h>
-#include <Utils/FlatbuffersHelper.h>
+#include <Core/Grid/GridSystemData3.h>
+#include <Core/Utils/Factory.h>
+#include <Core/Utils/FlatbuffersHelper.h>
 
 #include <Flatbuffers/generated/GridSystemData3_generated.h>
 

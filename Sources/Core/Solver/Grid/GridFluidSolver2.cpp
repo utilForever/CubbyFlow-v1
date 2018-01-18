@@ -6,14 +6,14 @@
 > Created Time: 2017/08/10
 > Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
-#include <Array/ArrayUtils.h>
-#include <LevelSet/LevelSetUtils.h>
-#include <SemiLagrangian/CubicSemiLagrangian2.h>
-#include <Solver/Grid/GridBackwardEulerDiffusionSolver2.h>
-#include <Solver/Grid/GridFractionalSinglePhasePressureSolver2.h>
-#include <Solver/Grid/GridFluidSolver2.h>
-#include <Utils/Logger.h>
-#include <Utils/Timer.h>
+#include <Core/Array/ArrayUtils.h>
+#include <Core/LevelSet/LevelSetUtils.h>
+#include <Core/SemiLagrangian/CubicSemiLagrangian2.h>
+#include <Core/Solver/Grid/GridBackwardEulerDiffusionSolver2.h>
+#include <Core/Solver/Grid/GridFractionalSinglePhasePressureSolver2.h>
+#include <Core/Solver/Grid/GridFluidSolver2.h>
+#include <Core/Utils/Logger.h>
+#include <Core/Utils/Timer.h>
 
 namespace CubbyFlow
 {

@@ -6,9 +6,9 @@
 > Created Time: 2017/07/07
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Grid/ScalarGrid3.h>
-#include <FDM/FDMUtils.h>
-#include <Utils/FlatbuffersHelper.h>
+#include <Core/Grid/ScalarGrid3.h>
+#include <Core/FDM/FDMUtils.h>
+#include <Core/Utils/FlatbuffersHelper.h>
 
 #include <Flatbuffers/generated/ScalarGrid3_generated.h>
 

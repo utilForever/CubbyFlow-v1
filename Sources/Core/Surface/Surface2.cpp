@@ -6,7 +6,7 @@
 > Created Time: 2017/04/08
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Surface/Surface2.h>
+#include <Core/Surface/Surface2.h>
 
 namespace CubbyFlow
 {

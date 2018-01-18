@@ -6,7 +6,7 @@
 > Created Time: 2017/06/02
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <PointGenerator/PointGenerator3.h>
+#include <Core/PointGenerator/PointGenerator3.h>
 
 namespace CubbyFlow
 {

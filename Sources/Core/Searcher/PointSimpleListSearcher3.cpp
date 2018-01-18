@@ -6,8 +6,8 @@
 > Created Time: 2017/05/26
 > Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
-#include <Searcher/PointSimpleListSearcher3.h>
-#include <Utils/FlatbuffersHelper.h>
+#include <Core/Searcher/PointSimpleListSearcher3.h>
+#include <Core/Utils/FlatbuffersHelper.h>
 
 #include <Flatbuffers/generated/PointSimpleListSearcher3_generated.h>
 

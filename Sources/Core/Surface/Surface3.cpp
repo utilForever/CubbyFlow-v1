@@ -6,7 +6,7 @@
 > Created Time: 2017/04/09
 > Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
-#include <Surface/Surface3.h>
+#include <Core/Surface/Surface3.h>
 
 namespace CubbyFlow
 {

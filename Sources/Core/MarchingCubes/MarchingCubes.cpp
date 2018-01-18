@@ -20,10 +20,10 @@
 //
 // This code is public domain.
 
-#include <LevelSet/LevelSetUtils.h>
-#include <MarchingCubes/MarchingCubes.h>
-#include <MarchingCubes/MarchingCubesTable.h>
-#include <MarchingCubes/MarchingSquaresTable.h>
+#include <Core/LevelSet/LevelSetUtils.h>
+#include <Core/MarchingCubes/MarchingCubes.h>
+#include <Core/MarchingCubes/MarchingCubesTable.h>
+#include <Core/MarchingCubes/MarchingSquaresTable.h>
 
 #include <unordered_map>
 

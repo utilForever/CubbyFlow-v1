@@ -6,8 +6,8 @@
 > Created Time: 2017/09/08
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <LevelSet/LevelSetUtils.h>
-#include <Surface/Implicit/CustomImplicitSurface2.h>
+#include <Core/LevelSet/LevelSetUtils.h>
+#include <Core/Surface/Implicit/CustomImplicitSurface2.h>
 
 namespace CubbyFlow
 {

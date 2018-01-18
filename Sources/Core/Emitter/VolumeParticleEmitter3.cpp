@@ -6,11 +6,11 @@
 > Created Time: 2017/06/21
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Emitter/VolumeParticleEmitter3.h>
-#include <PointGenerator/BccLatticePointGenerator.h>
-#include <Searcher/PointHashGridSearcher3.h>
-#include <Surface/Implicit/SurfaceToImplicit3.h>
-#include <Utils/Samplers.h>
+#include <Core/Emitter/VolumeParticleEmitter3.h>
+#include <Core/PointGenerator/BccLatticePointGenerator.h>
+#include <Core/Searcher/PointHashGridSearcher3.h>
+#include <Core/Surface/Implicit/SurfaceToImplicit3.h>
+#include <Core/Utils/Samplers.h>
 
 namespace CubbyFlow
 {

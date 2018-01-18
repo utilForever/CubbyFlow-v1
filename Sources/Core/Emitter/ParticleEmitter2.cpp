@@ -6,8 +6,8 @@
 > Created Time: 2017/05/19
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Emitter/ParticleEmitter2.h>
-#include <Utils/Macros.h>
+#include <Core/Emitter/ParticleEmitter2.h>
+#include <Core/Utils/Macros.h>
 
 namespace CubbyFlow
 {

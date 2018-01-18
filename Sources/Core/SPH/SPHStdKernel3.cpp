@@ -12,8 +12,8 @@
 // "Meshless Approximation Methods and Applications in Physics Based Modeling
 // and Animation", Eurographics 2009 Tutorial
 
-#include <SPH/SPHStdKernel3.h>
-#include <Utils/Constants.h>
+#include <Core/SPH/SPHStdKernel3.h>
+#include <Core/Utils/Constants.h>
 
 namespace CubbyFlow
 {

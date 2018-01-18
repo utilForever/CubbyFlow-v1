@@ -6,10 +6,10 @@
 > Created Time: 2017/11/18
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Particle/ParticleSystemData3.h>
-#include <Point/Implicit/ZhuBridsonPointsToImplicit3.h>
-#include <Solver/LevelSet/FMMLevelSetSolver3.h>
-#include <Utils/Logger.h>
+#include <Core/Particle/ParticleSystemData3.h>
+#include <Core/Point/Implicit/ZhuBridsonPointsToImplicit3.h>
+#include <Core/Solver/LevelSet/FMMLevelSetSolver3.h>
+#include <Core/Utils/Logger.h>
 
 namespace CubbyFlow
 {

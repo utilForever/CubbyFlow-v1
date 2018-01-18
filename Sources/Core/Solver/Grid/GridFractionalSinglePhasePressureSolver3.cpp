@@ -14,10 +14,10 @@
 // https://github.com/christopherbatty/FluidRigidCoupling2D
 //
 
-#include <LevelSet/LevelSetUtils.h>
-#include <Solver/FDM/FDMICCGSolver3.h>
-#include <Solver/Grid/GridFractionalBoundaryConditionSolver3.h>
-#include <Solver/Grid/GridFractionalSinglePhasePressureSolver3.h>
+#include <Core/LevelSet/LevelSetUtils.h>
+#include <Core/Solver/FDM/FDMICCGSolver3.h>
+#include <Core/Solver/Grid/GridFractionalBoundaryConditionSolver3.h>
+#include <Core/Solver/Grid/GridFractionalSinglePhasePressureSolver3.h>
 
 namespace CubbyFlow
 {

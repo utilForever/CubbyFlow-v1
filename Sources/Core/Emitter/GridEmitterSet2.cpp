@@ -6,7 +6,7 @@
 > Created Time: 2017/08/06
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Emitter/GridEmitterSet2.h>
+#include <Core/Emitter/GridEmitterSet2.h>
 
 namespace CubbyFlow
 {

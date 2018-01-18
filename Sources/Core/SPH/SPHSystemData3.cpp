@@ -6,10 +6,10 @@
 > Created Time: 2017/06/03
 > Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
-#include <BoundingBox/BoundingBox3.h>
-#include <PointGenerator/BccLatticePointGenerator.h>
-#include <SPH/SPHStdKernel3.h>
-#include <SPH/SPHSystemData3.h>
+#include <Core/BoundingBox/BoundingBox3.h>
+#include <Core/PointGenerator/BccLatticePointGenerator.h>
+#include <Core/SPH/SPHStdKernel3.h>
+#include <Core/SPH/SPHSystemData3.h>
 
 #include <Flatbuffers/generated/SPHSystemData3_generated.h>
 

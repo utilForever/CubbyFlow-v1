@@ -6,8 +6,8 @@
 > Created Time: 2017/05/09
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Collider/ColliderSet2.h>
-#include <Surface/SurfaceSet2.h>
+#include <Core/Collider/ColliderSet2.h>
+#include <Core/Surface/SurfaceSet2.h>
 
 namespace CubbyFlow
 {

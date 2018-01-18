@@ -6,7 +6,7 @@
 > Created Time: 2017/08/01
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Grid/CellCenteredScalarGrid2.h>
+#include <Core/Grid/CellCenteredScalarGrid2.h>
 
 namespace CubbyFlow
 {

@@ -6,11 +6,11 @@
 > Created Time: 2017/06/03
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Solver/SPH/SPHSolver2.h>
-#include <SPH/SPHStdKernel2.h>
-#include <Utils/Logger.h>
-#include <Utils/PhysicsHelpers.h>
-#include <Utils/Timer.h>
+#include <Core/Solver/SPH/SPHSolver2.h>
+#include <Core/SPH/SPHStdKernel2.h>
+#include <Core/Utils/Logger.h>
+#include <Core/Utils/PhysicsHelpers.h>
+#include <Core/Utils/Timer.h>
 
 namespace CubbyFlow
 {

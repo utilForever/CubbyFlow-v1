@@ -6,11 +6,11 @@
 > Created Time: 2017/06/21
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Emitter/VolumeParticleEmitter2.h>
-#include <Matrix/Matrix2x2.h>
-#include <PointGenerator/TrianglePointGenerator.h>
-#include <Searcher/PointHashGridSearcher2.h>
-#include <Surface/Implicit/SurfaceToImplicit2.h>
+#include <Core/Emitter/VolumeParticleEmitter2.h>
+#include <Core/Matrix/Matrix2x2.h>
+#include <Core/PointGenerator/TrianglePointGenerator.h>
+#include <Core/Searcher/PointHashGridSearcher2.h>
+#include <Core/Surface/Implicit/SurfaceToImplicit2.h>
 
 namespace CubbyFlow
 {

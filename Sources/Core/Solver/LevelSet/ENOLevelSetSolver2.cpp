@@ -6,8 +6,8 @@
 > Created Time: 2017/08/31
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Math/PDE.h>
-#include <Solver/LevelSet/ENOLevelSetSolver2.h>
+#include <Core/Math/PDE.h>
+#include <Core/Solver/LevelSet/ENOLevelSetSolver2.h>
 
 namespace CubbyFlow
 {

@@ -6,7 +6,7 @@
 > Created Time: 2017/10/13
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Utils/Parallel.h>
+#include <Core/Utils/Parallel.h>
 
 #include <thread>
 

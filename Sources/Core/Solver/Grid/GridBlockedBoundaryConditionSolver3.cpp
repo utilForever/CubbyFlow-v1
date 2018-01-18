@@ -6,8 +6,8 @@
 > Created Time: 2017/08/10
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <LevelSet/LevelSetUtils.h>
-#include <Solver/Grid/GridBlockedBoundaryConditionSolver3.h>
+#include <Core/LevelSet/LevelSetUtils.h>
+#include <Core/Solver/Grid/GridBlockedBoundaryConditionSolver3.h>
 
 namespace CubbyFlow
 {

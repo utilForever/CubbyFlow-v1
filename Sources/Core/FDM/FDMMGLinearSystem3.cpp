@@ -6,7 +6,7 @@
 > Created Time: 2017/11/03
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <FDM/FDMMGLinearSystem3.h>
+#include <Core/FDM/FDMMGLinearSystem3.h>
 
 namespace CubbyFlow
 {

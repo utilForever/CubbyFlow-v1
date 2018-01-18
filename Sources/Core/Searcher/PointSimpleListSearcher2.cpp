@@ -6,8 +6,8 @@
 > Created Time: 2017/05/26
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Searcher/PointSimpleListSearcher2.h>
-#include <Utils/FlatbuffersHelper.h>
+#include <Core/Searcher/PointSimpleListSearcher2.h>
+#include <Core/Utils/FlatbuffersHelper.h>
 
 #include <Flatbuffers/generated/PointSimpleListSearcher2_generated.h>
 

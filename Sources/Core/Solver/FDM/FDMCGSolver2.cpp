@@ -6,8 +6,8 @@
 > Created Time: 2017/08/16
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Math/CG.h>
-#include <Solver/FDM/FDMCGSolver2.h>
+#include <Core/Math/CG.h>
+#include <Core/Solver/FDM/FDMCGSolver2.h>
 
 namespace CubbyFlow
 {
@@ -95,19 +95,19 @@ namespace CubbyFlow
 		return m_lastResidual;
 	}
 
-    void FDMCGSolver2::ClearUncompressedVectors()
-    {
-        m_r.Clear();
-        m_d.Clear();
-        m_q.Clear();
-        m_s.Clear();
-    }
+	void FDMCGSolver2::ClearUncompressedVectors()
+	{
+		m_r.Clear();
+		m_d.Clear();
+		m_q.Clear();
+		m_s.Clear();
+	}
 
-    void FDMCGSolver2::ClearCompressedVectors()
-    {
-        m_rComp.Clear();
-        m_dComp.Clear();
-        m_qComp.Clear();
-        m_sComp.Clear();
-    }
+	void FDMCGSolver2::ClearCompressedVectors()
+	{
+		m_rComp.Clear();
+		m_dComp.Clear();
+		m_qComp.Clear();
+		m_sComp.Clear();
+	}
 }

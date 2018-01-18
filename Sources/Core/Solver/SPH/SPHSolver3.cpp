@@ -6,11 +6,11 @@
 > Created Time: 2017/06/10
 > Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
-#include <Solver/SPH/SPHSolver3.h>
-#include <SPH/SPHStdKernel3.h>
-#include <Utils/Logger.h>
-#include <Utils/PhysicsHelpers.h>
-#include <Utils/Timer.h>
+#include <Core/Solver/SPH/SPHSolver3.h>
+#include <Core/SPH/SPHStdKernel3.h>
+#include <Core/Utils/Logger.h>
+#include <Core/Utils/PhysicsHelpers.h>
+#include <Core/Utils/Timer.h>
 
 namespace CubbyFlow
 {

@@ -6,9 +6,9 @@
 > Created Time: 2017/11/03
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Solver/FDM/FDMGaussSeidelSolver3.h>
-#include <Solver/FDM/FDMMGSolver3.h>
-#include <Utils/MG.h>
+#include <Core/Solver/FDM/FDMGaussSeidelSolver3.h>
+#include <Core/Solver/FDM/FDMMGSolver3.h>
+#include <Core/Utils/MG.h>
 
 namespace CubbyFlow
 {

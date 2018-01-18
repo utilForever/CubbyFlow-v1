@@ -6,10 +6,10 @@
 > Created Time: 2017/11/17
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Point/Implicit/SPHPointsToImplicit2.h>
-#include <Solver/LevelSet/FMMLevelSetSolver2.h>
-#include <SPH/SPHSystemData2.h>
-#include <Utils/Logger.h>
+#include <Core/Point/Implicit/SPHPointsToImplicit2.h>
+#include <Core/Solver/LevelSet/FMMLevelSetSolver2.h>
+#include <Core/SPH/SPHSystemData2.h>
+#include <Core/Utils/Logger.h>
 
 namespace CubbyFlow
 {

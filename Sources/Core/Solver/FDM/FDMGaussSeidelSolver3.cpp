@@ -6,7 +6,7 @@
 > Created Time: 2017/08/17
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Solver/FDM/FDMGaussSeidelSolver3.h>
+#include <Core/Solver/FDM/FDMGaussSeidelSolver3.h>
 
 namespace CubbyFlow
 {
@@ -241,13 +241,13 @@ namespace CubbyFlow
 		});
 	}
 
-    void FDMGaussSeidelSolver3::ClearUncompressedVectors()
-    {
-        m_residual.Clear();
-    }
+	void FDMGaussSeidelSolver3::ClearUncompressedVectors()
+	{
+		m_residual.Clear();
+	}
 
-    void FDMGaussSeidelSolver3::ClearCompressedVectors()
-    {
-        m_residualComp.Clear();
-    }
+	void FDMGaussSeidelSolver3::ClearCompressedVectors()
+	{
+		m_residualComp.Clear();
+	}
 }

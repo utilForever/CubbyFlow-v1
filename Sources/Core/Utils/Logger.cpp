@@ -6,8 +6,8 @@
 > Created Time: 2017/04/23
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Utils/Logger.h>
-#include <Utils/Macros.h>
+#include <Core/Utils/Logger.h>
+#include <Core/Utils/Macros.h>
 
 #include <iostream>
 #include <mutex>

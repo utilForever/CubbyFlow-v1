@@ -6,7 +6,7 @@
 > Created Time: 2017/08/29
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Solver/LevelSet/LevelSetSolver2.h>
+#include <Core/Solver/LevelSet/LevelSetSolver2.h>
 
 namespace CubbyFlow
 {

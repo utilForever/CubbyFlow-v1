@@ -6,7 +6,7 @@
 > Created Time: 2017/08/07
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <PointGenerator/GridPointGenerator2.h>
+#include <Core/PointGenerator/GridPointGenerator2.h>
 
 namespace CubbyFlow
 {

@@ -6,7 +6,7 @@
 > Created Time: 2017/08/17
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Solver/FDM/FDMJacobiSolver2.h>
+#include <Core/Solver/FDM/FDMJacobiSolver2.h>
 
 namespace CubbyFlow
 {
@@ -25,7 +25,7 @@ namespace CubbyFlow
 
 	bool FDMJacobiSolver2::Solve(FDMLinearSystem2* system)
 	{
-        ClearCompressedVectors();
+		ClearCompressedVectors();
 
 		m_xTemp.Resize(system->x.size());
 		m_residual.Resize(system->x.size());

@@ -6,9 +6,9 @@
 > Created Time: 2017/04/15
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Geometry/TriangleMesh3.h>
-#include <Math/MathUtils.h>
-#include <Utils/Parallel.h>
+#include <Core/Geometry/TriangleMesh3.h>
+#include <Core/Math/MathUtils.h>
+#include <Core/Utils/Parallel.h>
 
 #include <obj/obj_parser.hpp>
 

@@ -6,8 +6,8 @@
 > Created Time: 2017/04/01
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Field/ConstantScalarField3.h>
-#include <Utils/Macros.h>
+#include <Core/Field/ConstantScalarField3.h>
+#include <Core/Utils/Macros.h>
 
 namespace CubbyFlow
 {

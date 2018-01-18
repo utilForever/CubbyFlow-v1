@@ -6,15 +6,15 @@
 > Created Time: 2017/05/09
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Particle/ParticleSystemData3.h>
-#include <Searcher/PointNeighborSearcher3.h>
-#include <Searcher/PointParallelHashGridSearcher3.h>
-#include <Utils/Factory.h>
-#include <Utils/FlatbuffersHelper.h>
-#include <Utils/Logger.h>
-#include <Utils/Parallel.h>
-#include <Utils/Timer.h>
-#include <Vector/Vector3.h>
+#include <Core/Particle/ParticleSystemData3.h>
+#include <Core/Searcher/PointNeighborSearcher3.h>
+#include <Core/Searcher/PointParallelHashGridSearcher3.h>
+#include <Core/Utils/Factory.h>
+#include <Core/Utils/FlatbuffersHelper.h>
+#include <Core/Utils/Logger.h>
+#include <Core/Utils/Parallel.h>
+#include <Core/Utils/Timer.h>
+#include <Core/Vector/Vector3.h>
 
 #include <Flatbuffers/generated/ParticleSystemData3_generated.h>
 

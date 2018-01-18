@@ -6,10 +6,10 @@
 > Created Time: 2017/05/07
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Searcher/PointParallelHashGridSearcher3.h>
-#include <Utils/FlatbuffersHelper.h>
-#include <Utils/Logger.h>
-#include <Utils/Parallel.h>
+#include <Core/Searcher/PointParallelHashGridSearcher3.h>
+#include <Core/Utils/FlatbuffersHelper.h>
+#include <Core/Utils/Logger.h>
+#include <Core/Utils/Parallel.h>
 
 #include <Flatbuffers/generated/PointParallelHashGridSearcher3_generated.h>
 

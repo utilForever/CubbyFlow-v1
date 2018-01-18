@@ -6,12 +6,12 @@
 > Created Time: 2017/08/09
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Array/ArrayUtils.h>
-#include <LevelSet/LevelSetUtils.h>
-#include <Solver/Grid/GridFractionalBoundaryConditionSolver3.h>
-#include <Surface/Implicit/ImplicitSurface3.h>
-#include <Surface/Implicit/SurfaceToImplicit3.h>
-#include <Utils/PhysicsHelpers.h>
+#include <Core/Array/ArrayUtils.h>
+#include <Core/LevelSet/LevelSetUtils.h>
+#include <Core/Solver/Grid/GridFractionalBoundaryConditionSolver3.h>
+#include <Core/Surface/Implicit/ImplicitSurface3.h>
+#include <Core/Surface/Implicit/SurfaceToImplicit3.h>
+#include <Core/Utils/PhysicsHelpers.h>
 
 namespace CubbyFlow
 {

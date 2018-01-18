@@ -6,8 +6,8 @@
 > Created Time: 2017/04/11
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Geometry/Sphere2.h>
-#include <Math/MathUtils.h>
+#include <Core/Geometry/Sphere2.h>
+#include <Core/Math/MathUtils.h>
 
 namespace CubbyFlow
 {

@@ -6,7 +6,7 @@
 > Created Time: 2017/08/10
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Solver/Grid/GridPressureSolver2.h>
+#include <Core/Solver/Grid/GridPressureSolver2.h>
 
 namespace CubbyFlow
 {

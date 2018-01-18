@@ -6,25 +6,25 @@
 > Created Time: 2017/05/01
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Grid/CellCenteredScalarGrid2.h>
-#include <Grid/CellCenteredScalarGrid3.h>
-#include <Grid/CellCenteredVectorGrid2.h>
-#include <Grid/CellCenteredVectorGrid3.h>
-#include <Grid/FaceCenteredGrid2.h>
-#include <Grid/FaceCenteredGrid3.h>
-#include <Grid/VertexCenteredScalarGrid2.h>
-#include <Grid/VertexCenteredScalarGrid3.h>
-#include <Grid/VertexCenteredVectorGrid2.h>
-#include <Grid/VertexCenteredVectorGrid3.h>
-#include <Searcher/PointHashGridSearcher2.h>
-#include <Searcher/PointHashGridSearcher3.h>
-#include <Searcher/PointKdTreeSearcher2.h>
-#include <Searcher/PointKdTreeSearcher3.h>
-#include <Searcher/PointParallelHashGridSearcher2.h>
-#include <Searcher/PointParallelHashGridSearcher3.h>
-#include <Searcher/PointSimpleListSearcher2.h>
-#include <Searcher/PointSimpleListSearcher3.h>
-#include <Utils/Factory.h>
+#include <Core/Grid/CellCenteredScalarGrid2.h>
+#include <Core/Grid/CellCenteredScalarGrid3.h>
+#include <Core/Grid/CellCenteredVectorGrid2.h>
+#include <Core/Grid/CellCenteredVectorGrid3.h>
+#include <Core/Grid/FaceCenteredGrid2.h>
+#include <Core/Grid/FaceCenteredGrid3.h>
+#include <Core/Grid/VertexCenteredScalarGrid2.h>
+#include <Core/Grid/VertexCenteredScalarGrid3.h>
+#include <Core/Grid/VertexCenteredVectorGrid2.h>
+#include <Core/Grid/VertexCenteredVectorGrid3.h>
+#include <Core/Searcher/PointHashGridSearcher2.h>
+#include <Core/Searcher/PointHashGridSearcher3.h>
+#include <Core/Searcher/PointKdTreeSearcher2.h>
+#include <Core/Searcher/PointKdTreeSearcher3.h>
+#include <Core/Searcher/PointParallelHashGridSearcher2.h>
+#include <Core/Searcher/PointParallelHashGridSearcher3.h>
+#include <Core/Searcher/PointSimpleListSearcher2.h>
+#include <Core/Searcher/PointSimpleListSearcher3.h>
+#include <Core/Utils/Factory.h>
 
 #include <memory>
 #include <unordered_map>
@@ -44,19 +44,19 @@ namespace CubbyFlow
 	map.emplace(#ClassName, std::make_shared<ClassName::Builder>());
 
 #define REGISTER_SCALAR_GRID2_BUILDER(ClassName) \
-    REGISTER_BUILDER(sScalarGrid2Builders, ClassName)
+	REGISTER_BUILDER(sScalarGrid2Builders, ClassName)
 #define REGISTER_SCALAR_GRID3_BUILDER(ClassName) \
-    REGISTER_BUILDER(sScalarGrid3Builders, ClassName)
+	REGISTER_BUILDER(sScalarGrid3Builders, ClassName)
 
 #define REGISTER_VECTOR_GRID2_BUILDER(ClassName) \
-    REGISTER_BUILDER(sVectorGrid2Builders, ClassName)
+	REGISTER_BUILDER(sVectorGrid2Builders, ClassName)
 #define REGISTER_VECTOR_GRID3_BUILDER(ClassName) \
-    REGISTER_BUILDER(sVectorGrid3Builders, ClassName)
+	REGISTER_BUILDER(sVectorGrid3Builders, ClassName)
 
 #define REGISTER_POINT_NEIGHBOR_SEARCHER2_BUILDER(ClassName) \
-    REGISTER_BUILDER(sPointNeighborSearcher2Builders, ClassName)
+	REGISTER_BUILDER(sPointNeighborSearcher2Builders, ClassName)
 #define REGISTER_POINT_NEIGHBOR_SEARCHER3_BUILDER(ClassName) \
-    REGISTER_BUILDER(sPointNeighborSearcher3Builders, ClassName)
+	REGISTER_BUILDER(sPointNeighborSearcher3Builders, ClassName)
 
 	class Registry
 	{
@@ -92,7 +92,7 @@ namespace CubbyFlow
 		}
 	};
 
-    static Registry sRegistry;
+	static Registry sRegistry;
 
 	ScalarGrid2Ptr Factory::BuildScalarGrid2(const std::string& name)
 	{

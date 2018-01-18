@@ -6,8 +6,8 @@
 > Created Time: 2017/09/23
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Geometry/ImplicitTriangleMesh3.h>
-#include <Geometry/TriangleMeshToSDF.h>
+#include <Core/Geometry/ImplicitTriangleMesh3.h>
+#include <Core/Geometry/TriangleMeshToSDF.h>
 
 namespace CubbyFlow
 {

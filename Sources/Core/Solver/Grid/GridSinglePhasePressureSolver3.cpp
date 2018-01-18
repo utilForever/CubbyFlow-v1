@@ -6,10 +6,10 @@
 > Created Time: 2017/08/14
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <LevelSet/LevelSetUtils.h>
-#include <Solver/FDM/FDMICCGSolver3.h>
-#include <Solver/Grid/GridBlockedBoundaryConditionSolver3.h>
-#include <Solver/Grid/GridSinglePhasePressureSolver3.h>
+#include <Core/LevelSet/LevelSetUtils.h>
+#include <Core/Solver/FDM/FDMICCGSolver3.h>
+#include <Core/Solver/Grid/GridBlockedBoundaryConditionSolver3.h>
+#include <Core/Solver/Grid/GridSinglePhasePressureSolver3.h>
 
 namespace CubbyFlow
 {

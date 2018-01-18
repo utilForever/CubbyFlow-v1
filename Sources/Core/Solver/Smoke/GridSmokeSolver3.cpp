@@ -6,8 +6,8 @@
 > Created Time: 2017/08/18
 > Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
-#include <Grid/CellCenteredScalarGrid3.h>
-#include <Solver/Smoke/GridSmokeSolver3.h>
+#include <Core/Grid/CellCenteredScalarGrid3.h>
+#include <Core/Solver/Smoke/GridSmokeSolver3.h>
 
 namespace CubbyFlow
 {

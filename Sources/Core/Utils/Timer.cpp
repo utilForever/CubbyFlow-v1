@@ -6,7 +6,7 @@
 > Created Time: 2017/04/22
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Utils/Timer.h>
+#include <Core/Utils/Timer.h>
 
 namespace CubbyFlow
 {

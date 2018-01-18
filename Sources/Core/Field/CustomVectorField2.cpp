@@ -6,7 +6,7 @@
 > Created Time: 2017/03/24
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Field/CustomVectorField2.h>
+#include <Core/Field/CustomVectorField2.h>
 
 namespace CubbyFlow
 {

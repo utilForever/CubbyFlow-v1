@@ -6,7 +6,7 @@
 > Created Time: 2017/05/27
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Utils/Serialization.h>
+#include <Core/Utils/Serialization.h>
 
 #include <Flatbuffers/generated/FlatData_generated.h>
 

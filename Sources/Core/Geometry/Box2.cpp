@@ -6,8 +6,8 @@
 > Created Time: 2017/06/23
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Geometry/Box2.h>
-#include <Geometry/Plane2.h>
+#include <Core/Geometry/Box2.h>
+#include <Core/Geometry/Plane2.h>
 
 namespace CubbyFlow
 {

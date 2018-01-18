@@ -6,10 +6,10 @@
 > Created Time: 2017/08/31
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Array/ArrayUtils.h>
-#include <FDM/FDMUtils.h>
-#include <Solver/LevelSet/IterativeLevelSetSolver2.h>
-#include <Utils/Logger.h>
+#include <Core/Array/ArrayUtils.h>
+#include <Core/FDM/FDMUtils.h>
+#include <Core/Solver/LevelSet/IterativeLevelSetSolver2.h>
+#include <Core/Utils/Logger.h>
 
 namespace CubbyFlow
 {

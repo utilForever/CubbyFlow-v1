@@ -6,7 +6,7 @@
 > Created Time: 2017/03/23
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Field/CustomScalarField3.h>
+#include <Core/Field/CustomScalarField3.h>
 
 namespace CubbyFlow
 {

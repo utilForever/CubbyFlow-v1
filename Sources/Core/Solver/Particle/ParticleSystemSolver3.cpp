@@ -6,12 +6,12 @@
 > Created Time: 2017/05/22
 > Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
-#include <Array/ArrayUtils.h>
-#include <Field/ConstantVectorField3.h>
-#include <Solver/Particle/ParticleSystemSolver3.h>
-#include <Utils/Logger.h>
-#include <Utils/Parallel.h>
-#include <Utils/Timer.h>
+#include <Core/Array/ArrayUtils.h>
+#include <Core/Field/ConstantVectorField3.h>
+#include <Core/Solver/Particle/ParticleSystemSolver3.h>
+#include <Core/Utils/Logger.h>
+#include <Core/Utils/Parallel.h>
+#include <Core/Utils/Timer.h>
 
 #include <algorithm>
 

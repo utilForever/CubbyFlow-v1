@@ -6,8 +6,8 @@
 > Created Time: 2017/05/23
 > Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
-#include <Searcher/PointHashGridSearcher2.h>
-#include <Utils/FlatbuffersHelper.h>
+#include <Core/Searcher/PointHashGridSearcher2.h>
+#include <Core/Utils/FlatbuffersHelper.h>
 
 #include <Flatbuffers/generated/PointHashGridSearcher2_generated.h>
 

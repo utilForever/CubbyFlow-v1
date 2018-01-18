@@ -6,10 +6,10 @@
 > Created Time: 2017/12/05
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Searcher/PointKdTreeSearcher2.h>
-#include <Utils/FlatbuffersHelper.h>
-#include <Utils/Logger.h>
-#include <Utils/Parallel.h>
+#include <Core/Searcher/PointKdTreeSearcher2.h>
+#include <Core/Utils/FlatbuffersHelper.h>
+#include <Core/Utils/Logger.h>
+#include <Core/Utils/Parallel.h>
 
 #include <Flatbuffers/generated/PointKdTreeSearcher2_generated.h>
 

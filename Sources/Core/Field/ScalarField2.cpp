@@ -6,7 +6,7 @@
 > Created Time: 2017/03/16
 > Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
-#include <Field/ScalarField2.h>
+#include <Core/Field/ScalarField2.h>
 
 namespace CubbyFlow
 {

@@ -6,7 +6,7 @@
 > Created Time: 2017/08/08
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <SemiLagrangian/CubicSemiLagrangian2.h>
+#include <Core/SemiLagrangian/CubicSemiLagrangian2.h>
 
 namespace CubbyFlow
 {

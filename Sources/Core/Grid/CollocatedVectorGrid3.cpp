@@ -6,7 +6,7 @@
 > Created Time: 2017/08/02
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Grid/CollocatedVectorGrid3.h>
+#include <Core/Grid/CollocatedVectorGrid3.h>
 
 namespace CubbyFlow
 {

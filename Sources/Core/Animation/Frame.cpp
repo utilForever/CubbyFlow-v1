@@ -6,8 +6,8 @@
 > Created Time: 2017/04/19
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Animation/Frame.h>
-#include <Utils/Macros.h>
+#include <Core/Animation/Frame.h>
+#include <Core/Utils/Macros.h>
 
 namespace CubbyFlow
 {

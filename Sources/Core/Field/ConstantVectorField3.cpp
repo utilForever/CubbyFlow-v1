@@ -6,8 +6,8 @@
 > Created Time: 2017/04/01
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Field/ConstantVectorField3.h>
-#include <Utils/Macros.h>
+#include <Core/Field/ConstantVectorField3.h>
+#include <Core/Utils/Macros.h>
 
 namespace CubbyFlow
 {

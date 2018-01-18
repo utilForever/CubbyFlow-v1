@@ -6,7 +6,7 @@
 > Created Time: 2017/06/05
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <PointGenerator/BccLatticePointGenerator.h>
+#include <Core/PointGenerator/BccLatticePointGenerator.h>
 
 namespace CubbyFlow
 {

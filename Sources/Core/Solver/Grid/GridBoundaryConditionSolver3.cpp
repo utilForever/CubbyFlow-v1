@@ -6,7 +6,7 @@
 > Created Time: 2017/08/09
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Solver/Grid/GridBoundaryConditionSolver3.h>
+#include <Core/Solver/Grid/GridBoundaryConditionSolver3.h>
 
 namespace CubbyFlow
 {

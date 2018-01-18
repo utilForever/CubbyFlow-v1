@@ -7,9 +7,9 @@
 > Created Time: 2017/11/05
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Math/CG.h>
-#include <Solver/FDM/FDMMGPCGSolver2.h>
-#include <Utils/Logger.h>
+#include <Core/Math/CG.h>
+#include <Core/Solver/FDM/FDMMGPCGSolver2.h>
+#include <Core/Utils/Logger.h>
 
 namespace CubbyFlow
 {

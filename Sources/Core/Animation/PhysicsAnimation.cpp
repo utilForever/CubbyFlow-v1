@@ -6,10 +6,10 @@
 > Created Time: 2017/04/23
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Animation/PhysicsAnimation.h>
-#include <Utils/Logger.h>
-#include <Utils/Macros.h>
-#include <Utils/Timer.h>
+#include <Core/Animation/PhysicsAnimation.h>
+#include <Core/Utils/Logger.h>
+#include <Core/Utils/Macros.h>
+#include <Core/Utils/Timer.h>
 
 namespace CubbyFlow
 {

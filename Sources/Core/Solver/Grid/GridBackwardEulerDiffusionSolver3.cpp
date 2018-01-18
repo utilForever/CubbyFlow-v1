@@ -6,9 +6,9 @@
 > Created Time: 2017/08/13
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <LevelSet/LevelSetUtils.h>
-#include <Solver/FDM/FDMICCGSolver3.h>
-#include <Solver/Grid/GridBackwardEulerDiffusionSolver3.h>
+#include <Core/LevelSet/LevelSetUtils.h>
+#include <Core/Solver/FDM/FDMICCGSolver3.h>
+#include <Core/Solver/Grid/GridBackwardEulerDiffusionSolver3.h>
 
 namespace CubbyFlow
 {

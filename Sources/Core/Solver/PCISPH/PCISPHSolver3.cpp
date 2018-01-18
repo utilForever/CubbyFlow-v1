@@ -6,10 +6,10 @@
 > Created Time: 2017/06/10
 > Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
-#include <PointGenerator/BccLatticePointGenerator.h>
-#include <Solver/PCISPH/PCISPHSolver3.h>
-#include <SPH/SPHStdKernel3.h>
-#include <Utils/Logger.h>
+#include <Core/PointGenerator/BccLatticePointGenerator.h>
+#include <Core/Solver/PCISPH/PCISPHSolver3.h>
+#include <Core/SPH/SPHStdKernel3.h>
+#include <Core/Utils/Logger.h>
 
 namespace CubbyFlow
 {

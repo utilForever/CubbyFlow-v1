@@ -6,7 +6,7 @@
 > Created Time: 2017/07/06
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <FDM/FDMUtils.h>
+#include <Core/FDM/FDMUtils.h>
 
 namespace CubbyFlow
 {

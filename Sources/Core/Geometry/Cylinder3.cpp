@@ -6,9 +6,9 @@
 > Created Time: 2017/06/24
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Geometry/Box2.h>
-#include <Geometry/Cylinder3.h>
-#include <Geometry/Plane3.h>
+#include <Core/Geometry/Box2.h>
+#include <Core/Geometry/Cylinder3.h>
+#include <Core/Geometry/Plane3.h>
 
 namespace CubbyFlow
 {
@@ -239,7 +239,7 @@ namespace CubbyFlow
 			
 			if (r.LengthSquared() > Square(radius))
 			{
-                // Do nothing
+				// Do nothing
 			}
 			else if (lowerIntersection.distance < intersection.distance)
 			{

@@ -6,12 +6,12 @@
 > Created Time: 2017/08/06
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Emitter/VolumeGridEmitter2.h>
-#include <Grid/CollocatedVectorGrid2.h>
-#include <Grid/FaceCenteredGrid2.h>
-#include <LevelSet/LevelSetUtils.h>
-#include <Surface/Implicit/SurfaceToImplicit2.h>
-#include <Utils/Macros.h>
+#include <Core/Emitter/VolumeGridEmitter2.h>
+#include <Core/Grid/CollocatedVectorGrid2.h>
+#include <Core/Grid/FaceCenteredGrid2.h>
+#include <Core/LevelSet/LevelSetUtils.h>
+#include <Core/Surface/Implicit/SurfaceToImplicit2.h>
+#include <Core/Utils/Macros.h>
 
 namespace CubbyFlow
 {

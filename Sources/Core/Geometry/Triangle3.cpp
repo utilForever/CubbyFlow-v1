@@ -6,7 +6,7 @@
 > Created Time: 2017/04/14
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Geometry/Triangle3.h>
+#include <Core/Geometry/Triangle3.h>
 
 namespace CubbyFlow
 {
