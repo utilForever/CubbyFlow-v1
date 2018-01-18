@@ -9,8 +9,8 @@
 #ifndef CUBBYFLOW_PHYSICS_HELPERS_H
 #define CUBBYFLOW_PHYSICS_HELPERS_H
 
-#include <Vector/Vector2.h>
-#include <Vector/Vector3.h>
+#include <Core/Vector/Vector2.h>
+#include <Core/Vector/Vector3.h>
 
 namespace CubbyFlow
 {
