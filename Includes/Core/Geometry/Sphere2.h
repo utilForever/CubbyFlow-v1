@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_SPHERE2_H
 #define CUBBYFLOW_SPHERE2_H
 
-#include <Surface/Surface2.h>
+#include <Core/Surface/Surface2.h>
 
 namespace CubbyFlow
 {

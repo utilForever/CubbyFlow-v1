@@ -9,10 +9,10 @@
 #ifndef CUBBYFLOW_FDM_LINEAR_SYSTEM3_H
 #define CUBBYFLOW_FDM_LINEAR_SYSTEM3_H
 
-#include <Array/Array3.h>
-#include <Matrix/MatrixCSR.h>
-#include <Size/Size3.h>
-#include <Vector/VectorN.h>
+#include <Core/Array/Array3.h>
+#include <Core/Matrix/MatrixCSR.h>
+#include <Core/Size/Size3.h>
+#include <Core/Vector/VectorN.h>
 
 namespace CubbyFlow
 {
@@ -57,21 +57,21 @@ namespace CubbyFlow
 		void Resize(const Size3& size);
 	};
 
-    //! Compressed linear system (Ax=b) for 3-D finite differencing.
-    struct FDMCompressedLinearSystem3
-    {
-        //! System matrix.
-        MatrixCSRD A;
+	//! Compressed linear system (Ax=b) for 3-D finite differencing.
+	struct FDMCompressedLinearSystem3
+	{
+		//! System matrix.
+		MatrixCSRD A;
 
-        //! Solution vector.
-        VectorND x;
+		//! Solution vector.
+		VectorND x;
 
-        //! RHS vector.
-        VectorND b;
+		//! RHS vector.
+		VectorND b;
 
-        //! Clears all the data.
-        void Clear();
-    };
+		//! Clears all the data.
+		void Clear();
+	};
 
 	//! BLAS operator wrapper for 3-D finite differencing.
 	struct FDMBLAS3

@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_CONSTANTS_H
 #define CUBBYFLOW_CONSTANTS_H
 
-#include <Utils/Macros.h>
+#include <Core/Utils/Macros.h>
 
 namespace CubbyFlow
 {

@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_SPH_SYSTEM_DATA2_H
 #define CUBBYFLOW_SPH_SYSTEM_DATA2_H
 
-#include <Particle/ParticleSystemData2.h>
+#include <Core/Particle/ParticleSystemData2.h>
 
 namespace CubbyFlow
 {

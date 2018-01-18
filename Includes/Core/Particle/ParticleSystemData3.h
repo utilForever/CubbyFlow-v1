@@ -9,9 +9,10 @@
 #ifndef CUBBYFLOW_PARTICLE_SYSTEM_DATA3_H
 #define CUBBYFLOW_PARTICLE_SYSTEM_DATA3_H
 
-#include <Array/Array1.h>
-#include <Searcher/PointNeighborSearcher3.h>
-#include <Utils/Serialization.h>
+#include <Core/Array/Array1.h>
+#include <Core/Searcher/PointNeighborSearcher3.h>
+#include <Core/Utils/Serialization.h>
+#include <Core/Vector/Vector3.h>
 
 #include <memory>
 #include <vector>

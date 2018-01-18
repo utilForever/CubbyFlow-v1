@@ -9,8 +9,8 @@
 #ifndef CUBBYFLOW_KDTREE_H
 #define CUBBYFLOW_KDTREE_H
 
-#include <Vector/Vector.h>
-#include <BoundingBox/BoundingBox.h>
+#include <Core/BoundingBox/BoundingBox.h>
+#include <Core/Vector/Vector.h>
 
 namespace CubbyFlow
 {
@@ -126,6 +126,6 @@ namespace CubbyFlow
 	};
 }
 
-#include <Geometry/KdTree-Impl.h>
+#include <Core/Geometry/KdTree-Impl.h>
 
 #endif

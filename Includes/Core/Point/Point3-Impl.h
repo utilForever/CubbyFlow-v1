@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_POINT3_IMPL_H
 #define CUBBYFLOW_POINT3_IMPL_H
 
-#include <Point/Point2.h>
+#include <Core/Point/Point2.h>
 
 #include <cassert>
 #include <cmath>

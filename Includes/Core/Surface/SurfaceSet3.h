@@ -9,8 +9,8 @@
 #ifndef CUBBYFLOW_SURFACE_SET3_H
 #define CUBBYFLOW_SURFACE_SET3_H
 
-#include <Geometry/BVH3.h>
-#include <Surface/Surface3.h>
+#include <Core/Geometry/BVH3.h>
+#include <Core/Surface/Surface3.h>
 
 #include <vector>
 

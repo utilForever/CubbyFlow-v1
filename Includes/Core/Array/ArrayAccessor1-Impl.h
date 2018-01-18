@@ -9,8 +9,8 @@
 #ifndef CUBBYFLOW_ARRAY_ACCESSOR1_IMPL_H
 #define CUBBYFLOW_ARRAY_ACCESSOR1_IMPL_H
 
-#include <Utils/Constants.h>
-#include <Utils/Parallel.h>
+#include <Core/Utils/Constants.h>
+#include <Core/Utils/Parallel.h>
 
 #include <algorithm>
 #include <cassert>

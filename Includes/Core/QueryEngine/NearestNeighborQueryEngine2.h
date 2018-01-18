@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_NEAREST_NEIGHBOR_QUERY_ENGINE2_H
 #define CUBBYFLOW_NEAREST_NEIGHBOR_QUERY_ENGINE2_H
 
-#include <Vector/Vector2.h>
+#include <Core/Vector/Vector2.h>
 
 namespace CubbyFlow
 {

@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_TRIANGLE_POINT_GENERATOR_H
 #define CUBBYFLOW_TRIANGLE_POINT_GENERATOR_H
 
-#include <PointGenerator/PointGenerator2.h>
+#include <Core/PointGenerator/PointGenerator2.h>
 
 namespace CubbyFlow
 {

@@ -32,8 +32,8 @@
 #ifndef CUBBYFLOW_TRIANGLE_MESH_TO_SDF_H
 #define CUBBYFLOW_TRIANGLE_MESH_TO_SDF_H
 
-#include <Geometry/TriangleMesh3.h>
-#include <Grid/ScalarGrid3.h>
+#include <Core/Geometry/TriangleMesh3.h>
+#include <Core/Grid/ScalarGrid3.h>
 
 namespace CubbyFlow
 {

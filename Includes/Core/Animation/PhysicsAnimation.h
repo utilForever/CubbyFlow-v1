@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_PHYSICS_ANIMATION_H
 #define CUBBYFLOW_PHYSICS_ANIMATION_H
 
-#include <Animation/Animation.h>
+#include <Core/Animation/Animation.h>
 
 namespace CubbyFlow
 {

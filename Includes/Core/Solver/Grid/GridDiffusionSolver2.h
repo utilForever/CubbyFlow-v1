@@ -9,10 +9,10 @@
 #ifndef CUBBYFLOW_GRID_DIFFUSION_SOLVER2_H
 #define CUBBYFLOW_GRID_DIFFUSION_SOLVER2_H
 
-#include <Field/ConstantScalarField2.h>
-#include <Grid/CollocatedVectorGrid2.h>
-#include <Grid/FaceCenteredGrid2.h>
-#include <Grid/ScalarGrid2.h>
+#include <Core/Field/ConstantScalarField2.h>
+#include <Core/Grid/CollocatedVectorGrid2.h>
+#include <Core/Grid/FaceCenteredGrid2.h>
+#include <Core/Grid/ScalarGrid2.h>
 
 namespace CubbyFlow
 {

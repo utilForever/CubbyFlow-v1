@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_VECTOR2_IMPL_H
 #define CUBBYFLOW_VECTOR2_IMPL_H
 
-#include <Math/MathUtils.h>
+#include <Core/Math/MathUtils.h>
 
 #include <cassert>
 #include <limits>
@@ -271,13 +271,13 @@ namespace CubbyFlow
 	template <typename T>
 	size_t Vector<T, 2>::DominantAxis() const
 	{
-    	return (std::fabs(x) > std::fabs(y)) ? 0 : 1;
+		return (std::fabs(x) > std::fabs(y)) ? 0 : 1;
 	}
 
 	template <typename T>
 	size_t Vector<T, 2>::SubdominantAxis() const
 	{
-    	return (std::fabs(x) < std::fabs(y)) ? 0 : 1;
+		return (std::fabs(x) < std::fabs(y)) ? 0 : 1;
 	}
 
 	template <typename T>
@@ -374,8 +374,8 @@ namespace CubbyFlow
 	template <typename T>
 	Vector<T, 2>& Vector<T, 2>::operator=(const Vector& v)
 	{
-    	Set(v);
-    	return (*this);
+		Set(v);
+		return (*this);
 	}
 
 	template <typename T>
@@ -473,13 +473,13 @@ namespace CubbyFlow
 	template <typename T>
 	Vector<T, 2> operator+(const Vector<T, 2>& a, const Vector<T, 2>& b)
 	{
-    	return a.Add(b);
+		return a.Add(b);
 	}
 
 	template <typename T>
 	Vector<T, 2> operator-(const Vector<T, 2>& a, T b)
 	{
-    	return a.Sub(b);
+		return a.Sub(b);
 	}
 
 

@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_COLLIDER2_H
 #define CUBBYFLOW_COLLIDER2_H
 
-#include <Surface/Surface2.h>
+#include <Core/Surface/Surface2.h>
 
 #include <functional>
 

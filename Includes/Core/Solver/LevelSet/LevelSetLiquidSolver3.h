@@ -9,8 +9,8 @@
 #ifndef CUBBYFLOW_LEVEL_SET_LIQUID_SOLVER3_H
 #define CUBBYFLOW_LEVEL_SET_LIQUID_SOLVER3_H
 
-#include <Solver/Grid/GridFluidSolver3.h>
-#include <Solver/LevelSet/LevelSetSolver3.h>
+#include <Core/Solver/Grid/GridFluidSolver3.h>
+#include <Core/Solver/LevelSet/LevelSetSolver3.h>
 
 namespace CubbyFlow
 {

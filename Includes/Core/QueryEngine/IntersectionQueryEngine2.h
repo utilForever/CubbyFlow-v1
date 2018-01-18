@@ -9,8 +9,8 @@
 #ifndef CUBBYFLOW_INTERSECTION_QUERY_ENGINE2_H
 #define CUBBYFLOW_INTERSECTION_QUERY_ENGINE2_H
 
-#include <BoundingBox/BoundingBox2.h>
-#include <Vector/Vector2.h>
+#include <Core/BoundingBox/BoundingBox2.h>
+#include <Core/Vector/Vector2.h>
 
 namespace CubbyFlow
 {

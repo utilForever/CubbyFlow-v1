@@ -9,10 +9,10 @@
 #ifndef CUBBYFLOW_ARRAY_UTILS_IMPL_H
 #define CUBBYFLOW_ARRAY_UTILS_IMPL_H
 
-#include <Array/Array2.h>
-#include <Array/Array3.h>
-#include <Utils/Parallel.h>
-#include <Utils/TypeHelpers.h>
+#include <Core/Array/Array2.h>
+#include <Core/Array/Array3.h>
+#include <Core/Utils/Parallel.h>
+#include <Core/Utils/TypeHelpers.h>
 
 #include <iostream>
 

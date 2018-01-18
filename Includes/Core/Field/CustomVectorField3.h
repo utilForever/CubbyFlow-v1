@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_CUSTOM_VECTOR_FIELD3_H
 #define CUBBYFLOW_CUSTOM_VECTOR_FIELD3_H
 
-#include <Field/VectorField3.h>
+#include <Core/Field/VectorField3.h>
 
 namespace CubbyFlow
 {

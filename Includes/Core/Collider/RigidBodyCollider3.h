@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_RIGID_BODY_COLLIDER3_H
 #define CUBBYFLOW_RIGID_BODY_COLLIDER3_H
 
-#include <Collider/Collider3.h>
+#include <Core/Collider/Collider3.h>
 
 namespace CubbyFlow
 {

@@ -106,6 +106,6 @@ namespace CubbyFlow
 	T WENO5(T* v, T h, bool is_velocity_positive, T eps = 1.0e-8);
 }
 
-#include <Math/PDE-Impl.h>
+#include <Core/Math/PDE-Impl.h>
 
 #endif

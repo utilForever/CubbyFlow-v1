@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_COLLIDER_SET3_H
 #define CUBBYFLOW_COLLIDER_SET3_H
 
-#include <Collider/Collider3.h>
+#include <Core/Collider/Collider3.h>
 
 #include <vector>
 

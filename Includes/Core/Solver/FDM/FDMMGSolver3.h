@@ -9,9 +9,9 @@
 #ifndef CUBBYFLOW_FDM_MG_SOLVER3_H
 #define CUBBYFLOW_FDM_MG_SOLVER3_H
 
-#include <FDM/FDMMGLinearSystem3.h>
-#include <Solver/FDM/FDMLinearSystemSolver3.h>
-#include <Utils/MG.h>
+#include <Core/FDM/FDMMGLinearSystem3.h>
+#include <Core/Solver/FDM/FDMLinearSystemSolver3.h>
+#include <Core/Utils/MG.h>
 
 namespace CubbyFlow
 {

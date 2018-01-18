@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_BOUNDING_BOX_H
 #define CUBBYFLOW_BOUNDING_BOX_H
 
-#include <Vector/Vector.h>
+#include <Core/Vector/Vector.h>
 
 namespace CubbyFlow
 {
@@ -73,6 +73,6 @@ namespace CubbyFlow
 	};
 }
 
-#include <BoundingBox/BoundingBox-Impl.h>
+#include <Core/BoundingBox/BoundingBox-Impl.h>
 
 #endif

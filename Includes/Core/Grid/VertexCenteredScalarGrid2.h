@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_VERTEX_CENTERED_SCALAR_GRID2_H
 #define CUBBYFLOW_VERTEX_CENTERED_SCALAR_GRID2_H
 
-#include <Grid/ScalarGrid2.h>
+#include <Core/Grid/ScalarGrid2.h>
 
 namespace CubbyFlow
 {

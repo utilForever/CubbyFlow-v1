@@ -9,8 +9,8 @@
 #ifndef CUBBYFLOW_SPH_SOLVER2_H
 #define CUBBYFLOW_SPH_SOLVER2_H
 
-#include <Solver/Particle/ParticleSystemSolver2.h>
-#include <SPH/SPHSystemData2.h>
+#include <Core/Solver/Particle/ParticleSystemSolver2.h>
+#include <Core/SPH/SPHSystemData2.h>
 
 namespace CubbyFlow
 {

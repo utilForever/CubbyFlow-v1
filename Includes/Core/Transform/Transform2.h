@@ -9,9 +9,9 @@
 #ifndef CUBBYFLOW_TRANSFORM2_H
 #define CUBBYFLOW_TRANSFORM2_H
 
-#include <BoundingBox/BoundingBox2.h>
-#include <Ray/Ray2.h>
-#include <Vector/Vector2.h>
+#include <Core/BoundingBox/BoundingBox2.h>
+#include <Core/Ray/Ray2.h>
+#include <Core/Vector/Vector2.h>
 
 namespace CubbyFlow
 {

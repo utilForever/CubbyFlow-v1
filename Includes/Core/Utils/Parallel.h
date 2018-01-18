@@ -255,6 +255,6 @@ namespace CubbyFlow
 	unsigned int GetMaxNumberOfThreads();
 }
 
-#include <Utils/Parallel-Impl.h>
+#include <Core/Utils/Parallel-Impl.h>
 
 #endif

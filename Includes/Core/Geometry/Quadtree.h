@@ -9,8 +9,8 @@
 #ifndef CUBBYFLOW_QUADTREE_H
 #define CUBBYFLOW_QUADTREE_H
 
-#include <QueryEngine/IntersectionQueryEngine2.h>
-#include <QueryEngine/NearestNeighborQueryEngine2.h>
+#include <Core/QueryEngine/IntersectionQueryEngine2.h>
+#include <Core/QueryEngine/NearestNeighborQueryEngine2.h>
 
 namespace CubbyFlow
 {
@@ -160,6 +160,6 @@ namespace CubbyFlow
 	};
 }
 
-#include <Geometry/Quadtree-Impl.h>
+#include <Core/Geometry/Quadtree-Impl.h>
 
 #endif

@@ -9,8 +9,8 @@
 #ifndef CUBBYFLOW_POINT_HASH_GRID_SEARCHER2_H
 #define CUBBYFLOW_POINT_HASH_GRID_SEARCHER2_H
 
-#include <Searcher/PointNeighborSearcher2.h>
-#include <Size/Size2.h>
+#include <Core/Searcher/PointNeighborSearcher2.h>
+#include <Core/Size/Size2.h>
 
 #include <vector>
 

@@ -101,6 +101,6 @@ namespace CubbyFlow
 	T FractionInside(T phiBottomLeft, T phiBottomRight, T phiTopLeft, T phiTopRight);
 }
 
-#include <LevelSet/LevelSetUtils-Impl.h>
+#include <Core/LevelSet/LevelSetUtils-Impl.h>
 
 #endif

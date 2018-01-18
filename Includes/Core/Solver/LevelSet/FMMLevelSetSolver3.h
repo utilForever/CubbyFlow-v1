@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_FMM_LEVEL_SET_SOLVER3_H
 #define CUBBYFLOW_FMM_LEVEL_SET_SOLVER3_H
 
-#include <Solver/LevelSet/LevelSetSolver3.h>
+#include <Core/Solver/LevelSet/LevelSetSolver3.h>
 
 namespace CubbyFlow
 {

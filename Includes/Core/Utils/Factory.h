@@ -9,12 +9,12 @@
 #ifndef CUBBYFLOW_FACTORY_H
 #define CUBBYFLOW_FACTORY_H
 
-#include <Grid/ScalarGrid2.h>
-#include <Grid/ScalarGrid3.h>
-#include <Grid/VectorGrid2.h>
-#include <Grid/VectorGrid3.h>
-#include <Searcher/PointNeighborSearcher2.h>
-#include <Searcher/PointNeighborSearcher3.h>
+#include <Core/Grid/ScalarGrid2.h>
+#include <Core/Grid/ScalarGrid3.h>
+#include <Core/Grid/VectorGrid2.h>
+#include <Core/Grid/VectorGrid3.h>
+#include <Core/Searcher/PointNeighborSearcher2.h>
+#include <Core/Searcher/PointNeighborSearcher3.h>
 
 namespace CubbyFlow
 {

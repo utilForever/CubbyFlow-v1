@@ -9,9 +9,9 @@
 #ifndef CUBBYFLOW_VECTOR_GRID2_H
 #define CUBBYFLOW_VECTOR_GRID2_H
 
-#include <Array/ArrayAccessor2.h>
-#include <Field/VectorField2.h>
-#include <Grid/Grid2.h>
+#include <Core/Array/ArrayAccessor2.h>
+#include <Core/Field/VectorField2.h>
+#include <Core/Grid/Grid2.h>
 
 namespace CubbyFlow
 {

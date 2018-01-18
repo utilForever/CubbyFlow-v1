@@ -9,9 +9,9 @@
 #ifndef CUBBYFLOW_VOLUME_PARTICLE_EMITTER2_H
 #define CUBBYFLOW_VOLUME_PARTICLE_EMITTER2_H
 
-#include <Emitter/ParticleEmitter2.h>
-#include <PointGenerator/PointGenerator2.h>
-#include <Surface/Implicit/ImplicitSurface2.h>
+#include <Core/Emitter/ParticleEmitter2.h>
+#include <Core/PointGenerator/PointGenerator2.h>
+#include <Core/Surface/Implicit/ImplicitSurface2.h>
 
 #include <random>
 

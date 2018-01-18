@@ -9,9 +9,9 @@
 #ifndef CUBBYFLOW_VECTOR_GRID3_H
 #define CUBBYFLOW_VECTOR_GRID3_H
 
-#include <Array/ArrayAccessor3.h>
-#include <Field/VectorField3.h>
-#include <Grid/Grid3.h>
+#include <Core/Array/ArrayAccessor3.h>
+#include <Core/Field/VectorField3.h>
+#include <Core/Grid/Grid3.h>
 
 namespace CubbyFlow
 {

@@ -9,9 +9,9 @@
 #ifndef CUBBYFLOW_POINTS_TO_IMPLICIT3_H
 #define CUBBYFLOW_POINTS_TO_IMPLICIT3_H
 
-#include <Array/ArrayAccessor1.h>
-#include <Grid/ScalarGrid3.h>
-#include <Vector/Vector3.h>
+#include <Core/Array/ArrayAccessor1.h>
+#include <Core/Grid/ScalarGrid3.h>
+#include <Core/Vector/Vector3.h>
 
 namespace CubbyFlow
 {

@@ -9,9 +9,9 @@
 #ifndef CUBBYFLOW_VECTOR_H
 #define CUBBYFLOW_VECTOR_H
 
-#include <Array/ArrayAccessor1.h>
-#include <Utils/TypeHelpers.h>
-#include <Vector/VectorExpression.h>
+#include <Core/Array/ArrayAccessor1.h>
+#include <Core/Utils/TypeHelpers.h>
+#include <Core/Vector/VectorExpression.h>
 
 #include <array>
 #include <cmath>
@@ -349,6 +349,6 @@ namespace CubbyFlow
 	};
 }
 
-#include <Vector/Vector-Impl.h>
+#include <Core/Vector/Vector-Impl.h>
 
 #endif

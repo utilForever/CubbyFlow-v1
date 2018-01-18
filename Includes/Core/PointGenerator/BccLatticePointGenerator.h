@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_BCC_LATTICE_POINT_GENERATOR_H
 #define CUBBYFLOW_BCC_LATTICE_POINT_GENERATOR_H
 
-#include <PointGenerator/PointGenerator3.h>
+#include <Core/PointGenerator/PointGenerator3.h>
 
 namespace CubbyFlow
 {

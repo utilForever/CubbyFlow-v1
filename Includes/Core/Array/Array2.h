@@ -9,10 +9,9 @@
 #ifndef CUBBYFLOW_ARRAY2_H
 #define CUBBYFLOW_ARRAY2_H
 
-#include <Array/Array.h>
-#include <Array/ArrayAccessor2.h>
-
-#include <Size/Size2.h>
+#include <Core/Array/Array.h>
+#include <Core/Array/ArrayAccessor2.h>
+#include <Core/Size/Size2.h>
 
 #include <vector>
 
@@ -380,6 +379,6 @@ namespace CubbyFlow
 	using Array2 = Array<T, 2>;
 }
 
-#include <Array/Array2-Impl.h>
+#include <Core/Array/Array2-Impl.h>
 
 #endif

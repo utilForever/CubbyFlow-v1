@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_CELL_CENTERED_SCALAR_GRID3_H
 #define CUBBYFLOW_CELL_CENTERED_SCALAR_GRID3_H
 
-#include <Grid/ScalarGrid3.h>
+#include <Core/Grid/ScalarGrid3.h>
 
 namespace CubbyFlow
 {

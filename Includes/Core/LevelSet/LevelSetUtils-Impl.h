@@ -18,7 +18,7 @@
 #ifndef CUBBYFLOW_LEVEL_SET_UTILS_IMPL_H
 #define CUBBYFLOW_LEVEL_SET_UTILS_IMPL_H
 
-#include <Utils/Constants.h>
+#include <Core/Utils/Constants.h>
 
 #include <algorithm>
 #include <cmath>

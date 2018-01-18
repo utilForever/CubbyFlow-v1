@@ -53,7 +53,7 @@ namespace CubbyFlow
 	{
 		m_maxDepth = 1;
 		m_items.clear();
-		m_nodes.cloear();
+		m_nodes.clear();
 		m_bbox = BoundingBox3D();
 	}
 

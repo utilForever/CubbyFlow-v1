@@ -33,6 +33,6 @@ namespace CubbyFlow
 	};
 }
 
-#include <Utils/Functors-Impl.h>
+#include <Core/Utils/Functors-Impl.h>
 
 #endif

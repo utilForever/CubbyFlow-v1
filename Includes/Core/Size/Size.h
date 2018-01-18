@@ -9,11 +9,12 @@
 #ifndef CUBBYFLOW_SIZE_H
 #define CUBBYFLOW_SIZE_H
 
-#include <Point/Point.h>
+#include <Core/Point/Point.h>
 
 namespace CubbyFlow
 {
-	template <size_t N> using Size = Point<size_t, N>;
+	template <size_t N>
+	using Size = Point<size_t, N>;
 }
 
 #endif

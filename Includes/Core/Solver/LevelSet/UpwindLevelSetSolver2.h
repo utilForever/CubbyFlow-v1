@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_UPWIND_LEVEL_SET_SOLVER2_H
 #define CUBBYFLOW_UPWIND_LEVEL_SET_SOLVER2_H
 
-#include <Solver/LevelSet/IterativeLevelSetSolver2.h>
+#include <Core/Solver/LevelSet/IterativeLevelSetSolver2.h>
 
 namespace CubbyFlow
 {

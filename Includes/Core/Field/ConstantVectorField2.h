@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_CONSTANT_VECTOR_FIELD2_H
 #define CUBBYFLOW_CONSTANT_VECTOR_FIELD2_H
 
-#include <Field/VectorField2.h>
+#include <Core/Field/VectorField2.h>
 
 namespace CubbyFlow
 {

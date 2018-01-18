@@ -9,10 +9,10 @@
 #ifndef CUBBYFLOW_FRACTIONAL_SINGLE_PHASE_PRESSURE_SOLVER2_H
 #define CUBBYFLOW_FRACTIONAL_SINGLE_PHASE_PRESSURE_SOLVER2_H
 
-#include <FDM/FDMMGLinearSystem2.h>
-#include <Solver/FDM/FDMLinearSystemSolver2.h>
-#include <Solver/FDM/FDMMGSolver2.h>
-#include <Solver/Grid/GridPressureSolver2.h>
+#include <Core/FDM/FDMMGLinearSystem2.h>
+#include <Core/Solver/FDM/FDMLinearSystemSolver2.h>
+#include <Core/Solver/FDM/FDMMGSolver2.h>
+#include <Core/Solver/Grid/GridPressureSolver2.h>
 
 namespace CubbyFlow
 {

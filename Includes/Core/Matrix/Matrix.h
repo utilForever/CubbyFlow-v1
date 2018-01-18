@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_MATRIX_H
 #define CUBBYFLOW_MATRIX_H
 
-#include <Matrix/MatrixExpression.h>
+#include <Core/Matrix/MatrixExpression.h>
 
 #include <array>
 #include <type_traits>
@@ -432,6 +432,6 @@ namespace CubbyFlow
 	};
 }
 
-#include <Matrix/Matrix-Impl.h>
+#include <Core/Matrix/Matrix-Impl.h>
 
 #endif

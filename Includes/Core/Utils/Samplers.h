@@ -9,8 +9,8 @@
 #ifndef CUBBYFLOW_SAMPLERS_H
 #define CUBBYFLOW_SAMPLERS_H
 
-#include <Vector/Vector2.h>
-#include <Vector/Vector3.h>
+#include <Core/Vector/Vector2.h>
+#include <Core/Vector/Vector3.h>
 
 namespace CubbyFlow
 {
@@ -98,6 +98,6 @@ namespace CubbyFlow
 	inline Vector2<T> UniformSampleDisk(T u1, T u2);
 }
 
-#include <Utils/Samplers-Impl.h>
+#include <Core/Utils/Samplers-Impl.h>
 
 #endif

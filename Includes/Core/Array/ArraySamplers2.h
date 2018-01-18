@@ -9,9 +9,9 @@
 #ifndef CUBBYFLOW_ARRAY_SAMPLERS2_H
 #define CUBBYFLOW_ARRAY_SAMPLERS2_H
 
-#include <Array/ArrayAccessor2.h>
-#include <Array/ArraySamplers.h>
-#include <Vector/Vector2.h>
+#include <Core/Array/ArrayAccessor2.h>
+#include <Core/Array/ArraySamplers.h>
+#include <Core/Vector/Vector2.h>
 
 #include <functional>
 
@@ -173,6 +173,6 @@ namespace CubbyFlow
 	using CubicArraySampler2 = CubicArraySampler<T, R, 2>;
 }
 
-#include <Array/ArraySamplers2-Impl.h>
+#include <Core/Array/ArraySamplers2-Impl.h>
 
 #endif

@@ -9,10 +9,10 @@
 #ifndef CUBBYFLOW_GRID_PRESSURE_SOLVER2_H
 #define CUBBYFLOW_GRID_PRESSURE_SOLVER2_H
 
-#include <Field/ConstantScalarField2.h>
-#include <Field/ConstantVectorField2.h>
-#include <Grid/FaceCenteredGrid2.h>
-#include <Solver/Grid/GridBoundaryConditionSolver2.h>
+#include <Core/Field/ConstantScalarField2.h>
+#include <Core/Field/ConstantVectorField2.h>
+#include <Core/Grid/FaceCenteredGrid2.h>
+#include <Core/Solver/Grid/GridBoundaryConditionSolver2.h>
 
 namespace CubbyFlow
 {

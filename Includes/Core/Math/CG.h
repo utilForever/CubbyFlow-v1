@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_CG_H
 #define CUBBYFLOW_CG_H
 
-#include <Math/BLAS.h>
+#include <Core/Math/BLAS.h>
 
 namespace CubbyFlow
 {
@@ -69,6 +69,6 @@ namespace CubbyFlow
 		double* lastResidualNorm);
 }
 
-#include <Math/CG-Impl.h>
+#include <Core/Math/CG-Impl.h>
 
 #endif

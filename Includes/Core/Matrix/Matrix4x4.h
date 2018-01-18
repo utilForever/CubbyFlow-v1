@@ -9,9 +9,8 @@
 #ifndef CUBBYFLOW_MATRIX4X4_H
 #define CUBBYFLOW_MATRIX4X4_H
 
-#include <Matrix/Matrix3x3.h>
-
-#include <Vector/Vector4.h>
+#include <Core/Matrix/Matrix3x3.h>
+#include <Core/Vector/Vector4.h>
 
 #include <array>
 #include <limits>
@@ -446,6 +445,6 @@ namespace CubbyFlow
 	using Matrix4x4D = Matrix4x4<double>;
 }
 
-#include <Matrix/Matrix4x4-Impl.h>
+#include <Core/Matrix/Matrix4x4-Impl.h>
 
 #endif

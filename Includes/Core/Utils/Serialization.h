@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_SERIALIZATION_H
 #define CUBBYFLOW_SERIALIZATION_H
 
-#include <Array/Array1.h>
+#include <Core/Array/Array1.h>
 
 #include <vector>
 #include <cstring>
@@ -48,6 +48,6 @@ namespace CubbyFlow
 	void Deserialize(const std::vector<uint8_t>& buffer, Array1<T>* array);
 }
 
-#include <Utils/Serialization-Impl.h>
+#include <Core/Utils/Serialization-Impl.h>
 
 #endif

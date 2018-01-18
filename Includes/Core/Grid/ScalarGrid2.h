@@ -9,11 +9,11 @@
 #ifndef CUBBYFLOW_SCALAR_GRID2_H
 #define CUBBYFLOW_SCALAR_GRID2_H
 
-#include <Array/Array2.h>
-#include <Array/ArrayAccessor2.h>
-#include <Array/ArraySamplers2.h>
-#include <Field/ScalarField2.h>
-#include <Grid/Grid2.h>
+#include <Core/Array/Array2.h>
+#include <Core/Array/ArrayAccessor2.h>
+#include <Core/Array/ArraySamplers2.h>
+#include <Core/Field/ScalarField2.h>
+#include <Core/Grid/Grid2.h>
 
 namespace CubbyFlow
 {

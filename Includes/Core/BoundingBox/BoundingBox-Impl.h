@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_BOUNDING_BOX_IMPL_H
 #define CUBBYFLOW_BOUNDING_BOX_IMPL_H
 
-#include <Math/MathUtils.h>
+#include <Core/Math/MathUtils.h>
 
 namespace CubbyFlow
 {

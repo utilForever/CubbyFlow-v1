@@ -10,7 +10,7 @@
 #ifndef CUBBYFLOW_FDM_MGPCG_SOLVER3_H
 #define CUBBYFLOW_FDM_MGPCG_SOLVER3_H
 
-#include <Solver/FDM/FDMMGSolver3.h>
+#include <Core/Solver/FDM/FDMMGSolver3.h>
 
 namespace CubbyFlow
 {

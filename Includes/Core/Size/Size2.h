@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_SIZE2_H
 #define CUBBYFLOW_SIZE2_H
 
-#include <Point/Point2.h>
+#include <Core/Point/Point2.h>
 
 namespace CubbyFlow
 {

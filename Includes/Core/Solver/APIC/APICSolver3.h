@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_APIC_SOLVER3_H
 #define CUBBYFLOW_APIC_SOLVER3_H
 
-#include <Solver/PIC/PICSolver3.h>
+#include <Core/Solver/PIC/PICSolver3.h>
 
 namespace CubbyFlow
 {

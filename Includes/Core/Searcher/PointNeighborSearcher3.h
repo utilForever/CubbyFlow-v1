@@ -9,8 +9,8 @@
 #ifndef CUBBYFLOW_POINT_NEIGHBOR_SEARCHER3_H
 #define CUBBYFLOW_POINT_NEIGHBOR_SEARCHER3_H
 
-#include <Utils/Serialization.h>
-#include <Vector/Vector3.h>
+#include <Core/Utils/Serialization.h>
+#include <Core/Vector/Vector3.h>
 
 #include <functional>
 #include <memory>
@@ -92,10 +92,10 @@ namespace CubbyFlow
 	using PointNeighborSearcherBuilder3Ptr = std::shared_ptr<PointNeighborSearcherBuilder3>;
 
 #define CUBBYFLOW_NEIGHBOR_SEARCHER3_TYPE_NAME(DerivedClassName) \
-    std::string TypeName() const override \
+	std::string TypeName() const override \
 	{ \
-        return #DerivedClassName; \
-    }
+		return #DerivedClassName; \
+	}
 }
 
 #endif

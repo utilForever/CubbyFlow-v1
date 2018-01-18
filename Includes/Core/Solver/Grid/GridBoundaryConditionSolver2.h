@@ -9,10 +9,10 @@
 #ifndef CUBBYFLOW_GRID_BOUNDARY_CONDITION_SOLVER2_H
 #define CUBBYFLOW_GRID_BOUNDARY_CONDITION_SOLVER2_H
 
-#include <Collider/Collider2.h>
-#include <Field/ScalarField2.h>
-#include <Grid/FaceCenteredGrid2.h>
-#include <Size/Size2.h>
+#include <Core/Collider/Collider2.h>
+#include <Core/Field/ScalarField2.h>
+#include <Core/Grid/FaceCenteredGrid2.h>
+#include <Core/Size/Size2.h>
 
 namespace CubbyFlow
 {

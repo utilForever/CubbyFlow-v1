@@ -9,10 +9,10 @@
 #ifndef CUBBYFLOW_SURFACE2_H
 #define CUBBYFLOW_SURFACE2_H
 
-#include <BoundingBox/BoundingBox2.h>
-#include <Ray/Ray2.h>
-#include <Transform/Transform2.h>
-#include <Vector/Vector2.h>
+#include <Core/BoundingBox/BoundingBox2.h>
+#include <Core/Ray/Ray2.h>
+#include <Core/Transform/Transform2.h>
+#include <Core/Vector/Vector2.h>
 
 #include <limits>
 #include <memory>
@@ -69,8 +69,8 @@ namespace CubbyFlow
 		//! point \p otherPoint.
 		Vector2D ClosestNormal(const Vector2D& otherPoint) const;
 
-        //! Updates internal spatial query engine.
-        virtual void UpdateQueryEngine();
+		//! Updates internal spatial query engine.
+		virtual void UpdateQueryEngine();
 
 	protected:
 		//! Returns the closest point from the given point \p otherPoint to the

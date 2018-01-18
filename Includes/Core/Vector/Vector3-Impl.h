@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_VECTOR3_IMPL_H
 #define CUBBYFLOW_VECTOR3_IMPL_H
 
-#include <Math/MathUtils.h>
+#include <Core/Math/MathUtils.h>
 
 #include <cassert>
 

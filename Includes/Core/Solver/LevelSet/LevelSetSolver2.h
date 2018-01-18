@@ -9,9 +9,9 @@
 #ifndef CUBBYFLOW_LEVEL_SET_SOLVER2_H
 #define CUBBYFLOW_LEVEL_SET_SOLVER2_H
 
-#include <Grid/CollocatedVectorGrid2.h>
-#include <Grid/FaceCenteredGrid2.h>
-#include <Grid/ScalarGrid2.h>
+#include <Core/Grid/CollocatedVectorGrid2.h>
+#include <Core/Grid/FaceCenteredGrid2.h>
+#include <Core/Grid/ScalarGrid2.h>
 
 #include <memory>
 

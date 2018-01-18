@@ -17,6 +17,6 @@ namespace CubbyFlow
 	ForwardIter BinaryFind(ForwardIter first, ForwardIter last, const T& value, Compare comp = {});
 }
 
-#include <Utils/CppUtils-Impl.h>
+#include <Core/Utils/CppUtils-Impl.h>
 
 #endif

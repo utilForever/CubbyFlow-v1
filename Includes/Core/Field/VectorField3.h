@@ -9,9 +9,8 @@
 #ifndef CUBBYFLOW_VECTOR_FIELD3_H
 #define CUBBYFLOW_VECTOR_FIELD3_H
 
-#include <Field/Field3.h>
-
-#include <Vector/Vector3.h>
+#include <Core/Field/Field3.h>
+#include <Core/Vector/Vector3.h>
 
 #include <functional>
 #include <memory>

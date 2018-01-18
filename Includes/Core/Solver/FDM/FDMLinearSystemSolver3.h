@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_FDM_LINEAR_SYSTEM_SOLVER3_H
 #define CUBBYFLOW_FDM_LINEAR_SYSTEM_SOLVER3_H
 
-#include <FDM/FDMLinearSystem3.h>
+#include <Core/FDM/FDMLinearSystem3.h>
 
 namespace CubbyFlow
 {
@@ -22,11 +22,11 @@ namespace CubbyFlow
 		//! Solves the given linear system.
 		virtual bool Solve(FDMLinearSystem3* system) = 0;
 
-        //! Solves the given compressed linear system.
-        virtual bool SolveCompressed(FDMCompressedLinearSystem3*)
-        {
-            return false;
-        }
+		//! Solves the given compressed linear system.
+		virtual bool SolveCompressed(FDMCompressedLinearSystem3*)
+		{
+			return false;
+		}
 	};
 
 	//! Shared pointer type for the FDMLinearSystemSolver3.

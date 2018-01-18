@@ -9,8 +9,8 @@
 #ifndef CUBBYFLOW_MATRIX_EXPRESSION_H
 #define CUBBYFLOW_MATRIX_EXPRESSION_H
 
-#include <Size/Size2.h>
-#include <Vector/VectorExpression.h>
+#include <Core/Size/Size2.h>
+#include <Core/Vector/VectorExpression.h>
 
 namespace CubbyFlow
 {
@@ -430,6 +430,6 @@ namespace CubbyFlow
 	MatrixScalarRDiv<T, E> operator/(T a, const MatrixExpression<T, E>& b);
 }
 
-#include <Matrix/MatrixExpression-Impl.h>
+#include <Core/Matrix/MatrixExpression-Impl.h>
 
 #endif

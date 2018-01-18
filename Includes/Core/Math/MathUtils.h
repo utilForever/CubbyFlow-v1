@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_MATH_UTILS_H
 #define CUBBYFLOW_MATH_UTILS_H
 
-#include <Utils/Macros.h>
+#include <Core/Utils/Macros.h>
 
 #include <cstddef>
 #include <limits>
@@ -204,6 +204,6 @@ namespace CubbyFlow
 	inline T MonotonicCatmullRom(const T& f0, const T& f1, const T& f2, const T& f3, T t);
 }
 
-#include <Math/MathUtils-Impl.h>
+#include <Core/Math/MathUtils-Impl.h>
 
 #endif

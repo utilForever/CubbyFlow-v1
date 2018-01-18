@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_VECTOR_EXPRESSION_H
 #define CUBBYFLOW_VECTOR_EXPRESSION_H
 
-#include <Utils/Functors.h>
+#include <Core/Utils/Functors.h>
 
 #include <functional>
 
@@ -220,6 +220,6 @@ namespace CubbyFlow
 	VectorDiv<T, E1, E2> operator/(const VectorExpression<T, E1>& a, const VectorExpression<T, E2>& b);
 }
 
-#include <Vector/VectorExpression-Impl.h>
+#include <Core/Vector/VectorExpression-Impl.h>
 
 #endif

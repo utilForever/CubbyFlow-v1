@@ -61,6 +61,6 @@ namespace CubbyFlow
 	};
 }
 
-#include <Math/BLAS-Impl.h>
+#include <Core/Math/BLAS-Impl.h>
 
 #endif

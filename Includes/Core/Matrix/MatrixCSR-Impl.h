@@ -9,8 +9,8 @@
 #ifndef CUBBYFLOW_MATRIX_CSR_IMPL_H
 #define CUBBYFLOW_MATRIX_CSR_IMPL_H
 
-#include <Utils/CppUtils.h>
-#include <Utils/Parallel.h>
+#include <Core/Utils/CppUtils.h>
+#include <Core/Utils/Parallel.h>
 
 #include <numeric>
 

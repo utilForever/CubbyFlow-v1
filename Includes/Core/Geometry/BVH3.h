@@ -9,8 +9,8 @@
 #ifndef CUBBYFLOW_BVH3_H
 #define CUBBYFLOW_BVH3_H
 
-#include <QueryEngine/IntersectionQueryEngine3.h>
-#include <QueryEngine/NearestNeighborQueryEngine3.h>
+#include <Core/QueryEngine/IntersectionQueryEngine3.h>
+#include <Core/QueryEngine/NearestNeighborQueryEngine3.h>
 
 namespace CubbyFlow
 {
@@ -118,6 +118,6 @@ namespace CubbyFlow
 	};
 }
 
-#include <Geometry/BVH3-Impl.h>
+#include <Core/Geometry/BVH3-Impl.h>
 
 #endif

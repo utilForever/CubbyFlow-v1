@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_POINT_SIMPLE_LIST_SEARCHER2_H
 #define CUBBYFLOW_POINT_SIMPLE_LIST_SEARCHER2_H
 
-#include <Searcher/PointNeighborSearcher2.h>
+#include <Core/Searcher/PointNeighborSearcher2.h>
 
 namespace CubbyFlow
 {

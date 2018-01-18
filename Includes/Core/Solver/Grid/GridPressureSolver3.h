@@ -9,10 +9,10 @@
 #ifndef CUBBYFLOW_GRID_PRESSURE_SOLVER3_H
 #define CUBBYFLOW_GRID_PRESSURE_SOLVER3_H
 
-#include <Field/ConstantScalarField3.h>
-#include <Field/ConstantVectorField3.h>
-#include <Grid/FaceCenteredGrid3.h>
-#include <Solver/Grid/GridBoundaryConditionSolver3.h>
+#include <Core/Field/ConstantScalarField3.h>
+#include <Core/Field/ConstantVectorField3.h>
+#include <Core/Grid/FaceCenteredGrid3.h>
+#include <Core/Solver/Grid/GridBoundaryConditionSolver3.h>
 
 namespace CubbyFlow
 {

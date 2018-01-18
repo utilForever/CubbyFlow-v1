@@ -9,8 +9,8 @@
 #ifndef CUBBYFLOW_FDM_MG_LINEAR_SYSTEM2_H
 #define CUBBYFLOW_FDM_MG_LINEAR_SYSTEM2_H
 
-#include <FDM/FDMLinearSystem2.h>
-#include <Utils/MG.h>
+#include <Core/FDM/FDMLinearSystem2.h>
+#include <Core/Utils/MG.h>
 
 namespace CubbyFlow
 {
@@ -83,6 +83,6 @@ namespace CubbyFlow
 	};
 }
 
-#include <FDM/FDMMGLinearSystem2-Impl.h>
+#include <Core/FDM/FDMMGLinearSystem2-Impl.h>
 
 #endif

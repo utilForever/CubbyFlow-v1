@@ -236,20 +236,20 @@ namespace CubbyFlow
 	template <typename T>
 	Vector3<T> BoundingBox<T, 3>::Corner(size_t idx) const
 	{
-        static const T h = static_cast<T>(1) / 2;
-        static const Vector3<T> offset[8] =
-        {
-            { -h, -h, -h }, { +h, -h, -h }, { -h, +h, -h }, { +h, +h, -h },
-            { -h, -h, +h },{  +h, -h, +h }, { -h, +h, +h }, { +h, +h, +h }
-        };
+		static const T h = static_cast<T>(1) / 2;
+		static const Vector3<T> offset[8] =
+		{
+			{ -h, -h, -h }, { +h, -h, -h }, { -h, +h, -h }, { +h, +h, -h },
+			{ -h, -h, +h },{  +h, -h, +h }, { -h, +h, +h }, { +h, +h, +h }
+		};
 
-        return Vector3<T>(Width(), Height(), Depth()) * offset[idx] + MidPoint();
+		return Vector3<T>(Width(), Height(), Depth()) * offset[idx] + MidPoint();
 	}
 
 	template <typename T>
 	Vector3<T> BoundingBox<T, 3>::Clamp(const Vector3<T>& pt) const
 	{
-	    return CubbyFlow::Clamp(pt, lowerCorner, upperCorner);
+		return CubbyFlow::Clamp(pt, lowerCorner, upperCorner);
 	}
 
 	template <typename T>

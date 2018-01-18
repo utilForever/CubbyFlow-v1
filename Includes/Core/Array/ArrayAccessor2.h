@@ -9,9 +9,8 @@
 #ifndef CUBBYFLOW_ARRAY_ACCESSOR2_H
 #define CUBBYFLOW_ARRAY_ACCESSOR2_H
 
-#include <Array/ArrayAccessor.h>
-
-#include <Size/Size2.h>
+#include <Core/Array/ArrayAccessor.h>
+#include <Core/Size/Size2.h>
 
 namespace CubbyFlow
 {
@@ -416,6 +415,6 @@ namespace CubbyFlow
 	template <typename T> using ConstArrayAccessor2 = ConstArrayAccessor<T, 2>;
 }
 
-#include <Array/ArrayAccessor2-Impl.h>
+#include <Core/Array/ArrayAccessor2-Impl.h>
 
 #endif

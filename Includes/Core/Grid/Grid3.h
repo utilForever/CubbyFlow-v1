@@ -9,10 +9,10 @@
 #ifndef CUBBYFLOW_GRID3_H
 #define CUBBYFLOW_GRID3_H
 
-#include <BoundingBox/BoundingBox3.h>
-#include <Size/Size3.h>
-#include <Utils/Serialization.h>
-#include <Vector/Vector3.h>
+#include <Core/BoundingBox/BoundingBox3.h>
+#include <Core/Size/Size3.h>
+#include <Core/Utils/Serialization.h>
+#include <Core/Vector/Vector3.h>
 
 #include <string>
 
@@ -111,10 +111,10 @@ namespace CubbyFlow
 	};
 
 #define CUBBYFLOW_GRID3_TYPE_NAME(DerivedClassName) \
-    std::string TypeName() const override \
+	std::string TypeName() const override \
 	{ \
-        return #DerivedClassName; \
-    }
+		return #DerivedClassName; \
+	}
 
 }
 

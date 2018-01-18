@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_GRID_BLOCKED_BOUNDARY_CONDITION_SOLVER2_H
 #define CUBBYFLOW_GRID_BLOCKED_BOUNDARY_CONDITION_SOLVER2_H
 
-#include <Solver/Grid/GridFractionalBoundaryConditionSolver2.h>
+#include <Core/Solver/Grid/GridFractionalBoundaryConditionSolver2.h>
 
 namespace CubbyFlow
 {

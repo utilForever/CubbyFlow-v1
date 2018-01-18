@@ -9,9 +9,8 @@
 #ifndef CUBBYFLOW_MATRIX2X2_H
 #define CUBBYFLOW_MATRIX2X2_H
 
-#include <Matrix/Matrix.h>
-
-#include <Vector/Vector2.h>
+#include <Core/Matrix/Matrix.h>
+#include <Core/Vector/Vector2.h>
 
 #include <array>
 #include <limits>
@@ -398,6 +397,6 @@ namespace CubbyFlow
 	using Matrix2x2D = Matrix2x2<double>;
 }
 
-#include <Matrix/Matrix2x2-Impl.h>
+#include <Core/Matrix/Matrix2x2-Impl.h>
 
 #endif

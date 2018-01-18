@@ -9,9 +9,8 @@
 #ifndef CUBBYFLOW_POINT2_H
 #define CUBBYFLOW_POINT2_H
 
-#include <Point/Point.h>
-
-#include <Utils/Constants.h>
+#include <Core/Point/Point.h>
+#include <Core/Utils/Constants.h>
 
 namespace CubbyFlow
 {
@@ -316,6 +315,6 @@ namespace CubbyFlow
 	using Point2UI = Point2<size_t>;
 }
 
-#include <Point/Point2-Impl.h>
+#include <Core/Point/Point2-Impl.h>
 
 #endif

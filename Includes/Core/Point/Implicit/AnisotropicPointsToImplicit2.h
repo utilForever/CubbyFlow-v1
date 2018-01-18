@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_ANISOTROPIC_POINTS_TO_IMPLICIT2_H
 #define CUBBYFLOW_ANISOTROPIC_POINTS_TO_IMPLICIT2_H
 
-#include <Point/Implicit/PointsToImplicit2.h>
+#include <Core/Point/Implicit/PointsToImplicit2.h>
 
 namespace CubbyFlow
 {

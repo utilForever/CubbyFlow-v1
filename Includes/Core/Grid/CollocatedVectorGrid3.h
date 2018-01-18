@@ -9,9 +9,9 @@
 #ifndef CUBBYFLOW_COLLOCATED_VECTOR_GRID3_H
 #define CUBBYFLOW_COLLOCATED_VECTOR_GRID3_H
 
-#include <Array/Array3.h>
-#include <Array/ArraySamplers3.h>
-#include <Grid/VectorGrid3.h>
+#include <Core/Array/Array3.h>
+#include <Core/Array/ArraySamplers3.h>
+#include <Core/Grid/VectorGrid3.h>
 
 namespace CubbyFlow
 {

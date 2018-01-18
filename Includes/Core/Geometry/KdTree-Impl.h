@@ -8,6 +8,7 @@
 *************************************************************************/
 #ifndef CUBBYFLOW_KDTREE_IMPL_H
 #define CUBBYFLOW_KDTREE_IMPL_H
+
 #include <numeric>
 
 namespace CubbyFlow

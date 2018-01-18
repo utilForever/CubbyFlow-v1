@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_FDM_CG_SOLVER3_H
 #define CUBBYFLOW_FDM_CG_SOLVER3_H
 
-#include <Solver/FDM/FDMLinearSystemSolver3.h>
+#include <Core/Solver/FDM/FDMLinearSystemSolver3.h>
 
 namespace CubbyFlow
 {
@@ -23,8 +23,8 @@ namespace CubbyFlow
 		//! Solves the given linear system.
 		bool Solve(FDMLinearSystem3* system) override;
 
-        //! Solves the given compressed linear system.
-        bool SolveCompressed(FDMCompressedLinearSystem3* system) override;
+		//! Solves the given compressed linear system.
+		bool SolveCompressed(FDMCompressedLinearSystem3* system) override;
 
 		//! Returns the max number of Jacobi iterations.
 		unsigned int GetMaxNumberOfIterations() const;
@@ -44,20 +44,20 @@ namespace CubbyFlow
 		double m_tolerance;
 		double m_lastResidual;
 
-        // Uncompressed vectors
-        FDMVector3 m_r;
-        FDMVector3 m_d;
-        FDMVector3 m_q;
-        FDMVector3 m_s;
+		// Uncompressed vectors
+		FDMVector3 m_r;
+		FDMVector3 m_d;
+		FDMVector3 m_q;
+		FDMVector3 m_s;
 
-        // Compressed vectors
-        VectorND m_rComp;
-        VectorND m_dComp;
-        VectorND m_qComp;
-        VectorND m_sComp;
+		// Compressed vectors
+		VectorND m_rComp;
+		VectorND m_dComp;
+		VectorND m_qComp;
+		VectorND m_sComp;
 
-        void ClearUncompressedVectors();
-        void ClearCompressedVectors();
+		void ClearUncompressedVectors();
+		void ClearCompressedVectors();
 	};
 
 	//! Shared pointer type for the FDMCGSolver3.

@@ -9,11 +9,11 @@
 #ifndef CUBBYFLOW_VOLUME_GRID_EMITTER3_H
 #define CUBBYFLOW_VOLUME_GRID_EMITTER3_H
 
-#include <Emitter/GridEmitter3.h>
-#include <Grid/ScalarGrid3.h>
-#include <Grid/VectorGrid3.h>
-#include <Surface/Implicit/ImplicitSurface3.h>
-#include <Vector/Vector3.h>
+#include <Core/Emitter/GridEmitter3.h>
+#include <Core/Grid/ScalarGrid3.h>
+#include <Core/Grid/VectorGrid3.h>
+#include <Core/Surface/Implicit/ImplicitSurface3.h>
+#include <Core/Vector/Vector3.h>
 
 #include <memory>
 

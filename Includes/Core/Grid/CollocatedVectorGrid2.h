@@ -9,9 +9,9 @@
 #ifndef CUBBYFLOW_COLLOCATED_VECTOR_GRID2_H
 #define CUBBYFLOW_COLLOCATED_VECTOR_GRID2_H
 
-#include <Array/Array2.h>
-#include <Array/ArraySamplers2.h>
-#include <Grid/VectorGrid2.h>
+#include <Core/Array/Array2.h>
+#include <Core/Array/ArraySamplers2.h>
+#include <Core/Grid/VectorGrid2.h>
 
 namespace CubbyFlow
 {

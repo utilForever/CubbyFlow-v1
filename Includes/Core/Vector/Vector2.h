@@ -9,10 +9,9 @@
 #ifndef CUBBYFLOW_VECTOR2_H
 #define CUBBYFLOW_VECTOR2_H
 
-#include <Vector/Vector.h>
-
-#include <Utils/Constants.h>
-#include <Utils/TypeHelpers.h>
+#include <Core/Utils/Constants.h>
+#include <Core/Utils/TypeHelpers.h>
+#include <Core/Vector/Vector.h>
 
 namespace CubbyFlow
 {
@@ -373,6 +372,6 @@ namespace CubbyFlow
 		T f);
 }
 
-#include <Vector/Vector2-Impl.h>
+#include <Core/Vector/Vector2-Impl.h>
 
 #endif

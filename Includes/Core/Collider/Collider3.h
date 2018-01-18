@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_COLLIDER3_H
 #define CUBBYFLOW_COLLIDER3_H
 
-#include <Surface/Surface3.h>
+#include <Core/Surface/Surface3.h>
 
 #include <functional>
 

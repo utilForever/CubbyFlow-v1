@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_QUATERNION_H
 #define CUBBYFLOW_QUATERNION_H
 
-#include <Matrix/Matrix4x4.h>
+#include <Core/Matrix/Matrix4x4.h>
 
 namespace CubbyFlow
 {
@@ -183,6 +183,6 @@ namespace CubbyFlow
 	using QuaternionD = Quaternion<double>;
 }
 
-#include <Math/Quaternion-Impl.h>
+#include <Core/Math/Quaternion-Impl.h>
 
 #endif

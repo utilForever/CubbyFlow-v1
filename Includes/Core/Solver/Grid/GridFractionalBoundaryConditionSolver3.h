@@ -9,9 +9,9 @@
 #ifndef CUBBYFLOW_GRID_FRACTIONAL_BOUNDARY_CONDITION_SOLVER3_H
 #define CUBBYFLOW_GRID_FRACTIONAL_BOUNDARY_CONDITION_SOLVER3_H
 
-#include <Field/CustomVectorField3.h>
-#include <Grid/CellCenteredScalarGrid3.h>
-#include <Solver/Grid/GridBoundaryConditionSolver3.h>
+#include <Core/Field/CustomVectorField3.h>
+#include <Core/Grid/CellCenteredScalarGrid3.h>
+#include <Core/Solver/Grid/GridBoundaryConditionSolver3.h>
 
 namespace CubbyFlow
 {

@@ -9,10 +9,10 @@
 #ifndef CUBBYFLOW_TRANSFORM3_H
 #define CUBBYFLOW_TRANSFORM3_H
 
-#include <BoundingBox/BoundingBox3.h>
-#include <Math/Quaternion.h>
-#include <Ray/Ray3.h>
-#include <Vector/Vector3.h>
+#include <Core/BoundingBox/BoundingBox3.h>
+#include <Core/Math/Quaternion.h>
+#include <Core/Ray/Ray3.h>
+#include <Core/Vector/Vector3.h>
 
 namespace CubbyFlow
 {

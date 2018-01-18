@@ -9,8 +9,8 @@
 #ifndef CUBBYFLOW_POINT_PARALLEL_HASH_GRID_SEARCHER3_H
 #define CUBBYFLOW_POINT_PARALLEL_HASH_GRID_SEARCHER3_H
 
-#include <Searcher/PointNeighborSearcher3.h>
-#include <Size/Size3.h>
+#include <Core/Searcher/PointNeighborSearcher3.h>
+#include <Core/Size/Size3.h>
 
 namespace CubbyFlow
 {

@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_CONSTANT_SCALAR_FIELD2_H
 #define CUBBYFLOW_CONSTANT_SCALAR_FIELD2_H
 
-#include <Field/ScalarField2.h>
+#include <Core/Field/ScalarField2.h>
 
 namespace CubbyFlow
 {

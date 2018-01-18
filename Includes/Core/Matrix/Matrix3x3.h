@@ -9,9 +9,8 @@
 #ifndef CUBBYFLOW_MATRIX3X3_H
 #define CUBBYFLOW_MATRIX3X3_H
 
-#include <Matrix/Matrix.h>
-
-#include <Vector/Vector3.h>
+#include <Core/Matrix/Matrix.h>
+#include <Core/Vector/Vector3.h>
 
 #include <array>
 #include <limits>
@@ -405,6 +404,6 @@ namespace CubbyFlow
 	using Matrix3x3D = Matrix3x3<double>;
 }
 
-#include <Matrix/Matrix3x3-Impl.h>
+#include <Core/Matrix/Matrix3x3-Impl.h>
 
 #endif

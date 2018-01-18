@@ -9,8 +9,8 @@
 #ifndef CUBBYFLOW_GRID_BACKWARD_EULER_DIFFUSION_SOLVER3_H
 #define CUBBYFLOW_GRID_BACKWARD_EULER_DIFFUSION_SOLVER3_H
 
-#include <Solver/FDM/FDMLinearSystemSolver3.h>
-#include <Solver/Grid/GridDiffusionSolver3.h>
+#include <Core/Solver/FDM/FDMLinearSystemSolver3.h>
+#include <Core/Solver/Grid/GridDiffusionSolver3.h>
 
 namespace CubbyFlow
 {

@@ -9,13 +9,13 @@
 #ifndef CUBBYFLOW_PARTICLE_SYSTEM_SOLVER3_H
 #define CUBBYFLOW_PARTICLE_SYSTEM_SOLVER3_H
 
-#include <Animation/PhysicsAnimation.h>
-#include <Collider/Collider3.h>
-#include <Emitter/ParticleEmitter3.h>
-#include <Field/VectorField3.h>
-#include <Particle/ParticleSystemData3.h>
-#include <Utils/Constants.h>
-#include <Vector/Vector3.h>
+#include <Core/Animation/PhysicsAnimation.h>
+#include <Core/Collider/Collider3.h>
+#include <Core/Emitter/ParticleEmitter3.h>
+#include <Core/Field/VectorField3.h>
+#include <Core/Particle/ParticleSystemData3.h>
+#include <Core/Utils/Constants.h>
+#include <Core/Vector/Vector3.h>
 
 namespace CubbyFlow
 {

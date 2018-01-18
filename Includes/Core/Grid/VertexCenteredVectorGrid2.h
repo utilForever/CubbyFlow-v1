@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_VERTEX_CENTERED_VECTOR_GRID2_H
 #define CUBBYFLOW_VERTEX_CENTERED_VECTOR_GRID2_H
 
-#include <Grid/CollocatedVectorGrid2.h>
+#include <Core/Grid/CollocatedVectorGrid2.h>
 
 namespace CubbyFlow
 {

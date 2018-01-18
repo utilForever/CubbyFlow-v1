@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_GRID_EMITTER_SET3_H
 #define CUBBYFLOW_GRID_EMITTER_SET3_H
 
-#include <Emitter/GridEmitter3.h>
+#include <Core/Emitter/GridEmitter3.h>
 
 #include <vector>
 

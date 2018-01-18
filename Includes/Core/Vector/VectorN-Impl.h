@@ -9,8 +9,8 @@
 #ifndef CUBBYFLOW_VECTORN_IMPL_H
 #define CUBBYFLOW_VECTORN_IMPL_H
 
-#include <Math/MathUtils.h>
-#include <Utils/Parallel.h>
+#include <Core/Math/MathUtils.h>
+#include <Core/Utils/Parallel.h>
 
 namespace CubbyFlow
 {
@@ -59,10 +59,10 @@ namespace CubbyFlow
 		m_elements.resize(n, val);
 	}
 
-    template <typename T>
-    void VectorN<T>::Clear()
+	template <typename T>
+	void VectorN<T>::Clear()
 	{
-        m_elements.clear();
+		m_elements.clear();
 	}
 
 	template <typename T>
@@ -89,10 +89,10 @@ namespace CubbyFlow
 		ParallelForEachIndex([&](size_t i) { m_elements[i] = expression[i]; });
 	}
 
-    template <typename T>
-    void VectorN<T>::Append(const T& val)
+	template <typename T>
+	void VectorN<T>::Append(const T& val)
 	{
-        m_elements.push_back(val);
+		m_elements.push_back(val);
 	}
 
 	template <typename T>

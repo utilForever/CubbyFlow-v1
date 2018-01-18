@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_BOX3_H
 #define CUBBYFLOW_BOX3_H
 
-#include <Surface/Surface3.h>
+#include <Core/Surface/Surface3.h>
 
 namespace CubbyFlow
 {

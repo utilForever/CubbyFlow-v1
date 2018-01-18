@@ -9,8 +9,8 @@
 #ifndef CUBBYFLOW_POINT_KDTREE_SEARCHER2_H
 #define CUBBYFLOW_POINT_KDTREE_SEARCHER2_H
 
-#include <Geometry/KdTree.h>
-#include <Searcher/PointNeighborSearcher2.h>
+#include <Core/Geometry/KdTree.h>
+#include <Core/Searcher/PointNeighborSearcher2.h>
 
 namespace CubbyFlow
 {

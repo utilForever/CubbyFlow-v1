@@ -9,10 +9,9 @@
 #ifndef CUBBYFLOW_BOUNDING_BOX2_H
 #define CUBBYFLOW_BOUNDING_BOX2_H
 
-#include <BoundingBox/BoundingBox.h>
-
-#include <Ray/Ray2.h>
-#include <Vector/Vector2.h>
+#include <Core/BoundingBox/BoundingBox.h>
+#include <Core/Ray/Ray2.h>
+#include <Core/Vector/Vector2.h>
 
 #include <limits>
 
@@ -133,6 +132,6 @@ namespace CubbyFlow
 	using BoundingBoxRayIntersection2D = BoundingBoxRayIntersection2<double>;
 }
 
-#include <BoundingBox/BoundingBox2-Impl.h>
+#include <Core/BoundingBox/BoundingBox2-Impl.h>
 
 #endif

@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_GRID_FORWARD_EULER_DIFFUSION_SOLVER3_H
 #define CUBBYFLOW_GRID_FORWARD_EULER_DIFFUSION_SOLVER3_H
 
-#include <Solver/Grid/GridDiffusionSolver3.h>
+#include <Core/Solver/Grid/GridDiffusionSolver3.h>
 
 namespace CubbyFlow
 {

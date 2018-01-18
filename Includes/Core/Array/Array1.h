@@ -9,8 +9,8 @@
 #ifndef CUBBYFLOW_ARRAY1_H
 #define CUBBYFLOW_ARRAY1_H
 
-#include <Array/Array.h>
-#include <Array/ArrayAccessor1.h>
+#include <Core/Array/Array.h>
+#include <Core/Array/ArrayAccessor1.h>
 
 #include <vector>
 
@@ -234,6 +234,6 @@ namespace CubbyFlow
 	using Array1 = Array<T, 1>;
 }
 
-#include <Array/Array1-Impl.h>
+#include <Core/Array/Array1-Impl.h>
 
 #endif

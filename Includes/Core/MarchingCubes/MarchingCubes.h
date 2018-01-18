@@ -9,9 +9,9 @@
 #ifndef CUBBYFLOW_MARCHING_CUBES_H
 #define CUBBYFLOW_MARCHING_CUBES_H
 
-#include <Array/ArrayAccessor3.h>
-#include <Geometry/TriangleMesh3.h>
-#include <Vector/Vector3.h>
+#include <Core/Array/ArrayAccessor3.h>
+#include <Core/Geometry/TriangleMesh3.h>
+#include <Core/Vector/Vector3.h>
 
 namespace CubbyFlow
 {

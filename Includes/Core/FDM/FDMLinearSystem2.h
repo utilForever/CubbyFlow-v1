@@ -9,10 +9,10 @@
 #ifndef CUBBYFLOW_FDM_LINEAR_SYSTEM2_H
 #define CUBBYFLOW_FDM_LINEAR_SYSTEM2_H
 
-#include <Array/Array2.h>
-#include <Matrix/MatrixCSR.h>
-#include <Size/Size2.h>
-#include <Vector/VectorN.h>
+#include <Core/Array/Array2.h>
+#include <Core/Matrix/MatrixCSR.h>
+#include <Core/Size/Size2.h>
+#include <Core/Vector/VectorN.h>
 
 namespace CubbyFlow
 {

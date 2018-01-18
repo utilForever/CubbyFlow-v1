@@ -9,9 +9,8 @@
 #ifndef CUBBYFLOW_RAY3_H
 #define CUBBYFLOW_RAY3_H
 
-#include <Ray/Ray.h>
-
-#include <Vector/Vector3.h>
+#include <Core/Ray/Ray.h>
+#include <Core/Vector/Vector3.h>
 
 namespace CubbyFlow
 {
@@ -55,6 +54,6 @@ namespace CubbyFlow
 	using Ray3D = Ray3<double>;
 }
 
-#include <Ray/Ray3-Impl.h>
+#include <Core/Ray/Ray3-Impl.h>
 
 #endif

@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_FDM_LINEAR_SYSTEM_SOLVER2_H
 #define CUBBYFLOW_FDM_LINEAR_SYSTEM_SOLVER2_H
 
-#include <FDM/FDMLinearSystem2.h>
+#include <Core/FDM/FDMLinearSystem2.h>
 
 namespace CubbyFlow
 {

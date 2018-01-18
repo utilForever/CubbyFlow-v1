@@ -9,8 +9,8 @@
 #ifndef CUBBYFLOW_ARRAY_UTILS_H
 #define CUBBYFLOW_ARRAY_UTILS_H
 
-#include <Array/ArrayAccessor2.h>
-#include <Array/ArrayAccessor3.h>
+#include <Core/Array/ArrayAccessor2.h>
+#include <Core/Array/ArrayAccessor3.h>
 
 namespace CubbyFlow
 {
@@ -138,6 +138,6 @@ namespace CubbyFlow
 	void ConvertToCSV(const ArrayType& data, std::ostream* stream);
 }
 
-#include <Array/ArrayUtils-Impl.h>
+#include <Core/Array/ArrayUtils-Impl.h>
 
 #endif

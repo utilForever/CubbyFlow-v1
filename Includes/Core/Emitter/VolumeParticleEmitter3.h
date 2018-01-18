@@ -9,9 +9,9 @@
 #ifndef CUBBYFLOW_VOLUME_PARTICLE_EMITTER3_H
 #define CUBBYFLOW_VOLUME_PARTICLE_EMITTER3_H
 
-#include <Emitter/ParticleEmitter3.h>
-#include <PointGenerator/PointGenerator3.h>
-#include <Surface/Implicit/ImplicitSurface3.h>
+#include <Core/Emitter/ParticleEmitter3.h>
+#include <Core/PointGenerator/PointGenerator3.h>
+#include <Core/Surface/Implicit/ImplicitSurface3.h>
 
 #include <random>
 

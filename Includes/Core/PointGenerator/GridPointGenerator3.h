@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_GRID_POINT_GENERATOR3_H
 #define CUBBYFLOW_GRID_POINT_GENERATOR3_H
 
-#include <PointGenerator/PointGenerator3.h>
+#include <Core/PointGenerator/PointGenerator3.h>
 
 namespace CubbyFlow
 {

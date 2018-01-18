@@ -9,9 +9,8 @@
 #ifndef CUBBYFLOW_ARRAY_ACCESSOR3_H
 #define CUBBYFLOW_ARRAY_ACCESSOR3_H
 
-#include <Array/ArrayAccessor.h>
-
-#include <Size/Size3.h>
+#include <Core/Array/ArrayAccessor.h>
+#include <Core/Size/Size3.h>
 
 namespace CubbyFlow
 {
@@ -432,6 +431,6 @@ namespace CubbyFlow
 	template <typename T> using ConstArrayAccessor3 = ConstArrayAccessor<T, 3>;
 }
 
-#include <Array/ArrayAccessor3-Impl.h>
+#include <Core/Array/ArrayAccessor3-Impl.h>
 
 #endif

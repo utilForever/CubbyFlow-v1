@@ -9,10 +9,10 @@
 #ifndef CUBBYFLOW_GRID2_H
 #define CUBBYFLOW_GRID2_H
 
-#include <BoundingBox/BoundingBox2.h>
-#include <Size/Size2.h>
-#include <Utils/Serialization.h>
-#include <Vector/Vector2.h>
+#include <Core/BoundingBox/BoundingBox2.h>
+#include <Core/Size/Size2.h>
+#include <Core/Utils/Serialization.h>
+#include <Core/Vector/Vector2.h>
 
 #include <string>
 
@@ -105,10 +105,10 @@ namespace CubbyFlow
 	};
 
 #define CUBBYFLOW_GRID2_TYPE_NAME(DerivedClassName) \
-    std::string TypeName() const override \
+	std::string TypeName() const override \
 	{ \
-        return #DerivedClassName; \
-    }
+		return #DerivedClassName; \
+	}
 }
 
 #endif

@@ -9,8 +9,8 @@
 #ifndef CUBBYFLOW_POINT_GENERATOR3_H
 #define CUBBYFLOW_POINT_GENERATOR3_H
 
-#include <Array/Array1.h>
-#include <BoundingBox/BoundingBox3.h>
+#include <Core/Array/Array1.h>
+#include <Core/BoundingBox/BoundingBox3.h>
 
 #include <functional>
 

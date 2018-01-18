@@ -9,9 +9,9 @@
 #ifndef CUBBYFLOW_PIC_SOLVER2_H
 #define CUBBYFLOW_PIC_SOLVER2_H
 
-#include <Emitter/ParticleEmitter2.h>
-#include <Particle/ParticleSystemData2.h>
-#include <Solver/Grid/GridFluidSolver2.h>
+#include <Core/Emitter/ParticleEmitter2.h>
+#include <Core/Particle/ParticleSystemData2.h>
+#include <Core/Solver/Grid/GridFluidSolver2.h>
 
 namespace CubbyFlow
 {

@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_PARTICLE_EMITTER3_H
 #define CUBBYFLOW_PARTICLE_EMITTER3_H
 
-#include <Particle/ParticleSystemData3.h>
+#include <Core/Particle/ParticleSystemData3.h>
 
 namespace CubbyFlow
 {

@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_FDM_JACOBI_SOLVER2_H
 #define CUBBYFLOW_FDM_JACOBI_SOLVER2_H
 
-#include <Solver/FDM/FDMLinearSystemSolver2.h>
+#include <Core/Solver/FDM/FDMLinearSystemSolver2.h>
 
 namespace CubbyFlow
 {

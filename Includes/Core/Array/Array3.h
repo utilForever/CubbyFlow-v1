@@ -9,10 +9,9 @@
 #ifndef CUBBYFLOW_ARRAY3_H
 #define CUBBYFLOW_ARRAY3_H
 
-#include <Array/Array.h>
-#include <Array/ArrayAccessor3.h>
-
-#include <Size/Size3.h>
+#include <Core/Array/Array.h>
+#include <Core/Array/ArrayAccessor3.h>
+#include <Core/Size/Size3.h>
 
 #include <vector>
 
@@ -421,6 +420,6 @@ namespace CubbyFlow
 	using Array3 = Array<T, 3>;
 }
 
-#include <Array/Array3-Impl.h>
+#include <Core/Array/Array3-Impl.h>
 
 #endif

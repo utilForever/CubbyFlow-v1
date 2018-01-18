@@ -9,9 +9,9 @@
 #ifndef CUBBYFLOW_GRID_SYSTM_DATA3_H
 #define CUBBYFLOW_GRID_SYSTM_DATA3_H
 
-#include <Grid/FaceCenteredGrid3.h>
-#include <Grid/ScalarGrid3.h>
-#include <Utils/Serialization.h>
+#include <Core/Grid/FaceCenteredGrid3.h>
+#include <Core/Grid/ScalarGrid3.h>
+#include <Core/Utils/Serialization.h>
 
 namespace CubbyFlow
 {

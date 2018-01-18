@@ -231,11 +231,11 @@ namespace CubbyFlow
 	template <typename T>
 	Quaternion<T> Quaternion<T>::Mul(const Quaternion& other) const
 	{
-        return Quaternion(
-            w * other.w - x * other.x - y * other.y - z * other.z,
-            w * other.x + x * other.w + y * other.z - z * other.y,
-            w * other.y - x * other.z + y * other.w + z * other.x,
-            w * other.z + x * other.y - y * other.x + z * other.w);
+		return Quaternion(
+			w * other.w - x * other.x - y * other.y - z * other.z,
+			w * other.x + x * other.w + y * other.z - z * other.y,
+			w * other.y - x * other.z + y * other.w + z * other.x,
+			w * other.z + x * other.y - y * other.x + z * other.w);
 	}
 
 	template <typename T>
@@ -247,11 +247,11 @@ namespace CubbyFlow
 	template <typename T>
 	Quaternion<T> Quaternion<T>::RMul(const Quaternion& other) const
 	{
-        return Quaternion(
-            other.w * w - other.x * x - other.y * y - other.z * z,
-            other.w * x + other.x * w + other.y * z - other.z * y,
-            other.w * y - other.x * z + other.y * w + other.z * x,
-            other.w * z + other.x * y - other.y * x + other.z * w);
+		return Quaternion(
+			other.w * w - other.x * x - other.y * y - other.z * z,
+			other.w * x + other.x * w + other.y * z - other.z * y,
+			other.w * y - other.x * z + other.y * w + other.z * x,
+			other.w * z + other.x * y - other.y * x + other.z * w);
 	}
 
 	template <typename T>

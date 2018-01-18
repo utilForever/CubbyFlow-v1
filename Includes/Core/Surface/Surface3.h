@@ -9,10 +9,10 @@
 #ifndef CUBBYFLOW_SURFACE3_H
 #define CUBBYFLOW_SURFACE3_H
 
-#include <BoundingBox/BoundingBox3.h>
-#include <Ray/Ray3.h>
-#include <Transform/Transform3.h>
-#include <Vector/Vector3.h>
+#include <Core/BoundingBox/BoundingBox3.h>
+#include <Core/Ray/Ray3.h>
+#include <Core/Transform/Transform3.h>
+#include <Core/Vector/Vector3.h>
 
 #include <limits>
 #include <memory>
@@ -69,8 +69,8 @@ namespace CubbyFlow
 		//! point \p otherPoint.
 		Vector3D ClosestNormal(const Vector3D& otherPoint) const;
 
-        //! Updates internal spatial query engine.
-        virtual void UpdateQueryEngine();
+		//! Updates internal spatial query engine.
+		virtual void UpdateQueryEngine();
 
 	protected:
 		//! Returns the closest point from the given point \p otherPoint to the

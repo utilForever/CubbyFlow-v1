@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_VECTOR_IMPL_H
 #define CUBBYFLOW_VECTOR_IMPL_H
 
-#include <Math/MathUtils.h>
+#include <Core/Math/MathUtils.h>
 
 namespace CubbyFlow
 {

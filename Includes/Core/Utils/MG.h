@@ -107,6 +107,6 @@ namespace CubbyFlow
 		MGVector<BlasType>* buffer);
 }
 
-#include <Utils/MG-Impl.h>
+#include <Core/Utils/MG-Impl.h>
 
 #endif

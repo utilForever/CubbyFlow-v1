@@ -9,8 +9,8 @@
 #ifndef CUBBYFLOW_MATRIX_CSR_H
 #define CUBBYFLOW_MATRIX_CSR_H
 
-#include <Matrix/MatrixExpression.h>
-#include <Vector/VectorExpression.h>
+#include <Core/Matrix/MatrixExpression.h>
+#include <Core/Vector/VectorExpression.h>
 
 namespace CubbyFlow
 {
@@ -161,8 +161,8 @@ namespace CubbyFlow
 		MatrixCSR(MatrixCSR&& other) noexcept;
 
 		// MARK: Basic setters
-        //! Clears the matrix and make it zero-dimensional.
-        void Clear();
+		//! Clears the matrix and make it zero-dimensional.
+		void Clear();
 
 		//! Sets whole matrix with input scalar.
 		void Set(const T& s);
@@ -475,6 +475,6 @@ namespace CubbyFlow
 	using MatrixCSRD = MatrixCSR<double>;
 }
 
-#include <Matrix/MatrixCSR-Impl.h>
+#include <Core/Matrix/MatrixCSR-Impl.h>
 
 #endif

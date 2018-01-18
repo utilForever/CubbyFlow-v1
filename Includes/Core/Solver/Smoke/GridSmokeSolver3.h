@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_GRID_SMOKE_SOLVER3_H
 #define CUBBYFLOW_GRID_SMOKE_SOLVER3_H
 
-#include <Solver/Grid/GridFluidSolver3.h>
+#include <Core/Solver/Grid/GridFluidSolver3.h>
 
 namespace CubbyFlow
 {

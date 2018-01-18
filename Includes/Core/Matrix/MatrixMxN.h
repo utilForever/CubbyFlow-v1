@@ -9,8 +9,8 @@
 #ifndef CUBBYFLOW_MATRIXMXN_H
 #define CUBBYFLOW_MATRIXMXN_H
 
-#include <Array/Array2.h>
-#include <Matrix/MatrixExpression.h>
+#include <Core/Array/Array2.h>
+#include <Core/Matrix/MatrixExpression.h>
 
 namespace CubbyFlow
 {
@@ -488,6 +488,6 @@ namespace CubbyFlow
 	using MatrixMxND = MatrixMxN<double>;
 }
 
-#include <Matrix/MatrixMxN-Impl.h>
+#include <Core/Matrix/MatrixMxN-Impl.h>
 
 #endif

@@ -9,8 +9,8 @@
 #ifndef CUBBYFLOW_OCTREE_H
 #define CUBBYFLOW_OCTREE_H
 
-#include <QueryEngine/IntersectionQueryEngine3.h>
-#include <QueryEngine/NearestNeighborQueryEngine3.h>
+#include <Core/QueryEngine/IntersectionQueryEngine3.h>
+#include <Core/QueryEngine/NearestNeighborQueryEngine3.h>
 
 namespace CubbyFlow
 {
@@ -161,6 +161,6 @@ namespace CubbyFlow
 	};
 }
 
-#include <Geometry/Octree-Impl.h>
+#include <Core/Geometry/Octree-Impl.h>
 
 #endif

@@ -9,11 +9,11 @@
 #ifndef CUBBYFLOW_SVD_H
 #define CUBBYFLOW_SVD_H
 
-#include <Matrix/Matrix2x2.h>
-#include <Matrix/Matrix3x3.h>
-#include <Matrix/Matrix4x4.h>
-#include <Matrix/MatrixMxN.h>
-#include <Vector/VectorN.h>
+#include <Core/Matrix/Matrix2x2.h>
+#include <Core/Matrix/Matrix3x3.h>
+#include <Core/Matrix/Matrix4x4.h>
+#include <Core/Matrix/MatrixMxN.h>
+#include <Core/Vector/VectorN.h>
 
 namespace CubbyFlow
 {
@@ -48,6 +48,6 @@ namespace CubbyFlow
 	void SVD(const Matrix<T, M, N>& a, Matrix<T, M, N>& u, Vector<T, N>& w, Matrix<T, N, N>& v);
 }
 
-#include <Math/SVD-Impl.h>
+#include <Core/Math/SVD-Impl.h>
 
 #endif

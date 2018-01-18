@@ -9,8 +9,8 @@
 #ifndef CUBBYFLOW_LIST_QUERY_ENGINE2_H
 #define CUBBYFLOW_LIST_QUERY_ENGINE2_H
 
-#include <QueryEngine/IntersectionQueryEngine2.h>
-#include <QueryEngine/NearestNeighborQueryEngine2.h>
+#include <Core/QueryEngine/IntersectionQueryEngine2.h>
+#include <Core/QueryEngine/NearestNeighborQueryEngine2.h>
 
 namespace CubbyFlow
 {
@@ -58,6 +58,6 @@ namespace CubbyFlow
 	};
 }
 
-#include <QueryEngine/ListQueryEngine2-Impl.h>
+#include <Core/QueryEngine/ListQueryEngine2-Impl.h>
 
 #endif

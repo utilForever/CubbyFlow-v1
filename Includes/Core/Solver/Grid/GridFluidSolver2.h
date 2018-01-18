@@ -9,13 +9,13 @@
 #ifndef CUBBYFLOW_GRID_FLUID_SOLVER2_H
 #define CUBBYFLOW_GRID_FLUID_SOLVER2_H
 
-#include <Animation/PhysicsAnimation.h>
-#include <Collider/Collider2.h>
-#include <Emitter/GridEmitter2.h>
-#include <Grid/GridSystemData2.h>
-#include <Solver/Advection/AdvectionSolver2.h>
-#include <Solver/Grid/GridDiffusionSolver2.h>
-#include <Solver/Grid/GridPressureSolver2.h>
+#include <Core/Animation/PhysicsAnimation.h>
+#include <Core/Collider/Collider2.h>
+#include <Core/Emitter/GridEmitter2.h>
+#include <Core/Grid/GridSystemData2.h>
+#include <Core/Solver/Advection/AdvectionSolver2.h>
+#include <Core/Solver/Grid/GridDiffusionSolver2.h>
+#include <Core/Solver/Grid/GridPressureSolver2.h>
 
 namespace CubbyFlow
 {

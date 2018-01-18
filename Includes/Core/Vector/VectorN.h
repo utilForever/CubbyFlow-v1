@@ -9,8 +9,8 @@
 #ifndef CUBBYFLOW_VECTORN_H
 #define CUBBYFLOW_VECTORN_H
 
-#include <Array/ArrayAccessor1.h>
-#include <Vector/VectorExpression.h>
+#include <Core/Array/ArrayAccessor1.h>
+#include <Core/Vector/VectorExpression.h>
 
 namespace CubbyFlow
 {
@@ -56,8 +56,8 @@ namespace CubbyFlow
 		//! Resizes to \p n dimensional vector with initial value \p val.
 		void Resize(size_t n, const T& val = 0);
 
-        //! Clears the vector and make it zero-dimensional.
-        void Clear();
+		//! Clears the vector and make it zero-dimensional.
+		void Clear();
 
 		//! Sets all elements to \p s.
 		void Set(const T& s);
@@ -70,8 +70,8 @@ namespace CubbyFlow
 		template <typename E>
 		void Set(const VectorExpression<T, E>& other);
 
-        //! Adds an element.
-        void Append(const T& val);
+		//! Adds an element.
+		void Append(const T& val);
 
 		//! Swaps the content of the vector with \p other vector.
 		void Swap(VectorN& other);
@@ -397,6 +397,6 @@ namespace CubbyFlow
 	using VectorND = VectorN<double>;
 }
 
-#include <Vector/VectorN-Impl.h>
+#include <Core/Vector/VectorN-Impl.h>
 
 #endif

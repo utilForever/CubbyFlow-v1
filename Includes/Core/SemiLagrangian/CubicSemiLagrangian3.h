@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_CUBIC_SEMI_LAGRANGIAN3_H
 #define CUBBYFLOW_CUBIC_SEMI_LAGRANGIAN3_H
 
-#include <SemiLagrangian/SemiLagrangian3.h>
+#include <Core/SemiLagrangian/SemiLagrangian3.h>
 
 namespace CubbyFlow
 {

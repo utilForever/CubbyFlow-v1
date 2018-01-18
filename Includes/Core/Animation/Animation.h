@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_ANIMATION_H
 #define CUBBYFLOW_ANIMATION_H
 
-#include <Animation/Frame.h>
+#include <Core/Animation/Frame.h>
 
 #include <memory>
 

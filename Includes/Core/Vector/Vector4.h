@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_VECTOR4_H
 #define CUBBYFLOW_VECTOR4_H
 
-#include <Vector/Vector3.h>
+#include <Core/Vector/Vector3.h>
 
 #include <limits>
 
@@ -372,6 +372,6 @@ namespace CubbyFlow
 		T f);
 }
 
-#include <Vector/Vector4-Impl.h>
+#include <Core/Vector/Vector4-Impl.h>
 
 #endif

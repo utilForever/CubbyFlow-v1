@@ -9,10 +9,10 @@
 #ifndef CUBBYFLOW_FLATBUFFERS_HELPER_H
 #define CUBBYFLOW_FLATBUFFERS_HELPER_H
 
-#include <Size/Size2.h>
-#include <Size/Size3.h>
-#include <Vector/Vector2.h>
-#include <Vector/Vector3.h>
+#include <Core/Size/Size2.h>
+#include <Core/Size/Size3.h>
+#include <Core/Vector/Vector2.h>
+#include <Core/Vector/Vector3.h>
 
 #include <Flatbuffers/generated/BasicTypes_generated.h>
 

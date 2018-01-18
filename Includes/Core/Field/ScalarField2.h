@@ -9,9 +9,8 @@
 #ifndef CUBBYFLOW_SCALAR_FIELD2_H
 #define CUBBYFLOW_SCALAR_FIELD2_H
 
-#include <Field/Field2.h>
-
-#include <Vector/Vector2.h>
+#include <Core/Field/Field2.h>
+#include <Core/Vector/Vector2.h>
 
 #include <functional>
 #include <memory>

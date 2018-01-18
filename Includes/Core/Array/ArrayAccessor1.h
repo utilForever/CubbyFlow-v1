@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_ARRAY_ACCESSOR1_H
 #define CUBBYFLOW_ARRAY_ACCESSOR1_H
 
-#include <Array/ArrayAccessor.h>
+#include <Core/Array/ArrayAccessor.h>
 
 namespace CubbyFlow
 {
@@ -283,6 +283,6 @@ namespace CubbyFlow
 	template <typename T> using ConstArrayAccessor1 = ConstArrayAccessor<T, 1>;
 }
 
-#include <Array/ArrayAccessor1-Impl.h>
+#include <Core/Array/ArrayAccessor1-Impl.h>
 
 #endif

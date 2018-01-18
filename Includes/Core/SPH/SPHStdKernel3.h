@@ -15,7 +15,7 @@
 #ifndef CUBBYFLOW_SPH_STD_KERNEL3_H
 #define CUBBYFLOW_SPH_STD_KERNEL3_H
 
-#include <Vector/Vector3.h>
+#include <Core/Vector/Vector3.h>
 
 namespace CubbyFlow
 {

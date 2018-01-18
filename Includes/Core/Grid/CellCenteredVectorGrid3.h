@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_CELL_CENTERED_VECTOR_GRID3_H
 #define CUBBYFLOW_CELL_CENTERED_VECTOR_GRID3_H
 
-#include <Grid/CollocatedVectorGrid3.h>
+#include <Core/Grid/CollocatedVectorGrid3.h>
 
 namespace CubbyFlow
 {

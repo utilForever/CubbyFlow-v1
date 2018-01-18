@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_COLLIDER_SET2_H
 #define CUBBYFLOW_COLLIDER_SET2_H
 
-#include <Collider/Collider2.h>
+#include <Core/Collider/Collider2.h>
 
 #include <vector>
 
