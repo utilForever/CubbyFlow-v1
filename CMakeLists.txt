@@ -14,7 +14,7 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
 
 # Includes
-include_directories(Includes/Core)
+include_directories(Includes)
 include_directories(Libraries)
 include_directories(Libraries/obj)
 include_directories(Libraries/googletest/googletest/include)
