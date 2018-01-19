@@ -200,8 +200,6 @@ namespace CubbyFlow
 		static Builder GetBuilder();
 
 	private:
-		friend class PointParallelHashGridSearcher2Tests;
-
 		double m_gridSpacing = 1.0;
 		Point2I m_resolution = Point2I(1, 1);
 		std::vector<Vector2D> m_points;
