@@ -1,8 +1,17 @@
 # Target name
 set(target PyCubbyFlow)
 
+# Define
+set(root_dir ${CMAKE_CURRENT_SOURCE_DIR}/../../..)
+
 # Sources
-file(GLOB sources
+file(GLOB header_dir
+    ${root_dir}/Includes/API/Python)
+
+file(GLOB_RECURSE headers
+    ${header_dir}/*.h)
+
+file(GLOB_RECURSE sources
         ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
 
 # Add Pybind11 module
