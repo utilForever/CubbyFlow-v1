@@ -2,9 +2,9 @@
 
 #include <ManualTests.h>
 
-#include <Grid/VertexCenteredScalarGrid3.h>
-#include <MarchingCubes/MarchingCubes.h>
-#include <Point/Implicit/ZhuBridsonPointsToImplicit3.h>
+#include <Core/Grid/VertexCenteredScalarGrid3.h>
+#include <Core/MarchingCubes/MarchingCubes.h>
+#include <Core/Point/Implicit/ZhuBridsonPointsToImplicit3.h>
 
 #include <random>
 

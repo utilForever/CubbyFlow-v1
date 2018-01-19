@@ -2,8 +2,8 @@
 
 #include <ManualTests.h>
 
-#include <Grid/CellCenteredScalarGrid2.h>
-#include <Point/Implicit/ZhuBridsonPointsToImplicit2.h>
+#include <Core/Grid/CellCenteredScalarGrid2.h>
+#include <Core/Point/Implicit/ZhuBridsonPointsToImplicit2.h>
 
 #include <random>
 

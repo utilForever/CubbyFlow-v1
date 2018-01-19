@@ -2,14 +2,14 @@
 
 #include <ManualTests.h>
 
-#include <Collider/RigidBodyCollider3.h>
-#include <Emitter/VolumeParticleEmitter3.h>
-#include <Geometry/Box3.h>
-#include <Geometry/Plane3.h>
-#include <Geometry/Sphere3.h>
-#include <Solver/SPH/SPHSolver3.h>
-#include <Surface/Implicit/ImplicitSurfaceSet3.h>
-#include <Surface/Implicit/SurfaceToImplicit3.h>
+#include <Core/Collider/RigidBodyCollider3.h>
+#include <Core/Emitter/VolumeParticleEmitter3.h>
+#include <Core/Geometry/Box3.h>
+#include <Core/Geometry/Plane3.h>
+#include <Core/Geometry/Sphere3.h>
+#include <Core/Solver/SPH/SPHSolver3.h>
+#include <Core/Surface/Implicit/ImplicitSurfaceSet3.h>
+#include <Core/Surface/Implicit/SurfaceToImplicit3.h>
 
 using namespace CubbyFlow;
 
