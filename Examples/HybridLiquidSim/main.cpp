@@ -6,23 +6,23 @@
 > Created Time: 2017/09/13
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Array/ArrayUtils.h>
-#include <BoundingBox/BoundingBox3.h>
-#include <Collider/RigidBodyCollider3.h>
-#include <Emitter/ParticleEmitterSet3.h>
-#include <Emitter/VolumeParticleEmitter3.h>
-#include <Geometry/Box3.h>
-#include <Geometry/Cylinder3.h>
-#include <Geometry/Plane3.h>
-#include <Geometry/Sphere3.h>
-#include <Particle/ParticleSystemData3.h>
-#include <PointGenerator/BccLatticePointGenerator.h>
-#include <PointGenerator/GridPointGenerator3.h>
-#include <Solver/APIC/APICSolver3.h>
-#include <Solver/FLIP/FLIPSolver3.h>
-#include <Solver/PIC/PICSolver3.h>
-#include <Surface/Implicit/ImplicitSurfaceSet3.h>
-#include <Utils/Logger.h>
+#include <Core/Array/ArrayUtils.h>
+#include <Core/BoundingBox/BoundingBox3.h>
+#include <Core/Collider/RigidBodyCollider3.h>
+#include <Core/Emitter/ParticleEmitterSet3.h>
+#include <Core/Emitter/VolumeParticleEmitter3.h>
+#include <Core/Geometry/Box3.h>
+#include <Core/Geometry/Cylinder3.h>
+#include <Core/Geometry/Plane3.h>
+#include <Core/Geometry/Sphere3.h>
+#include <Core/Particle/ParticleSystemData3.h>
+#include <Core/PointGenerator/BccLatticePointGenerator.h>
+#include <Core/PointGenerator/GridPointGenerator3.h>
+#include <Core/Solver/APIC/APICSolver3.h>
+#include <Core/Solver/FLIP/FLIPSolver3.h>
+#include <Core/Solver/PIC/PICSolver3.h>
+#include <Core/Surface/Implicit/ImplicitSurfaceSet3.h>
+#include <Core/Utils/Logger.h>
 
 #include <pystring/pystring.h>
 

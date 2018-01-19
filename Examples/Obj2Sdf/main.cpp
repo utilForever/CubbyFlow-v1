@@ -6,10 +6,10 @@
 > Created Time: 2017/09/08
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Geometry/TriangleMesh3.h>
-#include <Geometry/TriangleMeshToSDF.h>
-#include <Grid/VertexCenteredScalarGrid3.h>
-#include <MarchingCubes/MarchingCubes.h>
+#include <Core/Geometry/TriangleMesh3.h>
+#include <Core/Geometry/TriangleMeshToSDF.h>
+#include <Core/Grid/VertexCenteredScalarGrid3.h>
+#include <Core/MarchingCubes/MarchingCubes.h>
 
 #include <getopt.h>
 

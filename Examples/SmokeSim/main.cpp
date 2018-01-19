@@ -6,18 +6,20 @@
 > Created Time: 2017/09/07
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Array/Array2.h>
-#include <Collider/RigidBodyCollider3.h>
-#include <Emitter/VolumeGridEmitter3.h>
-#include <Geometry/Box3.h>
-#include <Geometry/Sphere3.h>
-#include <Grid/ScalarGrid3.h>
-#include <Math/MathUtils.h>
-#include <SemiLagrangian/CubicSemiLagrangian3.h>
-#include <SemiLagrangian/SemiLagrangian3.h>
-#include <Solver/Smoke/GridSmokeSolver3.h>
-#include <Surface/Implicit/CustomImplicitSurface3.h>
-#include <Utils/Logger.h>
+#include <Core/Array/Array2.h>
+#include <Core/Collider/RigidBodyCollider3.h>
+#include <Core/Emitter/VolumeGridEmitter3.h>
+#include <Core/Geometry/Box3.h>
+#include <Core/Geometry/ImplicitTriangleMesh3.h>
+#include <Core/Geometry/Sphere3.h>
+#include <Core/Geometry/TriangleMesh3.h>
+#include <Core/Grid/ScalarGrid3.h>
+#include <Core/Math/MathUtils.h>
+#include <Core/SemiLagrangian/CubicSemiLagrangian3.h>
+#include <Core/SemiLagrangian/SemiLagrangian3.h>
+#include <Core/Solver/Smoke/GridSmokeSolver3.h>
+#include <Core/Surface/Implicit/CustomImplicitSurface3.h>
+#include <Core/Utils/Logger.h>
 
 #include <pystring/pystring.h>
 
@@ -32,8 +34,6 @@
 #include <fstream>
 #include <string>
 #include <vector>
-#include "Geometry/TriangleMesh3.h"
-#include "Geometry/ImplicitTriangleMesh3.h"
 
 #define APP_NAME "SmokeSim"
 

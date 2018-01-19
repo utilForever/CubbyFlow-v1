@@ -6,9 +6,9 @@
 > Created Time: 2017/09/09
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Array/Array1.h>
-#include <Vector/Vector3.h>
-#include <Utils/Serialization.h>
+#include <Core/Array/Array1.h>
+#include <Core/Vector/Vector3.h>
+#include <Core/Utils/Serialization.h>
 
 #include <getopt.h>
 

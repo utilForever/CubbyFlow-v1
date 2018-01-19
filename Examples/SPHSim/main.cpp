@@ -6,18 +6,18 @@
 > Created Time: 2017/06/18
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Array/ArrayUtils.h>
-#include <Collider/RigidBodyCollider3.h>
-#include <Emitter/VolumeParticleEmitter3.h>
-#include <Geometry/Box3.h>
-#include <Geometry/Cylinder3.h>
-#include <Geometry/Plane3.h>
-#include <Geometry/Sphere3.h>
-#include <Particle/ParticleSystemData3.h>
-#include <Solver/PCISPH/PCISPHSolver3.h>
-#include <Solver/SPH/SPHSolver3.h>
-#include <Surface/Implicit/ImplicitSurfaceSet3.h>
-#include <Utils/Logger.h>
+#include <Core/Array/ArrayUtils.h>
+#include <Core/Collider/RigidBodyCollider3.h>
+#include <Core/Emitter/VolumeParticleEmitter3.h>
+#include <Core/Geometry/Box3.h>
+#include <Core/Geometry/Cylinder3.h>
+#include <Core/Geometry/Plane3.h>
+#include <Core/Geometry/Sphere3.h>
+#include <Core/Particle/ParticleSystemData3.h>
+#include <Core/Solver/PCISPH/PCISPHSolver3.h>
+#include <Core/Solver/SPH/SPHSolver3.h>
+#include <Core/Surface/Implicit/ImplicitSurfaceSet3.h>
+#include <Core/Utils/Logger.h>
 
 #include <pystring/pystring.h>
 

@@ -6,18 +6,18 @@
 > Created Time: 2017/07/03
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Array/Array1.h>
-#include <BoundingBox/BoundingBox3.h>
-#include <Geometry/TriangleMesh3.h>
-#include <Grid/ScalarGrid3.h>
-#include <Grid/VertexCenteredScalarGrid3.h>
-#include <Point/Implicit/AnisotropicPointsToImplicit3.h>
-#include <Point/Implicit/SphericalPointsToImplicit3.h>
-#include <Point/Implicit/SPHPointsToImplicit3.h>
-#include <Point/Implicit/ZhuBridsonPointsToImplicit3.h>
-#include <MarchingCubes/MarchingCubes.h>
-#include <Size/Size3.h>
-#include <Utils/Serialization.h>
+#include <Core/Array/Array1.h>
+#include <Core/BoundingBox/BoundingBox3.h>
+#include <Core/Geometry/TriangleMesh3.h>
+#include <Core/Grid/ScalarGrid3.h>
+#include <Core/Grid/VertexCenteredScalarGrid3.h>
+#include <Core/Point/Implicit/AnisotropicPointsToImplicit3.h>
+#include <Core/Point/Implicit/SphericalPointsToImplicit3.h>
+#include <Core/Point/Implicit/SPHPointsToImplicit3.h>
+#include <Core/Point/Implicit/ZhuBridsonPointsToImplicit3.h>
+#include <Core/MarchingCubes/MarchingCubes.h>
+#include <Core/Size/Size3.h>
+#include <Core/Utils/Serialization.h>
 
 #include <pystring/pystring.h>
 
