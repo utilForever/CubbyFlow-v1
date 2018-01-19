@@ -70,6 +70,8 @@ add_subdirectory(Examples/Particles2Xml)
 add_subdirectory(Examples/SmokeSim)
 add_subdirectory(Examples/SPHSim)
 
+add_subdirectory(Libraries/pybind11)
 if (BUILD_FROM_PIP)
     set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${DEFAULT_CMAKE_LIBRARY_OUTPUT_DIRECTORY})
 endif()
+add_subdirectory(Sources/API/Python)
