@@ -1,15 +1,15 @@
 #include "pch.h"
 
-#include <Geometry/Sphere2.h>
-#include <Geometry/Sphere3.h>
-#include <Size/Size2.h>
-#include <Size/Size3.h>
-#include <Solver/LevelSet/LevelSetLiquidSolver2.h>
-#include <Solver/LevelSet/LevelSetLiquidSolver3.h>
-#include <Surface/Implicit/ImplicitSurface2.h>
-#include <Surface/Implicit/ImplicitSurfaceSet2.h>
-#include <Surface/Implicit/ImplicitSurface3.h>
-#include <Surface/Implicit/ImplicitSurfaceSet3.h>
+#include <Core/Geometry/Sphere2.h>
+#include <Core/Geometry/Sphere3.h>
+#include <Core/Size/Size2.h>
+#include <Core/Size/Size3.h>
+#include <Core/Solver/LevelSet/LevelSetLiquidSolver2.h>
+#include <Core/Solver/LevelSet/LevelSetLiquidSolver3.h>
+#include <Core/Surface/Implicit/ImplicitSurface2.h>
+#include <Core/Surface/Implicit/ImplicitSurfaceSet2.h>
+#include <Core/Surface/Implicit/ImplicitSurface3.h>
+#include <Core/Surface/Implicit/ImplicitSurfaceSet3.h>
 
 using namespace CubbyFlow;
 

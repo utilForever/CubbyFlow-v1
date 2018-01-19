@@ -1,11 +1,11 @@
 #include "pch.h"
 
-#include <Array/Array1.h>
-#include <Array/Array2.h>
-#include <Array/Array3.h>
-#include <Array/ArraySamplers1.h>
-#include <Array/ArraySamplers2.h>
-#include <Array/ArraySamplers3.h>
+#include <Core/Array/Array1.h>
+#include <Core/Array/Array2.h>
+#include <Core/Array/Array3.h>
+#include <Core/Array/ArraySamplers1.h>
+#include <Core/Array/ArraySamplers2.h>
+#include <Core/Array/ArraySamplers3.h>
 
 using namespace CubbyFlow;
 
@@ -55,8 +55,8 @@ TEST(LinearArraySampler1, Sample)
 		double s1 = sampler(1.8);
 		EXPECT_LT(std::fabs(s1 - 2.8), 1e-9);
 
-        double s2 = sampler(3.5);
-        EXPECT_NEAR(4.0, s2, 1e-9);
+		double s2 = sampler(3.5);
+		EXPECT_NEAR(4.0, s2, 1e-9);
 	}
 
 	{
