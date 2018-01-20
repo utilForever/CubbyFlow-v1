@@ -79,7 +79,8 @@ void AddAnimation(pybind11::module& m)
 			overriden by its sub-classes to implement their own state update logic.
 		)pbdoc")
 	.def(pybind11::init<>())
-	.def("update", &Animation::Update,
+	.def("Update",
+        &Animation::Update,
 		R"pbdoc(
 			Updates animation state for given `frame`.
 
