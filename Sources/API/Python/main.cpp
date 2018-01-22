@@ -11,12 +11,12 @@
 
 #include <pybind11/pybind11.h>
 
-PYBIND11_PLUGIN(pyCubbyFlow)
+PYBIND11_MODULE(pyCubbyFlow, m)
 {
-	pybind11::module m("pyCubbyFlow",
+	m.doc() =
 		R"pbdoc(
 			Voxel-based fluid simulation engine for computer games
-		)pbdoc");
+		)pbdoc";
 
 	// Trivial basic types
 	AddFrame(m);
@@ -30,6 +30,4 @@ PYBIND11_PLUGIN(pyCubbyFlow)
 #else
 	m.attr("__version__") = pybind11::str("dev");
 #endif
-
-	return m.ptr();
 }
