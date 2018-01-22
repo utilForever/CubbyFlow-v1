@@ -54,7 +54,7 @@ class CMakeBuild(build_ext):
         else:
             cmake_args += ['-DCMAKE_BUILD_TYPE=' + cfg]
             num_jobs = env.get('NUM_JOBS', multiprocessing.cpu_count())
-            build_args += ['--', '-j%s' % str(num_jobs), 'pycubbyflow']
+            build_args += ['--', '-j%s' % str(num_jobs), 'pyCubbyFlow']
 
         env['CXXFLAGS'] = '{} -DVERSION_INFO=\\"{}\\"'.format(env.get('CXXFLAGS', ''),
                                                               self.distribution.get_version())
@@ -67,13 +67,13 @@ class CMakeBuild(build_ext):
 
 
 setup(
-    name='pycubbyflow',
+    name='pyCubbyFlow',
     version='0.7',
     author='Chris Ohk',
     author_email='utilforever@gmail.com',
     description='Voxel-based fluid simulation engine for computer games',
     long_description='',
-    ext_modules=[CMakeExtension('pycubbyflow')],
+    ext_modules=[CMakeExtension('pyCubbyFlow')],
     
     cmdclass=dict(build_ext=CMakeBuild),
     zip_safe=False,
