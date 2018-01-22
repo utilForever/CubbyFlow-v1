@@ -80,7 +80,7 @@ void AddAnimation(pybind11::module& m)
 		)pbdoc")
 	.def(pybind11::init<>())
 	.def("Update",
-        &Animation::Update,
+		&Animation::Update,
 		R"pbdoc(
 			Updates animation state for given `frame`.
 
