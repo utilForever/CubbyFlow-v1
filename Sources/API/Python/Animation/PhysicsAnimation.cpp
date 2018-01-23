@@ -7,8 +7,10 @@
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <API/Python/Animation/PhysicsAnimation.h>
-#include <API/Python/Utils/pybind11Utils.h>
+#include <Core/Animation/Animation.h>
 #include <Core/Animation/PhysicsAnimation.h>
+
+#include <pybind11/pybind11.h>
 
 using namespace CubbyFlow;
 
