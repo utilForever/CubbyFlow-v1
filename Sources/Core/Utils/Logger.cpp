@@ -20,8 +20,9 @@ namespace CubbyFlow
 	static std::ostream* warnOutStream = &std::cout;
 	static std::ostream* errorOutStream = &std::cerr;
 	static std::ostream* debugOutStream = &std::cout;
+	static LogLevel logLevel = LogLevel::All;
 
-	inline std::ostream* levelToStream(LogLevel level)
+	inline std::ostream* LevelToStream(LogLevel level)
 	{
 		switch (level)
 		{
@@ -33,12 +34,12 @@ namespace CubbyFlow
 			return errorOutStream;
 		case LogLevel::Debug:
 			return debugOutStream;
+		default:
+			return infoOutStream;
 		}
-
-		return nullptr;
 	}
 
-	inline std::string levelToString(LogLevel level)
+	inline std::string LevelToString(LogLevel level)
 	{
 		switch (level)
 		{
@@ -50,9 +51,14 @@ namespace CubbyFlow
 			return "ERROR";
 		case LogLevel::Debug:
 			return "DEBUG";
+		default:
+			return "";
 		}
+	}
 
-		return nullptr;
+	inline bool IsLeq(LogLevel a, LogLevel b)
+	{
+		return static_cast<uint8_t>(a) <= static_cast<uint8_t>(b);
 	}
 	
 	Logger::Logger(LogLevel level) :
@@ -61,17 +67,16 @@ namespace CubbyFlow
 		// Do nothing
 	}
 
-	Logger::~Logger() {
+	Logger::~Logger()
+	{
 		std::lock_guard<std::mutex> lock(critical);
-#if defined(DEBUG) || defined(_DEBUG)
-		if (m_level != LogLevel::Debug) {
-#endif
-			auto stream = levelToStream(m_level);
-			(*stream) << m_buffer.str() << std::endl;
+
+		if (IsLeq(logLevel, m_level))
+		{
+			auto stream = LevelToStream(m_level);
+			*stream << m_buffer.str() << std::endl;
 			stream->flush();
-#if defined(DEBUG) || defined(_DEBUG)
 		}
-#endif
 	}
 
 	void Logging::SetInfoStream(std::ostream* stream)
@@ -120,9 +125,25 @@ namespace CubbyFlow
 		char header[256];
 		snprintf(
 			header, sizeof(header), "[%s] %s ",
-			levelToString(level).c_str(),
+			LevelToString(level).c_str(),
 			timeStr);
 
 		return header;
+	}
+
+	void Logging::SetLevel(LogLevel level)
+	{
+		std::lock_guard<std::mutex> lock(critical);
+		logLevel = level;
+	}
+
+	void Logging::Mute()
+	{
+		SetLevel(LogLevel::Off);
+	}
+
+	void Logging::Unmute()
+	{
+		SetLevel(LogLevel::All);
 	}
 }

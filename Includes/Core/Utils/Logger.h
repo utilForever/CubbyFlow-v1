@@ -13,12 +13,16 @@
 
 namespace CubbyFlow
 {
-	enum class LogLevel
+	//! Level of the log.
+	//! All < Debug < Info < Warn < Error < Off.
+	enum class LogLevel : uint8_t
 	{
-		Info,
-		Warn,
-		Error,
-		Debug
+		All = 0,
+		Debug = 1,
+		Info = 2,
+		Warn = 3,
+		Error = 4,
+		Off = 5
 	};
 
 	//!
@@ -70,6 +74,15 @@ namespace CubbyFlow
 
 		//! Returns the header string.
 		static std::string GetHeader(LogLevel level);
+
+		//! Sets the log level.
+		static void SetLevel(LogLevel level);
+
+		//! Mutes the logger.
+		static void Mute();
+
+		//! Un-mutes the logger.
+		static void Unmute();
 	};
 
 	//! Info-level logger.
