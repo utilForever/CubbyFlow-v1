@@ -44,7 +44,7 @@ void AddFrame(pybind11::module& m)
 		R"pbdoc(Time interval of the frame in seconds)pbdoc")
 	.def("timeInSeconds", &Frame::TimeInSeconds,
 		R"pbdoc(Elapsed time in seconds)pbdoc")
-	.def("advance", [](Frame& instance, int delta)
+	.def("Advance", [](Frame& instance, int delta)
 	{
 		instance.Advance(delta);
 	},
