@@ -1,6 +1,6 @@
 #include "gtest/gtest.h"
 
-#include <Core/Utils/Logger.h>
+#include <Core/Utils/Logging.h>
 
 #include <fstream>
 
