@@ -1,7 +1,7 @@
-import pycubbyflow
+import pyCubbyFlow
 import unittest
 
-from animation_tests import *
+from AnimationTests import *
 
 def main():
 	unittest.main()
