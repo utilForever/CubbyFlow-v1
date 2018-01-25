@@ -18,7 +18,7 @@ class AnimationTests(unittest.TestCase):
 		self.assertEqual(anim.lastFrame.timeIntervalInSeconds, 0.02)
 
 def main():
-	pyCubbyFlow.Logging.mute()
+	pyCubbyFlow.Logging.Mute()
 	unittest.main()
 
 if __name__ == '__main__':
