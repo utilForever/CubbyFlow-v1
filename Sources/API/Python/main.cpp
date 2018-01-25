@@ -8,6 +8,7 @@
 *************************************************************************/
 #include <API/Python/Animation/Animation.h>
 #include <API/Python/Animation/PhysicsAnimation.h>
+#include <API/Python/Utils/Logging.h>
 
 #include <pybind11/pybind11.h>
 
@@ -20,6 +21,9 @@ PYBIND11_MODULE(pyCubbyFlow, m)
 
 	// Trivial basic types
 	AddFrame(m);
+
+	// Trivial APIs
+	AddLogging(m);
 	
 	// Animations
 	AddAnimation(m);
@@ -28,6 +32,6 @@ PYBIND11_MODULE(pyCubbyFlow, m)
 #ifdef VERSION_INFO
 	m.attr("__version__") = pybind11::str(VERSION_INFO);
 #else
-	m.attr("__version__") = pybind11::str("dev");
+	m.attr("__version__") = pybind11::str("Dev");
 #endif
 }
