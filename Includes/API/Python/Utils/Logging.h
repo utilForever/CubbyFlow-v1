@@ -1,8 +1,8 @@
 /*************************************************************************
-> File Name: Logger.h
+> File Name: Logging.h
 > Project Name: CubbyFlow
 > Author: Chan-Ho Chris Ohk
-> Purpose: Logger functions for CubbyFlow Python API.
+> Purpose: Logging functions for CubbyFlow Python API.
 > Created Time: 2018/01/23
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
@@ -11,6 +11,6 @@
 
 #include <pybind11/pybind11.h>
 
-void AddLogger(pybind11::module& m);
+void AddLogging(pybind11::module& m);
 
 #endif
