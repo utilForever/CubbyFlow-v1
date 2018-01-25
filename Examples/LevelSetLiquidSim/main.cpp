@@ -20,7 +20,7 @@
 #include <Core/MarchingCubes/MarchingCubes.h>
 #include <Core/Solver/LevelSet/LevelSetLiquidSolver3.h>
 #include <Core/Surface/Implicit/ImplicitSurfaceSet3.h>
-#include <Core/Utils/Logger.h>
+#include <Core/Utils/Logging.h>
 
 #include <pystring/pystring.h>
 

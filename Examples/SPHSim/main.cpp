@@ -17,7 +17,7 @@
 #include <Core/Solver/PCISPH/PCISPHSolver3.h>
 #include <Core/Solver/SPH/SPHSolver3.h>
 #include <Core/Surface/Implicit/ImplicitSurfaceSet3.h>
-#include <Core/Utils/Logger.h>
+#include <Core/Utils/Logging.h>
 
 #include <pystring/pystring.h>
 

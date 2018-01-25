@@ -22,7 +22,7 @@
 #include <Core/Solver/FLIP/FLIPSolver3.h>
 #include <Core/Solver/PIC/PICSolver3.h>
 #include <Core/Surface/Implicit/ImplicitSurfaceSet3.h>
-#include <Core/Utils/Logger.h>
+#include <Core/Utils/Logging.h>
 
 #include <pystring/pystring.h>
 
