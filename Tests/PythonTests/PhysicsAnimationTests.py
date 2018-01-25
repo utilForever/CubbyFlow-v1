@@ -21,7 +21,7 @@ class PhysicsAnimationTests(unittest.TestCase):
 	def testInheritance(self):
 		anim = MyPhysicsAnimation()
 
-		anim.isUsingFixedSubTimeSteps = false
+		anim.isUsingFixedSubTimeSteps = False
 		f = pyCubbyFlow.Frame(index = 3, timeIntervalInSeconds = 0.1)
 		anim.Update(f)
 		self.assertEqual(anim.initData, 1)
@@ -31,5 +31,5 @@ def main():
 	pyCubbyFlow.Logging.Mute()
 	unittest.main()
 
-if __name__ == '__main__';
+if __name__ == '__main__':
 	main()
