@@ -1,12 +1,12 @@
 /*************************************************************************
-> File Name: Logger.cpp
+> File Name: Logging.cpp
 > Project Name: CubbyFlow
 > Author: Chan-Ho Chris Ohk
 > Purpose: Super simple logger implementation.
 > Created Time: 2017/04/23
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Core/Utils/Logger.h>
+#include <Core/Utils/Logging.h>
 #include <Core/Utils/Macros.h>
 
 #include <iostream>

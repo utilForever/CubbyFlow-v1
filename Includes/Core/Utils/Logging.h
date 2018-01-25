@@ -1,5 +1,5 @@
 /*************************************************************************
-> File Name: Logger.h
+> File Name: Logging.h
 > Project Name: CubbyFlow
 > Author: Chan-Ho Chris Ohk
 > Purpose: Super simple logger implementation.
