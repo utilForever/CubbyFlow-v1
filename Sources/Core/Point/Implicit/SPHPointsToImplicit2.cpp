@@ -9,7 +9,7 @@
 #include <Core/Point/Implicit/SPHPointsToImplicit2.h>
 #include <Core/Solver/LevelSet/FMMLevelSetSolver2.h>
 #include <Core/SPH/SPHSystemData2.h>
-#include <Core/Utils/Logger.h>
+#include <Core/Utils/Logging.h>
 
 namespace CubbyFlow
 {

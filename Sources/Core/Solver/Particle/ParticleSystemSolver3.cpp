@@ -9,7 +9,7 @@
 #include <Core/Array/ArrayUtils.h>
 #include <Core/Field/ConstantVectorField3.h>
 #include <Core/Solver/Particle/ParticleSystemSolver3.h>
-#include <Core/Utils/Logger.h>
+#include <Core/Utils/Logging.h>
 #include <Core/Utils/Parallel.h>
 #include <Core/Utils/Timer.h>
 

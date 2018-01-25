@@ -9,7 +9,7 @@
 #include <Core/PointGenerator/TrianglePointGenerator.h>
 #include <Core/Solver/PCISPH/PCISPHSolver2.h>
 #include <Core/SPH/SPHStdKernel2.h>
-#include <Core/Utils/Logger.h>
+#include <Core/Utils/Logging.h>
 
 namespace CubbyFlow
 {

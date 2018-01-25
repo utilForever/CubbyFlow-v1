@@ -12,7 +12,7 @@
 #include <Core/Solver/Grid/GridBackwardEulerDiffusionSolver2.h>
 #include <Core/Solver/Grid/GridFractionalSinglePhasePressureSolver2.h>
 #include <Core/Solver/Grid/GridFluidSolver2.h>
-#include <Core/Utils/Logger.h>
+#include <Core/Utils/Logging.h>
 #include <Core/Utils/Timer.h>
 
 namespace CubbyFlow

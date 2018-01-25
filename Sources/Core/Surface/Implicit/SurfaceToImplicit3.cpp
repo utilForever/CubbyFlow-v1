@@ -8,7 +8,7 @@
 *************************************************************************/
 #include <Core/Geometry/TriangleMesh3.h>
 #include <Core/Surface/Implicit/SurfaceToImplicit3.h>
-#include <Core/Utils/Logger.h>
+#include <Core/Utils/Logging.h>
 
 namespace CubbyFlow
 {

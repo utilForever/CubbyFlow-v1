@@ -8,7 +8,7 @@
 *************************************************************************/
 #include <Core/Searcher/PointParallelHashGridSearcher2.h>
 #include <Core/Utils/FlatbuffersHelper.h>
-#include <Core/Utils/Logger.h>
+#include <Core/Utils/Logging.h>
 #include <Core/Utils/Parallel.h>
 
 #include <Flatbuffers/generated/PointParallelHashGridSearcher2_generated.h>

@@ -8,7 +8,7 @@
 *************************************************************************/
 #include <Core/Searcher/PointKdTreeSearcher2.h>
 #include <Core/Utils/FlatbuffersHelper.h>
-#include <Core/Utils/Logger.h>
+#include <Core/Utils/Logging.h>
 #include <Core/Utils/Parallel.h>
 
 #include <Flatbuffers/generated/PointKdTreeSearcher2_generated.h>

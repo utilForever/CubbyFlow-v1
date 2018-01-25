@@ -9,7 +9,7 @@
 *************************************************************************/
 #include <Core/Math/CG.h>
 #include <Core/Solver/FDM/FDMMGPCGSolver3.h>
-#include <Core/Utils/Logger.h>
+#include <Core/Utils/Logging.h>
 
 namespace CubbyFlow
 {

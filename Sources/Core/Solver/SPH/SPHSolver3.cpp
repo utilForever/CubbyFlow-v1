@@ -8,7 +8,7 @@
 *************************************************************************/
 #include <Core/Solver/SPH/SPHSolver3.h>
 #include <Core/SPH/SPHStdKernel3.h>
-#include <Core/Utils/Logger.h>
+#include <Core/Utils/Logging.h>
 #include <Core/Utils/PhysicsHelpers.h>
 #include <Core/Utils/Timer.h>
 

@@ -9,7 +9,7 @@
 #include <Core/Array/ArrayUtils.h>
 #include <Core/FDM/FDMUtils.h>
 #include <Core/Solver/LevelSet/IterativeLevelSetSolver2.h>
-#include <Core/Utils/Logger.h>
+#include <Core/Utils/Logging.h>
 
 namespace CubbyFlow
 {

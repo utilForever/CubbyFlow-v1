@@ -9,7 +9,7 @@
 #include <Core/PointGenerator/BccLatticePointGenerator.h>
 #include <Core/Solver/PCISPH/PCISPHSolver3.h>
 #include <Core/SPH/SPHStdKernel3.h>
-#include <Core/Utils/Logger.h>
+#include <Core/Utils/Logging.h>
 
 namespace CubbyFlow
 {

@@ -11,7 +11,7 @@
 #include <Core/Solver/LevelSet/ENOLevelSetSolver2.h>
 #include <Core/Solver/LevelSet/FMMLevelSetSolver2.h>
 #include <Core/Solver/LevelSet/LevelSetLiquidSolver2.h>
-#include <Core/Utils/Logger.h>
+#include <Core/Utils/Logging.h>
 #include <Core/Utils/Timer.h>
 
 namespace CubbyFlow

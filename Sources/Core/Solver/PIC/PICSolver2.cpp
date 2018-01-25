@@ -9,7 +9,7 @@
 #include <Core/Array/ArrayUtils.h>
 #include <Core/Grid/CellCenteredScalarGrid2.h>
 #include <Core/Solver/PIC/PICSolver2.h>
-#include <Core/Utils/Logger.h>
+#include <Core/Utils/Logging.h>
 #include <Core/Utils/Timer.h>
 
 namespace CubbyFlow
