@@ -255,6 +255,9 @@ paket-files/
 *.npy
 *.bat
 
+## For Python API
+*.pyc
+
 ## except resource files
 !Resources/
 
