@@ -53,19 +53,33 @@ cd CubbyFlow
 For macOS or Linux or Windows Subsystem for Linux (WSL):
 
 ```
-mkdir build && cd build && cmake .. && make
+mkdir build
+cd build
+cmake ..
+make
 ```
 
 For Windows:
 
 ```
-mkdir build && cd build && cmake .. -G"Visual Studio 15 2017 Win64" && MSBuild CubbyFlow.sln /p:Configuration=Release
+mkdir build
+cd build
+cmake .. -G"Visual Studio 15 2017 Win64"
+MSBuild CubbyFlow.sln /p:Configuration=Release
 ```
 
 Now run some examples, such as:
 
 ```
 bin/HybridLiquidSim
+```
+
+### Python API
+
+Build and install the package by running
+
+```
+pip install -U .
 ```
 
 ### More Instructions of Building the Code
