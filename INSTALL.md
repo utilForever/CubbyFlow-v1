@@ -251,3 +251,27 @@ cmake .. -G"Visual Studio 15 2017 Win64" -DCMAKE_INSTALL_PREFIX=_INSTALL_PATH_
 ```
 
 Then, build `INSTALL` project under `CubbyFlow.sln`. This will install the header files and the static library `CubbyFlow.lib` under `_INSTALL_PATH_`.
+
+### Installing Python SDK
+
+To install the Python SDK, `pyCubbyFlow`, run the following command from the project root directory (where `setup.py` lives):
+
+```
+pip install -U .
+```
+
+> You can also use `virtualenv` to isolate the SDK installation. Check out [the virtualenv documentation](https://virtualenv.pypa.io/en/stable/) for more details.
+
+To run the test scripts, install other Python dependencies as follows:
+
+```
+pip install -r Requirements.txt
+```
+
+Once installed, try running the unit test to see if the module is installed correctly:
+
+```
+python Tests/PythonTests/main.py
+```
+
+The tests should pass.
