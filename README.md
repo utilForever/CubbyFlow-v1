@@ -2,10 +2,10 @@
 
 <img src="https://github.com/utilForever/CubbyFlow/blob/master/Logo.png" align="center" />
 
+[![License](https://img.shields.io/badge/Licence-MIT-blue.svg)](https://github.com/utilForever/CubbyFlow/blob/master/LICENSE)
+
 CubbyFlow is voxel-based fluid simulation engine for computer games based on [Jet framework](https://github.com/doyubkim/fluid-engine-dev) that was created by [Doyub Kim](https://twitter.com/doyub).
 The code is built on C++17 and can be compiled with commonly available compilers such as g++, clang++, or Microsoft Visual Studio. CubbyFlow currently supports macOS (10.12.6 or later), Ubuntu (17.04 or later), Windows (Visual Studio 2017 or later), and Windows Subsystem for Linux (WSL). Other untested platforms that support C++17 also should be able to build CubbyFlow.
-
-[![License](https://img.shields.io/badge/Licence-MIT-blue.svg)](https://github.com/utilForever/CubbyFlow/blob/master/LICENSE)
 
 ## Key Features
 
@@ -17,7 +17,12 @@ The code is built on C++17 and can be compiled with commonly available compilers
 - PIC, FLIP, and APIC fluid simulators
 - Upwind, ENO, and FMM level set solvers
 - Jacobi, Gauss-Seidel, SOR, MG, CG, ICCG, and MGPCG linear system solvers
+- Spherical, SPH, Zhu & Bridson, and Anisotropic kernel for points-to-surface converter
 - Converters between signed distance function and triangular mesh
+- C++ API
+
+## To-do Features
+
 - MPS and MPM fluid simulators
 - IVOCK fluid simulators
 - Multiphase fluid simulators
@@ -27,7 +32,8 @@ The code is built on C++17 and can be compiled with commonly available compilers
     - Grid-based bubbly flow
 - Voxel surface reconstruction
 - Compatible for DirectX, OpenGL, Metal, and Vulkan
-- C++, Python, Go, and Rust API
+- Python, C#, Go, and Rust API
+- Intel TBB, OpenMP, and C++11 multi-threading backends
 
 Every simulator has both 2-D and 3-D implementations.
 
