@@ -385,13 +385,13 @@ namespace CubbyFlow
 
 	void TriangleMesh3::AddPointUVTriangle(
 		const Point3UI& newPointIndices,
-		const Point3UI& newUvIndices)
+		const Point3UI& newUVIndices)
 	{
 		// Number of normal indices must match with number of point indices once
 		// you decided to add normal indices. Same for the uvs as well.
 		assert(m_pointIndices.size() == m_uvs.size());
 		m_pointIndices.Append(newPointIndices);
-		m_uvIndices.Append(newUvIndices);
+		m_uvIndices.Append(newUVIndices);
 
 		InvalidateBVH();
 	}
@@ -604,6 +604,21 @@ namespace CubbyFlow
 
 			*stream << std::endl;
 		}
+	}
+
+	bool TriangleMesh3::WriteObj(const std::string& fileName) const
+	{
+		std::ofstream file(fileName.c_str());
+
+		if (file)
+		{
+			WriteObj(&file);
+			file.close();
+
+			return true;
+		}
+
+		return false;
 	}
 
 	bool TriangleMesh3::ReadObj(std::istream* stream)
@@ -826,6 +841,21 @@ namespace CubbyFlow
 		InvalidateBVH();
 
 		return parser.parse(*stream);
+	}
+
+	bool TriangleMesh3::ReadObj(const std::string& fileName)
+	{
+		std::ifstream file(fileName.c_str());
+
+		if (file)
+		{
+			bool result = ReadObj(&file);
+			file.close();
+
+			return result;
+		}
+
+		return false;
 	}
 
 	TriangleMesh3& TriangleMesh3::operator=(const TriangleMesh3& other)

@@ -51,7 +51,7 @@ namespace CubbyFlow
 			const IndexArray& normalIndices,
 			const IndexArray& uvIndices,
 			const Transform3& transform_ = Transform3(),
-			bool isNormalFlipped = false);
+			bool isNormalFlipped_ = false);
 
 		//! Copy constructor.
 		TriangleMesh3(const TriangleMesh3& other);
@@ -178,10 +178,16 @@ namespace CubbyFlow
 		void Rotate(const QuaternionD& q);
 
 		//! Writes the mesh in obj format to the output stream.
-		void WriteObj(std::ostream* strm) const;
+		void WriteObj(std::ostream* stream) const;
+
+		//! Writes the mesh in obj format to the file.
+		bool WriteObj(const std::string& fileName) const;
 
 		//! Reads the mesh in obj format from the input stream.
-		bool ReadObj(std::istream* strm);
+		bool ReadObj(std::istream* stream);
+
+		//! Reads the mesh in obj format from the file.
+		bool ReadObj(const std::string& fileName);
 
 		//! Copies \p other mesh.
 		TriangleMesh3& operator=(const TriangleMesh3& other);
