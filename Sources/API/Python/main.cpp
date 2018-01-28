@@ -6,9 +6,11 @@
 > Created Time: 2018/01/22
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
+#include <API/Python/Array/ArrayAccessor.h>
 #include <API/Python/Animation/Animation.h>
 #include <API/Python/Animation/PhysicsAnimation.h>
 #include <API/Python/Utils/Logging.h>
+#include <API/Python/Vector/Vector.h>
 
 #include <pybind11/pybind11.h>
 
@@ -20,7 +22,16 @@ PYBIND11_MODULE(pyCubbyFlow, m)
 		)pbdoc";
 
 	// Trivial basic types
+	AddVector2D(m);
+	AddVector2F(m);
+	AddVector3D(m);
+	AddVector3F(m);
 	AddFrame(m);
+
+	// Containers/helpers
+	AddArrayAccessor1(m);
+	AddArrayAccessor2(m);
+	AddArrayAccessor3(m);
 
 	// Trivial APIs
 	AddLogging(m);
