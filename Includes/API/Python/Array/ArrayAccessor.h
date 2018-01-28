@@ -11,8 +11,8 @@
 
 #include <pybind11/pybind11.h>
 
-void AddArrayAccessor1(pybind11::module* m);
-void AddArrayAccessor2(pybind11::module* m);
-void AddArrayAccessor3(pybind11::module* m);
+void AddArrayAccessor1(pybind11::module& m);
+void AddArrayAccessor2(pybind11::module& m);
+void AddArrayAccessor3(pybind11::module& m);
 
 #endif
