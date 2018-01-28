@@ -9,6 +9,12 @@
 #include <API/Python/Array/ArrayAccessor.h>
 #include <API/Python/Animation/Animation.h>
 #include <API/Python/Animation/PhysicsAnimation.h>
+#include <API/Python/Geometry/Box.h>
+#include <API/Python/Geometry/Cylinder.h>
+#include <API/Python/Geometry/Plane.h>
+#include <API/Python/Geometry/Sphere.h>
+#include <API/Python/Geometry/Triangle.h>
+#include <API/Python/Geometry/TriangleMesh.h>
 #include <API/Python/Utils/Logging.h>
 #include <API/Python/Vector/Vector.h>
 
@@ -22,11 +28,11 @@ PYBIND11_MODULE(pyCubbyFlow, m)
 		)pbdoc";
 
 	// Trivial basic types
+	AddFrame(m);
 	AddVector2D(m);
 	AddVector2F(m);
 	AddVector3D(m);
 	AddVector3F(m);
-	AddFrame(m);
 
 	// Containers/helpers
 	AddArrayAccessor1(m);
@@ -35,6 +41,20 @@ PYBIND11_MODULE(pyCubbyFlow, m)
 
 	// Trivial APIs
 	AddLogging(m);
+
+	// Surfaces
+
+
+	// Geometries
+	AddBox2(m);
+	AddBox3(m);
+	AddCylinder3(m);
+	AddPlane2(m);
+	AddPlane3(m);
+	AddSphere2(m);
+	AddSphere3(m);
+	AddTriangle3(m);
+	AddTriangleMesh3(m);
 	
 	// Animations
 	AddAnimation(m);
