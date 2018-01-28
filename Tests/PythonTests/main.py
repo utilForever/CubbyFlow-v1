@@ -3,6 +3,7 @@ import unittest
 
 from AnimationTests import *
 from PhysicsAnimationTests import *
+from VectorTests import *
 
 def main():
 	pyCubbyFlow.Logging.Mute()
