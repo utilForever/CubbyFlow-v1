@@ -3,6 +3,7 @@ import unittest
 
 from AnimationTests import *
 from PhysicsAnimationTests import *
+from SphereTests import *
 from VectorTests import *
 
 def main():
