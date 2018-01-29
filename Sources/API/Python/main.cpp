@@ -15,9 +15,11 @@
 #include <API/Python/Geometry/Sphere.h>
 #include <API/Python/Geometry/Triangle.h>
 #include <API/Python/Geometry/TriangleMesh.h>
+#include <API/Python/Ray/Ray.h>
 #include <API/Python/Surface/Surface.h>
 #include <API/Python/Surface/SurfaceSet.h>
 #include <API/Python/Surface/SurfaceToImplicit.h>
+#include <API/Python/Transform/Transform.h>
 #include <API/Python/Utils/Logging.h>
 #include <API/Python/Vector/Vector.h>
 
@@ -32,6 +34,12 @@ PYBIND11_MODULE(pyCubbyFlow, m)
 
 	// Trivial basic types
 	AddFrame(m);
+	AddRay2D(m);
+	AddRay2F(m);
+	AddRay3D(m);
+	AddRay3F(m);
+	AddTransform2(m);
+	AddTransform3(m);
 	AddVector2D(m);
 	AddVector2F(m);
 	AddVector3D(m);
