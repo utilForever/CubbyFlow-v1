@@ -9,13 +9,17 @@
 #include <API/Python/Array/ArrayAccessor.h>
 #include <API/Python/Animation/Animation.h>
 #include <API/Python/Animation/PhysicsAnimation.h>
+#include <API/Python/BoundingBox/BoundingBox.h>
 #include <API/Python/Geometry/Box.h>
 #include <API/Python/Geometry/Cylinder.h>
 #include <API/Python/Geometry/Plane.h>
 #include <API/Python/Geometry/Sphere.h>
 #include <API/Python/Geometry/Triangle.h>
 #include <API/Python/Geometry/TriangleMesh.h>
+#include <API/Python/Math/Quaternion.h>
+#include <API/Python/Point/Point.h>
 #include <API/Python/Ray/Ray.h>
+#include <API/Python/Size/Size.h>
 #include <API/Python/Surface/Surface.h>
 #include <API/Python/Surface/SurfaceSet.h>
 #include <API/Python/Surface/SurfaceToImplicit.h>
@@ -33,11 +37,21 @@ PYBIND11_MODULE(pyCubbyFlow, m)
 		)pbdoc";
 
 	// Trivial basic types
+	AddBoundingBox2D(m);
+	AddBoundingBox2F(m);
+	AddBoundingBox3D(m);
+	AddBoundingBox3F(m);
 	AddFrame(m);
+	AddPoint2UI(m);
+	AddPoint3UI(m);
+	AddQuaternionD(m);
+	AddQuaternionF(m);
 	AddRay2D(m);
 	AddRay2F(m);
 	AddRay3D(m);
 	AddRay3F(m);
+	AddSize2(m);
+	AddSize3(m);
 	AddTransform2(m);
 	AddTransform3(m);
 	AddVector2D(m);
