@@ -24,7 +24,9 @@
 #include <API/Python/Surface/SurfaceSet.h>
 #include <API/Python/Surface/SurfaceToImplicit.h>
 #include <API/Python/Transform/Transform.h>
+#include <API/Python/Utils/Constants.h>
 #include <API/Python/Utils/Logging.h>
+#include <API/Python/Utils/Serializable.h>
 #include <API/Python/Vector/Vector.h>
 
 #include <pybind11/pybind11.h>
@@ -35,6 +37,12 @@ PYBIND11_MODULE(pyCubbyFlow, m)
 		R"pbdoc(
 			Voxel-based fluid simulation engine for computer games
 		)pbdoc";
+
+	// Constants
+	AddConstants(m);
+
+	// Serialization
+	AddSerializable(m);
 
 	// Trivial basic types
 	AddBoundingBox2D(m);
