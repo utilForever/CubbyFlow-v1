@@ -9,6 +9,8 @@
 #ifndef CUBBYFLOW_FIELD3_H
 #define CUBBYFLOW_FIELD3_H
 
+#include <memory>
+
 namespace CubbyFlow
 {
 	//! Abstract base class for 3-D fields.
@@ -18,6 +20,8 @@ namespace CubbyFlow
 		Field3();
 		virtual ~Field3();
 	};
+
+	using Field3Ptr = std::shared_ptr<Field3>;
 }
 
 #endif
