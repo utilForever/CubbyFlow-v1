@@ -9,6 +9,8 @@
 #ifndef CUBBYFLOW_FIELD2_H
 #define CUBBYFLOW_FIELD2_H
 
+#include <memory>
+
 namespace CubbyFlow
 {
 	//! Abstract base class for 2-D fields.
@@ -18,6 +20,8 @@ namespace CubbyFlow
 		Field2();
 		virtual ~Field2();
 	};
+
+	using Field2Ptr = std::shared_ptr<Field2>;
 }
 
 #endif
