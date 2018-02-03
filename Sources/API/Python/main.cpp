@@ -10,6 +10,9 @@
 #include <API/Python/Animation/Animation.h>
 #include <API/Python/Animation/PhysicsAnimation.h>
 #include <API/Python/BoundingBox/BoundingBox.h>
+#include <API/Python/Field/Field.h>
+#include <API/Python/Field/ScalarField.h>
+#include <API/Python/Field/VectorField.h>
 #include <API/Python/Geometry/Box.h>
 #include <API/Python/Geometry/Cylinder.h>
 #include <API/Python/Geometry/Plane.h>
@@ -74,6 +77,14 @@ PYBIND11_MODULE(pyCubbyFlow, m)
 
 	// Trivial APIs
 	AddLogging(m);
+
+	// Fields/Grids
+	AddField2(m);
+	AddField3(m);
+	AddScalarField2(m);
+	AddScalarField3(m);
+	AddVectorField2(m);
+	AddVectorField3(m);
 
 	// Surfaces
 	AddSurface2(m);
