@@ -14,6 +14,7 @@
 #include <Core/Utils/Serialization.h>
 #include <Core/Vector/Vector2.h>
 
+#include <memory>
 #include <string>
 
 namespace CubbyFlow
@@ -103,6 +104,8 @@ namespace CubbyFlow
 		Vector2D m_origin;
 		BoundingBox2D m_boundingBox = BoundingBox2D(Vector2D(), Vector2D());
 	};
+
+	using Grid2Ptr = std::shared_ptr<Grid2>;
 
 #define CUBBYFLOW_GRID2_TYPE_NAME(DerivedClassName) \
 	std::string TypeName() const override \
