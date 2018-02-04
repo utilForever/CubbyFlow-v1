@@ -100,10 +100,10 @@ namespace CubbyFlow
 		DataPositionFunc GetDataPosition() const;
 
 		//! Fills the grid with given value.
-		void Fill(double value);
+		void Fill(double value, ExecutionPolicy policy = ExecutionPolicy::Parallel);
 
 		//! Fills the grid with given position-to-value mapping function.
-		void Fill(const std::function<double(const Vector2D&)>& func);
+		void Fill(const std::function<double(const Vector2D&)>& func, ExecutionPolicy policy = ExecutionPolicy::Parallel);
 
 		//!
 		//! \brief Invokes the given function \p func for each data point.
