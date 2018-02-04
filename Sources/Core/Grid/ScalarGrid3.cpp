@@ -152,7 +152,7 @@ namespace CubbyFlow
 		};
 	}
 
-	void ScalarGrid3::Fill(double value)
+	void ScalarGrid3::Fill(double value, ExecutionPolicy policy)
 	{
 		ParallelFor(
 			ZERO_SIZE, m_data.Width(),
@@ -161,10 +161,10 @@ namespace CubbyFlow
 			[this, value](size_t i, size_t j, size_t k)
 		{
 			m_data(i, j, k) = value;
-		});
+		}, policy);
 	}
 
-	void ScalarGrid3::Fill(const std::function<double(const Vector3D&)>& func)
+	void ScalarGrid3::Fill(const std::function<double(const Vector3D&)>& func, ExecutionPolicy policy)
 	{
 		DataPositionFunc pos = GetDataPosition();
 		
@@ -175,7 +175,7 @@ namespace CubbyFlow
 			[this, &func, &pos](size_t i, size_t j, size_t k)
 		{
 			m_data(i, j, k) = func(pos(i, j, k));
-		});
+		}, policy);
 	}
 
 	void ScalarGrid3::ForEachDataPointIndex(const std::function<void(size_t, size_t, size_t)>& func) const
