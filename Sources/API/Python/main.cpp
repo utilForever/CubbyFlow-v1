@@ -23,6 +23,9 @@
 #include <API/Python/Geometry/Sphere.h>
 #include <API/Python/Geometry/Triangle.h>
 #include <API/Python/Geometry/TriangleMesh.h>
+#include <API/Python/Grid/Grid.h>
+#include <API/Python/Grid/ScalarGrid.h>
+#include <API/Python/Grid/VectorGrid.h>
 #include <API/Python/Math/Quaternion.h>
 #include <API/Python/Point/Point.h>
 #include <API/Python/Ray/Ray.h>
@@ -97,6 +100,14 @@ PYBIND11_MODULE(pyCubbyFlow, m)
 	AddCustomScalarField3(m);
 	AddCustomVectorField2(m);
 	AddCustomVectorField3(m);
+
+	// Grids
+	AddGrid2(m);
+	AddGrid3(m);
+	AddScalarGrid2(m);
+	AddScalarGrid3(m);
+	AddVectorGrid2(m);
+	AddVectorGrid3(m);
 
 	// Surfaces
 	AddSurface2(m);
