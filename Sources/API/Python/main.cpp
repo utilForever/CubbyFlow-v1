@@ -13,6 +13,10 @@
 #include <API/Python/Field/Field.h>
 #include <API/Python/Field/ScalarField.h>
 #include <API/Python/Field/VectorField.h>
+#include <API/Python/Field/ConstantScalarField.h>
+#include <API/Python/Field/ConstantVectorField.h>
+#include <API/Python/Field/CustomScalarField.h>
+#include <API/Python/Field/CustomVectorField.h>
 #include <API/Python/Geometry/Box.h>
 #include <API/Python/Geometry/Cylinder.h>
 #include <API/Python/Geometry/Plane.h>
@@ -78,13 +82,21 @@ PYBIND11_MODULE(pyCubbyFlow, m)
 	// Trivial APIs
 	AddLogging(m);
 
-	// Fields/Grids
+	// Fields
 	AddField2(m);
 	AddField3(m);
 	AddScalarField2(m);
 	AddScalarField3(m);
 	AddVectorField2(m);
 	AddVectorField3(m);
+	AddConstantScalarField2(m);
+	AddConstantScalarField3(m);
+	AddConstantVectorField2(m);
+	AddConstantVectorField3(m);
+	AddCustomScalarField2(m);
+	AddCustomScalarField3(m);
+	AddCustomVectorField2(m);
+	AddCustomVectorField3(m);
 
 	// Surfaces
 	AddSurface2(m);
