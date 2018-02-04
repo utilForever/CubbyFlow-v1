@@ -588,6 +588,94 @@ namespace CubbyFlow
 		
 		throw std::invalid_argument("Cannot convert to QuaternionD.");
 	}
+
+	inline void ParseGridResizeParams(pybind11::args args, pybind11::kwargs kwargs,
+		Size2& resolution, Vector2D& gridSpacing, Vector2D& gridOrigin)
+	{
+		// See if we have list of parameters
+		if (args.size() <= 3)
+		{
+			if (args.size() > 0)
+			{
+				resolution = ObjectToSize2(pybind11::object(args[0]));
+			}
+			if (args.size() > 1)
+			{
+				gridSpacing = ObjectToVector2D(pybind11::object(args[1]));
+			}
+			if (args.size() > 2)
+			{
+				gridOrigin = ObjectToVector2D(pybind11::object(args[2]));
+			}
+		}
+		else
+		{
+			throw std::invalid_argument("Too many arguments.");
+		}
+
+		// Parse out keyword args
+		if (kwargs.contains("resolution"))
+		{
+			resolution = ObjectToSize2(pybind11::object(kwargs["resolution"]));
+		}
+		if (kwargs.contains("gridSpacing"))
+		{
+			gridSpacing = ObjectToVector2D(pybind11::object(kwargs["gridSpacing"]));
+		}
+		if (kwargs.contains("gridOrigin"))
+		{
+			gridOrigin = ObjectToVector2D(pybind11::object(kwargs["gridOrigin"]));
+		}
+		if (kwargs.contains("domainSizeX"))
+		{
+			double domainSizeX = kwargs["domainSizeX"].cast<double>();
+			gridSpacing.Set(domainSizeX / static_cast<double>(resolution.x));
+		}
+	}
+
+	inline void ParseGridResizeParams(pybind11::args args, pybind11::kwargs kwargs,
+		Size3& resolution, Vector3D& gridSpacing, Vector3D& gridOrigin)
+	{
+		// See if we have list of parameters
+		if (args.size() <= 3)
+		{
+			if (args.size() > 0)
+			{
+				resolution = ObjectToSize3(pybind11::object(args[0]));
+			}
+			if (args.size() > 1)
+			{
+				gridSpacing = ObjectToVector3D(pybind11::object(args[1]));
+			}
+			if (args.size() > 2)
+			{
+				gridOrigin = ObjectToVector3D(pybind11::object(args[2]));
+			}
+		}
+		else
+		{
+			throw std::invalid_argument("Too many arguments.");
+		}
+
+		// Parse out keyword args
+		if (kwargs.contains("resolution"))
+		{
+			resolution = ObjectToSize3(pybind11::object(kwargs["resolution"]));
+		}
+		if (kwargs.contains("gridSpacing"))
+		{
+			gridSpacing = ObjectToVector3D(pybind11::object(kwargs["gridSpacing"]));
+		}
+		if (kwargs.contains("gridOrigin"))
+		{
+			gridOrigin = ObjectToVector3D(pybind11::object(kwargs["gridOrigin"]));
+		}
+		if (kwargs.contains("domainSizeX"))
+		{
+			double domainSizeX = kwargs["domainSizeX"].cast<double>();
+			gridSpacing.Set(domainSizeX / static_cast<double>(resolution.x));
+		}
+	}
 }
 
 #endif
