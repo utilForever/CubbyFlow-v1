@@ -14,6 +14,7 @@
 #include <Core/Utils/Serialization.h>
 #include <Core/Vector/Vector3.h>
 
+#include <memory>
 #include <string>
 
 namespace CubbyFlow
@@ -109,6 +110,8 @@ namespace CubbyFlow
 		Vector3D m_origin;
 		BoundingBox3D m_boundingBox = BoundingBox3D(Vector3D(), Vector3D());
 	};
+
+	using Grid3Ptr = std::shared_ptr<Grid3>;
 
 #define CUBBYFLOW_GRID3_TYPE_NAME(DerivedClassName) \
 	std::string TypeName() const override \
