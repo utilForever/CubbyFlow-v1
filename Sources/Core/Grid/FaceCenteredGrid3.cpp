@@ -296,7 +296,8 @@ namespace CubbyFlow
 		return m_dataOriginW;
 	}
 
-	void FaceCenteredGrid3::Fill(const Vector3D& value) {
+	void FaceCenteredGrid3::Fill(const Vector3D& value, ExecutionPolicy policy)
+	{
 		ParallelFor(
 			ZERO_SIZE, m_dataU.Width(),
 			ZERO_SIZE, m_dataU.Height(),
@@ -304,7 +305,7 @@ namespace CubbyFlow
 			[this, value](size_t i, size_t j, size_t k)
 		{
 			m_dataU(i, j, k) = value.x;
-		});
+		}, policy);
 
 		ParallelFor(
 			ZERO_SIZE, m_dataV.Width(),
@@ -313,7 +314,7 @@ namespace CubbyFlow
 			[this, value](size_t i, size_t j, size_t k)
 		{
 			m_dataV(i, j, k) = value.y;
-		});
+		}, policy);
 
 		ParallelFor(
 			ZERO_SIZE, m_dataW.Width(),
@@ -322,10 +323,10 @@ namespace CubbyFlow
 			[this, value](size_t i, size_t j, size_t k)
 		{
 			m_dataW(i, j, k) = value.z;
-		});
+		}, policy);
 	}
 
-	void FaceCenteredGrid3::Fill(const std::function<Vector3D(const Vector3D&)>& func)
+	void FaceCenteredGrid3::Fill(const std::function<Vector3D(const Vector3D&)>& func, ExecutionPolicy policy)
 	{
 		DataPositionFunc uPos = GetUPosition();
 		ParallelFor(
@@ -335,7 +336,7 @@ namespace CubbyFlow
 			[this, &func, &uPos](size_t i, size_t j, size_t k)
 		{
 			m_dataU(i, j, k) = func(uPos(i, j, k)).x;
-		});
+		}, policy);
 		
 		DataPositionFunc vPos = GetVPosition();
 		ParallelFor(
@@ -345,7 +346,7 @@ namespace CubbyFlow
 			[this, &func, &vPos](size_t i, size_t j, size_t k)
 		{
 			m_dataV(i, j, k) = func(vPos(i, j, k)).y;
-		});
+		}, policy);
 		
 		DataPositionFunc wPos = GetWPosition();
 		ParallelFor(
@@ -355,7 +356,7 @@ namespace CubbyFlow
 			[this, &func, &wPos](size_t i, size_t j, size_t k)
 		{
 			m_dataW(i, j, k) = func(wPos(i, j, k)).z;
-		});
+		}, policy);
 	}
 
 	std::shared_ptr<VectorGrid3> FaceCenteredGrid3::Clone() const

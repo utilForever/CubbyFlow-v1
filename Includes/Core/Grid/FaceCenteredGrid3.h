@@ -157,10 +157,10 @@ namespace CubbyFlow
 		Vector3D GetWOrigin() const;
 
 		//! Fills the grid with given value.
-		void Fill(const Vector3D& value) override;
+		void Fill(const Vector3D& value, ExecutionPolicy policy = ExecutionPolicy::Parallel) override;
 
 		//! Fills the grid with given function.
-		void Fill(const std::function<Vector3D(const Vector3D&)>& func) override;
+		void Fill(const std::function<Vector3D(const Vector3D&)>& func, ExecutionPolicy policy = ExecutionPolicy::Parallel) override;
 
 		//! Returns the copy of the grid instance.
 		std::shared_ptr<VectorGrid3> Clone() const override;
