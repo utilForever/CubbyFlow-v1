@@ -131,10 +131,10 @@ namespace CubbyFlow
 		Vector2D GetVOrigin() const;
 
 		//! Fills the grid with given value.
-		void Fill(const Vector2D& value) override;
+		void Fill(const Vector2D& value, ExecutionPolicy policy = ExecutionPolicy::Parallel) override;
 
 		//! Fills the grid with given function.
-		void Fill(const std::function<Vector2D(const Vector2D&)>& func) override;
+		void Fill(const std::function<Vector2D(const Vector2D&)>& func, ExecutionPolicy policy = ExecutionPolicy::Parallel) override;
 
 		//! Returns the copy of the grid instance.
 		std::shared_ptr<VectorGrid2> Clone() const override;

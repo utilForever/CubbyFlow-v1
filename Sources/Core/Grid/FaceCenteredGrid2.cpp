@@ -225,7 +225,7 @@ namespace CubbyFlow
 		return m_dataOriginV;
 	}
 
-	void FaceCenteredGrid2::Fill(const Vector2D& value)
+	void FaceCenteredGrid2::Fill(const Vector2D& value, ExecutionPolicy policy)
 	{
 		ParallelFor(
 			ZERO_SIZE, m_dataU.Width(),
@@ -233,7 +233,7 @@ namespace CubbyFlow
 			[this, value](size_t i, size_t j)
 		{
 			m_dataU(i, j) = value.x;
-		});
+		}, policy);
 
 		ParallelFor(
 			ZERO_SIZE, m_dataV.Width(),
@@ -241,10 +241,10 @@ namespace CubbyFlow
 			[this, value](size_t i, size_t j)
 		{
 			m_dataV(i, j) = value.y;
-		});
+		}, policy);
 	}
 
-	void FaceCenteredGrid2::Fill(const std::function<Vector2D(const Vector2D&)>& func)
+	void FaceCenteredGrid2::Fill(const std::function<Vector2D(const Vector2D&)>& func, ExecutionPolicy policy)
 	{
 		DataPositionFunc uPos = GetUPosition();
 		ParallelFor(
@@ -253,7 +253,7 @@ namespace CubbyFlow
 			[this, &func, &uPos](size_t i, size_t j)
 		{
 			m_dataU(i, j) = func(uPos(i, j)).x;
-		});
+		}, policy);
 		
 		DataPositionFunc vPos = GetVPosition();
 		ParallelFor(
@@ -262,7 +262,7 @@ namespace CubbyFlow
 			[this, &func, &vPos](size_t i, size_t j)
 		{
 			m_dataV(i, j) = func(vPos(i, j)).y;
-		});
+		}, policy);
 	}
 
 	std::shared_ptr<VectorGrid2> FaceCenteredGrid2::Clone() const
