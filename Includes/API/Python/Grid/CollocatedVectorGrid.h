@@ -11,7 +11,7 @@
 
 #include <pybind11/pybind11.h>
 
-void AddCellCenteredVectorGrid2(pybind11::module& m);
-void AddCellCenteredVectorGrid3(pybind11::module& m);
+void AddCollocatedVectorGrid2(pybind11::module& m);
+void AddCollocatedVectorGrid3(pybind11::module& m);
 
 #endif
