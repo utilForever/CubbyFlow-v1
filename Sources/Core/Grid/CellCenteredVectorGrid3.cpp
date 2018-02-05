@@ -7,6 +7,7 @@
 > Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
 #include <Core/Grid/CellCenteredVectorGrid3.h>
+#include <reason.h>
 
 namespace CubbyFlow
 {
@@ -73,7 +74,7 @@ namespace CubbyFlow
 		return *this;
 	}
 
-	void CellCenteredVectorGrid3::Fill(const Vector3D& value)
+	void CellCenteredVectorGrid3::Fill(const Vector3D& value, ExecutionPolicy policy)
 	{
 		Size3 size = GetDataSize();
 		auto acc = GetDataAccessor();
@@ -85,10 +86,10 @@ namespace CubbyFlow
 			[this, value, &acc](size_t i, size_t j, size_t k)
 		{
 			acc(i, j, k) = value;
-		});
+		}, policy);
 	}
 
-	void CellCenteredVectorGrid3::Fill(const std::function<Vector3D(const Vector3D&)>& func)
+	void CellCenteredVectorGrid3::Fill(const std::function<Vector3D(const Vector3D&)>& func, ExecutionPolicy policy)
 	{
 		Size3 size = GetDataSize();
 		auto acc = GetDataAccessor();
@@ -101,7 +102,7 @@ namespace CubbyFlow
 			[this, &func, &acc, &pos](size_t i, size_t j, size_t k)
 		{
 			acc(i, j, k) = func(pos(i, j, k));
-		});
+		}, policy);
 	}
 
 	std::shared_ptr<VectorGrid3> CellCenteredVectorGrid3::Clone() const
