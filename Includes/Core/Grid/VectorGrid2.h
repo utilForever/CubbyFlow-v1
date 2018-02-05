@@ -57,10 +57,10 @@ namespace CubbyFlow
 		void Resize(const Vector2D& gridSpacing, const Vector2D& origin);
 
 		//! Fills the grid with given value.
-		virtual void Fill(const Vector2D& value) = 0;
+		virtual void Fill(const Vector2D& value, ExecutionPolicy policy = ExecutionPolicy::Parallel) = 0;
 
 		//! Fills the grid with given position-to-value mapping function.
-		virtual void Fill(const std::function<Vector2D(const Vector2D&)>& func) = 0;
+		virtual void Fill(const std::function<Vector2D(const Vector2D&)>& func, ExecutionPolicy policy = ExecutionPolicy::Parallel) = 0;
 
 		//! Returns the copy of the grid instance.
 		virtual std::shared_ptr<VectorGrid2> Clone() const = 0;
