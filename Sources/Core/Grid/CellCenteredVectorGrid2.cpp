@@ -73,7 +73,7 @@ namespace CubbyFlow
 		return *this;
 	}
 
-	void CellCenteredVectorGrid2::Fill(const Vector2D& value)
+	void CellCenteredVectorGrid2::Fill(const Vector2D& value, ExecutionPolicy policy)
 	{
 		Size2 size = GetDataSize();
 		auto acc = GetDataAccessor();
@@ -84,10 +84,10 @@ namespace CubbyFlow
 			[this, value, &acc](size_t i, size_t j)
 		{
 			acc(i, j) = value;
-		});
+		}, policy);
 	}
 
-	void CellCenteredVectorGrid2::Fill(const std::function<Vector2D(const Vector2D&)>& func)
+	void CellCenteredVectorGrid2::Fill(const std::function<Vector2D(const Vector2D&)>& func, ExecutionPolicy policy)
 	{
 		Size2 size = GetDataSize();
 		auto acc = GetDataAccessor();
@@ -99,7 +99,7 @@ namespace CubbyFlow
 			[this, &func, &acc, &pos](size_t i, size_t j)
 		{
 			acc(i, j) = func(pos(i, j));
-		});
+		}, policy);
 	}
 
 	std::shared_ptr<VectorGrid2> CellCenteredVectorGrid2::Clone() const

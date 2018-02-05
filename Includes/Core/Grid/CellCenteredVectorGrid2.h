@@ -70,10 +70,10 @@ namespace CubbyFlow
 		void Swap(Grid2* other) override;
 
 		//! Fills the grid with given value.
-		void Fill(const Vector2D& value) override;
+		void Fill(const Vector2D& value, ExecutionPolicy policy = ExecutionPolicy::Parallel) override;
 
 		//! Fills the grid with given function.
-		void Fill(const std::function<Vector2D(const Vector2D&)>& func) override;
+		void Fill(const std::function<Vector2D(const Vector2D&)>& func, ExecutionPolicy policy = ExecutionPolicy::Parallel) override;
 
 		//! Sets the contents with the given \p other grid.
 		void Set(const CellCenteredVectorGrid2& other);
