@@ -66,7 +66,7 @@ namespace CubbyFlow
 		}
 	}
 
-	void VertexCenteredVectorGrid3::Fill(const Vector3D& value)
+	void VertexCenteredVectorGrid3::Fill(const Vector3D& value, ExecutionPolicy policy)
 	{
 		Size3 size = GetDataSize();
 		auto acc = GetDataAccessor();
@@ -78,10 +78,10 @@ namespace CubbyFlow
 			[this, value, &acc](size_t i, size_t j, size_t k)
 		{
 			acc(i, j, k) = value;
-		});
+		}, policy);
 	}
 
-	void VertexCenteredVectorGrid3::Fill(const std::function<Vector3D(const Vector3D&)>& func)
+	void VertexCenteredVectorGrid3::Fill(const std::function<Vector3D(const Vector3D&)>& func, ExecutionPolicy policy)
 	{
 		Size3 size = GetDataSize();
 		auto acc = GetDataAccessor();
@@ -94,7 +94,7 @@ namespace CubbyFlow
 			[this, &func, &acc, &pos](size_t i, size_t j, size_t k)
 		{
 			acc(i, j, k) = func(pos(i, j, k));
-		});
+		}, policy);
 	}
 
 	std::shared_ptr<VectorGrid3> VertexCenteredVectorGrid3::Clone() const
