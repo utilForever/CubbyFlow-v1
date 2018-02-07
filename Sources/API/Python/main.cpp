@@ -38,6 +38,7 @@
 #include <API/Python/Size/Size.h>
 #include <API/Python/Surface/Surface.h>
 #include <API/Python/Surface/SurfaceSet.h>
+#include <API/Python/Surface/ImplicitSurface.h>
 #include <API/Python/Surface/SurfaceToImplicit.h>
 #include <API/Python/Transform/Transform.h>
 #include <API/Python/Utils/Constants.h>
@@ -132,6 +133,8 @@ PYBIND11_MODULE(pyCubbyFlow, m)
 	AddSurface3(m);
 	AddSurfaceSet2(m);
 	AddSurfaceSet3(m);
+	AddImplicitSurface2(m);
+	AddImplicitSurface3(m);
 	AddSurfaceToImplicit2(m);
 	AddSurfaceToImplicit3(m);
 
