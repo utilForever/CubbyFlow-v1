@@ -29,6 +29,9 @@
 #include <API/Python/Grid/CollocatedVectorGrid.h>
 #include <API/Python/Grid/CellCenteredScalarGrid.h>
 #include <API/Python/Grid/CellCenteredVectorGrid.h>
+#include <API/Python/Grid/VertexCenteredScalarGrid.h>
+#include <API/Python/Grid/VertexCenteredVectorGrid.h>
+#include <API/Python/Grid/FaceCenteredGrid.h>
 #include <API/Python/Math/Quaternion.h>
 #include <API/Python/Point/Point.h>
 #include <API/Python/Ray/Ray.h>
@@ -117,6 +120,12 @@ PYBIND11_MODULE(pyCubbyFlow, m)
 	AddCellCenteredScalarGrid3(m);
 	AddCellCenteredVectorGrid2(m);
 	AddCellCenteredVectorGrid3(m);
+	AddVertexCenteredScalarGrid2(m);
+	AddVertexCenteredScalarGrid3(m);
+	AddVertexCenteredVectorGrid2(m);
+	AddVertexCenteredVectorGrid3(m);
+	AddFaceCenteredGrid2(m);
+	AddFaceCenteredGrid3(m);
 
 	// Surfaces
 	AddSurface2(m);
