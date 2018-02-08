@@ -24,6 +24,7 @@
 #include <API/Python/Geometry/Triangle.h>
 #include <API/Python/Geometry/TriangleMesh.h>
 #include <API/Python/Grid/Grid.h>
+#include <API/Python/Grid/GridSystemData.h>
 #include <API/Python/Grid/ScalarGrid.h>
 #include <API/Python/Grid/VectorGrid.h>
 #include <API/Python/Grid/CollocatedVectorGrid.h>
@@ -33,9 +34,11 @@
 #include <API/Python/Grid/VertexCenteredVectorGrid.h>
 #include <API/Python/Grid/FaceCenteredGrid.h>
 #include <API/Python/Math/Quaternion.h>
+#include <API/Python/Particle/ParticleSystemData.h>
 #include <API/Python/Point/Point.h>
 #include <API/Python/Ray/Ray.h>
 #include <API/Python/Size/Size.h>
+#include <API/Python/SPH/SPHSystemData.h>
 #include <API/Python/Surface/Surface.h>
 #include <API/Python/Surface/SurfaceSet.h>
 #include <API/Python/Surface/ImplicitSurface.h>
@@ -92,6 +95,10 @@ PYBIND11_MODULE(pyCubbyFlow, m)
 	// Trivial APIs
 	AddLogging(m);
 
+	// Animations
+	AddAnimation(m);
+	AddPhysicsAnimation(m);
+
 	// Fields
 	AddField2(m);
 	AddField3(m);
@@ -107,6 +114,17 @@ PYBIND11_MODULE(pyCubbyFlow, m)
 	AddCustomScalarField3(m);
 	AddCustomVectorField2(m);
 	AddCustomVectorField3(m);
+
+	// Geometries
+	AddBox2(m);
+	AddBox3(m);
+	AddCylinder3(m);
+	AddPlane2(m);
+	AddPlane3(m);
+	AddSphere2(m);
+	AddSphere3(m);
+	AddTriangle3(m);
+	AddTriangleMesh3(m);
 
 	// Grids
 	AddGrid2(m);
@@ -138,20 +156,13 @@ PYBIND11_MODULE(pyCubbyFlow, m)
 	AddSurfaceToImplicit2(m);
 	AddSurfaceToImplicit3(m);
 
-	// Geometries
-	AddBox2(m);
-	AddBox3(m);
-	AddCylinder3(m);
-	AddPlane2(m);
-	AddPlane3(m);
-	AddSphere2(m);
-	AddSphere3(m);
-	AddTriangle3(m);
-	AddTriangleMesh3(m);
-	
-	// Animations
-	AddAnimation(m);
-	AddPhysicsAnimation(m);
+	// Data models
+	AddGridSystemData2(m);
+	AddGridSystemData3(m);
+	AddParticleSystemData2(m);
+	AddParticleSystemData3(m);
+	AddSPHSystemData2(m);
+	AddSPHSystemData3(m);
 
 #ifdef VERSION_INFO
 	m.attr("__version__") = pybind11::str(VERSION_INFO);
