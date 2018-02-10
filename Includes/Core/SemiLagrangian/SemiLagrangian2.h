@@ -148,6 +148,8 @@ namespace CubbyFlow
 			const Vector2D& pt0,
 			const ScalarField2& boundarySDF) const;
 	};
+
+	using SemiLagrangian2Ptr = std::shared_ptr<SemiLagrangian2>;
 }
 
 #endif
