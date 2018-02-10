@@ -47,6 +47,8 @@ namespace CubbyFlow
 		//!
 		std::function<Vector3D(const Vector3D&)> GetVectorSamplerFunc(const FaceCenteredGrid3& source) const override;
 	};
+
+	using CubicSemiLagrangian3Ptr = std::shared_ptr<CubicSemiLagrangian3>;
 }
 
 #endif
