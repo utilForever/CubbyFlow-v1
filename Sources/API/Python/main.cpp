@@ -10,6 +10,8 @@
 #include <API/Python/Animation/Animation.h>
 #include <API/Python/Animation/PhysicsAnimation.h>
 #include <API/Python/BoundingBox/BoundingBox.h>
+#include <API/Python/Collider/Collider.h>
+#include <API/Python/Collider/RigidbodyCollider.h>
 #include <API/Python/Field/Field.h>
 #include <API/Python/Field/ScalarField.h>
 #include <API/Python/Field/VectorField.h>
@@ -98,6 +100,12 @@ PYBIND11_MODULE(pyCubbyFlow, m)
 	// Animations
 	AddAnimation(m);
 	AddPhysicsAnimation(m);
+
+	// Colliders
+	AddCollider2(m);
+	AddCollider3(m);
+	AddRigidBodyCollider2(m);
+	AddRigidBodyCollider3(m);
 
 	// Fields
 	AddField2(m);
