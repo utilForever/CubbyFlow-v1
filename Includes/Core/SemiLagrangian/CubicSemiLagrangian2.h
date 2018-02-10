@@ -47,6 +47,8 @@ namespace CubbyFlow
 		//!
 		std::function<Vector2D(const Vector2D&)> GetVectorSamplerFunc(const FaceCenteredGrid2& source) const override;
 	};
+
+	using CubicSemiLagrangian2Ptr = std::shared_ptr<CubicSemiLagrangian2>;
 }
 
 #endif
