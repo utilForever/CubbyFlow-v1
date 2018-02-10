@@ -39,6 +39,8 @@
 #include <API/Python/Particle/ParticleSystemData.h>
 #include <API/Python/Point/Point.h>
 #include <API/Python/Ray/Ray.h>
+#include <API/Python/SemiLagrangian/SemiLagrangian.h>
+#include <API/Python/SemiLagrangian/CubicSemiLagrangian.h>
 #include <API/Python/Size/Size.h>
 #include <API/Python/SPH/SPHSystemData.h>
 #include <API/Python/Surface/Surface.h>
@@ -153,6 +155,12 @@ PYBIND11_MODULE(pyCubbyFlow, m)
 	AddVertexCenteredVectorGrid3(m);
 	AddFaceCenteredGrid2(m);
 	AddFaceCenteredGrid3(m);
+
+	// Semi-lagrangians
+	AddSemiLagrangian2(m);
+	AddSemiLagrangian3(m);
+	AddCubicSemiLagrangian2(m);
+	AddCubicSemiLagrangian3(m);
 
 	// Surfaces
 	AddSurface2(m);
