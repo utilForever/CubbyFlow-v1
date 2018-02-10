@@ -148,6 +148,8 @@ namespace CubbyFlow
 			const Vector3D& pt0,
 			const ScalarField3& boundarySDF) const;
 	};
+
+	using SemiLagrangian3Ptr = std::shared_ptr<SemiLagrangian3>;
 }
 
 #endif
