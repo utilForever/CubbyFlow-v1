@@ -38,6 +38,11 @@
 #include <API/Python/Math/Quaternion.h>
 #include <API/Python/Particle/ParticleSystemData.h>
 #include <API/Python/Point/Point.h>
+#include <API/Python/PointsToImplicit/PointsToImplicit.h>
+#include <API/Python/PointsToImplicit/AnisotropicPointsToImplicit.h>
+#include <API/Python/PointsToImplicit/SphericalPointsToImplicit.h>
+#include <API/Python/PointsToImplicit/SPHPointsToImplicit.h>
+#include <API/Python/PointsToImplicit/ZhuBridsonPointsToImplicit.h>
 #include <API/Python/Ray/Ray.h>
 #include <API/Python/SemiLagrangian/SemiLagrangian.h>
 #include <API/Python/SemiLagrangian/CubicSemiLagrangian.h>
@@ -155,6 +160,18 @@ PYBIND11_MODULE(pyCubbyFlow, m)
 	AddVertexCenteredVectorGrid3(m);
 	AddFaceCenteredGrid2(m);
 	AddFaceCenteredGrid3(m);
+
+	// Points to implicit functions
+	AddPointsToImplicit2(m);
+	AddPointsToImplicit3(m);
+	AddAnisotropicPointsToImplicit2(m);
+	AddAnisotropicPointsToImplicit3(m);
+	AddSphericalPointsToImplicit2(m);
+	AddSphericalPointsToImplicit3(m);
+	AddSPHPointsToImplicit2(m);
+	AddSPHPointsToImplicit3(m);
+	AddZhuBridsonPointsToImplicit2(m);
+	AddZhuBridsonPointsToImplicit3(m);
 
 	// Semi-lagrangians
 	AddSemiLagrangian2(m);
