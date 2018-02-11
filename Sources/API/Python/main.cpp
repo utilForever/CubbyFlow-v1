@@ -16,6 +16,8 @@
 #include <API/Python/Emitter/VolumeGridEmitter.h>
 #include <API/Python/Emitter/ParticleEmitter.h>
 #include <API/Python/Emitter/ParticleEmitterSet.h>
+#include <API/Python/Emitter/PointParticleEmitter.h>
+#include <API/Python/Emitter/VolumeParticleEmitter.h>
 #include <API/Python/Field/Field.h>
 #include <API/Python/Field/ScalarField.h>
 #include <API/Python/Field/VectorField.h>
@@ -127,6 +129,10 @@ PYBIND11_MODULE(pyCubbyFlow, m)
 	AddParticleEmitter3(m);
 	AddParticleEmitterSet2(m);
 	AddParticleEmitterSet3(m);
+	AddPointParticleEmitter2(m);
+	AddPointParticleEmitter3(m);
+	AddVolumeParticleEmitter2(m);
+	AddVolumeParticleEmitter3(m);
 
 	// Fields
 	AddField2(m);
