@@ -12,6 +12,8 @@
 #include <API/Python/BoundingBox/BoundingBox.h>
 #include <API/Python/Collider/Collider.h>
 #include <API/Python/Collider/RigidbodyCollider.h>
+#include <API/Python/Emitter/GridEmitter.h>
+#include <API/Python/Emitter/VolumeGridEmitter.h>
 #include <API/Python/Field/Field.h>
 #include <API/Python/Field/ScalarField.h>
 #include <API/Python/Field/VectorField.h>
@@ -113,6 +115,12 @@ PYBIND11_MODULE(pyCubbyFlow, m)
 	AddCollider3(m);
 	AddRigidBodyCollider2(m);
 	AddRigidBodyCollider3(m);
+
+	// Emitters
+	AddGridEmitter2(m);
+	AddGridEmitter3(m);
+	AddVolumeGridEmitter2(m);
+	AddVolumeGridEmitter3(m);
 
 	// Fields
 	AddField2(m);
