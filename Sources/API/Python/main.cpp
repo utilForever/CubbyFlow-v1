@@ -14,6 +14,8 @@
 #include <API/Python/Collider/RigidbodyCollider.h>
 #include <API/Python/Emitter/GridEmitter.h>
 #include <API/Python/Emitter/VolumeGridEmitter.h>
+#include <API/Python/Emitter/ParticleEmitter.h>
+#include <API/Python/Emitter/ParticleEmitterSet.h>
 #include <API/Python/Field/Field.h>
 #include <API/Python/Field/ScalarField.h>
 #include <API/Python/Field/VectorField.h>
@@ -121,6 +123,10 @@ PYBIND11_MODULE(pyCubbyFlow, m)
 	AddGridEmitter3(m);
 	AddVolumeGridEmitter2(m);
 	AddVolumeGridEmitter3(m);
+	AddParticleEmitter2(m);
+	AddParticleEmitter3(m);
+	AddParticleEmitterSet2(m);
+	AddParticleEmitterSet3(m);
 
 	// Fields
 	AddField2(m);
