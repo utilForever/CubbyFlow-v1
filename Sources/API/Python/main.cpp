@@ -53,6 +53,9 @@
 #include <API/Python/SemiLagrangian/SemiLagrangian.h>
 #include <API/Python/SemiLagrangian/CubicSemiLagrangian.h>
 #include <API/Python/Size/Size.h>
+#include <API/Python/Solver/Advection/AdvectionSolver.h>
+#include <API/Python/Solver/FDM/FDMLinearSystemSolver.h>
+#include <API/Python/Solver/FDM/FDMJacobiSolver.h>
 #include <API/Python/SPH/SPHSystemData.h>
 #include <API/Python/Surface/Surface.h>
 #include <API/Python/Surface/SurfaceSet.h>
@@ -216,6 +219,52 @@ PYBIND11_MODULE(pyCubbyFlow, m)
 	AddParticleSystemData3(m);
 	AddSPHSystemData2(m);
 	AddSPHSystemData3(m);
+
+	// Solvers, part 1
+	AddAdvectionSolver2(m);
+	AddAdvectionSolver3(m);
+	AddFDMLinearSystemSolver2(m);
+	AddFDMLinearSystemSolver3(m);
+	AddFDMJacobiSolver2(m);
+	AddFDMJacobiSolver3(m);
+	//AddFDMGaussSeidelSolver2(m);
+	//AddFDMGaussSeidelSolver3(m);
+	//AddFDMCGSolver2(m);
+	//AddFDMCGSolver3(m);
+	//AddFDMICCGSolver2(m);
+	//AddFDMICCGSolver3(m);
+	//AddFDMMGSolver2(m);
+	//AddFDMMGSolver3(m);
+	//AddFDMMGPCGSolver2(m);
+	//AddFDMMGPCGSolver3(m);
+	//AddGridDiffusionSolver2(m);
+	//AddGridDiffusionSolver3(m);
+	//AddGridForwardEulerDiffusionSolver2(m);
+	//AddGridForwardEulerDiffusionSolver3(m);
+	//AddGridBackwardEulerDiffusionSolver2(m);
+	//AddGridBackwardEulerDiffusionSolver3(m);
+	//AddGridBoundaryConditionSolver2(m);
+	//AddGridBoundaryConditionSolver3(m);
+	//AddGridFractionalBoundaryConditionSolver2(m);
+	//AddGridFractionalBoundaryConditionSolver3(m);
+	//AddGridBlockedBoundaryConditionSolver2(m);
+	//AddGridBlockedBoundaryConditionSolver3(m);
+	//AddGridPressureSolver2(m);
+	//AddGridPressureSolver3(m);
+	//AddGridSinglePhasePressureSolver2(m);
+	//AddGridSinglePhasePressureSolver3(m);
+	//AddGridFractionalSinglePhasePressureSolver2(m);
+	//AddGridFractionalSinglePhasePressureSolver3(m);
+	//AddLevelSetSolver2(m);
+	//AddLevelSetSolver3(m);
+	//AddIterativeLevelSetSolver2(m);
+	//AddIterativeLevelSetSolver3(m);
+	//AddUpwindLevelSetSolver2(m);
+	//AddUpwindLevelSetSolver3(m);
+	//AddENOLevelSetSolver2(m);
+	//AddENOLevelSetSolver3(m);
+	//AddFMMLevelSetSolver2(m);
+	//AddFMMLevelSetSolver3(m);
 
 #ifdef VERSION_INFO
 	m.attr("__version__") = pybind11::str(VERSION_INFO);
