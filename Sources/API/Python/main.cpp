@@ -56,6 +56,11 @@
 #include <API/Python/Solver/Advection/AdvectionSolver.h>
 #include <API/Python/Solver/FDM/FDMLinearSystemSolver.h>
 #include <API/Python/Solver/FDM/FDMJacobiSolver.h>
+#include <API/Python/Solver/FDM/FDMGaussSeidelSolver.h>
+#include <API/Python/Solver/FDM/FDMCGSolver.h>
+#include <API/Python/Solver/FDM/FDMICCGSolver.h>
+#include <API/Python/Solver/FDM/FDMMGSolver.h>
+#include <API/Python/Solver/FDM/FDMMGPCGSolver.h>
 #include <API/Python/SPH/SPHSystemData.h>
 #include <API/Python/Surface/Surface.h>
 #include <API/Python/Surface/SurfaceSet.h>
@@ -227,16 +232,16 @@ PYBIND11_MODULE(pyCubbyFlow, m)
 	AddFDMLinearSystemSolver3(m);
 	AddFDMJacobiSolver2(m);
 	AddFDMJacobiSolver3(m);
-	//AddFDMGaussSeidelSolver2(m);
-	//AddFDMGaussSeidelSolver3(m);
-	//AddFDMCGSolver2(m);
-	//AddFDMCGSolver3(m);
-	//AddFDMICCGSolver2(m);
-	//AddFDMICCGSolver3(m);
-	//AddFDMMGSolver2(m);
-	//AddFDMMGSolver3(m);
-	//AddFDMMGPCGSolver2(m);
-	//AddFDMMGPCGSolver3(m);
+	AddFDMGaussSeidelSolver2(m);
+	AddFDMGaussSeidelSolver3(m);
+	AddFDMCGSolver2(m);
+	AddFDMCGSolver3(m);
+	AddFDMICCGSolver2(m);
+	AddFDMICCGSolver3(m);
+	AddFDMMGSolver2(m);
+	AddFDMMGSolver3(m);
+	AddFDMMGPCGSolver2(m);
+	AddFDMMGPCGSolver3(m);
 	//AddGridDiffusionSolver2(m);
 	//AddGridDiffusionSolver3(m);
 	//AddGridForwardEulerDiffusionSolver2(m);
