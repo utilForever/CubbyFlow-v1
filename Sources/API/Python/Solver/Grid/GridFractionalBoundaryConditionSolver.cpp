@@ -82,7 +82,7 @@ void AddGridFractionalBoundaryConditionSolver3(pybind11::module& m)
 		R"pbdoc(
 			Signed distance field of the collider.
 		)pbdoc")
-	.def_property_readonly("colliderVelocityField", &GridFractionalBoundaryConditionSolver3::GetColliderVelocityField,
+	.def_property_readonly("colliderVelocityField", &GridFractionalBoundaryConditionSolver3::ColliderVelocityField,
 		R"pbdoc(
 			Velocity field of the collider.
 		)pbdoc");
