@@ -28,6 +28,8 @@ namespace CubbyFlow
 			size_t i, size_t j, size_t k,
 			std::array<double, 2>* dx, std::array<double, 2>* dy, std::array<double, 2>* dz) const override;
 	};
+
+	using UpwindLevelSetSolver3Ptr = std::shared_ptr<UpwindLevelSetSolver3>;
 }
 
 #endif
