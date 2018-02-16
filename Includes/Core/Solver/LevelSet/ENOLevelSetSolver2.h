@@ -28,6 +28,8 @@ namespace CubbyFlow
 			size_t i, size_t j,
 			std::array<double, 2>* dx, std::array<double, 2>* dy) const override;
 	};
+
+	using ENOLevelSetSolver2Ptr = std::shared_ptr<ENOLevelSetSolver2>;
 }
 
 #endif
