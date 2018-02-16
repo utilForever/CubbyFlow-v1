@@ -70,6 +70,11 @@
 #include <API/Python/Solver/Grid/GridPressureSolver.h>
 #include <API/Python/Solver/Grid/GridSinglePhasePressureSolver.h>
 #include <API/Python/Solver/Grid/GridFractionalSinglePhasePressureSolver.h>
+#include <API/Python/Solver/LevelSet/LevelSetSolver.h>
+#include <API/Python/Solver/LevelSet/IterativeLevelSetSolver.h>
+#include <API/Python/Solver/LevelSet/UpwindLevelSetSolver.h>
+#include <API/Python/Solver/LevelSet/ENOLevelSetSolver.h>
+#include <API/Python/Solver/LevelSet/FMMLevelSetSolver.h>
 #include <API/Python/SPH/SPHSystemData.h>
 #include <API/Python/Surface/Surface.h>
 #include <API/Python/Surface/SurfaceSet.h>
@@ -269,16 +274,16 @@ PYBIND11_MODULE(pyCubbyFlow, m)
 	AddGridSinglePhasePressureSolver3(m);
 	AddGridFractionalSinglePhasePressureSolver2(m);
 	AddGridFractionalSinglePhasePressureSolver3(m);
-	//AddLevelSetSolver2(m);
-	//AddLevelSetSolver3(m);
-	//AddIterativeLevelSetSolver2(m);
-	//AddIterativeLevelSetSolver3(m);
-	//AddUpwindLevelSetSolver2(m);
-	//AddUpwindLevelSetSolver3(m);
-	//AddENOLevelSetSolver2(m);
-	//AddENOLevelSetSolver3(m);
-	//AddFMMLevelSetSolver2(m);
-	//AddFMMLevelSetSolver3(m);
+	AddLevelSetSolver2(m);
+	AddLevelSetSolver3(m);
+	AddIterativeLevelSetSolver2(m);
+	AddIterativeLevelSetSolver3(m);
+	AddUpwindLevelSetSolver2(m);
+	AddUpwindLevelSetSolver3(m);
+	AddENOLevelSetSolver2(m);
+	AddENOLevelSetSolver3(m);
+	AddFMMLevelSetSolver2(m);
+	AddFMMLevelSetSolver3(m);
 
 #ifdef VERSION_INFO
 	m.attr("__version__") = pybind11::str(VERSION_INFO);
