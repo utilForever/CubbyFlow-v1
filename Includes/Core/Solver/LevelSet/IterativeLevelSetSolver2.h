@@ -129,6 +129,8 @@ namespace CubbyFlow
 			ConstArrayAccessor2<double> sdf,
 			const Vector2D& gridSpacing) const;
 	};
+
+	using IterativeLevelSetSolver2Ptr = std::shared_ptr<IterativeLevelSetSolver2>;
 }
 
 #endif
