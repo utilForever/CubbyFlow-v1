@@ -129,6 +129,8 @@ namespace CubbyFlow
 			ConstArrayAccessor3<double> sdf,
 			const Vector3D& gridSpacing) const;
 	};
+
+	using IterativeLevelSetSolver3Ptr = std::shared_ptr<IterativeLevelSetSolver3>;
 }
 
 #endif
