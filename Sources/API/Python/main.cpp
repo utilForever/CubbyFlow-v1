@@ -75,6 +75,8 @@
 #include <API/Python/Solver/LevelSet/UpwindLevelSetSolver.h>
 #include <API/Python/Solver/LevelSet/ENOLevelSetSolver.h>
 #include <API/Python/Solver/LevelSet/FMMLevelSetSolver.h>
+#include <API/Python/Solver/Grid/GridFluidSolver.h>
+#include <API/Python/Solver/Grid/GridSmokeSolver.h>
 #include <API/Python/SPH/SPHSystemData.h>
 #include <API/Python/Surface/Surface.h>
 #include <API/Python/Surface/SurfaceSet.h>
@@ -284,6 +286,26 @@ PYBIND11_MODULE(pyCubbyFlow, m)
 	AddENOLevelSetSolver3(m);
 	AddFMMLevelSetSolver2(m);
 	AddFMMLevelSetSolver3(m);
+
+	// Solvers, part 2
+	AddGridFluidSolver2(m);
+	AddGridFluidSolver3(m);
+	AddGridSmokeSolver2(m);
+	AddGridSmokeSolver3(m);
+	//AddLevelSetLiquidSolver2(m);
+	//AddLevelSetLiquidSolver3(m);
+	//AddPICSolver2(m);
+	//AddPICSolver3(m);
+	//AddFLIPSolver2(m);
+	//AddFLIPSolver3(m);
+	//AddAPICSolver2(m);
+	//AddAPICSolver3(m);
+	//AddParticleSystemSolver2(m);
+	//AddParticleSystemSolver3(m);
+	//AddSPHSolver2(m);
+	//AddSPHSolver3(m);
+	//AddPCISPHSolver2(m);
+	//AddPCISPHSolver3(m);
 
 #ifdef VERSION_INFO
 	m.attr("__version__") = pybind11::str(VERSION_INFO);
