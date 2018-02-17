@@ -78,6 +78,9 @@
 #include <API/Python/Solver/Grid/GridFluidSolver.h>
 #include <API/Python/Solver/Grid/GridSmokeSolver.h>
 #include <API/Python/Solver/LevelSet/LevelSetLiquidSolver.h>
+#include <API/Python/Solver/Hybrid/PIC/PICSolver.h>
+#include <API/Python/Solver/Hybrid/FLIP/FLIPSolver.h>
+#include <API/Python/Solver/Hybrid/APIC/APICSolver.h>
 #include <API/Python/Solver/Particle/ParticleSystemSolver.h>
 #include <API/Python/SPH/SPHSystemData.h>
 #include <API/Python/Surface/Surface.h>
@@ -296,12 +299,12 @@ PYBIND11_MODULE(pyCubbyFlow, m)
 	AddGridSmokeSolver3(m);
 	AddLevelSetLiquidSolver2(m);
 	AddLevelSetLiquidSolver3(m);
-	//AddPICSolver2(m);
-	//AddPICSolver3(m);
-	//AddFLIPSolver2(m);
-	//AddFLIPSolver3(m);
-	//AddAPICSolver2(m);
-	//AddAPICSolver3(m);
+	AddPICSolver2(m);
+	AddPICSolver3(m);
+	AddFLIPSolver2(m);
+	AddFLIPSolver3(m);
+	AddAPICSolver2(m);
+	AddAPICSolver3(m);
 	AddParticleSystemSolver2(m);
 	AddParticleSystemSolver3(m);
 	//AddSPHSolver2(m);
