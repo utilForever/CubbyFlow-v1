@@ -82,6 +82,8 @@
 #include <API/Python/Solver/Hybrid/FLIP/FLIPSolver.h>
 #include <API/Python/Solver/Hybrid/APIC/APICSolver.h>
 #include <API/Python/Solver/Particle/ParticleSystemSolver.h>
+#include <API/Python/Solver/Particle/SPH/SPHSolver.h>
+#include <API/Python/Solver/Particle/PCISPH/PCISPHSolver.h>
 #include <API/Python/SPH/SPHSystemData.h>
 #include <API/Python/Surface/Surface.h>
 #include <API/Python/Surface/SurfaceSet.h>
@@ -307,10 +309,10 @@ PYBIND11_MODULE(pyCubbyFlow, m)
 	AddAPICSolver3(m);
 	AddParticleSystemSolver2(m);
 	AddParticleSystemSolver3(m);
-	//AddSPHSolver2(m);
-	//AddSPHSolver3(m);
-	//AddPCISPHSolver2(m);
-	//AddPCISPHSolver3(m);
+	AddSPHSolver2(m);
+	AddSPHSolver3(m);
+	AddPCISPHSolver2(m);
+	AddPCISPHSolver3(m);
 
 #ifdef VERSION_INFO
 	m.attr("__version__") = pybind11::str(VERSION_INFO);
