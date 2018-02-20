@@ -256,6 +256,9 @@ paket-files/
 *.bat
 
 ## For Python API
+build/
+dist/
+pyCubbyFlow.egg-info/
 *.pyc
 
 ## except resource files
