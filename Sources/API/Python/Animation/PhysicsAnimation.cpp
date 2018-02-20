@@ -45,7 +45,7 @@ void AddPhysicsAnimation(pybind11::module& m)
     .def_property("numberOfFixedSubTimeSteps",
         &PhysicsAnimation::NumberOfFixedSubTimeSteps,
         &PhysicsAnimation::SetNumberOfFixedSubTimeSteps)
-    .def("advanceSingleFrame",
+    .def("AdvanceSingleFrame",
         &PhysicsAnimation::AdvanceSingleFrame)
     .def_property("currentFrame",
         &PhysicsAnimation::CurrentFrame,
