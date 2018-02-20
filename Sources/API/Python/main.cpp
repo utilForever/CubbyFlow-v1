@@ -52,7 +52,7 @@
 #include <API/Python/Ray/Ray.h>
 #include <API/Python/SemiLagrangian/SemiLagrangian.h>
 #include <API/Python/SemiLagrangian/CubicSemiLagrangian.h>
-#include <API/Python/Size/Size.h>
+//#include <API/Python/Size/Size.h>
 #include <API/Python/Solver/Advection/AdvectionSolver.h>
 #include <API/Python/Solver/FDM/FDMLinearSystemSolver.h>
 #include <API/Python/Solver/FDM/FDMJacobiSolver.h>
@@ -111,27 +111,41 @@ PYBIND11_MODULE(pyCubbyFlow, m)
 	AddSerializable(m);
 
 	// Trivial basic types
-	AddBoundingBox2D(m);
-	AddBoundingBox2F(m);
-	AddBoundingBox3D(m);
-	AddBoundingBox3F(m);
-	AddFrame(m);
-	AddPoint2UI(m);
-	AddPoint3UI(m);
-	AddQuaternionD(m);
-	AddQuaternionF(m);
-	AddRay2D(m);
-	AddRay2F(m);
-	AddRay3D(m);
-	AddRay3F(m);
-	AddSize2(m);
-	AddSize3(m);
-	AddTransform2(m);
-	AddTransform3(m);
 	AddVector2D(m);
 	AddVector2F(m);
 	AddVector3D(m);
 	AddVector3F(m);
+
+	// Rays
+	AddRay2D(m);
+	AddRay2F(m);
+	AddRay3D(m);
+	AddRay3F(m);
+
+	// Bounding boxes
+	AddBoundingBox2D(m);
+	AddBoundingBox2F(m);
+	AddBoundingBox3D(m);
+	AddBoundingBox3F(m);
+
+	// Frames
+	AddFrame(m);
+
+	// Quaternions
+	AddQuaternionD(m);
+	AddQuaternionF(m);
+
+	// Points
+	AddPoint2UI(m);
+	AddPoint3UI(m);
+
+	// Sizes
+	//AddSize2(m);
+	//AddSize3(m);
+
+	// Transforms
+	AddTransform2(m);
+	AddTransform3(m);
 
 	// Containers/helpers
 	AddArrayAccessor1(m);
@@ -140,30 +154,6 @@ PYBIND11_MODULE(pyCubbyFlow, m)
 
 	// Trivial APIs
 	AddLogging(m);
-
-	// Animations
-	AddAnimation(m);
-	AddPhysicsAnimation(m);
-
-	// Colliders
-	AddCollider2(m);
-	AddCollider3(m);
-	AddRigidBodyCollider2(m);
-	AddRigidBodyCollider3(m);
-
-	// Emitters
-	AddGridEmitter2(m);
-	AddGridEmitter3(m);
-	AddVolumeGridEmitter2(m);
-	AddVolumeGridEmitter3(m);
-	AddParticleEmitter2(m);
-	AddParticleEmitter3(m);
-	AddParticleEmitterSet2(m);
-	AddParticleEmitterSet3(m);
-	AddPointParticleEmitter2(m);
-	AddPointParticleEmitter3(m);
-	AddVolumeParticleEmitter2(m);
-	AddVolumeParticleEmitter3(m);
 
 	// Fields
 	AddField2(m);
@@ -180,17 +170,6 @@ PYBIND11_MODULE(pyCubbyFlow, m)
 	AddCustomScalarField3(m);
 	AddCustomVectorField2(m);
 	AddCustomVectorField3(m);
-
-	// Geometries
-	AddBox2(m);
-	AddBox3(m);
-	AddCylinder3(m);
-	AddPlane2(m);
-	AddPlane3(m);
-	AddSphere2(m);
-	AddSphere3(m);
-	AddTriangle3(m);
-	AddTriangleMesh3(m);
 
 	// Grids
 	AddGrid2(m);
@@ -212,29 +191,24 @@ PYBIND11_MODULE(pyCubbyFlow, m)
 	AddFaceCenteredGrid2(m);
 	AddFaceCenteredGrid3(m);
 
-	// Points to implicit functions
-	AddPointsToImplicit2(m);
-	AddPointsToImplicit3(m);
-	AddAnisotropicPointsToImplicit2(m);
-	AddAnisotropicPointsToImplicit3(m);
-	AddSphericalPointsToImplicit2(m);
-	AddSphericalPointsToImplicit3(m);
-	AddSPHPointsToImplicit2(m);
-	AddSPHPointsToImplicit3(m);
-	AddZhuBridsonPointsToImplicit2(m);
-	AddZhuBridsonPointsToImplicit3(m);
-
-	// Semi-lagrangians
-	AddSemiLagrangian2(m);
-	AddSemiLagrangian3(m);
-	AddCubicSemiLagrangian2(m);
-	AddCubicSemiLagrangian3(m);
-
 	// Surfaces
 	AddSurface2(m);
 	AddSurface3(m);
 	AddSurfaceSet2(m);
 	AddSurfaceSet3(m);
+
+	// Geometries
+	AddBox2(m);
+	AddBox3(m);
+	AddCylinder3(m);
+	AddPlane2(m);
+	AddPlane3(m);
+	AddSphere2(m);
+	AddSphere3(m);
+	AddTriangle3(m);
+	AddTriangleMesh3(m);
+
+	// Implicit surfaces
 	AddImplicitSurface2(m);
 	AddImplicitSurface3(m);
 	AddSurfaceToImplicit2(m);
@@ -248,9 +222,37 @@ PYBIND11_MODULE(pyCubbyFlow, m)
 	AddSPHSystemData2(m);
 	AddSPHSystemData3(m);
 
-	// Solvers, part 1
+	// Emitters
+	AddGridEmitter2(m);
+	AddGridEmitter3(m);
+	AddVolumeGridEmitter2(m);
+	AddVolumeGridEmitter3(m);
+	AddParticleEmitter2(m);
+	AddParticleEmitter3(m);
+	AddParticleEmitterSet2(m);
+	AddParticleEmitterSet3(m);
+	AddPointParticleEmitter2(m);
+	AddPointParticleEmitter3(m);
+	AddVolumeParticleEmitter2(m);
+	AddVolumeParticleEmitter3(m);
+
+	// Colliders
+	AddCollider2(m);
+	AddCollider3(m);
+	AddRigidBodyCollider2(m);
+	AddRigidBodyCollider3(m);
+
+	// Advection solvers
 	AddAdvectionSolver2(m);
 	AddAdvectionSolver3(m);
+
+	// Semi-lagrangians
+	AddSemiLagrangian2(m);
+	AddSemiLagrangian3(m);
+	AddCubicSemiLagrangian2(m);
+	AddCubicSemiLagrangian3(m);
+
+	// Solvers, part 1
 	AddFDMLinearSystemSolver2(m);
 	AddFDMLinearSystemSolver3(m);
 	AddFDMJacobiSolver2(m);
@@ -293,6 +295,22 @@ PYBIND11_MODULE(pyCubbyFlow, m)
 	AddENOLevelSetSolver3(m);
 	AddFMMLevelSetSolver2(m);
 	AddFMMLevelSetSolver3(m);
+
+	// Points to implicit functions
+	AddPointsToImplicit2(m);
+	AddPointsToImplicit3(m);
+	AddAnisotropicPointsToImplicit2(m);
+	AddAnisotropicPointsToImplicit3(m);
+	AddSphericalPointsToImplicit2(m);
+	AddSphericalPointsToImplicit3(m);
+	AddSPHPointsToImplicit2(m);
+	AddSPHPointsToImplicit3(m);
+	AddZhuBridsonPointsToImplicit2(m);
+	AddZhuBridsonPointsToImplicit3(m);
+
+	// Animations
+	AddAnimation(m);
+	AddPhysicsAnimation(m);
 
 	// Solvers, part 2
 	AddGridFluidSolver2(m);
