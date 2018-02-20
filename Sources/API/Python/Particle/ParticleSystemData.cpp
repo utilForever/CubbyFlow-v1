@@ -43,7 +43,7 @@ void AddParticleSystemData2(pybind11::module& m)
 			- newNumberOfParticles : New number of particles.
 		)pbdoc",
 		pybind11::arg("newNumberOfParticles"))
-	.def_property_readonly("NumberOfParticles",
+	.def_property_readonly("numberOfParticles",
 		&ParticleSystemData2::NumberOfParticles,
 		R"pbdoc(
 			The number of particles.
