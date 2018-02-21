@@ -52,7 +52,7 @@
 #include <API/Python/Ray/Ray.h>
 #include <API/Python/SemiLagrangian/SemiLagrangian.h>
 #include <API/Python/SemiLagrangian/CubicSemiLagrangian.h>
-//#include <API/Python/Size/Size.h>
+#include <API/Python/Size/Size.h>
 #include <API/Python/Solver/Advection/AdvectionSolver.h>
 #include <API/Python/Solver/FDM/FDMLinearSystemSolver.h>
 #include <API/Python/Solver/FDM/FDMJacobiSolver.h>
@@ -140,8 +140,8 @@ PYBIND11_MODULE(pyCubbyFlow, m)
 	AddPoint3UI(m);
 
 	// Sizes
-	//AddSize2(m);
-	//AddSize3(m);
+	AddSize2(m);
+	AddSize3(m);
 
 	// Transforms
 	AddTransform2(m);
