@@ -17,6 +17,7 @@ using namespace CubbyFlow;
 
 void AddSize2(pybind11::module& m)
 {
+	// NOTE: pybind11::module_local() is correct solution? :thinking:
 	pybind11::class_<Size2>(static_cast<pybind11::handle>(m), "Size2", pybind11::module_local())
 	.def("__init__", [](Size2& instance, size_t x, size_t y)
 	{
@@ -40,6 +41,7 @@ void AddSize2(pybind11::module& m)
 
 void AddSize3(pybind11::module& m)
 {
+	// NOTE: pybind11::module_local() is correct solution? :thinking:
 	pybind11::class_<Size3>(static_cast<pybind11::handle>(m), "Size3", pybind11::module_local())
 	.def("__init__", [](Size3& instance, size_t x, size_t y, size_t z)
 	{
