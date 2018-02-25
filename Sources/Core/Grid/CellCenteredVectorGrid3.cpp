@@ -7,7 +7,6 @@
 > Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
 #include <Core/Grid/CellCenteredVectorGrid3.h>
-#include <reason.h>
 
 namespace CubbyFlow
 {
