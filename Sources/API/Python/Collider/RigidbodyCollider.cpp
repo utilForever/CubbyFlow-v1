@@ -8,8 +8,8 @@
 *************************************************************************/
 #include <API/Python/Collider/RigidbodyCollider.h>
 #include <API/Python/Utils/pybind11Utils.h>
-#include <Core/Collider/RigidbodyCollider2.h>
-#include <Core/Collider/RigidbodyCollider3.h>
+#include <Core/Collider/RigidBodyCollider2.h>
+#include <Core/Collider/RigidBodyCollider3.h>
 
 #include <pybind11/pybind11.h>
 
