@@ -24,7 +24,7 @@ namespace CubbyFlow
 	}
 	
 	template <typename T>
-	Quaternion<T>::Quaternion(const std::initializer_list<T>& list)
+	Quaternion<T>::Quaternion(std::initializer_list<T>& list)
 	{
 		Set(list);
 	}
@@ -62,28 +62,29 @@ namespace CubbyFlow
 	template <typename T>
 	void Quaternion<T>::Set(const Quaternion& other)
 	{
-		Set(other.w, other.x, other.y, other.z);
+		Set(other.data.w, other.data.x, other.data.y, other.data.z);
 	}
 
 	template <typename T>
 	void Quaternion<T>::Set(T newW, T newX, T newY, T newZ) 
 	{
-		w = newW;
-		x = newX;
-		y = newY;
-		z = newZ;
+		data.w = newW;
+		data.x = newX;
+		data.y = newY;
+		data.z = newZ;
 	}
 
 	template <typename T>
-	void Quaternion<T>::Set(const std::initializer_list<T>& list)
+	void Quaternion<T>::Set(std::initializer_list<T>& list)
 	{
 		assert(list.size() == 4);
-
 		auto inputElem = list.begin();
-		w = *inputElem;
-		x = *(++inputElem);
-		y = *(++inputElem);
-		z = *(++inputElem);
+
+		Data* arrData = &data;
+		for (size_t i = 0; i < 4; ++i)
+		{
+			arrData[i] = inputElem[i];
+		}
 	}
 
 	template <typename T>
@@ -102,10 +103,10 @@ namespace CubbyFlow
 			Vector3<T> normalizedAxis = axis.Normalized();
 			T s = std::sin(angle / 2);
 
-			x = normalizedAxis.x * s;
-			y = normalizedAxis.y * s;
-			z = normalizedAxis.z * s;
-			w = std::cos(angle / 2);
+			data.x = normalizedAxis.x * s;
+			data.y = normalizedAxis.y * s;
+			data.z = normalizedAxis.z * s;
+			data.w = std::cos(angle / 2);
 		}
 	}
 
@@ -134,7 +135,7 @@ namespace CubbyFlow
 			}
 
 			Set(from.Dot(to), axis.x, axis.y, axis.z);
-			w += L2Norm();
+			data.w += L2Norm();
 
 			Normalize();
 		}
@@ -163,34 +164,34 @@ namespace CubbyFlow
 		if (onePlusTrace > eps)
 		{
 			T S = std::sqrt(onePlusTrace) * 2;
-			w = quarter * S;
-			x = (m(2, 1) - m(1, 2)) / S;
-			y = (m(0, 2) - m(2, 0)) / S;
-			z = (m(1, 0) - m(0, 1)) / S;
+			data.w = quarter * S;
+			data.x = (m(2, 1) - m(1, 2)) / S;
+			data.y = (m(0, 2) - m(2, 0)) / S;
+			data.z = (m(1, 0) - m(0, 1)) / S;
 		}
 		else if (m(0, 0) > m(1, 1) && m(0, 0) > m(2, 2))
 		{
 			T S = std::sqrt(1 + m(0, 0) - m(1, 1) - m(2, 2)) * 2;
-			w = (m(2, 1) - m(1, 2)) / S;
-			x = quarter * S;
-			y = (m(0, 1) + m(1, 0)) / S;
-			z = (m(0, 2) + m(2, 0)) / S;
+			data.w = (m(2, 1) - m(1, 2)) / S;
+			data.x = quarter * S;
+			data.y = (m(0, 1) + m(1, 0)) / S;
+			data.z = (m(0, 2) + m(2, 0)) / S;
 		}
 		else if (m(1, 1) > m(2, 2))
 		{
 			T S = std::sqrt(1 + m(1, 1) - m(0, 0) - m(2, 2)) * 2;
-			w = (m(0, 2) - m(2, 0)) / S;
-			x = (m(0, 1) + m(1, 0)) / S;
-			y = quarter * S;
-			z = (m(1, 2) + m(2, 1)) / S;
+			data.w = (m(0, 2) - m(2, 0)) / S;
+			data.x = (m(0, 1) + m(1, 0)) / S;
+			data.y = quarter * S;
+			data.z = (m(1, 2) + m(2, 1)) / S;
 		}
 		else
 		{
 			T S = std::sqrt(1 + m(2, 2) - m(0, 0) - m(1, 1)) * 2;
-			w = (m(1, 0) - m(0, 1)) / S;
-			x = (m(0, 2) + m(2, 0)) / S;
-			y = (m(1, 2) + m(2, 1)) / S;
-			z = quarter * S;
+			data.w = (m(1, 0) - m(0, 1)) / S;
+			data.x = (m(0, 2) + m(2, 0)) / S;
+			data.y = (m(1, 2) + m(2, 1)) / S;
+			data.z = quarter * S;
 		}
 	}
 
@@ -198,7 +199,7 @@ namespace CubbyFlow
 	template <typename U>
 	Quaternion<U> Quaternion<T>::CastTo() const
 	{
-		return Quaternion<U>(static_cast<U>(w), static_cast<U>(x), static_cast<U>(y), static_cast<U>(z));
+		return Quaternion<U>(static_cast<U>(data.w), static_cast<U>(data.x), static_cast<U>(data.y), static_cast<U>(data.z));
 	}
 
 	template <typename T>
@@ -212,15 +213,15 @@ namespace CubbyFlow
 	template <typename T>
 	Vector3<T> Quaternion<T>::Mul(const Vector3<T>& v) const
 	{
-		T _2xx = 2 * x * x;
-		T _2yy = 2 * y * y;
-		T _2zz = 2 * z * z;
-		T _2xy = 2 * x * y;
-		T _2xz = 2 * x * z;
-		T _2xw = 2 * x * w;
-		T _2yz = 2 * y * z;
-		T _2yw = 2 * y * w;
-		T _2zw = 2 * z * w;
+		T _2xx = 2 * data.x * data.x;
+		T _2yy = 2 * data.y * data.y;
+		T _2zz = 2 * data.z * data.z;
+		T _2xy = 2 * data.x * data.y;
+		T _2xz = 2 * data.x * data.z;
+		T _2xw = 2 * data.x * data.w;
+		T _2yz = 2 * data.y * data.z;
+		T _2yw = 2 * data.y * data.w;
+		T _2zw = 2 * data.z * data.w;
 
 		return Vector3<T>(
 			(1 - _2yy - _2zz) * v.x + (_2xy - _2zw) * v.y + (_2xz + _2yw) * v.z,
@@ -232,26 +233,26 @@ namespace CubbyFlow
 	Quaternion<T> Quaternion<T>::Mul(const Quaternion& other) const
 	{
 		return Quaternion(
-			w * other.w - x * other.x - y * other.y - z * other.z,
-			w * other.x + x * other.w + y * other.z - z * other.y,
-			w * other.y - x * other.z + y * other.w + z * other.x,
-			w * other.z + x * other.y - y * other.x + z * other.w);
+			data.w * other.data.w - data.x * other.data.x - data.y * other.data.y - data.z * other.data.z,
+			data.w * other.data.x + data.x * other.data.w + data.y * other.data.z - data.z * other.data.y,
+			data.w * other.data.y - data.x * other.data.z + data.y * other.data.w + data.z * other.data.x,
+			data.w * other.data.z + data.x * other.data.y - data.y * other.data.x + data.z * other.data.w);
 	}
 
 	template <typename T>
 	T Quaternion<T>::Dot(const Quaternion<T>& other)
 	{
-		return w * other.w + x * other.x + y * other.y + z * other.z;
+		return data.w * other.data.w + data.x * other.data.x + data.y * other.data.y + data.z * other.data.z;
 	}
 
 	template <typename T>
 	Quaternion<T> Quaternion<T>::RMul(const Quaternion& other) const
 	{
 		return Quaternion(
-			other.w * w - other.x * x - other.y * y - other.z * z,
-			other.w * x + other.x * w + other.y * z - other.z * y,
-			other.w * y - other.x * z + other.y * w + other.z * x,
-			other.w * z + other.x * y - other.y * x + other.z * w);
+			other.data.w * data.w - other.data.x * data.x - other.data.y * data.y - other.data.z * data.z,
+			other.data.w * data.x + other.data.x * data.w + other.data.y * data.z - other.data.z * data.y,
+			other.data.w * data.y - other.data.x * data.z + other.data.y * data.w + other.data.z * data.x,
+			other.data.w * data.z + other.data.x * data.y - other.data.y * data.x + other.data.z * data.w);
 	}
 
 	template <typename T>
@@ -286,20 +287,20 @@ namespace CubbyFlow
 
 		if (norm > 0)
 		{
-			w /= norm;
-			x /= norm;
-			y /= norm;
-			z /= norm;
+			data.w /= norm;
+			data.x /= norm;
+			data.y /= norm;
+			data.z /= norm;
 		}
 	}
 
 	template <typename T>
 	Vector3<T> Quaternion<T>::Axis() const
 	{
-		Vector3<T> result(x, y, z);
+		Vector3<T> result(data.x, data.y, data.z);
 		result.Normalize();
 
-		if (2 * std::acos(w) < PI<T>())
+		if (2 * std::acos(data.w) < PI<T>())
 		{
 			return result;
 		}
@@ -310,7 +311,7 @@ namespace CubbyFlow
 	template <typename T>
 	T Quaternion<T>::Angle() const
 	{
-		T result = 2 * std::acos(w);
+		T result = 2 * std::acos(data.w);
 
 		if (result < PI<T>())
 		{
@@ -324,9 +325,9 @@ namespace CubbyFlow
 	template <typename T>
 	void Quaternion<T>::GetAxisAngle(Vector3<T>* axis, T* angle) const
 	{
-		axis->Set(x, y, z);
+		axis->Set(data.x, data.y, data.z);
 		axis->Normalize();
-		*angle = 2 * std::acos(w);
+		*angle = 2 * std::acos(data.w);
 
 		if (*angle > PI<T>())
 		{
@@ -339,22 +340,22 @@ namespace CubbyFlow
 	template <typename T>
 	Quaternion<T> Quaternion<T>::Inverse() const
 	{
-		T denom = w * w + x * x + y * y + z * z;
-		return Quaternion(w / denom, -x / denom, -y / denom, -z / denom);
+		T denom = data.w * data.w + data.x * data.x + data.y * data.y + data.z * data.z;
+		return Quaternion(data.w / denom, -data.x / denom, -data.y / denom, -data.z / denom);
 	}
 
 	template <typename T>
 	Matrix3x3<T> Quaternion<T>::Matrix3() const
 	{
-		T _2xx = 2 * x * x;
-		T _2yy = 2 * y * y;
-		T _2zz = 2 * z * z;
-		T _2xy = 2 * x * y;
-		T _2xz = 2 * x * z;
-		T _2xw = 2 * x * w;
-		T _2yz = 2 * y * z;
-		T _2yw = 2 * y * w;
-		T _2zw = 2 * z * w;
+		T _2xx = 2 * data.x * data.x;
+		T _2yy = 2 * data.y * data.y;
+		T _2zz = 2 * data.z * data.z;
+		T _2xy = 2 * data.x * data.y;
+		T _2xz = 2 * data.x * data.z;
+		T _2xw = 2 * data.x * data.w;
+		T _2yz = 2 * data.y * data.z;
+		T _2yw = 2 * data.y * data.w;
+		T _2zw = 2 * data.z * data.w;
 
 		Matrix3x3<T> m(
 			1 - _2yy - _2zz, _2xy - _2zw, _2xz + _2yw,
@@ -367,15 +368,15 @@ namespace CubbyFlow
 	template <typename T>
 	Matrix4x4<T> Quaternion<T>::Matrix4() const
 	{
-		T _2xx = 2 * x * x;
-		T _2yy = 2 * y * y;
-		T _2zz = 2 * z * z;
-		T _2xy = 2 * x * y;
-		T _2xz = 2 * x * z;
-		T _2xw = 2 * x * w;
-		T _2yz = 2 * y * z;
-		T _2yw = 2 * y * w;
-		T _2zw = 2 * z * w;
+		T _2xx = 2 * data.x * data.x;
+		T _2yy = 2 * data.y * data.y;
+		T _2zz = 2 * data.z * data.z;
+		T _2xy = 2 * data.x * data.y;
+		T _2xz = 2 * data.x * data.z;
+		T _2xw = 2 * data.x * data.w;
+		T _2yz = 2 * data.y * data.z;
+		T _2yw = 2 * data.y * data.w;
+		T _2zw = 2 * data.z * data.w;
 
 		Matrix4x4<T> m(
 			1 - _2yy - _2zz, _2xy - _2zw, _2xz + _2yw, 0,
@@ -389,7 +390,7 @@ namespace CubbyFlow
 	template <typename T>
 	T Quaternion<T>::L2Norm() const
 	{
-		return std::sqrt(w * w + x * x + y * y + z * z);
+		return std::sqrt(data.w * data.w + data.x * data.x + data.y * data.y + data.z * data.z);
 	}
 
 	template <typename T>
@@ -409,25 +410,25 @@ namespace CubbyFlow
 	template <typename T>
 	T& Quaternion<T>::operator[](size_t i)
 	{
-		return (&w)[i];
+		return (&data.w)[i];
 	}
 
 	template <typename T>
 	const T& Quaternion<T>::operator[](size_t i) const
 	{
-		return (&w)[i];
+		return (&data.w)[i];
 	}
 
 	template <typename T>
 	bool Quaternion<T>::operator==(const Quaternion& other) const
 	{
-		return (w == other.w && x == other.x && y == other.y && z == other.z);
+		return (data.w == other.data.w && data.x == other.data.x && data.y == other.data.y && data.z == other.data.z);
 	}
 
 	template <typename T>
 	bool Quaternion<T>::operator!=(const Quaternion& other) const
 	{
-		return (w != other.w || x != other.x || y != other.y || z != other.z);
+		return (data.w != other.data.w || data.x != other.data.x || data.y != other.data.y || data.z != other.data.z);
 	}
 
 	template <typename T>
