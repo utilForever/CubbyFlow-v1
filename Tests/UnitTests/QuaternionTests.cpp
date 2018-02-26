@@ -9,34 +9,34 @@ TEST(Quaternion, Constructors)
 	{
 		QuaternionD q;
 
-		EXPECT_DOUBLE_EQ(1.0, q.w);
-		EXPECT_DOUBLE_EQ(0.0, q.x);
-		EXPECT_DOUBLE_EQ(0.0, q.y);
-		EXPECT_DOUBLE_EQ(0.0, q.z);
+		EXPECT_DOUBLE_EQ(1.0, q.data.w);
+		EXPECT_DOUBLE_EQ(0.0, q.data.x);
+		EXPECT_DOUBLE_EQ(0.0, q.data.y);
+		EXPECT_DOUBLE_EQ(0.0, q.data.z);
 	}
 	{
 		QuaternionD q(1, 2, 3, 4);
 
-		EXPECT_DOUBLE_EQ(1.0, q.w);
-		EXPECT_DOUBLE_EQ(2.0, q.x);
-		EXPECT_DOUBLE_EQ(3.0, q.y);
-		EXPECT_DOUBLE_EQ(4.0, q.z);
+		EXPECT_DOUBLE_EQ(1.0, q.data.w);
+		EXPECT_DOUBLE_EQ(2.0, q.data.x);
+		EXPECT_DOUBLE_EQ(3.0, q.data.y);
+		EXPECT_DOUBLE_EQ(4.0, q.data.z);
 	}
 	{
 		QuaternionD q(QuaternionD(1, 2, 3, 4));
 
-		EXPECT_DOUBLE_EQ(1.0, q.w);
-		EXPECT_DOUBLE_EQ(2.0, q.x);
-		EXPECT_DOUBLE_EQ(3.0, q.y);
-		EXPECT_DOUBLE_EQ(4.0, q.z);
+		EXPECT_DOUBLE_EQ(1.0, q.data.w);
+		EXPECT_DOUBLE_EQ(2.0, q.data.x);
+		EXPECT_DOUBLE_EQ(3.0, q.data.y);
+		EXPECT_DOUBLE_EQ(4.0, q.data.z);
 	}
 	{
 		QuaternionD q({ 1, 2, 3, 4 });
 
-		EXPECT_DOUBLE_EQ(1.0, q.w);
-		EXPECT_DOUBLE_EQ(2.0, q.x);
-		EXPECT_DOUBLE_EQ(3.0, q.y);
-		EXPECT_DOUBLE_EQ(4.0, q.z);
+		EXPECT_DOUBLE_EQ(1.0, q.data.w);
+		EXPECT_DOUBLE_EQ(2.0, q.data.x);
+		EXPECT_DOUBLE_EQ(3.0, q.data.y);
+		EXPECT_DOUBLE_EQ(4.0, q.data.z);
 	}
 	{
 		// set with axis & angle
@@ -76,10 +76,10 @@ TEST(Quaternion, Constructors)
 
 		QuaternionD q(rotationBasis0, rotationBasis1, rotationBasis2);
 
-		EXPECT_DOUBLE_EQ(std::sqrt(2.0) / 2.0, q.w);
-		EXPECT_DOUBLE_EQ(std::sqrt(2.0) / 2.0, q.x);
-		EXPECT_DOUBLE_EQ(0.0, q.y);
-		EXPECT_DOUBLE_EQ(0.0, q.z);
+		EXPECT_DOUBLE_EQ(std::sqrt(2.0) / 2.0, q.data.w);
+		EXPECT_DOUBLE_EQ(std::sqrt(2.0) / 2.0, q.data.x);
+		EXPECT_DOUBLE_EQ(0.0, q.data.y);
+		EXPECT_DOUBLE_EQ(0.0, q.data.z);
 	}
 }
 
@@ -89,28 +89,28 @@ TEST(Quaternion, BasicSetters)
 		QuaternionD q;
 		q.Set(QuaternionD(1, 2, 3, 4));
 
-		EXPECT_DOUBLE_EQ(1.0, q.w);
-		EXPECT_DOUBLE_EQ(2.0, q.x);
-		EXPECT_DOUBLE_EQ(3.0, q.y);
-		EXPECT_DOUBLE_EQ(4.0, q.z);
+		EXPECT_DOUBLE_EQ(1.0, q.data.w);
+		EXPECT_DOUBLE_EQ(2.0, q.data.x);
+		EXPECT_DOUBLE_EQ(3.0, q.data.y);
+		EXPECT_DOUBLE_EQ(4.0, q.data.z);
 	}
 	{
 		QuaternionD q;
 		q.Set(1, 2, 3, 4);
 
-		EXPECT_DOUBLE_EQ(1.0, q.w);
-		EXPECT_DOUBLE_EQ(2.0, q.x);
-		EXPECT_DOUBLE_EQ(3.0, q.y);
-		EXPECT_DOUBLE_EQ(4.0, q.z);
+		EXPECT_DOUBLE_EQ(1.0, q.data.w);
+		EXPECT_DOUBLE_EQ(2.0, q.data.x);
+		EXPECT_DOUBLE_EQ(3.0, q.data.y);
+		EXPECT_DOUBLE_EQ(4.0, q.data.z);
 	}
 	{
 		QuaternionD q;
 		q.Set({ 1, 2, 3, 4 });
 
-		EXPECT_DOUBLE_EQ(1.0, q.w);
-		EXPECT_DOUBLE_EQ(2.0, q.x);
-		EXPECT_DOUBLE_EQ(3.0, q.y);
-		EXPECT_DOUBLE_EQ(4.0, q.z);
+		EXPECT_DOUBLE_EQ(1.0, q.data.w);
+		EXPECT_DOUBLE_EQ(2.0, q.data.x);
+		EXPECT_DOUBLE_EQ(3.0, q.data.y);
+		EXPECT_DOUBLE_EQ(4.0, q.data.z);
 	}
 	{
 		// set with axis & angle
@@ -153,10 +153,10 @@ TEST(Quaternion, BasicSetters)
 		QuaternionD q;
 		q.Set(rotationBasis0, rotationBasis1, rotationBasis2);
 
-		EXPECT_DOUBLE_EQ(std::sqrt(2.0) / 2.0, q.w);
-		EXPECT_DOUBLE_EQ(std::sqrt(2.0) / 2.0, q.x);
-		EXPECT_DOUBLE_EQ(0.0, q.y);
-		EXPECT_DOUBLE_EQ(0.0, q.z);
+		EXPECT_DOUBLE_EQ(std::sqrt(2.0) / 2.0, q.data.w);
+		EXPECT_DOUBLE_EQ(std::sqrt(2.0) / 2.0, q.data.x);
+		EXPECT_DOUBLE_EQ(0.0, q.data.y);
+		EXPECT_DOUBLE_EQ(0.0, q.data.z);
 	}
 }
 
@@ -165,10 +165,10 @@ TEST(Quaternion, CastTo)
 	QuaternionD qd(1, 2, 3, 4);
 	QuaternionF qf = qd.CastTo<float>();
 
-	EXPECT_FLOAT_EQ(1.f, qf.w);
-	EXPECT_FLOAT_EQ(2.f, qf.x);
-	EXPECT_FLOAT_EQ(3.f, qf.y);
-	EXPECT_FLOAT_EQ(4.f, qf.z);
+	EXPECT_FLOAT_EQ(1.f, qf.data.w);
+	EXPECT_FLOAT_EQ(2.f, qf.data.x);
+	EXPECT_FLOAT_EQ(3.f, qf.data.y);
+	EXPECT_FLOAT_EQ(4.f, qf.data.z);
 }
 
 TEST(Quaternion, Normalized)
@@ -177,10 +177,10 @@ TEST(Quaternion, Normalized)
 	QuaternionD qn = q.Normalized();
 
 	double denom = std::sqrt(30.0);
-	EXPECT_DOUBLE_EQ(1.0 / denom, qn.w);
-	EXPECT_DOUBLE_EQ(2.0 / denom, qn.x);
-	EXPECT_DOUBLE_EQ(3.0 / denom, qn.y);
-	EXPECT_DOUBLE_EQ(4.0 / denom, qn.z);
+	EXPECT_DOUBLE_EQ(1.0 / denom, qn.data.w);
+	EXPECT_DOUBLE_EQ(2.0 / denom, qn.data.x);
+	EXPECT_DOUBLE_EQ(3.0 / denom, qn.data.y);
+	EXPECT_DOUBLE_EQ(4.0 / denom, qn.data.z);
 }
 
 TEST(Quaternion, BinaryOperators)
@@ -190,10 +190,10 @@ TEST(Quaternion, BinaryOperators)
 
 	QuaternionD q3 = q1.Mul(q2);
 
-	EXPECT_DOUBLE_EQ(30.0, q3.w);
-	EXPECT_DOUBLE_EQ(0.0, q3.x);
-	EXPECT_DOUBLE_EQ(0.0, q3.y);
-	EXPECT_DOUBLE_EQ(0.0, q3.z);
+	EXPECT_DOUBLE_EQ(30.0, q3.data.w);
+	EXPECT_DOUBLE_EQ(0.0, q3.data.x);
+	EXPECT_DOUBLE_EQ(0.0, q3.data.y);
+	EXPECT_DOUBLE_EQ(0.0, q3.data.z);
 
 	q1.Normalize();
 	Vector3D v(7, 8, 9);
@@ -221,19 +221,19 @@ TEST(Quaternion, Modifiers)
 	QuaternionD q(4, 3, 2, 1);
 	q.SetIdentity();
 
-	EXPECT_DOUBLE_EQ(1.0, q.w);
-	EXPECT_DOUBLE_EQ(0.0, q.x);
-	EXPECT_DOUBLE_EQ(0.0, q.y);
-	EXPECT_DOUBLE_EQ(0.0, q.z);
+	EXPECT_DOUBLE_EQ(1.0, q.data.w);
+	EXPECT_DOUBLE_EQ(0.0, q.data.x);
+	EXPECT_DOUBLE_EQ(0.0, q.data.y);
+	EXPECT_DOUBLE_EQ(0.0, q.data.z);
 
 	q.Set(4, 3, 2, 1);
 	q.Normalize();
 
 	double denom = std::sqrt(30.0);
-	EXPECT_DOUBLE_EQ(4.0 / denom, q.w);
-	EXPECT_DOUBLE_EQ(3.0 / denom, q.x);
-	EXPECT_DOUBLE_EQ(2.0 / denom, q.y);
-	EXPECT_DOUBLE_EQ(1.0 / denom, q.z);
+	EXPECT_DOUBLE_EQ(4.0 / denom, q.data.w);
+	EXPECT_DOUBLE_EQ(3.0 / denom, q.data.x);
+	EXPECT_DOUBLE_EQ(2.0 / denom, q.data.y);
+	EXPECT_DOUBLE_EQ(1.0 / denom, q.data.z);
 
 	Vector3D axis;
 	double angle;
@@ -250,10 +250,10 @@ TEST(Quaternion, ComplexGetters)
 	QuaternionD q(1, 2, 3, 4);
 
 	QuaternionD q2 = q.Inverse();
-	EXPECT_DOUBLE_EQ(1.0 / 30.0, q2.w);
-	EXPECT_DOUBLE_EQ(-1.0 / 15.0, q2.x);
-	EXPECT_DOUBLE_EQ(-1.0 / 10.0, q2.y);
-	EXPECT_DOUBLE_EQ(-2.0 / 15.0, q2.z);
+	EXPECT_DOUBLE_EQ(1.0 / 30.0, q2.data.w);
+	EXPECT_DOUBLE_EQ(-1.0 / 15.0, q2.data.x);
+	EXPECT_DOUBLE_EQ(-1.0 / 10.0, q2.data.y);
+	EXPECT_DOUBLE_EQ(-2.0 / 15.0, q2.data.z);
 
 	q.Set(1, 0, 5, 2);
 	q.Normalize();
@@ -308,19 +308,19 @@ TEST(Quaternion, SetterOperators)
 	QuaternionD q2;
 
 	q2 = q;
-	EXPECT_EQ(1.0, q2.w);
-	EXPECT_EQ(2.0, q2.x);
-	EXPECT_EQ(3.0, q2.y);
-	EXPECT_EQ(4.0, q2.z);
+	EXPECT_EQ(1.0, q2.data.w);
+	EXPECT_EQ(2.0, q2.data.x);
+	EXPECT_EQ(3.0, q2.data.y);
+	EXPECT_EQ(4.0, q2.data.z);
 
 	q2.Set(5, 6, 7, 8);
 
 	q *= q2;
 
-	EXPECT_EQ(-60.0, q.w);
-	EXPECT_EQ(12.0, q.x);
-	EXPECT_EQ(30.0, q.y);
-	EXPECT_EQ(24.0, q.z);
+	EXPECT_EQ(-60.0, q.data.w);
+	EXPECT_EQ(12.0, q.data.x);
+	EXPECT_EQ(30.0, q.data.y);
+	EXPECT_EQ(24.0, q.data.z);
 }
 
 TEST(Quaternion, GetterOperators)
