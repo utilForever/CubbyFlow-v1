@@ -30,10 +30,7 @@ void AddQuaternionF(pybind11::module& m)
 		pybind11::arg("x") = 0.0f,
 		pybind11::arg("y") = 0.0f,
 		pybind11::arg("z") = 0.0f)
-	.def_readwrite("w", &QuaternionF::w)
-	.def_readwrite("x", &QuaternionF::x)
-	.def_readwrite("y", &QuaternionF::y)
-	.def_readwrite("z", &QuaternionF::z)
+	//.def_readwrite("data", &QuaternionF::data)
 	.def("Angle", &QuaternionF::Angle)
 	.def("Axis", &QuaternionF::Axis)
 	.def("Normalized", &QuaternionF::Normalized)
@@ -107,6 +104,13 @@ void AddQuaternionF(pybind11::module& m)
 		QuaternionF other = ObjectToQuaternionF(obj);
 		return instance == other;
 	});
+
+	pybind11::class_<QuaternionF::Data>(m, "QuaternionFData")
+	.def(pybind11::init<>())
+	.def_readwrite("w", &QuaternionF::Data::w)
+	.def_readwrite("x", &QuaternionF::Data::x)
+	.def_readwrite("y", &QuaternionF::Data::y)
+	.def_readwrite("z", &QuaternionF::Data::z);
 }
 
 void AddQuaternionD(pybind11::module& m)
@@ -120,15 +124,8 @@ void AddQuaternionD(pybind11::module& m)
 			Constructs QuaternionD.
 
 			This method constructs double-type quaternion with w, x, y, and z.
-		)pbdoc",
-		pybind11::arg("w") = 1.0,
-		pybind11::arg("x") = 0.0,
-		pybind11::arg("y") = 0.0,
-		pybind11::arg("z") = 0.0)
-	.def_readwrite("w", &QuaternionD::w)
-	.def_readwrite("x", &QuaternionD::x)
-	.def_readwrite("y", &QuaternionD::y)
-	.def_readwrite("z", &QuaternionD::z)
+		)pbdoc")
+	//.def_readwrite("data", &QuaternionF::data)
 	.def("Angle", &QuaternionD::Angle)
 	.def("Axis", &QuaternionD::Axis)
 	.def("Normalized", &QuaternionD::Normalized)
@@ -202,4 +199,11 @@ void AddQuaternionD(pybind11::module& m)
 		QuaternionD other = ObjectToQuaternionD(obj);
 		return instance == other;
 	});
+
+	pybind11::class_<QuaternionD::Data>(m, "QuaternionDData")
+	.def(pybind11::init<>())
+	.def_readwrite("w", &QuaternionD::Data::w)
+	.def_readwrite("x", &QuaternionD::Data::x)
+	.def_readwrite("y", &QuaternionD::Data::y)
+	.def_readwrite("z", &QuaternionD::Data::z);
 }
