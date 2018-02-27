@@ -302,7 +302,7 @@ namespace CubbyFlow
 	{
 		if (m_particleEmitter != nullptr)
 		{
-			m_particleEmitter->Update(CurrentTimeInSeconds(), timeIntervalInSeconds);
+			m_particleEmitter->Update(GetCurrentTimeInSeconds(), timeIntervalInSeconds);
 		}
 	}
 
