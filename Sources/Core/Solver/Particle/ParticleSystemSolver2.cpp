@@ -273,7 +273,7 @@ namespace CubbyFlow
 	{
 		if (m_collider != nullptr)
 		{
-			m_collider->Update(CurrentTimeInSeconds(), timeStepInSeconds);
+			m_collider->Update(GetCurrentTimeInSeconds(), timeStepInSeconds);
 		}
 	}
 
@@ -281,7 +281,7 @@ namespace CubbyFlow
 	{
 		if (m_emitter != nullptr)
 		{
-			m_emitter->Update(CurrentTimeInSeconds(), timeStepInSeconds);
+			m_emitter->Update(GetCurrentTimeInSeconds(), timeStepInSeconds);
 		}
 	}
 
