@@ -204,7 +204,7 @@ namespace CubbyFlow
 		//!
 		//! \see GridFluidSolver3::GetMaxCFL
 		//!
-		unsigned int NumberOfSubTimeSteps(double timeIntervalInSeconds) const override;
+		unsigned int GetNumberOfSubTimeSteps(double timeIntervalInSeconds) const override;
 
 		//! Called at the beginning of a time-step.
 		virtual void OnBeginAdvanceTimeStep(double timeIntervalInSeconds);

@@ -245,7 +245,7 @@ namespace CubbyFlow
 		EndAdvanceTimeStep(timeIntervalInSeconds);
 	}
 
-	unsigned int GridFluidSolver3::NumberOfSubTimeSteps(double timeIntervalInSeconds) const
+	unsigned int GridFluidSolver3::GetNumberOfSubTimeSteps(double timeIntervalInSeconds) const
 	{
 		double currentCFL = GetCFL(timeIntervalInSeconds);
 		return static_cast<unsigned int>(std::max(std::ceil(currentCFL / m_maxCFL), 1.0));
@@ -584,7 +584,7 @@ namespace CubbyFlow
 	{
 		if (m_collider != nullptr)
 		{
-			m_collider->Update(CurrentTimeInSeconds(), timeIntervalInSeconds);
+			m_collider->Update(GetCurrentTimeInSeconds(), timeIntervalInSeconds);
 		}
 	}
 
@@ -592,7 +592,7 @@ namespace CubbyFlow
 	{
 		if (m_emitter != nullptr)
 		{
-			m_emitter->Update(CurrentTimeInSeconds(), timeIntervalInSeconds);
+			m_emitter->Update(GetCurrentTimeInSeconds(), timeIntervalInSeconds);
 		}
 	}
 
