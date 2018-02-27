@@ -121,7 +121,7 @@ namespace CubbyFlow
 
 	protected:
 		//! Returns the number of sub-time-steps.
-		unsigned int NumberOfSubTimeSteps(double timeIntervalInSeconds) const override;
+		unsigned int GetNumberOfSubTimeSteps(double timeIntervalInSeconds) const override;
 
 		//! Accumulates the force to the forces array in the particle system.
 		void AccumulateForces(double timeStepInSeconds) override;

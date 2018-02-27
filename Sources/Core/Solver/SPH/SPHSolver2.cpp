@@ -103,7 +103,7 @@ namespace CubbyFlow
 		return std::dynamic_pointer_cast<SPHSystemData2>(GetParticleSystemData());
 	}
 
-	unsigned int SPHSolver2::NumberOfSubTimeSteps(double timeIntervalInSeconds) const
+	unsigned int SPHSolver2::GetNumberOfSubTimeSteps(double timeIntervalInSeconds) const
 	{
 		auto particles = GetSPHSystemData();
 		size_t numberOfParticles = particles->NumberOfParticles();
