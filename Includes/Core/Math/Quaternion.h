@@ -22,23 +22,17 @@ namespace CubbyFlow
 	public:
 		static_assert(std::is_floating_point<T>::value, "Quaternion only can be instantiated with floating point types");
 
-		//! Simple quaternion data.
-		struct Data
-		{
-			//! Real part.
-			T w;
+		//! Real part.
+		T w;
 
-			//!< Imaginary part (i).
-			T x;
+		//!< Imaginary part (i).
+		T x;
 
-			//!< Imaginary part (j).
-			T y;
+		//!< Imaginary part (j).
+		T y;
 
-			//!< Imaginary part (k).
-			T z;
-		};
-
-		Data data;
+		//!< Imaginary part (k).
+		T z;
 
 		// MARK: Constructors
 		//! Make an identity quaternion.
@@ -48,7 +42,7 @@ namespace CubbyFlow
 		Quaternion(T newW, T newX, T newY, T newZ);
 
 		//! Constructs a quaternion with given elements.
-		Quaternion(std::initializer_list<T>& list);
+		Quaternion(const std::initializer_list<T>& list);
 
 		//! Constructs a quaternion with given rotation axis and angle.
 		Quaternion(const Vector3<T>& axis, T angle);
@@ -73,7 +67,7 @@ namespace CubbyFlow
 		void Set(T newW, T newX, T newY, T newZ);
 
 		//! Sets the quaternion with given elements.
-		void Set(std::initializer_list<T>& list);
+		void Set(const std::initializer_list<T>& list);
 
 		//! Sets the quaternion with given rotation axis and angle.
 		void Set(const Vector3<T>& axis, T angle);
