@@ -23,7 +23,7 @@ namespace CubbyFlow
 		// Do nothing
 	}
 
-	bool PhysicsAnimation::IsUsingFixedSubTimeSteps() const
+	bool PhysicsAnimation::GetIsUsingFixedSubTimeSteps() const
 	{
 		return m_isUsingFixedSubTimeSteps;
 	}
@@ -33,7 +33,7 @@ namespace CubbyFlow
 		m_isUsingFixedSubTimeSteps = isUsing;
 	}
 
-	unsigned int PhysicsAnimation::NumberOfFixedSubTimeSteps() const
+	unsigned int PhysicsAnimation::GetNumberOfFixedSubTimeSteps() const
 	{
 		return m_numberOfFixedSubTimeSteps;
 	}
@@ -49,7 +49,7 @@ namespace CubbyFlow
 		Update(++f);
 	}
 
-	Frame PhysicsAnimation::CurrentFrame() const
+	Frame PhysicsAnimation::GetCurrentFrame() const
 	{
 		return m_currentFrame;
 	}
@@ -59,12 +59,12 @@ namespace CubbyFlow
 		m_currentFrame = frame;
 	}
 
-	double PhysicsAnimation::CurrentTimeInSeconds() const
+	double PhysicsAnimation::GetCurrentTimeInSeconds() const
 	{
 		return m_currentTime;
 	}
 
-	unsigned int PhysicsAnimation::NumberOfSubTimeSteps(double timeIntervalInSeconds) const
+	unsigned int PhysicsAnimation::GetNumberOfSubTimeSteps(double timeIntervalInSeconds) const
 	{
 		UNUSED_VARIABLE(timeIntervalInSeconds);
 
@@ -125,7 +125,7 @@ namespace CubbyFlow
 			double remainingTime = timeIntervalInSeconds;
 			while (remainingTime > std::numeric_limits<double>::epsilon())
 			{
-				unsigned int numSteps = NumberOfSubTimeSteps(remainingTime);
+				unsigned int numSteps = GetNumberOfSubTimeSteps(remainingTime);
 				double actualTimeInterval = remainingTime / static_cast<double>(numSteps);
 
 				CUBBYFLOW_INFO << "Number of remaining sub-timesteps: " << numSteps;

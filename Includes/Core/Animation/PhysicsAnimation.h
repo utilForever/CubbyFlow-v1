@@ -38,7 +38,7 @@ namespace CubbyFlow
 		//!
 		//! \return True if using fixed sub time steps, false otherwise.
 		//!
-		bool IsUsingFixedSubTimeSteps() const;
+		bool GetIsUsingFixedSubTimeSteps() const;
 
 		//!
 		//! \brief Sets true if fixed sub-timestepping is used.
@@ -62,7 +62,7 @@ namespace CubbyFlow
 		//!
 		//! \return The number of fixed sub-timesteps.
 		//!
-		unsigned int NumberOfFixedSubTimeSteps() const;
+		unsigned int GetNumberOfFixedSubTimeSteps() const;
 
 		//!
 		//! \brief Sets the number of fixed sub-timesteps.
@@ -82,7 +82,7 @@ namespace CubbyFlow
 		//!
 		//! \brief Returns current frame.
 		//!
-		Frame CurrentFrame() const;
+		Frame GetCurrentFrame() const;
 
 		//!
 		//! \brief Sets current frame cursor (but do not invoke update()).
@@ -95,7 +95,7 @@ namespace CubbyFlow
 		//! This function returns the current time which is calculated by adding
 		//! current frame + sub-timesteps it passed.
 		//!
-		double CurrentTimeInSeconds() const;
+		double GetCurrentTimeInSeconds() const;
 
 	protected:
 		//!
@@ -123,7 +123,7 @@ namespace CubbyFlow
 		//!
 		//! \return The required number of sub-timesteps.
 		//!
-		virtual unsigned int NumberOfSubTimeSteps(double timeIntervalInSeconds) const;
+		virtual unsigned int GetNumberOfSubTimeSteps(double timeIntervalInSeconds) const;
 
 		//!
 		//! \brief Called at frame 0 to initialize the physics state.
