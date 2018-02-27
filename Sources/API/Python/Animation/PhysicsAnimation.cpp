@@ -39,17 +39,9 @@ void AddPhysicsAnimation(pybind11::module& m)
 {
     pybind11::class_<PhysicsAnimation, PyPhysicsAnimation, PhysicsAnimationPtr, Animation>(static_cast<pybind11::handle>(m), "PhysicsAnimation")
     .def(pybind11::init<>())
-    .def_property("isUsingFixedSubTimeSteps",
-        &PhysicsAnimation::GetIsUsingFixedSubTimeSteps,
-        &PhysicsAnimation::SetIsUsingFixedSubTimeSteps)
-    .def_property("numberOfFixedSubTimeSteps",
-        &PhysicsAnimation::GetNumberOfFixedSubTimeSteps,
-        &PhysicsAnimation::SetNumberOfFixedSubTimeSteps)
-    .def("AdvanceSingleFrame",
-        &PhysicsAnimation::AdvanceSingleFrame)
-    .def_property("currentFrame",
-        &PhysicsAnimation::GetCurrentFrame,
-        &PhysicsAnimation::SetCurrentFrame)
-    .def_property_readonly("currentTimeInSeconds",
-        &PhysicsAnimation::GetCurrentTimeInSeconds);
+    .def_property("isUsingFixedSubTimeSteps", &PhysicsAnimation::GetIsUsingFixedSubTimeSteps, &PhysicsAnimation::SetIsUsingFixedSubTimeSteps)
+    .def_property("numberOfFixedSubTimeSteps", &PhysicsAnimation::GetNumberOfFixedSubTimeSteps, &PhysicsAnimation::SetNumberOfFixedSubTimeSteps)
+    .def("AdvanceSingleFrame", &PhysicsAnimation::AdvanceSingleFrame)
+    .def_property("currentFrame", &PhysicsAnimation::GetCurrentFrame, &PhysicsAnimation::SetCurrentFrame)
+    .def_property_readonly("currentTimeInSeconds", &PhysicsAnimation::GetCurrentTimeInSeconds);
 }
