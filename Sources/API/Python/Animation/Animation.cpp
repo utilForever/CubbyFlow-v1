@@ -42,7 +42,7 @@ void AddFrame(pybind11::module& m)
 		R"pbdoc(Index of the frame)pbdoc")
 	.def_readwrite("timeIntervalInSeconds", &Frame::timeIntervalInSeconds,
 		R"pbdoc(Time interval of the frame in seconds)pbdoc")
-	.def("timeInSeconds", &Frame::TimeInSeconds,
+	.def("TimeInSeconds", &Frame::TimeInSeconds,
 		R"pbdoc(Elapsed time in seconds)pbdoc")
 	.def("Advance", [](Frame& instance, int delta)
 	{
