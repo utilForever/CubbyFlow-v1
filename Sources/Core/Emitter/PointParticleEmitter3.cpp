@@ -55,7 +55,7 @@ namespace CubbyFlow
 		double currentTimeInSeconds,
 		double timeIntervalInSeconds)
 	{
-		auto particles = Target();
+		auto particles = GetTarget();
 
 		if (particles == nullptr)
 		{
