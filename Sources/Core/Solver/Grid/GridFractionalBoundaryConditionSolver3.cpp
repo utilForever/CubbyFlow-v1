@@ -131,7 +131,7 @@ namespace CubbyFlow
 				{
 					Vector3D n = g.Normalized();
 					Vector3D velr = vel - colliderVel;
-					Vector3D velt = ProjectAndApplyFriction(velr, n, GetCollider()->FrictionCoefficient());
+					Vector3D velt = ProjectAndApplyFriction(velr, n, GetCollider()->GetFrictionCoefficient());
 					Vector3D velp = velt + colliderVel;
 
 					uTemp(i, j, k) = velp.x;
@@ -161,7 +161,7 @@ namespace CubbyFlow
 				{
 					Vector3D n = g.Normalized();
 					Vector3D velr = vel - colliderVel;
-					Vector3D velt = ProjectAndApplyFriction(velr, n, GetCollider()->FrictionCoefficient());
+					Vector3D velt = ProjectAndApplyFriction(velr, n, GetCollider()->GetFrictionCoefficient());
 					Vector3D velp = velt + colliderVel;
 
 					vTemp(i, j, k) = velp.y;
@@ -191,7 +191,7 @@ namespace CubbyFlow
 				{
 					Vector3D n = g.Normalized();
 					Vector3D velr = vel - colliderVel;
-					Vector3D velt = ProjectAndApplyFriction(velr, n, GetCollider()->FrictionCoefficient());
+					Vector3D velt = ProjectAndApplyFriction(velr, n, GetCollider()->GetFrictionCoefficient());
 					Vector3D velp = velt + colliderVel;
 
 					wTemp(i, j, k) = velp.z;
@@ -308,7 +308,7 @@ namespace CubbyFlow
 
 		if (GetCollider() != nullptr)
 		{
-			Surface3Ptr surface = GetCollider()->Surface();
+			Surface3Ptr surface = GetCollider()->GetSurface();
 			ImplicitSurface3Ptr implicitSurface = std::dynamic_pointer_cast<ImplicitSurface3>(surface);
 			if (implicitSurface == nullptr)
 			{

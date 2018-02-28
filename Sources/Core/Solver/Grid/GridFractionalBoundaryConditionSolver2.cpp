@@ -108,7 +108,7 @@ namespace CubbyFlow
 				{
 					Vector2D n = g.Normalized();
 					Vector2D velr = vel - colliderVel;
-					Vector2D velt = ProjectAndApplyFriction(velr, n, GetCollider()->FrictionCoefficient());
+					Vector2D velt = ProjectAndApplyFriction(velr, n, GetCollider()->GetFrictionCoefficient());
 					Vector2D velp = velt + colliderVel;
 
 					uTemp(i, j) = velp.x;
@@ -138,7 +138,7 @@ namespace CubbyFlow
 				{
 					Vector2D n = g.Normalized();
 					Vector2D velr = vel - colliderVel;
-					Vector2D velt = ProjectAndApplyFriction(velr, n, GetCollider()->FrictionCoefficient());
+					Vector2D velt = ProjectAndApplyFriction(velr, n, GetCollider()->GetFrictionCoefficient());
 					Vector2D velp = velt + colliderVel;
 
 					vTemp(i, j) = velp.y;
@@ -219,7 +219,7 @@ namespace CubbyFlow
 
 		if (GetCollider() != nullptr)
 		{
-			Surface2Ptr surface = GetCollider()->Surface();
+			Surface2Ptr surface = GetCollider()->GetSurface();
 			ImplicitSurface2Ptr implicitSurface = std::dynamic_pointer_cast<ImplicitSurface2>(surface);
 			if (implicitSurface == nullptr)
 			{
