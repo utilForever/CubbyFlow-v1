@@ -68,11 +68,11 @@ void AddBoundingBox2F(pybind11::module& m)
 		R"pbdoc(
 			Upper corner of the bounding box.
 		)pbdoc")
-	.def_property_readonly("Width", &BoundingBox2F::Width,
+	.def_property_readonly("width", &BoundingBox2F::GetWidth,
 		R"pbdoc(
 			Width of the box.
 		)pbdoc")
-	.def_property_readonly("Height", &BoundingBox2F::Height,
+	.def_property_readonly("height", &BoundingBox2F::GetHeight,
 		R"pbdoc(
 			Height of the box.
 		)pbdoc")
@@ -258,11 +258,11 @@ void AddBoundingBox2D(pybind11::module& m)
 		R"pbdoc(
 			Upper corner of the bounding box.
 		)pbdoc")
-	.def_property_readonly("Width", &BoundingBox2D::Width,
+	.def_property_readonly("width", &BoundingBox2D::GetWidth,
 		R"pbdoc(
 			Width of the box.
 		)pbdoc")
-	.def_property_readonly("Height", &BoundingBox2D::Height,
+	.def_property_readonly("height", &BoundingBox2D::GetHeight,
 		R"pbdoc(
 			Height of the box.
 		)pbdoc")
@@ -448,15 +448,15 @@ void AddBoundingBox3F(pybind11::module& m)
 		R"pbdoc(
 			Upper corner of the bounding box.
 		)pbdoc")
-	.def_property_readonly("Width", &BoundingBox3F::Width,
+	.def_property_readonly("width", &BoundingBox3F::GetWidth,
 		R"pbdoc(
 			Width of the box.
 		)pbdoc")
-	.def_property_readonly("Height", &BoundingBox3F::Height,
+	.def_property_readonly("height", &BoundingBox3F::GetHeight,
 		R"pbdoc(
 			Height of the box.
 		)pbdoc")
-	.def_property_readonly("Depth", &BoundingBox3F::Depth,
+	.def_property_readonly("depth", &BoundingBox3F::GetDepth,
 		R"pbdoc(
 			Depth of the box.
 		)pbdoc")
@@ -642,15 +642,15 @@ void AddBoundingBox3D(pybind11::module& m)
 		R"pbdoc(
 			Upper corner of the bounding box.
 		)pbdoc")
-	.def_property_readonly("Width", &BoundingBox3D::Width,
+	.def_property_readonly("width", &BoundingBox3D::GetWidth,
 		R"pbdoc(
 			Width of the box.
 		)pbdoc")
-	.def_property_readonly("Height", &BoundingBox3D::Height,
+	.def_property_readonly("height", &BoundingBox3D::GetHeight,
 		R"pbdoc(
 			Height of the box.
 		)pbdoc")
-	.def_property_readonly("Depth", &BoundingBox3D::Depth,
+	.def_property_readonly("depth", &BoundingBox3D::GetDepth,
 		R"pbdoc(
 			Depth of the box.
 		)pbdoc")
