@@ -27,7 +27,7 @@ void AddParticleEmitter2(pybind11::module& m)
 		)pbdoc",
 		pybind11::arg("currentTimeInSeconds"),
 		pybind11::arg("timeIntervalInSeconds"))
-	.def_property("target", &ParticleEmitter2::Target, &ParticleEmitter2::SetTarget,
+	.def_property("target", &ParticleEmitter2::GetTarget, &ParticleEmitter2::SetTarget,
 		R"pbdoc(
 			The target particle system to emit.
 		)pbdoc")
@@ -54,7 +54,7 @@ void AddParticleEmitter3(pybind11::module& m)
 		)pbdoc",
 		pybind11::arg("currentTimeInSeconds"),
 		pybind11::arg("timeIntervalInSeconds"))
-	.def_property("target", &ParticleEmitter3::Target, &ParticleEmitter3::SetTarget,
+	.def_property("target", &ParticleEmitter3::GetTarget, &ParticleEmitter3::SetTarget,
 		R"pbdoc(
 			The target particle system to emit.
 		)pbdoc")
