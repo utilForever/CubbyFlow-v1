@@ -49,9 +49,9 @@ TEST(BoundingBox3, BasicGetters)
 {
 	BoundingBox3D box(Vector3D(-2.0, 3.0, 5.0), Vector3D(4.0, -2.0, 1.0));
 
-	EXPECT_DOUBLE_EQ(6.0, box.Width());
-	EXPECT_DOUBLE_EQ(5.0, box.Height());
-	EXPECT_DOUBLE_EQ(4.0, box.Depth());
+	EXPECT_DOUBLE_EQ(6.0, box.GetWidth());
+	EXPECT_DOUBLE_EQ(5.0, box.GetHeight());
+	EXPECT_DOUBLE_EQ(4.0, box.GetDepth());
 	EXPECT_DOUBLE_EQ(6.0, box.Length(0));
 	EXPECT_DOUBLE_EQ(5.0, box.Length(1));
 	EXPECT_DOUBLE_EQ(4.0, box.Length(2));
