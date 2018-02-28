@@ -55,7 +55,7 @@ namespace CubbyFlow
 		void ResolveCollision(double radius, double restitutionCoefficient, Vector2D* position, Vector2D* velocity);
 
 		//! Returns friction coefficient.
-		double FrictionCoefficient() const;
+		double GetFrictionCoefficient() const;
 
 		//!
 		//! \brief Sets the friction coefficient.
@@ -66,7 +66,7 @@ namespace CubbyFlow
 		void SetFrictionCoefficient(double newFrictionCoeffient);
 
 		//! Returns the surface instance.
-		const Surface2Ptr& Surface() const;
+		const Surface2Ptr& GetSurface() const;
 
 		//! Updates the collider state.
 		void Update(double currentTimeInSeconds, double timeIntervalInSeconds);

@@ -66,7 +66,7 @@ namespace CubbyFlow
 		}
 	}
 
-	double Collider2::FrictionCoefficient() const
+	double Collider2::GetFrictionCoefficient() const
 	{
 		return m_frictionCoeffient;
 	}
@@ -76,7 +76,7 @@ namespace CubbyFlow
 		m_frictionCoeffient = std::max(newFrictionCoeffient, 0.0);
 	}
 
-	const Surface2Ptr& Collider2::Surface() const
+	const Surface2Ptr& Collider2::GetSurface() const
 	{
 		return m_surface;
 	}
