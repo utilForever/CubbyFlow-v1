@@ -60,10 +60,10 @@ namespace CubbyFlow
 		BoundingBox(const BoundingBox& other);
 
 		//! Returns width of the box.
-		T Width() const;
+		T GetWidth() const;
 
 		//! Returns height of the box.
-		T Height() const;
+		T GetHeight() const;
 
 		//! Returns length of the box in given axis.
 		T Length(size_t axis);
