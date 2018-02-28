@@ -265,7 +265,7 @@ void RunExample1(const std::string& rootDir, size_t resolutionX, int numberOfFra
 	// Build collider
 	const auto sphere = Sphere3::Builder()
 		.WithCenter({ 0.5, 0.3, 0.5 })
-		.WithRadius(0.075 * domain.Width())
+		.WithRadius(0.075 * domain.GetWidth())
 		.MakeShared();
 
 	const auto collider = RigidBodyCollider3::Builder()
@@ -313,7 +313,7 @@ void RunExample2(const std::string& rootDir, size_t resolutionX, int numberOfFra
 	// Build collider
 	const auto sphere = Sphere3::Builder()
 		.WithCenter({ 0.5, 0.3, 0.5 })
-		.WithRadius(0.075 * domain.Width())
+		.WithRadius(0.075 * domain.GetWidth())
 		.MakeShared();
 
 	const auto collider = RigidBodyCollider3::Builder()

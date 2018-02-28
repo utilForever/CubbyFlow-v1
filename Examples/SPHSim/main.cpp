@@ -132,12 +132,12 @@ void RunExample1(const std::string& rootDir, double targetSpacing, int numberOfF
 
 	const auto plane = Plane3::GetBuilder()
 		.WithNormal({0, 1, 0})
-		.WithPoint({0, 0.25 * domain.Height(), 0})
+		.WithPoint({0, 0.25 * domain.GetHeight(), 0})
 		.MakeShared();
 
 	const auto sphere = Sphere3::GetBuilder()
 		.WithCenter(domain.MidPoint())
-		.WithRadius(0.15 * domain.Width())
+		.WithRadius(0.15 * domain.GetWidth())
 		.MakeShared();
 
 	const auto surfaceSet = ImplicitSurfaceSet3::GetBuilder()
@@ -191,12 +191,12 @@ void RunExample2(const std::string& rootDir, double targetSpacing, int numberOfF
 
 	const auto plane = Plane3::GetBuilder()
 		.WithNormal({0, 1, 0})
-		.WithPoint({0, 0.25 * domain.Height(), 0})
+		.WithPoint({0, 0.25 * domain.GetHeight(), 0})
 		.MakeShared();
 
 	const auto sphere = Sphere3::GetBuilder()
 		.WithCenter(domain.MidPoint())
-		.WithRadius(0.15 * domain.Width())
+		.WithRadius(0.15 * domain.GetWidth())
 		.MakeShared();
 
 	const auto surfaceSet = ImplicitSurfaceSet3::GetBuilder()
@@ -236,7 +236,7 @@ void RunExample2(const std::string& rootDir, double targetSpacing, int numberOfF
 void RunExample3(const std::string& rootDir, double targetSpacing, int numberOfFrames, const std::string& format, double fps)
 {
 	BoundingBox3D domain(Vector3D(), Vector3D(3, 2, 1.5));
-	const double lz = domain.Depth();
+	const double lz = domain.GetDepth();
 
 	// Build solver
 	auto solver = PCISPHSolver3::GetBuilder()

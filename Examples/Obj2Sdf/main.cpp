@@ -115,18 +115,18 @@ int main(int argc, char* argv[])
 	}
 
 	BoundingBox3D box = triMesh.BoundingBox();
-	const Vector3D scale(box.Width(), box.Height(), box.Depth());
+	const Vector3D scale(box.GetWidth(), box.GetHeight(), box.GetDepth());
 	box.lowerCorner -= marginScale * scale;
 	box.upperCorner += marginScale * scale;
 
-	const size_t resolutionY = static_cast<size_t>(std::ceil(resolutionX * box.Height() / box.Width()));
-	const size_t resolutionZ = static_cast<size_t>(std::ceil(resolutionX * box.Depth() / box.Width()));
+	const size_t resolutionY = static_cast<size_t>(std::ceil(resolutionX * box.GetHeight() / box.GetWidth()));
+	const size_t resolutionZ = static_cast<size_t>(std::ceil(resolutionX * box.GetDepth() / box.GetWidth()));
 
 	printf(
 		"Vertex-centered grid size: %zu x %zu x %zu\n",
 		resolutionX, resolutionY, resolutionZ);
 
-	const double dx = box.Width() / resolutionX;
+	const double dx = box.GetWidth() / resolutionX;
 
 	VertexCenteredScalarGrid3 grid(
 		resolutionX, resolutionY, resolutionZ,

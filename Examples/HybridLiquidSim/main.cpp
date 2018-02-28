@@ -149,12 +149,12 @@ void RunExample1(const std::string& rootDir, size_t resolutionX, int numberOfFra
 	// Build emitter
 	const auto plane = Plane3::Builder()
 		.WithNormal({ 0, 1, 0 })
-		.WithPoint({ 0, 0.25 * domain.Height(), 0 })
+		.WithPoint({ 0, 0.25 * domain.GetHeight(), 0 })
 		.MakeShared();
 
 	const auto sphere = Sphere3::Builder()
 		.WithCenter(domain.MidPoint())
-		.WithRadius(0.15 * domain.Width())
+		.WithRadius(0.15 * domain.GetWidth())
 		.MakeShared();
 
 	auto emitter1 = VolumeParticleEmitter3::Builder()
@@ -206,12 +206,12 @@ void RunExample2(const std::string& rootDir, size_t resolutionX, int numberOfFra
 	// Build emitter
 	const auto plane = Plane3::Builder()
 		.WithNormal({ 0, 1, 0 })
-		.WithPoint({ 0, 0.25 * domain.Height(), 0 })
+		.WithPoint({ 0, 0.25 * domain.GetHeight(), 0 })
 		.MakeShared();
 
 	const auto sphere = Sphere3::Builder()
 		.WithCenter(domain.MidPoint())
-		.WithRadius(0.15 * domain.Width())
+		.WithRadius(0.15 * domain.GetWidth())
 		.MakeShared();
 
 	auto emitter1 = VolumeParticleEmitter3::Builder()
@@ -258,7 +258,7 @@ void RunExample3(const std::string& rootDir, size_t resolutionX, int numberOfFra
 	const auto grids = solver->GetGridSystemData();
 	const double dx = grids->GetGridSpacing().x;
 	const BoundingBox3D domain = grids->GetBoundingBox();
-	const double lz = domain.Depth();
+	const double lz = domain.GetDepth();
 
 	// Build emitter
 	const auto box1 = Box3::Builder()
@@ -335,7 +335,7 @@ void RunExample4(const std::string& rootDir, size_t resolutionX, int numberOfFra
 	const auto grids = solver->GetGridSystemData();
 	const double dx = grids->GetGridSpacing().x;
 	const BoundingBox3D domain = grids->GetBoundingBox();
-	const double lz = domain.Depth();
+	const double lz = domain.GetDepth();
 
 	// Build emitter
 	const auto box1 = Box3::Builder()
@@ -412,7 +412,7 @@ void RunExample5(const std::string& rootDir, size_t resolutionX, unsigned int nu
 	const auto grids = solver->GetGridSystemData();
 	const double dx = grids->GetGridSpacing().x;
 	const BoundingBox3D domain = grids->GetBoundingBox();
-	const double lz = domain.Depth();
+	const double lz = domain.GetDepth();
 
 	// Build emitter
 	const auto box1 = Box3::Builder()
