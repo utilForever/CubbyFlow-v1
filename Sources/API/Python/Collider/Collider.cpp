@@ -26,14 +26,14 @@ void AddCollider2(pybind11::module& m)
 			provide a Surface2 instance to define collider surface using
 			Collider2::SetSurface function.
 		)pbdoc")
-	.def_property("frictionCoefficient", &Collider2::FrictionCoefficient, &Collider2::SetFrictionCoefficient,
+	.def_property("frictionCoefficient", &Collider2::GetFrictionCoefficient, &Collider2::SetFrictionCoefficient,
 		R"pbdoc(
 			The friction coefficient.
 
 			This property specifies the friction coefficient to the collider. Any
 			negative inputs will be clamped to zero.
 		)pbdoc")
-	.def_property_readonly("surface", &Collider2::Surface,
+	.def_property_readonly("surface", &Collider2::GetSurface,
 		R"pbdoc(
 			The surface instance.
 		)pbdoc");
@@ -51,14 +51,14 @@ void AddCollider3(pybind11::module& m)
 			provide a Surface3 instance to define collider surface using
 			Collider3::SetSurface function.
 		)pbdoc")
-	.def_property("frictionCoefficient", &Collider3::FrictionCoefficient, &Collider3::SetFrictionCoefficient,
+	.def_property("frictionCoefficient", &Collider3::GetFrictionCoefficient, &Collider3::SetFrictionCoefficient,
 		R"pbdoc(
 			The friction coefficient.
 
 			This property specifies the friction coefficient to the collider. Any
 			negative inputs will be clamped to zero.
 		)pbdoc")
-	.def_property_readonly("surface", &Collider3::Surface,
+	.def_property_readonly("surface", &Collider3::GetSurface,
 		R"pbdoc(
 			The surface instance.
 		)pbdoc");
