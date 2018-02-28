@@ -37,7 +37,7 @@ namespace CubbyFlow
 
 		// Normalize bounding box
 		m_bbox = bound;
-		double maxEdgeLen = std::max(m_bbox.Width(), m_bbox.Height());
+		double maxEdgeLen = std::max(m_bbox.GetWidth(), m_bbox.GetHeight());
 		m_bbox.upperCorner = m_bbox.lowerCorner + Vector2D(maxEdgeLen, maxEdgeLen);
 
 		// Build
