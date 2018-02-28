@@ -108,8 +108,8 @@ TEST(RigidBodyCollider3, VelocityAt)
 
 	collider.linearVelocity = { 1, 3, -2 };
 	collider.angularVelocity = { 0, 0, 4 };
-	collider.Surface()->transform.SetTranslation({ -1, -2, 2 });
-	collider.Surface()->transform.SetOrientation(QuaternionD({ 1, 0, 0 }, 0.1));
+	collider.GetSurface()->transform.SetTranslation({ -1, -2, 2 });
+	collider.GetSurface()->transform.SetOrientation(QuaternionD({ 1, 0, 0 }, 0.1));
 
 	Vector3D result = collider.VelocityAt({ 5, 7, 8 });
 	EXPECT_DOUBLE_EQ(-35.0, result.x);
