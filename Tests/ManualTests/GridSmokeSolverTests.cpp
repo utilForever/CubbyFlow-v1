@@ -333,7 +333,7 @@ CUBBYFLOW_BEGIN_TEST_F(GridSmokeSolver3, RisingWithCollider)
 	// Build collider
 	auto sphere = Sphere3::Builder()
 		.WithCenter({ 0.5, 0.3, 0.5 })
-		.WithRadius(0.075 * domain.Width())
+		.WithRadius(0.075 * domain.GetWidth())
 		.MakeShared();
 
 	auto collider = RigidBodyCollider3::Builder()
@@ -399,7 +399,7 @@ CUBBYFLOW_BEGIN_TEST_F(GridSmokeSolver3, RisingWithColliderLinear)
 	// Build collider
 	auto sphere = Sphere3::Builder()
 		.WithCenter({ 0.5, 0.3, 0.5 })
-		.WithRadius(0.075 * domain.Width())
+		.WithRadius(0.075 * domain.GetWidth())
 		.MakeShared();
 
 	auto collider = RigidBodyCollider3::Builder()

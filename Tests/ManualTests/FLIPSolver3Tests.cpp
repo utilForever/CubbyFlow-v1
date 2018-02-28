@@ -37,12 +37,12 @@ CUBBYFLOW_BEGIN_TEST_F(FLIPSolver3, WaterDrop)
 	// Build emitter
 	auto plane = Plane3::Builder()
 		.WithNormal({ 0, 1, 0 })
-		.WithPoint({ 0, 0.25 * domain.Height(), 0 })
+		.WithPoint({ 0, 0.25 * domain.GetHeight(), 0 })
 		.MakeShared();
 
 	auto sphere = Sphere3::Builder()
 		.WithCenter(domain.MidPoint())
-		.WithRadius(0.15 * domain.Width())
+		.WithRadius(0.15 * domain.GetWidth())
 		.MakeShared();
 
 	auto emitter1 = VolumeParticleEmitter3::Builder()
@@ -98,12 +98,12 @@ CUBBYFLOW_BEGIN_TEST_F(FLIPSolver3, WaterDropWithBlending)
 	// Build emitter
 	auto plane = Plane3::Builder()
 		.WithNormal({ 0, 1, 0 })
-		.WithPoint({ 0, 0.25 * domain.Height(), 0 })
+		.WithPoint({ 0, 0.25 * domain.GetHeight(), 0 })
 		.MakeShared();
 
 	auto sphere = Sphere3::Builder()
 		.WithCenter(domain.MidPoint())
-		.WithRadius(0.15 * domain.Width())
+		.WithRadius(0.15 * domain.GetWidth())
 		.MakeShared();
 
 	auto emitter1 = VolumeParticleEmitter3::Builder()
@@ -152,7 +152,7 @@ CUBBYFLOW_BEGIN_TEST_F(FLIPSolver3, DamBreakingWithCollider)
 	auto grids = solver->GetGridSystemData();
 	double dx = grids->GetGridSpacing().x;
 	BoundingBox3D domain = grids->GetBoundingBox();
-	double lz = domain.Depth();
+	double lz = domain.GetDepth();
 
 	// Build emitter
 	auto box1 = Box3::Builder()
