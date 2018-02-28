@@ -44,7 +44,7 @@ namespace CubbyFlow
 		UNUSED_VARIABLE(currentTimeInSeconds);
 		UNUSED_VARIABLE(timeIntervalInSeconds);
 
-		auto particles = Target();
+		auto particles = GetTarget();
 
 		if (particles == nullptr)
 		{
