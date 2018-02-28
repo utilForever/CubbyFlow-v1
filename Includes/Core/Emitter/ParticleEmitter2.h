@@ -38,7 +38,7 @@ namespace CubbyFlow
 		void Update(double currentTimeInSeconds, double timeIntervalInSeconds);
 
 		//! Returns the target particle system to emit.
-		const ParticleSystemData2Ptr& Target() const;
+		const ParticleSystemData2Ptr& GetTarget() const;
 
 		//! Sets the target particle system to emit.
 		void SetTarget(const ParticleSystemData2Ptr& particles);

@@ -21,7 +21,7 @@ namespace CubbyFlow
 		// Do nothing
 	}
 
-	const ParticleSystemData2Ptr& ParticleEmitter2::Target() const
+	const ParticleSystemData2Ptr& ParticleEmitter2::GetTarget() const
 	{
 		return m_particles;
 	}
