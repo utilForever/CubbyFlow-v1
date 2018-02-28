@@ -11,7 +11,7 @@ class MyPhysicsAnimation(pyCubbyFlow.PhysicsAnimation):
 	def OnAdvanceTimeStep(self, timeIntervalInSeconds):
 		self.advData += 1
 
-	def NumberOfSubTimeSteps(self, timeIntervalInSeconds):
+	def GetNumberOfSubTimeSteps(self, timeIntervalInSeconds):
 		return int(math.ceil(timeIntervalInSeconds / 0.02))
 
 	def OnInitialize(self):
