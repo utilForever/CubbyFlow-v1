@@ -33,7 +33,7 @@ namespace CubbyFlow
 
 		for (size_t i = 0; i < m_colliders.size(); ++i)
 		{
-			double dist = m_colliders[i]->Surface()->ClosestDistance(point);
+			double dist = m_colliders[i]->GetSurface()->ClosestDistance(point);
 			
 			if (dist < closestDist)
 			{
@@ -52,9 +52,9 @@ namespace CubbyFlow
 
 	void ColliderSet2::AddCollider(const Collider2Ptr& collider)
 	{
-		auto surfaceSet = std::dynamic_pointer_cast<SurfaceSet2>(Surface());
+		auto surfaceSet = std::dynamic_pointer_cast<SurfaceSet2>(GetSurface());
 		m_colliders.push_back(collider);
-		surfaceSet->AddSurface(collider->Surface());
+		surfaceSet->AddSurface(collider->GetSurface());
 	}
 
 	size_t ColliderSet2::NumberOfColliders() const
