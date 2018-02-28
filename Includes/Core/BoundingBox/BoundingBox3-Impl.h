@@ -36,19 +36,19 @@ namespace CubbyFlow
 	}
 
 	template <typename T>
-	T BoundingBox<T, 3>::Width() const
+	T BoundingBox<T, 3>::GetWidth() const
 	{
 		return upperCorner.x - lowerCorner.x;
 	}
 
 	template <typename T>
-	T BoundingBox<T, 3>::Height() const
+	T BoundingBox<T, 3>::GetHeight() const
 	{
 		return upperCorner.y - lowerCorner.y;
 	}
 
 	template <typename T>
-	T BoundingBox<T, 3>::Depth() const
+	T BoundingBox<T, 3>::GetDepth() const
 	{
 		return upperCorner.z - lowerCorner.z;
 	}
@@ -243,7 +243,7 @@ namespace CubbyFlow
 			{ -h, -h, +h },{  +h, -h, +h }, { -h, +h, +h }, { +h, +h, +h }
 		};
 
-		return Vector3<T>(Width(), Height(), Depth()) * offset[idx] + MidPoint();
+		return Vector3<T>(GetWidth(), GetHeight(), GetDepth()) * offset[idx] + MidPoint();
 	}
 
 	template <typename T>
