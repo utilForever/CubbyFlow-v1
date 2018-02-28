@@ -551,7 +551,7 @@ CUBBYFLOW_BEGIN_TEST_F(LevelSetLiquidSolver2, RisingFloor)
 
 	collider->SetOnBeginUpdateCallback([](Collider2* col, double t, double)
 	{
-		col->Surface()->transform.SetTranslation({ 0, t });
+		col->GetSurface()->transform.SetTranslation({ 0, t });
 		static_cast<RigidBodyCollider2*>(col)->linearVelocity.x = 0.0;
 		static_cast<RigidBodyCollider2*>(col)->linearVelocity.y = 1.0;
 	});

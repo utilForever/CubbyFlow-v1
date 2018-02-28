@@ -273,7 +273,7 @@ CUBBYFLOW_BEGIN_TEST_F(FLIPSolver2, RotatingTank)
 	{
 		if (t < 1.0)
 		{
-			col->Surface()->transform.SetOrientation(2.0 * t);
+			col->GetSurface()->transform.SetOrientation(2.0 * t);
 			static_cast<RigidBodyCollider2*>(col)->angularVelocity = 2.0;
 		}
 		else
