@@ -19,14 +19,14 @@ namespace CubbyFlow
 		ImplicitSurface3(transform, isNormalFlipped), m_mesh(mesh)
 	{
 		BoundingBox3D box = m_mesh->BoundingBox();
-		Vector3D scale(box.Width(), box.Height(), box.Depth());
+		Vector3D scale(box.GetWidth(), box.GetHeight(), box.GetDepth());
 		box.lowerCorner -= margin * scale;
 		box.upperCorner += margin * scale;
 
-		size_t resolutionY = static_cast<size_t>(std::ceil(resolutionX * box.Height() / box.Width()));
-		size_t resolutionZ = static_cast<size_t>(std::ceil(resolutionX * box.Depth() / box.Width()));
+		size_t resolutionY = static_cast<size_t>(std::ceil(resolutionX * box.GetHeight() / box.GetWidth()));
+		size_t resolutionZ = static_cast<size_t>(std::ceil(resolutionX * box.GetDepth() / box.GetWidth()));
 
-		double dx = box.Width() / resolutionX;
+		double dx = box.GetWidth() / resolutionX;
 
 		m_grid = std::make_shared<VertexCenteredScalarGrid3>();
 		m_grid->Resize(resolutionX, resolutionY, resolutionZ, dx, dx, dx, box.lowerCorner.x, box.lowerCorner.y, box.lowerCorner.z);
