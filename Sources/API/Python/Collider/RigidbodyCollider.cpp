@@ -46,7 +46,7 @@ void AddRigidBodyCollider2(pybind11::module& m)
 		R"pbdoc(
 			Angular velocity of the collider.
 		)pbdoc")
-	.def("velocityAt", [](const RigidBodyCollider2& instance, pybind11::object obj)
+	.def("VelocityAt", [](const RigidBodyCollider2& instance, pybind11::object obj)
 	{
 		return instance.VelocityAt(ObjectToVector2D(obj));
 	},
@@ -93,7 +93,7 @@ void AddRigidBodyCollider3(pybind11::module& m)
 		R"pbdoc(
 			Angular velocity of the collider.
 		)pbdoc")
-	.def("velocityAt", [](const RigidBodyCollider3& instance, pybind11::object obj)
+	.def("VelocityAt", [](const RigidBodyCollider3& instance, pybind11::object obj)
 	{
 		return instance.VelocityAt(ObjectToVector3D(obj));
 	},
