@@ -16,9 +16,9 @@ namespace CubbyFlow
 		const std::function<bool(const Vector3D&)>& callback) const
 	{
 		Vector3D position;
-		double boxWidth = boundingBox.Width();
-		double boxHeight = boundingBox.Height();
-		double boxDepth = boundingBox.Depth();
+		double boxWidth = boundingBox.GetWidth();
+		double boxHeight = boundingBox.GetHeight();
+		double boxDepth = boundingBox.GetDepth();
 		bool shouldQuit = false;
 
 		for (int k = 0; k * spacing <= boxDepth && !shouldQuit; ++k)
