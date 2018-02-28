@@ -15,8 +15,8 @@ namespace CubbyFlow
 	{
 		const double halfSpacing = spacing / 2.0;
 		const double ySpacing = spacing * std::sqrt(3.0) / 2.0;
-		double boxWidth = boundingBox.Width();
-		double boxHeight = boundingBox.Height();
+		double boxWidth = boundingBox.GetWidth();
+		double boxHeight = boundingBox.GetHeight();
 
 		Vector2D position;
 		bool hasOffset = false;
