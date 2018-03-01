@@ -93,7 +93,7 @@ void AddTriangleMesh3(pybind11::module& m)
 			Copies the contents from `other` mesh.
 		)pbdoc",
 		pybind11::arg("other"))
-	.def("swap", [](TriangleMesh3& instance, const TriangleMesh3Ptr& other)
+	.def("Swap", [](TriangleMesh3& instance, const TriangleMesh3Ptr& other)
 	{
 		instance.Swap(*other);
 	},
@@ -109,7 +109,7 @@ void AddTriangleMesh3(pybind11::module& m)
 		R"pbdoc(
 			Returns volume of this mesh.
 		)pbdoc")
-	.def("Point", [](const TriangleMesh3& instance, size_t i) -> Vector3D
+	.def("GetPoint", [](const TriangleMesh3& instance, size_t i) -> Vector3D
 	{
 		return instance.Point(i);
 	},
@@ -126,7 +126,7 @@ void AddTriangleMesh3(pybind11::module& m)
 		)pbdoc",
 		pybind11::arg("i"),
 		pybind11::arg("pt"))
-	.def("Normal", [](const TriangleMesh3& instance, size_t i) -> Vector3D
+	.def("GetNormal", [](const TriangleMesh3& instance, size_t i) -> Vector3D
 	{
 		return instance.Normal(i);
 	},
@@ -143,7 +143,7 @@ void AddTriangleMesh3(pybind11::module& m)
 		)pbdoc",
 		pybind11::arg("i"),
 		pybind11::arg("n"))
-	.def("PointIndex", [](const TriangleMesh3& instance, size_t i) -> Point3UI
+	.def("GetPointIndex", [](const TriangleMesh3& instance, size_t i) -> Point3UI
 	{
 		return instance.PointIndex(i);
 	},
@@ -160,7 +160,7 @@ void AddTriangleMesh3(pybind11::module& m)
 		)pbdoc",
 		pybind11::arg("i"),
 		pybind11::arg("idx"))
-	.def("NormalIndexIndex", [](const TriangleMesh3& instance, size_t i) -> Point3UI
+	.def("GetNormalIndex", [](const TriangleMesh3& instance, size_t i) -> Point3UI
 	{
 		return instance.NormalIndex(i);
 	},
@@ -168,7 +168,7 @@ void AddTriangleMesh3(pybind11::module& m)
 			Returns i-th normalIndexIndex.
 		)pbdoc",
 		pybind11::arg("i"))
-	.def("SetNormalIndexIndex", [](TriangleMesh3& instance, size_t i, const Point3UI& idx)
+	.def("SetNormalIndex", [](TriangleMesh3& instance, size_t i, const Point3UI& idx)
 	{
 		instance.NormalIndex(i) = idx;
 	},
@@ -177,7 +177,7 @@ void AddTriangleMesh3(pybind11::module& m)
 		)pbdoc",
 		pybind11::arg("i"),
 		pybind11::arg("idx"))
-	.def("UVIndex", [](const TriangleMesh3& instance, size_t i) -> Point3UI
+	.def("GetUVIndex", [](const TriangleMesh3& instance, size_t i) -> Point3UI
 	{
 		return instance.UVIndex(i);
 	},
@@ -198,9 +198,9 @@ void AddTriangleMesh3(pybind11::module& m)
 	{
 		return std::make_shared<Triangle3>(instance.Triangle(i));
 	},
-			R"pbdoc(
-             Returns `i`-th triangle.
-             )pbdoc",
+		R"pbdoc(
+			Returns `i`-th triangle.
+		)pbdoc",
 		pybind11::arg("i"))
 	.def("NumberOfPoints", &TriangleMesh3::NumberOfPoints,
 		R"pbdoc(
