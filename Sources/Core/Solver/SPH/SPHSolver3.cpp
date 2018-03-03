@@ -106,7 +106,7 @@ namespace CubbyFlow
 	unsigned int SPHSolver3::GetNumberOfSubTimeSteps(double timeIntervalInSeconds) const
 	{
 		auto particles = GetSPHSystemData();
-		size_t numberOfParticles = particles->NumberOfParticles();
+		size_t numberOfParticles = particles->GetNumberOfParticles();
 		auto f = particles->GetForces();
 
 		const double kernelRadius = particles->GetKernelRadius();
@@ -154,7 +154,7 @@ namespace CubbyFlow
 		ComputePseudoViscosity(timeStepInSeconds);
 
 		auto particles = GetSPHSystemData();
-		size_t numberOfParticles = particles->NumberOfParticles();
+		size_t numberOfParticles = particles->GetNumberOfParticles();
 		auto densities = particles->GetDensities();
 
 		double maxDensity = 0.0;
@@ -191,7 +191,7 @@ namespace CubbyFlow
 	void SPHSolver3::ComputePressure()
 	{
 		auto particles = GetSPHSystemData();
-		size_t numberOfParticles = particles->NumberOfParticles();
+		size_t numberOfParticles = particles->GetNumberOfParticles();
 		auto d = particles->GetDensities();
 		auto p = particles->GetPressures();
 
@@ -213,14 +213,14 @@ namespace CubbyFlow
 		ArrayAccessor1<Vector3D> pressureForces)
 	{
 		auto particles = GetSPHSystemData();
-		size_t numberOfParticles = particles->NumberOfParticles();
+		size_t numberOfParticles = particles->GetNumberOfParticles();
 
 		const double massSquared = Square(particles->GetMass());
 		const SPHSpikyKernel3 kernel(particles->GetKernelRadius());
 
 		ParallelFor(ZERO_SIZE, numberOfParticles, [&](size_t i)
 		{
-			const auto& neighbors = particles->NeighborLists()[i];
+			const auto& neighbors = particles->GetNeighborLists()[i];
 			for (size_t j : neighbors)
 			{
 				double dist = positions[i].DistanceTo(positions[j]);
@@ -237,7 +237,7 @@ namespace CubbyFlow
 	void SPHSolver3::AccumulateViscosityForce()
 	{
 		auto particles = GetSPHSystemData();
-		size_t numberOfParticles = particles->NumberOfParticles();
+		size_t numberOfParticles = particles->GetNumberOfParticles();
 		auto x = particles->GetPositions();
 		auto v = particles->GetVelocities();
 		auto d = particles->GetDensities();
@@ -248,7 +248,7 @@ namespace CubbyFlow
 
 		ParallelFor(ZERO_SIZE, numberOfParticles, [&](size_t i)
 		{
-			const auto& neighbors = particles->NeighborLists()[i];
+			const auto& neighbors = particles->GetNeighborLists()[i];
 			for (size_t j : neighbors)
 			{
 				double dist = x[i].DistanceTo(x[j]);
@@ -261,7 +261,7 @@ namespace CubbyFlow
 	void SPHSolver3::ComputePseudoViscosity(double timeStepInSeconds)
 	{
 		auto particles = GetSPHSystemData();
-		size_t numberOfParticles = particles->NumberOfParticles();
+		size_t numberOfParticles = particles->GetNumberOfParticles();
 		auto x = particles->GetPositions();
 		auto v = particles->GetVelocities();
 		auto d = particles->GetDensities();
@@ -276,7 +276,7 @@ namespace CubbyFlow
 			double weightSum = 0.0;
 			Vector3D smoothedVelocity;
 
-			const auto& neighbors = particles->NeighborLists()[i];
+			const auto& neighbors = particles->GetNeighborLists()[i];
 			for (size_t j : neighbors)
 			{
 				double dist = x[i].DistanceTo(x[j]);
