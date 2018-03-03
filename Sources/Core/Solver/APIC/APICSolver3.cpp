@@ -35,7 +35,7 @@ namespace CubbyFlow
         const auto particles = GetParticleSystemData();
         const auto positions = particles->GetPositions();
         auto velocities = particles->GetVelocities();
-        const size_t numberOfParticles = particles->NumberOfParticles();
+        const size_t numberOfParticles = particles->GetNumberOfParticles();
         const auto hh = flow->GridSpacing() / 2.0;
         const auto bbox = flow->BoundingBox();
 
@@ -157,7 +157,7 @@ namespace CubbyFlow
         const auto particles = GetParticleSystemData();
         auto positions = particles->GetPositions();
         auto velocities = particles->GetVelocities();
-        const size_t numberOfParticles = particles->NumberOfParticles();
+        const size_t numberOfParticles = particles->GetNumberOfParticles();
         const auto hh = flow->GridSpacing() / 2.0;
         const auto bbox = flow->BoundingBox();
 
