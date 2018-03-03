@@ -72,7 +72,7 @@ namespace CubbyFlow
 		auto flow = GetGridSystemData()->GetVelocity();
 		auto positions = GetParticleSystemData()->GetPositions();
 		auto velocities = GetParticleSystemData()->GetVelocities();
-		size_t numberOfParticles = GetParticleSystemData()->NumberOfParticles();
+		size_t numberOfParticles = GetParticleSystemData()->GetNumberOfParticles();
 
 		// Compute delta
 		flow->ParallelForEachUIndex([&](size_t i, size_t j, size_t k)
