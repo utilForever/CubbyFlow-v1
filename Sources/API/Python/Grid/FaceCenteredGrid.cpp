@@ -98,7 +98,9 @@ void AddFaceCenteredGrid2(pybind11::module& m)
 			- j : Data point index j.
 			- val : Value to set.
 		)pbdoc",
-			pybind11::arg("i"), pybind11::arg("j"), pybind11::arg("val"))
+		pybind11::arg("i"),
+		pybind11::arg("j"),
+		pybind11::arg("val"))
 	.def("SetV", [](FaceCenteredGrid2& instance, size_t i, size_t j, double val)
 	{
 		instance.GetV(i, j) = val;
