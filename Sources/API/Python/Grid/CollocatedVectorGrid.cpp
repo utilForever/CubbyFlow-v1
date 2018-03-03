@@ -60,7 +60,7 @@ void AddCollocatedVectorGrid2(pybind11::module& m)
 			- idx : Data point index (i, j).
 		)pbdoc",
 		pybind11::arg("idx"))
-		.def("__setitem__", [](CollocatedVectorGrid2& instance, pybind11::object obj, const Vector2D& val)
+	.def("__setitem__", [](CollocatedVectorGrid2& instance, pybind11::object obj, const Vector2D& val)
 	{
 		if (pybind11::isinstance<pybind11::tuple>(static_cast<pybind11::handle>(obj)))
 		{
@@ -91,7 +91,7 @@ void AddCollocatedVectorGrid2(pybind11::module& m)
 			throw std::invalid_argument("Input type must be tuple or list");
 		}
 	},
-			R"pbdoc(
+		R"pbdoc(
 			Sets the grid data at given data point.
 
 			Parameters
