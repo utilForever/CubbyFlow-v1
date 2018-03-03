@@ -39,8 +39,8 @@ using namespace CubbyFlow;
 
 void SaveParticleAsPos(const ParticleSystemData3Ptr& particles, const std::string& rootDir, int frameCnt)
 {
-	Array1<Vector3D> positions(particles->NumberOfParticles());
-	CopyRange1(particles->GetPositions(), particles->NumberOfParticles(), &positions);
+	Array1<Vector3D> positions(particles->GetNumberOfParticles());
+	CopyRange1(particles->GetPositions(), particles->GetNumberOfParticles(), &positions);
 	char baseName[256];
 	snprintf(baseName, sizeof(baseName), "frame_%06d.pos", frameCnt);
 	std::string fileName = pystring::os::path::join(rootDir, baseName);
@@ -57,8 +57,8 @@ void SaveParticleAsPos(const ParticleSystemData3Ptr& particles, const std::strin
 
 void SaveParticleAsXYZ(const ParticleSystemData3Ptr& particles, const std::string& rootDir, int frameCnt)
 {
-	Array1<Vector3D> positions(particles->NumberOfParticles());
-	CopyRange1(particles->GetPositions(), particles->NumberOfParticles(), &positions);
+	Array1<Vector3D> positions(particles->GetNumberOfParticles());
+	CopyRange1(particles->GetPositions(), particles->GetNumberOfParticles(), &positions);
 	char baseName[256];
 	snprintf(baseName, sizeof(baseName), "frame_%06d.xyz", frameCnt);
 	std::string filename = pystring::os::path::join(rootDir, baseName);
@@ -91,7 +91,7 @@ void PrintUsage()
 void PrintInfo(const SPHSolver3Ptr& solver)
 {
 	const auto particles = solver->GetSPHSystemData();
-	printf("Number of particles: %zu\n", particles->NumberOfParticles());
+	printf("Number of particles: %zu\n", particles->GetNumberOfParticles());
 }
 
 void RunSimulation(const std::string& rootDir, const SPHSolver3Ptr& solver, int numberOfFrames, const std::string& format, double fps)

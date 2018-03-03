@@ -44,8 +44,8 @@ using namespace CubbyFlow;
 
 void SaveParticleAsPos(const ParticleSystemData3Ptr& particles, const std::string& rootDir, int frameCnt)
 {
-	Array1<Vector3D> positions(particles->NumberOfParticles());
-	CopyRange1(particles->GetPositions(), particles->NumberOfParticles(), &positions);
+	Array1<Vector3D> positions(particles->GetNumberOfParticles());
+	CopyRange1(particles->GetPositions(), particles->GetNumberOfParticles(), &positions);
 	char baseName[256];
 	snprintf(baseName, sizeof(baseName), "frame_%06d.pos", frameCnt);
 	std::string fileName = pystring::os::path::join(rootDir, baseName);
@@ -62,8 +62,8 @@ void SaveParticleAsPos(const ParticleSystemData3Ptr& particles, const std::strin
 
 void SaveParticleAsXYZ(const ParticleSystemData3Ptr& particles, const std::string& rootDir, int frameCnt)
 {
-	Array1<Vector3D> positions(particles->NumberOfParticles());
-	CopyRange1(particles->GetPositions(), particles->NumberOfParticles(), &positions);
+	Array1<Vector3D> positions(particles->GetNumberOfParticles());
+	CopyRange1(particles->GetPositions(), particles->GetNumberOfParticles(), &positions);
 	char baseName[256];
 	snprintf(baseName, sizeof(baseName), "frame_%06d.xyz", frameCnt);
 	std::string fileName = pystring::os::path::join(rootDir, baseName);
@@ -518,7 +518,7 @@ void RunExample6(const std::string& rootDir, size_t resolutionX, unsigned int nu
 		return true;
 	});
 
-	printf("Number of particles: %zu\n", solver->GetParticleSystemData()->NumberOfParticles());
+	printf("Number of particles: %zu\n", solver->GetParticleSystemData()->GetNumberOfParticles());
 
 	// Print simulation info
 	printf("Running example 6 (sphere boundary with APIC)\n");
