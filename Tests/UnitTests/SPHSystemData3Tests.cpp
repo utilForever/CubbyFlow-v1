@@ -104,7 +104,7 @@ TEST(SPHSystemData3, Serialization)
 	EXPECT_EQ(2.5, data2.GetRelativeKernelRadius());
 	EXPECT_DOUBLE_EQ(2.5 * 0.549, data2.GetKernelRadius());
 
-	EXPECT_EQ(positions.size(), data2.NumberOfParticles());
+	EXPECT_EQ(positions.size(), data2.GetNumberOfParticles());
 	auto as0 = data2.ScalarDataAt(a0);
 	for (size_t i = 0; i < positions.size(); ++i)
 	{
@@ -125,8 +125,8 @@ TEST(SPHSystemData3, Serialization)
 		EXPECT_DOUBLE_EQ(5.0, as2[i].z);
 	}
 
-	const auto& neighborLists = data.NeighborLists();
-	const auto& neighborLists2 = data2.NeighborLists();
+	const auto& neighborLists = data.GetNeighborLists();
+	const auto& neighborLists2 = data2.GetNeighborLists();
 	EXPECT_EQ(neighborLists.size(), neighborLists2.size());
 
 	for (size_t i = 0; i < neighborLists.size(); ++i)

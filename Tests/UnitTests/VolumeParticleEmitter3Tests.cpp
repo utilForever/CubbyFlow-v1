@@ -58,8 +58,8 @@ TEST(VolumeParticleEmitter3, Emit)
 	auto pos = particles->GetPositions();
 	auto vel = particles->GetVelocities();
 
-	EXPECT_EQ(30u, particles->NumberOfParticles());
-	for (size_t i = 0; i < particles->NumberOfParticles(); ++i)
+	EXPECT_EQ(30u, particles->GetNumberOfParticles());
+	for (size_t i = 0; i < particles->GetNumberOfParticles(); ++i)
 	{
 		EXPECT_GE(3.0, (pos[i] - Vector3D(1.0, 2.0, 4.0)).Length());
 		EXPECT_TRUE(box.Contains(pos[i]));
@@ -73,17 +73,17 @@ TEST(VolumeParticleEmitter3, Emit)
 	emitter.SetMaxNumberOfParticles(80);
 	emitter.Update(frame.TimeInSeconds(), frame.timeIntervalInSeconds);
 
-	EXPECT_EQ(69u, particles->NumberOfParticles());
+	EXPECT_EQ(69u, particles->GetNumberOfParticles());
 
 	pos = particles->GetPositions();
-	for (size_t i = 0; i < particles->NumberOfParticles(); ++i)
+	for (size_t i = 0; i < particles->GetNumberOfParticles(); ++i)
 	{
 		pos[i] += Vector3D(2.0, 1.5, 5.0);
 	}
 
 	++frame;
 	emitter.Update(frame.TimeInSeconds(), frame.timeIntervalInSeconds);
-	EXPECT_LT(69u, particles->NumberOfParticles());
+	EXPECT_LT(69u, particles->GetNumberOfParticles());
 }
 
 TEST(VolumeParticleEmitter3, Builder)
