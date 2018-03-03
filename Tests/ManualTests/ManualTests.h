@@ -125,7 +125,7 @@ inline void CreateDirectory(const std::string& dirName)
 		template <typename ParticleSystem> \
 		void SaveParticleDataXY(const std::shared_ptr<ParticleSystem>& particles, unsigned int frameNum) \
 		{ \
-			size_t n = particles->NumberOfParticles(); \
+			size_t n = particles->GetNumberOfParticles(); \
 			Array1<double> x(n); \
 			Array1<double> y(n); \
 			auto positions = particles->GetPositions(); \
