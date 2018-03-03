@@ -55,7 +55,7 @@ namespace CubbyFlow
 	void PCISPHSolver3::AccumulatePressureForce(double timeIntervalInSeconds)
 	{
 		auto particles = GetSPHSystemData();
-		const size_t numberOfParticles = particles->NumberOfParticles();
+		const size_t numberOfParticles = particles->GetNumberOfParticles();
 		const double delta = ComputeDelta(timeIntervalInSeconds);
 		const double targetDensity = particles->GetTargetDensity();
 		const double mass = particles->GetMass();
@@ -100,7 +100,7 @@ namespace CubbyFlow
 			ParallelFor(ZERO_SIZE, numberOfParticles, [&](size_t i)
 			{
 				double weightSum = 0.0;
-				const auto& neighbors = particles->NeighborLists()[i];
+				const auto& neighbors = particles->GetNeighborLists()[i];
 
 				for (size_t j : neighbors)
 				{
@@ -166,7 +166,7 @@ namespace CubbyFlow
 		SPHSolver3::OnBeginAdvanceTimeStep(timeStepInSeconds);
 
 		// Allocate temp buffers
-		size_t numberOfParticles = GetParticleSystemData()->NumberOfParticles();
+		size_t numberOfParticles = GetParticleSystemData()->GetNumberOfParticles();
 		m_tempPositions.Resize(numberOfParticles);
 		m_tempVelocities.Resize(numberOfParticles);
 		m_pressureForces.Resize(numberOfParticles);
