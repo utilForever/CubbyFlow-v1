@@ -43,8 +43,7 @@ void AddParticleSystemData2(pybind11::module& m)
 			- newNumberOfParticles : New number of particles.
 		)pbdoc",
 		pybind11::arg("newNumberOfParticles"))
-	.def_property_readonly("numberOfParticles",
-		&ParticleSystemData2::NumberOfParticles,
+	.def_property_readonly("numberOfParticles", &ParticleSystemData2::GetNumberOfParticles,
 		R"pbdoc(
 			The number of particles.
 		)pbdoc")
@@ -58,7 +57,7 @@ void AddParticleSystemData2(pybind11::module& m)
 			Parameters
 			----------
 			- initialVal : Initial value of the new scalar data.
-			)pbdoc",
+		)pbdoc",
 		pybind11::arg("initialVal") = 0.0)
 	.def("AddVectorData", [](ParticleSystemData2& instance, pybind11::object object)
 	{
@@ -194,7 +193,7 @@ void AddParticleSystemData2(pybind11::module& m)
 			This property returns currently set neighbor searcher object. By
 			default, PointParallelHashGridSearcher2 is used.
 		)pbdoc")
-	.def_property_readonly("neighborLists", &ParticleSystemData2::NeighborLists,
+	.def_property_readonly("neighborLists", &ParticleSystemData2::GetNeighborLists,
 		R"pbdoc(
 			The neighbor lists.
 
@@ -239,7 +238,7 @@ void AddParticleSystemData3(pybind11::module& m)
 			- newNumberOfParticles : New number of particles.
 		)pbdoc",
 		pybind11::arg("newNumberOfParticles"))
-	.def_property_readonly("numberOfParticles", &ParticleSystemData3::NumberOfParticles,
+	.def_property_readonly("numberOfParticles", &ParticleSystemData3::GetNumberOfParticles,
 		R"pbdoc(
 			The number of particles.
 		)pbdoc")
@@ -389,7 +388,7 @@ void AddParticleSystemData3(pybind11::module& m)
 			This property returns currently set neighbor searcher object. By
 			default, PointParallelHashGridSearcher2 is used.
 		)pbdoc")
-	.def_property_readonly("neighborLists", &ParticleSystemData3::NeighborLists,
+	.def_property_readonly("neighborLists", &ParticleSystemData3::GetNeighborLists,
 		R"pbdoc(
 			The neighbor lists.
 
