@@ -47,7 +47,7 @@ namespace CubbyFlow
 		sphParticles.BuildNeighborSearcher();
 		sphParticles.UpdateDensities();
 
-		Array1<double> constData(sphParticles.NumberOfParticles(), 1.0);
+		Array1<double> constData(sphParticles.GetNumberOfParticles(), 1.0);
 		auto temp = output->Clone();
 		temp->Fill([&](const Vector3D& x)
 		{
