@@ -346,13 +346,13 @@ void AddScalarGrid3(pybind11::module& m)
 		pybind11::arg("j"),
 		pybind11::arg("k"))
 	.def("GetDataAccessor", &ScalarGrid3::GetDataAccessor,
-			R"pbdoc(
-				Returns the data array accessor.
-			)pbdoc")
+		R"pbdoc(
+			Returns the data array accessor.
+		)pbdoc")
 	.def("GetDataPosition", &ScalarGrid3::GetDataPosition,
-			R"pbdoc(
-				Returns the function that maps data point to its position.
-			)pbdoc")
+		R"pbdoc(
+			Returns the function that maps data point to its position.
+		)pbdoc")
 	.def("Fill", [](ScalarGrid3& instance, pybind11::object obj)
 	{
 		if (pybind11::isinstance<double>(static_cast<pybind11::handle>(obj)))
