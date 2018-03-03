@@ -75,7 +75,7 @@ namespace CubbyFlow
 			<< timer.DurationInSeconds() << " seconds";
 
 		CUBBYFLOW_INFO << "Number of PIC-type particles: "
-			<< m_particles->NumberOfParticles();
+			<< m_particles->GetNumberOfParticles();
 
 		timer.Reset();
 		TransferFromParticlesToGrids();
@@ -125,7 +125,7 @@ namespace CubbyFlow
 		auto flow = GetGridSystemData()->GetVelocity();
 		auto positions = m_particles->GetPositions();
 		auto velocities = m_particles->GetVelocities();
-		size_t numberOfParticles = m_particles->NumberOfParticles();
+		size_t numberOfParticles = m_particles->GetNumberOfParticles();
 
 		// Clear velocity to zero
 		flow->Fill(Vector2D());
@@ -190,7 +190,7 @@ namespace CubbyFlow
 		auto flow = GetGridSystemData()->GetVelocity();
 		auto positions = m_particles->GetPositions();
 		auto velocities = m_particles->GetVelocities();
-		size_t numberOfParticles = m_particles->NumberOfParticles();
+		size_t numberOfParticles = m_particles->GetNumberOfParticles();
 
 		ParallelFor(ZERO_SIZE, numberOfParticles, [&](size_t i)
 		{
@@ -203,7 +203,7 @@ namespace CubbyFlow
 		auto flow = GetGridSystemData()->GetVelocity();
 		auto positions = m_particles->GetPositions();
 		auto velocities = m_particles->GetVelocities();
-		size_t numberOfParticles = m_particles->NumberOfParticles();
+		size_t numberOfParticles = m_particles->GetNumberOfParticles();
 		int domainBoundaryFlag = GetClosedDomainBoundaryFlag();
 		BoundingBox2D boundingBox = flow->BoundingBox();
 
