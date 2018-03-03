@@ -79,7 +79,7 @@ namespace CubbyFlow
 		void Resize(size_t newNumberOfParticles);
 
 		//! Returns the number of particles.
-		size_t NumberOfParticles() const;
+		size_t GetNumberOfParticles() const;
 
 		//!
 		//! \brief      Adds a scalar data layer and returns its index.
@@ -202,7 +202,7 @@ namespace CubbyFlow
 		//!
 		//! \return     Neighbor lists.
 		//!
-		const std::vector<std::vector<size_t>>& NeighborLists() const;
+		const std::vector<std::vector<size_t>>& GetNeighborLists() const;
 
 		//! Builds neighbor searcher with given search radius.
 		void BuildNeighborSearcher(double maxSearchRadius);

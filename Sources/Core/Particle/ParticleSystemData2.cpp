@@ -68,7 +68,7 @@ namespace CubbyFlow
 		}
 	}
 
-	size_t ParticleSystemData2::NumberOfParticles() const
+	size_t ParticleSystemData2::GetNumberOfParticles() const
 	{
 		return m_numberOfParticles;
 	}
@@ -76,14 +76,14 @@ namespace CubbyFlow
 	size_t ParticleSystemData2::AddScalarData(double initialVal)
 	{
 		size_t attrIdx = m_scalarDataList.size();
-		m_scalarDataList.emplace_back(NumberOfParticles(), initialVal);
+		m_scalarDataList.emplace_back(GetNumberOfParticles(), initialVal);
 		return attrIdx;
 	}
 
 	size_t ParticleSystemData2::AddVectorData(const Vector2D& initialVal)
 	{
 		size_t attrIdx = m_vectorDataList.size();
-		m_vectorDataList.emplace_back(NumberOfParticles(), initialVal);
+		m_vectorDataList.emplace_back(GetNumberOfParticles(), initialVal);
 		return attrIdx;
 	}
 
@@ -181,7 +181,7 @@ namespace CubbyFlow
 			throw std::invalid_argument("newForces.size() > 0 && newForces.size() != newPositions.size()");
 		}
 
-		size_t oldNumberOfParticles = NumberOfParticles();
+		size_t oldNumberOfParticles = GetNumberOfParticles();
 		size_t newNumberOfParticles = oldNumberOfParticles + newPositions.size();
 
 		Resize(newNumberOfParticles);
@@ -222,7 +222,7 @@ namespace CubbyFlow
 		m_neighborSearcher = newNeighborSearcher;
 	}
 
-	const std::vector<std::vector<size_t>>& ParticleSystemData2::NeighborLists() const
+	const std::vector<std::vector<size_t>>& ParticleSystemData2::GetNeighborLists() const
 	{
 		return m_neighborLists;
 	}
@@ -248,11 +248,11 @@ namespace CubbyFlow
 	{
 		Timer timer;
 
-		m_neighborLists.resize(NumberOfParticles());
+		m_neighborLists.resize(GetNumberOfParticles());
 
 		auto points = GetPositions();
 
-		for (size_t i = 0; i < NumberOfParticles(); ++i)
+		for (size_t i = 0; i < GetNumberOfParticles(); ++i)
 		{
 			Vector2D origin = points[i];
 			m_neighborLists[i].clear();
