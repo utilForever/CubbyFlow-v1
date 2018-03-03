@@ -165,7 +165,7 @@ namespace CubbyFlow
 			<< timer.DurationInSeconds() << " seconds";
 
 		// Allocate buffers
-		size_t n = m_particleSystemData->NumberOfParticles();
+		size_t n = m_particleSystemData->GetNumberOfParticles();
 		m_newPositions.Resize(n);
 		m_newVelocities.Resize(n);
 
@@ -175,7 +175,7 @@ namespace CubbyFlow
 	void ParticleSystemSolver3::EndAdvanceTimeStep(double timeStepInSeconds)
 	{
 		// Update data
-		size_t n = m_particleSystemData->NumberOfParticles();
+		size_t n = m_particleSystemData->GetNumberOfParticles();
 		auto positions = m_particleSystemData->GetPositions();
 		auto velocities = m_particleSystemData->GetVelocities();
 
@@ -209,7 +209,7 @@ namespace CubbyFlow
 	{
 		if (m_collider != nullptr)
 		{
-			size_t numberOfParticles = m_particleSystemData->NumberOfParticles();
+			size_t numberOfParticles = m_particleSystemData->GetNumberOfParticles();
 			const double radius = m_particleSystemData->GetRadius();
 
 			ParallelFor(ZERO_SIZE, numberOfParticles, [&](size_t i)
@@ -230,7 +230,7 @@ namespace CubbyFlow
 
 	void ParticleSystemSolver3::AccumulateExternalForces()
 	{
-		size_t n = m_particleSystemData->NumberOfParticles();
+		size_t n = m_particleSystemData->GetNumberOfParticles();
 		auto forces = m_particleSystemData->GetForces();
 		auto velocities = m_particleSystemData->GetVelocities();
 		auto positions = m_particleSystemData->GetPositions();
@@ -251,7 +251,7 @@ namespace CubbyFlow
 
 	void ParticleSystemSolver3::TimeIntegration(double timeStepInSeconds)
 	{
-		size_t n = m_particleSystemData->NumberOfParticles();
+		size_t n = m_particleSystemData->GetNumberOfParticles();
 		auto forces = m_particleSystemData->GetForces();
 		auto velocities = m_particleSystemData->GetVelocities();
 		auto positions = m_particleSystemData->GetPositions();
