@@ -79,7 +79,7 @@ namespace CubbyFlow
 		auto d = GetDensities();
 		const double m = GetMass();
 
-		ParallelFor(ZERO_SIZE, NumberOfParticles(), [&](size_t i)
+		ParallelFor(ZERO_SIZE, GetNumberOfParticles(), [&](size_t i)
 		{
 			double sum = SumOfKernelNearby(p[i]);
 			d[i] = m * sum;
@@ -197,7 +197,7 @@ namespace CubbyFlow
 		Vector2D sum;
 		auto p = GetPositions();
 		auto d = GetDensities();
-		const auto& neighbors = NeighborLists()[i];
+		const auto& neighbors = GetNeighborLists()[i];
 		Vector2D origin = p[i];
 		SPHSpikyKernel2 kernel(m_kernelRadius);
 		const double m = GetMass();
@@ -222,7 +222,7 @@ namespace CubbyFlow
 		double sum = 0.0;
 		auto p = GetPositions();
 		auto d = GetDensities();
-		const auto& neighbors = NeighborLists()[i];
+		const auto& neighbors = GetNeighborLists()[i];
 		Vector2D origin = p[i];
 		SPHSpikyKernel2 kernel(m_kernelRadius);
 		const double m = GetMass();
@@ -242,7 +242,7 @@ namespace CubbyFlow
 		Vector2D sum;
 		auto p = GetPositions();
 		auto d = GetDensities();
-		const auto& neighbors = NeighborLists()[i];
+		const auto& neighbors = GetNeighborLists()[i];
 		Vector2D origin = p[i];
 		SPHSpikyKernel2 kernel(m_kernelRadius);
 		const double m = GetMass();
