@@ -35,7 +35,7 @@ void AddSurfaceToImplicit2(pybind11::module& m)
 		pybind11::arg("surface"),
 		pybind11::arg("transform") = Transform2(),
 		pybind11::arg("isNormalFlipped") = false)
-	.def_property_readonly("GetSurface", &SurfaceToImplicit2::GetSurface,
+	.def_property_readonly("surface", &SurfaceToImplicit2::GetSurface,
 		R"pbdoc(
 			The raw surface instance.
 		)pbdoc");
@@ -62,7 +62,7 @@ void AddSurfaceToImplicit3(pybind11::module& m)
 		pybind11::arg("surface"),
 		pybind11::arg("transform") = Transform3(),
 		pybind11::arg("isNormalFlipped") = false)
-	.def_property_readonly("GetSurface", &SurfaceToImplicit3::GetSurface,
+	.def_property_readonly("surface", &SurfaceToImplicit3::GetSurface,
 		R"pbdoc(
 			The raw surface instance.
 		)pbdoc");
