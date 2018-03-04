@@ -6,10 +6,10 @@
 #include <Core/Size/Size3.h>
 #include <Core/Solver/LevelSet/LevelSetLiquidSolver2.h>
 #include <Core/Solver/LevelSet/LevelSetLiquidSolver3.h>
-#include <Core/Surface/Implicit/ImplicitSurface2.h>
-#include <Core/Surface/Implicit/ImplicitSurfaceSet2.h>
-#include <Core/Surface/Implicit/ImplicitSurface3.h>
-#include <Core/Surface/Implicit/ImplicitSurfaceSet3.h>
+#include <Core/Surface/ImplicitSurface2.h>
+#include <Core/Surface/ImplicitSurfaceSet2.h>
+#include <Core/Surface/ImplicitSurface3.h>
+#include <Core/Surface/ImplicitSurfaceSet3.h>
 
 using namespace CubbyFlow;
 

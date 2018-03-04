@@ -2,8 +2,8 @@
 #include "UnitTestsUtils.h"
 
 #include <Core/Geometry/Sphere3.h>
-#include <Core/Surface/Implicit/CustomImplicitSurface3.h>
-#include <Core/Surface/Implicit/SurfaceToImplicit3.h>
+#include <Core/Surface/CustomImplicitSurface3.h>
+#include <Core/Surface/SurfaceToImplicit3.h>
 
 using namespace CubbyFlow;
 
