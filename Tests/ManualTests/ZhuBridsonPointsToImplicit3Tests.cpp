@@ -4,7 +4,7 @@
 
 #include <Core/Grid/VertexCenteredScalarGrid3.h>
 #include <Core/MarchingCubes/MarchingCubes.h>
-#include <Core/Point/Implicit/ZhuBridsonPointsToImplicit3.h>
+#include <Core/PointsToImplicit/ZhuBridsonPointsToImplicit3.h>
 
 #include <random>
 

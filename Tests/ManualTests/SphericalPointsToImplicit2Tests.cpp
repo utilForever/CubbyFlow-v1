@@ -3,7 +3,7 @@
 #include <ManualTests.h>
 
 #include <Core/Grid/CellCenteredScalarGrid2.h>
-#include <Core/Point/Implicit/SphericalPointsToImplicit2.h>
+#include <Core/PointsToImplicit/SphericalPointsToImplicit2.h>
 
 #include <random>
 

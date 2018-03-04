@@ -8,8 +8,8 @@
 #include <Core/LevelSet/LevelSetUtils.h>
 #include <Core/Solver/Grid/GridFractionalSinglePhasePressureSolver2.h>
 #include <Core/Solver/LevelSet/LevelSetLiquidSolver2.h>
-#include <Core/Surface/Implicit/ImplicitSurfaceSet2.h>
-#include <Core/Surface/Implicit/SurfaceToImplicit2.h>
+#include <Core/Surface/ImplicitSurfaceSet2.h>
+#include <Core/Surface/SurfaceToImplicit2.h>
 
 #include <ManualTests.h>
 

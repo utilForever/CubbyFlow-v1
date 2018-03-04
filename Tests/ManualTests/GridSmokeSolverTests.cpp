@@ -10,8 +10,8 @@
 #include <Core/Geometry/Sphere3.h>
 #include <Core/SemiLagrangian/CubicSemiLagrangian3.h>
 #include <Core/Solver/Grid/GridSinglePhasePressureSolver2.h>
-#include <Core/Solver/Smoke/GridSmokeSolver2.h>
-#include <Core/Solver/Smoke/GridSmokeSolver3.h>
+#include <Core/Solver/Grid/GridSmokeSolver2.h>
+#include <Core/Solver/Grid/GridSmokeSolver3.h>
 
 #include <ManualTests.h>
 

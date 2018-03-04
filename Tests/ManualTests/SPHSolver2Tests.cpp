@@ -7,9 +7,9 @@
 #include <Core/Geometry/Box2.h>
 #include <Core/Geometry/Plane2.h>
 #include <Core/Geometry/Sphere2.h>
-#include <Core/Solver/SPH/SPHSolver2.h>
-#include <Core/Surface/Implicit/ImplicitSurfaceSet2.h>
-#include <Core/Surface/Implicit/SurfaceToImplicit2.h>
+#include <Core/Solver/Particle/SPH/SPHSolver2.h>
+#include <Core/Surface/ImplicitSurfaceSet2.h>
+#include <Core/Surface/SurfaceToImplicit2.h>
 
 using namespace CubbyFlow;
 

@@ -10,8 +10,8 @@
 #include <Core/Geometry/Plane3.h>
 #include <Core/Geometry/Sphere3.h>
 #include <Core/PointGenerator/GridPointGenerator3.h>
-#include <Core/Solver/PIC/PICSolver3.h>
-#include <Core/Surface/Implicit/ImplicitSurfaceSet3.h>
+#include <Core/Solver/Hybrid/PIC/PICSolver3.h>
+#include <Core/Surface/ImplicitSurfaceSet3.h>
 
 using namespace CubbyFlow;
 

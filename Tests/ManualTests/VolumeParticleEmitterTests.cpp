@@ -8,8 +8,8 @@
 #include <Core/Geometry/Sphere3.h>
 #include <Core/Solver/Particle/ParticleSystemSolver2.h>
 #include <Core/Solver/Particle/ParticleSystemSolver3.h>
-#include <Core/Surface/Implicit/SurfaceToImplicit2.h>
-#include <Core/Surface/Implicit/SurfaceToImplicit3.h>
+#include <Core/Surface/SurfaceToImplicit2.h>
+#include <Core/Surface/SurfaceToImplicit3.h>
 
 using namespace CubbyFlow;
 
