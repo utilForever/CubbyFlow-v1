@@ -284,12 +284,12 @@ namespace CubbyFlow
 		}
 	}
 
-	ScalarField3Ptr GridFractionalBoundaryConditionSolver3::ColliderSDF() const
+	ScalarField3Ptr GridFractionalBoundaryConditionSolver3::GetColliderSDF() const
 	{
 		return m_colliderSDF;
 	}
 
-	VectorField3Ptr GridFractionalBoundaryConditionSolver3::ColliderVelocityField() const
+	VectorField3Ptr GridFractionalBoundaryConditionSolver3::GetColliderVelocityField() const
 	{
 		return m_colliderVel;
 	}

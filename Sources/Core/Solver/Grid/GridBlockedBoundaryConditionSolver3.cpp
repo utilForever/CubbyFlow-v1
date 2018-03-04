@@ -84,7 +84,7 @@ namespace CubbyFlow
 	{
 		GridFractionalBoundaryConditionSolver3::OnColliderUpdated(gridSize, gridSpacing, gridOrigin);
 
-		const auto sdf = std::dynamic_pointer_cast<CellCenteredScalarGrid3>(ColliderSDF());
+		const auto sdf = std::dynamic_pointer_cast<CellCenteredScalarGrid3>(GetColliderSDF());
 
 		m_marker.Resize(gridSize);
 		m_marker.ParallelForEachIndex([&](size_t i, size_t j, size_t k)

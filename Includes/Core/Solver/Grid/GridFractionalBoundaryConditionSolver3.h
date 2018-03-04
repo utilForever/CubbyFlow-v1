@@ -44,10 +44,10 @@ namespace CubbyFlow
 			unsigned int extrapolationDepth = 5) override;
 
 		//! Returns the signed distance field of the collider.
-		ScalarField3Ptr ColliderSDF() const override;
+		ScalarField3Ptr GetColliderSDF() const override;
 
 		//! Returns the velocity field of the collider.
-		VectorField3Ptr ColliderVelocityField() const override;
+		VectorField3Ptr GetColliderVelocityField() const override;
 
 	protected:
 		//! Invoked when a new collider is set.

@@ -71,10 +71,10 @@ namespace CubbyFlow
 			unsigned int extrapolationDepth = 5) = 0;
 
 		//! Returns the signed distance field of the collider.
-		virtual ScalarField2Ptr ColliderSDF() const = 0;
+		virtual ScalarField2Ptr GetColliderSDF() const = 0;
 
 		//! Returns the velocity field of the collider.
-		virtual VectorField2Ptr ColliderVelocityField() const = 0;
+		virtual VectorField2Ptr GetColliderVelocityField() const = 0;
 
 	protected:
 		//! Invoked when a new collider is set.
