@@ -34,8 +34,8 @@ TEST(GridFluidSolver2, ResizeGridSystemData)
 
 	solver.ResizeGrid(Size2(1, 2), Vector2D(3.0, 4.0), Vector2D(5.0, 6.0));
 
-	EXPECT_EQ(1u, solver.GetGridResolution().x);
-	EXPECT_EQ(2u, solver.GetGridResolution().y);
+	EXPECT_EQ(1u, solver.GetResolution().x);
+	EXPECT_EQ(2u, solver.GetResolution().y);
 	EXPECT_EQ(3.0, solver.GetGridSpacing().x);
 	EXPECT_EQ(4.0, solver.GetGridSpacing().y);
 	EXPECT_EQ(5.0, solver.GetGridOrigin().x);
