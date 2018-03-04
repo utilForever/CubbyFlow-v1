@@ -46,8 +46,14 @@ void AddFDMMGPCGSolver2(pybind11::module& m)
 		R"pbdoc(
 			The last residual after the MGPCG iterations.
 		)pbdoc")
-	.def_property_readonly("sorFactor", &FDMMGPCGSolver2::GetSORFactor)
-	.def_property_readonly("useRedBlackOrdering", &FDMMGPCGSolver2::GetUseRedBlackOrdering);
+	.def_property_readonly("sorFactor", &FDMMGPCGSolver2::GetSORFactor,
+		R"pbdoc(
+			Returns the SOR (Successive Over Relaxation) factor.
+		)pbdoc")
+	.def_property_readonly("useRedBlackOrdering", &FDMMGPCGSolver2::GetUseRedBlackOrdering,
+		R"pbdoc(
+			Returns true if red-black ordering is enabled.
+		)pbdoc");
 }
 
 void AddFDMMGPCGSolver3(pybind11::module& m)
@@ -82,6 +88,12 @@ void AddFDMMGPCGSolver3(pybind11::module& m)
 		R"pbdoc(
 			The last residual after the MGPCG iterations.
 		)pbdoc")
-	.def_property_readonly("sorFactor", &FDMMGPCGSolver3::GetSORFactor)
-	.def_property_readonly("useRedBlackOrdering", &FDMMGPCGSolver3::GetUseRedBlackOrdering);
+	.def_property_readonly("sorFactor", &FDMMGPCGSolver3::GetSORFactor,
+		R"pbdoc(
+			Returns the SOR (Successive Over Relaxation) factor.
+		)pbdoc")
+	.def_property_readonly("useRedBlackOrdering", &FDMMGPCGSolver3::GetUseRedBlackOrdering,
+		R"pbdoc(
+			Returns true if red-black ordering is enabled.
+		)pbdoc");
 }
