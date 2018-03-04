@@ -8,8 +8,8 @@
 *************************************************************************/
 #include <API/Python/Solver/Grid/GridSmokeSolver.h>
 #include <API/Python/Utils/pybind11Utils.h>
-#include <Core/Solver/Smoke/GridSmokeSolver2.h>
-#include <Core/Solver/Smoke/GridSmokeSolver3.h>
+#include <Core/Solver/Grid/GridSmokeSolver2.h>
+#include <Core/Solver/Grid/GridSmokeSolver3.h>
 
 #include <pybind11/pybind11.h>
 

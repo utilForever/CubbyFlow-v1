@@ -7,8 +7,8 @@
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <API/Python/Solver/Particle/PCISPH/PCISPHSolver.h>
-#include <Core/Solver/PCISPH/PCISPHSolver2.h>
-#include <Core/Solver/PCISPH/PCISPHSolver3.h>
+#include <Core/Solver/Particle/PCISPH/PCISPHSolver2.h>
+#include <Core/Solver/Particle/PCISPH/PCISPHSolver3.h>
 #include <Core/Utils/Constants.h>
 
 #include <pybind11/pybind11.h>

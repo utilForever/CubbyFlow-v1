@@ -8,8 +8,8 @@
 *************************************************************************/
 #include <API/Python/Solver/Hybrid/APIC/APICSolver.h>
 #include <API/Python/Utils/pybind11Utils.h>
-#include <Core/Solver/APIC/APICSolver2.h>
-#include <Core/Solver/APIC/APICSolver3.h>
+#include <Core/Solver/Hybrid/APIC/APICSolver2.h>
+#include <Core/Solver/Hybrid/APIC/APICSolver3.h>
 
 #include <pybind11/pybind11.h>
 

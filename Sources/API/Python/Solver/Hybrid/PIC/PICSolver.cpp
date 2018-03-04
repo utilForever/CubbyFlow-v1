@@ -8,8 +8,8 @@
 *************************************************************************/
 #include <API/Python/Solver/Hybrid/PIC/PICSolver.h>
 #include <API/Python/Utils/pybind11Utils.h>
-#include <Core/Solver/PIC/PICSolver2.h>
-#include <Core/Solver/PIC/PICSolver3.h>
+#include <Core/Solver/Hybrid/PIC/PICSolver2.h>
+#include <Core/Solver/Hybrid/PIC/PICSolver3.h>
 
 #include <pybind11/pybind11.h>
 

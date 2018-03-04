@@ -7,8 +7,8 @@
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <API/Python/PointsToImplicit/AnisotropicPointsToImplicit.h>
-#include <Core/Point/Implicit/AnisotropicPointsToImplicit2.h>
-#include <Core/Point/Implicit/AnisotropicPointsToImplicit3.h>
+#include <Core/PointsToImplicit/AnisotropicPointsToImplicit2.h>
+#include <Core/PointsToImplicit/AnisotropicPointsToImplicit3.h>
 
 #include <pybind11/pybind11.h>
 

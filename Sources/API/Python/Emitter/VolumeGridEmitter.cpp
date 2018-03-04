@@ -9,8 +9,8 @@
 #include <API/Python/Emitter/VolumeGridEmitter.h>
 #include <Core/Emitter/VolumeGridEmitter2.h>
 #include <Core/Emitter/VolumeGridEmitter3.h>
-#include <Core/Surface/Implicit/SurfaceToImplicit2.h>
-#include <Core/Surface/Implicit/SurfaceToImplicit3.h>
+#include <Core/Surface/SurfaceToImplicit2.h>
+#include <Core/Surface/SurfaceToImplicit3.h>
 
 #include <pybind11/pybind11.h>
 

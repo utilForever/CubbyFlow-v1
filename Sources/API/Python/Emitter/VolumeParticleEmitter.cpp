@@ -10,8 +10,8 @@
 #include <API/Python/Utils/pybind11Utils.h>
 #include <Core/Emitter/VolumeParticleEmitter2.h>
 #include <Core/Emitter/VolumeParticleEmitter3.h>
-#include <Core/Surface/Implicit/SurfaceToImplicit2.h>
-#include <Core/Surface/Implicit/SurfaceToImplicit3.h>
+#include <Core/Surface/SurfaceToImplicit2.h>
+#include <Core/Surface/SurfaceToImplicit3.h>
 
 #include <pybind11/pybind11.h>
 

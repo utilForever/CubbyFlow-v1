@@ -7,8 +7,8 @@
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <API/Python/PointsToImplicit/SphericalPointsToImplicit.h>
-#include <Core/Point/Implicit/SphericalPointsToImplicit2.h>
-#include <Core/Point/Implicit/SphericalPointsToImplicit3.h>
+#include <Core/PointsToImplicit/SphericalPointsToImplicit2.h>
+#include <Core/PointsToImplicit/SphericalPointsToImplicit3.h>
 
 #include <pybind11/pybind11.h>
 
