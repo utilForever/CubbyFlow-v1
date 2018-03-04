@@ -26,7 +26,8 @@ void AddVector2F(pybind11::module& m)
 
 			This method constructs float-type 2-D vector with x and y.
 		)pbdoc",
-		pybind11::arg("x") = 0.0f, pybind11::arg("y") = 0.0f)
+		pybind11::arg("x") = 0.0f,
+		pybind11::arg("y") = 0.0f)
 	.def_readwrite("x", &Vector2F::x)
 	.def_readwrite("y", &Vector2F::y)
 	.def("SetZero", &Vector2F::SetZero)
@@ -161,7 +162,8 @@ void AddVector2D(pybind11::module& m)
 
 			This method constructs double-type 2-D vector with x and y.
 		)pbdoc",
-		pybind11::arg("x") = 0.0, pybind11::arg("y") = 0.0)
+		pybind11::arg("x") = 0.0,
+		pybind11::arg("y") = 0.0)
 	.def_readwrite("x", &Vector2D::x)
 	.def_readwrite("y", &Vector2D::y)
 	.def("SetZero", &Vector2D::SetZero)
@@ -295,7 +297,9 @@ void AddVector3F(pybind11::module& m)
 
 			This method constructs float-type 3-D vector with x, y, and z.
 		)pbdoc",
-		pybind11::arg("x") = 0.0f, pybind11::arg("y") = 0.0f, pybind11::arg("z") = 0.0f)
+		pybind11::arg("x") = 0.0f,
+		pybind11::arg("y") = 0.0f,
+		pybind11::arg("z") = 0.0f)
 	.def_readwrite("x", &Vector3F::x)
 	.def_readwrite("y", &Vector3F::y)
 	.def_readwrite("z", &Vector3F::z)
@@ -430,7 +434,9 @@ void AddVector3D(pybind11::module& m)
 
 			This method constructs double-type 3-D vector with x, y, and z.
 		)pbdoc",
-		pybind11::arg("x") = 0.0, pybind11::arg("y") = 0.0, pybind11::arg("z") = 0.0)
+		pybind11::arg("x") = 0.0,
+		pybind11::arg("y") = 0.0,
+		pybind11::arg("z") = 0.0)
 	.def_readwrite("x", &Vector3D::x)
 	.def_readwrite("y", &Vector3D::y)
 	.def_readwrite("z", &Vector3D::z)
