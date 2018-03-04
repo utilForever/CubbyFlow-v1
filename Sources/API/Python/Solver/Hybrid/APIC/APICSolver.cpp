@@ -76,7 +76,7 @@ void AddAPICSolver3(pybind11::module& m)
 
 		new (&instance) APICSolver3(resolution, gridSpacing, gridOrigin);
 	},
-			R"pbdoc(
+		R"pbdoc(
 			Constructs APICSolver3
 
 			This method constructs APICSolver3 with resolution, gridSpacing,
@@ -90,5 +90,5 @@ void AddAPICSolver3(pybind11::module& m)
 				- gridSpacing : Grid spacing.
 				- gridOrigin : Origin point at the grid.
 				- domainSizeX : Domain size in x-direction.
-			)pbdoc");
+		)pbdoc");
 }
