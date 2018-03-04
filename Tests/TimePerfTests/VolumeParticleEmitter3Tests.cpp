@@ -4,7 +4,7 @@
 #include <Core/Emitter/VolumeParticleEmitter3.h>
 #include <Core/Geometry/Box3.h>
 #include <Core/Particle/ParticleSystemData3.h>
-#include <Core/Surface/Implicit/ImplicitSurfaceSet3.h>
+#include <Core/Surface/ImplicitSurfaceSet3.h>
 
 #include <memory>
 
