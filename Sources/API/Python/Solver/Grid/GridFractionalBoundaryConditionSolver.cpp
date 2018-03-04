@@ -41,11 +41,11 @@ void AddGridFractionalBoundaryConditionSolver2(pybind11::module& m)
 		)pbdoc",
 		pybind11::arg("velocity"),
 		pybind11::arg("extrapolationDepth") = 5)
-	.def_property_readonly("colliderSDF", &GridFractionalBoundaryConditionSolver2::ColliderSDF,
+	.def_property_readonly("colliderSDF", &GridFractionalBoundaryConditionSolver2::GetColliderSDF,
 		R"pbdoc(
 			Signed distance field of the collider.
 		)pbdoc")
-	.def_property_readonly("colliderVelocityField", &GridFractionalBoundaryConditionSolver2::ColliderVelocityField,
+	.def_property_readonly("colliderVelocityField", &GridFractionalBoundaryConditionSolver2::GetColliderVelocityField,
 		R"pbdoc(
 			Velocity field of the collider.
 		)pbdoc");
@@ -78,11 +78,11 @@ void AddGridFractionalBoundaryConditionSolver3(pybind11::module& m)
 		)pbdoc",
 		pybind11::arg("velocity"),
 		pybind11::arg("extrapolationDepth") = 5)
-	.def_property_readonly("colliderSDF", &GridFractionalBoundaryConditionSolver3::ColliderSDF,
+	.def_property_readonly("colliderSDF", &GridFractionalBoundaryConditionSolver3::GetColliderSDF,
 		R"pbdoc(
 			Signed distance field of the collider.
 		)pbdoc")
-	.def_property_readonly("colliderVelocityField", &GridFractionalBoundaryConditionSolver3::ColliderVelocityField,
+	.def_property_readonly("colliderVelocityField", &GridFractionalBoundaryConditionSolver3::GetColliderVelocityField,
 		R"pbdoc(
 			Velocity field of the collider.
 		)pbdoc");
