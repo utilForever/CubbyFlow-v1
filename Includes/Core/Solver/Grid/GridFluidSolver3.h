@@ -144,7 +144,7 @@ namespace CubbyFlow
 		//! equivalent to calling gridSystemData()->resolution(), but provides a
 		//! shortcut.
 		//!
-		Size3 GetGridResolution() const;
+		Size3 GetResolution() const;
 
 		//!
 		//! \brief Returns the grid spacing of the grid system data.

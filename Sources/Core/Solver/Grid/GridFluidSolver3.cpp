@@ -160,7 +160,7 @@ namespace CubbyFlow
 		m_grids->Resize(newSize, newGridSpacing, newGridOrigin);
 	}
 
-	Size3 GridFluidSolver3::GetGridResolution() const
+	Size3 GridFluidSolver3::GetResolution() const
 	{
 		return m_grids->GetResolution();
 	}
@@ -537,12 +537,12 @@ namespace CubbyFlow
 
 	ScalarField3Ptr GridFluidSolver3::GetColliderSDF() const
 	{
-		return m_boundaryConditionSolver->ColliderSDF();
+		return m_boundaryConditionSolver->GetColliderSDF();
 	}
 
 	VectorField3Ptr GridFluidSolver3::GetColliderVelocityField() const
 	{
-		return m_boundaryConditionSolver->ColliderVelocityField();
+		return m_boundaryConditionSolver->GetColliderVelocityField();
 	}
 
 	void GridFluidSolver3::BeginAdvanceTimeStep(double timeIntervalInSeconds)
