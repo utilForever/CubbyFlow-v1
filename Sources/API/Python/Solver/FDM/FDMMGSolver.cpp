@@ -64,8 +64,14 @@ void AddFDMMGSolver2(pybind11::module& m)
 		R"pbdoc(
 			Number of iteration at final step.
 		)pbdoc")
-	.def_property_readonly("sorFactor", &FDMMGSolver2::GetSORFactor)
-	.def_property_readonly("useRedBlackOrdering", &FDMMGSolver2::GetUseRedBlackOrdering);
+	.def_property_readonly("sorFactor", &FDMMGSolver2::GetSORFactor,
+		R"pbdoc(
+			Returns the SOR (Successive Over Relaxation) factor.
+		)pbdoc")
+	.def_property_readonly("useRedBlackOrdering", &FDMMGSolver2::GetUseRedBlackOrdering,
+		R"pbdoc(
+			Returns true if red-black ordering is enabled.
+		)pbdoc");
 }
 
 void AddFDMMGSolver3(pybind11::module& m)
@@ -118,6 +124,12 @@ void AddFDMMGSolver3(pybind11::module& m)
 		R"pbdoc(
 			Number of iteration at final step.
 		)pbdoc")
-	.def_property_readonly("sorFactor", &FDMMGSolver3::GetSORFactor)
-	.def_property_readonly("useRedBlackOrdering", &FDMMGSolver3::GetUseRedBlackOrdering);
+	.def_property_readonly("sorFactor", &FDMMGSolver3::GetSORFactor,
+		R"pbdoc(
+			Returns the SOR (Successive Over Relaxation) factor.
+		)pbdoc")
+	.def_property_readonly("useRedBlackOrdering", &FDMMGSolver3::GetUseRedBlackOrdering,
+		R"pbdoc(
+			Returns true if red-black ordering is enabled.
+		)pbdoc");
 }
