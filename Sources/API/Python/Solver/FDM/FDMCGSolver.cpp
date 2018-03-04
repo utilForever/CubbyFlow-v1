@@ -17,9 +17,9 @@ using namespace CubbyFlow;
 void AddFDMCGSolver2(pybind11::module& m)
 {
 	pybind11::class_<FDMCGSolver2, FDMCGSolver2Ptr, FDMLinearSystemSolver2>(m, "FDMCGSolver2",
-	R"pbdoc(
-		2-D finite difference-type linear system solver using conjugate gradient.
-	)pbdoc")
+		R"pbdoc(
+			2-D finite difference-type linear system solver using conjugate gradient.
+		)pbdoc")
 	.def(pybind11::init<uint32_t, double>(),
 		pybind11::arg("maxNumberOfIterations"),
 		pybind11::arg("tolerance"))
