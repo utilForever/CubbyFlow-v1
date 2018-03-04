@@ -17,8 +17,7 @@
 #include <Core/Math/MathUtils.h>
 #include <Core/SemiLagrangian/CubicSemiLagrangian3.h>
 #include <Core/SemiLagrangian/SemiLagrangian3.h>
-#include <Core/Solver/Smoke/GridSmokeSolver3.h>
-#include <Core/Surface/Implicit/CustomImplicitSurface3.h>
+#include <Core/Solver/Grid/GridSmokeSolver3.h>
 #include <Core/Utils/Logging.h>
 
 #include <pystring/pystring.h>

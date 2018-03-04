@@ -14,9 +14,9 @@
 #include <Core/Geometry/Plane3.h>
 #include <Core/Geometry/Sphere3.h>
 #include <Core/Particle/ParticleSystemData3.h>
-#include <Core/Solver/PCISPH/PCISPHSolver3.h>
-#include <Core/Solver/SPH/SPHSolver3.h>
-#include <Core/Surface/Implicit/ImplicitSurfaceSet3.h>
+#include <Core/Solver/Particle/PCISPH/PCISPHSolver3.h>
+#include <Core/Solver/Particle/SPH/SPHSolver3.h>
+#include <Core/Surface/ImplicitSurfaceSet3.h>
 #include <Core/Utils/Logging.h>
 
 #include <pystring/pystring.h>

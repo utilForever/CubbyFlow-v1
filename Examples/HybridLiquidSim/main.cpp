@@ -18,10 +18,10 @@
 #include <Core/Particle/ParticleSystemData3.h>
 #include <Core/PointGenerator/BccLatticePointGenerator.h>
 #include <Core/PointGenerator/GridPointGenerator3.h>
-#include <Core/Solver/APIC/APICSolver3.h>
-#include <Core/Solver/FLIP/FLIPSolver3.h>
-#include <Core/Solver/PIC/PICSolver3.h>
-#include <Core/Surface/Implicit/ImplicitSurfaceSet3.h>
+#include <Core/Solver/Hybrid/APIC/APICSolver3.h>
+#include <Core/Solver/Hybrid/FLIP/FLIPSolver3.h>
+#include <Core/Solver/Hybrid/PIC/PICSolver3.h>
+#include <Core/Surface/ImplicitSurfaceSet3.h>
 #include <Core/Utils/Logging.h>
 
 #include <pystring/pystring.h>

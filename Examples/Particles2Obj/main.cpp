@@ -11,10 +11,10 @@
 #include <Core/Geometry/TriangleMesh3.h>
 #include <Core/Grid/ScalarGrid3.h>
 #include <Core/Grid/VertexCenteredScalarGrid3.h>
-#include <Core/Point/Implicit/AnisotropicPointsToImplicit3.h>
-#include <Core/Point/Implicit/SphericalPointsToImplicit3.h>
-#include <Core/Point/Implicit/SPHPointsToImplicit3.h>
-#include <Core/Point/Implicit/ZhuBridsonPointsToImplicit3.h>
+#include <Core/PointsToImplicit/AnisotropicPointsToImplicit3.h>
+#include <Core/PointsToImplicit/SphericalPointsToImplicit3.h>
+#include <Core/PointsToImplicit/SPHPointsToImplicit3.h>
+#include <Core/PointsToImplicit/ZhuBridsonPointsToImplicit3.h>
 #include <Core/MarchingCubes/MarchingCubes.h>
 #include <Core/Size/Size3.h>
 #include <Core/Utils/Serialization.h>
