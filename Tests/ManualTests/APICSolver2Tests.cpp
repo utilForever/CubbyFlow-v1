@@ -295,7 +295,7 @@ CUBBYFLOW_BEGIN_TEST_F(APICSolver2, Circular)
     solver->SetCollider(collider);
 
     // Manually emit particles
-    size_t resX = solver->GetGridResolution().x;
+    size_t resX = solver->GetResolution().x;
     std::mt19937 rng;
     std::uniform_real_distribution<> dist(0, 1);
     
@@ -343,7 +343,7 @@ CUBBYFLOW_BEGIN_TEST_F(APICSolver2, CircularWithFriction)
     solver->SetCollider(collider);
 
     // Manually emit particles
-    size_t resX = solver->GetGridResolution().x;
+    size_t resX = solver->GetResolution().x;
     std::mt19937 rng;
     std::uniform_real_distribution<> dist(0, 1);
 
