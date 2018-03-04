@@ -19,7 +19,7 @@ The code is built on C++17 and can be compiled with commonly available compilers
 - Jacobi, Gauss-Seidel, SOR, MG, CG, ICCG, and MGPCG linear system solvers
 - Spherical, SPH, Zhu & Bridson, and Anisotropic kernel for points-to-surface converter
 - Converters between signed distance function and triangular mesh
-- C++ API
+- C++ and Python API
 
 ## To-do Features
 
@@ -32,7 +32,7 @@ The code is built on C++17 and can be compiled with commonly available compilers
     - Grid-based bubbly flow
 - Voxel surface reconstruction
 - Compatible for DirectX, OpenGL, Metal, and Vulkan
-- Python, C#, Go, and Rust API
+- C#, Go, and Rust API
 - Intel TBB, OpenMP, and C++11 multi-threading backends
 
 Every simulator has both 2-D and 3-D implementations.
