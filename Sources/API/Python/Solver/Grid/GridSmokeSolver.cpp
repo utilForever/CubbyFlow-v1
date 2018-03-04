@@ -53,7 +53,7 @@ void AddGridSmokeSolver2(pybind11::module& m)
 				- gridSpacing : Grid spacing.
 				- gridOrigin : Origin point ot the grid.
 				- domainSizeX : Domain size in x-direction.
-			)pbdoc")
+		)pbdoc")
 	.def_property("smokeDiffusionCoefficient", &GridSmokeSolver2::GetSmokeDiffusionCoefficient, &GridSmokeSolver2::SetSmokeDiffusionCoefficient,
 		R"pbdoc(
 			The smoke diffusion coefficient.
@@ -146,7 +146,7 @@ void AddGridSmokeSolver3(pybind11::module& m)
 				- gridSpacing : Grid spacing.
 				- gridOrigin : Origin point ot the grid.
 				- domainSizeX : Domain size in x-direction.
-			)pbdoc")
+		)pbdoc")
 	.def_property("smokeDiffusionCoefficient", &GridSmokeSolver3::GetSmokeDiffusionCoefficient, &GridSmokeSolver3::SetSmokeDiffusionCoefficient,
 		R"pbdoc(
 			The smoke diffusion coefficient.
