@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_CUSTOM_IMPLICIT_SURFACE3_H
 #define CUBBYFLOW_CUSTOM_IMPLICIT_SURFACE3_H
 
-#include <Core/Surface/Implicit/ImplicitSurface3.h>
+#include <Core/Surface/ImplicitSurface3.h>
 
 #include <functional>
 

@@ -12,7 +12,7 @@
 #include <Core/Emitter/GridEmitter2.h>
 #include <Core/Grid/ScalarGrid2.h>
 #include <Core/Grid/VectorGrid2.h>
-#include <Core/Surface/Implicit/ImplicitSurface2.h>
+#include <Core/Surface/ImplicitSurface2.h>
 #include <Core/Vector/Vector2.h>
 
 #include <memory>

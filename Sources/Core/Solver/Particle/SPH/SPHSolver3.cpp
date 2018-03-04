@@ -6,7 +6,7 @@
 > Created Time: 2017/06/10
 > Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
-#include <Core/Solver/SPH/SPHSolver3.h>
+#include <Core/Solver/Particle/SPH/SPHSolver3.h>
 #include <Core/SPH/SPHStdKernel3.h>
 #include <Core/Utils/Logging.h>
 #include <Core/Utils/PhysicsHelpers.h>

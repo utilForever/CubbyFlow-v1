@@ -7,7 +7,7 @@
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <Core/LevelSet/LevelSetUtils.h>
-#include <Core/Surface/Implicit/CustomImplicitSurface3.h>
+#include <Core/Surface/CustomImplicitSurface3.h>
 
 namespace CubbyFlow
 {

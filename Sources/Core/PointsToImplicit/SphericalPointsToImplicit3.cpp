@@ -7,7 +7,7 @@
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <Core/Particle/ParticleSystemData3.h>
-#include <Core/Point/Implicit/SphericalPointsToImplicit3.h>
+#include <Core/PointsToImplicit/SphericalPointsToImplicit3.h>
 #include <Core/Solver/LevelSet/FMMLevelSetSolver3.h>
 #include <Core/Utils/Logging.h>
 

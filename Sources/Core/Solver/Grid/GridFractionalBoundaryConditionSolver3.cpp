@@ -9,8 +9,8 @@
 #include <Core/Array/ArrayUtils.h>
 #include <Core/LevelSet/LevelSetUtils.h>
 #include <Core/Solver/Grid/GridFractionalBoundaryConditionSolver3.h>
-#include <Core/Surface/Implicit/ImplicitSurface3.h>
-#include <Core/Surface/Implicit/SurfaceToImplicit3.h>
+#include <Core/Surface/ImplicitSurface3.h>
+#include <Core/Surface/SurfaceToImplicit3.h>
 #include <Core/Utils/PhysicsHelpers.h>
 
 namespace CubbyFlow

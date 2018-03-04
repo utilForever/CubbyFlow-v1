@@ -11,8 +11,8 @@
 
 #include <Core/Geometry/TriangleMesh3.h>
 #include <Core/Grid/VertexCenteredScalarGrid3.h>
-#include <Core/Surface/Implicit/CustomImplicitSurface3.h>
-#include <Core/Surface/Implicit/ImplicitSurface3.h>
+#include <Core/Surface/CustomImplicitSurface3.h>
+#include <Core/Surface/ImplicitSurface3.h>
 
 namespace CubbyFlow
 {

@@ -7,7 +7,7 @@
 > Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
 #include <Core/Geometry/TriangleMesh3.h>
-#include <Core/Surface/Implicit/SurfaceToImplicit3.h>
+#include <Core/Surface/SurfaceToImplicit3.h>
 #include <Core/Utils/Logging.h>
 
 namespace CubbyFlow

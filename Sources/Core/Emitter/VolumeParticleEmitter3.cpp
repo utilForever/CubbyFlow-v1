@@ -9,7 +9,7 @@
 #include <Core/Emitter/VolumeParticleEmitter3.h>
 #include <Core/PointGenerator/BccLatticePointGenerator.h>
 #include <Core/Searcher/PointHashGridSearcher3.h>
-#include <Core/Surface/Implicit/SurfaceToImplicit3.h>
+#include <Core/Surface/SurfaceToImplicit3.h>
 #include <Core/Utils/Samplers.h>
 
 namespace CubbyFlow

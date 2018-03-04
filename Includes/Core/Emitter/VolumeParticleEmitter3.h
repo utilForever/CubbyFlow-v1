@@ -11,7 +11,7 @@
 
 #include <Core/Emitter/ParticleEmitter3.h>
 #include <Core/PointGenerator/PointGenerator3.h>
-#include <Core/Surface/Implicit/ImplicitSurface3.h>
+#include <Core/Surface/ImplicitSurface3.h>
 
 #include <random>
 

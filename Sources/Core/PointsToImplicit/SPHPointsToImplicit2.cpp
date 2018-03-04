@@ -6,7 +6,7 @@
 > Created Time: 2017/11/17
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Core/Point/Implicit/SPHPointsToImplicit2.h>
+#include <Core/PointsToImplicit/SPHPointsToImplicit2.h>
 #include <Core/Solver/LevelSet/FMMLevelSetSolver2.h>
 #include <Core/SPH/SPHSystemData2.h>
 #include <Core/Utils/Logging.h>

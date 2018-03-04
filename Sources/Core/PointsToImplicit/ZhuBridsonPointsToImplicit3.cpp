@@ -7,7 +7,7 @@
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
 #include <Core/Particle/ParticleSystemData3.h>
-#include <Core/Point/Implicit/ZhuBridsonPointsToImplicit3.h>
+#include <Core/PointsToImplicit/ZhuBridsonPointsToImplicit3.h>
 #include <Core/Solver/LevelSet/FMMLevelSetSolver3.h>
 #include <Core/Utils/Logging.h>
 

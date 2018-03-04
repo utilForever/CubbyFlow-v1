@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_SPH_POINTS_TO_IMPLICIT3_H
 #define CUBBYFLOW_SPH_POINTS_TO_IMPLICIT3_H
 
-#include <Core/Point/Implicit/PointsToImplicit3.h>
+#include <Core/PointsToImplicit/PointsToImplicit3.h>
 
 namespace CubbyFlow
 {

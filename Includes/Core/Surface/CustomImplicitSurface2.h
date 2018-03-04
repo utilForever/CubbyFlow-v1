@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_CUSTOM_IMPLICIT_SURFACE2_H
 #define CUBBYFLOW_CUSTOM_IMPLICIT_SURFACE2_H
 
-#include <Core/Surface/Implicit/ImplicitSurface2.h>
+#include <Core/Surface/ImplicitSurface2.h>
 
 #include <functional>
 

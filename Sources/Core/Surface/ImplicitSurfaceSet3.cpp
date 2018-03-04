@@ -6,8 +6,8 @@
 > Created Time: 2017/04/18
 > Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
-#include <Core/Surface/Implicit/ImplicitSurfaceSet3.h>
-#include <Core/Surface/Implicit/SurfaceToImplicit3.h>
+#include <Core/Surface/ImplicitSurfaceSet3.h>
+#include <Core/Surface/SurfaceToImplicit3.h>
 
 namespace CubbyFlow
 {

@@ -10,7 +10,7 @@
 #include <Core/Grid/CollocatedVectorGrid2.h>
 #include <Core/Grid/FaceCenteredGrid2.h>
 #include <Core/LevelSet/LevelSetUtils.h>
-#include <Core/Surface/Implicit/SurfaceToImplicit2.h>
+#include <Core/Surface/SurfaceToImplicit2.h>
 #include <Core/Utils/Macros.h>
 
 namespace CubbyFlow

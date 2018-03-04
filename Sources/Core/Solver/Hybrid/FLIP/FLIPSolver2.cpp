@@ -6,7 +6,7 @@
 > Created Time: 2017/09/13
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Core/Solver/FLIP/FLIPSolver2.h>
+#include <Core/Solver/Hybrid/FLIP/FLIPSolver2.h>
 
 namespace CubbyFlow
 {

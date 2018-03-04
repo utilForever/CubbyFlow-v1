@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_SURFACE_TO_IMPLICIT3_H
 #define CUBBYFLOW_SURFACE_TO_IMPLICIT3_H
 
-#include <Core/Surface/Implicit/ImplicitSurface3.h>
+#include <Core/Surface/ImplicitSurface3.h>
 
 namespace CubbyFlow
 {

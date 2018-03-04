@@ -8,7 +8,7 @@
 *************************************************************************/
 #include <Core/Math/SVD.h>
 #include <Core/Matrix/Matrix3x3.h>
-#include <Core/Point/Implicit/AnisotropicPointsToImplicit3.h>
+#include <Core/PointsToImplicit/AnisotropicPointsToImplicit3.h>
 #include <Core/Searcher/PointKdTreeSearcher3.h>
 #include <Core/Solver/LevelSet/FMMLevelSetSolver3.h>
 #include <Core/SPH/SPHSystemData3.h>

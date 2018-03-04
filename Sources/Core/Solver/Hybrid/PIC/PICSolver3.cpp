@@ -8,7 +8,7 @@
 *************************************************************************/
 #include <Core/Array/ArrayUtils.h>
 #include <Core/Grid/CellCenteredScalarGrid3.h>
-#include <Core/Solver/PIC/PICSolver3.h>
+#include <Core/Solver/Hybrid/PIC/PICSolver3.h>
 #include <Core/Utils/Logging.h>
 #include <Core/Utils/Timer.h>
 

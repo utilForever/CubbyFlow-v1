@@ -6,7 +6,7 @@
 > Created Time: 2017/11/16
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
-#include <Core/Point/Implicit/PointsToImplicit2.h>
+#include <Core/PointsToImplicit/PointsToImplicit2.h>
 
 namespace CubbyFlow
 {

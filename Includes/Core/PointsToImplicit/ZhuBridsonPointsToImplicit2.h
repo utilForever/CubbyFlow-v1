@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_ZHU_BRIDSON_POINTS_TO_IMPLICIT2_H
 #define CUBBYFLOW_ZHU_BRIDSON_POINTS_TO_IMPLICIT2_H
 
-#include <Core/Point/Implicit/PointsToImplicit2.h>
+#include <Core/PointsToImplicit/PointsToImplicit2.h>
 
 namespace CubbyFlow
 {

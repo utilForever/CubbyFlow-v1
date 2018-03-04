@@ -10,7 +10,7 @@
 #define CUBBYFLOW_IMPLICIT_SURFACE_SET2_H
 
 #include <Core/Geometry/BVH2.h>
-#include <Core/Surface/Implicit/ImplicitSurface2.h>
+#include <Core/Surface/ImplicitSurface2.h>
 
 #include <vector>
 

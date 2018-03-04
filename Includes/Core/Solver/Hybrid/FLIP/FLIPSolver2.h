@@ -9,7 +9,7 @@
 #ifndef CUBBYFLOW_FLIP_SOLVER2_H
 #define CUBBYFLOW_FLIP_SOLVER2_H
 
-#include <Core/Solver/PIC/PICSolver2.h>
+#include <Core/Solver/Hybrid/PIC/PICSolver2.h>
 
 namespace CubbyFlow
 {

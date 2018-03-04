@@ -7,7 +7,7 @@
 > Copyright (c) 2018, Dongmin Kim
 *************************************************************************/
 #include <Core/PointGenerator/BccLatticePointGenerator.h>
-#include <Core/Solver/PCISPH/PCISPHSolver3.h>
+#include <Core/Solver/Particle/PCISPH/PCISPHSolver3.h>
 #include <Core/SPH/SPHStdKernel3.h>
 #include <Core/Utils/Logging.h>
 

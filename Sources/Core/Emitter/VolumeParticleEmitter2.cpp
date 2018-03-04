@@ -10,7 +10,7 @@
 #include <Core/Matrix/Matrix2x2.h>
 #include <Core/PointGenerator/TrianglePointGenerator.h>
 #include <Core/Searcher/PointHashGridSearcher2.h>
-#include <Core/Surface/Implicit/SurfaceToImplicit2.h>
+#include <Core/Surface/SurfaceToImplicit2.h>
 
 namespace CubbyFlow
 {
