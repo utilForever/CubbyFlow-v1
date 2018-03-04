@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.68</a>
+                    <a class="navbar-brand">CubbyFlow v0.7</a>
                 </div>
             </div>
         </nav>
@@ -84,7 +84,7 @@ $(function() {
 <p>Abstract base class for 2-D boundary condition solver for grids.  
  <a href="class_cubby_flow_1_1_grid_boundary_condition_solver2.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_grid_boundary_condition_solver2_8h_source.html">Solver/Grid/GridBoundaryConditionSolver2.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="_grid_boundary_condition_solver2_8h_source.html">Core/Solver/Grid/GridBoundaryConditionSolver2.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for CubbyFlow::GridBoundaryConditionSolver2:</div>
 <div class="dyncontent">
@@ -118,12 +118,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:adcc1f3679cc773726d783cf273912c4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4aaafd34ae5db7253073b86fd6a8422f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_grid_boundary_condition_solver2.html#a4aaafd34ae5db7253073b86fd6a8422f">ConstrainVelocity</a> (<a class="el" href="class_cubby_flow_1_1_face_centered_grid2.html">FaceCenteredGrid2</a> *velocity, unsigned int extrapolationDepth=5)=0</td></tr>
 <tr class="separator:a4aaafd34ae5db7253073b86fd6a8422f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d64c763f89f31ea764131b6fb55dbfc"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespace_cubby_flow.html#a7630ba43eff0cf8384150daef0065f95">ScalarField2Ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_grid_boundary_condition_solver2.html#a4d64c763f89f31ea764131b6fb55dbfc">ColliderSDF</a> () const =0</td></tr>
-<tr class="memdesc:a4d64c763f89f31ea764131b6fb55dbfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the signed distance field of the collider.  <a href="#a4d64c763f89f31ea764131b6fb55dbfc">More...</a><br /></td></tr>
-<tr class="separator:a4d64c763f89f31ea764131b6fb55dbfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11a70d83be80a3b9c4a1066471005c04"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespace_cubby_flow.html#ab71dea58b8939ced874c39bd1b9a6304">VectorField2Ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_grid_boundary_condition_solver2.html#a11a70d83be80a3b9c4a1066471005c04">ColliderVelocityField</a> () const =0</td></tr>
-<tr class="memdesc:a11a70d83be80a3b9c4a1066471005c04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the velocity field of the collider.  <a href="#a11a70d83be80a3b9c4a1066471005c04">More...</a><br /></td></tr>
-<tr class="separator:a11a70d83be80a3b9c4a1066471005c04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af425ae42167a6f229cd7bde18b1caf77"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespace_cubby_flow.html#a7630ba43eff0cf8384150daef0065f95">ScalarField2Ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_grid_boundary_condition_solver2.html#af425ae42167a6f229cd7bde18b1caf77">GetColliderSDF</a> () const =0</td></tr>
+<tr class="memdesc:af425ae42167a6f229cd7bde18b1caf77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the signed distance field of the collider.  <a href="#af425ae42167a6f229cd7bde18b1caf77">More...</a><br /></td></tr>
+<tr class="separator:af425ae42167a6f229cd7bde18b1caf77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09ba51170faa02eb53a5a7e8e643e67f"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespace_cubby_flow.html#ab71dea58b8939ced874c39bd1b9a6304">VectorField2Ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_grid_boundary_condition_solver2.html#a09ba51170faa02eb53a5a7e8e643e67f">GetColliderVelocityField</a> () const =0</td></tr>
+<tr class="memdesc:a09ba51170faa02eb53a5a7e8e643e67f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the velocity field of the collider.  <a href="#a09ba51170faa02eb53a5a7e8e643e67f">More...</a><br /></td></tr>
+<tr class="separator:a09ba51170faa02eb53a5a7e8e643e67f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -191,64 +191,6 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a4d64c763f89f31ea764131b6fb55dbfc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d64c763f89f31ea764131b6fb55dbfc">&#9670;&nbsp;</a></span>ColliderSDF()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="el" href="namespace_cubby_flow.html#a7630ba43eff0cf8384150daef0065f95">ScalarField2Ptr</a> CubbyFlow::GridBoundaryConditionSolver2::ColliderSDF </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the signed distance field of the collider. </p>
-
-<p>Implemented in <a class="el" href="class_cubby_flow_1_1_grid_fractional_boundary_condition_solver2.html#a6df998b3356dcb8766d78137327ab69c">CubbyFlow::GridFractionalBoundaryConditionSolver2</a>.</p>
-
-</div>
-</div>
-<a id="a11a70d83be80a3b9c4a1066471005c04"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11a70d83be80a3b9c4a1066471005c04">&#9670;&nbsp;</a></span>ColliderVelocityField()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="el" href="namespace_cubby_flow.html#ab71dea58b8939ced874c39bd1b9a6304">VectorField2Ptr</a> CubbyFlow::GridBoundaryConditionSolver2::ColliderVelocityField </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the velocity field of the collider. </p>
-
-<p>Implemented in <a class="el" href="class_cubby_flow_1_1_grid_fractional_boundary_condition_solver2.html#af615621b2bb966738493a5f2cf7de65b">CubbyFlow::GridFractionalBoundaryConditionSolver2</a>.</p>
-
-</div>
-</div>
 <a id="a4aaafd34ae5db7253073b86fd6a8422f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4aaafd34ae5db7253073b86fd6a8422f">&#9670;&nbsp;</a></span>ConstrainVelocity()</h2>
 
@@ -330,6 +272,64 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns associated collider. </p>
+
+</div>
+</div>
+<a id="af425ae42167a6f229cd7bde18b1caf77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af425ae42167a6f229cd7bde18b1caf77">&#9670;&nbsp;</a></span>GetColliderSDF()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="namespace_cubby_flow.html#a7630ba43eff0cf8384150daef0065f95">ScalarField2Ptr</a> CubbyFlow::GridBoundaryConditionSolver2::GetColliderSDF </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the signed distance field of the collider. </p>
+
+<p>Implemented in <a class="el" href="class_cubby_flow_1_1_grid_fractional_boundary_condition_solver2.html#a546de9e7ed5451a2b62768d59df7298b">CubbyFlow::GridFractionalBoundaryConditionSolver2</a>.</p>
+
+</div>
+</div>
+<a id="a09ba51170faa02eb53a5a7e8e643e67f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09ba51170faa02eb53a5a7e8e643e67f">&#9670;&nbsp;</a></span>GetColliderVelocityField()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="namespace_cubby_flow.html#ab71dea58b8939ced874c39bd1b9a6304">VectorField2Ptr</a> CubbyFlow::GridBoundaryConditionSolver2::GetColliderVelocityField </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the velocity field of the collider. </p>
+
+<p>Implemented in <a class="el" href="class_cubby_flow_1_1_grid_fractional_boundary_condition_solver2.html#a33d1f304d6ec3367c0d48f3b0fc18c85">CubbyFlow::GridFractionalBoundaryConditionSolver2</a>.</p>
 
 </div>
 </div>
@@ -533,7 +533,7 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Solver/Grid/<a class="el" href="_grid_boundary_condition_solver2_8h_source.html">GridBoundaryConditionSolver2.h</a></li>
+<li>Core/Solver/Grid/<a class="el" href="_grid_boundary_condition_solver2_8h_source.html">GridBoundaryConditionSolver2.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.8-->
@@ -544,7 +544,7 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 25 2017 22:42:36 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 4 2018 16:17:05 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

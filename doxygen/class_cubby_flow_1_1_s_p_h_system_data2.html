@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.68</a>
+                    <a class="navbar-brand">CubbyFlow v0.7</a>
                 </div>
             </div>
         </nav>
@@ -83,7 +83,7 @@ $(function() {
 <p>2-D SPH particle system data.  
  <a href="class_cubby_flow_1_1_s_p_h_system_data2.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_s_p_h_system_data2_8h_source.html">SPH/SPHSystemData2.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="_s_p_h_system_data2_8h_source.html">Core/SPH/SPHSystemData2.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for CubbyFlow::SPHSystemData2:</div>
 <div class="dyncontent">
@@ -203,9 +203,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a510d396c59603d9ae72b322858731908 inherit pub_methods_class_cubby_flow_1_1_particle_system_data2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_particle_system_data2.html#a510d396c59603d9ae72b322858731908">Resize</a> (size_t newNumberOfParticles)</td></tr>
 <tr class="memdesc:a510d396c59603d9ae72b322858731908 inherit pub_methods_class_cubby_flow_1_1_particle_system_data2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resizes the number of particles of the container.  <a href="class_cubby_flow_1_1_particle_system_data2.html#a510d396c59603d9ae72b322858731908">More...</a><br /></td></tr>
 <tr class="separator:a510d396c59603d9ae72b322858731908 inherit pub_methods_class_cubby_flow_1_1_particle_system_data2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a920ddf543a34cda114b8c3acf5c9ebfc inherit pub_methods_class_cubby_flow_1_1_particle_system_data2"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_particle_system_data2.html#a920ddf543a34cda114b8c3acf5c9ebfc">NumberOfParticles</a> () const</td></tr>
-<tr class="memdesc:a920ddf543a34cda114b8c3acf5c9ebfc inherit pub_methods_class_cubby_flow_1_1_particle_system_data2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of particles.  <a href="class_cubby_flow_1_1_particle_system_data2.html#a920ddf543a34cda114b8c3acf5c9ebfc">More...</a><br /></td></tr>
-<tr class="separator:a920ddf543a34cda114b8c3acf5c9ebfc inherit pub_methods_class_cubby_flow_1_1_particle_system_data2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6503457f0a549488f00a64d310dd3ab0 inherit pub_methods_class_cubby_flow_1_1_particle_system_data2"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_particle_system_data2.html#a6503457f0a549488f00a64d310dd3ab0">GetNumberOfParticles</a> () const</td></tr>
+<tr class="memdesc:a6503457f0a549488f00a64d310dd3ab0 inherit pub_methods_class_cubby_flow_1_1_particle_system_data2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of particles.  <a href="class_cubby_flow_1_1_particle_system_data2.html#a6503457f0a549488f00a64d310dd3ab0">More...</a><br /></td></tr>
+<tr class="separator:a6503457f0a549488f00a64d310dd3ab0 inherit pub_methods_class_cubby_flow_1_1_particle_system_data2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37d45abfbd0f6e23d2f7609d108a3f03 inherit pub_methods_class_cubby_flow_1_1_particle_system_data2"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_particle_system_data2.html#a37d45abfbd0f6e23d2f7609d108a3f03">AddScalarData</a> (double initialVal=0.0)</td></tr>
 <tr class="memdesc:a37d45abfbd0f6e23d2f7609d108a3f03 inherit pub_methods_class_cubby_flow_1_1_particle_system_data2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a scalar data layer and returns its index.  <a href="class_cubby_flow_1_1_particle_system_data2.html#a37d45abfbd0f6e23d2f7609d108a3f03">More...</a><br /></td></tr>
 <tr class="separator:a37d45abfbd0f6e23d2f7609d108a3f03 inherit pub_methods_class_cubby_flow_1_1_particle_system_data2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -260,9 +260,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a40f094dbdf641e135b0dad6e66aa9ac5 inherit pub_methods_class_cubby_flow_1_1_particle_system_data2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_particle_system_data2.html#a40f094dbdf641e135b0dad6e66aa9ac5">SetNeighborSearcher</a> (const <a class="el" href="namespace_cubby_flow.html#a56bc6a60eea7940490b7ab5df8e6ed37">PointNeighborSearcher2Ptr</a> &amp;newNeighborSearcher)</td></tr>
 <tr class="memdesc:a40f094dbdf641e135b0dad6e66aa9ac5 inherit pub_methods_class_cubby_flow_1_1_particle_system_data2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets neighbor searcher.  <a href="class_cubby_flow_1_1_particle_system_data2.html#a40f094dbdf641e135b0dad6e66aa9ac5">More...</a><br /></td></tr>
 <tr class="separator:a40f094dbdf641e135b0dad6e66aa9ac5 inherit pub_methods_class_cubby_flow_1_1_particle_system_data2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a901652e71d86f9e94226b5f3d5cf77 inherit pub_methods_class_cubby_flow_1_1_particle_system_data2"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::vector&lt; size_t &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_particle_system_data2.html#a2a901652e71d86f9e94226b5f3d5cf77">NeighborLists</a> () const</td></tr>
-<tr class="memdesc:a2a901652e71d86f9e94226b5f3d5cf77 inherit pub_methods_class_cubby_flow_1_1_particle_system_data2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns neighbor lists.  <a href="class_cubby_flow_1_1_particle_system_data2.html#a2a901652e71d86f9e94226b5f3d5cf77">More...</a><br /></td></tr>
-<tr class="separator:a2a901652e71d86f9e94226b5f3d5cf77 inherit pub_methods_class_cubby_flow_1_1_particle_system_data2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0d6d1be1d94cacade1985b2aec996b8 inherit pub_methods_class_cubby_flow_1_1_particle_system_data2"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::vector&lt; size_t &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_particle_system_data2.html#af0d6d1be1d94cacade1985b2aec996b8">GetNeighborLists</a> () const</td></tr>
+<tr class="memdesc:af0d6d1be1d94cacade1985b2aec996b8 inherit pub_methods_class_cubby_flow_1_1_particle_system_data2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns neighbor lists.  <a href="class_cubby_flow_1_1_particle_system_data2.html#af0d6d1be1d94cacade1985b2aec996b8">More...</a><br /></td></tr>
+<tr class="separator:af0d6d1be1d94cacade1985b2aec996b8 inherit pub_methods_class_cubby_flow_1_1_particle_system_data2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a735a0354cc9e46cf248cdcdb6ffe1d41 inherit pub_methods_class_cubby_flow_1_1_particle_system_data2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_particle_system_data2.html#a735a0354cc9e46cf248cdcdb6ffe1d41">BuildNeighborSearcher</a> (double maxSearchRadius)</td></tr>
 <tr class="memdesc:a735a0354cc9e46cf248cdcdb6ffe1d41 inherit pub_methods_class_cubby_flow_1_1_particle_system_data2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds neighbor searcher with given search radius.  <a href="class_cubby_flow_1_1_particle_system_data2.html#a735a0354cc9e46cf248cdcdb6ffe1d41">More...</a><br /></td></tr>
 <tr class="separator:a735a0354cc9e46cf248cdcdb6ffe1d41 inherit pub_methods_class_cubby_flow_1_1_particle_system_data2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1028,7 +1028,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>SPH/<a class="el" href="_s_p_h_system_data2_8h_source.html">SPHSystemData2.h</a></li>
+<li>Core/SPH/<a class="el" href="_s_p_h_system_data2_8h_source.html">SPHSystemData2.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.8-->
@@ -1039,7 +1039,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 25 2017 22:42:44 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 4 2018 16:17:16 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

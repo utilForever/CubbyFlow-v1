@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.68</a>
+                    <a class="navbar-brand">CubbyFlow v0.7</a>
                 </div>
             </div>
         </nav>
@@ -96,8 +96,8 @@ $(function() {
   <tr class="even"><td class="entry"><a class="el" href="class_cubby_flow_1_1_face_centered_grid3.html#a569d9c617c12930f2f30160af68b339d">FaceCenteredGrid3</a>(const Size3 &amp;resolution, const Vector3D &amp;gridSpacing=Vector3D(1.0, 1.0, 1.0), const Vector3D &amp;origin=Vector3D(), const Vector3D &amp;initialValue=Vector3D())</td><td class="entry"><a class="el" href="class_cubby_flow_1_1_face_centered_grid3.html">CubbyFlow::FaceCenteredGrid3</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_cubby_flow_1_1_face_centered_grid3.html#ac68c2230161a28e4d685b8312fa7a01f">FaceCenteredGrid3</a>(const FaceCenteredGrid3 &amp;other)</td><td class="entry"><a class="el" href="class_cubby_flow_1_1_face_centered_grid3.html">CubbyFlow::FaceCenteredGrid3</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_cubby_flow_1_1_field3.html#ae51010acc07dc956f784bf32dd0cfbe2">Field3</a>()</td><td class="entry"><a class="el" href="class_cubby_flow_1_1_field3.html">CubbyFlow::Field3</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_cubby_flow_1_1_face_centered_grid3.html#a35457916884cce8d6fd96729a9be60a3">Fill</a>(const Vector3D &amp;value) override</td><td class="entry"><a class="el" href="class_cubby_flow_1_1_face_centered_grid3.html">CubbyFlow::FaceCenteredGrid3</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_cubby_flow_1_1_face_centered_grid3.html#ab3c673b7c0f90dae8c111d02f5c89165">Fill</a>(const std::function&lt; Vector3D(const Vector3D &amp;)&gt; &amp;func) override</td><td class="entry"><a class="el" href="class_cubby_flow_1_1_face_centered_grid3.html">CubbyFlow::FaceCenteredGrid3</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_cubby_flow_1_1_face_centered_grid3.html#a183d29e67a8c88b843cf834a0d67832c">Fill</a>(const Vector3D &amp;value, ExecutionPolicy policy=ExecutionPolicy::Parallel) override</td><td class="entry"><a class="el" href="class_cubby_flow_1_1_face_centered_grid3.html">CubbyFlow::FaceCenteredGrid3</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_cubby_flow_1_1_face_centered_grid3.html#aa65c6171154efe15276d381bb3dc577a">Fill</a>(const std::function&lt; Vector3D(const Vector3D &amp;)&gt; &amp;func, ExecutionPolicy policy=ExecutionPolicy::Parallel) override</td><td class="entry"><a class="el" href="class_cubby_flow_1_1_face_centered_grid3.html">CubbyFlow::FaceCenteredGrid3</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr><td class="entry"><a class="el" href="class_cubby_flow_1_1_grid3.html#a08a3bfffeb9c356de4f2e03cde871558">ForEachCellIndex</a>(const std::function&lt; void(size_t, size_t, size_t)&gt; &amp;func) const</td><td class="entry"><a class="el" href="class_cubby_flow_1_1_grid3.html">CubbyFlow::Grid3</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_cubby_flow_1_1_face_centered_grid3.html#a68b3dace92884ceeeea9d8e5afb39ddc">ForEachUIndex</a>(const std::function&lt; void(size_t, size_t, size_t)&gt; &amp;func) const</td><td class="entry"><a class="el" href="class_cubby_flow_1_1_face_centered_grid3.html">CubbyFlow::FaceCenteredGrid3</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_cubby_flow_1_1_face_centered_grid3.html#aef7d9e4b0292a4de418cabb0c490f108">ForEachVIndex</a>(const std::function&lt; void(size_t, size_t, size_t)&gt; &amp;func) const</td><td class="entry"><a class="el" href="class_cubby_flow_1_1_face_centered_grid3.html">CubbyFlow::FaceCenteredGrid3</a></td><td class="entry"></td></tr>
@@ -168,7 +168,7 @@ $(function() {
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 25 2017 22:42:34 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 4 2018 16:17:02 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

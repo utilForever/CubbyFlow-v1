@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.68</a>
+                    <a class="navbar-brand">CubbyFlow v0.7</a>
                 </div>
             </div>
         </nav>
@@ -85,7 +85,7 @@ $(function() {
 <p>Abstract base class for 3-D vector grid structure.  
  <a href="class_cubby_flow_1_1_vector_grid3.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_vector_grid3_8h_source.html">Grid/VectorGrid3.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="_vector_grid3_8h_source.html">Core/Grid/VectorGrid3.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for CubbyFlow::VectorGrid3:</div>
 <div class="dyncontent">
@@ -139,12 +139,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aecb9e713ddd9e550b1b22655a5a64ac1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_vector_grid3.html#aecb9e713ddd9e550b1b22655a5a64ac1">Resize</a> (const <a class="el" href="namespace_cubby_flow.html#a7a0f165a2c76a196c9e23978ff7f2dcb">Vector3D</a> &amp;gridSpacing, const <a class="el" href="namespace_cubby_flow.html#a7a0f165a2c76a196c9e23978ff7f2dcb">Vector3D</a> &amp;origin)</td></tr>
 <tr class="memdesc:aecb9e713ddd9e550b1b22655a5a64ac1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resizes the grid using given parameters.  <a href="#aecb9e713ddd9e550b1b22655a5a64ac1">More...</a><br /></td></tr>
 <tr class="separator:aecb9e713ddd9e550b1b22655a5a64ac1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94baa958fdac836087819c95177bf167"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_vector_grid3.html#a94baa958fdac836087819c95177bf167">Fill</a> (const <a class="el" href="namespace_cubby_flow.html#a7a0f165a2c76a196c9e23978ff7f2dcb">Vector3D</a> &amp;value)=0</td></tr>
-<tr class="memdesc:a94baa958fdac836087819c95177bf167"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the grid with given value.  <a href="#a94baa958fdac836087819c95177bf167">More...</a><br /></td></tr>
-<tr class="separator:a94baa958fdac836087819c95177bf167"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6052d9d9236452496e4ccbec96d2e25"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_vector_grid3.html#ac6052d9d9236452496e4ccbec96d2e25">Fill</a> (const std::function&lt; <a class="el" href="namespace_cubby_flow.html#a7a0f165a2c76a196c9e23978ff7f2dcb">Vector3D</a>(const <a class="el" href="namespace_cubby_flow.html#a7a0f165a2c76a196c9e23978ff7f2dcb">Vector3D</a> &amp;)&gt; &amp;func)=0</td></tr>
-<tr class="memdesc:ac6052d9d9236452496e4ccbec96d2e25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the grid with given position-to-value mapping function.  <a href="#ac6052d9d9236452496e4ccbec96d2e25">More...</a><br /></td></tr>
-<tr class="separator:ac6052d9d9236452496e4ccbec96d2e25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b2befc9fd8a6d321ba72a7192ea833b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_vector_grid3.html#a4b2befc9fd8a6d321ba72a7192ea833b">Fill</a> (const <a class="el" href="namespace_cubby_flow.html#a7a0f165a2c76a196c9e23978ff7f2dcb">Vector3D</a> &amp;value, <a class="el" href="namespace_cubby_flow.html#afca17441ed562aa8c59856e36c532101">ExecutionPolicy</a> policy=<a class="el" href="namespace_cubby_flow.html#afca17441ed562aa8c59856e36c532101a98402eecfbcefc336954458a01752131">ExecutionPolicy::Parallel</a>)=0</td></tr>
+<tr class="memdesc:a4b2befc9fd8a6d321ba72a7192ea833b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the grid with given value.  <a href="#a4b2befc9fd8a6d321ba72a7192ea833b">More...</a><br /></td></tr>
+<tr class="separator:a4b2befc9fd8a6d321ba72a7192ea833b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a685dcaf158ad9f8852255575758eb2b0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_vector_grid3.html#a685dcaf158ad9f8852255575758eb2b0">Fill</a> (const std::function&lt; <a class="el" href="namespace_cubby_flow.html#a7a0f165a2c76a196c9e23978ff7f2dcb">Vector3D</a>(const <a class="el" href="namespace_cubby_flow.html#a7a0f165a2c76a196c9e23978ff7f2dcb">Vector3D</a> &amp;)&gt; &amp;func, <a class="el" href="namespace_cubby_flow.html#afca17441ed562aa8c59856e36c532101">ExecutionPolicy</a> policy=<a class="el" href="namespace_cubby_flow.html#afca17441ed562aa8c59856e36c532101a98402eecfbcefc336954458a01752131">ExecutionPolicy::Parallel</a>)=0</td></tr>
+<tr class="memdesc:a685dcaf158ad9f8852255575758eb2b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the grid with given position-to-value mapping function.  <a href="#a685dcaf158ad9f8852255575758eb2b0">More...</a><br /></td></tr>
+<tr class="separator:a685dcaf158ad9f8852255575758eb2b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f50fb3d8853ec0babb8dd3ef8519f23"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="class_cubby_flow_1_1_vector_grid3.html">VectorGrid3</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_vector_grid3.html#a4f50fb3d8853ec0babb8dd3ef8519f23">Clone</a> () const =0</td></tr>
 <tr class="memdesc:a4f50fb3d8853ec0babb8dd3ef8519f23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the copy of the grid instance.  <a href="#a4f50fb3d8853ec0babb8dd3ef8519f23">More...</a><br /></td></tr>
 <tr class="separator:a4f50fb3d8853ec0babb8dd3ef8519f23"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -399,8 +399,8 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a94baa958fdac836087819c95177bf167"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a94baa958fdac836087819c95177bf167">&#9670;&nbsp;</a></span>Fill() <span class="overload">[1/2]</span></h2>
+<a id="a4b2befc9fd8a6d321ba72a7192ea833b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b2befc9fd8a6d321ba72a7192ea833b">&#9670;&nbsp;</a></span>Fill() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -412,8 +412,18 @@ Protected Member Functions</h2></td></tr>
           <td class="memname">virtual void CubbyFlow::VectorGrid3::Fill </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="namespace_cubby_flow.html#a7a0f165a2c76a196c9e23978ff7f2dcb">Vector3D</a> &amp;&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="namespace_cubby_flow.html#afca17441ed562aa8c59856e36c532101">ExecutionPolicy</a>&#160;</td>
+          <td class="paramname"><em>policy</em> = <code><a class="el" href="namespace_cubby_flow.html#afca17441ed562aa8c59856e36c532101a98402eecfbcefc336954458a01752131">ExecutionPolicy::Parallel</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -425,12 +435,12 @@ Protected Member Functions</h2></td></tr>
 
 <p>Fills the grid with given value. </p>
 
-<p>Implemented in <a class="el" href="class_cubby_flow_1_1_face_centered_grid3.html#a35457916884cce8d6fd96729a9be60a3">CubbyFlow::FaceCenteredGrid3</a>, <a class="el" href="class_cubby_flow_1_1_vertex_centered_vector_grid3.html#a6a847d10667e7bbfefee7c0eef86bca3">CubbyFlow::VertexCenteredVectorGrid3</a>, and <a class="el" href="class_cubby_flow_1_1_cell_centered_vector_grid3.html#a5dab1c9fc52bf4b5971d00354ae37a1d">CubbyFlow::CellCenteredVectorGrid3</a>.</p>
+<p>Implemented in <a class="el" href="class_cubby_flow_1_1_face_centered_grid3.html#a183d29e67a8c88b843cf834a0d67832c">CubbyFlow::FaceCenteredGrid3</a>, <a class="el" href="class_cubby_flow_1_1_vertex_centered_vector_grid3.html#a532ff417955a223a5b6459cfe5a84502">CubbyFlow::VertexCenteredVectorGrid3</a>, and <a class="el" href="class_cubby_flow_1_1_cell_centered_vector_grid3.html#ad42771236c66270da1e93b8955730d37">CubbyFlow::CellCenteredVectorGrid3</a>.</p>
 
 </div>
 </div>
-<a id="ac6052d9d9236452496e4ccbec96d2e25"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac6052d9d9236452496e4ccbec96d2e25">&#9670;&nbsp;</a></span>Fill() <span class="overload">[2/2]</span></h2>
+<a id="a685dcaf158ad9f8852255575758eb2b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a685dcaf158ad9f8852255575758eb2b0">&#9670;&nbsp;</a></span>Fill() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -442,8 +452,18 @@ Protected Member Functions</h2></td></tr>
           <td class="memname">virtual void CubbyFlow::VectorGrid3::Fill </td>
           <td>(</td>
           <td class="paramtype">const std::function&lt; <a class="el" href="namespace_cubby_flow.html#a7a0f165a2c76a196c9e23978ff7f2dcb">Vector3D</a>(const <a class="el" href="namespace_cubby_flow.html#a7a0f165a2c76a196c9e23978ff7f2dcb">Vector3D</a> &amp;)&gt; &amp;&#160;</td>
-          <td class="paramname"><em>func</em></td><td>)</td>
+          <td class="paramname"><em>func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="namespace_cubby_flow.html#afca17441ed562aa8c59856e36c532101">ExecutionPolicy</a>&#160;</td>
+          <td class="paramname"><em>policy</em> = <code><a class="el" href="namespace_cubby_flow.html#afca17441ed562aa8c59856e36c532101a98402eecfbcefc336954458a01752131">ExecutionPolicy::Parallel</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -455,7 +475,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Fills the grid with given position-to-value mapping function. </p>
 
-<p>Implemented in <a class="el" href="class_cubby_flow_1_1_face_centered_grid3.html#ab3c673b7c0f90dae8c111d02f5c89165">CubbyFlow::FaceCenteredGrid3</a>, <a class="el" href="class_cubby_flow_1_1_vertex_centered_vector_grid3.html#a9c3d4e0212356e60fdafd586f1e628a0">CubbyFlow::VertexCenteredVectorGrid3</a>, and <a class="el" href="class_cubby_flow_1_1_cell_centered_vector_grid3.html#a53668ac5851d3664b61e102271bda857">CubbyFlow::CellCenteredVectorGrid3</a>.</p>
+<p>Implemented in <a class="el" href="class_cubby_flow_1_1_face_centered_grid3.html#aa65c6171154efe15276d381bb3dc577a">CubbyFlow::FaceCenteredGrid3</a>, <a class="el" href="class_cubby_flow_1_1_vertex_centered_vector_grid3.html#a3b770e183cd2f107fdac663c67fd3940">CubbyFlow::VertexCenteredVectorGrid3</a>, and <a class="el" href="class_cubby_flow_1_1_cell_centered_vector_grid3.html#a04ea7a3f3c9e865407a7050d0901dd72">CubbyFlow::CellCenteredVectorGrid3</a>.</p>
 
 </div>
 </div>
@@ -759,7 +779,7 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Grid/<a class="el" href="_vector_grid3_8h_source.html">VectorGrid3.h</a></li>
+<li>Core/Grid/<a class="el" href="_vector_grid3_8h_source.html">VectorGrid3.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.8-->
@@ -770,7 +790,7 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 25 2017 22:42:45 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 4 2018 16:17:18 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

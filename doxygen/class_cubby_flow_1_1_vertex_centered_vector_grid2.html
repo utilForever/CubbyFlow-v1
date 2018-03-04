@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.68</a>
+                    <a class="navbar-brand">CubbyFlow v0.7</a>
                 </div>
             </div>
         </nav>
@@ -85,7 +85,7 @@ $(function() {
 <p>2-D Vertex-centered vector grid structure.  
  <a href="class_cubby_flow_1_1_vertex_centered_vector_grid2.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_vertex_centered_vector_grid2_8h_source.html">Grid/VertexCenteredVectorGrid2.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="_vertex_centered_vector_grid2_8h_source.html">Core/Grid/VertexCenteredVectorGrid2.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for CubbyFlow::VertexCenteredVectorGrid2:</div>
 <div class="dyncontent">
@@ -133,12 +133,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3271a73749a470c318a7ea48e4bb059e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_cubby_flow_1_1_vertex_centered_vector_grid2.html">VertexCenteredVectorGrid2</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_vertex_centered_vector_grid2.html#a3271a73749a470c318a7ea48e4bb059e">operator=</a> (const <a class="el" href="class_cubby_flow_1_1_vertex_centered_vector_grid2.html">VertexCenteredVectorGrid2</a> &amp;other)</td></tr>
 <tr class="memdesc:a3271a73749a470c318a7ea48e4bb059e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the contents with the given <code>other</code> grid.  <a href="#a3271a73749a470c318a7ea48e4bb059e">More...</a><br /></td></tr>
 <tr class="separator:a3271a73749a470c318a7ea48e4bb059e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3b6cbbfee1d9d4b0e6cfffa036b307a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_vertex_centered_vector_grid2.html#af3b6cbbfee1d9d4b0e6cfffa036b307a">Fill</a> (const <a class="el" href="namespace_cubby_flow.html#a4db57ff3bc35d170bda4f85afce858cc">Vector2D</a> &amp;value) override</td></tr>
-<tr class="memdesc:af3b6cbbfee1d9d4b0e6cfffa036b307a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the grid with given value.  <a href="#af3b6cbbfee1d9d4b0e6cfffa036b307a">More...</a><br /></td></tr>
-<tr class="separator:af3b6cbbfee1d9d4b0e6cfffa036b307a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ff78fbb328271c2edc945bfa29a706b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_vertex_centered_vector_grid2.html#a0ff78fbb328271c2edc945bfa29a706b">Fill</a> (const std::function&lt; <a class="el" href="namespace_cubby_flow.html#a4db57ff3bc35d170bda4f85afce858cc">Vector2D</a>(const <a class="el" href="namespace_cubby_flow.html#a4db57ff3bc35d170bda4f85afce858cc">Vector2D</a> &amp;)&gt; &amp;func) override</td></tr>
-<tr class="memdesc:a0ff78fbb328271c2edc945bfa29a706b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the grid with given function.  <a href="#a0ff78fbb328271c2edc945bfa29a706b">More...</a><br /></td></tr>
-<tr class="separator:a0ff78fbb328271c2edc945bfa29a706b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cac8bbc057c022ed54eabd84873f3db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_vertex_centered_vector_grid2.html#a1cac8bbc057c022ed54eabd84873f3db">Fill</a> (const <a class="el" href="namespace_cubby_flow.html#a4db57ff3bc35d170bda4f85afce858cc">Vector2D</a> &amp;value, <a class="el" href="namespace_cubby_flow.html#afca17441ed562aa8c59856e36c532101">ExecutionPolicy</a> policy=<a class="el" href="namespace_cubby_flow.html#afca17441ed562aa8c59856e36c532101a98402eecfbcefc336954458a01752131">ExecutionPolicy::Parallel</a>) override</td></tr>
+<tr class="memdesc:a1cac8bbc057c022ed54eabd84873f3db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the grid with given value.  <a href="#a1cac8bbc057c022ed54eabd84873f3db">More...</a><br /></td></tr>
+<tr class="separator:a1cac8bbc057c022ed54eabd84873f3db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72a83e028122af403caf314c2ac955b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_vertex_centered_vector_grid2.html#a72a83e028122af403caf314c2ac955b0">Fill</a> (const std::function&lt; <a class="el" href="namespace_cubby_flow.html#a4db57ff3bc35d170bda4f85afce858cc">Vector2D</a>(const <a class="el" href="namespace_cubby_flow.html#a4db57ff3bc35d170bda4f85afce858cc">Vector2D</a> &amp;)&gt; &amp;func, <a class="el" href="namespace_cubby_flow.html#afca17441ed562aa8c59856e36c532101">ExecutionPolicy</a> policy=<a class="el" href="namespace_cubby_flow.html#afca17441ed562aa8c59856e36c532101a98402eecfbcefc336954458a01752131">ExecutionPolicy::Parallel</a>) override</td></tr>
+<tr class="memdesc:a72a83e028122af403caf314c2ac955b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the grid with given function.  <a href="#a72a83e028122af403caf314c2ac955b0">More...</a><br /></td></tr>
+<tr class="separator:a72a83e028122af403caf314c2ac955b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76cdbf59d673df8d0b4c0961dd7a803c"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_cubby_flow_1_1_vector_grid2.html">VectorGrid2</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_vertex_centered_vector_grid2.html#a76cdbf59d673df8d0b4c0961dd7a803c">Clone</a> () const override</td></tr>
 <tr class="memdesc:a76cdbf59d673df8d0b4c0961dd7a803c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the copy of the grid instance.  <a href="#a76cdbf59d673df8d0b4c0961dd7a803c">More...</a><br /></td></tr>
 <tr class="separator:a76cdbf59d673df8d0b4c0961dd7a803c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -485,8 +485,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="af3b6cbbfee1d9d4b0e6cfffa036b307a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af3b6cbbfee1d9d4b0e6cfffa036b307a">&#9670;&nbsp;</a></span>Fill() <span class="overload">[1/2]</span></h2>
+<a id="a1cac8bbc057c022ed54eabd84873f3db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cac8bbc057c022ed54eabd84873f3db">&#9670;&nbsp;</a></span>Fill() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -498,8 +498,18 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">void CubbyFlow::VertexCenteredVectorGrid2::Fill </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="namespace_cubby_flow.html#a4db57ff3bc35d170bda4f85afce858cc">Vector2D</a> &amp;&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="namespace_cubby_flow.html#afca17441ed562aa8c59856e36c532101">ExecutionPolicy</a>&#160;</td>
+          <td class="paramname"><em>policy</em> = <code><a class="el" href="namespace_cubby_flow.html#afca17441ed562aa8c59856e36c532101a98402eecfbcefc336954458a01752131">ExecutionPolicy::Parallel</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -511,12 +521,12 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Fills the grid with given value. </p>
 
-<p>Implements <a class="el" href="class_cubby_flow_1_1_vector_grid2.html#a65a5be7dc3b33ab0902211387cae9cee">CubbyFlow::VectorGrid2</a>.</p>
+<p>Implements <a class="el" href="class_cubby_flow_1_1_vector_grid2.html#aed386f6e43702b896fae6e5c7a59e06b">CubbyFlow::VectorGrid2</a>.</p>
 
 </div>
 </div>
-<a id="a0ff78fbb328271c2edc945bfa29a706b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ff78fbb328271c2edc945bfa29a706b">&#9670;&nbsp;</a></span>Fill() <span class="overload">[2/2]</span></h2>
+<a id="a72a83e028122af403caf314c2ac955b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72a83e028122af403caf314c2ac955b0">&#9670;&nbsp;</a></span>Fill() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -528,8 +538,18 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">void CubbyFlow::VertexCenteredVectorGrid2::Fill </td>
           <td>(</td>
           <td class="paramtype">const std::function&lt; <a class="el" href="namespace_cubby_flow.html#a4db57ff3bc35d170bda4f85afce858cc">Vector2D</a>(const <a class="el" href="namespace_cubby_flow.html#a4db57ff3bc35d170bda4f85afce858cc">Vector2D</a> &amp;)&gt; &amp;&#160;</td>
-          <td class="paramname"><em>func</em></td><td>)</td>
+          <td class="paramname"><em>func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="namespace_cubby_flow.html#afca17441ed562aa8c59856e36c532101">ExecutionPolicy</a>&#160;</td>
+          <td class="paramname"><em>policy</em> = <code><a class="el" href="namespace_cubby_flow.html#afca17441ed562aa8c59856e36c532101a98402eecfbcefc336954458a01752131">ExecutionPolicy::Parallel</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -541,7 +561,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Fills the grid with given function. </p>
 
-<p>Implements <a class="el" href="class_cubby_flow_1_1_vector_grid2.html#a8eafe65517b2f0a8a9410d81bbd3f8ce">CubbyFlow::VectorGrid2</a>.</p>
+<p>Implements <a class="el" href="class_cubby_flow_1_1_vector_grid2.html#a77dc1d0978dc3e00c59b9b72c565707d">CubbyFlow::VectorGrid2</a>.</p>
 
 </div>
 </div>
@@ -701,7 +721,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Grid/<a class="el" href="_vertex_centered_vector_grid2_8h_source.html">VertexCenteredVectorGrid2.h</a></li>
+<li>Core/Grid/<a class="el" href="_vertex_centered_vector_grid2_8h_source.html">VertexCenteredVectorGrid2.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.8-->
@@ -712,7 +732,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 25 2017 22:42:45 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 4 2018 16:17:19 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

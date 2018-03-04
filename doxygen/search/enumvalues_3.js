@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['neumann',['Neumann',['../class_cubby_flow_1_1_grid_backward_euler_diffusion_solver2.html#a42fa0a9fa439c37a0be99d3b789a559dab8537a769dbc90cb1762215441212152',1,'CubbyFlow::GridBackwardEulerDiffusionSolver2::Neumann()'],['../class_cubby_flow_1_1_grid_backward_euler_diffusion_solver3.html#a76931f2c773f4c0860f1cc624874734bab8537a769dbc90cb1762215441212152',1,'CubbyFlow::GridBackwardEulerDiffusionSolver3::Neumann()']]]
+  ['info',['Info',['../namespace_cubby_flow.html#a38dc4ab8c46da6790b186ba0c84d86c8a4059b0251f66a18cb56f544728796875',1,'CubbyFlow']]]
 ];

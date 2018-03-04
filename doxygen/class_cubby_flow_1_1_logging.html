@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.68</a>
+                    <a class="navbar-brand">CubbyFlow v0.7</a>
                 </div>
             </div>
         </nav>
@@ -83,7 +83,7 @@ $(function() {
 <p>Helper class for logging.  
  <a href="class_cubby_flow_1_1_logging.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_logger_8h_source.html">Utils/Logger.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="_core_2_utils_2_logging_8h_source.html">Core/Utils/Logging.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -102,9 +102,18 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:aa7562151dc924640d05430caacb1e05f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_logging.html#aa7562151dc924640d05430caacb1e05f">SetAllStream</a> (std::ostream *stream)</td></tr>
 <tr class="memdesc:aa7562151dc924640d05430caacb1e05f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the output stream for all the log levels.  <a href="#aa7562151dc924640d05430caacb1e05f">More...</a><br /></td></tr>
 <tr class="separator:aa7562151dc924640d05430caacb1e05f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf6a55bae79da151b6eedf5fe3605294"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_logging.html#aaf6a55bae79da151b6eedf5fe3605294">GetHeader</a> (<a class="el" href="namespace_cubby_flow.html#ac5842d96fbae3ee0a98f901b0ad8659d">LogLevel</a> level)</td></tr>
+<tr class="memitem:aaf6a55bae79da151b6eedf5fe3605294"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_logging.html#aaf6a55bae79da151b6eedf5fe3605294">GetHeader</a> (<a class="el" href="namespace_cubby_flow.html#a38dc4ab8c46da6790b186ba0c84d86c8">LogLevel</a> level)</td></tr>
 <tr class="memdesc:aaf6a55bae79da151b6eedf5fe3605294"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the header string.  <a href="#aaf6a55bae79da151b6eedf5fe3605294">More...</a><br /></td></tr>
 <tr class="separator:aaf6a55bae79da151b6eedf5fe3605294"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5dd59c6ead35f8ef86479fe2ad153be"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_logging.html#ac5dd59c6ead35f8ef86479fe2ad153be">SetLevel</a> (<a class="el" href="namespace_cubby_flow.html#a38dc4ab8c46da6790b186ba0c84d86c8">LogLevel</a> level)</td></tr>
+<tr class="memdesc:ac5dd59c6ead35f8ef86479fe2ad153be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the log level.  <a href="#ac5dd59c6ead35f8ef86479fe2ad153be">More...</a><br /></td></tr>
+<tr class="separator:ac5dd59c6ead35f8ef86479fe2ad153be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bdca54eb49455bd0766e05c289a059a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_logging.html#a2bdca54eb49455bd0766e05c289a059a">Mute</a> ()</td></tr>
+<tr class="memdesc:a2bdca54eb49455bd0766e05c289a059a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutes the logger.  <a href="#a2bdca54eb49455bd0766e05c289a059a">More...</a><br /></td></tr>
+<tr class="separator:a2bdca54eb49455bd0766e05c289a059a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac48925f2459758737979916253a32f94"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_logging.html#ac48925f2459758737979916253a32f94">Unmute</a> ()</td></tr>
+<tr class="memdesc:ac48925f2459758737979916253a32f94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Un-mutes the logger.  <a href="#ac48925f2459758737979916253a32f94">More...</a><br /></td></tr>
+<tr class="separator:ac48925f2459758737979916253a32f94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Helper class for logging. </p>
@@ -121,7 +130,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">static std::string CubbyFlow::Logging::GetHeader </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespace_cubby_flow.html#ac5842d96fbae3ee0a98f901b0ad8659d">LogLevel</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="namespace_cubby_flow.html#a38dc4ab8c46da6790b186ba0c84d86c8">LogLevel</a>&#160;</td>
           <td class="paramname"><em>level</em></td><td>)</td>
           <td></td>
         </tr>
@@ -134,6 +143,33 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the header string. </p>
+
+</div>
+</div>
+<a id="a2bdca54eb49455bd0766e05c289a059a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bdca54eb49455bd0766e05c289a059a">&#9670;&nbsp;</a></span>Mute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void CubbyFlow::Logging::Mute </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Mutes the logger. </p>
 
 </div>
 </div>
@@ -249,6 +285,34 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ac5dd59c6ead35f8ef86479fe2ad153be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5dd59c6ead35f8ef86479fe2ad153be">&#9670;&nbsp;</a></span>SetLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void CubbyFlow::Logging::SetLevel </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_cubby_flow.html#a38dc4ab8c46da6790b186ba0c84d86c8">LogLevel</a>&#160;</td>
+          <td class="paramname"><em>level</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the log level. </p>
+
+</div>
+</div>
 <a id="af96335e96d527b0029429bdf33f4f88a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af96335e96d527b0029429bdf33f4f88a">&#9670;&nbsp;</a></span>SetWarnStream()</h2>
 
@@ -277,8 +341,35 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ac48925f2459758737979916253a32f94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac48925f2459758737979916253a32f94">&#9670;&nbsp;</a></span>Unmute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void CubbyFlow::Logging::Unmute </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Un-mutes the logger. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Utils/<a class="el" href="_logger_8h_source.html">Logger.h</a></li>
+<li>Core/Utils/<a class="el" href="_core_2_utils_2_logging_8h_source.html">Logging.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.8-->
@@ -289,7 +380,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 25 2017 22:42:38 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 4 2018 16:17:08 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

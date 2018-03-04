@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.68</a>
+                    <a class="navbar-brand">CubbyFlow v0.7</a>
                 </div>
             </div>
         </nav>
@@ -85,7 +85,7 @@ $(function() {
 <p>3-D particle system data.  
  <a href="class_cubby_flow_1_1_particle_system_data3.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_particle_system_data3_8h_source.html">Particle/ParticleSystemData3.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="_particle_system_data3_8h_source.html">Core/Particle/ParticleSystemData3.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for CubbyFlow::ParticleSystemData3:</div>
 <div class="dyncontent">
@@ -123,9 +123,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af37a6bc3bdceee16bea27c5f1726bcc6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_particle_system_data3.html#af37a6bc3bdceee16bea27c5f1726bcc6">Resize</a> (size_t newNumberOfParticles)</td></tr>
 <tr class="memdesc:af37a6bc3bdceee16bea27c5f1726bcc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resizes the number of particles of the container.  <a href="#af37a6bc3bdceee16bea27c5f1726bcc6">More...</a><br /></td></tr>
 <tr class="separator:af37a6bc3bdceee16bea27c5f1726bcc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e2f85fa3a50badda35209a8329ea7e6"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_particle_system_data3.html#a7e2f85fa3a50badda35209a8329ea7e6">NumberOfParticles</a> () const</td></tr>
-<tr class="memdesc:a7e2f85fa3a50badda35209a8329ea7e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of particles.  <a href="#a7e2f85fa3a50badda35209a8329ea7e6">More...</a><br /></td></tr>
-<tr class="separator:a7e2f85fa3a50badda35209a8329ea7e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad046a91059b1aba2ba1f52b9787dbd9f"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_particle_system_data3.html#ad046a91059b1aba2ba1f52b9787dbd9f">GetNumberOfParticles</a> () const</td></tr>
+<tr class="memdesc:ad046a91059b1aba2ba1f52b9787dbd9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of particles.  <a href="#ad046a91059b1aba2ba1f52b9787dbd9f">More...</a><br /></td></tr>
+<tr class="separator:ad046a91059b1aba2ba1f52b9787dbd9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87e5686d59ae5aa0c0fe899ffc111511"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_particle_system_data3.html#a87e5686d59ae5aa0c0fe899ffc111511">AddScalarData</a> (double initialVal=0.0)</td></tr>
 <tr class="memdesc:a87e5686d59ae5aa0c0fe899ffc111511"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a scalar data layer and returns its index.  <a href="#a87e5686d59ae5aa0c0fe899ffc111511">More...</a><br /></td></tr>
 <tr class="separator:a87e5686d59ae5aa0c0fe899ffc111511"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -186,9 +186,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2db7bffcb1f448a88e10f3b5868909f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_particle_system_data3.html#a2db7bffcb1f448a88e10f3b5868909f3">SetNeighborSearcher</a> (const <a class="el" href="namespace_cubby_flow.html#a0b0e44c31697d434e702214bd99c26e6">PointNeighborSearcher3Ptr</a> &amp;newNeighborSearcher)</td></tr>
 <tr class="memdesc:a2db7bffcb1f448a88e10f3b5868909f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets neighbor searcher.  <a href="#a2db7bffcb1f448a88e10f3b5868909f3">More...</a><br /></td></tr>
 <tr class="separator:a2db7bffcb1f448a88e10f3b5868909f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47f1c5bc33c7d2bdec8710c903bc8797"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::vector&lt; size_t &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_particle_system_data3.html#a47f1c5bc33c7d2bdec8710c903bc8797">NeighborLists</a> () const</td></tr>
-<tr class="memdesc:a47f1c5bc33c7d2bdec8710c903bc8797"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns neighbor lists.  <a href="#a47f1c5bc33c7d2bdec8710c903bc8797">More...</a><br /></td></tr>
-<tr class="separator:a47f1c5bc33c7d2bdec8710c903bc8797"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d84227e2f0d778080ef249d5529322a"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::vector&lt; size_t &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_particle_system_data3.html#a0d84227e2f0d778080ef249d5529322a">GetNeighborLists</a> () const</td></tr>
+<tr class="memdesc:a0d84227e2f0d778080ef249d5529322a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns neighbor lists.  <a href="#a0d84227e2f0d778080ef249d5529322a">More...</a><br /></td></tr>
+<tr class="separator:a0d84227e2f0d778080ef249d5529322a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad976b68b2e57278f653f82b232518cc4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_particle_system_data3.html#ad976b68b2e57278f653f82b232518cc4">BuildNeighborSearcher</a> (double maxSearchRadius)</td></tr>
 <tr class="memdesc:ad976b68b2e57278f653f82b232518cc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds neighbor searcher with given search radius.  <a href="#ad976b68b2e57278f653f82b232518cc4">More...</a><br /></td></tr>
 <tr class="separator:ad976b68b2e57278f653f82b232518cc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -646,6 +646,27 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a0d84227e2f0d778080ef249d5529322a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d84227e2f0d778080ef249d5529322a">&#9670;&nbsp;</a></span>GetNeighborLists()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt;std::vector&lt;size_t&gt; &gt;&amp; CubbyFlow::ParticleSystemData3::GetNeighborLists </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns neighbor lists. </p>
+<p>This function returns neighbor lists which is available after calling PointParallelHashGridSearcher3::BuildNeighborLists. Each list stores indices of the neighbors.</p>
+<dl class="section return"><dt>Returns</dt><dd>Neighbor lists. </dd></dl>
+
+</div>
+</div>
 <a id="a6552ff1cc03c9fc1fc5747b18f99f006"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6552ff1cc03c9fc1fc5747b18f99f006">&#9670;&nbsp;</a></span>GetNeighborSearcher()</h2>
 
@@ -664,6 +685,25 @@ Protected Member Functions</h2></td></tr>
 <p>Returns neighbor searcher. </p>
 <p>This function returns currently set neighbor searcher object. By default, <a class="el" href="class_cubby_flow_1_1_point_parallel_hash_grid_searcher3.html" title="Parallel version of hash grid-based 3-D point searcher. ">PointParallelHashGridSearcher3</a> is used.</p>
 <dl class="section return"><dt>Returns</dt><dd>Current neighbor searcher. </dd></dl>
+
+</div>
+</div>
+<a id="ad046a91059b1aba2ba1f52b9787dbd9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad046a91059b1aba2ba1f52b9787dbd9f">&#9670;&nbsp;</a></span>GetNumberOfParticles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t CubbyFlow::ParticleSystemData3::GetNumberOfParticles </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the number of particles. </p>
 
 </div>
 </div>
@@ -759,46 +799,6 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the velocity array (mutable). </p>
-
-</div>
-</div>
-<a id="a47f1c5bc33c7d2bdec8710c903bc8797"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a47f1c5bc33c7d2bdec8710c903bc8797">&#9670;&nbsp;</a></span>NeighborLists()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::vector&lt;std::vector&lt;size_t&gt; &gt;&amp; CubbyFlow::ParticleSystemData3::NeighborLists </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns neighbor lists. </p>
-<p>This function returns neighbor lists which is available after calling PointParallelHashGridSearcher3::BuildNeighborLists. Each list stores indices of the neighbors.</p>
-<dl class="section return"><dt>Returns</dt><dd>Neighbor lists. </dd></dl>
-
-</div>
-</div>
-<a id="a7e2f85fa3a50badda35209a8329ea7e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e2f85fa3a50badda35209a8329ea7e6">&#9670;&nbsp;</a></span>NumberOfParticles()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">size_t CubbyFlow::ParticleSystemData3::NumberOfParticles </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the number of particles. </p>
 
 </div>
 </div>
@@ -1098,7 +1098,7 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Particle/<a class="el" href="_particle_system_data3_8h_source.html">ParticleSystemData3.h</a></li>
+<li>Core/Particle/<a class="el" href="_particle_system_data3_8h_source.html">ParticleSystemData3.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.8-->
@@ -1109,7 +1109,7 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 25 2017 22:42:40 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 4 2018 16:17:10 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

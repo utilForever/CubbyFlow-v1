@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.68</a>
+                    <a class="navbar-brand">CubbyFlow v0.7</a>
                 </div>
             </div>
         </nav>
@@ -85,7 +85,7 @@ $(function() {
 <p>Abstract base class for 3-D scalar grid structure.  
  <a href="class_cubby_flow_1_1_scalar_grid3.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_scalar_grid3_8h_source.html">Grid/ScalarGrid3.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="_scalar_grid3_8h_source.html">Core/Grid/ScalarGrid3.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for CubbyFlow::ScalarGrid3:</div>
 <div class="dyncontent">
@@ -167,12 +167,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad8ebd85da65a7831310bd553f7863902"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_cubby_flow_1_1_grid3.html#a316f2114e7714ab43c7ed28873dbab10">DataPositionFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_scalar_grid3.html#ad8ebd85da65a7831310bd553f7863902">GetDataPosition</a> () const</td></tr>
 <tr class="memdesc:ad8ebd85da65a7831310bd553f7863902"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the function that maps data point to its position.  <a href="#ad8ebd85da65a7831310bd553f7863902">More...</a><br /></td></tr>
 <tr class="separator:ad8ebd85da65a7831310bd553f7863902"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72c7e42dea7135dc538051ac0bde54a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_scalar_grid3.html#a72c7e42dea7135dc538051ac0bde54a6">Fill</a> (double value)</td></tr>
-<tr class="memdesc:a72c7e42dea7135dc538051ac0bde54a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the grid with given value.  <a href="#a72c7e42dea7135dc538051ac0bde54a6">More...</a><br /></td></tr>
-<tr class="separator:a72c7e42dea7135dc538051ac0bde54a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21fda9092e3bf63a109cc84cdd55a8d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_scalar_grid3.html#a21fda9092e3bf63a109cc84cdd55a8d7">Fill</a> (const std::function&lt; double(const <a class="el" href="namespace_cubby_flow.html#a7a0f165a2c76a196c9e23978ff7f2dcb">Vector3D</a> &amp;)&gt; &amp;func)</td></tr>
-<tr class="memdesc:a21fda9092e3bf63a109cc84cdd55a8d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the grid with given position-to-value mapping function.  <a href="#a21fda9092e3bf63a109cc84cdd55a8d7">More...</a><br /></td></tr>
-<tr class="separator:a21fda9092e3bf63a109cc84cdd55a8d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a496069267b6345070ee6c6f3d8cbf2c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_scalar_grid3.html#a496069267b6345070ee6c6f3d8cbf2c7">Fill</a> (double value, <a class="el" href="namespace_cubby_flow.html#afca17441ed562aa8c59856e36c532101">ExecutionPolicy</a> policy=<a class="el" href="namespace_cubby_flow.html#afca17441ed562aa8c59856e36c532101a98402eecfbcefc336954458a01752131">ExecutionPolicy::Parallel</a>)</td></tr>
+<tr class="memdesc:a496069267b6345070ee6c6f3d8cbf2c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the grid with given value.  <a href="#a496069267b6345070ee6c6f3d8cbf2c7">More...</a><br /></td></tr>
+<tr class="separator:a496069267b6345070ee6c6f3d8cbf2c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb6e0ffbab3f778d2522ec6cf4b259f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_scalar_grid3.html#adb6e0ffbab3f778d2522ec6cf4b259f8">Fill</a> (const std::function&lt; double(const <a class="el" href="namespace_cubby_flow.html#a7a0f165a2c76a196c9e23978ff7f2dcb">Vector3D</a> &amp;)&gt; &amp;func, <a class="el" href="namespace_cubby_flow.html#afca17441ed562aa8c59856e36c532101">ExecutionPolicy</a> policy=<a class="el" href="namespace_cubby_flow.html#afca17441ed562aa8c59856e36c532101a5255d3daaa0a6276b844d61401e6f493">ExecutionPolicy::Serial</a>)</td></tr>
+<tr class="memdesc:adb6e0ffbab3f778d2522ec6cf4b259f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the grid with given position-to-value mapping function.  <a href="#adb6e0ffbab3f778d2522ec6cf4b259f8">More...</a><br /></td></tr>
+<tr class="separator:adb6e0ffbab3f778d2522ec6cf4b259f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6c40884c17ce9df1ff281962608f894"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_scalar_grid3.html#ae6c40884c17ce9df1ff281962608f894">ForEachDataPointIndex</a> (const std::function&lt; void(size_t, size_t, size_t)&gt; &amp;func) const</td></tr>
 <tr class="memdesc:ae6c40884c17ce9df1ff281962608f894"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invokes the given function <code>func</code> for each data point.  <a href="#ae6c40884c17ce9df1ff281962608f894">More...</a><br /></td></tr>
 <tr class="separator:ae6c40884c17ce9df1ff281962608f894"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -433,8 +433,8 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a72c7e42dea7135dc538051ac0bde54a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a72c7e42dea7135dc538051ac0bde54a6">&#9670;&nbsp;</a></span>Fill() <span class="overload">[1/2]</span></h2>
+<a id="a496069267b6345070ee6c6f3d8cbf2c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a496069267b6345070ee6c6f3d8cbf2c7">&#9670;&nbsp;</a></span>Fill() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -443,8 +443,18 @@ Protected Member Functions</h2></td></tr>
           <td class="memname">void CubbyFlow::ScalarGrid3::Fill </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="namespace_cubby_flow.html#afca17441ed562aa8c59856e36c532101">ExecutionPolicy</a>&#160;</td>
+          <td class="paramname"><em>policy</em> = <code><a class="el" href="namespace_cubby_flow.html#afca17441ed562aa8c59856e36c532101a98402eecfbcefc336954458a01752131">ExecutionPolicy::Parallel</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -453,8 +463,8 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a21fda9092e3bf63a109cc84cdd55a8d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21fda9092e3bf63a109cc84cdd55a8d7">&#9670;&nbsp;</a></span>Fill() <span class="overload">[2/2]</span></h2>
+<a id="adb6e0ffbab3f778d2522ec6cf4b259f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb6e0ffbab3f778d2522ec6cf4b259f8">&#9670;&nbsp;</a></span>Fill() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -463,8 +473,18 @@ Protected Member Functions</h2></td></tr>
           <td class="memname">void CubbyFlow::ScalarGrid3::Fill </td>
           <td>(</td>
           <td class="paramtype">const std::function&lt; double(const <a class="el" href="namespace_cubby_flow.html#a7a0f165a2c76a196c9e23978ff7f2dcb">Vector3D</a> &amp;)&gt; &amp;&#160;</td>
-          <td class="paramname"><em>func</em></td><td>)</td>
+          <td class="paramname"><em>func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="namespace_cubby_flow.html#afca17441ed562aa8c59856e36c532101">ExecutionPolicy</a>&#160;</td>
+          <td class="paramname"><em>policy</em> = <code><a class="el" href="namespace_cubby_flow.html#afca17441ed562aa8c59856e36c532101a5255d3daaa0a6276b844d61401e6f493">ExecutionPolicy::Serial</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1248,7 +1268,7 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Grid/<a class="el" href="_scalar_grid3_8h_source.html">ScalarGrid3.h</a></li>
+<li>Core/Grid/<a class="el" href="_scalar_grid3_8h_source.html">ScalarGrid3.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.8-->
@@ -1259,7 +1279,7 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 25 2017 22:42:43 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 4 2018 16:17:14 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

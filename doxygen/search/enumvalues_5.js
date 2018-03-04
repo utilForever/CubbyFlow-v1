@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['serial',['Serial',['../namespace_cubby_flow.html#afca17441ed562aa8c59856e36c532101a5255d3daaa0a6276b844d61401e6f493',1,'CubbyFlow']]]
+  ['off',['Off',['../namespace_cubby_flow.html#a38dc4ab8c46da6790b186ba0c84d86c8ad15305d7a4e34e02489c74a5ef542f36',1,'CubbyFlow']]]
 ];

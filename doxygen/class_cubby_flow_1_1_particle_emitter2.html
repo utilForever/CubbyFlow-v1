@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.68</a>
+                    <a class="navbar-brand">CubbyFlow v0.7</a>
                 </div>
             </div>
         </nav>
@@ -85,7 +85,7 @@ $(function() {
 <p>Abstract base class for 2-D particle emitter.  
  <a href="class_cubby_flow_1_1_particle_emitter2.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_particle_emitter2_8h_source.html">Emitter/ParticleEmitter2.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="_particle_emitter2_8h_source.html">Core/Emitter/ParticleEmitter2.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for CubbyFlow::ParticleEmitter2:</div>
 <div class="dyncontent">
@@ -114,9 +114,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:acd9c2b47da80810fdba552be6d13a923"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a089cbc3b69bb7aa8bfe6700a146b5060"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_particle_emitter2.html#a089cbc3b69bb7aa8bfe6700a146b5060">Update</a> (double currentTimeInSeconds, double timeIntervalInSeconds)</td></tr>
 <tr class="separator:a089cbc3b69bb7aa8bfe6700a146b5060"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e0ac4cf9405eabe705a369a44939b1b"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespace_cubby_flow.html#aae383dec28ff7fa695942e909131deb2">ParticleSystemData2Ptr</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_particle_emitter2.html#a9e0ac4cf9405eabe705a369a44939b1b">Target</a> () const</td></tr>
-<tr class="memdesc:a9e0ac4cf9405eabe705a369a44939b1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the target particle system to emit.  <a href="#a9e0ac4cf9405eabe705a369a44939b1b">More...</a><br /></td></tr>
-<tr class="separator:a9e0ac4cf9405eabe705a369a44939b1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac971be52bb547e9798e5cbbb894cb0e3"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespace_cubby_flow.html#aae383dec28ff7fa695942e909131deb2">ParticleSystemData2Ptr</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_particle_emitter2.html#ac971be52bb547e9798e5cbbb894cb0e3">GetTarget</a> () const</td></tr>
+<tr class="memdesc:ac971be52bb547e9798e5cbbb894cb0e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the target particle system to emit.  <a href="#ac971be52bb547e9798e5cbbb894cb0e3">More...</a><br /></td></tr>
+<tr class="separator:ac971be52bb547e9798e5cbbb894cb0e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d1c549d9ac61413f8562017d6fee8b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_particle_emitter2.html#a7d1c549d9ac61413f8562017d6fee8b0">SetTarget</a> (const <a class="el" href="namespace_cubby_flow.html#aae383dec28ff7fa695942e909131deb2">ParticleSystemData2Ptr</a> &amp;particles)</td></tr>
 <tr class="memdesc:a7d1c549d9ac61413f8562017d6fee8b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the target particle system to emit.  <a href="#a7d1c549d9ac61413f8562017d6fee8b0">More...</a><br /></td></tr>
 <tr class="separator:a7d1c549d9ac61413f8562017d6fee8b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -201,6 +201,25 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ac971be52bb547e9798e5cbbb894cb0e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac971be52bb547e9798e5cbbb894cb0e3">&#9670;&nbsp;</a></span>GetTarget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespace_cubby_flow.html#aae383dec28ff7fa695942e909131deb2">ParticleSystemData2Ptr</a>&amp; CubbyFlow::ParticleEmitter2::GetTarget </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the target particle system to emit. </p>
+
+</div>
+</div>
 <a id="a288a0e5b4c40e94a8998501dfc09eb69"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a288a0e5b4c40e94a8998501dfc09eb69">&#9670;&nbsp;</a></span>OnSetTarget()</h2>
 
@@ -314,25 +333,6 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a9e0ac4cf9405eabe705a369a44939b1b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e0ac4cf9405eabe705a369a44939b1b">&#9670;&nbsp;</a></span>Target()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="namespace_cubby_flow.html#aae383dec28ff7fa695942e909131deb2">ParticleSystemData2Ptr</a>&amp; CubbyFlow::ParticleEmitter2::Target </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the target particle system to emit. </p>
-
-</div>
-</div>
 <a id="a089cbc3b69bb7aa8bfe6700a146b5060"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a089cbc3b69bb7aa8bfe6700a146b5060">&#9670;&nbsp;</a></span>Update()</h2>
 
@@ -363,7 +363,7 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Emitter/<a class="el" href="_particle_emitter2_8h_source.html">ParticleEmitter2.h</a></li>
+<li>Core/Emitter/<a class="el" href="_particle_emitter2_8h_source.html">ParticleEmitter2.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.8-->
@@ -374,7 +374,7 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 25 2017 22:42:40 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 4 2018 16:17:10 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

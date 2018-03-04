@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.68</a>
+                    <a class="navbar-brand">CubbyFlow v0.7</a>
                 </div>
             </div>
         </nav>
@@ -85,7 +85,7 @@ $(function() {
 <p>2-D Cell-centered scalar grid structure.  
  <a href="class_cubby_flow_1_1_cell_centered_scalar_grid2.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_cell_centered_scalar_grid2_8h_source.html">Grid/CellCenteredScalarGrid2.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="_cell_centered_scalar_grid2_8h_source.html">Core/Grid/CellCenteredScalarGrid2.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for CubbyFlow::CellCenteredScalarGrid2:</div>
 <div class="dyncontent">
@@ -178,12 +178,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:acbaa6661b7955b070931968f3f221418 inherit pub_methods_class_cubby_flow_1_1_scalar_grid2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_cubby_flow_1_1_grid2.html#ad02c267f3b24fe2de73ff3f6058f8629">DataPositionFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_scalar_grid2.html#acbaa6661b7955b070931968f3f221418">GetDataPosition</a> () const</td></tr>
 <tr class="memdesc:acbaa6661b7955b070931968f3f221418 inherit pub_methods_class_cubby_flow_1_1_scalar_grid2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the function that maps data point to its position.  <a href="class_cubby_flow_1_1_scalar_grid2.html#acbaa6661b7955b070931968f3f221418">More...</a><br /></td></tr>
 <tr class="separator:acbaa6661b7955b070931968f3f221418 inherit pub_methods_class_cubby_flow_1_1_scalar_grid2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9535c94a1fe3584118446ecc2f3db0be inherit pub_methods_class_cubby_flow_1_1_scalar_grid2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_scalar_grid2.html#a9535c94a1fe3584118446ecc2f3db0be">Fill</a> (double value)</td></tr>
-<tr class="memdesc:a9535c94a1fe3584118446ecc2f3db0be inherit pub_methods_class_cubby_flow_1_1_scalar_grid2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the grid with given value.  <a href="class_cubby_flow_1_1_scalar_grid2.html#a9535c94a1fe3584118446ecc2f3db0be">More...</a><br /></td></tr>
-<tr class="separator:a9535c94a1fe3584118446ecc2f3db0be inherit pub_methods_class_cubby_flow_1_1_scalar_grid2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed995bcef4de2a17b8418a911f0602e5 inherit pub_methods_class_cubby_flow_1_1_scalar_grid2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_scalar_grid2.html#aed995bcef4de2a17b8418a911f0602e5">Fill</a> (const std::function&lt; double(const <a class="el" href="namespace_cubby_flow.html#a4db57ff3bc35d170bda4f85afce858cc">Vector2D</a> &amp;)&gt; &amp;func)</td></tr>
-<tr class="memdesc:aed995bcef4de2a17b8418a911f0602e5 inherit pub_methods_class_cubby_flow_1_1_scalar_grid2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the grid with given position-to-value mapping function.  <a href="class_cubby_flow_1_1_scalar_grid2.html#aed995bcef4de2a17b8418a911f0602e5">More...</a><br /></td></tr>
-<tr class="separator:aed995bcef4de2a17b8418a911f0602e5 inherit pub_methods_class_cubby_flow_1_1_scalar_grid2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf89ef738e1e0f4aefe2e24ba2c98b74 inherit pub_methods_class_cubby_flow_1_1_scalar_grid2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_scalar_grid2.html#abf89ef738e1e0f4aefe2e24ba2c98b74">Fill</a> (double value, <a class="el" href="namespace_cubby_flow.html#afca17441ed562aa8c59856e36c532101">ExecutionPolicy</a> policy=<a class="el" href="namespace_cubby_flow.html#afca17441ed562aa8c59856e36c532101a98402eecfbcefc336954458a01752131">ExecutionPolicy::Parallel</a>)</td></tr>
+<tr class="memdesc:abf89ef738e1e0f4aefe2e24ba2c98b74 inherit pub_methods_class_cubby_flow_1_1_scalar_grid2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the grid with given value.  <a href="class_cubby_flow_1_1_scalar_grid2.html#abf89ef738e1e0f4aefe2e24ba2c98b74">More...</a><br /></td></tr>
+<tr class="separator:abf89ef738e1e0f4aefe2e24ba2c98b74 inherit pub_methods_class_cubby_flow_1_1_scalar_grid2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84679ecb435d2c936a7fb42993daead0 inherit pub_methods_class_cubby_flow_1_1_scalar_grid2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_scalar_grid2.html#a84679ecb435d2c936a7fb42993daead0">Fill</a> (const std::function&lt; double(const <a class="el" href="namespace_cubby_flow.html#a4db57ff3bc35d170bda4f85afce858cc">Vector2D</a> &amp;)&gt; &amp;func, <a class="el" href="namespace_cubby_flow.html#afca17441ed562aa8c59856e36c532101">ExecutionPolicy</a> policy=<a class="el" href="namespace_cubby_flow.html#afca17441ed562aa8c59856e36c532101a98402eecfbcefc336954458a01752131">ExecutionPolicy::Parallel</a>)</td></tr>
+<tr class="memdesc:a84679ecb435d2c936a7fb42993daead0 inherit pub_methods_class_cubby_flow_1_1_scalar_grid2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the grid with given position-to-value mapping function.  <a href="class_cubby_flow_1_1_scalar_grid2.html#a84679ecb435d2c936a7fb42993daead0">More...</a><br /></td></tr>
+<tr class="separator:a84679ecb435d2c936a7fb42993daead0 inherit pub_methods_class_cubby_flow_1_1_scalar_grid2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1d7f4f22150f773dc800dddad6dc316 inherit pub_methods_class_cubby_flow_1_1_scalar_grid2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_scalar_grid2.html#aa1d7f4f22150f773dc800dddad6dc316">ForEachDataPointIndex</a> (const std::function&lt; void(size_t, size_t)&gt; &amp;func) const</td></tr>
 <tr class="memdesc:aa1d7f4f22150f773dc800dddad6dc316 inherit pub_methods_class_cubby_flow_1_1_scalar_grid2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invokes the given function <code>func</code> for each data point.  <a href="class_cubby_flow_1_1_scalar_grid2.html#aa1d7f4f22150f773dc800dddad6dc316">More...</a><br /></td></tr>
 <tr class="separator:aa1d7f4f22150f773dc800dddad6dc316 inherit pub_methods_class_cubby_flow_1_1_scalar_grid2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -627,7 +627,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Grid/<a class="el" href="_cell_centered_scalar_grid2_8h_source.html">CellCenteredScalarGrid2.h</a></li>
+<li>Core/Grid/<a class="el" href="_cell_centered_scalar_grid2_8h_source.html">CellCenteredScalarGrid2.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.8-->
@@ -638,7 +638,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 25 2017 22:42:32 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 4 2018 16:16:59 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

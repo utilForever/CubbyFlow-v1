@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.68</a>
+                    <a class="navbar-brand">CubbyFlow v0.7</a>
                 </div>
             </div>
         </nav>
@@ -87,7 +87,7 @@ $(function() {
 <p>3-D triangle mesh geometry.  
  <a href="class_cubby_flow_1_1_triangle_mesh3.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_triangle_mesh3_8h_source.html">Geometry/TriangleMesh3.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="_triangle_mesh3_8h_source.html">Core/Geometry/TriangleMesh3.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for CubbyFlow::TriangleMesh3:</div>
 <div class="dyncontent">
@@ -124,9 +124,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a92a24210a50fafb4873f00bbff6f976c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_triangle_mesh3.html#a92a24210a50fafb4873f00bbff6f976c">TriangleMesh3</a> (const <a class="el" href="class_cubby_flow_1_1_transform3.html">Transform3</a> &amp;<a class="el" href="class_cubby_flow_1_1_surface3.html#a6f2cfd388bb62b2c6ae3ea35cec4a03e">transform</a>=<a class="el" href="class_cubby_flow_1_1_transform3.html">Transform3</a>(), bool <a class="el" href="class_cubby_flow_1_1_surface3.html#a72d33029c181964ddf2f46df0faa2b59">isNormalFlipped</a>=false)</td></tr>
 <tr class="memdesc:a92a24210a50fafb4873f00bbff6f976c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="#a92a24210a50fafb4873f00bbff6f976c">More...</a><br /></td></tr>
 <tr class="separator:a92a24210a50fafb4873f00bbff6f976c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc3211682dd02a071f01e421f6c70504"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_triangle_mesh3.html#abc3211682dd02a071f01e421f6c70504">TriangleMesh3</a> (const <a class="el" href="class_cubby_flow_1_1_triangle_mesh3.html#a6887a9808f10d70082d9a0b6de33dd13">PointArray</a> &amp;points, const <a class="el" href="class_cubby_flow_1_1_triangle_mesh3.html#a10529430663a9adfb0f672f1d50ce0be">NormalArray</a> &amp;normals, const <a class="el" href="class_cubby_flow_1_1_triangle_mesh3.html#a6a7ae27be079f43b24aa3a17ced6509c">UVArray</a> &amp;uvs, const <a class="el" href="class_cubby_flow_1_1_triangle_mesh3.html#ad254d5daf244d3bc245237d9bc26bd48">IndexArray</a> &amp;pointIndices, const <a class="el" href="class_cubby_flow_1_1_triangle_mesh3.html#ad254d5daf244d3bc245237d9bc26bd48">IndexArray</a> &amp;normalIndices, const <a class="el" href="class_cubby_flow_1_1_triangle_mesh3.html#ad254d5daf244d3bc245237d9bc26bd48">IndexArray</a> &amp;uvIndices, const <a class="el" href="class_cubby_flow_1_1_transform3.html">Transform3</a> &amp;transform_=<a class="el" href="class_cubby_flow_1_1_transform3.html">Transform3</a>(), bool <a class="el" href="class_cubby_flow_1_1_surface3.html#a72d33029c181964ddf2f46df0faa2b59">isNormalFlipped</a>=false)</td></tr>
-<tr class="memdesc:abc3211682dd02a071f01e421f6c70504"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs mesh with points, normals, uvs, and their indices.  <a href="#abc3211682dd02a071f01e421f6c70504">More...</a><br /></td></tr>
-<tr class="separator:abc3211682dd02a071f01e421f6c70504"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99553b65092ed1f886ce2fa2483ae4d1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_triangle_mesh3.html#a99553b65092ed1f886ce2fa2483ae4d1">TriangleMesh3</a> (const <a class="el" href="class_cubby_flow_1_1_triangle_mesh3.html#a6887a9808f10d70082d9a0b6de33dd13">PointArray</a> &amp;points, const <a class="el" href="class_cubby_flow_1_1_triangle_mesh3.html#a10529430663a9adfb0f672f1d50ce0be">NormalArray</a> &amp;normals, const <a class="el" href="class_cubby_flow_1_1_triangle_mesh3.html#a6a7ae27be079f43b24aa3a17ced6509c">UVArray</a> &amp;uvs, const <a class="el" href="class_cubby_flow_1_1_triangle_mesh3.html#ad254d5daf244d3bc245237d9bc26bd48">IndexArray</a> &amp;pointIndices, const <a class="el" href="class_cubby_flow_1_1_triangle_mesh3.html#ad254d5daf244d3bc245237d9bc26bd48">IndexArray</a> &amp;normalIndices, const <a class="el" href="class_cubby_flow_1_1_triangle_mesh3.html#ad254d5daf244d3bc245237d9bc26bd48">IndexArray</a> &amp;uvIndices, const <a class="el" href="class_cubby_flow_1_1_transform3.html">Transform3</a> &amp;transform_=<a class="el" href="class_cubby_flow_1_1_transform3.html">Transform3</a>(), bool isNormalFlipped_=false)</td></tr>
+<tr class="memdesc:a99553b65092ed1f886ce2fa2483ae4d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs mesh with points, normals, uvs, and their indices.  <a href="#a99553b65092ed1f886ce2fa2483ae4d1">More...</a><br /></td></tr>
+<tr class="separator:a99553b65092ed1f886ce2fa2483ae4d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af2ea21e6c3a59268c257398cd5ed59c9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_triangle_mesh3.html#af2ea21e6c3a59268c257398cd5ed59c9">TriangleMesh3</a> (const <a class="el" href="class_cubby_flow_1_1_triangle_mesh3.html">TriangleMesh3</a> &amp;other)</td></tr>
 <tr class="memdesc:af2ea21e6c3a59268c257398cd5ed59c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor.  <a href="#af2ea21e6c3a59268c257398cd5ed59c9">More...</a><br /></td></tr>
 <tr class="separator:af2ea21e6c3a59268c257398cd5ed59c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -244,12 +244,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a60b882c39cec92bf2dd790908090e2a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_triangle_mesh3.html#a60b882c39cec92bf2dd790908090e2a4">Rotate</a> (const <a class="el" href="namespace_cubby_flow.html#afde25bbbacb3ff035a5e6df8d7d0b363">QuaternionD</a> &amp;q)</td></tr>
 <tr class="memdesc:a60b882c39cec92bf2dd790908090e2a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotates the mesh.  <a href="#a60b882c39cec92bf2dd790908090e2a4">More...</a><br /></td></tr>
 <tr class="separator:a60b882c39cec92bf2dd790908090e2a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e26198116094b06719fcf958dd60940"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_triangle_mesh3.html#a3e26198116094b06719fcf958dd60940">WriteObj</a> (std::ostream *strm) const</td></tr>
-<tr class="memdesc:a3e26198116094b06719fcf958dd60940"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the mesh in obj format to the output stream.  <a href="#a3e26198116094b06719fcf958dd60940">More...</a><br /></td></tr>
-<tr class="separator:a3e26198116094b06719fcf958dd60940"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1001b8481bc365fabe9755530a87041"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_triangle_mesh3.html#af1001b8481bc365fabe9755530a87041">ReadObj</a> (std::istream *strm)</td></tr>
-<tr class="memdesc:af1001b8481bc365fabe9755530a87041"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the mesh in obj format from the input stream.  <a href="#af1001b8481bc365fabe9755530a87041">More...</a><br /></td></tr>
-<tr class="separator:af1001b8481bc365fabe9755530a87041"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12d22f21e017a8803a43d0f2b8ce9b51"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_triangle_mesh3.html#a12d22f21e017a8803a43d0f2b8ce9b51">WriteObj</a> (std::ostream *stream) const</td></tr>
+<tr class="memdesc:a12d22f21e017a8803a43d0f2b8ce9b51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the mesh in obj format to the output stream.  <a href="#a12d22f21e017a8803a43d0f2b8ce9b51">More...</a><br /></td></tr>
+<tr class="separator:a12d22f21e017a8803a43d0f2b8ce9b51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a777c4d066e050341e1918a2da9289774"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_triangle_mesh3.html#a777c4d066e050341e1918a2da9289774">WriteObj</a> (const std::string &amp;fileName) const</td></tr>
+<tr class="memdesc:a777c4d066e050341e1918a2da9289774"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the mesh in obj format to the file.  <a href="#a777c4d066e050341e1918a2da9289774">More...</a><br /></td></tr>
+<tr class="separator:a777c4d066e050341e1918a2da9289774"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f25a52da09b1caee07887d1799d3bc2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_triangle_mesh3.html#a2f25a52da09b1caee07887d1799d3bc2">ReadObj</a> (std::istream *stream)</td></tr>
+<tr class="memdesc:a2f25a52da09b1caee07887d1799d3bc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the mesh in obj format from the input stream.  <a href="#a2f25a52da09b1caee07887d1799d3bc2">More...</a><br /></td></tr>
+<tr class="separator:a2f25a52da09b1caee07887d1799d3bc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e2473e182ffa06dfb2385654da5aebf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_triangle_mesh3.html#a5e2473e182ffa06dfb2385654da5aebf">ReadObj</a> (const std::string &amp;fileName)</td></tr>
+<tr class="memdesc:a5e2473e182ffa06dfb2385654da5aebf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the mesh in obj format from the file.  <a href="#a5e2473e182ffa06dfb2385654da5aebf">More...</a><br /></td></tr>
+<tr class="separator:a5e2473e182ffa06dfb2385654da5aebf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4eebc330c426a1b250b65797ee8d9b84"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_cubby_flow_1_1_triangle_mesh3.html">TriangleMesh3</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_triangle_mesh3.html#a4eebc330c426a1b250b65797ee8d9b84">operator=</a> (const <a class="el" href="class_cubby_flow_1_1_triangle_mesh3.html">TriangleMesh3</a> &amp;other)</td></tr>
 <tr class="memdesc:a4eebc330c426a1b250b65797ee8d9b84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies <code>other</code> mesh.  <a href="#a4eebc330c426a1b250b65797ee8d9b84">More...</a><br /></td></tr>
 <tr class="separator:a4eebc330c426a1b250b65797ee8d9b84"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -432,8 +438,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="abc3211682dd02a071f01e421f6c70504"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc3211682dd02a071f01e421f6c70504">&#9670;&nbsp;</a></span>TriangleMesh3() <span class="overload">[2/3]</span></h2>
+<a id="a99553b65092ed1f886ce2fa2483ae4d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99553b65092ed1f886ce2fa2483ae4d1">&#9670;&nbsp;</a></span>TriangleMesh3() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -484,7 +490,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>isNormalFlipped</em> = <code>false</code>&#160;</td>
+          <td class="paramname"><em>isNormalFlipped_</em> = <code>false</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1249,8 +1255,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="af1001b8481bc365fabe9755530a87041"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af1001b8481bc365fabe9755530a87041">&#9670;&nbsp;</a></span>ReadObj()</h2>
+<a id="a2f25a52da09b1caee07887d1799d3bc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f25a52da09b1caee07887d1799d3bc2">&#9670;&nbsp;</a></span>ReadObj() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1259,13 +1265,33 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">bool CubbyFlow::TriangleMesh3::ReadObj </td>
           <td>(</td>
           <td class="paramtype">std::istream *&#160;</td>
-          <td class="paramname"><em>strm</em></td><td>)</td>
+          <td class="paramname"><em>stream</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Reads the mesh in obj format from the input stream. </p>
+
+</div>
+</div>
+<a id="a5e2473e182ffa06dfb2385654da5aebf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e2473e182ffa06dfb2385654da5aebf">&#9670;&nbsp;</a></span>ReadObj() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CubbyFlow::TriangleMesh3::ReadObj </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fileName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reads the mesh in obj format from the file. </p>
 
 </div>
 </div>
@@ -1555,8 +1581,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a3e26198116094b06719fcf958dd60940"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e26198116094b06719fcf958dd60940">&#9670;&nbsp;</a></span>WriteObj()</h2>
+<a id="a12d22f21e017a8803a43d0f2b8ce9b51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12d22f21e017a8803a43d0f2b8ce9b51">&#9670;&nbsp;</a></span>WriteObj() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1565,7 +1591,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">void CubbyFlow::TriangleMesh3::WriteObj </td>
           <td>(</td>
           <td class="paramtype">std::ostream *&#160;</td>
-          <td class="paramname"><em>strm</em></td><td>)</td>
+          <td class="paramname"><em>stream</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -1575,8 +1601,28 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a777c4d066e050341e1918a2da9289774"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a777c4d066e050341e1918a2da9289774">&#9670;&nbsp;</a></span>WriteObj() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CubbyFlow::TriangleMesh3::WriteObj </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fileName</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Writes the mesh in obj format to the file. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Geometry/<a class="el" href="_triangle_mesh3_8h_source.html">TriangleMesh3.h</a></li>
+<li>Core/Geometry/<a class="el" href="_triangle_mesh3_8h_source.html">TriangleMesh3.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.8-->
@@ -1587,7 +1633,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 25 2017 22:42:44 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 4 2018 16:17:17 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

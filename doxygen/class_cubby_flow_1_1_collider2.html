@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">CubbyFlow v0.68</a>
+                    <a class="navbar-brand">CubbyFlow v0.7</a>
                 </div>
             </div>
         </nav>
@@ -86,7 +86,7 @@ $(function() {
 <p>Abstract base class for generic collider object.  
  <a href="class_cubby_flow_1_1_collider2.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_collider2_8h_source.html">Collider/Collider2.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="_collider2_8h_source.html">Core/Collider/Collider2.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for CubbyFlow::Collider2:</div>
 <div class="dyncontent">
@@ -123,15 +123,15 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a10f6584362652707685b61a0fe3277d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd6f74fc7beedfee8e8ac61e5968bd95"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_collider2.html#acd6f74fc7beedfee8e8ac61e5968bd95">ResolveCollision</a> (double radius, double restitutionCoefficient, <a class="el" href="namespace_cubby_flow.html#a4db57ff3bc35d170bda4f85afce858cc">Vector2D</a> *position, <a class="el" href="namespace_cubby_flow.html#a4db57ff3bc35d170bda4f85afce858cc">Vector2D</a> *velocity)</td></tr>
 <tr class="separator:acd6f74fc7beedfee8e8ac61e5968bd95"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b8fda74b3cfbeae45b209898a819030"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_collider2.html#a1b8fda74b3cfbeae45b209898a819030">FrictionCoefficient</a> () const</td></tr>
-<tr class="memdesc:a1b8fda74b3cfbeae45b209898a819030"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns friction coefficient.  <a href="#a1b8fda74b3cfbeae45b209898a819030">More...</a><br /></td></tr>
-<tr class="separator:a1b8fda74b3cfbeae45b209898a819030"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab93f7be0d6381b5b027a8334fa682abe"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_collider2.html#ab93f7be0d6381b5b027a8334fa682abe">GetFrictionCoefficient</a> () const</td></tr>
+<tr class="memdesc:ab93f7be0d6381b5b027a8334fa682abe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns friction coefficient.  <a href="#ab93f7be0d6381b5b027a8334fa682abe">More...</a><br /></td></tr>
+<tr class="separator:ab93f7be0d6381b5b027a8334fa682abe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40866a724fb3dc5d9837a9cdf95333dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_collider2.html#a40866a724fb3dc5d9837a9cdf95333dd">SetFrictionCoefficient</a> (double newFrictionCoeffient)</td></tr>
 <tr class="memdesc:a40866a724fb3dc5d9837a9cdf95333dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the friction coefficient.  <a href="#a40866a724fb3dc5d9837a9cdf95333dd">More...</a><br /></td></tr>
 <tr class="separator:a40866a724fb3dc5d9837a9cdf95333dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b0d91bf00c3ae6dac81fe8e577553cf"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespace_cubby_flow.html#a7fef7b5ca2d8284c3f45e7573d7e5d84">Surface2Ptr</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_collider2.html#a6b0d91bf00c3ae6dac81fe8e577553cf">Surface</a> () const</td></tr>
-<tr class="memdesc:a6b0d91bf00c3ae6dac81fe8e577553cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the surface instance.  <a href="#a6b0d91bf00c3ae6dac81fe8e577553cf">More...</a><br /></td></tr>
-<tr class="separator:a6b0d91bf00c3ae6dac81fe8e577553cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2216641d5f146ad8f215608409c08d33"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespace_cubby_flow.html#a7fef7b5ca2d8284c3f45e7573d7e5d84">Surface2Ptr</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_collider2.html#a2216641d5f146ad8f215608409c08d33">GetSurface</a> () const</td></tr>
+<tr class="memdesc:a2216641d5f146ad8f215608409c08d33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the surface instance.  <a href="#a2216641d5f146ad8f215608409c08d33">More...</a><br /></td></tr>
+<tr class="separator:a2216641d5f146ad8f215608409c08d33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e06bc2d6b2b2d882756c9d481ff35b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cubby_flow_1_1_collider2.html#a6e06bc2d6b2b2d882756c9d481ff35b3">Update</a> (double currentTimeInSeconds, double timeIntervalInSeconds)</td></tr>
 <tr class="memdesc:a6e06bc2d6b2b2d882756c9d481ff35b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the collider state.  <a href="#a6e06bc2d6b2b2d882756c9d481ff35b3">More...</a><br /></td></tr>
 <tr class="separator:a6e06bc2d6b2b2d882756c9d481ff35b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -220,25 +220,6 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a1b8fda74b3cfbeae45b209898a819030"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1b8fda74b3cfbeae45b209898a819030">&#9670;&nbsp;</a></span>FrictionCoefficient()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double CubbyFlow::Collider2::FrictionCoefficient </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns friction coefficient. </p>
-
-</div>
-</div>
 <a id="ac2f48b4628e85818f85a90f0b174eb0c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac2f48b4628e85818f85a90f0b174eb0c">&#9670;&nbsp;</a></span>GetClosestPoint()</h2>
 
@@ -280,6 +261,44 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Outputs closest point's information. </p>
+
+</div>
+</div>
+<a id="ab93f7be0d6381b5b027a8334fa682abe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab93f7be0d6381b5b027a8334fa682abe">&#9670;&nbsp;</a></span>GetFrictionCoefficient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double CubbyFlow::Collider2::GetFrictionCoefficient </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns friction coefficient. </p>
+
+</div>
+</div>
+<a id="a2216641d5f146ad8f215608409c08d33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2216641d5f146ad8f215608409c08d33">&#9670;&nbsp;</a></span>GetSurface()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespace_cubby_flow.html#a7fef7b5ca2d8284c3f45e7573d7e5d84">Surface2Ptr</a>&amp; CubbyFlow::Collider2::GetSurface </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the surface instance. </p>
 
 </div>
 </div>
@@ -453,25 +472,6 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a6b0d91bf00c3ae6dac81fe8e577553cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6b0d91bf00c3ae6dac81fe8e577553cf">&#9670;&nbsp;</a></span>Surface()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="namespace_cubby_flow.html#a7fef7b5ca2d8284c3f45e7573d7e5d84">Surface2Ptr</a>&amp; CubbyFlow::Collider2::Surface </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the surface instance. </p>
-
-</div>
-</div>
 <a id="a6e06bc2d6b2b2d882756c9d481ff35b3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6e06bc2d6b2b2d882756c9d481ff35b3">&#9670;&nbsp;</a></span>Update()</h2>
 
@@ -533,7 +533,7 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Collider/<a class="el" href="_collider2_8h_source.html">Collider2.h</a></li>
+<li>Core/Collider/<a class="el" href="_collider2_8h_source.html">Collider2.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.8-->
@@ -544,7 +544,7 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 25 2017 22:42:33 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 4 2018 16:17:00 for CubbyFlow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>
