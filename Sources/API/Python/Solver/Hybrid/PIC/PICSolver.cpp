@@ -42,7 +42,7 @@ void AddPICSolver2(pybind11::module& m)
 				- gridSpacing : Grid spacing.
 				- gridOrigin : Origin point ot the grid.
 				- domainSizeX : Domain size in x-direction.
-			)pbdoc")
+		)pbdoc")
 	.def_property_readonly("particleSystemData", &PICSolver2::GetParticleSystemData,
 		R"pbdoc(
 			Returns particleSystemData.
@@ -80,7 +80,7 @@ void AddPICSolver3(pybind11::module& m)
 				- gridSpacing : Grid spacing.
 				- gridOrigin : Origin point ot the grid.
 				- domainSizeX : Domain size in x-direction.
-			)pbdoc")
+		)pbdoc")
 	.def_property_readonly("particleSystemData", &PICSolver3::GetParticleSystemData,
 		R"pbdoc(
 			Returns particleSystemData.
