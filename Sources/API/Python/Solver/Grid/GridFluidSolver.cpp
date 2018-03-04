@@ -105,7 +105,7 @@ void AddGridFluidSolver2(pybind11::module& m)
 				- gridOrigin : Origin point at the grid.
 				- domainSizeX : Domain size in x-direction.
 		)pbdoc")
-	.def_property_readonly("resolution", &GridFluidSolver2::GetGridResolution,
+	.def_property_readonly("resolution", &GridFluidSolver2::GetResolution,
 		R"pbdoc(
 			The resolution of the grid system data.
 
@@ -174,7 +174,7 @@ void AddGridFluidSolver3(pybind11::module& m)
 			user wants to change the advection solver to her/his own implementation,
 			simply call setAdvectionSolver(newSolver).
 		)pbdoc")
-		.def_property("gravity", &GridFluidSolver3::GetGravity, [](GridFluidSolver3& instance, pybind11::object obj)
+	.def_property("gravity", &GridFluidSolver3::GetGravity, [](GridFluidSolver3& instance, pybind11::object obj)
 	{
 		instance.SetGravity(ObjectToVector3D(obj));
 	},
@@ -250,7 +250,7 @@ void AddGridFluidSolver3(pybind11::module& m)
 				- gridOrigin : Origin point at the grid.
 				- domainSizeX : Domain size in x-direction.
 		)pbdoc")
-	.def_property_readonly("resolution", &GridFluidSolver3::GetGridResolution,
+	.def_property_readonly("resolution", &GridFluidSolver3::GetResolution,
 		R"pbdoc(
 			The resolution of the grid system data.
 
