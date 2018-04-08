@@ -8,9 +8,9 @@
 *************************************************************************/
 #include <Core/Utils/Parallel.h>
 
-#include <thread>
+#include <boost/thread.hpp>
 
-static unsigned int MAX_NUMBER_OF_THREADS = std::thread::hardware_concurrency();
+static unsigned int MAX_NUMBER_OF_THREADS = boost::thread::hardware_concurrency();
 
 namespace CubbyFlow
 {
