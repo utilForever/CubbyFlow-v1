@@ -12,16 +12,17 @@ namespace CubbyFlowSharp.CLI
         {
             string path = Directory.GetCurrentDirectory();
             string includePath = System.IO.Path.Combine(path, @"../../../../../Includes");
+            string boostIncludePath = System.IO.Path.Combine(path, @"../../../../../Libraries/boost");
 
             var driverOptions = driver.Options;
             driverOptions.GeneratorKind = GeneratorKind.CLI;
 
             var parserOptions = driver.ParserOptions;
-            parserOptions.AddArguments("-fexceptions");
             parserOptions.EnableRTTI = true;
 
             var module = driverOptions.AddModule("CubbyFlowSharp");
             module.IncludeDirs.Add(includePath);
+            module.IncludeDirs.Add(boostIncludePath);
 
             module.Headers.Add("Core/Animation/Animation.h");
             module.Headers.Add("Core/Animation/Frame.h");
