@@ -267,3 +267,6 @@ pyCubbyFlow.egg-info/
 ## CppDepend files
 CppDependOut/
 *.cdproj
+
+## Boost libraries
+Libraries/boost/
