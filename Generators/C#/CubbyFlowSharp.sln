@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CubbyFlowSharp.CLI", "Cubby
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CubbyFlowSharp.Wrapper", "CubbyFlowSharp.Wrapper\CubbyFlowSharp.Wrapper.vcxproj", "{1DC256E8-69CD-4621-9E58-52AE68D3596C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CubbyFlowSharp.Tests", "CubbyFlowSharp.Tests\CubbyFlowSharp.Tests.csproj", "{18B1D2AC-AC07-4586-918C-54938C88B195}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,18 @@ Global
 		{1DC256E8-69CD-4621-9E58-52AE68D3596C}.Release|x64.Build.0 = Release|x64
 		{1DC256E8-69CD-4621-9E58-52AE68D3596C}.Release|x86.ActiveCfg = Release|Win32
 		{1DC256E8-69CD-4621-9E58-52AE68D3596C}.Release|x86.Build.0 = Release|Win32
+		{18B1D2AC-AC07-4586-918C-54938C88B195}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18B1D2AC-AC07-4586-918C-54938C88B195}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18B1D2AC-AC07-4586-918C-54938C88B195}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{18B1D2AC-AC07-4586-918C-54938C88B195}.Debug|x64.Build.0 = Debug|Any CPU
+		{18B1D2AC-AC07-4586-918C-54938C88B195}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{18B1D2AC-AC07-4586-918C-54938C88B195}.Debug|x86.Build.0 = Debug|Any CPU
+		{18B1D2AC-AC07-4586-918C-54938C88B195}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18B1D2AC-AC07-4586-918C-54938C88B195}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18B1D2AC-AC07-4586-918C-54938C88B195}.Release|x64.ActiveCfg = Release|Any CPU
+		{18B1D2AC-AC07-4586-918C-54938C88B195}.Release|x64.Build.0 = Release|Any CPU
+		{18B1D2AC-AC07-4586-918C-54938C88B195}.Release|x86.ActiveCfg = Release|Any CPU
+		{18B1D2AC-AC07-4586-918C-54938C88B195}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
