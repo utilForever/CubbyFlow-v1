@@ -26,19 +26,19 @@ namespace CubbyFlow
 		return 0;
 	}
 
-	////! Zero for float.
-	//template <>
-	//constexpr float Zero<float>()
-	//{
-	//	return 0.f;
-	//}
+	//! Zero for float.
+	template <>
+	constexpr float Zero<float>()
+	{
+		return 0.f;
+	}
 
-	////! Zero for double.
-	//template <>
-	//constexpr double Zero<double>()
-	//{
-	//	return 0.0;
-	//}
+	//! Zero for double.
+	template <>
+	constexpr double Zero<double>()
+	{
+		return 0.0;
+	}
 
 	// MARK: One
 	//! One size_t.
@@ -54,19 +54,19 @@ namespace CubbyFlow
 		return 1;
 	}
 
-	////! One for float.
-	//template <>
-	//constexpr float One<float>()
-	//{
-	//	return 1.f;
-	//}
+	//! One for float.
+	template <>
+	constexpr float One<float>()
+	{
+		return 1.f;
+	}
 
-	////! One for double.
-	//template <>
-	//constexpr double One<double>()
-	//{
-	//	return 1.0;
-	//}
+	//! One for double.
+	template <>
+	constexpr double One<double>()
+	{
+		return 1.0;
+	}
 
 	// MARK: PI
 	//! Float-type PI.
@@ -81,19 +81,19 @@ namespace CubbyFlow
 		return static_cast<T>(PI_DOUBLE);
 	}
 
-	////! Pi for float.
-	//template <>
-	//constexpr float PI<float>()
-	//{
-	//	return PI_FLOAT;
-	//}
+	//! Pi for float.
+	template <>
+	constexpr float PI<float>()
+	{
+		return PI_FLOAT;
+	}
 
-	////! Pi for double.
-	//template <>
-	//constexpr double PI<double>()
-	//{
-	//	return PI_DOUBLE;
-	//}
+	//! Pi for double.
+	template <>
+	constexpr double PI<double>()
+	{
+		return PI_DOUBLE;
+	}
 
 	// MARK: PI/2
 	//! Float-type PI/2.
@@ -109,19 +109,19 @@ namespace CubbyFlow
 		return static_cast<T>(HALF_PI_DOUBLE);
 	}
 
-	////! PI/2 for float.
-	//template <>
-	//constexpr float HalfPI<float>()
-	//{
-	//	return HALF_PI_FLOAT;
-	//}
+	//! PI/2 for float.
+	template <>
+	constexpr float HalfPI<float>()
+	{
+		return HALF_PI_FLOAT;
+	}
 
-	////! PI/2 for double.
-	//template <>
-	//constexpr double HalfPI<double>()
-	//{
-	//	return HALF_PI_DOUBLE;
-	//}
+	//! PI/2 for double.
+	template <>
+	constexpr double HalfPI<double>()
+	{
+		return HALF_PI_DOUBLE;
+	}
 
 	// MARK: PI/4
 	//! Float-type PI/4.
@@ -137,19 +137,19 @@ namespace CubbyFlow
 		return static_cast<T>(QUARTER_PI_DOUBLE);
 	}
 
-	////! PI/4 for float.
-	//template <>
-	//constexpr float QuarterPI<float>()
-	//{
-	//	return QUARTER_PI_FLOAT;
-	//}
+	//! PI/4 for float.
+	template <>
+	constexpr float QuarterPI<float>()
+	{
+		return QUARTER_PI_FLOAT;
+	}
 
-	////! PI/4 for double.
-	//template <>
-	//constexpr double QuarterPI<double>()
-	//{
-	//	return QUARTER_PI_DOUBLE;
-	//}
+	//! PI/4 for double.
+	template <>
+	constexpr double QuarterPI<double>()
+	{
+		return QUARTER_PI_DOUBLE;
+	}
 
 	// MARK: Physics
 	//! Gravity.
