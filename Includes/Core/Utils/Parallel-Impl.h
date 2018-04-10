@@ -12,10 +12,9 @@
 #include <Core/Utils/Constants.h>
 #include <Core/Utils/Parallel.h>
 
-#include <boost/thread.hpp>
-
 #include <algorithm>
 #include <cmath>
+#include <thread>
 #include <vector>
 
 #undef max
@@ -84,7 +83,7 @@ namespace CubbyFlow
 			}
 			else if (numThreads > 1)
 			{
-				std::vector<boost::thread> pool;
+				std::vector<std::thread> pool;
 				pool.reserve(2);
 
 				auto launchRange = [compareFunction](RandomIterator begin, size_t k2, RandomIterator2 temp, unsigned int numThreads)
@@ -96,7 +95,7 @@ namespace CubbyFlow
 				pool.emplace_back(launchRange, a + size / 2, size - size / 2, temp + size / 2, numThreads - numThreads / 2);
 
 				// Wait for jobs to finish
-				for (boost::thread& t : pool)
+				for (std::thread& t : pool)
 				{
 					if (t.joinable())
 					{
@@ -158,7 +157,7 @@ namespace CubbyFlow
 		};
 
 		// Create pool and launch jobs
-		std::vector<boost::thread> pool;
+		std::vector<std::thread> pool;
 		pool.reserve(numThreads);
 		IndexType i1 = beginIndex;
 		IndexType i2 = std::min(beginIndex + slice, endIndex);
@@ -176,7 +175,7 @@ namespace CubbyFlow
 		}
 
 		// Wait for jobs to finish
-		for (boost::thread& t : pool)
+		for (std::thread& t : pool)
 		{
 			if (t.joinable())
 			{
@@ -206,7 +205,7 @@ namespace CubbyFlow
 		slice = std::max(slice, IndexType(1));
 
 		// Create pool and launch jobs
-		std::vector<boost::thread> pool;
+		std::vector<std::thread> pool;
 		pool.reserve(numThreads);
 		IndexType i1 = beginIndex;
 		IndexType i2 = std::min(beginIndex + slice, endIndex);
@@ -224,7 +223,7 @@ namespace CubbyFlow
 		}
 
 		// Wait for jobs to finish
-		for (boost::thread& t : pool)
+		for (std::thread& t : pool)
 		{
 			if (t.joinable())
 			{
@@ -325,7 +324,7 @@ namespace CubbyFlow
 		};
 		
 		// Create pool and launch jobs
-		std::vector<boost::thread> pool;
+		std::vector<std::thread> pool;
 		pool.reserve(numThreads);
 
 		IndexType i1 = start;
@@ -345,7 +344,7 @@ namespace CubbyFlow
 		}
 		
 		// Wait for jobs to finish
-		for (boost::thread& t : pool)
+		for (std::thread& t : pool)
 		{
 			if (t.joinable())
 			{
