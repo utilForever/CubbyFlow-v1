@@ -9,7 +9,6 @@
 #ifndef CUBBYFLOW_ARRAY_ACCESSOR2_IMPL_H
 #define CUBBYFLOW_ARRAY_ACCESSOR2_IMPL_H
 
-#include <Core/Array/ArrayAccessor2.h>
 #include <Core/Utils/Constants.h>
 #include <Core/Utils/Parallel.h>
 
