@@ -9,8 +9,6 @@
 #ifndef CUBBYFLOW_POINT_IMPL_H
 #define CUBBYFLOW_POINT_IMPL_H
 
-#include <Core/Point/Point.h>
-
 #include <cassert>
 
 namespace CubbyFlow

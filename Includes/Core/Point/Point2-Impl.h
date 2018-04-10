@@ -10,7 +10,6 @@
 #define CUBBYFLOW_POINT2_IMPL_H
 
 #include <Core/Math/MathUtils.h>
-#include <Core/Point/Point2.h>
 
 #include <cassert>
 #include <cmath>
