@@ -6,13 +6,13 @@ set(root_dir ${CMAKE_CURRENT_SOURCE_DIR}/../..)
 
 # Sources
 file(GLOB header_dir
-		${root_dir}/Includes)
+	${root_dir}/Includes)
 
 file(GLOB_RECURSE headers
-		${header_dir}/*.h)
+	${header_dir}/*.h)
 
 file(GLOB_RECURSE sources
-		${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
+	${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
 
 # Build library
 add_library(${target} SHARED
@@ -28,8 +28,19 @@ string(REPLACE "/EHsc" " " CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 string(REGEX REPLACE "/RTC(su|[1su])" " " CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 string(REGEX REPLACE "/RTC(su|[1su])" " " CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG}")
 
+# Compile options
+target_compile_options(${target}
+	PRIVATE
+
+	PUBLIC
+	${DEFAULT_COMPILE_OPTIONS}
+
+	INTERFACE
+)
+
 # Link libraries
 target_link_libraries(${target}
-		PRIVATE
-		${DEFAULT_LINKER_OPTIONS}
-		CubbyFlow)
+	PRIVATE
+	${DEFAULT_LINKER_OPTIONS}
+	CubbyFlow
+)
