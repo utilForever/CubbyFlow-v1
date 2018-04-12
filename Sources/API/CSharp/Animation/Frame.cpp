@@ -23,11 +23,11 @@ namespace CubbyFlowSharp
 
 	double Frame::TimeInSeconds()
 	{
-		return index * timeIntervalInSeconds;
+		return m_pFrame->index * m_pFrame->timeIntervalInSeconds;
 	}
 
 	void Frame::Advance(int delta)
 	{
-		index += delta;
+		m_pFrame->Advance(delta);
 	}
 } 
