@@ -21,12 +21,6 @@ namespace CubbyFlowSharp
 	//!
 	public ref struct Frame
 	{
-		//! Frame index.
-		int index = 0;
-
-		//! Time interval in seconds between two adjacent frames.
-		double timeIntervalInSeconds = 1.0 / 60.0;
-
 		//! Constructs Frame instance with 1/60 seconds time interval.
 		Frame();
 
