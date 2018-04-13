@@ -19,13 +19,16 @@ namespace CubbyFlowSharp
 	//! This struct holds current animation frame index and frame interval in
 	//! seconds.
 	//!
-	public ref struct Frame
+	struct Frame
 	{
 		//! Constructs Frame instance with 1/60 seconds time interval.
 		Frame();
 
 		//! Constructs Frame instance with given time interval.
 		Frame(int newIndex, double newTimeIntervalInSeconds);
+
+		//! Returns internal pointer.
+		::CubbyFlow::Frame* GetInteralPtr();
 
 		//! Returns the elapsed time in seconds.
 		double TimeInSeconds();

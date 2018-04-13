@@ -21,6 +21,11 @@ namespace CubbyFlowSharp
 		// Do nothing
 	}
 
+	::CubbyFlow::Frame* Frame::GetInteralPtr()
+	{
+		return m_pFrame;
+	}
+
 	double Frame::TimeInSeconds()
 	{
 		return m_pFrame->index * m_pFrame->timeIntervalInSeconds;
