@@ -22,15 +22,18 @@ include_directories(Libraries)
 include_directories(Libraries/obj)
 include_directories(Libraries/pybind11/include)
 include_directories(Libraries/googletest/googletest/include)
-if (CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
+if(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
     include_directories(Libraries/winix)
 endif()
+
+# Tasking system options
+include(Builds/CMake/TaskingSystemOptions.cmake)
 
 # Compile options
 include(Builds/CMake/CompileOptions.cmake)
 
 # Build type - Release by default
-if (NOT CMAKE_BUILD_TYPE)
+if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
 endif()
 
@@ -61,7 +64,7 @@ add_subdirectory(Tests/ManualTests)
 add_subdirectory(Tests/UnitTests)
 add_subdirectory(Tests/MemPerfTests)
 add_subdirectory(Tests/TimePerfTests)
-if (CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
+if(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
     add_subdirectory(Libraries/winix)
 endif()
 add_subdirectory(Examples/HelloFluidSim)
@@ -74,7 +77,7 @@ add_subdirectory(Examples/SmokeSim)
 add_subdirectory(Examples/SPHSim)
 
 add_subdirectory(Libraries/pybind11)
-if (BUILD_FROM_PIP)
+if(BUILD_FROM_PIP)
     set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${DEFAULT_CMAKE_LIBRARY_OUTPUT_DIRECTORY})
 endif()
 add_subdirectory(Sources/API/Python)
