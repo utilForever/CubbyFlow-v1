@@ -41,7 +41,11 @@ set(DEFAULT_INCLUDE_DIRECTORIES)
 # Libraries
 #
 
-set(DEFAULT_LIBRARIES)
+set(DEFAULT_LIBRARIES
+	PUBLIC
+	${TASKING_SYSTEM_LIBS}
+	PRIVATE
+)
 
 #
 # Compile definitions
@@ -68,7 +72,7 @@ set(DEFAULT_COMPILE_OPTIONS)
 # MSVC compiler options
 if(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
 	# remove default warning level from CMAKE_CXX_FLAGS
-	string (REGEX REPLACE "/W[0-4]" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+	string(REGEX REPLACE "/W[0-4]" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 endif()
 
 # MSVC compiler options
