@@ -52,12 +52,12 @@ set(DEFAULT_COMPILE_DEFINITIONS
 )
 
 # MSVC compiler options
-if (CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
+if(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
 	set(DEFAULT_COMPILE_DEFINITIONS ${DEFAULT_COMPILE_DEFINITIONS}
 		_SCL_SECURE_NO_WARNINGS  # Calling any one of the potentially unsafe methods in the Standard C++ Library
 		_CRT_SECURE_NO_WARNINGS  # Calling any one of the potentially unsafe methods in the CRT Library
 	)
-endif ()
+endif()
 
 #
 # Compile options
@@ -66,17 +66,17 @@ endif ()
 set(DEFAULT_COMPILE_OPTIONS)
 
 # MSVC compiler options
-if (CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
+if(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
 	# remove default warning level from CMAKE_CXX_FLAGS
 	string (REGEX REPLACE "/W[0-4]" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 endif()
 
 # MSVC compiler options
-if (CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
+if(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
 	set(DEFAULT_COMPILE_OPTIONS ${DEFAULT_COMPILE_OPTIONS}
 		/MP           # -> build with multiple processes
 		/W4           # -> warning level 4
-		/WX           # -> treat warnings as errors
+		${WARN_AS_ERROR_FLAGS}
 
 		# /wd4251     # -> disable warning: 'identifier': class 'type' needs to have dll-interface to be used by clients of class 'type2'
 		# /wd4592     # -> disable warning: 'identifier': symbol will be dynamically initialized (implementation limitation)
@@ -98,16 +98,16 @@ if (CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
 
 		# No manual c++11 enable for MSVC as all supported MSVC versions for cmake-init have C++11 implicitly enabled (MSVC >=2013)
 	)
-endif ()
+endif()
 
 # GCC and Clang compiler options
-if (CMAKE_CXX_COMPILER_ID MATCHES "GNU" OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+if(CMAKE_CXX_COMPILER_ID MATCHES "GNU" OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
 	set(DEFAULT_COMPILE_OPTIONS ${DEFAULT_COMPILE_OPTIONS}
 		-Wall
-		-Werror
+		${WARN_AS_ERROR_FLAGS}
 		-std=c++1z
 	)
-endif ()
+endif()
 
 #
 # Linker options
@@ -116,7 +116,7 @@ endif ()
 set(DEFAULT_LINKER_OPTIONS)
 
 # Use pthreads on mingw and linux
-if (CMAKE_CXX_COMPILER_ID MATCHES "GNU" OR CMAKE_SYSTEM_NAME MATCHES "Linux")
+if(CMAKE_CXX_COMPILER_ID MATCHES "GNU" OR CMAKE_SYSTEM_NAME MATCHES "Linux")
 	set(DEFAULT_LINKER_OPTIONS
 		-pthread
 	)
