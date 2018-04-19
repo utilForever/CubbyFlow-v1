@@ -46,6 +46,7 @@ target_link_libraries(${target}
 
     PUBLIC
     ${DEFAULT_LINKER_OPTIONS}
+	${DEFAULT_LIBRARIES}
 
     INTERFACE
 )
