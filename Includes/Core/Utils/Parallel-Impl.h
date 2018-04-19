@@ -12,9 +12,16 @@
 #include <Core/Utils/Constants.h>
 #include <Core/Utils/Parallel.h>
 
+#if defined(CUBBYFLOW_TASKING_TBB)
+#include <tbb/parallel.h>
+#include <tbb/task.h>
+#elif defined(CUBBYFLOW_TASKING_CPP11THREAD)
+#include <thread>
+#endif
+
 #include <algorithm>
 #include <cmath>
-#include <thread>
+#include <future>
 #include <vector>
 
 #undef max
@@ -24,6 +31,39 @@ namespace CubbyFlow
 {
 	namespace Internal
 	{
+		// NOTE: This abstraction takes a lambda which should take captured
+		//       variables by *value* to ensure no captured references race
+		//       with the task itself.
+		template <typename TASK>
+		inline void Schedule(TASK&& fn)
+		{
+#if defined(CUBBYFLOW_TASKING_TBB)
+			struct LocalTBBTask : public tbb::task
+			{
+				TASK func;
+
+				LocalTBBTask(TASK&& f) : func(std::forward<TASK>(f))
+				{
+					// Do nothing
+				}
+
+				tbb::task* execute() override
+				{
+					func();
+					return nullptr;
+				}
+			};
+
+			auto* tbbNode = new(tbb::task::allocate_root()) LocalTBBTask(std::forward<TASK>(fn));
+			tbb::task::enqueue(*tbbNode);
+#elif defined(CUBBYFLOW_TASKING_CPP11THREAD)
+			std::thread thread(fn);
+			thread.detach();
+#else	// OpenMP or Serial -> Synchronous!
+			fn();
+#endif
+		}
+
 		// Adopted from:
 		// Radenski, A.
 		// Shared Memory, Message Passing, and Hybrid Merge Sorts for Standalone and
