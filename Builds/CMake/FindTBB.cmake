@@ -130,3 +130,18 @@ if(TBB_INCLUDE_DIR)
 	set(TBB_VERSION ${TBB_VERSION} CACHE STRING "TBB Version")
 	mark_as_advanced(TBB_VERSION)
 endif()
+
+if(TBB_FOUND)
+	set(TBB_INCLUDE_DIRS ${TBB_INCLUDE_DIR})
+	# NOTE - TBB found in CentOS 6/7 package manager does not have debug
+	#		 versions of the library...silently fall-back to using only the
+	#		 libraries which we actually found.
+	if(NOT TBB_LIBRARY_DEBUG)
+		set(TBB_LIBRARIES ${TBB_LIBRARY} ${TBB_LIBRARY_MALLOC})
+	else()
+	set(TBB_LIBRARIES
+		optimized ${TBB_LIBRARY} optimized ${TBB_LIBRARY_MALLOC}
+		debug ${TBB_LIBRARY_DEBUG} debug ${TBB_LIBRARY_MALLOC_DEBUG}
+	)
+	endif()
+endif()
