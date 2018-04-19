@@ -100,3 +100,15 @@ else()
 	mark_as_advanced(TBB_LIBRARY_MIC)
 	mark_as_advanced(TBB_LIBRARY_MALLOC_MIC)
 endif()
+
+set(TBB_ROOT_LAST ${TBB_ROOT} CACHE INTERNAL "Last value of TBB_ROOT to detect changes")
+
+set(TBB_ERROR_MESSAGE
+	"Threading Building Blocks (TBB) with minimum version ${TBB_VERSION_REQUIRED} not found.
+	Please make sure you have the TBB headers installed as well (the package is typically named 'libtbb-dev' or 'tbb-devel') and/or hint the location of TBB in TBB_ROOT. Alternatively, you can try to use OpenMP as tasking system by setting CUBBYFLOW_TASKING_SYSTEM=OpenMP or C++11 threads using CUBBYFLOW_TASKING_SYSTEM=CPP11Thread")
+
+include(FindPackageHandleStandardArgs)
+find_package_handle_standard_args(TBB
+	${TBB_ERROR_MESSAGE}
+	TBB_INCLUDE_DIR TBB_LIBRARY TBB_LIBRARY_MALLOC
+)
