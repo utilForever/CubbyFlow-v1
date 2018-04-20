@@ -144,7 +144,7 @@ namespace CubbyFlow
 			}
 			else if (numThreads > 1)
 			{
-				std::vector<std::thread> pool;
+				std::vector<std::future<void>> pool;
 				pool.reserve(2);
 
 				auto launchRange = [compareFunction](RandomIterator begin, size_t k2, RandomIterator2 temp, unsigned int numThreads)
@@ -152,15 +152,22 @@ namespace CubbyFlow
 					ParallelMergeSort(begin, k2, temp, numThreads, compareFunction);
 				};
 
-				pool.emplace_back(launchRange, a, size / 2, temp, numThreads / 2);
-				pool.emplace_back(launchRange, a + size / 2, size - size / 2, temp + size / 2, numThreads - numThreads / 2);
+				pool.emplace_back(Internal::Async([=]()
+				{
+					launchRange(a, size / 2, temp, numThreads / 2);
+				}));
+
+				pool.emplace_back(Internal::Async([=]()
+				{
+					launchRange(a + size / 2, size - size / 2, temp + size / 2, numThreads - numThreads / 2);
+				}));
 
 				// Wait for jobs to finish
-				for (std::thread& t : pool)
+				for (auto& f : pool)
 				{
-					if (t.joinable())
+					if (f.valid())
 					{
-						t.join();
+						f.wait();
 					}
 				}
 
