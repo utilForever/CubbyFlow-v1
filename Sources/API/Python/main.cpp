@@ -8,6 +8,7 @@
 *************************************************************************/
 #include <API/Python/Array/ArrayAccessor.h>
 #include <API/Python/Animation/Animation.h>
+#include <API/Python/Animation/Frame.h>
 #include <API/Python/Animation/PhysicsAnimation.h>
 #include <API/Python/BoundingBox/BoundingBox.h>
 #include <API/Python/Collider/Collider.h>
