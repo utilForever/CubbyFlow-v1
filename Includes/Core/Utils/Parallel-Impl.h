@@ -64,6 +64,27 @@ namespace CubbyFlow
 #endif
 		}
 
+		template <typename TASK>
+		using operator_return_t = typename std::result_of<TASK()>::type;
+
+		// NOTE: see above, same issues associated with Schedule()
+		template <typename TASK>
+		inline auto Async(TASK&& fn) -> std::future<operator_return_t<TASK>>
+		{
+			using package_t = std::packaged_task<operator_return_t<TASK>()>;
+
+			auto task = new package_t(std::forward<TASK>(fn));
+			auto future = task->get_future();
+
+			Schedule([=]()
+			{
+				(*task)();
+				delete task;
+			});
+
+			return future;
+		}
+
 		// Adopted from:
 		// Radenski, A.
 		// Shared Memory, Message Passing, and Hybrid Merge Sorts for Standalone and
