@@ -205,6 +205,10 @@ namespace CubbyFlow
 			return;
 		}
 
+#if defined(CUBBYFLOW_TASKING_TBB)
+		(void)policy;
+		tbb::parallel_for(start, end, function);
+#elif defined(CUBBYFLOW_TASKING_CPP11THREAD)
 		// Estimate number of threads in the pool
 		const unsigned int numThreadsHint = GetMaxNumberOfThreads();
 		const unsigned int numThreads = (policy == ExecutionPolicy::Parallel) ?
@@ -250,6 +254,27 @@ namespace CubbyFlow
 				t.join();
 			}
 		}
+#else
+		(void)policy;
+
+#if defined(CUBBYFLOW_TASKING_OPENMP)
+#pragma omp parallel for
+#if defined(_MSC_VER) && !defined(__INTEL_COMPILER)
+		for (ssize_t i = beginIndex; i < static_cast<ssize_t>(endIndex); ++i)
+		{
+#else // !MSVC || Intel
+		for (auto i = beginIndex; i < endIndex; ++i)
+		{
+#endif // MSVC && !Intel
+			function(i);
+		}
+#else // CUBBYFLOW_TASKING_SERIAL
+		for (auto i = beginIndex; i < endIndex; ++i)
+		{
+			function(i);
+		}
+#endif // CUBBYFLOW_TASKING_OPENMP
+#endif
 	}
 
 	template <typename IndexType, typename Function>
