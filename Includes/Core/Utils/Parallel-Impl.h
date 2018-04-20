@@ -298,29 +298,29 @@ namespace CubbyFlow
 		slice = std::max(slice, IndexType(1));
 
 		// Create pool and launch jobs
-		std::vector<std::thread> pool;
+		std::vector<std::future<void>> pool;
 		pool.reserve(numThreads);
 		IndexType i1 = beginIndex;
 		IndexType i2 = std::min(beginIndex + slice, endIndex);
 
 		for (unsigned int i = 0; i + 1 < numThreads && i1 < endIndex; ++i)
 		{
-			pool.emplace_back(function, i1, i2);
+			pool.emplace_back(Internal::Async([=]() { function(i1, i2); }));
 			i1 = i2;
 			i2 = std::min(i2 + slice, endIndex);
 		}
 
 		if (i1 < endIndex)
 		{
-			pool.emplace_back(function, i1, endIndex);
+			pool.emplace_back(Internal::Async([=]() { function(i1, endIndex); }));
 		}
 
 		// Wait for jobs to finish
-		for (std::thread& t : pool)
+		for (auto& f : pool)
 		{
-			if (t.joinable())
+			if (f.valid())
 			{
-				t.join();
+				f.wait();
 			}
 		}
 	}
