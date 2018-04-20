@@ -11,7 +11,6 @@
 
 #include <pybind11/pybind11.h>
 
-void AddFrame(pybind11::module& m);
 void AddAnimation(pybind11::module& m);
 
 #endif
