@@ -13,7 +13,9 @@
 #include <Core/Utils/Parallel.h>
 
 #if defined(CUBBYFLOW_TASKING_TBB)
-#include <tbb/parallel.h>
+#include <tbb/parallel_for.h>
+#include <tbb/parallel_reduce.h>
+#include <tbb/parallel_sort.h>
 #include <tbb/task.h>
 #elif defined(CUBBYFLOW_TASKING_CPP11THREAD)
 #include <thread>
@@ -287,6 +289,20 @@ namespace CubbyFlow
 			return;
 		}
 
+#if defined(CUBBYFLOW_TASKING_TBB)
+		if (policy == ExecutionPolicy::Parallel)
+		{
+			tbb::parallel_for(tbb::blocked_range<IndexType>(beginIndex, endIndex),
+				[&function](const tbb::blocked_range<IndexType>& range)
+			{
+				function(range.begin(), range.end());
+			});
+		}
+		else
+		{
+			function(beginIndex, endIndex);
+		}
+#else
 		// Estimate number of threads in the pool
 		const unsigned int numThreadsHint = GetMaxNumberOfThreads();
 		const unsigned int numThreads = (policy == ExecutionPolicy::Parallel) ?
@@ -323,6 +339,7 @@ namespace CubbyFlow
 				f.wait();
 			}
 		}
+#endif
 	}
 
 	template <typename IndexType, typename Function>
