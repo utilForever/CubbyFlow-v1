@@ -406,14 +406,29 @@ namespace CubbyFlow
 	template <typename IndexType, typename Value, typename Function, typename Reduce>
 	Value ParallelReduce(
 		IndexType start, IndexType end,
-		const Value& identity, const Function& func,
+		const Value& identity, const Function& function,
 		const Reduce& reduce, ExecutionPolicy policy)
 	{
 		if (start > end)
 		{
 			return identity;	
 		}
-		
+
+#if defined(CUBBYFLOW_TASKING_TBB)
+		if (policy == ExecutionPolicy::Parallel)
+		{
+			return tbb::parallel_reduce(tbb::blocked_range<IndexType>(beginIndex, endIndex), identity,
+				[&function](const tbb::blocked_range<IndexType>& range, const Value& init)
+			{
+				return function(range.begin(), range.end(), init);
+			}, reduce);
+		}
+		else
+		{
+			(void)reduce;
+			return function(beginIndex, endIndex, identity);
+		}
+#else
 		// Estimate number of threads in the pool
 		const unsigned int numThreadsHint = GetMaxNumberOfThreads();
 		const unsigned int numThreads = (policy == ExecutionPolicy::Parallel) ?
@@ -430,7 +445,7 @@ namespace CubbyFlow
 		// [Helper] Inner loop
 		auto launchRange = [&](IndexType k1, IndexType k2, unsigned int tid)
 		{
-			results[tid] = func(k1, k2, identity);
+			results[tid] = function(k1, k2, identity);
 		};
 		
 		// Create pool and launch jobs
@@ -470,6 +485,7 @@ namespace CubbyFlow
 		}
 		
 		return finalResult;
+#endif
 	}
 
 	template<typename RandomIterator>
