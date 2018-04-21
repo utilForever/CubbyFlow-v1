@@ -405,11 +405,11 @@ namespace CubbyFlow
 
 	template <typename IndexType, typename Value, typename Function, typename Reduce>
 	Value ParallelReduce(
-		IndexType start, IndexType end,
+		IndexType beginIndex, IndexType endIndex,
 		const Value& identity, const Function& function,
 		const Reduce& reduce, ExecutionPolicy policy)
 	{
-		if (start > end)
+		if (beginIndex > endIndex)
 		{
 			return identity;	
 		}
@@ -435,7 +435,7 @@ namespace CubbyFlow
 			(numThreadsHint == 0u ? 8u : numThreadsHint) : 1;
 		
 		// Size of a slice for the range functions
-		IndexType n = end - start + 1;
+		IndexType n = endIndex - beginIndex + 1;
 		IndexType slice = static_cast<IndexType>(std::round(n / static_cast<double>(numThreads)));
 		slice = std::max(slice, IndexType(1));
 		
@@ -452,20 +452,20 @@ namespace CubbyFlow
 		std::vector<std::future<void>> pool;
 		pool.reserve(numThreads);
 
-		IndexType i1 = start;
-		IndexType i2 = std::min(start + slice, end);
+		IndexType i1 = beginIndex;
+		IndexType i2 = std::min(beginIndex + slice, endIndex);
 		unsigned int threadID = 0;
 		
-		for (; threadID + 1 < numThreads && i1 < end; ++threadID)
+		for (; threadID + 1 < numThreads && i1 < endIndex; ++threadID)
 		{
 			pool.emplace_back(Internal::Async([=]() { launchRange(i1, i2, threadID); }));
 			i1 = i2;
-			i2 = std::min(i2 + slice, end);
+			i2 = std::min(i2 + slice, endIndex);
 		}
 		
-		if (i1 < end)
+		if (i1 < endIndex)
 		{
-			pool.emplace_back(Internal::Async([=]() { launchRange(i1, end, threadID); }));
+			pool.emplace_back(Internal::Async([=]() { launchRange(i1, endIndex, threadID); }));
 		}
 		
 		// Wait for jobs to finish
