@@ -506,6 +506,16 @@ namespace CubbyFlow
 			return;
 		}
 
+#if defined(CUBBYFLOW_TASKING_TBB)
+		if (policy == ExecutionPolicy::Parallel)
+		{
+			tbb::parallel_sort(begin, end, compareFunction);
+		}
+		else
+		{
+			std::sort(begin, end, compareFunction);
+		}
+#else
 		size_t size = static_cast<size_t>(end - begin);
 
 		using value_type = typename std::iterator_traits<RandomIterator>::value_type;
@@ -517,6 +527,7 @@ namespace CubbyFlow
 			(numThreadsHint == 0u ? 8u : numThreadsHint) : 1;
 
 		Internal::ParallelMergeSort(begin, size, temp.begin(), numThreads, compareFunction);
+#endif
 	}
 }
 
