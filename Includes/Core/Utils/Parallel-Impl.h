@@ -209,7 +209,7 @@ namespace CubbyFlow
 
 #if defined(CUBBYFLOW_TASKING_TBB)
 		(void)policy;
-		tbb::parallel_for(start, end, function);
+		tbb::parallel_for(beginIndex, endIndex, function);
 #elif defined(CUBBYFLOW_TASKING_CPP11THREAD)
 		// Estimate number of threads in the pool
 		const unsigned int numThreadsHint = GetMaxNumberOfThreads();

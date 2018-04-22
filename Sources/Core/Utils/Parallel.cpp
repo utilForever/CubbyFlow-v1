@@ -29,7 +29,7 @@ namespace CubbyFlow
 
 		if (!tbbInit.get())
 		{
-			tbbInit.reset(new tbb::task_scheduler_list(numThreads));
+			tbbInit.reset(new tbb::task_scheduler_init(numThreads));
 		}
 		else
 		{
