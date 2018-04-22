@@ -42,6 +42,7 @@ if(WIN32)
 			"${PROGRAMFILES32}/IntelSWTools/compilers_and_libraries/windows/tbb"
 			"${PROGRAMFILES32}/Intel/Composer XE/tbb"
 			"${PROGRAMFILES32}/Intel/compilers_and_libraries/windows/tbb"
+			"${PROGRAMFILES32}/Intel/tbb"
 	)
 
 	if(CMAKE_SIZEOF_VOID_P EQUAL 8)
