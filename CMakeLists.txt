@@ -26,6 +26,9 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
     include_directories(Libraries/winix)
 endif()
 
+# Find TBB
+include(Builds/CMake/FindTBB.cmake)
+
 # Tasking system options
 include(Builds/CMake/TaskingSystemOptions.cmake)
 
