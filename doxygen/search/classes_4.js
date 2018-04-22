@@ -37,5 +37,5 @@ var searchData=
   ['flipsolver3',['FLIPSolver3',['../class_cubby_flow_1_1_f_l_i_p_solver3.html',1,'CubbyFlow']]],
   ['fmmlevelsetsolver2',['FMMLevelSetSolver2',['../class_cubby_flow_1_1_f_m_m_level_set_solver2.html',1,'CubbyFlow']]],
   ['fmmlevelsetsolver3',['FMMLevelSetSolver3',['../class_cubby_flow_1_1_f_m_m_level_set_solver3.html',1,'CubbyFlow']]],
-  ['frame',['Frame',['../struct_cubby_flow_1_1_frame.html',1,'CubbyFlow']]]
+  ['frame',['Frame',['../struct_cubby_flow_1_1_frame.html',1,'CubbyFlow::Frame'],['../struct_cubby_flow_sharp_1_1_frame.html',1,'CubbyFlowSharp::Frame']]]
 ];

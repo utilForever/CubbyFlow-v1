@@ -1,7 +1,7 @@
 var searchData=
 [
   ['tangential',['Tangential',['../class_cubby_flow_1_1_vector_3_01_t_00_012_01_4.html#a9089b444f23a35892b6c7d72fe10e11d',1,'CubbyFlow::Vector&lt; T, 2 &gt;::Tangential()'],['../class_cubby_flow_1_1_vector_3_01_t_00_013_01_4.html#ac83dc0b68869e81e934677170d90baa9',1,'CubbyFlow::Vector&lt; T, 3 &gt;::Tangential()']]],
-  ['timeinseconds',['TimeInSeconds',['../struct_cubby_flow_1_1_frame.html#a2cbfc8e7bab6249e43aa147e338f89f7',1,'CubbyFlow::Frame']]],
+  ['timeinseconds',['TimeInSeconds',['../struct_cubby_flow_sharp_1_1_frame.html#aa3a2ebe7ee67320b7c4aacea5c741a11',1,'CubbyFlowSharp::Frame::TimeInSeconds()'],['../struct_cubby_flow_1_1_frame.html#a2cbfc8e7bab6249e43aa147e338f89f7',1,'CubbyFlow::Frame::TimeInSeconds()']]],
   ['timeintervalinseconds',['timeIntervalInSeconds',['../struct_cubby_flow_1_1_frame.html#a9391851d1f424841511c6489837184e5',1,'CubbyFlow::Frame']]],
   ['timer',['Timer',['../class_cubby_flow_1_1_timer.html',1,'CubbyFlow::Timer'],['../class_cubby_flow_1_1_timer.html#a8f62bc50c711fcf8c918816e475dcb51',1,'CubbyFlow::Timer::Timer()']]],
   ['timer_2eh',['Timer.h',['../_timer_8h.html',1,'']]],
