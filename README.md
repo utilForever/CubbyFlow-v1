@@ -124,6 +124,18 @@ Here are some of the example simulations generated using CubbyFlow framework. Co
 ![rising_smoke_linear](https://github.com/utilForever/CubbyFlow/blob/master/Medias/Screenshots/rising_smoke_linear.png "Rising Smoke - Linear")
 ![rising_smoke_cubic](https://github.com/utilForever/CubbyFlow/blob/master/Medias/Screenshots/rising_smoke_cubic.png "Rising Smoke - Cubic")
 
+## Presentations (Korean)
+
+<figure>
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/HVE7X3QOG5fh2C" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/utilforever/ndc-2018-95260566" title="[NDC 2018] 유체역학 엔진 개발기" target="_blank">[NDC 2018] 유체역학 엔진 개발기</a> </strong> from <strong><a href="https://www.slideshare.net/utilforever" target="_blank">찬호 옥</a></strong> </div>
+</figure>
+
+#### Related articles
+
+- http://www.gamevu.co.kr/news/articleView.html?idxno=8464
+
+- http://www.inven.co.kr/webzine/news/?news=198413&iskin=l2mobile
+
 ## How To Contribute
 
 Contributions are always welcome, either reporting issues/bugs or forking the repository and then issuing pull requests when you have completed some additional coding that you feel will be beneficial to the main project. If you are interested in contributing in a more dedicated capacity, then please contact me.
