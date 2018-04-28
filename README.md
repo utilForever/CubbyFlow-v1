@@ -96,33 +96,33 @@ Here are some of the example simulations generated using CubbyFlow framework. Co
 
 #### PCISPH Simulation Example
 
-![PCISPH_dam_breaking](https://github.com/utilForever/CubbyFlow/blob/master/Medias/PCISPH_dam_breaking.png "PCISPH Example")
+![PCISPH_dam_breaking](https://github.com/utilForever/CubbyFlow/blob/master/Medias/Screenshots/PCISPH_dam_breaking.png "PCISPH Example")
 
 #### Level Set Simulation Example
 
-![Level-set_dam_breaking](https://github.com/utilForever/CubbyFlow/blob/master/Medias/LevelSet_dam_breaking.png "Level Set Example")
+![Level-set_dam_breaking](https://github.com/utilForever/CubbyFlow/blob/master/Medias/Screenshots/LevelSet_dam_breaking.png "Level Set Example")
 
 #### FLIP Simulation Example
 
-![FLIP_dam_breaking](https://github.com/utilForever/CubbyFlow/blob/master/Medias/FLIP_dam_breaking.png "FLIP Example")
+![FLIP_dam_breaking](https://github.com/utilForever/CubbyFlow/blob/master/Medias/Screenshots/FLIP_dam_breaking.png "FLIP Example")
 
 #### PIC Simulation Example
 
-![PIC_dam_breaking](https://github.com/utilForever/CubbyFlow/blob/master/Medias/PIC_dam_breaking.png "PIC Example")
+![PIC_dam_breaking](https://github.com/utilForever/CubbyFlow/blob/master/Medias/Screenshots/PIC_dam_breaking.png "PIC Example")
 
 #### APIC Simulation Example
 
-![APIC_dam_breaking](https://github.com/utilForever/CubbyFlow/blob/master/Medias/APIC_dam_breaking.png "APIC Example")
+![APIC_dam_breaking](https://github.com/utilForever/CubbyFlow/blob/master/Medias/Screenshots/APIC_dam_breaking.png "APIC Example")
 
 #### Level Set Example with Different Viscosity (high / low)
 
-![level_set_bunny_drop_high_viscosity](https://github.com/utilForever/CubbyFlow/blob/master/Medias/level_set_bunny_drop_high_viscosity.png "Level Set Bunny Drop - High Viscosity")
-![level_set_bunny_drop_low_viscosity](https://github.com/utilForever/CubbyFlow/blob/master/Medias/level_set_bunny_drop_low_viscosity.png "Level Set Bunny Drop - Low Viscosity")
+![level_set_bunny_drop_high_viscosity](https://github.com/utilForever/CubbyFlow/blob/master/Medias/Screenshots/level_set_bunny_drop_high_viscosity.png "Level Set Bunny Drop - High Viscosity")
+![level_set_bunny_drop_low_viscosity](https://github.com/utilForever/CubbyFlow/blob/master/Medias/Screenshots/level_set_bunny_drop_low_viscosity.png "Level Set Bunny Drop - Low Viscosity")
 
 #### Smoke Simulation with Different Advection Methods (Linear / Cubic-Spline)
 
-![rising_smoke_linear](https://github.com/utilForever/CubbyFlow/blob/master/Medias/rising_smoke_linear.png "Rising Smoke - Linear")
-![rising_smoke_cubic](https://github.com/utilForever/CubbyFlow/blob/master/Medias/rising_smoke_cubic.png "Rising Smoke - Cubic")
+![rising_smoke_linear](https://github.com/utilForever/CubbyFlow/blob/master/Medias/Screenshots/rising_smoke_linear.png "Rising Smoke - Linear")
+![rising_smoke_cubic](https://github.com/utilForever/CubbyFlow/blob/master/Medias/Screenshots/rising_smoke_cubic.png "Rising Smoke - Cubic")
 
 ## How To Contribute
 
