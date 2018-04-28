@@ -61,7 +61,12 @@ namespace CubbyFlow
 		};
 
 		const auto queryResult = m_bvh.GetNearestNeighbor(otherPoint, distanceFunc);
-		return (*queryResult.item)->ClosestPoint(otherPoint);
+		if (queryResult.item != nullptr)
+		{
+			return (*queryResult.item)->ClosestPoint(otherPoint);
+		}
+
+		return Vector2D{ std::numeric_limits<double>::max(), std::numeric_limits<double>::max() };
 	}
 
 	Vector2D SurfaceSet2::ClosestNormalLocal(const Vector2D& otherPoint) const
@@ -74,7 +79,12 @@ namespace CubbyFlow
 		};
 
 		const auto queryResult = m_bvh.GetNearestNeighbor(otherPoint, distanceFunc);
-		return (*queryResult.item)->ClosestNormal(otherPoint);
+		if (queryResult.item != nullptr)
+		{
+			return (*queryResult.item)->ClosestNormal(otherPoint);
+		}
+
+		return Vector2D{ 1.0, 0.0 };
 	}
 
 	double SurfaceSet2::ClosestDistanceLocal(const Vector2D& otherPoint) const
