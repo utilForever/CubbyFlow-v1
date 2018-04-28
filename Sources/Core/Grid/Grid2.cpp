@@ -57,7 +57,7 @@ namespace CubbyFlow
 		SerialFor(
 			ZERO_SIZE, m_resolution.x,
 			ZERO_SIZE, m_resolution.y,
-			[this, &func](size_t i, size_t j)
+			[&func](size_t i, size_t j)
 		{
 			func(i, j);
 		});
@@ -68,7 +68,7 @@ namespace CubbyFlow
 		ParallelFor(
 			ZERO_SIZE, m_resolution.x,
 			ZERO_SIZE, m_resolution.y,
-			[this, &func](size_t i, size_t j)
+			[&func](size_t i, size_t j)
 		{
 			func(i, j);
 		});

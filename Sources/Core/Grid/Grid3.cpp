@@ -58,7 +58,7 @@ namespace CubbyFlow
 			ZERO_SIZE, m_resolution.x,
 			ZERO_SIZE, m_resolution.y,
 			ZERO_SIZE, m_resolution.z,
-			[this, &func](size_t i, size_t j, size_t k)
+			[&func](size_t i, size_t j, size_t k)
 		{
 			func(i, j, k);
 		});
@@ -70,7 +70,7 @@ namespace CubbyFlow
 			ZERO_SIZE, m_resolution.x,
 			ZERO_SIZE, m_resolution.y,
 			ZERO_SIZE, m_resolution.z,
-			[this, &func](size_t i, size_t j, size_t k)
+			[&func](size_t i, size_t j, size_t k)
 		{
 			func(i, j, k);
 		});
