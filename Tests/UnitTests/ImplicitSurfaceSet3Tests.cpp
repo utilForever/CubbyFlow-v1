@@ -74,6 +74,11 @@ TEST(ImplicitSurfaceSet3, ClosestPoint)
 	box->isNormalFlipped = true;
 
 	ImplicitSurfaceSet3Ptr sset = std::make_shared<ImplicitSurfaceSet3>();
+	Vector3D emptyPoint = sset->ClosestPoint({ 1.0, 2.0, 3.0 });
+	EXPECT_DOUBLE_EQ(std::numeric_limits<double>::max(), emptyPoint.x);
+	EXPECT_DOUBLE_EQ(std::numeric_limits<double>::max(), emptyPoint.y);
+	EXPECT_DOUBLE_EQ(std::numeric_limits<double>::max(), emptyPoint.z);
+
 	sset->AddExplicitSurface(box);
 
 	Vector3D pt(0.5, 2.5, -1.0);
@@ -178,6 +183,10 @@ TEST(ImplicitSurfaceSet3, ClosestNormal)
 	box->isNormalFlipped = true;
 
 	ImplicitSurfaceSet3Ptr sset = std::make_shared<ImplicitSurfaceSet3>();
+	Vector3D emptyNormal = sset->ClosestNormal({ 1.0, 2.0, 3.0 });
+	// No excepted value -- just see if it doesn't crash
+	(void)emptyNormal;
+
 	sset->AddExplicitSurface(box);
 
 	Vector3D pt(0.5, 2.5, -1.0);
