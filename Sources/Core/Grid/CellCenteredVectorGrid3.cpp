@@ -82,7 +82,7 @@ namespace CubbyFlow
 			ZERO_SIZE, size.x,
 			ZERO_SIZE, size.y,
 			ZERO_SIZE, size.z,
-			[this, value, &acc](size_t i, size_t j, size_t k)
+			[value, &acc](size_t i, size_t j, size_t k)
 		{
 			acc(i, j, k) = value;
 		}, policy);
@@ -98,7 +98,7 @@ namespace CubbyFlow
 			ZERO_SIZE, size.x,
 			ZERO_SIZE, size.y,
 			ZERO_SIZE, size.z,
-			[this, &func, &acc, &pos](size_t i, size_t j, size_t k)
+			[&func, &acc, &pos](size_t i, size_t j, size_t k)
 		{
 			acc(i, j, k) = func(pos(i, j, k));
 		}, policy);
