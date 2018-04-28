@@ -127,8 +127,9 @@ Here are some of the example simulations generated using CubbyFlow framework. Co
 ## Presentations (Korean)
 
 <figure>
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/HVE7X3QOG5fh2C" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/utilforever/ndc-2018-95260566" title="[NDC 2018] 유체역학 엔진 개발기" target="_blank">[NDC 2018] 유체역학 엔진 개발기</a> </strong> from <strong><a href="https://www.slideshare.net/utilforever" target="_blank">찬호 옥</a></strong> </div>
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/HVE7X3QOG5fh2C" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
 </figure>
+<div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/utilforever/ndc-2018-95260566" title="[NDC 2018] 유체역학 엔진 개발기" target="_blank">[NDC 2018] 유체역학 엔진 개발기</a> </strong> from <strong><a href="https://www.slideshare.net/utilforever" target="_blank">찬호 옥</a></strong> </div>
 
 #### Related articles
 
