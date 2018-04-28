@@ -52,6 +52,12 @@ TEST(SurfaceSet3, ClosestPoint)
 {
 	SurfaceSet3 sset1;
 
+	// Test empty set
+	Vector3D emptyPoint = sset1.ClosestPoint({ 1.0, 2.0, 3.0 });
+	EXPECT_DOUBLE_EQ(std::numeric_limits<double>::max(), emptyPoint.x);
+	EXPECT_DOUBLE_EQ(std::numeric_limits<double>::max(), emptyPoint.y);
+	EXPECT_DOUBLE_EQ(std::numeric_limits<double>::max(), emptyPoint.z);
+
 	size_t numSamples = GetNumberOfSamplePoints3();
 
 	// Use first half of the samples as the centers of the spheres
@@ -114,6 +120,11 @@ TEST(SurfaceSet3, ClosestPoint)
 TEST(SurfaceSet3, ClosestNormal)
 {
 	SurfaceSet3 sset1;
+
+	// Test empty set
+	Vector3D emptyNormal = sset1.ClosestNormal({ 1.0, 2.0, 3.0 });
+	// No excepted value -- just see if it doesn't crash
+	(void)emptyNormal;
 
 	size_t numSamples = GetNumberOfSamplePoints3();
 
