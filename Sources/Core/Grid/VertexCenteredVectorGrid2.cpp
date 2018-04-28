@@ -74,7 +74,7 @@ namespace CubbyFlow
 		ParallelFor(
 			ZERO_SIZE, size.x,
 			ZERO_SIZE, size.y,
-			[this, value, &acc](size_t i, size_t j)
+			[value, &acc](size_t i, size_t j)
 		{
 			acc(i, j) = value;
 		}, policy);
@@ -89,7 +89,7 @@ namespace CubbyFlow
 		ParallelFor(
 			ZERO_SIZE, size.x,
 			ZERO_SIZE, size.y,
-			[this, &func, &acc, &pos](size_t i, size_t j)
+			[&func, &acc, &pos](size_t i, size_t j)
 		{
 			acc(i, j) = func(pos(i, j));
 		}, policy);
