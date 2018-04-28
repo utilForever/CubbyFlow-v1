@@ -79,7 +79,12 @@ namespace CubbyFlow
 		};
 
 		const auto queryResult = m_bvh.GetNearestNeighbor(otherPoint, distanceFunc);
-		return (*queryResult.item)->ClosestPoint(otherPoint);
+		if (queryResult.item != nullptr)
+		{
+			return (*queryResult.item)->ClosestPoint(otherPoint);
+		}
+
+		return Vector3D{ std::numeric_limits<double>::max(), std::numeric_limits<double>::max(), std::numeric_limits<double>::max() };
 	}
 
 	double ImplicitSurfaceSet3::ClosestDistanceLocal(const Vector3D& otherPoint) const
@@ -105,7 +110,12 @@ namespace CubbyFlow
 		};
 
 		const auto queryResult = m_bvh.GetNearestNeighbor(otherPoint, distanceFunc);
-		return (*queryResult.item)->ClosestNormal(otherPoint);
+		if (queryResult.item != nullptr)
+		{
+			return (*queryResult.item)->ClosestNormal(otherPoint);
+		}
+
+		return Vector3D{ 1.0, 0.0, 0.0 };
 	}
 
 	bool ImplicitSurfaceSet3::IntersectsLocal(const Ray3D& ray) const
