@@ -275,3 +275,7 @@ python Tests/PythonTests/main.py
 ```
 
 The tests should pass.
+
+### Coding Style
+
+CubbyFlow uses clang-format. Checkout [`.clang-format`](https://github.com/utilforever/CubbyFlow/blob/master/.clang-format) file for the style guideline.
