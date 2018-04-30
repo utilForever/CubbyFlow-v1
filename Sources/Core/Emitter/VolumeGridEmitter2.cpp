@@ -85,6 +85,13 @@ namespace CubbyFlow
 
 	void VolumeGridEmitter2::Emit() 
 	{
+		if (m_sourceRegion == nullptr)
+		{
+			return;
+		}
+
+		m_sourceRegion->UpdateQueryEngine();
+
 		for (const auto& target : m_customScalarTargets)
 		{
 			const auto& grid = std::get<0>(target);
