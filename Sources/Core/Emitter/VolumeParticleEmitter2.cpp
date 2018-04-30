@@ -67,6 +67,13 @@ namespace CubbyFlow
 	void VolumeParticleEmitter2::Emit(const ParticleSystemData2Ptr& particles,
 		Array1<Vector2D>* newPositions, Array1<Vector2D>* newVelocities)
 	{
+		if (m_implicitSurface == nullptr)
+		{
+			return;
+		}
+
+		m_implicitSurface->UpdateQueryEngine();
+
 		// Reserving more space for jittering
 		const double j = GetJitter();
 		const double maxJitterDist = 0.5 * j * m_spacing;
