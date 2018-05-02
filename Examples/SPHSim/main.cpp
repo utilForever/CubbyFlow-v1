@@ -19,6 +19,7 @@
 #include <Core/Surface/ImplicitSurfaceSet3.h>
 #include <Core/Utils/Logging.h>
 
+#include <Clara/include/clara.hpp>
 #include <pystring/pystring.h>
 
 #ifdef CUBBYFLOW_WINDOWS
@@ -26,8 +27,6 @@
 #else
 #include <sys/stat.h>
 #endif
-
-#include <getopt.h>
 
 #include <fstream>
 #include <string>
@@ -325,60 +324,72 @@ int main(int argc, char* argv[])
 	std::string outputDir = APP_NAME "_output";
 	std::string format = "xyz";
 
-	// Parse options
-	static struct option longOptions[] =
-	{
-		{"spacing",   optional_argument, nullptr, 's'},
-		{"frames",    optional_argument, nullptr, 'f'},
-		{"fps",       optional_argument, nullptr, 'p'},
-		{"example",   optional_argument, nullptr, 'e'},
-		{"log",       optional_argument, nullptr, 'l'},
-		{"outputDir", optional_argument, nullptr, 'o'},
-		{"format",    optional_argument, nullptr, 'm'},
-		{"help",      optional_argument, nullptr, 'h'},
-		{nullptr,     0,                 nullptr,  0 }
-	};
+    auto cli =
+        clara::Opt(targetSpacing, "targetSpacing")
+        ["-s"]["--spacing"]
+        ("target particle spacing (default is 0.02)");
 
-	int opt;
-	int long_index = 0;
-	while ((opt = getopt_long(argc, argv, "s:f:p:e:l:o:m:h", longOptions, &long_index)) != -1)
-	{
-		switch (opt)
-		{
-			case 's':
-				targetSpacing = atof(optarg);
-				break;
-			case 'f':
-				numberOfFrames = atoi(optarg);
-				break;
-			case 'p':
-				fps = atof(optarg);
-				break;
-			case 'e':
-				exampleNum = atoi(optarg);
-				break;
-			case 'l':
-				logFileName = optarg;
-				break;
-			case 'o':
-				outputDir = optarg;
-				break;
-			case 'm':
-				format = optarg;
-				if (format != "pos" && format != "xyz")
-				{
-					PrintUsage();
-					exit(EXIT_FAILURE);
-				}
-				break;
-			case 'h':
-				PrintUsage();
-				exit(EXIT_SUCCESS);
-			default:
-				PrintUsage();
-				exit(EXIT_FAILURE);
-		}
-	}
+    auto result = cli.parse(clara::Args(argc, argv));
+    if (!result)
+    {
+        std::cerr << "Error in command line: " << result.errorMessage() << "\n";
+        exit(EXIT_FAILURE);
+    }
+
+	// Parse options
+	//static struct option longOptions[] =
+	//{
+	//	{"spacing",   optional_argument, nullptr, 's'},
+	//	{"frames",    optional_argument, nullptr, 'f'},
+	//	{"fps",       optional_argument, nullptr, 'p'},
+	//	{"example",   optional_argument, nullptr, 'e'},
+	//	{"log",       optional_argument, nullptr, 'l'},
+	//	{"outputDir", optional_argument, nullptr, 'o'},
+	//	{"format",    optional_argument, nullptr, 'm'},
+	//	{"help",      optional_argument, nullptr, 'h'},
+	//	{nullptr,     0,                 nullptr,  0 }
+	//};
+
+	//int opt;
+	//int long_index = 0;
+	//while ((opt = getopt_long(argc, argv, "s:f:p:e:l:o:m:h", longOptions, &long_index)) != -1)
+	//{
+	//	switch (opt)
+	//	{
+	//		case 's':
+	//			targetSpacing = atof(optarg);
+	//			break;
+	//		case 'f':
+	//			numberOfFrames = atoi(optarg);
+	//			break;
+	//		case 'p':
+	//			fps = atof(optarg);
+	//			break;
+	//		case 'e':
+	//			exampleNum = atoi(optarg);
+	//			break;
+	//		case 'l':
+	//			logFileName = optarg;
+	//			break;
+	//		case 'o':
+	//			outputDir = optarg;
+	//			break;
+	//		case 'm':
+	//			format = optarg;
+	//			if (format != "pos" && format != "xyz")
+	//			{
+	//				PrintUsage();
+	//				exit(EXIT_FAILURE);
+	//			}
+	//			break;
+	//		case 'h':
+	//			PrintUsage();
+	//			exit(EXIT_SUCCESS);
+	//		default:
+	//			PrintUsage();
+	//			exit(EXIT_FAILURE);
+	//	}
+	//}
 
 #ifdef CUBBYFLOW_WINDOWS
 	_mkdir(outputDir.c_str());
