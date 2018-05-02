@@ -25,6 +25,7 @@ include_directories(Libraries/googletest/googletest/include)
 if(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
     include_directories(Libraries/winix)
 endif()
+include_directories(Libraries/Clara/include)
 
 # Find TBB
 include(Builds/CMake/FindTBB.cmake)
