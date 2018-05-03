@@ -6,6 +6,8 @@
 > Created Time: 2017/06/18
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
+#include <../ClaraUtils.h>
+
 #include <Core/Array/ArrayUtils.h>
 #include <Core/Collider/RigidBodyCollider3.h>
 #include <Core/Emitter/VolumeParticleEmitter3.h>
@@ -19,6 +21,7 @@
 #include <Core/Surface/ImplicitSurfaceSet3.h>
 #include <Core/Utils/Logging.h>
 
+#include <Clara/include/clara.hpp>
 #include <pystring/pystring.h>
 
 #ifdef CUBBYFLOW_WINDOWS
@@ -26,8 +29,6 @@
 #else
 #include <sys/stat.h>
 #endif
-
-#include <getopt.h>
 
 #include <fstream>
 #include <string>
@@ -74,20 +75,6 @@ void SaveParticleAsXYZ(const ParticleSystemData3Ptr& particles, const std::strin
 	}
 }
 
-void PrintUsage()
-{
-	printf(
-		"Usage: " APP_NAME " [options]\n"
-		"   -s, --spacing: target particle spacing (default is 0.02)\n"
-		"   -f, --frames: total number of frames (default is 100)\n"
-		"   -p, --fps: frames per second (default is 60.0)\n"
-		"   -l, --log: log filename (default is " APP_NAME ".log)\n"
-		"   -o, --output: output directory name (default is " APP_NAME "_output)\n"
-		"   -m, --format: particle output format (xyz or pos. default is xyz)\n"
-		"   -e, --example: example number (between 1 and 3, default is 1)\n"
-		"   -h, --help: print this message\n");
-}
-
 void PrintInfo(const SPHSolver3Ptr& solver)
 {
 	const auto particles = solver->GetSPHSystemData();
@@ -131,8 +118,8 @@ void RunExample1(const std::string& rootDir, double targetSpacing, int numberOfF
 	sourceBound.Expand(-targetSpacing);
 
 	const auto plane = Plane3::GetBuilder()
-		.WithNormal({0, 1, 0})
-		.WithPoint({0, 0.25 * domain.GetHeight(), 0})
+		.WithNormal({ 0, 1, 0 })
+		.WithPoint({ 0, 0.25 * domain.GetHeight(), 0 })
 		.MakeShared();
 
 	const auto sphere = Sphere3::GetBuilder()
@@ -141,7 +128,7 @@ void RunExample1(const std::string& rootDir, double targetSpacing, int numberOfF
 		.MakeShared();
 
 	const auto surfaceSet = ImplicitSurfaceSet3::GetBuilder()
-		.WithExplicitSurfaces({plane, sphere})
+		.WithExplicitSurfaces({ plane, sphere })
 		.MakeShared();
 
 	const auto emitter = VolumeParticleEmitter3::GetBuilder()
@@ -190,8 +177,8 @@ void RunExample2(const std::string& rootDir, double targetSpacing, int numberOfF
 	sourceBound.Expand(-targetSpacing);
 
 	const auto plane = Plane3::GetBuilder()
-		.WithNormal({0, 1, 0})
-		.WithPoint({0, 0.25 * domain.GetHeight(), 0})
+		.WithNormal({ 0, 1, 0 })
+		.WithPoint({ 0, 0.25 * domain.GetHeight(), 0 })
 		.MakeShared();
 
 	const auto sphere = Sphere3::GetBuilder()
@@ -200,7 +187,7 @@ void RunExample2(const std::string& rootDir, double targetSpacing, int numberOfF
 		.MakeShared();
 
 	const auto surfaceSet = ImplicitSurfaceSet3::GetBuilder()
-		.WithExplicitSurfaces({plane, sphere})
+		.WithExplicitSurfaces({ plane, sphere })
 		.MakeShared();
 
 	const auto emitter = VolumeParticleEmitter3::GetBuilder()
@@ -252,17 +239,17 @@ void RunExample3(const std::string& rootDir, double targetSpacing, int numberOfF
 	sourceBound.Expand(-targetSpacing);
 
 	const auto box1 = Box3::GetBuilder()
-		.WithLowerCorner({0, 0, 0})
-		.WithUpperCorner({0.5 + 0.001, 0.75 + 0.001, 0.75 * lz + 0.001})
+		.WithLowerCorner({ 0, 0, 0 })
+		.WithUpperCorner({ 0.5 + 0.001, 0.75 + 0.001, 0.75 * lz + 0.001 })
 		.MakeShared();
 
 	const auto box2 = Box3::GetBuilder()
-		.WithLowerCorner({2.5 - 0.001, 0, 0.25 * lz - 0.001})
-		.WithUpperCorner({3.5 + 0.001, 0.75 + 0.001, 1.5 * lz + 0.001})
+		.WithLowerCorner({ 2.5 - 0.001, 0, 0.25 * lz - 0.001 })
+		.WithUpperCorner({ 3.5 + 0.001, 0.75 + 0.001, 1.5 * lz + 0.001 })
 		.MakeShared();
 
 	const auto boxSet = ImplicitSurfaceSet3::GetBuilder()
-		.WithExplicitSurfaces({box1, box2})
+		.WithExplicitSurfaces({ box1, box2 })
 		.MakeShared();
 
 	const auto emitter = VolumeParticleEmitter3::GetBuilder()
@@ -275,19 +262,19 @@ void RunExample3(const std::string& rootDir, double targetSpacing, int numberOfF
 
 	// Build collider
 	const auto cyl1 = Cylinder3::GetBuilder()
-		.WithCenter({1, 0.375, 0.375})
+		.WithCenter({ 1, 0.375, 0.375 })
 		.WithRadius(0.1)
 		.WithHeight(0.75)
 		.MakeShared();
 
 	const auto cyl2 = Cylinder3::GetBuilder()
-		.WithCenter({1.5, 0.375, 0.75})
+		.WithCenter({ 1.5, 0.375, 0.75 })
 		.WithRadius(0.1)
 		.WithHeight(0.75)
 		.MakeShared();
 
 	const auto cyl3 = Cylinder3::GetBuilder()
-		.WithCenter({2, 0.375, 1.125})
+		.WithCenter({ 2, 0.375, 1.125 })
 		.WithRadius(0.1)
 		.WithHeight(0.75)
 		.MakeShared();
@@ -317,6 +304,8 @@ void RunExample3(const std::string& rootDir, double targetSpacing, int numberOfF
 
 int main(int argc, char* argv[])
 {
+	bool showHelp = false;
+
 	double targetSpacing = 0.02;
 	int numberOfFrames = 100;
 	double fps = 60.0;
@@ -325,59 +314,42 @@ int main(int argc, char* argv[])
 	std::string outputDir = APP_NAME "_output";
 	std::string format = "xyz";
 
-	// Parse options
-	static struct option longOptions[] =
-	{
-		{"spacing",   optional_argument, nullptr, 's'},
-		{"frames",    optional_argument, nullptr, 'f'},
-		{"fps",       optional_argument, nullptr, 'p'},
-		{"example",   optional_argument, nullptr, 'e'},
-		{"log",       optional_argument, nullptr, 'l'},
-		{"outputDir", optional_argument, nullptr, 'o'},
-		{"format",    optional_argument, nullptr, 'm'},
-		{"help",      optional_argument, nullptr, 'h'},
-		{nullptr,     0,                 nullptr,  0 }
-	};
+	// Parsing
+	auto parser =
+		clara::Help(showHelp) |
+		clara::Opt(targetSpacing, "targetSpacing")
+		["-s"]["--spacing"]
+		("target particle spacing (default is 0.02)") |
+		clara::Opt(numberOfFrames, "numberOfFrames")
+		["-f"]["--frames"]
+		("total number of frames (default is 100)") |
+		clara::Opt(fps, "fps")
+		["-p"]["--fps"]
+		("frames per second (default is 60.0)") |
+		clara::Opt(exampleNum, "exampleNum")
+		["-e"]["--example"]
+		("example number (between 1 and 3, default is 1)") |
+		clara::Opt(logFileName, "logFileName")
+		["-l"]["--log"]
+		("log file name (default is " APP_NAME ".log)") |
+		clara::Opt(outputDir, "outputDir")
+		["-o"]["--output"]
+		("output directory name (default is " APP_NAME "_output)") |
+		clara::Opt(format, "format")
+		["-m"]["--format"]
+		("particle output format (xyz or pos. default is xyz)");
 
-	int opt;
-	int long_index = 0;
-	while ((opt = getopt_long(argc, argv, "s:f:p:e:l:o:m:h", longOptions, &long_index)) != -1)
+	auto result = parser.parse(clara::Args(argc, argv));
+	if (!result)
 	{
-		switch (opt)
-		{
-			case 's':
-				targetSpacing = atof(optarg);
-				break;
-			case 'f':
-				numberOfFrames = atoi(optarg);
-				break;
-			case 'p':
-				fps = atof(optarg);
-				break;
-			case 'e':
-				exampleNum = atoi(optarg);
-				break;
-			case 'l':
-				logFileName = optarg;
-				break;
-			case 'o':
-				outputDir = optarg;
-				break;
-			case 'm':
-				format = optarg;
-				if (format != "pos" && format != "xyz")
-				{
-					PrintUsage();
-					exit(EXIT_FAILURE);
-				}
-				break;
-			case 'h':
-				PrintUsage();
-				exit(EXIT_SUCCESS);
-			default:
-				PrintUsage();
-				exit(EXIT_FAILURE);
-		}
+		std::cerr << "Error in command line: " << result.errorMessage() << '\n';
+		exit(EXIT_FAILURE);
+	}
+
+	if (showHelp)
+	{
+		std::cout << ToString(parser) << '\n';
+		exit(EXIT_SUCCESS);
 	}
 
 #ifdef CUBBYFLOW_WINDOWS
@@ -394,18 +366,18 @@ int main(int argc, char* argv[])
 
 	switch (exampleNum)
 	{
-		case 1:
-			RunExample1(outputDir, targetSpacing, numberOfFrames, format, fps);
-			break;
-		case 2:
-			RunExample2(outputDir, targetSpacing, numberOfFrames, format, fps);
-			break;
-		case 3:
-			RunExample3(outputDir, targetSpacing, numberOfFrames, format, fps);
-			break;
-		default:
-			PrintUsage();
-			exit(EXIT_FAILURE);
+	case 1:
+		RunExample1(outputDir, targetSpacing, numberOfFrames, format, fps);
+		break;
+	case 2:
+		RunExample2(outputDir, targetSpacing, numberOfFrames, format, fps);
+		break;
+	case 3:
+		RunExample3(outputDir, targetSpacing, numberOfFrames, format, fps);
+		break;
+	default:
+		std::cout << ToString(parser) << '\n';
+		exit(EXIT_FAILURE);
 	}
 
 	return EXIT_SUCCESS;
