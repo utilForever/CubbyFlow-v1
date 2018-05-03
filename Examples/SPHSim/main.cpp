@@ -87,20 +87,6 @@ void SaveParticleAsXYZ(const ParticleSystemData3Ptr& particles, const std::strin
 	}
 }
 
-void PrintUsage()
-{
-	printf(
-		"Usage: " APP_NAME " [options]\n"
-		"   -s, --spacing: target particle spacing (default is 0.02)\n"
-		"   -f, --frames: total number of frames (default is 100)\n"
-		"   -p, --fps: frames per second (default is 60.0)\n"
-		"   -l, --log: log filename (default is " APP_NAME ".log)\n"
-		"   -o, --output: output directory name (default is " APP_NAME "_output)\n"
-		"   -m, --format: particle output format (xyz or pos. default is xyz)\n"
-		"   -e, --example: example number (between 1 and 3, default is 1)\n"
-		"   -h, --help: print this message\n");
-}
-
 void PrintInfo(const SPHSolver3Ptr& solver)
 {
 	const auto particles = solver->GetSPHSystemData();
@@ -340,79 +326,43 @@ int main(int argc, char* argv[])
 	std::string outputDir = APP_NAME "_output";
 	std::string format = "xyz";
 
-	auto cli =
+	// Parsing
+	auto parser =
 		clara::Help(showHelp) |
 		clara::Opt(targetSpacing, "targetSpacing")
 		["-s"]["--spacing"]
-		("target particle spacing (default is 0.02)");
+		("target particle spacing (default is 0.02)") |
+		clara::Opt(numberOfFrames, "numberOfFrames")
+		["-f"]["--frames"]
+		("total number of frames (default is 100)") |
+		clara::Opt(fps, "fps")
+		["-p"]["--fps"]
+		("frames per second (default is 60.0)") |
+		clara::Opt(exampleNum, "exampleNum")
+		["-e"]["--example"]
+		("example number (between 1 and 3, default is 1)") |
+		clara::Opt(logFileName, "logFileName")
+		["-l"]["--log"]
+		("log file name (default is " APP_NAME ".log)") |
+		clara::Opt(outputDir, "outputDir")
+		["-o"]["--output"]
+		("output directory name (default is " APP_NAME "_output)") |
+		clara::Opt(format, "format")
+		["-m"]["--format"]
+		("particle output format (xyz or pos. default is xyz)");
 
-	auto result = cli.parse(clara::Args(argc, argv));
+	auto result = parser.parse(clara::Args(argc, argv));
 	if (!result)
 	{
-		std::cerr << "Error in command line: " << result.errorMessage() << "\n";
+		std::cerr << "Error in command line: " << result.errorMessage() << '\n';
 		exit(EXIT_FAILURE);
 	}
 
 	if (showHelp)
 	{
-		std::cout << ToString(cli) << "\n";
+		std::cout << ToString(parser) << '\n';
 		exit(EXIT_SUCCESS);
 	}
-
-	// Parse options
-	//static struct option longOptions[] =
-	//{
-	//	{"spacing",   optional_argument, nullptr, 's'},
-	//	{"frames",    optional_argument, nullptr, 'f'},
-	//	{"fps",       optional_argument, nullptr, 'p'},
-	//	{"example",   optional_argument, nullptr, 'e'},
-	//	{"log",       optional_argument, nullptr, 'l'},
-	//	{"outputDir", optional_argument, nullptr, 'o'},
-	//	{"format",    optional_argument, nullptr, 'm'},
-	//	{"help",      optional_argument, nullptr, 'h'},
-	//	{nullptr,     0,                 nullptr,  0 }
-	//};
-
-	//int opt;
-	//int long_index = 0;
-	//while ((opt = getopt_long(argc, argv, "s:f:p:e:l:o:m:h", longOptions, &long_index)) != -1)
-	//{
-	//	switch (opt)
-	//	{
-	//		case 's':
-	//			targetSpacing = atof(optarg);
-	//			break;
-	//		case 'f':
-	//			numberOfFrames = atoi(optarg);
-	//			break;
-	//		case 'p':
-	//			fps = atof(optarg);
-	//			break;
-	//		case 'e':
-	//			exampleNum = atoi(optarg);
-	//			break;
-	//		case 'l':
-	//			logFileName = optarg;
-	//			break;
-	//		case 'o':
-	//			outputDir = optarg;
-	//			break;
-	//		case 'm':
-	//			format = optarg;
-	//			if (format != "pos" && format != "xyz")
-	//			{
-	//				PrintUsage();
-	//				exit(EXIT_FAILURE);
-	//			}
-	//			break;
-	//		case 'h':
-	//			PrintUsage();
-	//			exit(EXIT_SUCCESS);
-	//		default:
-	//			PrintUsage();
-	//			exit(EXIT_FAILURE);
-	//	}
-	//}
 
 #ifdef CUBBYFLOW_WINDOWS
 	_mkdir(outputDir.c_str());
@@ -438,7 +388,7 @@ int main(int argc, char* argv[])
 		RunExample3(outputDir, targetSpacing, numberOfFrames, format, fps);
 		break;
 	default:
-		PrintUsage();
+		std::cout << ToString(parser) << '\n';
 		exit(EXIT_FAILURE);
 	}
 
