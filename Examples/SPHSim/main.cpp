@@ -36,6 +36,20 @@
 
 using namespace CubbyFlow;
 
+std::string ToString(const clara::Opt& opt)
+{
+	std::ostringstream oss;
+	oss << (clara::Parser() | opt);
+	return oss.str();
+}
+
+std::string ToString(const clara::Parser& p)
+{
+	std::ostringstream oss;
+	oss << p;
+	return oss.str();
+}
+
 void SaveParticleAsPos(const ParticleSystemData3Ptr& particles, const std::string& rootDir, int frameCnt)
 {
 	Array1<Vector3D> positions(particles->GetNumberOfParticles());
@@ -130,8 +144,8 @@ void RunExample1(const std::string& rootDir, double targetSpacing, int numberOfF
 	sourceBound.Expand(-targetSpacing);
 
 	const auto plane = Plane3::GetBuilder()
-		.WithNormal({0, 1, 0})
-		.WithPoint({0, 0.25 * domain.GetHeight(), 0})
+		.WithNormal({ 0, 1, 0 })
+		.WithPoint({ 0, 0.25 * domain.GetHeight(), 0 })
 		.MakeShared();
 
 	const auto sphere = Sphere3::GetBuilder()
@@ -140,7 +154,7 @@ void RunExample1(const std::string& rootDir, double targetSpacing, int numberOfF
 		.MakeShared();
 
 	const auto surfaceSet = ImplicitSurfaceSet3::GetBuilder()
-		.WithExplicitSurfaces({plane, sphere})
+		.WithExplicitSurfaces({ plane, sphere })
 		.MakeShared();
 
 	const auto emitter = VolumeParticleEmitter3::GetBuilder()
@@ -189,8 +203,8 @@ void RunExample2(const std::string& rootDir, double targetSpacing, int numberOfF
 	sourceBound.Expand(-targetSpacing);
 
 	const auto plane = Plane3::GetBuilder()
-		.WithNormal({0, 1, 0})
-		.WithPoint({0, 0.25 * domain.GetHeight(), 0})
+		.WithNormal({ 0, 1, 0 })
+		.WithPoint({ 0, 0.25 * domain.GetHeight(), 0 })
 		.MakeShared();
 
 	const auto sphere = Sphere3::GetBuilder()
@@ -199,7 +213,7 @@ void RunExample2(const std::string& rootDir, double targetSpacing, int numberOfF
 		.MakeShared();
 
 	const auto surfaceSet = ImplicitSurfaceSet3::GetBuilder()
-		.WithExplicitSurfaces({plane, sphere})
+		.WithExplicitSurfaces({ plane, sphere })
 		.MakeShared();
 
 	const auto emitter = VolumeParticleEmitter3::GetBuilder()
@@ -251,17 +265,17 @@ void RunExample3(const std::string& rootDir, double targetSpacing, int numberOfF
 	sourceBound.Expand(-targetSpacing);
 
 	const auto box1 = Box3::GetBuilder()
-		.WithLowerCorner({0, 0, 0})
-		.WithUpperCorner({0.5 + 0.001, 0.75 + 0.001, 0.75 * lz + 0.001})
+		.WithLowerCorner({ 0, 0, 0 })
+		.WithUpperCorner({ 0.5 + 0.001, 0.75 + 0.001, 0.75 * lz + 0.001 })
 		.MakeShared();
 
 	const auto box2 = Box3::GetBuilder()
-		.WithLowerCorner({2.5 - 0.001, 0, 0.25 * lz - 0.001})
-		.WithUpperCorner({3.5 + 0.001, 0.75 + 0.001, 1.5 * lz + 0.001})
+		.WithLowerCorner({ 2.5 - 0.001, 0, 0.25 * lz - 0.001 })
+		.WithUpperCorner({ 3.5 + 0.001, 0.75 + 0.001, 1.5 * lz + 0.001 })
 		.MakeShared();
 
 	const auto boxSet = ImplicitSurfaceSet3::GetBuilder()
-		.WithExplicitSurfaces({box1, box2})
+		.WithExplicitSurfaces({ box1, box2 })
 		.MakeShared();
 
 	const auto emitter = VolumeParticleEmitter3::GetBuilder()
@@ -274,19 +288,19 @@ void RunExample3(const std::string& rootDir, double targetSpacing, int numberOfF
 
 	// Build collider
 	const auto cyl1 = Cylinder3::GetBuilder()
-		.WithCenter({1, 0.375, 0.375})
+		.WithCenter({ 1, 0.375, 0.375 })
 		.WithRadius(0.1)
 		.WithHeight(0.75)
 		.MakeShared();
 
 	const auto cyl2 = Cylinder3::GetBuilder()
-		.WithCenter({1.5, 0.375, 0.75})
+		.WithCenter({ 1.5, 0.375, 0.75 })
 		.WithRadius(0.1)
 		.WithHeight(0.75)
 		.MakeShared();
 
 	const auto cyl3 = Cylinder3::GetBuilder()
-		.WithCenter({2, 0.375, 1.125})
+		.WithCenter({ 2, 0.375, 1.125 })
 		.WithRadius(0.1)
 		.WithHeight(0.75)
 		.MakeShared();
@@ -316,6 +330,8 @@ void RunExample3(const std::string& rootDir, double targetSpacing, int numberOfF
 
 int main(int argc, char* argv[])
 {
+	bool showHelp = false;
+
 	double targetSpacing = 0.02;
 	int numberOfFrames = 100;
 	double fps = 60.0;
@@ -324,17 +340,24 @@ int main(int argc, char* argv[])
 	std::string outputDir = APP_NAME "_output";
 	std::string format = "xyz";
 
-    auto cli =
-        clara::Opt(targetSpacing, "targetSpacing")
-        ["-s"]["--spacing"]
-        ("target particle spacing (default is 0.02)");
+	auto cli =
+		clara::Help(showHelp) |
+		clara::Opt(targetSpacing, "targetSpacing")
+		["-s"]["--spacing"]
+		("target particle spacing (default is 0.02)");
 
-    auto result = cli.parse(clara::Args(argc, argv));
-    if (!result)
-    {
-        std::cerr << "Error in command line: " << result.errorMessage() << "\n";
-        exit(EXIT_FAILURE);
-    }
+	auto result = cli.parse(clara::Args(argc, argv));
+	if (!result)
+	{
+		std::cerr << "Error in command line: " << result.errorMessage() << "\n";
+		exit(EXIT_FAILURE);
+	}
+
+	if (showHelp)
+	{
+		std::cout << ToString(cli) << "\n";
+		exit(EXIT_SUCCESS);
+	}
 
 	// Parse options
 	//static struct option longOptions[] =
@@ -405,18 +428,18 @@ int main(int argc, char* argv[])
 
 	switch (exampleNum)
 	{
-		case 1:
-			RunExample1(outputDir, targetSpacing, numberOfFrames, format, fps);
-			break;
-		case 2:
-			RunExample2(outputDir, targetSpacing, numberOfFrames, format, fps);
-			break;
-		case 3:
-			RunExample3(outputDir, targetSpacing, numberOfFrames, format, fps);
-			break;
-		default:
-			PrintUsage();
-			exit(EXIT_FAILURE);
+	case 1:
+		RunExample1(outputDir, targetSpacing, numberOfFrames, format, fps);
+		break;
+	case 2:
+		RunExample2(outputDir, targetSpacing, numberOfFrames, format, fps);
+		break;
+	case 3:
+		RunExample3(outputDir, targetSpacing, numberOfFrames, format, fps);
+		break;
+	default:
+		PrintUsage();
+		exit(EXIT_FAILURE);
 	}
 
 	return EXIT_SUCCESS;
