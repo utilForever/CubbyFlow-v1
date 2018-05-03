@@ -6,6 +6,8 @@
 > Created Time: 2017/06/18
 > Copyright (c) 2018, Chan-Ho Chris Ohk
 *************************************************************************/
+#include <../ClaraUtils.h>
+
 #include <Core/Array/ArrayUtils.h>
 #include <Core/Collider/RigidBodyCollider3.h>
 #include <Core/Emitter/VolumeParticleEmitter3.h>
@@ -35,20 +37,6 @@
 #define APP_NAME "SPHSim"
 
 using namespace CubbyFlow;
-
-std::string ToString(const clara::Opt& opt)
-{
-	std::ostringstream oss;
-	oss << (clara::Parser() | opt);
-	return oss.str();
-}
-
-std::string ToString(const clara::Parser& p)
-{
-	std::ostringstream oss;
-	oss << p;
-	return oss.str();
-}
 
 void SaveParticleAsPos(const ParticleSystemData3Ptr& particles, const std::string& rootDir, int frameCnt)
 {
