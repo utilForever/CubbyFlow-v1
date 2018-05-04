@@ -18,6 +18,7 @@
 #include <hpx/include/parallel_fill.hpp>
 #include <hpx/include/parallel_for_each.hpp>
 #include <hpx/include/parallel_for_loop.hpp>
+#include <hpx/include/future.hpp>
 #endif
 
 #if defined(CUBBYFLOW_TASKING_TBB)
@@ -41,10 +42,15 @@ namespace CubbyFlow
 {
     namespace Internal
     {
+
+
         // NOTE: This abstraction takes a lambda which should take captured
         //       variables by *value* to ensure no captured references race
         //       with the task itself.
 #if defined(CUBBYFLOW_TASKING_HPX)
+        template<typename Task>
+        using future = hpx::future<Task>;
+
         template <typename TASK>
         using operator_return_t = typename std::result_of<TASK()>::type;
 
@@ -54,6 +60,9 @@ namespace CubbyFlow
             return hpx::async(std::forward<TASK>(fn));
         }
 #else
+        template<typename Task>
+        using future = std::future<Task>;
+
         template <typename TASK>
         inline void Schedule(TASK&& fn)
         {
@@ -165,7 +174,7 @@ namespace CubbyFlow
             }
             else if (numThreads > 1)
             {
-                std::vector<std::future<void>> pool;
+                std::vector<CubbyFlow::Internal::future<void>> pool;
                 pool.reserve(2);
 
                 auto launchRange = [compareFunction](RandomIterator begin, size_t k2, RandomIterator2 temp, unsigned int numThreads)
@@ -346,7 +355,7 @@ namespace CubbyFlow
             slice = std::max(slice, IndexType(1));
 
             // Create pool and launch jobs
-            std::vector<std::future<void>> pool;
+            std::vector<CubbyFlow::Internal::future<void>> pool;
             pool.reserve(numThreads);
             IndexType i1 = beginIndex;
             IndexType i2 = std::min(beginIndex + slice, endIndex);
@@ -480,7 +489,7 @@ namespace CubbyFlow
                 };
         
             // Create pool and launch jobs
-            std::vector<std::future<void>> pool;
+            std::vector<CubbyFlow::Internal::future<void>> pool;
             pool.reserve(numThreads);
 
             IndexType i1 = beginIndex;
