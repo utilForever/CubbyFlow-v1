@@ -491,12 +491,6 @@ int main(int argc, char* argv[])
         ["-m"]["--format"]
         ("particle output format (xyz or pos. default is xyz)");
 
-#ifdef CUBBYFLOW_WINDOWS
-    _mkdir(outputDir.c_str());
-#else
-    mkdir(outputDir.c_str(), S_IRWXU | S_IRWXG | S_IRWXO);
-#endif
-
     auto result = parser.parse(clara::Args(argc, argv));
     if (!result)
     {
@@ -509,6 +503,12 @@ int main(int argc, char* argv[])
         std::cout << ToString(parser) << '\n';
         exit(EXIT_SUCCESS);
     }
+
+#ifdef CUBBYFLOW_WINDOWS
+    _mkdir(outputDir.c_str());
+#else
+    mkdir(outputDir.c_str(), S_IRWXU | S_IRWXG | S_IRWXO);
+#endif
 
     std::ofstream logFile(logFileName.c_str());
     if (logFile)
