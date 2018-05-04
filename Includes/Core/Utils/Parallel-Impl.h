@@ -44,37 +44,29 @@ namespace CubbyFlow
     {
 
 
-        // NOTE: This abstraction takes a lambda which should take captured
-        //       variables by *value* to ensure no captured references race
-        //       with the task itself.
 #if defined(CUBBYFLOW_TASKING_HPX)
         template<typename Task>
         using future = hpx::future<Task>;
+#else
+        template<typename Task>
+        using future = std::future<Task>;
+#endif
 
         template <typename TASK>
         using operator_return_t = typename std::result_of<TASK()>::type;
 
         template <typename TASK>
-        inline auto Async(TASK&& fn) -> hpx::future<operator_return_t<TASK>>
+        inline auto Async(TASK&& fn) -> future<operator_return_t<TASK>>
         {
+#if defined(CUBBYFLOW_TASKING_HPX)
             return hpx::async(std::forward<TASK>(fn));
-        }
-#else
-        template<typename Task>
-        using future = std::future<Task>;
 
-        template <typename TASK>
-        inline void Schedule(TASK&& fn)
-        {
-#if defined(CUBBYFLOW_TASKING_TBB)
+#elif defined(CUBBYFLOW_TASKING_TBB)
             struct LocalTBBTask : public tbb::task
             {
                 TASK func;
 
-                LocalTBBTask(TASK&& f) : func(std::forward<TASK>(f))
-                {
-                    // Do nothing
-                }
+                LocalTBBTask(TASK&& f) : func(std::forward<TASK>(f)) {}
 
                 tbb::task* execute() override
                 {
@@ -82,38 +74,21 @@ namespace CubbyFlow
                     return nullptr;
                 }
             };
-
-            auto* tbbNode = new(tbb::task::allocate_root()) LocalTBBTask(std::forward<TASK>(fn));
+            using package_t = std::packaged_task<operator_return_t<TASK>()>;
+			auto task = new package_t(std::forward<TASK>(fn));
+            auto* tbbNode = new(tbb::task::allocate_root()) LocalTBBTask(
+                [=](){
+                    (*task)();
+                    delete task;
+                });
             tbb::task::enqueue(*tbbNode);
+
 #elif defined(CUBBYFLOW_TASKING_CPP11THREAD)
-            std::thread thread(fn);
-            thread.detach();
-#else	// OpenMP or Serial -> Synchronous!
+            return std::async(std::launch::async, fn);
+#else
             fn();
 #endif
         }
-
-        template <typename TASK>
-        using operator_return_t = typename std::result_of<TASK()>::type;
-
-        // NOTE: see above, same issues associated with Schedule()
-        template <typename TASK>
-        inline auto Async(TASK&& fn) -> std::future<operator_return_t<TASK>>
-        {
-            using package_t = std::packaged_task<operator_return_t<TASK>()>;
-
-            auto task = new package_t(std::forward<TASK>(fn));
-            auto future = task->get_future();
-
-            Schedule([=]()
-                     {
-                         (*task)();
-                         delete task;
-                     });
-
-            return future;
-        }
-#endif
 
         // Adopted from:
         // Radenski, A.
