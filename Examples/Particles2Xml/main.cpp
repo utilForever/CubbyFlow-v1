@@ -80,12 +80,12 @@ int main(int argc, char* argv[])
     // Parsing
     auto parser =
         clara::Help(showHelp) |
-        clara::Opt(inputFileName, "input_pos")
+        clara::Opt(inputFileName, "inputFileName")
         ["-i"]["--input"]
         ("input particle position file name") |
-        clara::Opt(outputFileName, "output_xml")
+        clara::Opt(outputFileName, "outputFileName")
         ["-o"]["--output"]
-        ("output obj file name");
+        ("output xml file name");
 
     auto result = parser.parse(clara::Args(argc, argv));
     if (!result)
