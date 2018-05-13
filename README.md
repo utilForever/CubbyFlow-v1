@@ -9,31 +9,7 @@ The code is built on C++17 and can be compiled with commonly available compilers
 
 ## Key Features
 
-- Basic math and geometry operations and data structures
-- Spatial query accelerators
-- SPH and PCISPH fluid simulators
-- Stable fluids-based smoke simulator
-- Level set-based liquid simulator
-- PIC, FLIP, and APIC fluid simulators
-- Upwind, ENO, and FMM level set solvers
-- Jacobi, Gauss-Seidel, SOR, MG, CG, ICCG, and MGPCG linear system solvers
-- Spherical, SPH, Zhu & Bridson, and Anisotropic kernel for points-to-surface converter
-- Converters between signed distance function and triangular mesh
-- C++ and Python API
-- Intel TBB, OpenMP, and C++11 multi-threading backends
-
-## To-do Features
-
-- MPS and MPM fluid simulators
-- IVOCK fluid simulators
-- Multiphase fluid simulators
-    - Particle-based multiphase flow
-    - Grid-based two-phase flow
-    - Grid-based multiphase flow
-    - Grid-based bubbly flow
-- Voxel surface reconstruction
-- Compatible for DirectX, OpenGL, Metal, and Vulkan
-- C#, Go, and Rust API
+TBA
 
 Every simulator has both 2-D and 3-D implementations.
 
@@ -70,17 +46,7 @@ MSBuild CubbyFlow.sln /p:Configuration=Release
 
 Now run some examples, such as:
 
-```
-bin/HybridLiquidSim
-```
-
-### Python API
-
-Build and install the package by running
-
-```
-pip install -U .
-```
+TBA
 
 ### More Instructions of Building the Code
 
