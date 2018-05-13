@@ -4,7 +4,9 @@
 
 [![License](https://img.shields.io/badge/Licence-MIT-blue.svg)](https://github.com/utilForever/CubbyFlow/blob/master/LICENSE)
 
-CubbyFlow is voxel-based fluid simulation engine for computer games based on [Jet framework](https://github.com/doyubkim/fluid-engine-dev) that was created by [Doyub Kim](https://twitter.com/doyub).
+<b>IMPORTANT: If you want to see the complete source code that does not include the Jet Framework as a submodule, see [CubbyFlow-v0](https://github.com/utilForever/CubbyFlow-v0).</b>
+
+CubbyFlow is voxel-based fluid simulation engine for computer games based on [Jet Framework](https://github.com/doyubkim/fluid-engine-dev) that was created by [Doyub Kim](https://twitter.com/doyub).
 The code is built on C++17 and can be compiled with commonly available compilers such as g++, clang++, or Microsoft Visual Studio. CubbyFlow currently supports macOS (10.12.6 or later), Ubuntu (17.04 or later), Windows (Visual Studio 2017 or later), and Windows Subsystem for Linux (WSL). Other untested platforms that support C++17 also should be able to build CubbyFlow.
 
 ## Key Features (To do)
