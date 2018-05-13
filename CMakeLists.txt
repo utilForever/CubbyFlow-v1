@@ -19,16 +19,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 # Includes
 include_directories(Includes)
 include_directories(Libraries)
-include_directories(Libraries/obj)
-include_directories(Libraries/pybind11/include)
-include_directories(Libraries/googletest/googletest/include)
-include_directories(Libraries/Clara/include)
-
-# Find TBB
-include(Builds/CMake/FindTBB.cmake)
-
-# Tasking system options
-include(Builds/CMake/TaskingSystemOptions.cmake)
+include_directories(Libraries/Jet/include/jet)
 
 # Compile options
 include(Builds/CMake/CompileOptions.cmake)
@@ -41,41 +32,6 @@ endif()
 # Overrides
 set(CMAKE_MACOSX_RPATH ON)
 
-# Set resources
-set(RESOURCES_DIR ${CMAKE_CURRENT_SOURCE_DIR}/Resources)
-set(RESOURCES_OBJS
-        ${RESOURCES_DIR}/bunny.obj
-        ${RESOURCES_DIR}/cube.obj
-        ${RESOURCES_DIR}/dragon.obj)
-
 # Project modules
-set(BUILD_GTEST ON CACHE BOOL "" FORCE)
-set(BUILD_GMOCK OFF CACHE BOOL "" FORCE)
-set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-add_subdirectory(Libraries/googletest EXCLUDE_FROM_ALL)
-cmake_policy(SET CMP0063 NEW)
-set(BENCHMARK_ENABLE_TESTING OFF CACHE BOOL "" FORCE)
-add_subdirectory(Libraries/googlebenchmark)
-set(CMAKE_CXX_VISIBILITY_PRESET hidden)
-set(CMAKE_VISIBILITY_INLINES_HIDDEN 1)
-add_subdirectory(Libraries/cnpy)
-add_subdirectory(Libraries/pystring)
-add_subdirectory(Sources/Core)
-add_subdirectory(Tests/ManualTests)
-add_subdirectory(Tests/UnitTests)
-add_subdirectory(Tests/MemPerfTests)
-add_subdirectory(Tests/TimePerfTests)
-add_subdirectory(Examples/HelloFluidSim)
-add_subdirectory(Examples/HybridLiquidSim)
-add_subdirectory(Examples/LevelSetLiquidSim)
-add_subdirectory(Examples/Obj2Sdf)
-add_subdirectory(Examples/Particles2Obj)
-add_subdirectory(Examples/Particles2Xml)
-add_subdirectory(Examples/SmokeSim)
-add_subdirectory(Examples/SPHSim)
-
-add_subdirectory(Libraries/pybind11)
-if(BUILD_FROM_PIP)
-    set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${DEFAULT_CMAKE_LIBRARY_OUTPUT_DIRECTORY})
-endif()
-add_subdirectory(Sources/API/Python)
+add_subdirectory(Sources)
+add_subdirectory(Libraries/Jet)
