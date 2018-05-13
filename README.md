@@ -7,9 +7,12 @@
 CubbyFlow is voxel-based fluid simulation engine for computer games based on [Jet framework](https://github.com/doyubkim/fluid-engine-dev) that was created by [Doyub Kim](https://twitter.com/doyub).
 The code is built on C++17 and can be compiled with commonly available compilers such as g++, clang++, or Microsoft Visual Studio. CubbyFlow currently supports macOS (10.12.6 or later), Ubuntu (17.04 or later), Windows (Visual Studio 2017 or later), and Windows Subsystem for Linux (WSL). Other untested platforms that support C++17 also should be able to build CubbyFlow.
 
-## Key Features
+## Key Features (To do)
 
-TBA
+- Available fluid dynamics in computer games
+- Support game engines (Unity, Unreal and so on)
+- Support ML frameworks (TensorFlow, Caffe, Torch and so on)
+- Real-time fluid simulation using ML
 
 Every simulator has both 2-D and 3-D implementations.
 
@@ -48,47 +51,13 @@ Now run some examples, such as:
 
 TBA
 
-### More Instructions of Building the Code
-
-To learn how to build, test, and install the SDK, please check out [INSTALL.md](https://github.com/utilForever/CubbyFlow/blob/master/INSTALL.md).
-
 ## Documentation
 
 All the documentations for the framework can be found from [the project website](https://utilforever.github.io/CubbyFlow/) incluing the API reference.
 
 ## Examples
 
-Here are some of the example simulations generated using CubbyFlow framework. Corresponding example codes can be found under [Examples](https://github.com/utilForever/CubbyFlow/tree/master/Examples). All images are rendered using [Mitsuba renderer](https://www.mitsuba-renderer.org/) and the Mitsuba scene files can be found from [the demo directory](https://github.com/utilForever/CubbyFlow/tree/master/Demos). Find out more demos from [the project website](https://utilforever.github.io/CubbyFlow/Examples).
-
-#### PCISPH Simulation Example
-
-![PCISPH_dam_breaking](https://github.com/utilForever/CubbyFlow/blob/master/Medias/Screenshots/PCISPH_dam_breaking.png "PCISPH Example")
-
-#### Level Set Simulation Example
-
-![Level-set_dam_breaking](https://github.com/utilForever/CubbyFlow/blob/master/Medias/Screenshots/LevelSet_dam_breaking.png "Level Set Example")
-
-#### FLIP Simulation Example
-
-![FLIP_dam_breaking](https://github.com/utilForever/CubbyFlow/blob/master/Medias/Screenshots/FLIP_dam_breaking.png "FLIP Example")
-
-#### PIC Simulation Example
-
-![PIC_dam_breaking](https://github.com/utilForever/CubbyFlow/blob/master/Medias/Screenshots/PIC_dam_breaking.png "PIC Example")
-
-#### APIC Simulation Example
-
-![APIC_dam_breaking](https://github.com/utilForever/CubbyFlow/blob/master/Medias/Screenshots/APIC_dam_breaking.png "APIC Example")
-
-#### Level Set Example with Different Viscosity (high / low)
-
-![level_set_bunny_drop_high_viscosity](https://github.com/utilForever/CubbyFlow/blob/master/Medias/Screenshots/level_set_bunny_drop_high_viscosity.png "Level Set Bunny Drop - High Viscosity")
-![level_set_bunny_drop_low_viscosity](https://github.com/utilForever/CubbyFlow/blob/master/Medias/Screenshots/level_set_bunny_drop_low_viscosity.png "Level Set Bunny Drop - Low Viscosity")
-
-#### Smoke Simulation with Different Advection Methods (Linear / Cubic-Spline)
-
-![rising_smoke_linear](https://github.com/utilForever/CubbyFlow/blob/master/Medias/Screenshots/rising_smoke_linear.png "Rising Smoke - Linear")
-![rising_smoke_cubic](https://github.com/utilForever/CubbyFlow/blob/master/Medias/Screenshots/rising_smoke_cubic.png "Rising Smoke - Cubic")
+TBA
 
 ## Presentations
 
@@ -120,7 +89,7 @@ You can contact me via e-mail (utilForever at gmail.com). I am always happy to a
 
 The class is licensed under the [MIT License](http://opensource.org/licenses/MIT):
 
-Copyright &copy; 2018 [Chris Ohk](http://www.github.com/utilForever), [Dongmin Kim](https://github.com/dmk98), and [YoungJoong Kim](https://github.com/revsic).
+Copyright &copy; 2018 [Chris Ohk](http://www.github.com/utilForever), [Dongmin Kim](https://github.com/dmk98), [YoungJoong Kim](https://github.com/revsic) and [SeungHyun Jeon](https://github.com/FuZer).
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
