@@ -10,3 +10,6 @@
 [submodule "Libraries/Clara"]
 	path = Libraries/Clara
 	url = https://github.com/catchorg/Clara
+[submodule "Libraries/Jet"]
+	path = Libraries/Jet
+	url = https://github.com/doyubkim/fluid-engine-dev
