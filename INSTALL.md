@@ -5,8 +5,8 @@ This document explains how to build, test, and install the SDK.
 To get started, clone the code from the repository and also download dependent libraries by running
 
 ```
-git clone https://github.com/utilForever/CubbyFlow.git
-cd CubbyFlow.git
+git clone https://github.com/utilForever/CubbyFlow-v1.git
+cd CubbyFlow-v1.git
 git submodule init
 git submodule update
 ```
@@ -81,12 +81,12 @@ cd build
 cmake .. -G"Visual Studio 15 2017 Win64"
 ```
 
-This will generate 64-bit version of VS 2017 solution and projects. Once executed, you can find `CubbyFlow.sln` solution file in the `build` directory. Open the solution file and hit `Ctrl + Shift + B` to build the entire solution. Set `UnitTests` as a start-up project and hit `Ctrl + F5` to run the test.
+This will generate 64-bit version of VS 2017 solution and projects. Once executed, you can find `CubbyFlow-v1.sln` solution file in the `build` directory. Open the solution file and hit `Ctrl + Shift + B` to build the entire solution. Set `UnitTests` as a start-up project and hit `Ctrl + F5` to run the test.
 
 Alternatively, you can use MSBuild to build the solution from the command prompt. In such case, simply run:
 
 ```
-MSBuild CubbyFlow.sln /p:Configuration=Release
+MSBuild CubbyFlow-v1.sln /p:Configuration=Release
 ```
 
 This will build the whole solution in release mode. Once built, run the following command to execute unit tests:
@@ -194,7 +194,7 @@ Once everything is installed, add the following line to CMakeLists.txt using ```
 vi CMakeLists.txt
 ```
 
-NOTE: Please move to CubbyFlow folder.
+NOTE: Please move to CubbyFlow-v1 folder.
 
 ```
 # CMake version
@@ -230,7 +230,7 @@ It should show all the tests are passing.
 
 ### Running Tests
 
-There are two different tests in the codebase including the unit test and manual test. For the detailed instruction on how to run those tests, please checkout the documentation page from [the project website](https://utilforever.github.io/CubbyFlow/Documentation/).
+There are two different tests in the codebase including the unit test and manual test. For the detailed instruction on how to run those tests, please checkout the documentation page from [the project website](https://utilforever.github.io/CubbyFlow-v1/Documentation/).
 
 ### Installing C++ SDK
 
@@ -250,7 +250,7 @@ For Windows, run:
 cmake .. -G"Visual Studio 15 2017 Win64" -DCMAKE_INSTALL_PREFIX=_INSTALL_PATH_
 ```
 
-Then, build `INSTALL` project under `CubbyFlow.sln`. This will install the header files and the static library `CubbyFlow.lib` under `_INSTALL_PATH_`.
+Then, build `INSTALL` project under `CubbyFlow-v1.sln`. This will install the header files and the static library `CubbyFlow.lib` under `_INSTALL_PATH_`.
 
 ### Installing Python SDK
 
@@ -278,4 +278,4 @@ The tests should pass.
 
 ### Coding Style
 
-CubbyFlow uses clang-format. Checkout [`.clang-format`](https://github.com/utilforever/CubbyFlow/blob/master/.clang-format) file for the style guideline.
+CubbyFlow uses clang-format. Checkout [`.clang-format`](https://github.com/utilforever/CubbyFlow-v1/blob/master/.clang-format) file for the style guideline.
